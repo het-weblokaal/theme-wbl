@@ -1,0 +1,6 @@
+/**
+ * Automattic Layout Grid
+ */
+.wp-block-jetpack-layout-grid {
+	grid-gap: var(--gutter) !important;
+}

@@ -1,0 +1,49 @@
+{
+	"name": "wbl-theme/segment",
+	"title": "Segment",
+	"category": "layout",
+	"icon": "editor-table",
+	"description": "Simple layoutstructure with two columns",
+	"keywords": [ "Columns", "Kolommen" ],
+	"textdomain": "theme-wbl",
+	"attributes": {
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wbl-segment__title",
+			"default": ""
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 2
+		},
+		"variation": {
+			"type": "string",
+			"default": ""
+		},
+		"tagName": {
+			"type": "string",
+			"default": "div"
+		},
+		"allowedBlocks": {
+			"type": "array"
+		},
+		"orientation": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"align"              : false,
+		"alignWide"          : false,
+		"anchor"             : true,
+		"className"			 : false,
+		"customClassName"    : false,
+		"defaultStylePicker" : false,
+		"html"               : true,
+		"lightBlockWrapper"  : false
+	}
+}

@@ -1,0 +1,18 @@
+.wp-block-image {
+	figure {
+		margin-bottom: calc(var(--row) * 3);
+	}
+
+
+	figcaption {
+
+	}
+
+	&.alignwide,
+	&.alignfull {
+		max-width: none;
+		figcaption {
+			margin-bottom: calc(var(--row) * -1);
+		}
+	}
+}

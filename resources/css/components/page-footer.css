@@ -1,0 +1,18 @@
+.page-footer {
+
+	.meta {
+		margin-top: calc(var(--row) * 8);
+		margin-bottom: calc(var(--row) * 8);
+
+		&__content {
+			font-size: inherit;
+		}
+	}
+
+	.post-navigation {
+	}
+
+	@media (--breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -1);
+	}
+}

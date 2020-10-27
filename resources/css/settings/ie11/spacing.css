@@ -1,0 +1,21 @@
+:root {
+	--column        : 6.5vw;
+	--gutter        : 5vw;
+	--column-gutter : 11.5vw;
+
+	--row: 12px;
+
+	--column-span-1: var(--column);
+	--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
+	--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
+	--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
+	--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
+	--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
+	--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
+	--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
+
+	--site--width         : 87vw;
+	--site--padding       : 3vw;
+	--page--width         : var(--site--width);
+	--page-content--width : var(--column-span-5);
+}

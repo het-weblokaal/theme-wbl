@@ -1,0 +1,66 @@
+/**
+ * All Columns Alignment
+ */
+.wp-block-columns {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (--only-desktop) {
+		flex-wrap: nowrap;
+	}
+
+	&.are-vertically-aligned-top {
+		align-items: flex-start;
+	}
+
+	&.are-vertically-aligned-center {
+		align-items: center;
+	}
+
+	&.are-vertically-aligned-bottom {
+		align-items: flex-end;
+	}
+}
+
+.wp-block-column {
+	flex-grow: 1;
+	flex-basis: 0;
+
+	/* Prevent the columns from growing wider than their distributed sizes. */
+	min-width: 0;
+
+	/* Prevent long unbroken words from overflowing. */
+	overflow-wrap: break-word;
+
+	/* Columns with an explicitly-assigned width should maintain their
+	`flex-basis` width and not grow. */
+	&[style*="flex-basis"] {
+		flex-grow: 0;
+	}
+
+	/* When columns are in a single row, add space before all except the first. */
+	&:not(:first-child) {
+		/* margin-left: var(--gutter); */
+	}
+
+	&.is-vertically-aligned-top {
+		align-self: flex-start;
+	}
+
+	&.is-vertically-aligned-center {
+		align-self: center;
+	}
+
+	&.is-vertically-aligned-bottom {
+		align-self: flex-end;
+	}
+
+	&.is-vertically-aligned-top,
+	&.is-vertically-aligned-center,
+	&.is-vertically-aligned-bottom {
+		width: 100%;
+	}
+
+	> *:first-child { margin-top: 0; }
+	> *:last-child { margin-bottom: 0; }
+}

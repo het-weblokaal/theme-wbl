@@ -1,0 +1,34 @@
+.post-navigation {
+	margin-top: calc(var(--row) * 8);
+	margin-bottom: calc(var(--row) * 8);
+
+	a {}
+
+	&__links {
+		display: grid;
+		grid-template-columns: 1fr;
+		column-gap: var(--gutter);
+		row-gap: calc(var(--row) * 4);
+
+		@media (--breakpoint-2) {
+			grid-template-columns: 1fr 1fr;
+			@mixin ie11-grid-fallback 2;
+		}
+	}
+
+	&__link-label {
+		@mixin label;
+		margin-bottom: calc(var(--row) * 2);
+	}
+
+	&__link {
+
+		&--previous {
+
+		}
+
+		&--next {
+
+		}
+	}
+}

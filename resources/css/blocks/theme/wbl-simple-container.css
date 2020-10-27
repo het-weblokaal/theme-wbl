@@ -1,0 +1,12 @@
+/**
+ * A generic simple container for this theme
+ */
+
+.wbl-simple-container {
+
+}
+
+/* Editor */
+.is-root-container [data-type="wbl-theme/simple-container"] {
+
+}

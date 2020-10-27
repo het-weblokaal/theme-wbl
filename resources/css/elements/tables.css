@@ -1,0 +1,15 @@
+/* Tables
+---------------------------------------------------- */
+
+table {
+    border-collapse: collapse; /* Makes table rows borderable */
+    border-spacing: 0;
+    width: 100%;
+}
+
+th,
+td {
+	border-width: 1px;
+    text-align: left;
+    vertical-align: top;
+}

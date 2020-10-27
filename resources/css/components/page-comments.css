@@ -1,0 +1,130 @@
+.page-comments {
+	font-size: var(--font-size--sm);
+	margin-top: calc(var(--row) * 6);
+
+	&__title {
+		background-color: var(--foreground-color);
+		border-top-right-radius: 40px;
+		border-bottom-right-radius: 40px;
+		color: var(--background-color);
+		display: inline-block;
+		margin-left: calc(var(--site-padding) * -1);
+		margin-top: 0;
+		margin-bottom: calc(var(--row) * 4);
+		padding: calc(var(--row) * 1) calc(var(--row) * 2 + 0.25em) calc(var(--row) * 1) calc(var(--row) * 2);
+	}
+
+	@media (--breakpoint-1) {
+		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width));
+
+		&__title {
+			margin-left: calc(var(--gutter) * -1);
+		}
+	}
+}
+
+.comments {
+
+	&__list {
+		&,
+		ul, ol {
+			@mixin reset-list;
+		}
+	}
+}
+
+.comment {
+
+	.children:before,
+	& + &:before {
+		content: '';
+		display: block;
+		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		width: calc(var(--gutter) * 1);
+		margin-top: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * 4);
+	}
+
+	&__meta-group {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-bottom: calc(var(--row) * 1);
+
+		a {
+			@mixin reset-link;
+
+			&:hover {
+			}
+		}
+	}
+
+	&__author {
+		font-weight: bold;
+		font-size: var(--font-size--md);
+		font-family: var(--font-2-family);
+		line-height: var(--font-2-line-height);
+
+		a {
+			@mixin reset-link;
+		}
+	}
+
+	&__content {
+		* {
+			margin-bottom: calc(var(--row) * 1);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.children {
+		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		margin-top: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * -4);
+		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width));
+		padding-bottom: calc(var(--row) * 4);
+
+		&:before {
+			margin-left: calc(var(--gutter) * -1);
+		}
+	}
+
+	@media (--breakpoint-1) {
+
+		.children {
+
+		}
+
+/* 		.children & + &:before {
+			margin-left: 0;
+		} */
+	}
+}
+
+/** This component doesn't comply to BEM */
+.comment-respond {
+
+	&:before {
+		content: '';
+		display: block;
+		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		width: calc(var(--gutter) * 1);
+		margin-top: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * 4);
+	}
+
+	.comment-reply-title {
+	}
+}
+
+/** This component doesn't comply to BEM */
+.comment-form {
+	&-cookies-consent {
+		line-height: var(--line-height--sm);
+	}
+}

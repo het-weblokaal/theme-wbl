@@ -1,0 +1,13 @@
+.site-version {
+	font-family: monotype;
+	font-weight: bold;
+	font-size: var(--font-size--min);
+	text-align: right;
+	opacity: 0.4;
+	margin: calc(var(--row) * 1);
+	position: absolute;
+	top: 0;
+	right: 0;
+	/* left: 0; */
+	z-index: 99;
+}

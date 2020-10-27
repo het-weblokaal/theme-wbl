@@ -1,0 +1,58 @@
+/**
+ * Meta (like date, author, categories)
+ *
+ * Elements
+ * __label
+ * __items
+ *
+ * Modifiers
+ * --date
+ * --categories
+ * --author
+ * --password-protection-status
+ *
+ */
+
+.meta {
+
+	&__label {
+		@mixin label;
+		display: block;
+		margin-bottom: calc(var(--row) * 2);
+	}
+
+	&__content {
+		font-size: var(--font-size--meta);
+	}
+
+	a {
+
+	}
+
+	&--author a {
+		@mixin reset-link;
+
+		&:hover,
+	    &:active {
+	    	@mixin link-active-2;
+	    }
+	}
+
+	&--date &__content {}
+
+	&--categories {
+		a {
+			display: inline-block;
+			margin-right: 1em;
+		}
+	}
+
+	&--password-protection-status {
+		&:before {
+			color: var(--ui-color);
+			content: '\2022';
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+		}
+	}
+}

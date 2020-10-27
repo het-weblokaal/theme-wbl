@@ -1,0 +1,123 @@
+/**
+ * Main stylesheet for the theme.
+ *
+ * Theme styles follow http://cssguidelin.es/ and are organized according to
+ * Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
+ * short, each layer of CSS gets more specific as you move down this page.
+ */
+
+/*--------------------------------------------------------------
+# Settings - Global variables, config switches.
+--------------------------------------------------------------*/
+
+@import "settings/ie11/media-queries.css";
+@import "settings/ie11/typography.css";
+@import "settings/ie11/spacing.css";
+@import "settings/colors.css";
+@import "settings/effects.css";
+@import "settings/misc.css";
+
+/*--------------------------------------------------------------
+# Tools - Default mixins and functions.
+--------------------------------------------------------------*/
+@import "tools/mixins.css";
+
+/*--------------------------------------------------------------
+# Generic - Ground-zero styles (resets, box-sizing, etc.).
+--------------------------------------------------------------*/
+@import "generic/reset.css";
+@import "generic/vertical-spacing.css";
+
+
+/*--------------------------------------------------------------
+# Elements - Unclassed HTML elements (type selectors).
+--------------------------------------------------------------*/
+@import "elements/html-body.css";
+@import "elements/buttons.css";
+@import "elements/forms.css";
+@import "elements/headings.css";
+@import "elements/inline.css";
+@import "elements/links.css";
+@import "elements/lists.css";
+@import "elements/media.css";
+@import "elements/misc.css";
+@import "elements/quotes.css";
+@import "elements/svg.css";
+@import "elements/tables.css";
+
+
+/*--------------------------------------------------------------
+# Objects - Undecorated design patterns.
+--------------------------------------------------------------*/
+@import "objects/template-landing-page.css";
+@import "objects/layouts.css";
+
+/*--------------------------------------------------------------
+# Blocks - editor related styles.
+--------------------------------------------------------------*/
+@import "blocks/core/button.css";
+@import "blocks/core/code.css";
+@import "blocks/core/cover.css";
+@import "blocks/core/columns.css";
+@import "blocks/core/gallery.css";
+@import "blocks/core/group.css";
+@import "blocks/core/heading.css";
+@import "blocks/core/image.css";
+@import "blocks/core/media-text.css";
+@import "blocks/core/paragraph.css";
+@import "blocks/core/pullquote.css";
+@import "blocks/core/quote.css";
+@import "blocks/core/separator.css";
+@import "blocks/core/table.css";
+
+@import "blocks/theme/wbl-segment.css";
+@import "blocks/theme/wbl-card.css";
+@import "blocks/theme/wbl-simple-container.css";
+@import "blocks/theme/wbl-simple-image.css";
+
+@import "blocks/third-party/automattic--layout-grid.css";
+
+@import "blocks/colors.css";
+@import "blocks/misc.css";
+
+/*--------------------------------------------------------------
+# Components - specific UI components.
+--------------------------------------------------------------*/
+@import "components/call-to-action.css";
+@import "components/meta.css";
+@import "components/password-protection-form.css";
+@import "components/posts.css";
+@import "components/posts-post.css";
+@import "components/posts-pagination.css";
+@import "components/post-navigation.css";
+@import "components/search-form.css";
+@import "components/social-media-list.css";
+@import "components/social-media-link.css";
+
+@import "components/site-version.css";
+@import "components/site.css";
+@import "components/site-header.css";
+@import "components/site-main.css";
+@import "components/site-footer.css";
+@import "components/site-nav.css";
+@import "components/site-branding.css";
+@import "components/site-nav-toggle.css";
+@import "components/site-meta.css";
+@import "components/page.css";
+@import "components/page-header.css";
+@import "components/page-image.css";
+@import "components/page-main.css";
+@import "components/page-comments.css";
+@import "components/page-footer.css";
+
+
+
+/*--------------------------------------------------------------
+# Utilities - Helpers and overrides.
+--------------------------------------------------------------*/
+@import "utilities/accessibility.css";
+@import "utilities/alignments.css";
+@import "utilities/helpers.css";
+@import "utilities/wordpress.css";
+@import "utilities/prefers-reduced-motion.css";
+@import "utilities/shame.css";

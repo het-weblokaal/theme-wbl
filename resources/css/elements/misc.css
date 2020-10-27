@@ -1,0 +1,22 @@
+/* Miscelaneous
+---------------------------------------------------- */
+p {
+
+}
+
+hr {
+	color: currentColor;
+	border: 0;
+    border-bottom-width: var(--ui-border-width);
+    border-color: currentColor;
+    border-style: solid;
+    clear: both;
+    width: 100%;
+    margin-top: calc(var(--row) * 3);
+    margin-bottom: calc(var(--row) * 3);
+}
+
+pre {
+    white-space: pre-wrap;
+}
+

@@ -1,0 +1,36 @@
+/**
+ * A card block for this theme
+ *
+ * Elements
+ * &__inner
+ * &__image
+ * &__title
+ * &__text
+ */
+
+.wbl-card {
+	&__heading {
+		font-size: var(--font-size--lg);
+		margin-bottom: calc(var(--row) * 3);
+		margin-top: 0;
+	}
+
+	&__image {
+		margin-bottom: calc(var(--row) * 3);
+	}
+
+	&__text {
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* Editor */
+.is-root-container [data-type="wbl-theme/card"] {
+
+	.wbl-card {
+	}
+
+}
+

@@ -1,0 +1,10 @@
+.posts {
+	@mixin container--page-content--full-page;
+	margin-bottom: calc(var(--row) * 10);
+	margin-top: calc(var(--row) * 8);
+
+	_:-ms-fullscreen, :root & {
+		column-gap: var(--gutter);
+		@mixin ie11-grid-fallback 2;
+	}
+}

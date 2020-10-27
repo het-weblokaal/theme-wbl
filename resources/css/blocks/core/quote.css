@@ -1,0 +1,35 @@
+/**
+ * Difference between pullquote and quote:
+ *
+ * - A quote is something someone else said.
+ * - A pullquote is a piece of text from the text of your article, pulled out.
+ *
+ * @link https://github.com/WordPress/gutenberg/issues/11610
+ */
+
+.wp-block-quote {
+	/* border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color); */
+	/* margin-top: calc(var(--row) * 4);
+	margin-bottom: calc(var(--row) * 4); */
+	margin: calc(var(--row) * 4 - var(--ui-border-width)) calc(var(--gutter) - var(--ui-border-width));
+	margin-right: 0;
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	p {
+		font-family: var(--font-2-family);
+		/* line-height: var(--line-height--sm); */
+		font-size: var(--font-size--xl);
+		font-style: italic;
+		margin-bottom: calc(var(--row) * 1);
+	}
+
+	cite {
+		/* font-style: italic; */
+		font-size: var(--font-size--sm);
+		font-weight: bold;
+	}
+
+}

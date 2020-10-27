@@ -1,0 +1,32 @@
+.alignleft,
+.alignright {
+}
+
+.alignleft {
+	@mixin container--page-content--left;
+}
+
+.alignright {
+	@mixin container--page-content--right;
+}
+
+figure.alignleft,
+figure.alignright {
+
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+
+	@media (--breakpoint-1) {
+		margin-top: calc(var(--row) * 0.5);
+	}
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,25 @@
+/* Blockquotes
+---------------------------------------------------- */
+
+blockquote {
+	/* @mixin background--light; */
+
+    i,
+    em,
+    cite {
+
+    }
+
+    p {
+
+    }
+
+    cite,
+    footer {
+    	font-style: normal;
+        &:before {
+			content: '\2014';
+			margin-right: var(--spacing--05);
+		}
+    }
+}

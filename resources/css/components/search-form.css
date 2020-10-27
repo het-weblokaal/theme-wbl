@@ -1,0 +1,9 @@
+.search-form {
+	display: flex;
+	flex-wrap: wrap;
+
+	.search-field {
+		margin-right: calc(var(--row) * 0.5);
+		width: auto;
+	}
+}

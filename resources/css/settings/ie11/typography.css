@@ -1,0 +1,36 @@
+/* Use values with units as much as you can because of performance impact calculating the unit */
+
+:root {
+
+	--rem-size: 125%;
+
+	/* Typography */
+	--font-1-family: unit-rounded, sans-serif;
+	--font-1-line-height: 1.333;
+
+	/* Font Sizes */
+	--font-size--min: 0.8125rem;
+	--font-size--xs: 0.8125rem;
+	--font-size--sm: 0.9rem;
+	--font-size--base: 1rem;
+	--font-size--lg: 1.1rem;
+	--font-size--xl: 1.25rem;
+	--font-size--2xl: 1.5rem;
+	--font-size--3xl: 2rem;
+	--font-size--max: 2.5rem;
+
+	/* Utility Mapping */
+	--font-size--site-nav: var(--font-size--lg);
+	--font-size--site-nav-toggle: var(--font-size--2xl);
+	--font-size--meta: var(--font-size--sm);
+	--font-size--label: var(--font-size--sm);
+	--font-size--h3: var(--font-size--base);
+	--font-size--h2: var(--font-size--2xl);
+	--font-size--h1: var(--font-size--max);
+
+	/* Line heights */
+	--line-height--xs: 1;
+	--line-height--sm: 1.2;
+	--line-height--md: 1.5;
+}
+

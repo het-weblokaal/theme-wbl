@@ -1,0 +1,18 @@
+@custom-media --breakpoint-1 (min-width: 360px);
+@custom-media --breakpoint-2 (min-width: 600px);
+@custom-media --breakpoint-3 (min-width: 840px);
+@custom-media --breakpoint-4 (min-width: 1080px);
+@custom-media --breakpoint-5 (min-width: 1400px);
+@custom-media --breakpoint-6 (min-width: 1720px);
+
+/**
+ * Helper breakpoints
+ */
+@custom-media --columns-2 (min-width: 360px);
+@custom-media --columns-4 (min-width: 600px);
+@custom-media --columns-8 (min-width: 840px);
+
+/* Mobile-Desktop helpers */
+@custom-media --only-mobile-xs (max-width: 359px);
+@custom-media --only-mobile (max-width: 839px);
+@custom-media --only-desktop (min-width: 840px);

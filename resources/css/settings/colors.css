@@ -1,0 +1,25 @@
+:root {
+
+	/**
+	 * Color library
+	 *
+	 * We define them in theme-support colors function in php, but we
+	 * also define fallback colors here for when they are missing out.
+	 */
+	--wp--preset--color--primary-1: #FFF7D6;
+	--wp--preset--color--secondary-1: #000000;
+
+	/**
+	 * Assign colors
+	 */
+	--background-color: var(--wp--preset--color--primary-1);
+	--foreground-color: var(--wp--preset--color--secondary-1);
+
+	/* --ui-color: var(--wp--preset--color--secondary-1); */
+
+	/* @media screen and (prefers-color-scheme: dark) {
+		--background-color: var(--wp--preset--color--secondary-1);
+		--foreground-color: var(--wp--preset--color--primary-1);
+		--ui-color: var(--wp--preset--color--primary-1);
+	} */
+}

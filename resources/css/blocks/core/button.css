@@ -1,0 +1,35 @@
+.wp-block-buttons {
+	margin-bottom: calc(var(--row) * 4);
+	display: flex;
+	flex-wrap: wrap;
+
+	&.aligncenter {
+		display: flex;
+		justify-content: center;
+	}
+
+	&.alignright {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.wp-block-button {
+
+	&__link {
+		@mixin button;
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
+
+	& + & {
+		margin-left: calc(var(--column) * 0.5);
+	}
+}
+
