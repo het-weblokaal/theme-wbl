@@ -26,18 +26,26 @@ class Config {
 	 * @param  string  $name
 	 * @return array
 	 */
-	public static function get( $name, $key = null ) {
+	public static function get( $name, $key = null, $key_2 = null ) {
 
+		// Get config file
 		$file = static::path( "{$name}.php" );
 
-		$config = (array) apply_filters(
-			"wbl-theme/config/{$name}",
-			file_exists( $file ) ? include( $file ) : []
-		);
+		// Get config data
+		$config = file_exists( $file ) ? include( $file ) : [];
 
 		// Get key value
 		if ($key) {
-			$config = $config[$key] ?? [];
+
+			// Get nested key value
+			if ($key_2) {
+				$config = $config[$key][$key_2] ?? null;
+			}
+
+			// Just get key value
+			else {
+				$config = $config[$key] ?? null;
+			}
 		}
 
 		return $config;

@@ -8,9 +8,10 @@
 return [
 	 // Array of plugin arrays.
 	'search' => [
-		'title' => sprintf(   esc_html__( 'Search results for: %s', 'theme-wbl' ), get_search_query() )
+		'title' => sprintf(   esc_html__( 'Zoekresultaten voor: %s', 'theme-wbl' ), get_search_query() )
 	],
 	'404' => [
-		'title' => __('Page not found', 'theme-wbl')
+		'title' => __('Pagina niet gevonden', 'theme-wbl'),
+		'content' => __('We kunnen de opgevraagde pagina niet vinden :/', 'theme-wbl')
 	]
 ];

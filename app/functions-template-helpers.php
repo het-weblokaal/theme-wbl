@@ -157,7 +157,7 @@ function get_page_title() {
 	}
 
 	elseif ( \is_404() ) {
-		$page_title = __( 'Page not found', 'theme-wbl' );
+		$page_title = Config::get('template-content', '404', 'title');
 	}
 
 	elseif (is_home()) {

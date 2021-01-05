@@ -35,7 +35,11 @@ use Theme_WBL\View;
 			}
 		}
 
-		// OTHER (404..)
+		// 404
+		elseif (\is_404()) {
+			echo apply_filters( 'the_content', Theme_WBL\Config::get('template-content', '404', 'content') );
+		}
+
 		else {
 			the_content();
 		}
