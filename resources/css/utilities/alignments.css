@@ -30,3 +30,7 @@ figure.alignright {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.alignwide {
+	@mixin container--page-content--full-site;
+}

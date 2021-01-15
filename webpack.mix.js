@@ -94,7 +94,6 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
  */
 mix.postCss( `${devPath}/css/style.css`,             'css' )
    .postCss( `${devPath}/css/editor-style.css`,      'css' );
-   // .postCss( `${devPath}/css/ie11-style.css`,      'css' );
 
 if ( processIE11 ) {
 	mix.postCss( `${devPath}/css/ie11-style.css`, 'css', [
@@ -118,8 +117,7 @@ if ( processIE11 ) {
  */
 if ( processMedia ) {
 	mix.copy( `${devPath}/img/*`,   `${pubPath}/img` )
-	   .copy( `${devPath}/svg/*`,   `${pubPath}/svg` )
-	   .copy( `${devPath}/fonts/`,  `${pubPath}/fonts`, false );
+	   .copy( `${devPath}/svg/*`,   `${pubPath}/svg` );
 }
 
 

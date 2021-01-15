@@ -12,7 +12,14 @@
 	&.alignfull {
 		max-width: none;
 		figcaption {
-			margin-bottom: calc(var(--row) * -1);
+			@mixin container--page;
+		}
+
+		@media (--columns-8) {
+
+			img {
+				@mixin container--page;
+			}
 		}
 	}
 }
