@@ -24,7 +24,7 @@ if (! is_singular('post')) {
 
 					<?php wp_list_comments( [
 						'callback' => function( $comment, $args, $depth ) {
-							Theme_WBL\View::display( 'components/comment', null, compact( 'comment', 'args', 'depth' ) );
+							Theme_WBL\App::display( 'components/comment', null, compact( 'comment', 'args', 'depth' ) );
 						}
 					] ) ?>
 

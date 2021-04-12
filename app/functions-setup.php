@@ -65,7 +65,7 @@ add_action( 'after_setup_theme', function() {
 	add_filter( 'allowed_block_types', 				 __NAMESPACE__ . '\allowed_block_types', 10, 2 );
 
 	// Fire up the blocks
-	require_once( App::get_file_path( 'resources/blocks/init.php' ) );
+	require_once( App::blocks_path( 'init.php' ) );
 
 
 	/* ==========================
@@ -110,7 +110,7 @@ add_action( 'after_setup_theme', function() {
 
 	/** Override plugin templates */
 	add_filter( 'wbl-blocks/posts/templates/directory', function( $directory ) {
-    	return View::get_dir() . 'components';
+    	return template('components');
 	} );
 
 	/* ==========================

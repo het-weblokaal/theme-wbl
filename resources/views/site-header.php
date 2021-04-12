@@ -1,16 +1,16 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 ?>
 <header class="site-header">
 	<div class="site-header__inner">
 
-		<?php View::display( 'components/site-branding' ) ?>
+		<?php App::display_template( 'components/site-branding' ) ?>
 
-		<?php View::display( 'components/site-nav-toggle' ) ?>
+		<?php App::display_template( 'components/site-nav-toggle' ) ?>
 
-		<?php View::display( 'components/site-nav' ) ?>
+		<?php App::display_template( 'components/site-nav' ) ?>
 
 	</div>
 </header>

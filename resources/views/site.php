@@ -1,17 +1,17 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 ?>
 
 <div class="site">
 	<div class="site__inner">
 
-<?php View::display( 'site-header' ) ?>
+<?php App::display_template( 'site-header' ) ?>
 
-<?php View::display( 'site-main' ) ?>
+<?php App::display_template( 'site-main' ) ?>
 
-<?php View::display( 'site-footer' ) ?>
+<?php App::display_template( 'site-footer' ) ?>
 
 	</div>
 </div>

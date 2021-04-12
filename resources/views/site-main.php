@@ -1,6 +1,6 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 ?>
 
@@ -8,8 +8,8 @@ use Theme_WBL\View;
 
 <?php if ( is_singular() ) { the_post(); } ?>
 
-<?php View::display( 'page' ) ?>
+<?php App::display_template( 'page' ) ?>
 
-<?php View::display( 'components/call-to-action' ); ?>
+<?php App::display_template( 'components/call-to-action' ); ?>
 
 </main>

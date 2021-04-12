@@ -1,6 +1,6 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 ?>
 <div class="page-main">
@@ -9,7 +9,7 @@ use Theme_WBL\View;
 		<?php
 
 		if (is_singular('post')) {
-			View::display( 'components/page-image' );
+			App::display_template( 'components/page-image' );
 		}
 
 		// SINGULAR
@@ -22,7 +22,7 @@ use Theme_WBL\View;
 
 			the_archive_description();
 
-			View::display( 'components/posts-loop' );
+			App::display_template( 'components/posts-loop' );
 		}
 
 		// SEARCH
@@ -31,7 +31,7 @@ use Theme_WBL\View;
 			get_search_form();
 
 			if (get_search_query()) {
-				View::display( 'components/posts-loop' );
+				App::display_template( 'components/posts-loop' );
 			}
 		}
 

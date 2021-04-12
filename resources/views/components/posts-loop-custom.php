@@ -14,7 +14,7 @@ $custom_query = new \WP_Query( $args );
 
 		<?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-			<?php \Theme_WBL\View::display( 'components/posts-post' ); ?>
+			<?php \Theme_WBL\App::display( 'components/posts-post' ); ?>
 
 			<?php wp_reset_postdata(); ?>
 

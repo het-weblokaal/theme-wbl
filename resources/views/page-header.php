@@ -1,6 +1,6 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 $title = Theme_WBL\get_page_title();
 
@@ -19,8 +19,8 @@ $hide_header = ( !$title || get_page_template_slug() == 'template-landing-page.p
 
 		<?php if (is_singular('post')) : ?>
 			<div class="page-header__meta-group">
-				<?php View::display( 'components/meta-author' ); ?>
-				<?php View::display( 'components/meta-date' ); ?>
+				<?php App::display_template( 'components/meta-author' ); ?>
+				<?php App::display_template( 'components/meta-date' ); ?>
 			</div>
 		<?php endif; ?>
 

@@ -1,12 +1,12 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 ?>
-<?php View::display( 'html-header' ) ?>
+<?php App::display_template( 'html-header' ) ?>
 
-<?php View::display( 'site-version' ) ?>
+<?php App::display_template( 'site-version' ) ?>
 
-<?php View::display( 'site' ) ?>
+<?php App::display_template( 'site' ) ?>
 
-<?php View::display( 'html-footer' ) ?>
+<?php App::display_template( 'html-footer' ) ?>

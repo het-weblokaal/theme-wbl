@@ -1,6 +1,6 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 $post_class = Theme_WBL\render_class( \get_post_class(), false );
 $post_image = Theme_WBL\render_featured_image([ 'size' => 'thumbnail' ]);
@@ -28,10 +28,10 @@ $post_image = Theme_WBL\render_featured_image([ 'size' => 'thumbnail' ]);
 
 	<div class="posts-post__meta-group">
 
-		<?php View::display( 'components/meta-author' ); ?>
-		<?php View::display( 'components/meta-date' ); ?>
-		<?php View::display( 'components/meta-categories' ); ?>
-		<?php View::display( 'components/meta-password-protection' ); ?>
+		<?php App::display_template( 'components/meta-author' ); ?>
+		<?php App::display_template( 'components/meta-date' ); ?>
+		<?php App::display_template( 'components/meta-categories' ); ?>
+		<?php App::display_template( 'components/meta-password-protection' ); ?>
 
 	</div>
 

@@ -222,8 +222,8 @@ function edit_password_protected_excerpt( $excerpt ) {
 function comments_template( $template ) {
 
 	$templates = [
-		View::get_dir() . 'components/page-comments.php' ,
-		View::get_dir() . 'page-comments.php'
+		App::template( 'components/page-comments.php' ) ,
+		App::template( 'page-comments.php' )
 	];
 
 	// Return the found template.

@@ -1,13 +1,13 @@
 <?php
 
-use Theme_WBL\View;
+use Theme_WBL\App;
 
 ?>
 <article class="page">
-	<?php View::display( 'page-header' ); ?>
+	<?php App::display_template( 'page-header' ); ?>
 
-	<?php View::display( 'page-main' ); ?>
+	<?php App::display_template( 'page-main' ); ?>
 
-	<?php View::display( 'page-footer' ); ?>
+	<?php App::display_template( 'page-footer' ); ?>
 
 </article>

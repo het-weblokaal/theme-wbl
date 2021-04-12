@@ -5,11 +5,11 @@
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php \Theme_WBL\View::display( 'components/posts-post' ); ?>
+				<?php \Theme_WBL\App::display( 'components/posts-post' ); ?>
 
 			<?php endwhile; ?>
 
-			<?php \Theme_WBL\View::display( 'components/posts-navigation' ); ?>
+			<?php \Theme_WBL\App::display( 'components/posts-navigation' ); ?>
 
 		<?php else : ?>
 

@@ -12,6 +12,6 @@ if ( ! function_exists( 'add_filter' ) ) {
 }
 
 // Kickstart
-\Theme_WBL\View::display( 'index' );
+// \Theme_WBL\App::display_template( 'index' );
 
 ?>

@@ -1,6 +1,8 @@
 <?php
 namespace Theme_WBL;
 
+App::log('functions template helpers');
+
 /**
  * Render classes
  *
