@@ -1,0 +1,31 @@
+{
+	"name"        : "hetweblokaal/wbl-templating",
+	"description" : "Templating system by Het Weblokaal",
+	"keywords"    : [ "wordpress" ],
+	"homepage"    : "https://github.com/hetweblokaal/wbl-templating",
+	"license"     : "GPL-2.0-or-later",
+	"authors"     : [
+		{
+			"name"     : "Erik Joling",
+			"email"    : "erik@hetweblokaal.nl",
+			"homepage" : "https://hetweblokaal.nl",
+			"role"     : "Developer"
+		}
+	],
+	"support"     : {
+		"issues" : "https://github.com/hetweblokaal/wbl-templating/issues",
+	},
+	"autoload"    : {
+		"psr-4" : {},
+		"files" : []
+	},
+	"require"     : {
+		"php" : ">=7.0",
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

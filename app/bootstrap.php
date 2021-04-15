@@ -41,17 +41,16 @@ if ( file_exists( App::vendor_path( 'wptt-webfont-loader.php' ) ) ) {
 # ------------------------------------------------------------------------------
 # Autoload functions files.
 # ------------------------------------------------------------------------------
-App::log('test');
 array_map( function( $file ) {
 	require_once( App::inc_path( "{$file}.php" ) );
 }, [
-	'functions-setup',
-	'functions-assets',
-	'functions-filters',
-	'functions-template-components',
-	'functions-template-helpers',
-	'functions-comment',
-	'functions-call-to-action',
-	'functions-footer',
+	'functions/setup',
+	'functions/assets',
+	'functions/filters',
+	'functions/template-components',
+	'functions/template-helpers',
+	'functions/comment',
+	'functions/call-to-action',
+	'functions/footer',
 ] );
 

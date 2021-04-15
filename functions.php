@@ -5,6 +5,8 @@
  * This file is used to bootstrap the theme.
  */
 
+namespace Theme_WBL;
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
@@ -12,9 +14,9 @@ defined( 'ABSPATH' ) || exit;
 require_once( __DIR__ . '/vendor/wbl-app.php' );
 
 // Customize WBL App
-Theme_WBL\App::customize( [
-	'template_dir' => 'resources/views'
+App::customize( [
+	'template_dir' => 'vendors/wbl-templating/views'
 ] );
 
 // Bootstrap
-Theme_WBL\App::bootstrap();
+App::bootstrap();
