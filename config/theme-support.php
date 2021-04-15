@@ -36,7 +36,7 @@ return [
 				'color' => '#000000',
 			]
 		],
-		// 'align-wide',
+		'align-wide',
 		'disable-custom-colors', // Disable colors
 		'disable-custom-font-sizes', // Disable font-sizes
 		'disable-custom-gradients', // Disable gradients
