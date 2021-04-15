@@ -5,7 +5,7 @@
  * Things like menu and site-nav
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 /**

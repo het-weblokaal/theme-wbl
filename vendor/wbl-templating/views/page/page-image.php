@@ -1,7 +1,7 @@
 <?php
 
 // Get featured image
-$page_image = ClimateCampus\render_featured_image([ 'size' => $args['large'] ]);
+$page_image = WBL\Templating\render_featured_image([ 'size' => $args['large'] ]);
 
 ?>
 

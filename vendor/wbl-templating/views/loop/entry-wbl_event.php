@@ -1,8 +1,8 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\get_featured_image_src;
-use function ClimateCampus\display_extra_entry_classes;
+use WBL\Templating\Template;
+use function WBL\Templating\get_featured_image_src;
+use function WBL\Templating\display_extra_entry_classes;
 
 $featured_image_src = get_featured_image_src( 'medium' );
 $featured_image_css = ( $featured_image_src ) ? "background-image: url({$featured_image_src});" : '';
@@ -21,7 +21,7 @@ $media_image_class = ( !$featured_image_src ) ? 'has-no-featured-image' : '';
 		<div class="entry__main">
 
 			<div class="entry__calendar">
-				<?php App::display_template( 'components/meta-agenda-date-calendar' ); ?>
+				<?php Template::display( 'components/meta-agenda-date-calendar' ); ?>
 			</div>
 
 			<div class="entry__header-content-container">
@@ -41,9 +41,9 @@ $media_image_class = ( !$featured_image_src ) ? 'has-no-featured-image' : '';
 		</div>
 
 		<footer class="entry__footer">
-			<?php App::display_template( 'components/meta-agenda-location' ); ?>
-			<?php App::display_template( 'components/meta-agenda-date' ); ?>
-			<?php App::display_template( 'components/meta-agenda-time' ); ?>
+			<?php Template::display( 'components/meta-agenda-location' ); ?>
+			<?php Template::display( 'components/meta-agenda-date' ); ?>
+			<?php Template::display( 'components/meta-agenda-time' ); ?>
 		</footer>
 
 	</div>

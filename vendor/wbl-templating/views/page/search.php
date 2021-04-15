@@ -1,6 +1,6 @@
 <?php
 
-use ClimateCampus\App;
+use WBL\Templating\Template;
 
 ?>
 <article class="page">
@@ -8,9 +8,9 @@ use ClimateCampus\App;
 	<header class="page-header">
 		<div class="page-header__inner">
 
-			<?php App::display_template( 'components/page-breadcrumbs' ) ?>
+			<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-			<?php App::display_template( 'components/page-title' ) ?>
+			<?php Template::display( 'components/page-title' ) ?>
 
 		</div>
 	</header>
@@ -23,7 +23,7 @@ use ClimateCampus\App;
 			get_search_form();
 
 			if (get_search_query()) {
-				App::display_template( 'loop/loop', 'search' );
+				Template::display( 'loop/loop', 'search' );
 			}
 
 			?>

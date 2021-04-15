@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\display_extra_loop_classes;
+use WBL\Templating\Template;
+use function WBL\Templating\display_extra_loop_classes;
 
 $args = wp_parse_args( $args, [
 	'post_type' => 'post',
@@ -20,7 +20,7 @@ $custom_query = new \WP_Query( $args );
 
 			<?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 
-				<?php App::display_template( 'loop/entry', get_post_type() ); ?>
+				<?php Template::display( 'loop/entry', get_post_type() ); ?>
 
 				<?php wp_reset_postdata(); ?>
 

@@ -1,6 +1,6 @@
 <?php
 
-use ClimateCampus\App;
+use WBL\Templating\Template;
 
 /// Only show site version on development
 if ( ! App::is_debug_mode() ) {

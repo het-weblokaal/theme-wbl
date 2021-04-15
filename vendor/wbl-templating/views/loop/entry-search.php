@@ -1,8 +1,8 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\display_extra_entry_classes;
-use function ClimateCampus\get_post_type_on_archive;
+use WBL\Templating\Template;
+use function WBL\Templating\display_extra_entry_classes;
+use function WBL\Templating\get_post_type_on_archive;
 
 $post_type_object = get_post_type_object( get_post_type() );
 

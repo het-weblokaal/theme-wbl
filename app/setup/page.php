@@ -3,7 +3,7 @@
  * Theme setup functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**
@@ -24,7 +24,7 @@ add_action( 'after_setup_theme', function() {
 function manage_page_title( $page_title ) {
 
 	if ( is_singular('wbl_event') ) {
-		$page_title = App::render_template( 'components/meta-agenda-date-calendar' ) . $page_title;
+		$page_title = Template::render( 'components/meta-agenda-date-calendar' ) . $page_title;
 	}
 
 	return $page_title;

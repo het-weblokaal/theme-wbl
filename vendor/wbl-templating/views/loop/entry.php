@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\display_extra_entry_classes;
+use WBL\Templating\Template;
+use function WBL\Templating\display_extra_entry_classes;
 
 ?>
 

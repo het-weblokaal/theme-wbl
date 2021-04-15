@@ -1,9 +1,9 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\render_project_taxonomy_icon;
-use function ClimateCampus\render_terms;
-use function ClimateCampus\get_project_type_icon;
+use WBL\Templating\Template;
+use function WBL\Templating\render_project_taxonomy_icon;
+use function WBL\Templating\render_terms;
+use function WBL\Templating\get_project_type_icon;
 
 $args = wp_parse_args( $args, [
 	'icon' => true,

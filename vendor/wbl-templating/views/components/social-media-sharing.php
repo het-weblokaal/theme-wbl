@@ -1,7 +1,7 @@
 <?php
 
-use function ClimateCampus\get_social_media_share_platforms;
-use function ClimateCampus\render_social_media_share_link;
+use function WBL\Templating\get_social_media_share_platforms;
+use function WBL\Templating\render_social_media_share_link;
 
 if (is_front_page()) {
 	return;

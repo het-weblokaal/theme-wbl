@@ -11,7 +11,7 @@
  * @link      https://www.hetweblokaal.nl/
  */
 
-namespace Theme_WBL;
+namespace WBL\Theme;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -24,8 +24,8 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Composer Dependancies
  */
-if ( file_exists( App::vendor_path( 'autoload.php' ) ) ) {
-	require_once( App::vendor_path( 'autoload.php' ) );
+if ( file_exists( Theme::get_vendor_path( 'autoload.php' ) ) ) {
+	require_once( Theme::get_vendor_path( 'autoload.php' ) );
 }
 
 /**
@@ -33,24 +33,36 @@ if ( file_exists( App::vendor_path( 'autoload.php' ) ) ) {
  *
  * @link https://make.wordpress.org/themes/2020/09/25/new-package-to-allow-locally-hosting-webfonts/
  */
-if ( file_exists( App::vendor_path( 'wptt-webfont-loader.php' ) ) ) {
-	require_once( App::vendor_path( 'wptt-webfont-loader.php' ) );
+if ( file_exists( Theme::get_vendor_path( 'wptt-webfont-loader.php' ) ) ) {
+	require_once( Theme::get_vendor_path( 'wptt-webfont-loader.php' ) );
 }
 
 
 # ------------------------------------------------------------------------------
-# Autoload functions files.
+# Load 'setup' files.
 # ------------------------------------------------------------------------------
+
 array_map( function( $file ) {
-	require_once( App::inc_path( "{$file}.php" ) );
+	require_once( Theme::get_app_path( "{$file}.php" ) );
 }, [
-	'functions/setup',
-	'functions/assets',
-	'functions/filters',
-	'functions/template-components',
-	'functions/template-helpers',
-	'functions/comment',
-	'functions/call-to-action',
-	'functions/footer',
+	'setup/assets',
+	'setup/block-editor',
+	'setup/block-editor-assets',
+	'setup/blocks',
+	'setup/cleanup',
+	'setup/customizer',
+	'setup/custom-templates',
+	'setup/dependencies',
+	'setup/entry',
+	'setup/general',
+	'setup/loop',
+	'setup/media',
+	'setup/menu',
+	'setup/newsletter',
+	'setup/page',
+	'setup/password-protection',
+	'setup/polylang',
+	'setup/posts',
+	'setup/seo',
 ] );
 

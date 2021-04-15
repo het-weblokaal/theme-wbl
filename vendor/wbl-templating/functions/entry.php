@@ -3,7 +3,7 @@
  * Template entry functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 /**

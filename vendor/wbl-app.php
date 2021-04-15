@@ -2,7 +2,7 @@
 /**
  * WordPress App Class for Themes and Plugins
  *
- * Version: 1.0-alpha-12
+ * Version: 1.0-alpha-13
  * Author: Erik Joling | Het Weblokaal <erik.info@hetweblokaal.nl>
  * Author URI: https://www.hetweblokaal.nl/
  *
@@ -35,15 +35,12 @@ final class App {
 	private static $args = [
 		'id'           => '',
 		'name'         => '',
-		'config_dir'   => 'config',
-		'inc_dir'      => 'app',
-		'assets_dir'   => 'public',
-		'src_dir'      => 'resources',
+		'app_dir'      => 'app',
+		'assets_dir'   => 'assets',
 		'template_dir' => 'app/template',
-		'blocks_dir'   => 'resources/blocks',
-		'lang_dir'     => 'resources/lang',
+		'blocks_dir'   => 'blocks',
+		'lang_dir'     => 'assets/lang',
 		'vendor_dir'   => 'vendor',
-		'wbl_app_dir'  => 'vendor',
 	];
 
 	/**
@@ -768,18 +765,6 @@ final class App {
 	/*=============================================================*/
 	/**                       Utilities                            */
 	/*=============================================================*/
-
-	/**
-	 * Bootstrap the app
-	 *
-	 * @return boolean
-	 */
-	public static function bootstrap() {
-		
-		if ( file_exists(static::inc_path( 'bootstrap.php' )) ) {
-			require_once( static::inc_path( 'bootstrap.php' ) );
-		}
-	}
 
 	/**
 	 * Check if this app is a theme

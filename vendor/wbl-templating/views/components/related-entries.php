@@ -3,8 +3,8 @@
  * Related entries
  */
 
-use ClimateCampus\App;
-use function ClimateCampus\get_post_type_archive_url;
+use WBL\Templating\Template;
+use function WBL\Templating\get_post_type_archive_url;
 
 # Setup args
 $args = wp_parse_args( $args, [
@@ -34,7 +34,7 @@ $post_type_name = strtolower($post_type_name);
 		<p class="has-text-align-center"><a href="<?= get_post_type_archive_url() ?>" class="button is-style-button-link"><?= sprintf( _x('Bekijk onze %s', 'Gerelateerd', 'clc'), $post_type_name ); ?></a></p>
 
 		<?php
-		App::display_template( 'loop/custom-loop', $post_type, [
+		Template::display( 'loop/custom-loop', $post_type, [
 			'posts_per_page' => 4,
 			'post_type' => $post_type,
 			'post__not_in' => [ get_the_ID() ],

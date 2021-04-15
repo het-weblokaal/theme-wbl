@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\get_agenda_archive_page_slug;
+use WBL\Templating\Template;
+use function WBL\Templating\get_agenda_archive_page_slug;
 
 the_post(); // Setup postdata (only on singular templates)
 
@@ -11,9 +11,9 @@ the_post(); // Setup postdata (only on singular templates)
 	<header class="page-header">
 		<div class="page-header__inner">
 
-			<?php App::display_template( 'components/page-breadcrumbs' ) ?>
+			<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-			<?php App::display_template( 'components/page-title' ) ?>
+			<?php Template::display( 'components/page-title' ) ?>
 
 		</div>
 	</header>
@@ -23,19 +23,19 @@ the_post(); // Setup postdata (only on singular templates)
 
 			<div class="page-meta page-meta--wbl_project">
 				<div class="page-meta__inner">
-					<?php App::display_template( 'components/meta-agenda-location' ); ?>
-					<?php App::display_template( 'components/meta-agenda-date' ); ?>
-					<?php App::display_template( 'components/meta-agenda-time' ); ?>
+					<?php Template::display( 'components/meta-agenda-location' ); ?>
+					<?php Template::display( 'components/meta-agenda-date' ); ?>
+					<?php Template::display( 'components/meta-agenda-time' ); ?>
 				</div>
 			</div>
 
-			<?php App::display_template( 'components/page-image' ); ?>
+			<?php Template::display( 'components/page-image' ); ?>
 
 			<?php the_content(); ?>
 
-			<?php App::display_template( 'components/social-media-sharing' ); ?>
+			<?php Template::display( 'components/social-media-sharing' ); ?>
 
-			<?php App::display_template( 'components/related-entries', get_post_type(), [] ); ?>
+			<?php Template::display( 'components/related-entries', get_post_type(), [] ); ?>
 
 		</div>
 	</div>

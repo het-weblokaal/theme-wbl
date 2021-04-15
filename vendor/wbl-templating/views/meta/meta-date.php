@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\render_post_date;
+use WBL\Templating\Template;
+use function WBL\Templating\render_post_date;
 
 $args = wp_parse_args( $args, [
 	'icon' => true,

@@ -1,5 +1,5 @@
 <?php
-	use ClimateCampus\App;
+	use WBL\Templating\Template;
 
 	# Slim SEO breadcrumbs doesn't support svg as separator unfortunately.
 	$separator = '>';

@@ -6,7 +6,7 @@
  * We use a class to box all the related functionality..
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 use Kirki;
 

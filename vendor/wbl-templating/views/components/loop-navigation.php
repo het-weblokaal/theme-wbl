@@ -4,8 +4,8 @@
  */
 
 # Namespacing
-use ClimateCampus\App;
-use function ClimateCampus\get_post_type_on_archive;
+use WBL\Templating\Template;
+use function WBL\Templating\get_post_type_on_archive;
 
 # Don't print empty markup if there's only one page.
 if ( $GLOBALS['wp_query']->max_num_pages <= 1 ) {

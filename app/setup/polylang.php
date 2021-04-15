@@ -3,7 +3,7 @@
  * Polylang setup.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 /**
  * Setup at regular hook
@@ -46,7 +46,7 @@ function add_polylang_menu_class( $classes, $item ) {
  */
 function update_polylang_customizer_script_location($url, $file) {
 	if ($file == 'js/polylang-customizer.js') {
-		$url = App::file_uri( App::get_vendor_dir() . "/polylang-customizer/{$file}" );
+		$url = Theme::file_uri( Theme::get_vendor_dir() . "/polylang-customizer/{$file}" );
 	}
 
 	return $url;

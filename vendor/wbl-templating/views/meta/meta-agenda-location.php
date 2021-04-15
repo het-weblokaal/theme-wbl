@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\get_agenda_location;
+use WBL\Templating\Template;
+use function WBL\Templating\get_agenda_location;
 
 $args = wp_parse_args( $args, [
 	'icon' => true,

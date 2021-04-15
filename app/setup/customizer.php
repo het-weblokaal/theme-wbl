@@ -3,7 +3,7 @@
  * Theme customizer functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 use Kirki;
 

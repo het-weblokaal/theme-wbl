@@ -3,7 +3,7 @@
  * Theme menu functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**
@@ -27,13 +27,10 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'init', function() {
 
-	$nav_menus = App::config('site-content', 'nav_menus');
-
-	if (!empty($nav_menus)) {
-
-		// Register site navigation
-		register_nav_menus( $nav_menus );
-	}
+	// Register site navigation
+	register_nav_menus( [
+		'site-nav'     => esc_html_x( 'Website navigation', 'nav menu location' ),
+	] );
 
 }, 5 );
 
@@ -130,7 +127,7 @@ function add_icons_to_menus( $items, $args ) {
 	# Setup regular expression
 	# See https://www.phpliveregex.com/#tab-preg-replace
 	$regex_pattern = '/(menu__item--search.*><a.*>)(.*)(<\/a>)/U';
-	$regex_replace = '$1<span class="label">$2</span>' . App::svg('search') . '$3';
+	$regex_replace = '$1<span class="label">$2</span>' . Theme::svg('search') . '$3';
 
 	# Search and replace
 	$items = preg_replace( $regex_pattern, $regex_replace, $items );
@@ -145,7 +142,7 @@ function add_icons_to_menus( $items, $args ) {
 		# Setup regular expression
 		# See https://www.phpliveregex.com/#tab-preg-replace
 		$regex_pattern = '/(has-children.*><a.*>)(.*)(<\/a>)/U';
-		$regex_replace = '$1<span class="label">$2</span>' . App::svg('angle-down') . '$3';
+		$regex_replace = '$1<span class="label">$2</span>' . Theme::svg('angle-down') . '$3';
 
 		# Search and replace
 		$items = preg_replace( $regex_pattern, $regex_replace, $items );

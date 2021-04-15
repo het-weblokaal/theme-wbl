@@ -6,7 +6,7 @@
  * Things like Featured image
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 /**

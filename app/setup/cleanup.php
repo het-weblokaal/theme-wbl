@@ -3,7 +3,7 @@
  * Theme cleanup functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**

@@ -3,7 +3,7 @@
  * Theme media functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**

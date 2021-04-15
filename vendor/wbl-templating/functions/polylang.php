@@ -3,7 +3,7 @@
  * Footer template functions
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 function display_language_switcher( $args = [] ) {

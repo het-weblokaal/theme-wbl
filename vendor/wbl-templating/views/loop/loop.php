@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\display_extra_loop_classes;
+use WBL\Templating\Template;
+use function WBL\Templating\display_extra_loop_classes;
 
 ?>
 
@@ -13,14 +13,14 @@ use function ClimateCampus\display_extra_loop_classes;
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php App::display_template( 'loop/entry', get_post_type() ); ?>
+		<?php Template::display( 'loop/entry', get_post_type() ); ?>
 
 		<?php endwhile; ?>
 
 	</div>
 </div>
 
-<?php App::display_template( 'components/loop-navigation', get_post_type() ); ?>
+<?php Template::display( 'components/loop-navigation', get_post_type() ); ?>
 
 <?php else : ?>
 

@@ -1,8 +1,8 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\get_social_media_profile_platforms_with_link;
-use function ClimateCampus\render_social_media_profile_link;
+use WBL\Templating\Template;
+use function WBL\Templating\get_social_media_profile_platforms_with_link;
+use function WBL\Templating\render_social_media_profile_link;
 
 $platforms = get_social_media_profile_platforms_with_link();
 

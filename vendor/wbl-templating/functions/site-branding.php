@@ -5,7 +5,9 @@
  * Just the site logo :)
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
+
+use WBL\Theme\App;
 
 
 /**
@@ -68,8 +70,8 @@ function display_site_branding( $args = [] ) {
 function get_site_logo() {
 	$logo = '';
 
-	// Try to get logo from site config
-	$theme_logo = App::config( 'site-content', 'site-logo' );
+	// Try to get logo
+	$theme_logo = apply_filters( 'wbl/templating/site-logo', get_theme_file_uri('assets/img/logo.png') );
 
 	if ($theme_logo) {
 

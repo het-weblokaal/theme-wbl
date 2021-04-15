@@ -1,8 +1,8 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\display_extra_loop_classes;
-use function ClimateCampus\get_project_term;
+use WBL\Templating\Template;
+use function WBL\Templating\display_extra_loop_classes;
+use function WBL\Templating\get_project_term;
 
 $args = wp_parse_args( $args, [
 	'posts_per_page' => 4,
@@ -56,7 +56,7 @@ if ($projects_query->post_count < 4 ) {
 
 				<?php while ( $projects_query->have_posts() ) : $projects_query->the_post(); ?>
 
-					<?php App::display_template( 'loop/entry', get_post_type() ); ?>
+					<?php Template::display( 'loop/entry', get_post_type() ); ?>
 
 					<?php wp_reset_postdata(); ?>
 
@@ -68,7 +68,7 @@ if ($projects_query->post_count < 4 ) {
 
 				<?php while ( $projects_query_2->have_posts() ) : $projects_query_2->the_post(); ?>
 
-					<?php App::display_template( 'loop/entry', get_post_type() ); ?>
+					<?php Template::display( 'loop/entry', get_post_type() ); ?>
 
 					<?php wp_reset_postdata(); ?>
 

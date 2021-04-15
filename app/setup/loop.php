@@ -3,7 +3,7 @@
  * Theme loop functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**

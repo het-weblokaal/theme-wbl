@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\render_author;
+use WBL\Templating\Template;
+use function WBL\Templating\render_author;
 
 return false;
 

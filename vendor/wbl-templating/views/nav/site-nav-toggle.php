@@ -1,6 +1,6 @@
 <?php
 
-use ClimateCampus\App;
+use WBL\Templating\Template;
 
 ?>
 

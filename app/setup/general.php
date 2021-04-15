@@ -3,7 +3,7 @@
  * Theme setup functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**
@@ -12,7 +12,7 @@ namespace ClimateCampus;
 add_action( 'after_setup_theme', function() {
 
 	# Inform WordPress of custom language directory
-	load_theme_textdomain( 'clc', App::file_path( App::get_lang_dir() ) );
+	load_theme_textdomain( 'wbl', Theme::get_file_path( Theme::get_lang_dir() ) );
 
 	# Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );
@@ -28,30 +28,6 @@ add_action( 'after_setup_theme', function() {
 
 	# Add button icon
 	add_filter( 'render_block', __NAMESPACE__ . '\add_button_icon', 10, 2 );
-
-	# Prevent empty paragraphs from being added to shortcode
-	// remove_filter( 'the_content', 'wpautop' );
-	// add_filter( 'the_content', 'shortcode_unautop' );
-
-	// add_filter( 'wpcf7_load_css', '__return_false' );
-
-
-	# Fix block-editor bug. Enables the orderby=menu_order for wbl_events and wbl_projects
-	add_filter( 'rest_wbl_event_collection_params', __NAMESPACE__ . '\filter_add_rest_orderby_params', 10, 1 );
-	add_filter( 'rest_wbl_project_collection_params', __NAMESPACE__ . '\filter_add_rest_orderby_params', 10, 1 );
-
-	// Remove old theme_mods
-	// remove_theme_mod('site_footer_content_1');
-	// remove_theme_mod('site_footer_content_2');
-	// remove_theme_mod('clc_footer_content_1');
-	// remove_theme_mod('clc_footer_content_2');
-	// remove_theme_mod('site-footer-menu-2');
-	// remove_theme_mod('site-footer-menu-1');
-	// remove_theme_mod('clc_newsletter_active');
-	// remove_theme_mod('clc_newsletter_heading');
-	// remove_theme_mod('clc_newsletter_content');
-	// remove_theme_mod('clc_newsletter_button_text');
-	// remove_theme_mod('clc_newsletter_link');
 
 }, 5 );
 
@@ -103,10 +79,10 @@ function body_class( $classes ) {
 		$classes[] = 'has-admin-bar';
 	}
 
-	if ( App::is_debug_mode() ) {
+	if ( Theme::is_debug_mode() ) {
 		$classes[] = 'is-development';
 
-		if ( App::is_local_environment() ) {
+		if ( Theme::is_local_environment() ) {
 			$classes[] = 'is-development--local';
 		}
 		else {
@@ -129,7 +105,7 @@ function add_button_icon( $block_content, $block ) {
 		# Setup regular expression
 		# See https://www.phpliveregex.com/#tab-preg-replace
 		// $regex_pattern = '/(is-style-button-link.*><a.*>.*)(<\/a>)/U';
-		// $regex_replace = '$1 ' . App::svg('angle-right') . '$2';
+		// $regex_replace = '$1 ' . Theme::svg('angle-right') . '$2';
 
 		// # Search and replace
 		// $block_content = preg_replace( $regex_pattern, $regex_replace, $block_content );

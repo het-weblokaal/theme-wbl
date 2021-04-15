@@ -5,7 +5,7 @@
  * Inspired/copied from Justin Tadlock <justintadlock@gmail.com>
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 /**

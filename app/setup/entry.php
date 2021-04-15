@@ -3,7 +3,7 @@
  * Theme entry functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**

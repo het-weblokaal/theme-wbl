@@ -1,6 +1,6 @@
 <?php
 
-$status_render = ClimateCampus\render_password_protection_status();
+$status_render = WBL\Templating\render_password_protection_status();
 
 ?>
 

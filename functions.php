@@ -5,18 +5,13 @@
  * This file is used to bootstrap the theme.
  */
 
-namespace Theme_WBL;
+namespace WBL\Theme;
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 // Load the WBL App
-require_once( __DIR__ . '/vendor/wbl-app.php' );
-
-// Customize WBL App
-App::customize( [
-	'template_dir' => 'vendors/wbl-templating/views'
-] );
+require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
 
 // Bootstrap
-App::bootstrap();
+require_once( Theme::get_app_path( 'bootstrap.php' ) );

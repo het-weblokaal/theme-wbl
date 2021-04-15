@@ -6,7 +6,7 @@
  * functions for work with assets.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**
@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', function() {
 function manage_general_assets() {
 
 	// Load font
-	wp_enqueue_style( App::handle('roboto-font'), wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap' ), null, App::get_version() );
+	wp_enqueue_style( Theme::handle('roboto-font'), wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap' ), null, Theme::get_version() );
 
 	// Add global color inline style
 	enqueue_global_color_inline_style();
@@ -47,10 +47,10 @@ function manage_frontend_assets() {
 	wp_dequeue_style( 'wp-block-library' );
 
 	// Add theme scripts
-	wp_enqueue_script( App::handle(), App::asset( 'js/app.js' ), null, null, true );
+	wp_enqueue_script( Theme::handle(), Theme::asset( 'js/app.js' ), null, null, true );
 
 	// Add theme styles
-	wp_enqueue_style( App::handle(), App::asset( 'css/style.css' ), null, null );
+	wp_enqueue_style( Theme::handle(), Theme::asset( 'css/style.css' ), null, null );
 }
 
 /**
@@ -63,9 +63,9 @@ function enqueue_global_color_inline_style() {
 
 	if ($global_color_css) {
 		// Register global styles
-		wp_register_style( App::handle('global-color'), false, array(), true, true );
-		wp_add_inline_style( App::handle('global-color'), $global_color_css );
-		wp_enqueue_style( App::handle('global-color') );
+		wp_register_style( Theme::handle('global-color'), false, array(), true, true );
+		wp_add_inline_style( Theme::handle('global-color'), $global_color_css );
+		wp_enqueue_style( Theme::handle('global-color') );
 	}
 }
 
@@ -100,9 +100,9 @@ function get_global_color_inline_style() {
 function theme_data_script() {
 
 	$theme = [
-		'id' => App::get_id(),
-		'version' => App::get_version(),
-		'assetUri' => App::asset_uri(),
+		'id' => Theme::get_id(),
+		'version' => Theme::get_version(),
+		'assetUri' => Theme::get_asset_uri(),
 	];
 
 	echo "<script>var theme = ", json_encode( $theme, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ), "</script>";

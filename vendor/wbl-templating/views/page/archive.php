@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\get_post_type_on_archive;
+use WBL\Templating\Template;
+use function WBL\Templating\get_post_type_on_archive;
 
 ?>
 <article class="page">
@@ -9,9 +9,9 @@ use function ClimateCampus\get_post_type_on_archive;
 	<header class="page-header">
 		<div class="page-header__inner">
 
-			<?php App::display_template( 'components/page-breadcrumbs' ) ?>
+			<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-			<?php App::display_template( 'components/page-title' ) ?>
+			<?php Template::display( 'components/page-title' ) ?>
 
 		</div>
 	</header>
@@ -21,7 +21,7 @@ use function ClimateCampus\get_post_type_on_archive;
 
 			<?php the_archive_description(); ?>
 
-			<?php App::display_template( 'loop/loop', get_post_type_on_archive() ); ?>
+			<?php Template::display( 'loop/loop', get_post_type_on_archive() ); ?>
 
 		</div>
 	</div>

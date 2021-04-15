@@ -6,7 +6,7 @@
  * Things like charset, viewport
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 /**

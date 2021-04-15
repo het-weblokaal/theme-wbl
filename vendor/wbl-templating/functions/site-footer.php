@@ -3,7 +3,7 @@
  * Footer template functions
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 function render_footer_menu_1() {
 	return wp_nav_menu( [

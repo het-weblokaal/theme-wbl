@@ -1,9 +1,9 @@
 <?php
 
-use ClimateCampus\App;
+use WBL\Templating\Template;
 
-use function ClimateCampus\display_html_attributes;
-use function ClimateCampus\display_body_classes;
+use function WBL\Templating\display_html_attributes;
+use function WBL\Templating\display_body_classes;
 
 ?>
 <!doctype html>
@@ -16,15 +16,15 @@ use function ClimateCampus\display_body_classes;
 <body class="site <?php display_body_classes(); ?>">
 	<div class="site__inner">
 
-<?php App::display_template( 'site-header' ) ?>
+<?php Template::display( 'site-header' ) ?>
 
-<?php App::display_template( 'site-main' ) ?>
+<?php Template::display( 'site-main' ) ?>
 
-<?php App::display_template( 'site-footer' ) ?>
+<?php Template::display( 'site-footer' ) ?>
 
 	</div>
 
-	<?php App::display_template( 'components/site-debug-info' ) ?>
+	<?php Template::display( 'components/site-debug-info' ) ?>
 
 	<?php wp_footer(); ?>
 </body>

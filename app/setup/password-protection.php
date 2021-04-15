@@ -3,7 +3,7 @@
  * Password protection functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**
@@ -48,7 +48,7 @@ function get_password_protection_status() {
  */
 function password_protected_title_format() {
 	return '%s';
-	// return '<span class="icon">' . App::svg('lock-alt') . '</span><span>%s</span>';
+	// return '<span class="icon">' . Theme::svg('lock-alt') . '</span><span>%s</span>';
 }
 
 /**
@@ -67,7 +67,7 @@ function the_password_form() {
 		add_filter( 'the_content', '_restore_wpautop_hook', $priority + 1 );
 	}
 
-	return App::render_template( 'components/page-password-protection-form' );
+	return Template::render( 'components/page-password-protection-form' );
 }
 
 /**

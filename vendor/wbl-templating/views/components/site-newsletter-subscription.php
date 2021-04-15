@@ -1,7 +1,7 @@
 <?php
 
-use ClimateCampus\App;
-use function ClimateCampus\get_newsletter_option;
+use WBL\Templating\Template;
+use function WBL\Templating\get_newsletter_option;
 
 if ( ! get_newsletter_option( 'active' ) ) {
 	return;

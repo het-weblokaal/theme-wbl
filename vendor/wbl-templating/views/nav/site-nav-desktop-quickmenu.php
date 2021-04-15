@@ -1,6 +1,6 @@
 <?php
 
-use function ClimateCampus\get_menu_name_by_location;
+use function WBL\Templating\get_menu_name_by_location;
 
 $menu_location = 'site-nav-desktop-quickmenu';
 

@@ -6,7 +6,7 @@
  * Things like categories, author, date...
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 /**
  * Render Project Terms for specific taxonomy

@@ -6,7 +6,7 @@
  * Things title, featured image
  */
 
-namespace ClimateCampus;
+namespace WBL\Templating;
 
 
 /**

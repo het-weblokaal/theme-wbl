@@ -1,6 +1,6 @@
 <?php
 
-use ClimateCampus\App;
+use WBL\Templating\Template;
 
 ?>
 
@@ -10,17 +10,17 @@ use ClimateCampus\App;
 
 	// Display 404 template
 	if (is_404()) {
-		App::display_template( 'page/404' );
+		Template::display( 'page/404' );
 	}
 
 	// Display search page template
 	elseif (is_search()) {
-		App::display_template( 'page/search' );
+		Template::display( 'page/search' );
 	}
 
 	// Display archive pages template
 	elseif (is_archive() || is_home()) {
-		App::display_template( 'page/archive', get_post_type() );
+		Template::display( 'page/archive', get_post_type() );
 	}
 
 	// Display custom page-template
@@ -29,12 +29,12 @@ use ClimateCampus\App;
 		// Strip potential .php extension from template name
 		$page_template = rtrim($page_template, '.php');
 
-		App::display_template( 'page/singular', "template-{$page_template}" );
+		Template::display( 'page/singular', "template-{$page_template}" );
 	}
 
 	// Otherwise we assume single page
 	else {
-		App::display_template( 'page/singular', get_post_type() );
+		Template::display( 'page/singular', get_post_type() );
 	}
 
 ?>

@@ -7,7 +7,7 @@ if ( has_nav_menu( $menu_location ) ) : ?>
     <nav class="site-nav-secondary">
 
         <h3 class="site-nav__title screen-reader-text">
-            <?php ClimateCampus\get_menu_name_by_location( $menu_location ) ?>
+            <?php WBL\Templating\get_menu_name_by_location( $menu_location ) ?>
         </h3>
 
         <?php wp_nav_menu( [

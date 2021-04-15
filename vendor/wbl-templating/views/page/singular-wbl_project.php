@@ -1,6 +1,6 @@
 <?php
 
-use ClimateCampus\App;
+use WBL\Templating\Template;
 
 the_post(); // Setup postdata (only on singular templates)
 
@@ -10,9 +10,9 @@ the_post(); // Setup postdata (only on singular templates)
 	<header class="page-header">
 		<div class="page-header__inner">
 
-			<?php App::display_template( 'components/page-breadcrumbs' ) ?>
+			<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-			<?php App::display_template( 'components/page-title' ) ?>
+			<?php Template::display( 'components/page-title' ) ?>
 
 		</div>
 	</header>
@@ -22,21 +22,21 @@ the_post(); // Setup postdata (only on singular templates)
 
 			<div class="page-meta page-meta--wbl_project">
 				<div class="page-meta__inner">
-					<?php App::display_template( 'components/meta-project-tax', 'project_type' ); ?>
-					<?php App::display_template( 'components/meta-project-tax', 'project_effect' ); ?>
-					<?php App::display_template( 'components/meta-project-tax', 'project_location' ); ?>
-					<?php App::display_template( 'components/meta-project-tax', 'project_status' ); ?>
-					<?php App::display_template( 'components/meta-project-tax', 'project_audience' ); ?>
+					<?php Template::display( 'components/meta-project-tax', 'project_type' ); ?>
+					<?php Template::display( 'components/meta-project-tax', 'project_effect' ); ?>
+					<?php Template::display( 'components/meta-project-tax', 'project_location' ); ?>
+					<?php Template::display( 'components/meta-project-tax', 'project_status' ); ?>
+					<?php Template::display( 'components/meta-project-tax', 'project_audience' ); ?>
 				</div>
 			</div>
 
-			<?php App::display_template( 'components/page-image' ); ?>
+			<?php Template::display( 'components/page-image' ); ?>
 
 			<?php the_content(); ?>
 
-			<?php App::display_template( 'components/social-media-sharing' ); ?>
+			<?php Template::display( 'components/social-media-sharing' ); ?>
 
-			<?php App::display_template( 'components/related-entries', get_post_type(), [] ); ?>
+			<?php Template::display( 'components/related-entries', get_post_type(), [] ); ?>
 
 		</div>
 	</div>

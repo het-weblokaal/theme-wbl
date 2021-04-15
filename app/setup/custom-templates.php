@@ -3,7 +3,7 @@
  * Theme page template functions.
  */
 
-namespace ClimateCampus;
+namespace WBL\Theme;
 
 
 /**
