@@ -144,10 +144,10 @@ final class Template {
 	 */
 	public static function display( $slug, $name = null, $args = null ) {
 
-		// Theme::log("display {$slug}");
-
+		// Setup templates
 		$templates = array();
 
+		// Setup template data
 		$template_data = [
 			'slug' => $slug,
 			'name' => $name,
@@ -166,25 +166,31 @@ final class Template {
 		// WordPress Core Action
 		do_action( "get_template_part_{$slug}", $slug, $name, $args );
 
+		// Setup slug for main template path
+		$main_slug = static::get_main_template_path( $slug );
+
+		// Setup slug for custom template path
+		$custom_slug = static::get_custom_template_path( $slug );
+
 		// Allow plugin or theme to pass custom file for template
 		if ( !empty($template_data['file']) ) {
 			$templates[] = $template_data['file'];
 		}
 
-		$custom_slug = static::get_custom_template_path( $slug );
-		$vendor_slug = static::get_main_template_path( $slug );
-
-		// Give slugs with name priority in template-order
+		/**
+		 * Set template priority
+		 *
+		 * - A template with a specific name is higher in order than the basic template
+		 * - The custom template is higher in order than main template
+		 */
 		$name = (string) $name;
 		if ( '' !== $name ) {
-		    $templates[] = "{$custom_slug}-{$name}.php";
-		    $templates[] = "{$vendor_slug}-{$name}.php";
+		    $templates[] = "{$custom_slug}--{$name}.php";
+		    $templates[] = "{$main_slug}--{$name}.php";
 		}
 
 		$templates[] = "{$custom_slug}.php";
-		$templates[] = "{$vendor_slug}.php";
-
-		// Theme::log($templates);
+		$templates[] = "{$main_slug}.php";
 
 		// WordPress Core Action
 		do_action( 'get_template_part', $slug, $name, $templates, $args );
