@@ -16,6 +16,10 @@ use function WBL\Theme\display_body_classes;
 <body class="site <?php display_body_classes(); ?>">
 	<div class="site__inner">
 
+<?php wp_body_open() ?>
+
+<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'wbl' ) ?></a>
+
 <?php Template::display( 'site-header' ) ?>
 
 <?php Template::display( 'site-main' ) ?>

@@ -4,7 +4,7 @@ use WBL\Theme\Template;
 
 ?>
 
-<main class="site-main">
+<main class="site-main" id="main">
 
 <?php
 
