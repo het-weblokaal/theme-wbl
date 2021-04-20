@@ -21,11 +21,11 @@ namespace WBL\Theme;
 require_once( "classes/Theme.php" );
 
 // Load Template class
-require_once( "template-system/classes/Template.php" );
+require_once( "classes/Template.php" );
 
 // Load template functions
 array_map( function( $file ) {
-	require_once( "template-system/functions/{$file}.php" );
+	require_once( "template/functions/{$file}.php" );
 }, [
 	'helpers',
 	'media',

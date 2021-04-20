@@ -1,6 +1,6 @@
 <?php
 
 // Kickstart
-\WBL\Theme\Template::display( 'site' );
+\WBL\Theme\Template::kickstart();
 
 ?>
