@@ -2,17 +2,9 @@
 
 namespace WBL\Theme;
 
+the_post(); // Setup postdata (only on singular templates)
+
 ?>
-<div class="site">
-	<div class="site__inner">
-
-		<?php Theme::log($args); ?>
-
-		<?php Template::display( 'partials/skip-to-content' ) ?>
-
-		<?php Template::display( 'site/header' ) ?>
-
-		<?php the_post(); // Setup postdata (only on singular templates) ?>
 <article class="page">
 
 	<header class="page-header">
@@ -38,9 +30,3 @@ namespace WBL\Theme;
 	</div>
 
 </article>
-
-
-		<?php //Template::display( 'site/footer' ) ?>
-
-	</div>
-</div>

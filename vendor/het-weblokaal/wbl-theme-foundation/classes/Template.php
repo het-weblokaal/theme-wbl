@@ -138,59 +138,42 @@ final class Template {
 	/**
 	 * Display template file
 	 *
-	 * This replaces the default WordPress template functionality but integrates the expected actions
+	 * This is a wrapper around the default WordPress template functionality
+	 * though it also changes some functionality. All expected hooks are present.
 	 *
 	 * @link /wp-includes/general-template.php
 	 */
 	public static function display( $slug, $name = null, $args = null ) {
-
-		// Setup templates
-		$templates = array();
 
 		// Setup template data
 		$template_data = [
 			'slug' => $slug,
 			'name' => $name,
 			'args' => $args,
-			'file' => null,
+			'custom_template' => null,
 		];
 
 		// Allow to change the template data
-		$template_data = apply_filters( "wbl/theme/template/{$slug}", $template_data);
+		$template_data = apply_filters( "wbl/theme/template/data/{$slug}", $template_data);
 
 		// Set slug, name and args based on filtered template_data
 		$slug = $template_data['slug'];
 		$name = $template_data['name'];
 		$args = $template_data['args'];
+		$custom_template = $template_data['custom_template'];
 
 		// WordPress Core Action
 		do_action( "get_template_part_{$slug}", $slug, $name, $args );
 
-		// Setup slug for main template path
-		$main_slug = static::get_main_template_path( $slug );
+		// Setup templates
+		$templates = static::setup_templates($slug, $name);
 
-		// Setup slug for custom template path
-		$custom_slug = static::get_custom_template_path( $slug );
-
-		// Allow plugin or theme to pass custom file for template
-		if ( !empty($template_data['file']) ) {
-			$templates[] = $template_data['file'];
+		// Add custom template to top of priority if it is set
+		if ( $custom_template ) {			
+			array_unshift($templates, $custom_template);
 		}
-
-		/**
-		 * Set template priority
-		 *
-		 * - A template with a specific name is higher in order than the basic template
-		 * - The custom template is higher in order than main template
-		 */
-		$name = (string) $name;
-		if ( '' !== $name ) {
-		    $templates[] = "{$custom_slug}--{$name}.php";
-		    $templates[] = "{$main_slug}--{$name}.php";
-		}
-
-		$templates[] = "{$custom_slug}.php";
-		$templates[] = "{$main_slug}.php";
+		
+		Theme::log($templates);
 
 		// WordPress Core Action
 		do_action( 'get_template_part', $slug, $name, $templates, $args );
@@ -198,6 +181,41 @@ final class Template {
 		if ( ! locate_template( $templates, true, false, $args ) ) {
 		    return false;
     	}
+	}
+
+	/**
+	 * Setup template intention list
+	 *
+	 * @return array
+	 */
+	private static function setup_templates($slug, $name) {
+
+		$_templates = array();
+		$templates = array();
+		
+		/**
+		 * Set template priority
+		 *
+		 * - A template with a specific name is higher in order than the basic template
+		 * - The custom template is higher in order than main template
+		 */
+		$name = (string) $name;
+		if ( $name !== '' ) {
+		    $_templates[] = "{$slug}--{$name}.php";
+		}
+		$_templates[] = "{$slug}.php";
+
+		// Add custom path to templates
+		foreach ($_templates as $template) {
+			$templates[] = static::get_custom_template_path( $template );
+		}
+
+		// Add main path to templates as fallback
+		foreach ($_templates as $template) {
+			$templates[] = static::get_main_template_path( $template );
+		}
+
+		return $templates;
 	}
 
 
