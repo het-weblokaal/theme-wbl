@@ -6,9 +6,7 @@ namespace WBL\Theme;
 <div class="page-content">
 	<div class="page-content__inner">
 
-		<?php Template::display( 'components/page-image' ); ?>
-
-		<?php the_content(); ?>
+		<p>Pagina niet gevonden</p>
 
 	</div>
 </div>

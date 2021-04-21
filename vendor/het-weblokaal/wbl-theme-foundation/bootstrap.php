@@ -38,5 +38,6 @@ array_map( function( $file ) {
 	'html-head',
 	'site-branding',
 	'site-footer',
+	'template',
 ] );
 

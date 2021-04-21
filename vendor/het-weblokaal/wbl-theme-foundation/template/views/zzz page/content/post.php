@@ -20,7 +20,7 @@ namespace WBL\Theme;
 
 		<?php Template::display( 'components/social-media-sharing' ); ?>
 
-		<?php Template::display( 'components/related-entries', get_post_type(), [] ); ?>
+		<?php Template::display( 'components/related', get_post_type(), [] ); ?>
 
 	</div>
 </div>
