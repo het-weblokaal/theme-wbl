@@ -11,14 +11,14 @@ namespace WBL\Theme;
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php Template::display( 'entry/blog' ); ?>
+		<?php Template::display( 'entry/post', 'blog' ); ?>
 
 		<?php endwhile; ?>
 
 	</div>
 </div>
 
-<?php Template::display( 'nav/loop-navigation', get_post_type() ); ?>
+<?php Template::display( 'components/loop-navigation' ); ?>
 
 <?php else : ?>
 

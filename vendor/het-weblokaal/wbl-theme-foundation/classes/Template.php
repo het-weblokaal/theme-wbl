@@ -201,7 +201,14 @@ final class Template {
 		 */
 		$name = (string) $name;
 		if ( $name !== '' ) {
-		    $_templates[] = "{$slug}--{$name}.php";
+				
+			// Get base from slug (ie. page/header --> header)
+			$slug_base = basename($slug);
+			$slug_without_base = str_replace($slug_base, '', $slug);
+			$slug_without_base = trim($slug_without_base, '/');
+
+			$_templates[] = "{$slug_without_base}/{$slug_base}/{$name}.php";
+			$_templates[] = "{$slug}--{$name}.php";
 		}
 		$_templates[] = "{$slug}.php";
 

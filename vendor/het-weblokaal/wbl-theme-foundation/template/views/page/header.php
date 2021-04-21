@@ -3,15 +3,12 @@
 namespace WBL\Theme;
 
 ?>
-<header class="site-header">
-	<div class="site-header__inner">
+<header class="page-header">
+	<div class="page-header__inner">
 
-		<?php Template::display( 'partials/site-branding' ) ?>
+		<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-		<?php Template::display( 'nav/site-nav' ) ?>
-
-		<?php Template::display( 'nav/site-nav-toggle' ) ?>
+		<?php Template::display( 'components/page-title' ) ?>
 
 	</div>
 </header>
-
