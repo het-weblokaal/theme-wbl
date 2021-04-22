@@ -23,11 +23,11 @@ function get_page_title() {
 	}
 
 	elseif ( \is_search() ) {
-		$page_title = Theme::config('site-content', 'search', 'title' );
+		$page_title = get_search_title();
 	}
 
 	elseif ( \is_404() ) {
-		$page_title = Theme::config('site-content', '404', 'title' );
+		$page_title = get_404_title();
 	}
 
 	elseif (is_home()) {
@@ -56,65 +56,24 @@ function get_page_title() {
 	return apply_filters( 'page_title', $page_title );
 }
 
-// function get_page_data( $type ) {
 
-// 	$page_data = '';
+function get_search_title() {
 
-// 	if ( \is_singular() ) {
+	$title = sprintf( esc_html__( 'Zoekresultaten voor: %s', 'wbl-theme' ), get_search_query() );
 
-// 		if ($type == 'title') {
-// 			$page_data = get_the_title(get_queried_object_id());
-// 		}
-// 	}
+	return apply_filters( 'wbl/theme/search/title', $title );
+}
 
-// 	elseif ( \is_search() ) {
+function get_404_title() {
 
-// 		if ($type == 'title') {
-// 			$page_data = Theme::config('site-content', 'search', 'title' );
-// 		}
-// 	}
+	$title = __('Pagina niet gevonden', 'wbl-theme');
 
-// 	elseif ( \is_404() ) {
-// 		if ($type == 'title') {
-// 			$page_data = Theme::config('site-content', '404', 'title' );
-// 		}
-// 	}
+	return apply_filters( 'wbl/theme/404/title', $title );
+}
 
-// 	elseif (is_home()) {
+function get_404_content() {
 
-// 		if (is_front_page()) {
-// 			if ($type == 'title') {
-// 				$page_data = 'Home';
-// 			}
-// 		}
-// 		else {
-// 			if ($type == 'title') {
-// 				$page_data = get_the_title(get_queried_object_id());
-// 			}
-// 		}
-// 	}
+	$content = __("Sorry, we kunnen de opgevraagde pagina niet vinden... :(", 'wbl-theme');
 
-// 	elseif ( \is_tax() || \is_category() || \is_tag() ) {
-// 		if ($type == 'title') {
-// 			$page_data = get_the_archive_title();
-// 			// $page_data = single_term_title( '', false );
-// 		}
-// 	}
-
-// 	elseif ( \is_post_type_archive() ) {
-// 		if ($type == 'title') {
-// 			$page_data = post_type_archive_title( '', false );
-// 		}
-// 	}
-
-// 	elseif ( \is_author() ) {
-// 		if ($type == 'title') {
-// 			$page_data = get_the_author_meta( 'display_name', absint( get_query_var( 'author' ) ) );
-// 		}
-// 	}
-
-// 	$page_data = apply_filters( "page_data_{$type}", $page_data );
-// 	$page_data = apply_filters( 'page_data', $page_data );
-
-// 	return $page_data;
-// }
+	return apply_filters( 'wbl/theme/404/content', $content );
+}

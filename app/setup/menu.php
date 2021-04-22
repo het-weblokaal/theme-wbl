@@ -18,7 +18,7 @@ add_action( 'after_setup_theme', function() {
 
 	add_filter( 'clc_nav_menu_css_class', __NAMESPACE__ . '\fix_blog_nav_menu_class', 10, 2 );
 
-	add_filter( 'wp_nav_menu_items', __NAMESPACE__ . '\add_icons_to_menus', 10, 2 );
+	// add_filter( 'wp_nav_menu_items', __NAMESPACE__ . '\add_icons_to_menus', 10, 2 );
 
 }, 5 );
 

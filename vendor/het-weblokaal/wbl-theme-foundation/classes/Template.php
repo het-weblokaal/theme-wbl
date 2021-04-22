@@ -173,12 +173,19 @@ final class Template {
 			array_unshift($templates, $custom_template);
 		}
 		
-		Theme::log($templates);
-
 		// WordPress Core Action
 		do_action( 'get_template_part', $slug, $name, $templates, $args );
 
-		if ( ! locate_template( $templates, true, false, $args ) ) {
+		$locate_template = locate_template( $templates, true, false, $args );
+
+		if ( $locate_template ) {
+			Theme::log($locate_template);
+			// Theme::log($template_data);
+			Theme::log($templates);
+    	}
+    	else {
+    		Theme::log('Template not found');
+			Theme::log($templates);
 		    return false;
     	}
 	}
@@ -199,17 +206,18 @@ final class Template {
 		 * - A template with a specific name is higher in order than the basic template
 		 * - The custom template is higher in order than main template
 		 */
+
 		$name = (string) $name;
 		if ( $name !== '' ) {
-				
-			// Get base from slug (ie. page/header --> header)
-			$slug_base = basename($slug);
-			$slug_without_base = str_replace($slug_base, '', $slug);
-			$slug_without_base = trim($slug_without_base, '/');
 
-			$_templates[] = "{$slug_without_base}/{$slug_base}/{$name}.php";
+			// Get base and path from slug (ie. page/header --> header and page/)
+			$slug_base = basename($slug);
+			$slug_path = str_replace($slug_base, '', $slug);
+				
+			$_templates[] = "{$slug_path}{$slug_base}/{$name}.php";
 			$_templates[] = "{$slug}--{$name}.php";
 		}
+
 		$_templates[] = "{$slug}.php";
 
 		// Add custom path to templates
