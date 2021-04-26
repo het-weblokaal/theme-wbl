@@ -8,7 +8,7 @@ namespace WBL\Theme;
 
 		<?php Template::display( 'components/page-skip-to-content' ) ?>
 
-		<?php Template::display( 'site/main', get_template_types() ) ?>
+		<?php Template::display( 'site/main', Template::hierarchy() ) ?>
 
 	</div>
 </div>

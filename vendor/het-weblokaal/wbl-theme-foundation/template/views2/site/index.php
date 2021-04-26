@@ -8,11 +8,11 @@ namespace WBL\Theme;
 
 		<?php Template::display( 'components/page-skip-to-content' ) ?>
 
-		<?php Template::display( 'site/header', get_template_types() ) ?>
+		<?php Template::display( 'site/header', Template::hierarchy() ) ?>
 
-		<?php Template::display( 'site/main', get_template_types() ) ?>
+		<?php Template::display( 'site/main', Template::hierarchy() ) ?>
 
-		<?php Template::display( 'site/footer', get_template_types() ) ?>
+		<?php Template::display( 'site/footer', Template::hierarchy() ) ?>
 
 	</div>
 </div>

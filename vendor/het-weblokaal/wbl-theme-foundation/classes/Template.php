@@ -143,12 +143,12 @@ final class Template {
 	 *
 	 * @link /wp-includes/general-template.php
 	 */
-	public static function display( $slug, $types = null, $args = null ) {
+	public static function display( $slug, $hierarchy = null, $args = null ) {
 
 		// Setup template data
 		$template_data = [
 			'slug' => $slug,
-			'types' => $types,
+			'hierarchy' => $hierarchy,
 			'args' => $args,
 			'custom_template' => null,
 		];
@@ -156,17 +156,17 @@ final class Template {
 		// Allow to change the template data
 		$template_data = apply_filters( "wbl/theme/template/data/{$slug}", $template_data);
 
-		// Set slug, types and args based on filtered template_data
+		// Set slug, hierarchy and args based on filtered template_data
 		$slug = $template_data['slug'];
-		$types = $template_data['types'];
+		$hierarchy = $template_data['hierarchy'];
 		$args = $template_data['args'];
 		$custom_template = $template_data['custom_template'];
 
 		// WordPress Core Action
-		do_action( "get_template_part_{$slug}", $slug, $types, $args );
+		do_action( "get_template_part_{$slug}", $slug, $hierarchy, $args );
 
 		// Setup templates
-		$templates = static::setup_templates($slug, $types);
+		$templates = static::setup_templates($slug, $hierarchy);
 
 		// Add custom template to top of priority if it is set
 		if ( $custom_template ) {			
@@ -174,7 +174,7 @@ final class Template {
 		}
 		
 		// WordPress Core Action
-		do_action( 'get_template_part', $slug, $types, $templates, $args );
+		do_action( 'get_template_part', $slug, $hierarchy, $templates, $args );
 		
 		Theme::log($templates);
 
@@ -195,7 +195,7 @@ final class Template {
 	 *
 	 * @return array
 	 */
-	private static function setup_templates($slug, $types) {
+	private static function setup_templates($slug, $hierarchy) {
 
 		$_templates = array();
 		$templates = array();
@@ -207,9 +207,9 @@ final class Template {
 		 * - The custom template is higher in order than main template
 		 */
 
-		if ( is_array($types) ) {
-			foreach ($types as $type) {
-				$_templates[] = "{$slug}/{$type}.php";
+		if ( is_array($hierarchy) ) {
+			foreach ($hierarchy as $name) {
+				$_templates[] = "{$slug}/{$name}.php";
 			}
 		}
 
@@ -229,7 +229,7 @@ final class Template {
 		return $templates;
 	}
 
-
+	
 	/*=============================================================*/
 	/**                       Utilities                            */
 	/*=============================================================*/
@@ -262,6 +262,66 @@ final class Template {
 
 		return static::get_custom_template_dir() . '/' . $relative_file;
 	}
+
+	/**
+	 * Get template hierarchy
+	 *
+	 * @link https://github.com/themehybrid/hybrid-core/blob/master/src/Template/Hierarchy.php
+	 * @return array
+	 */
+	public static function hierarchy() {	
+
+		$template_hierarchy = ['index'];
+
+		// Try `Page not found` template_type
+		if (is_404()) {
+			$template_hierarchy[] = '404';
+		}
+
+		// Try singular template hierarchy
+		elseif (\is_singular()) {
+			$template_hierarchy[] = get_post_type();
+
+			// Display custom page-template
+			if ( $page_template = get_page_template_slug() ) {
+
+				// Strip potential .php extension from template name
+				$template_hierarchy[] = rtrim($page_template, '.php');
+			}
+		}
+
+		// Try archive template hierarchy
+		elseif (is_archive() || is_home() || is_search()) {
+			$template_hierarchy[] = 'archive';
+
+			// Display search page template
+			if (is_search()) {
+				$template_hierarchy[] = 'search-archive';
+			}
+			elseif (\is_category() || \is_tag() || \is_tax()) {
+				$template_hierarchy[] = 'tax-archive';
+
+				if (\is_category()) {
+					$template_hierarchy[] = 'category-archive';
+				}
+				elseif (\is_tag()) {
+					$template_hierarchy[] = 'tag-archive';
+				}
+				elseif (\is_tax()) {
+					$template_hierarchy[] = get_query_var( 'taxonomy' ) . '-archive';
+				}
+			}
+			// elseif (\is_author()) {
+			// 	$template_hierarchy[] = 'author-archive';
+			// }
+			// elseif (\is_date()) {
+			// 	$template_hierarchy[] = 'date-archive';
+			// }
+		}
+
+		return array_reverse( $template_hierarchy );
+	}
+
 
 	/**
 	 * Allow arguments to be customized

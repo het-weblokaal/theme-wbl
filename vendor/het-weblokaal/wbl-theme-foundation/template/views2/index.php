@@ -14,7 +14,7 @@ namespace WBL\Theme;
 	
 	<?php wp_body_open() ?>
 
-	<?php Template::display( 'site', get_template_types() ); ?>
+	<?php Template::display( 'site', Template::hierarchy() ); ?>
 	
 	<?php Template::display( 'components/site-debug-info' ) ?>
 
