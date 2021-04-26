@@ -106,14 +106,35 @@ function render_date( array $args = [] ) {
 	$args = wp_parse_args( $args, [
 		'text'   => '%s',
 		'class'  => 'entry__published',
-		'format' => '',
+		'format' => get_option( 'date_format' ),
+		'nicename' => true,
 	] );
+
+	// Get post date
+	$date = get_the_date( $args['format'] );
+
+	// Get nicename of the date
+	if ($args['nicename']) {
+
+		// return 'today', 'yesterday' or date
+		if ($date == wp_date( $args['format'] ) ) {
+			$date = __('Vandaag', 'clc');
+		}
+		elseif ($date == wp_date( $args['format'], strtotime("-1 days") ) ) {
+			$date = __('Gisteren', 'clc');
+		}
+		elseif ($date == wp_date( $args['format'], strtotime("-2 days") ) ||
+			    $date == wp_date( $args['format'], strtotime("-3 days") ) ||
+			    $date == wp_date( $args['format'], strtotime("-4 days") ) ) {
+			$date = sprintf( _x('Afgelopen %s', 'datum', 'clc'), get_the_date( 'l' ) );
+		}
+	}
 
 	$html = sprintf(
 		'<time class="%s" datetime="%s">%s</time>',
 		esc_attr( $args['class'] ),
 		esc_attr( get_the_date( DATE_W3C ) ),
-		sprintf( $args['text'], get_the_date( $args['format'] ) )
+		sprintf( $args['text'], $date )
 	);
 
 	return apply_filters( 'wbl/theme/entry/date', $html	);
@@ -155,6 +176,27 @@ function render_terms( array $args = [] ) {
 	return apply_filters( 'wbl/theme/entry/terms', $html );
 }
 
+
+/**
+ * Returns the password status HTML.
+ *
+ * @return string
+ */
+function render_password_protection_status() {
+
+	$html = '';
+
+	$status = get_password_protection_status();
+
+	if ($status == 'locked') {
+		$html = '<span class="password-protection-status">Slotje</span>';
+	}
+	elseif ($status == 'opened') {
+		$html = '<span class="password-protection-status">Slotje open</span>';
+	}
+
+	return $html;
+}
 
 /**
  * Returns the entry classes.

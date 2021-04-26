@@ -322,6 +322,21 @@ final class Template {
 		return array_reverse( $template_hierarchy );
 	}
 
+	/**
+	 * Get template hierarchy
+	 *
+	 * @link https://github.com/themehybrid/hybrid-core/blob/master/src/Template/Hierarchy.php
+	 * @return array
+	 */
+	public static function entry_hierarchy() {	
+
+		$template_hierarchy = ['index'];
+
+		$template_hierarchy[] = get_post_type();
+
+		return array_reverse( $template_hierarchy );
+	}
+
 
 	/**
 	 * Allow arguments to be customized

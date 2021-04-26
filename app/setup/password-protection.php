@@ -20,28 +20,28 @@ add_action( 'after_setup_theme', function() {
 }, 5 );
 
 
-/**
- * Get password protection status of the current post
- *
- * @return string locked or opened | boolean false (not applicable)
- */
-function get_password_protection_status() {
-	global $post;
+// /**
+//  * Get password protection status of the current post
+//  *
+//  * @return string locked or opened | boolean false (not applicable)
+//  */
+// function get_password_protection_status() {
+// 	global $post;
 
-	$status = false;
+// 	$status = false;
 
-	if ($post) {
+// 	if ($post) {
 
-		// Password-protected posts.
-		if ( post_password_required( $post ) ) {
-			$status = 'locked';
-		} elseif ( $post->post_password ) {
-			$status = 'opened';
-		}
-	}
+// 		// Password-protected posts.
+// 		if ( post_password_required( $post ) ) {
+// 			$status = 'locked';
+// 		} elseif ( $post->post_password ) {
+// 			$status = 'opened';
+// 		}
+// 	}
 
-	return $status;
-}
+// 	return $status;
+// }
 
 /**
  * Edit password protection title format

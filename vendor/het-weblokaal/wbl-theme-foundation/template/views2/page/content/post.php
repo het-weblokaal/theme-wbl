@@ -8,19 +8,13 @@ namespace WBL\Theme;
 
 		<div class="page-meta">
 			<div class="page-meta__inner">
-				<?php Template::display( 'meta/date', get_post_type(), [ 'link' => false ] ); ?>
-				<?php Template::display( 'meta/author', get_post_type(), [ 'link' => false ]  ); ?>
-				<?php Template::display( 'meta/categories' ), get_post_type(); ?>
+				<?= render_author() ?>
+				<?= render_date() ?>
+				<?= render_terms( [ 'taxonomy' => 'category' ] ) ?>
 			</div>
 		</div>
 
-		<?php Template::display( 'components/page-image' ); ?>
-
 		<?php the_content(); ?>
-
-		<?php Template::display( 'components/social-media-sharing' ); ?>
-
-		<?php Template::display( 'components/related', get_post_type(), [] ); ?>
 
 	</div>
 </div>

@@ -40,10 +40,14 @@ function html_attributes( $attr ) {
  * @param bool  $show_class_attribute
  * @return string
  */
-function html_classes( $classes, $show_class_attribute = false ) {
+function html_classes( array $classes, $show_class_attribute = false ) {
 
-	$html = esc_attr( implode( ' ', $classes ) );
-	$html = trim( $html );
+	$html = '';
+
+	if ( $classes ) {
+		$html = esc_attr( implode( ' ', $classes ) );
+		$html = trim( $html );
+	}
 
 	return ($show_class_attribute) ? "class=\"$html\"": $html;
 }
@@ -146,4 +150,28 @@ function get_post_type_on_archive() {
 	}
 
     return $post_type;
+}
+
+
+/**
+ * Get password protection status of the current post
+ *
+ * @return string locked or opened | boolean false (not applicable)
+ */
+function get_password_protection_status() {
+	global $post;
+
+	$status = false;
+
+	if ($post) {
+
+		// Password-protected posts.
+		if ( post_password_required( $post ) ) {
+			$status = 'locked';
+		} elseif ( $post->post_password ) {
+			$status = 'opened';
+		}
+	}
+
+	return $status;
 }

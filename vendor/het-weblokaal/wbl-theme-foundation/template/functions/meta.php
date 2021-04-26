@@ -133,25 +133,3 @@ function render_author( array $args = [] ) {
 
 	return $html;
 }
-
-
-/**
- * Returns the password status HTML.
- *
- * @return string
- */
-function render_password_protection_status() {
-
-	$html = '';
-
-	$status = get_password_protection_status();
-
-	if ($status == 'locked') {
-		$html = '<span class="password-protection-status">'. Theme::svg('lock-alt') .'</span>';
-	}
-	elseif ($status == 'opened') {
-		$html = '<span class="password-protection-status">'. Theme::svg('lock-open-alt') .'</span>';
-	}
-
-	return $html;
-}
