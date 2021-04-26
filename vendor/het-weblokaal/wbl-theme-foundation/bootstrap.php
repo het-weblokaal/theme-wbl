@@ -34,7 +34,7 @@ array_map( function( $file ) {
 	'polylang',
 	'entry',
 	'loop',
-	'meta',
+	// 'meta',
 	'html-head',
 	'site-branding',
 	'site-footer',

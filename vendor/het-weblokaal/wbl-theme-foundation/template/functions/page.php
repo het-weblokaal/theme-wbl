@@ -22,12 +22,12 @@ function get_page_title() {
 		$page_title = get_the_title(get_queried_object_id());
 	}
 
-	elseif ( \is_search() ) {
-		$page_title = get_search_title();
-	}
-
 	elseif ( \is_404() ) {
 		$page_title = get_404_title();
+	}
+
+	elseif ( \is_search() ) {
+		$page_title = get_search_title();
 	}
 
 	elseif (is_home()) {

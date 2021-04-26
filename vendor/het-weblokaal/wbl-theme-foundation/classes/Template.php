@@ -18,7 +18,7 @@ final class Template {
 	 * @var array
 	 */
 	private static $args = [
-		'main_template_dir'   => 'vendor/het-weblokaal/wbl-theme-foundation/template/views',
+		'main_template_dir'   => 'vendor/het-weblokaal/wbl-theme-foundation/template/views2',
 		'custom_template_dir' => 'app/views',
 	];
 
@@ -143,12 +143,12 @@ final class Template {
 	 *
 	 * @link /wp-includes/general-template.php
 	 */
-	public static function display( $slug, $name = null, $args = null ) {
+	public static function display( $slug, $types = null, $args = null ) {
 
 		// Setup template data
 		$template_data = [
 			'slug' => $slug,
-			'name' => $name,
+			'types' => $types,
 			'args' => $args,
 			'custom_template' => null,
 		];
@@ -156,17 +156,17 @@ final class Template {
 		// Allow to change the template data
 		$template_data = apply_filters( "wbl/theme/template/data/{$slug}", $template_data);
 
-		// Set slug, name and args based on filtered template_data
+		// Set slug, types and args based on filtered template_data
 		$slug = $template_data['slug'];
-		$name = $template_data['name'];
+		$types = $template_data['types'];
 		$args = $template_data['args'];
 		$custom_template = $template_data['custom_template'];
 
 		// WordPress Core Action
-		do_action( "get_template_part_{$slug}", $slug, $name, $args );
+		do_action( "get_template_part_{$slug}", $slug, $types, $args );
 
 		// Setup templates
-		$templates = static::setup_templates($slug, $name);
+		$templates = static::setup_templates($slug, $types);
 
 		// Add custom template to top of priority if it is set
 		if ( $custom_template ) {			
@@ -174,18 +174,18 @@ final class Template {
 		}
 		
 		// WordPress Core Action
-		do_action( 'get_template_part', $slug, $name, $templates, $args );
+		do_action( 'get_template_part', $slug, $types, $templates, $args );
+		
+		Theme::log($templates);
 
 		$locate_template = locate_template( $templates, true, false, $args );
 
 		if ( $locate_template ) {
-			Theme::log($locate_template);
+			// Theme::log($locate_template);
 			// Theme::log($template_data);
-			Theme::log($templates);
     	}
     	else {
     		Theme::log('Template not found');
-			Theme::log($templates);
 		    return false;
     	}
 	}
@@ -195,7 +195,7 @@ final class Template {
 	 *
 	 * @return array
 	 */
-	private static function setup_templates($slug, $name) {
+	private static function setup_templates($slug, $types) {
 
 		$_templates = array();
 		$templates = array();
@@ -207,17 +207,13 @@ final class Template {
 		 * - The custom template is higher in order than main template
 		 */
 
-		$name = (string) $name;
-		if ( $name !== '' ) {
-
-			// Get base and path from slug (ie. page/header --> header and page/)
-			$slug_base = basename($slug);
-			$slug_path = str_replace($slug_base, '', $slug);
-				
-			$_templates[] = "{$slug_path}{$slug_base}/{$name}.php";
-			$_templates[] = "{$slug}--{$name}.php";
+		if ( is_array($types) ) {
+			foreach ($types as $type) {
+				$_templates[] = "{$slug}/{$type}.php";
+			}
 		}
 
+		// Fallback template
 		$_templates[] = "{$slug}.php";
 
 		// Add custom path to templates
