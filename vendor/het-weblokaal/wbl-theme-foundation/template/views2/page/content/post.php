@@ -8,9 +8,9 @@ namespace WBL\Theme;
 
 		<div class="page-meta">
 			<div class="page-meta__inner">
-				<?= render_author() ?>
-				<?= render_date() ?>
-				<?= render_terms( [ 'taxonomy' => 'category' ] ) ?>
+				<?= render_entry_author( [ 'class' => 'page-meta__author meta meta--author' ] ) ?>
+				<?= render_entry_date( [ 'class' => 'page-meta__date meta meta--date' ]) ?>
+				<?= render_entry_terms( [ 'class' => 'page-meta__category meta meta--category', 'taxonomy' => 'category' ] ) ?>
 			</div>
 		</div>
 

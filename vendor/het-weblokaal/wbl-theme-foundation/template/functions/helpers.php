@@ -36,15 +36,15 @@ function html_attributes( $attr ) {
  *
  * Example ['class-1', 'class-2'] becomes "class-1 class-2"
  *
- * @param array $classes
+ * @param array|string $classes
  * @param bool  $show_class_attribute
  * @return string
  */
-function html_classes( array $classes, $show_class_attribute = false ) {
+function html_classes( $classes, $show_class_attribute = false ) {
 
 	$html = '';
 
-	if ( $classes ) {
+	if ( is_array($classes) && $classes ) {
 		$html = esc_attr( implode( ' ', $classes ) );
 		$html = trim( $html );
 	}

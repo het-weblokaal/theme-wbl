@@ -3,7 +3,7 @@
 namespace WBL\Theme;
 
 $args = wp_parse_args($args, [
-	'extra_classes' => [],
+	'extra_classes' => ['entry--search'],
 	'attr' => []
 ]);
 
@@ -21,6 +21,10 @@ $args = wp_parse_args($args, [
 		<div class="entry__main">
 			<?php the_excerpt(); ?>
 		</div>
+
+		<footer class="entry__footer">
+			<?= get_post_type() ?>
+		</footer>
 
 	</div>
 </article>

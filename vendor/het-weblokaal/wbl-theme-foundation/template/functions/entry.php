@@ -14,7 +14,7 @@ namespace WBL\Theme;
  * @param  array  $args
  * @return string
  */
-function entry_title( array $args = [] ) {
+function render_entry_title( array $args = [] ) {
 
 	$args = wp_parse_args( $args, [
 		'text'   => '%s',
@@ -45,7 +45,7 @@ function entry_title( array $args = [] ) {
  * @param  array  $args
  * @return string
  */
-function render_permalink( array $args = [] ) {
+function render_entry_permalink( array $args = [] ) {
 
 	$args = wp_parse_args( $args, [
 		'text'   => '%s',
@@ -70,7 +70,7 @@ function render_permalink( array $args = [] ) {
  * @param  array  $args
  * @return string
  */
-function render_author( array $args = [] ) {
+function render_entry_author( array $args = [] ) {
 
 	$args = wp_parse_args( $args, [
 		'text'   => '%s',
@@ -101,11 +101,11 @@ function render_author( array $args = [] ) {
  * @param  array  $args
  * @return string
  */
-function render_date( array $args = [] ) {
+function render_entry_date( array $args = [] ) {
 
 	$args = wp_parse_args( $args, [
 		'text'   => '%s',
-		'class'  => 'entry__published',
+		'class'  => 'entry__date',
 		'format' => get_option( 'date_format' ),
 		'nicename' => true,
 	] );
@@ -146,7 +146,7 @@ function render_date( array $args = [] ) {
  * @param  array  $args
  * @return string
  */
-function render_terms( array $args = [] ) {
+function render_entry_terms( array $args = [] ) {
 
 	$html = '';
 
@@ -182,7 +182,7 @@ function render_terms( array $args = [] ) {
  *
  * @return string
  */
-function render_password_protection_status() {
+function render_entry_password_protection_status() {
 
 	$html = '';
 
@@ -196,39 +196,4 @@ function render_password_protection_status() {
 	}
 
 	return $html;
-}
-
-/**
- * Returns the entry classes.
- *
- * @return string
- */
-function render_extra_entry_classes( $extra_classes = [] ) {
-
-	// If we want to incorporate expected WordPress filter `post_class`
-	// $classes = get_post_class();
-
-	$classes = [];
-
-	// Set post type
-	$post_type = (is_search()) ? 'search' : get_post_type();
-
-	// Add post_type as modifier
-	$classes[] =  "entry--{$post_type}";
-
-	// Add extra classes as modifiers to base-class
-	foreach ( (array) $extra_classes as $extra_class) {
-		$classes[] =  $extra_class;
-	}
-
-	// Apply filters just like post_class
-	$classes = apply_filters( 'wbl/theme/entry/extra_classes', $classes, $extra_classes, $post_type );
-
-	return html_classes($classes);
-}
-
-function display_extra_entry_classes( $extra_classes = [], $post_type = null ) {
-
-	echo render_extra_entry_classes( $extra_classes, $post_type );
-
 }

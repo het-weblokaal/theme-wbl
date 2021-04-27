@@ -2,9 +2,14 @@
 
 namespace WBL\Theme;
 
+$args = wp_parse_args($args, [
+	'extra_classes' => [],
+	'attr' => []
+]);
+
 ?>
 
-<article class="entry <?php display_extra_entry_classes() ?>">
+<article class="entry <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
 		<header class="entry__header">			
@@ -22,10 +27,10 @@ namespace WBL\Theme;
 		</div>
 
 		<footer class="entry__footer">
-			<?= render_author() ?>
-			<?= render_date() ?>
-			<?= render_terms( [ 'taxonomy' => 'category' ] ) ?>
-			<?= render_password_protection_status() ?>
+			<?= render_entry_author( [ 'class' => 'entry__author meta meta--author' ] ) ?>
+			<?= render_entry_date( [ 'class' => 'entry__date meta meta--date' ]) ?>
+			<?= render_entry_terms( [ 'class' => 'entry__category meta meta--category', 'taxonomy' => 'category' ] ) ?>
+			<?= render_entry_password_protection_status() ?>
 		</footer>
 
 	</div>

@@ -143,8 +143,19 @@ final class Template {
 	 *
 	 * @link /wp-includes/general-template.php
 	 */
-	public static function display( $slug, $hierarchy = null, $args = null ) {
+	public static function display( $slug, $hierarchy = [], $args = [] ) {
 
+		// Default args
+		$args = wp_parse_args( $args, [
+			'extra_classes' => [],
+			'attr' => [],
+		] );
+
+		// Add query_args to loops
+		if( strpos( $slug, 'loop' ) !== false) {
+			$args['query_args'] = $args['query_args'] ?? [];
+		}
+		
 		// Setup template data
 		$template_data = [
 			'slug' => $slug,
@@ -331,6 +342,10 @@ final class Template {
 	public static function entry_hierarchy() {	
 
 		$template_hierarchy = ['index'];
+
+		if (is_search() && is_main_query()) {
+			$template_hierarchy[] = 'search';
+		}
 
 		$template_hierarchy[] = get_post_type();
 

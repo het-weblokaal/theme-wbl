@@ -8,5 +8,17 @@ namespace WBL\Theme;
 
 		<p>Pagina niet gevonden</p>
 
+		<?php 
+			Template::display( 'loop/blog', null, [ 'query' => [
+				'post_type' => 'page'
+			]]); 
+		?>
+		<hr>
+		<?php
+			Template::display( 'loop/blog', null, [ 'query' => [
+				'post_type' => 'post'
+			]]); 
+		?>
+
 	</div>
 </div>

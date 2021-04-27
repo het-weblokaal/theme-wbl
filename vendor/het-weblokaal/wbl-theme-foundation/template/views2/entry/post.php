@@ -1,16 +1,15 @@
 <?php
 
 namespace WBL\Theme;
-use function WBL\Theme\get_featured_image_src;
-use function WBL\Theme\display_extra_entry_classes;
 
-$featured_image_src = get_featured_image_src( 'medium' );
-$featured_image_css = ( $featured_image_src ) ? "background-image: url({$featured_image_src});" : '';
-$media_image_class = ( !$featured_image_src ) ? 'has-no-featured-image' : '';
+$args = wp_parse_args($args, [
+	'extra_classes' => [],
+	'attr' => []
+]);
 
 ?>
 
-<article class="entry <?php display_extra_entry_classes() ?>">
+<article class="entry <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
 		<div class="entry__media <?= ($media_image_class) ?>" style="<?= $featured_image_css ?>">
