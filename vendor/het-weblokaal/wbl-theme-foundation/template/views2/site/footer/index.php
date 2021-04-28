@@ -3,10 +3,8 @@
 namespace WBL\Theme;
 
 ?>
-<footer class="site-footer">
-	<div class="site-footer__inner">
+<footer class="site-footer <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
-		Footer
+	Footer
 
-	</div>
 </footer>
