@@ -3,22 +3,26 @@
 namespace WBL\Theme;
 
 ?>
-<div class="page-content">
-	<div class="page-content__inner">
+<div class="page__content">
 
-		<p>Pagina niet gevonden</p>
+	<p>Pagina niet gevonden</p>
 
-		<?php 
-			Template::display( 'loop/blog', null, [ 'query' => [
-				'post_type' => 'page'
-			]]); 
-		?>
-		<hr>
-		<?php
-			Template::display( 'loop/blog', null, [ 'query' => [
-				'post_type' => 'post'
-			]]); 
-		?>
+	<?php 
+		Template::display( 'loop/blog', null, [ 'query_args' => [
+			'post_type' => 'page'
+		]]); 
+	?>
+	<hr>
+	<?php
+		Template::display( 'loop/list', null, [ 'query_args' => [
+			'post_type' => 'post'
+		]]); 
+	?>
+	<hr>
+	<?php
+		Template::display( 'loop/list', null, [ 'query_args' => [
+			'post_type' => 'test'
+		]]); 
+	?>
 
-	</div>
 </div>

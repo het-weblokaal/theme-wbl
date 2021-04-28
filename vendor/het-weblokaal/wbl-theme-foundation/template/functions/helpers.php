@@ -55,9 +55,17 @@ function html_classes( $classes, $show_class_attribute = false ) {
 /**
  * Add class based on check
  */
-function maybe_add_class( $class, $check = false ) {
-	return ($check) ? $class : '';
+function maybe_render( $text, $check = false ) {
+	return ($check) ? $text : '';
 }
+
+/**
+ * Add class based on check
+ */
+function maybe_add_class( $class, $check = false ) {
+	return maybe_render( $class, $check );
+}
+
 
 /**
  * Get post type archive page

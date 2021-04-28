@@ -3,12 +3,10 @@
 namespace WBL\Theme;
 
 ?>
-<header class="page-header">
-	<div class="page-header__inner">
+<header class="page__header">
 
-		<?php Template::display( 'components/page-breadcrumbs' ) ?>
+	<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-		<?php Template::display( 'components/page-title' ) ?>
+	<?php Template::display( 'components/page-title' ) ?>
 
-	</div>
 </header>

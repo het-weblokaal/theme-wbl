@@ -307,27 +307,30 @@ final class Template {
 
 			// Display search page template
 			if (is_search()) {
-				$template_hierarchy[] = 'search';
+				$template_hierarchy[] = 'archive-search';
+			}
+			elseif (\is_home() || \is_post_type_archive()) {
+				$template_hierarchy[] = 'archive-' . get_post_type_on_archive();
 			}
 			elseif (\is_category() || \is_tag() || \is_tax()) {
-				$template_hierarchy[] = 'tax';
+				$template_hierarchy[] = 'archive-tax';
 
 				if (\is_category()) {
-					$template_hierarchy[] = 'tax-category';
+					$template_hierarchy[] = 'archive-tax-category';
 				}
 				elseif (\is_tag()) {
-					$template_hierarchy[] = 'tax-tag';
+					$template_hierarchy[] = 'archive-tax-tag';
 				}
 				elseif (\is_tax()) {
-					$template_hierarchy[] = 'tax-' . get_query_var( 'taxonomy' );
+					$template_hierarchy[] = 'archive-tax-' . get_query_var( 'taxonomy' );
 				}
 			}
-			// elseif (\is_author()) {
-			// 	$template_hierarchy[] = 'author-archive';
-			// }
-			// elseif (\is_date()) {
-			// 	$template_hierarchy[] = 'date-archive';
-			// }
+			elseif (\is_author()) {
+				$template_hierarchy[] = 'archive-author';
+			}
+			elseif (\is_date()) {
+				$template_hierarchy[] = 'archive-date';
+			}
 		}
 
 		return array_reverse( $template_hierarchy );

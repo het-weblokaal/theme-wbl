@@ -7,6 +7,6 @@ namespace WBL\Theme;
 
 	<?php the_archive_description(); ?>
 
-	<?php Template::display( 'loop/blog' ); ?>
+	<?php Template::display( 'loop/list' ); ?>
 
 </div>

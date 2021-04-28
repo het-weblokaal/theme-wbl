@@ -3,10 +3,8 @@
 namespace WBL\Theme;
 
 ?>
-<footer class="page-footer">
-	<div class="page-footer__inner">
+<footer class="page__footer">
 
-		Page footer (maybe comments?)
+	Page footer (maybe comments?)
 
-	</div>
 </footer>

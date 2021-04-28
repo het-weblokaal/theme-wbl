@@ -3,12 +3,10 @@
 namespace WBL\Theme;
 
 ?>
-<div class="page-content">
-	<div class="page-content__inner">
+<div class="page__content">
 
-		<?php Template::display( 'components/page-image' ); ?>
+	<?php Template::display( 'components/page-image' ); ?>
 
-		<?php the_content(); ?>
+	<?php the_content(); ?>
 
-	</div>
 </div>
