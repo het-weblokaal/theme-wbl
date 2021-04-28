@@ -1,6 +1,6 @@
 <?php 
 namespace WBL\Theme; 
 ?>
-<h1 class="page-title">
-	<?= get_page_title() ?>
-</h1>
+<div class="page-title">
+	<h1><?= get_page_title() ?></h1>
+</div>

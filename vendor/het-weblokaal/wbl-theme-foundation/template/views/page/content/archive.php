@@ -1,14 +1,12 @@
 <?php
 
-use WBL\Theme\Template;
+namespace WBL\Theme;
 
 ?>
-<div class="page-content">
-	<div class="page-content__inner">
+<div class="page__content">
 
-		<?php the_archive_description(); ?>
+	<?php the_archive_description(); ?>
 
-		<?php Template::display( 'loop/blog' ); ?>
+	<?php Template::display( 'loop/blog' ); ?>
 
-	</div>
 </div>

@@ -3,19 +3,19 @@
  * Pagination
  */
 
-# Namespacing
 namespace WBL\Theme;
-use function WBL\Theme\get_post_type_on_archive;
 
-# Don't print empty markup if there's only one page.
-if ( $GLOBALS['wp_query']->max_num_pages <= 1 ) {
+// Don't print empty markup if...
+// - it's not the main query
+// - there's only one page.
+if ( ! is_main_query() || $GLOBALS['wp_query']->max_num_pages <= 1 ) {
 	return;
 }
 
-# Get Post Type object
+// Get Post Type object
 $post_type_object = get_post_type_object( get_post_type_on_archive() );
 
-# Set labels
+// Set labels
 $label = $post_type_object->labels->name ?? null;
 $plural = $post_type_object->labels->name ?? null;
 

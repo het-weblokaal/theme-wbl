@@ -9,11 +9,11 @@ $query = ( $args['query_args'] ) ? new \WP_Query( $args['query_args'] ) : $GLOBA
 
 <?php if ( $query->have_posts() ) : ?>
 
-	<div class="loop loop--blog <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
+	<div class="loop layout-list <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php Template::display( 'entry/blog', Template::entry_hierarchy() ); ?>
+			<?php Template::display( 'entry/list', Template::entry_hierarchy() ); ?>
 
 		<?php endwhile; ?>
 

@@ -18,7 +18,7 @@ final class Template {
 	 * @var array
 	 */
 	private static $args = [
-		'main_template_dir'   => 'vendor/het-weblokaal/wbl-theme-foundation/template/views2',
+		'main_template_dir'   => 'vendor/het-weblokaal/wbl-theme-foundation/template/views',
 		'custom_template_dir' => 'app/views',
 	];
 

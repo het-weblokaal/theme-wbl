@@ -1,11 +1,10 @@
 <?php
 
 namespace WBL\Theme;
-use function WBL\Theme\display_extra_entry_classes;
 
 ?>
 
-<article class="entry <?php display_extra_entry_classes() ?>">
+<article class="entry layout-list__item <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
 		<header class="entry__header">
@@ -17,6 +16,10 @@ use function WBL\Theme\display_extra_entry_classes;
 		<div class="entry__main">
 			<?php the_excerpt(); ?>
 		</div>
+
+		<footer class="entry__footer">
+			<?= get_post_type() ?>
+		</footer>
 
 	</div>
 </article>

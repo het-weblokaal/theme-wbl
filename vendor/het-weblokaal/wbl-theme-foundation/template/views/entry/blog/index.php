@@ -4,10 +4,10 @@ namespace WBL\Theme;
 
 ?>
 
-<article class="entry entry--search <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
+<article class="entry layout-blog__item <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
-		<header class="entry__header">
+		<header class="entry__header">			
 			<h3 class="entry__title">
 				<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
 			</h3>
@@ -20,6 +20,5 @@ namespace WBL\Theme;
 		<footer class="entry__footer">
 			<?= get_post_type() ?>
 		</footer>
-
 	</div>
 </article>
