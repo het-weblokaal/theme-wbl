@@ -2,14 +2,9 @@
 
 namespace WBL\Theme;
 
-$args = wp_parse_args($args, [
-	'extra_classes' => ['entry--no-results'],
-	'attr' => []
-]);
-
 ?>
 
-<article class="entry  <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
+<article class="entry entry--list entry--no-results <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
 		<header class="entry__header">			

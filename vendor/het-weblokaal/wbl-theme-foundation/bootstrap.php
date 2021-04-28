@@ -33,7 +33,7 @@ array_map( function( $file ) {
 	'page',
 	'polylang',
 	'entry',
-	'loop',
+	// 'loop',
 	// 'meta',
 	'html-head',
 	'site-branding',

@@ -307,19 +307,19 @@ final class Template {
 
 			// Display search page template
 			if (is_search()) {
-				$template_hierarchy[] = 'search-archive';
+				$template_hierarchy[] = 'search';
 			}
 			elseif (\is_category() || \is_tag() || \is_tax()) {
-				$template_hierarchy[] = 'tax-archive';
+				$template_hierarchy[] = 'tax';
 
 				if (\is_category()) {
-					$template_hierarchy[] = 'category-archive';
+					$template_hierarchy[] = 'tax-category';
 				}
 				elseif (\is_tag()) {
-					$template_hierarchy[] = 'tag-archive';
+					$template_hierarchy[] = 'tax-tag';
 				}
 				elseif (\is_tax()) {
-					$template_hierarchy[] = get_query_var( 'taxonomy' ) . '-archive';
+					$template_hierarchy[] = 'tax-' . get_query_var( 'taxonomy' );
 				}
 			}
 			// elseif (\is_author()) {
@@ -343,11 +343,11 @@ final class Template {
 
 		$template_hierarchy = ['index'];
 
+		$template_hierarchy[] = get_post_type();
+
 		if (is_search() && is_main_query()) {
 			$template_hierarchy[] = 'search';
 		}
-
-		$template_hierarchy[] = get_post_type();
 
 		return array_reverse( $template_hierarchy );
 	}

@@ -6,7 +6,7 @@ namespace WBL\Theme;
 $query = ( $args['query_args'] ) ? new \WP_Query( $args['query_args'] ) : $GLOBALS['wp_query'];
 
 // Add extra class if no posts
-$args['extra_classes'] = ! $query->have_posts() ? 'loop--no-results' : [];
+$args['extra_classes'][] = ! $query->have_posts() ? 'loop--no-results' : '';
 
 ?>
 <div class="loop loop--list <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
@@ -14,13 +14,19 @@ $args['extra_classes'] = ! $query->have_posts() ? 'loop--no-results' : [];
 
 		<?php if ( $query->have_posts() ) : ?>
 
-			<?php display_loop( $query, 'entry/list', Template::entry_hierarchy() ); ?>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+				<?php Template::display( 'entry/list', Template::entry_hierarchy() ); ?>
+
+			<?php endwhile; ?>
 
 		<?php else : ?>
 
 			<?php Template::display( 'entry/list/no-results' ); ?>
 		
 		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
 
 	</div>
 </div>

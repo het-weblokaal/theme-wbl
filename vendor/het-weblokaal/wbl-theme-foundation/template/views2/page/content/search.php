@@ -1,6 +1,6 @@
 <?php
 
-use WBL\Theme\Template;
+namespace WBL\Theme;
 
 ?>
 <div class="page-content">

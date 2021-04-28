@@ -14,13 +14,19 @@ $args['extra_classes'] = ! $query->have_posts() ? 'loop--no-results' : [];
 
 		<?php if ( $query->have_posts() ) : ?>
 
-			<?php display_loop( $query, 'entry/blog', Template::entry_hierarchy() ); ?>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+				<?php Template::display( 'entry/blog', Template::entry_hierarchy() ); ?>
+
+			<?php endwhile; ?>
 
 		<?php else : ?>
 
 			<?php Template::display( 'entry/blog/no-results' ); ?>
 		
 		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
 
 	</div>
 </div>
