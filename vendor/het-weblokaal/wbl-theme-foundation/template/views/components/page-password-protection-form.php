@@ -4,7 +4,7 @@
 		<div class="password-protection-form__field">
 			<label class="screen-reader-text" for="password-protection-form__input"><?= __( 'Password:' ) ?></label>
 			<input class="password-protection-form__input" name="post_password" id="password-protection-form__input" type="password" size="20" placeholder="<?= __( 'Password' ) ?>"/>
-			<input type="submit" name="Submit" value="<?= esc_attr__( 'Ontgrendel', 'clc' ) ?>" />
+			<input type="submit" name="Submit" value="<?= esc_attr__( 'Ontgrendel', 'wbl-theme' ) ?>" />
 		</div>
 	</div>
 </form>

@@ -29,7 +29,7 @@ function display_language_switcher( $args = [] ) {
     if (function_exists('pll_the_languages')) {
     ?> 
         <div class="language-switcher <?= $args['extra_classes'] ?>">
-            <span class="language-switcher__label"><?= _x( 'Go to:', 'language-switcher', 'clc' ); ?></span>
+            <span class="language-switcher__label"><?= _x( 'Go to:', 'language-switcher', 'wbl-theme' ); ?></span>
             <ul class="language-switcher__list">
                 <?php pll_the_languages( array( 'show_flags' => 1, 'hide_current' => 1 ) ); ?>
             </ul>

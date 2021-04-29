@@ -118,15 +118,15 @@ function render_entry_date( array $args = [] ) {
 
 		// return 'today', 'yesterday' or date
 		if ($date == wp_date( $args['format'] ) ) {
-			$date = __('Vandaag', 'clc');
+			$date = __('Vandaag', 'wbl-theme');
 		}
 		elseif ($date == wp_date( $args['format'], strtotime("-1 days") ) ) {
-			$date = __('Gisteren', 'clc');
+			$date = __('Gisteren', 'wbl-theme');
 		}
 		elseif ($date == wp_date( $args['format'], strtotime("-2 days") ) ||
 			    $date == wp_date( $args['format'], strtotime("-3 days") ) ||
 			    $date == wp_date( $args['format'], strtotime("-4 days") ) ) {
-			$date = sprintf( _x('Afgelopen %s', 'datum', 'clc'), get_the_date( 'l' ) );
+			$date = sprintf( _x('Afgelopen %s', 'datum', 'wbl-theme'), get_the_date( 'l' ) );
 		}
 	}
 
@@ -196,4 +196,55 @@ function render_entry_password_protection_status() {
 	}
 
 	return $html;
+}
+
+/**
+ * Get the post featured image id
+ *
+ * We use has_post_thumbnail to trigger core-filter. This is a standard.
+ *
+ * @return int|false
+ */
+function get_featured_image_id() {
+
+    return has_post_thumbnail() ? get_post_thumbnail_id() : false;
+}
+
+/**
+ * Get the post featured image source
+ *
+ * @param  string $size
+ * @return string
+ */
+function get_featured_image_src( $size = 'thumbnail' ) {
+
+	$src = '';
+
+    if ($image_id = get_featured_image_id()) {
+	    $src = \wp_get_attachment_image_src( $image_id, $size )[0] ?? $src;
+	}
+
+	return $src;
+}
+
+/**
+ * Render the post featured image
+ *
+ * @param  array  $args
+ * @return string
+ */
+function render_featured_image( array $args = [] ) {
+
+	$html = '';
+
+	$args = wp_parse_args( $args, [
+		'size' => 'thumbnail',
+		'class' => ''
+	] );
+
+    if ($image_id = get_featured_image_id()) {
+	    $html = \wp_get_attachment_image( $image_id, $args['size'], false, ['class' => $args['class']] );
+	}
+
+	return apply_filters( 'wbl/theme/entry/image', $html, $image_id, $args );
 }

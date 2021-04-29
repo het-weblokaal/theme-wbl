@@ -26,7 +26,7 @@ if ( has_nav_menu( 'site-nav' ) ) : ?>
     <nav class="site-nav site-nav--no-menu">
 
         <ul class="site-nav__menu menu">
-            <li class="menu__item"><a class="menu__link" href="/"><?= __('Home', 'clc') ?></a></li>
+            <li class="menu__item"><a class="menu__link" href="/"><?= __('Home', 'wbl-theme') ?></a></li>
         </ul>
 
     </nav>

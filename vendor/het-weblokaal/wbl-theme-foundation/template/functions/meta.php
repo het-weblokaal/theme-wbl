@@ -21,7 +21,7 @@ function render_terms( $tax_id, $args = [] ) {
 	$args = wp_parse_args( $args, [
 		
 		// Separates tags, categories, etc. when displaying a post.
-		'sep'  => _x( ', ', 'taxonomy terms separator', 'clc' ),
+		'sep'  => _x( ', ', 'taxonomy terms separator', 'wbl-theme' ),
 
 		// Generate links or spans
 		'link' => true,
@@ -80,15 +80,15 @@ function render_date( array $args = [] ) {
 
 		// return 'today', 'yesterday' or date
 		if ($date == wp_date( $args['format'] ) ) {
-			$date = __('Vandaag', 'clc');
+			$date = __('Vandaag', 'wbl-theme');
 		}
 		elseif ($date == wp_date( $args['format'], strtotime("-1 days") ) ) {
-			$date = __('Gisteren', 'clc');
+			$date = __('Gisteren', 'wbl-theme');
 		}
 		elseif ($date == wp_date( $args['format'], strtotime("-2 days") ) ||
 			    $date == wp_date( $args['format'], strtotime("-3 days") ) ||
 			    $date == wp_date( $args['format'], strtotime("-4 days") ) ) {
-			$date = sprintf( _x('Afgelopen %s', 'datum', 'clc'), get_the_date( 'l' ) );
+			$date = sprintf( _x('Afgelopen %s', 'datum', 'wbl-theme'), get_the_date( 'l' ) );
 		}
 	}
 

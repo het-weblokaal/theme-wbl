@@ -32,7 +32,7 @@ $pagination = get_the_posts_pagination([
 <div class="loop-navigation">
 	<div class="loop-navigation__inner">
 
-		<h3><?= sprintf( __('Blader door onze %s', 'clc'), strtolower($plural) ) ?></h3>
+		<h3><?= sprintf( __('Blader door onze %s', 'wbl-theme'), strtolower($plural) ) ?></h3>
 
 		<?= $pagination ?>
 

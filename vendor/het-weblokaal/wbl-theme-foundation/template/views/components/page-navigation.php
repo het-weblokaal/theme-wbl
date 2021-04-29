@@ -28,7 +28,7 @@ elseif ( ! $next_link ) {
 		<?php if ( $previous_link ) : ?>
 
 			<div class="post-navigation__previous">
-				<div class="post-navigation__link-label"><?= __( 'Vorig bericht', 'clc' ) ?></div>
+				<div class="post-navigation__link-label"><?= __( 'Vorig bericht', 'wbl-theme' ) ?></div>
 				<?= $previous_link ?>
 			</div>
 
@@ -37,7 +37,7 @@ elseif ( ! $next_link ) {
 		<?php if ( $next_link ) : ?>
 
 			<div class="post-navigation__next">
-				<div class="post-navigation__link-label"><?= __( 'Volgend bericht', 'clc' ) ?></div>
+				<div class="post-navigation__link-label"><?= __( 'Volgend bericht', 'wbl-theme' ) ?></div>
 				<?= $next_link ?>
 			</div>
 
