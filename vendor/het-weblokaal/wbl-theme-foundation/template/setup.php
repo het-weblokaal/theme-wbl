@@ -20,33 +20,6 @@ add_action( 'after_setup_theme', function() {
 	// Body Class
 	add_filter( 'body_class', 'WBL\Theme\body_class' );
 
-	/**
-	 * Cleanup
-	 */
-	remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 ); // remove REST API link
-	remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ); // remove Oembed links which allow the site to be embedded in other sites
-	remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // remove Shortlink meta
-	add_action( 'init', function() { wp_deregister_script( 'wp-embed' ); } ); // Oembed: Remove javascript which is used to embed other sites in a page
-
-	/**
-	 * HTML HEAD
-	 */
-	add_action( 'wp_head', 'WBL\Theme\display_meta_charset',   0 );
-	add_action( 'wp_head', 'WBL\Theme\display_meta_viewport',  1 );
-	add_theme_support( 'title-tag' );
-
-	/**
-	 * Page Template
-	 */
-	add_filter( 'theme_templates', __NAMESPACE__ . '\custom_templates', 10, 4 );
-
-	/**
-	 * Navigation
-	 */
-	add_filter( 'nav_menu_css_class',         __NAMESPACE__ . '\nav_menu_css_class',         5, 2 );
-	add_filter( 'nav_menu_item_id',           __NAMESPACE__ . '\nav_menu_item_id',           5    );
-	add_filter( 'nav_menu_submenu_css_class', __NAMESPACE__ . '\nav_menu_submenu_css_class', 5    );
-	add_filter( 'nav_menu_link_attributes',   __NAMESPACE__ . '\nav_menu_link_attributes',   5    );
 
 }, 5 );
 

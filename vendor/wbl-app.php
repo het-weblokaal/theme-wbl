@@ -1100,14 +1100,14 @@ final class App {
 	    if ( is_array( $data ) || is_object( $data ) ) {
 
 			if ($show_namespace) {
-				error_log( '[' . __NAMESPACE__ . '] ...' );
+				error_log( '[' . WBL\Theme] ...' );
 			}
 
 	        error_log( print_r( $data, true ) );
 	    } else {
 
 	    	if ($show_namespace) {
-	    		$data = '[' . __NAMESPACE__ . '] ' . $data;
+	    		$data = '[' . WBL\Theme] ' . $data;
 	    	}
 
 	        error_log( $data );
