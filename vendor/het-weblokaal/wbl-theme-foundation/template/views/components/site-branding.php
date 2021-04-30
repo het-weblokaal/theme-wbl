@@ -1,7 +1,10 @@
 <?php
 
-use function WBL\Theme\display_site_branding;
+namespace WBL\Theme;
 
-display_site_branding( [
-	'heading'   => true,
-] );
+?>
+
+<div class="site-branding <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
+	<a class="site-branding__link" href="<?= home_url() ?>" rel="home"><?= render_site_logo() ?></a>
+</div>
+
