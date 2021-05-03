@@ -20,10 +20,6 @@ add_action( 'after_setup_theme', function() {
 	/* Manage Frontend assets */
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\manage_frontend_assets' );
 
-	// Make theme data available in JS
-	add_action( 'wp_footer', __NAMESPACE__ . '\theme_data_script' );
-	add_action( 'admin_footer', __NAMESPACE__ . '\theme_data_script' );
-
 }, 5 );
 
 /**
@@ -91,19 +87,4 @@ function get_global_color_inline_style() {
 	}
 
 	return $css;
-}
-
-
-/**
- * Make theme data (like version) available to scripts
- */
-function theme_data_script() {
-
-	$theme = [
-		'id' => Theme::get_id(),
-		'version' => Theme::get_version(),
-		'assetUri' => Theme::get_asset_uri(),
-	];
-
-	echo "<script>var theme = ", json_encode( $theme, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ), "</script>";
 }

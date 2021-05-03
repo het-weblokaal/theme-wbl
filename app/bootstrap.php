@@ -45,7 +45,7 @@ if ( file_exists( Theme::get_vendor_path( 'wptt-webfont-loader.php' ) ) ) {
 array_map( function( $file ) {
 	require_once( Theme::get_app_path( "{$file}.php" ) );
 }, [
-	// 'setup/assets',
+	'setup/assets',
 	// 'setup/block-editor',
 	// 'setup/block-editor-assets',
 	// 'setup/blocks',

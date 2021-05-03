@@ -6,29 +6,30 @@
 namespace WBL\Theme;
 
 
-/**
- * Setup at regular hook
- */
-add_action( 'after_setup_theme', function() {
-
-	add_filter( 'nav_menu_css_class',         'WBL\Theme\nav_menu_css_class',         5, 2 );
-	add_filter( 'nav_menu_item_id',           'WBL\Theme\nav_menu_item_id',           5    );
-	add_filter( 'nav_menu_submenu_css_class', 'WBL\Theme\nav_menu_submenu_css_class', 5    );
-	add_filter( 'nav_menu_link_attributes',   'WBL\Theme\nav_menu_link_attributes',   5    );
-
-}, 5 );
 
 /**
- * Init hook menus
+ * Get menu_name by location
  */
-add_action( 'init', function() {
+function get_menu_name_by_location( $location ) {
+	$locations = get_nav_menu_locations();
 
-	// Register site navigation
-	register_nav_menus( [
-		'site-nav'     => esc_html_x( 'Website navigation', 'nav menu location' ),
-	] );
+	$menu = isset( $locations[ $location ] ) ? wp_get_nav_menu_object( $locations[ $location ] ) : '';
 
-}, 5 );
+	return $menu->name ?? '';
+}
+
+/**
+ * Get menu id by location
+ */
+function get_menu_id_by_location( $location ) {
+	$locations = get_nav_menu_locations();
+
+	$menu = isset( $locations[ $location ] ) ? wp_get_nav_menu_object( $locations[ $location ] ) : '';
+
+	return $menu->term_id ?? false;
+}
+
+
 
 /**
  * Simplifies the nav menu class system.

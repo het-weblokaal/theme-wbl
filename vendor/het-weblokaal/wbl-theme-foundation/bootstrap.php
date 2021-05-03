@@ -27,43 +27,34 @@ require_once( "classes/Template.php" );
 array_map( function( $file ) {
 	require_once( "template/functions/{$file}.php" );
 }, [
-	'helpers',
-	'media',
-	'menu',
-	'page',
-	'polylang',
+	'comments',
 	'entry',
-	// 'loop',
-	// 'meta',
+	'helpers',
 	'html-head',
-	'site-branding',
-	'site-footer',
+	'page',
+	'site',
 ] );
 
 # ------------------------------------------------------------------------------
-# Load 'setup' files.
+# Load theme 'setup' en functions files.
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
-	require_once( Theme::get_app_path( "{$file}.php" ) );
+	require_once( "theme/{$file}.php" );
 }, [
-	'setup/assets',
-	'setup/block-editor',
-	'setup/block-editor-assets',
-	'setup/blocks',
-	'setup/cleanup',
-	'setup/customizer',
-	'setup/custom-templates',
-	'setup/dependencies',
-	'setup/entry',
-	'setup/general',
-	'setup/loop',
-	'setup/media',
-	'setup/menu',
-	'setup/newsletter',
-	'setup/page',
-	'setup/password-protection',
-	'setup/polylang',
-	'setup/posts',
-	'setup/seo',
+	'setup',
+	'functions/assets',
+	'functions/block-editor',
+	'functions/block-editor-assets',
+	'functions/blocks',
+	'functions/customizer',
+	'functions/custom-templates',
+	'functions/dependencies',
+	'functions/entry',
+	'functions/general',
+	'functions/media',
+	'functions/menu',
+	'functions/password-protection',
+	'functions/polylang',
+	'functions/seo',
 ] );

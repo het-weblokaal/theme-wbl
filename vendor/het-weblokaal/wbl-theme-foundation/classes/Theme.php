@@ -804,14 +804,14 @@ final class Theme {
 	    if ( is_array( $data ) || is_object( $data ) ) {
 
 			if ($show_namespace) {
-				error_log( '[' . WBL\Theme] ...' );
+				error_log( '[WBL\Theme] ...' );
 			}
 
 	        error_log( print_r( $data, true ) );
 	    } else {
 
 	    	if ($show_namespace) {
-	    		$data = '[' . WBL\Theme] ' . $data;
+	    		$data = '[WBL\Theme] ' . $data;
 	    	}
 
 	        error_log( $data );

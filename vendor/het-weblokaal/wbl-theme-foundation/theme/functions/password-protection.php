@@ -7,20 +7,6 @@ namespace WBL\Theme;
 
 
 /**
- * Setup at regular hook
- */
-add_action( 'after_setup_theme', function() {
-
-	add_filter( 'protected_title_format', 'WBL\Theme\password_protected_title_format' );
-	add_filter( 'the_password_form', 'WBL\Theme\the_password_form' );
-
-	// Don't show post_thumbnail on password protected pages 
-	add_filter( 'has_post_thumbnail', 'WBL\Theme\password_protected_thumbnail', 10, 3 );
-
-}, 5 );
-
-
-/**
  * Get password protection status of the current post
  *
  * @return string locked or opened | boolean false (not applicable)

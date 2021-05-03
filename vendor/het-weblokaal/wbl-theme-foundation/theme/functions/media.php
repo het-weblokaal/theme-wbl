@@ -1,9 +1,6 @@
 <?php
-
 /**
- * Media template functions
- *
- * Things like Featured image
+ * Theme media functions.
  */
 
 namespace WBL\Theme;
@@ -36,26 +33,4 @@ function get_featured_image_src( $size = 'thumbnail' ) {
 	}
 
 	return $src;
-}
-
-/**
- * Render the post featured image
- *
- * @param  array  $args
- * @return string
- */
-function render_featured_image( array $args = [] ) {
-
-	$html = '';
-
-	$args = wp_parse_args( $args, [
-		'size' => 'thumbnail',
-		'class' => ''
-	] );
-
-    if ($image_id = get_featured_image_id()) {
-	    $html = \wp_get_attachment_image( $image_id, $args['size'], false, ['class' => $args['class']] );
-	}
-
-	return $html;
 }

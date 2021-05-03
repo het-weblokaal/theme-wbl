@@ -7,17 +7,6 @@ namespace WBL\Theme;
 
 
 /**
- * Setup at regular hook
- */
-add_action( 'after_setup_theme', function() {
-
-	// Show gutenberg on page_for_posts page (blog/home)
-	add_filter( 'replace_editor', 'WBL\Theme\enable_block_editor_on_blog_page', 10, 2 );
-
-}, 5 );
-
-
-/**
  * Simulate non-empty content to enable Gutenberg editor
  *
  * @link   https://wordpress.stackexchange.com/a/350563/133100

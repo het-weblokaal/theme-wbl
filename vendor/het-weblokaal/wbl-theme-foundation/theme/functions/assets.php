@@ -10,17 +10,6 @@ namespace WBL\Theme;
 
 
 /**
- * Setup at regular hook
- */
-add_action( 'after_setup_theme', function() {
-
-	// Make theme data available in JS
-	add_action( 'wp_footer', 'WBL\Theme\add_theme_data_script' );
-	add_action( 'admin_footer', 'WBL\Theme\add_theme_data_script' );
-
-}, 5 );
-
-/**
  * Make theme data (like version) available to scripts
  */
 function add_theme_data_script() {

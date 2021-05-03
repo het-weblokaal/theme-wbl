@@ -16,7 +16,7 @@ function render_site_logo() {
 	$html = '';
 
 	// Try to get logo
-	$theme_logo = apply_filters( 'wbl/theme/site-logo', Theme::get_asset_uri('assets/img/logo.png') );
+	$theme_logo = apply_filters( 'wbl/theme/site-logo', Theme::get_asset_uri('img/logo.png') );
 
 	if ($theme_logo) {
 
@@ -38,7 +38,7 @@ function render_site_logo() {
 	if ( ! $html ) {
 		$html = sprintf( '<span class="%s">%s</span>', 
 			'site-logo site-logo--text',
-			get_bloginfo( 'name' );
+			get_bloginfo( 'name' )
 		);
 	} 
 

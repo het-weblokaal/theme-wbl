@@ -5,17 +5,6 @@
 
 namespace WBL\Theme;
 
-
-/**
- * Setup at regular hook
- */
-add_action( 'after_setup_theme', function() {
-
-	// Setup allowed blocks
-	add_filter( 'allowed_block_types', 'WBL\Theme\allowed_block_types', 10, 2 );
-
-}, 5 );
-
 /**
  * Get the allowed blocks (used by filter)
  */

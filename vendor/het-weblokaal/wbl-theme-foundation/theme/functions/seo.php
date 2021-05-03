@@ -7,20 +7,6 @@ namespace WBL\Theme;
 
 
 /**
- * Setup at regular hook
- */
-add_action( 'after_setup_theme', function() {
-
-	/* Page SEO Meta */
-	add_filter( 'slim_seo_meta_title', 'WBL\Theme\set_meta_title_for_blog' );
-	add_filter( 'slim_seo_meta_description', 'WBL\Theme\manage_page_meta_description' );
-
-	/* Breadcrumbs */
-	add_filter( 'slim_seo_breadcrumbs_links', 'WBL\Theme\manageslim_seo__breadcrumbs' );
-
-}, 5 );
-
-/**
  * Manage the Page Meta Title
  *
  * @return string
