@@ -49,19 +49,6 @@ add_action( 'after_setup_theme', function() {
 	// Excerpt
 	add_filter( 'excerpt_more',    'WBL\Theme\edit_excerpt_more' ); // Remove link from excerpt
 
-	// Show gutenberg on page_for_posts page (blog/home)
-	add_filter( 'replace_editor', 'WBL\Theme\enable_block_editor_on_blog_page', 10, 2 );
-
-	// Remove google fonts
-	add_action( 'enqueue_block_editor_assets', 'WBL\Theme\remove_google_font' );
-
-	// Remove block directory (installation of new blocks through the editor)
-	remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
-	remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
-
-	// Setup allowed blocks
-	add_filter( 'allowed_block_types', 'WBL\Theme\allowed_block_types', 10, 2 );
-
 	// Make theme data available in JS
 	add_action( 'wp_footer',    'WBL\Theme\add_theme_data_script' );
 	add_action( 'admin_footer', 'WBL\Theme\add_theme_data_script' );
@@ -83,13 +70,47 @@ add_action( 'after_setup_theme', function() {
 	// Improve archive description
 	add_filter( 'get_the_archive_description', 'WBL\Theme\archive_description_filter' );
 
-
 	// Page SEO Meta
 	add_filter( 'slim_seo_meta_title',       'WBL\Theme\set_meta_title_for_blog'      );
 	add_filter( 'slim_seo_meta_description', 'WBL\Theme\manage_page_meta_description' );
 
 	// Breadcrumbs
 	add_filter( 'slim_seo_breadcrumbs_links', 'WBL\Theme\manageslim_seo__breadcrumbs' );
+
+	/**
+	 * Block Editor
+	 */
+	add_theme_support( 'editor-styles' );
+
+	// Alignment
+	add_theme_support( 'align-wide' );
+
+	// Disable custom colors
+	add_theme_support( 'disable-custom-colors' );
+
+	// Disable gradients
+	add_theme_support( 'editor-gradient-presets' );
+	add_theme_support( 'disable-custom-gradients' );
+
+	// Disable font-sizes
+	add_theme_support( 'editor-font-sizes' );
+	add_theme_support( 'disable-custom-font-sizes' );
+
+	// Custom Spacing (Experimental)
+	// add_theme_support( 'experimental-custom-spacing' );
+
+	// Core Block Patterns
+	remove_theme_support( 'core-block-patterns' );
+
+	// Setup allowed blocks
+	add_filter( 'allowed_block_types', 'WBL\Theme\allowed_block_types', 10, 2 );
+
+	// Show gutenberg on page_for_posts page (blog/home)
+	add_filter( 'replace_editor', 'WBL\Theme\enable_block_editor_on_blog_page', 10, 2 );
+
+	// Remove block directory (installation of new blocks through the editor)
+	remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
+	remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
 
 }, 5 );
 
