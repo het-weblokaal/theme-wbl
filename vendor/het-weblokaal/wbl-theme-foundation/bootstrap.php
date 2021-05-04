@@ -17,6 +17,13 @@
 
 namespace WBL\Theme;
 
+// Load the Theme Foundation externally if we are developping it
+if (file_exists( WP_CONTENT_DIR . '/themes/wbl-theme-foundation/bootstrap.php' )) {
+	require_once( WP_CONTENT_DIR . '/themes/wbl-theme-foundation/bootstrap.php' );
+
+	exit;
+}
+
 // Load Theme class
 require_once( "classes/Theme.php" );
 
@@ -35,17 +42,27 @@ array_map( function( $file ) {
 	'site',
 ] );
 
+
+
 # ------------------------------------------------------------------------------
-# Load theme 'setup' en functions files.
+# Load 'setup' files.
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
 	require_once( "theme/{$file}.php" );
 }, [
 	'setup',
+] );
+
+# ------------------------------------------------------------------------------
+# Load 'functions' files.
+# ------------------------------------------------------------------------------
+
+array_map( function( $file ) {
+	require_once( "theme/{$file}.php" );
+}, [
 	'functions/assets',
 	'functions/block-editor',
-	'functions/block-editor-assets',
 	'functions/blocks',
 	'functions/customizer',
 	'functions/custom-templates',

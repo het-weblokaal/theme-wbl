@@ -6,9 +6,6 @@ namespace WBL\Theme;
  */
 add_action( 'after_setup_theme', function() {
 
-	// // Inform WordPress of custom language directory
-	// load_theme_textdomain( 'wbl', Theme::get_file_path( Theme::get_lang_dir() ) );
-
 	// Automatically add the `<title>` tag.
 	add_theme_support( 'title-tag' );
 
@@ -71,11 +68,11 @@ add_action( 'after_setup_theme', function() {
 	add_filter( 'get_the_archive_description', 'WBL\Theme\archive_description_filter' );
 
 	// Page SEO Meta
-	add_filter( 'slim_seo_meta_title',       'WBL\Theme\set_meta_title_for_blog'      );
-	add_filter( 'slim_seo_meta_description', 'WBL\Theme\manage_page_meta_description' );
+	add_filter( 'slim_seo_meta_title',       'WBL\Theme\manage_site_meta_title'       );
+	add_filter( 'slim_seo_meta_description', 'WBL\Theme\manage_site_meta_description' );
 
 	// Breadcrumbs
-	add_filter( 'slim_seo_breadcrumbs_links', 'WBL\Theme\manageslim_seo__breadcrumbs' );
+	add_filter( 'slim_seo_breadcrumbs_links', 'WBL\Theme\manage_slim_seo_breadcrumbs' );
 
 	/**
 	 * Block Editor

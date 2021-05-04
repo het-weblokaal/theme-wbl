@@ -7,6 +7,6 @@ namespace WBL\Theme;
 
 	<?php Template::display( 'components/page-breadcrumbs' ) ?>
 
-	<?php //Template::display( 'components/page-title' ) ?>
+	<?php Template::display( 'components/page-title' ) ?>
 
 </header>

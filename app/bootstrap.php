@@ -45,24 +45,16 @@ if ( file_exists( Theme::get_vendor_path( 'wptt-webfont-loader.php' ) ) ) {
 array_map( function( $file ) {
 	require_once( Theme::get_app_path( "{$file}.php" ) );
 }, [
-	'setup/assets',
-	// 'setup/block-editor',
-	// 'setup/block-editor-assets',
-	// 'setup/blocks',
-	// 'setup/cleanup',
-	// 'setup/customizer',
-	// 'setup/custom-templates',
-	// 'setup/dependencies',
-	// 'setup/entry',
-	// 'setup/general',
-	// 'setup/loop',
-	// 'setup/media',
-	// 'setup/menu',
-	// 'setup/newsletter',
-	// 'setup/page',
-	// 'setup/password-protection',
-	// 'setup/polylang',
-	// 'setup/posts',
-	// 'setup/seo',
+	'setup',
+] );
+
+# ------------------------------------------------------------------------------
+# Load 'function' files.
+# ------------------------------------------------------------------------------
+
+array_map( function( $file ) {
+	require_once( Theme::get_app_path( "{$file}.php" ) );
+}, [
+	'functions',
 ] );
 

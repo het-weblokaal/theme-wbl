@@ -10,7 +10,7 @@ namespace WBL\Theme;
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-// Load the WBL App
+// Load the Theme Foundation
 require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
 
 // Bootstrap

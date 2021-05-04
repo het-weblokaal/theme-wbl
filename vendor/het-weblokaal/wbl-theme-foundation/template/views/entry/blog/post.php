@@ -14,7 +14,7 @@ namespace WBL\Theme;
 		</header>
 
 		<div class="entry__image">
-			<?= render_featured_image([ 'size' => $args['large'] ]) ?>
+			<?= render_featured_image([ 'size' => 'large' ]) ?>
 		</div>
 
 		<div class="entry__main">

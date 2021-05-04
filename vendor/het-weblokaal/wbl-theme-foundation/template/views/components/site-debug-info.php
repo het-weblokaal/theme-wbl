@@ -1,7 +1,6 @@
 <?php
 
 namespace WBL\Theme;
-use WBL\Theme\Theme;
 
 /// Only show site version on development
 if ( ! Theme::is_debug_mode() ) {
