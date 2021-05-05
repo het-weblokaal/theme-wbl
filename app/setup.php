@@ -28,10 +28,23 @@ add_action( 'after_setup_theme', function() {
 		]
 	] );
 
+	// Add scripts and styles for block-editor
+	add_action( 'enqueue_block_editor_assets', 'WBL\Theme\add_block_scripts_and_styles' );
+
+	// Load font
+	add_action( 'enqueue_block_assets', 'WBL\Theme\load_font' );
+
+	// Global inline css ...
+	add_action( 'enqueue_block_assets', 'WBL\Theme\add_global_color_inline_css' );
+
 	// Add block category for this theme
 	// add_filter( 'block_categories', __NAMESPACE__ . '\register_block_category' );
 
-	// Setup block pattern category
+	/**
+	 * Register block patterns
+	 */
+
+	// Setup custom category for block patterns
 	// register_block_pattern_category( Theme::get_id(), [ 'label' => Theme::get_name() ], 'Theme category' );
 
 	// Setup block patterns
@@ -41,14 +54,19 @@ add_action( 'after_setup_theme', function() {
 
 
 /**
- * Manage scripts/styles on frontend + backend
+ * Load font
  */
-add_action( 'enqueue_block_assets', function() {
+function load_font() {
 
 	// Load font
 	// wp_enqueue_style( Theme::handle('roboto-font'), wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap' ), null, Theme::get_version() );
+}
 
-	// Add global color inline style
+/**
+ * Add global color inline style
+ */
+function add_global_color_inline_css() {
+
 	if ($global_color_css = get_global_color_inline_style()) {
 
 		// Register global styles
@@ -56,51 +74,12 @@ add_action( 'enqueue_block_assets', function() {
 		wp_add_inline_style( Theme::handle('global-color'), $global_color_css );
 		wp_enqueue_style( Theme::handle('global-color') );
 	}
-});
+}
 
 /**
- * Manage scripts/styles on frontend
+ * Block assets for the block editor
  */
-add_action( 'wp_enqueue_scripts', function() {
-
-	// Remove Gutenberg styles
-	wp_dequeue_style( 'wp-block-library' );
-
-	// Add theme scripts
-	wp_enqueue_script( 
-		Theme::handle(), 
-		Theme::asset( 'js/app.js' ), 
-		null, 
-		null, 
-		true 
-	);
-
-	// Add theme styles
-	wp_enqueue_style( Theme::handle(), Theme::asset( 'css/style.css' ), null, null );
-} );
-
-/**
- * Block editor assets
- */
-add_action( 'enqueue_block_editor_assets', function() {
-
-	/**
-	 * Scripts
-	 */
-
-	// Add script for block editor
-	wp_enqueue_script( 
-		Theme::handle('block-editor'), 
-		Theme::asset( 'js/block-editor.js' ), 
-		[ 
-			'wp-blocks', 
-			'wp-i18n', 
-			'wp-data', 
-			'wp-dom-ready', 
-			'wp-edit-post', 
-			'wp-hooks'
-		] 
-	);
+function add_block_scripts_and_styles() {
 
 	// Add script for blocks
 	wp_enqueue_script(
@@ -119,21 +98,10 @@ add_action( 'enqueue_block_editor_assets', function() {
 		true // Enqueue the script in the footer.
 	);
 
-	/**
-	 * Styles
-	 */
-
-	// Remove core editor google font
-	wp_deregister_style( 'wp-editor-font' );
-	wp_register_style( 'wp-editor-font', '' );
-
-	// Add the themes editor styles to the editor
-	// wp_enqueue_style( Theme::handle('editor'), Theme::asset( 'css/editor-style.css' ), null, null );
-
 	// By depending on frontend-style the editor style is later in the cascade
 	wp_enqueue_style(
 		Theme::handle('blocks'),
 		Theme::asset( 'css/blocks.editor.css' ),
 		array( 'wp-edit-blocks' )
 	);
-});
+}
