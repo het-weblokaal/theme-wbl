@@ -10,9 +10,14 @@ class ComposerStaticInit9cc99c1266b9b5b429d830b64d3c63a0
         'a5f882d89ab791a139cd2d37e50cdd80' => __DIR__ . '/..' . '/tgmpa/tgm-plugin-activation/class-tgm-plugin-activation.php',
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->classMap = ComposerStaticInit9cc99c1266b9b5b429d830b64d3c63a0::$classMap;
 
         }, null, ClassLoader::class);
     }

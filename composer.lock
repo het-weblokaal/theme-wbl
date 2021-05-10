@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3981c5d5483e7cb09aac75e9a1dc927c",
+    "content-hash": "4ec0314b2fdf4924a9eb804b425f32bb",
     "packages": [
+        {
+            "name": "het-weblokaal/wbl-theme-foundation",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/het-weblokaal/wbl-theme-foundation.git",
+                "reference": "76591e0dcc47cbc4e9227620e650d70bedc66ef9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/76591e0dcc47cbc4e9227620e650d70bedc66ef9",
+                "reference": "76591e0dcc47cbc4e9227620e650d70bedc66ef9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": [],
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Erik Joling",
+                    "email": "erik.info@hetweblokaal.nl",
+                    "homepage": "https://www.hetweblokaal.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A theme foundation by Het Weblokaal",
+            "homepage": "https://github.com/het-weblokaal/wbl-theme-foundation",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/het-weblokaal/wbl-theme-foundation/issues",
+                "source": "https://github.com/het-weblokaal/wbl-theme-foundation/tree/main"
+            },
+            "time": "2021-05-04T15:20:33+00:00"
+        },
         {
             "name": "tgmpa/tgm-plugin-activation",
             "version": "2.6.1",
@@ -59,15 +105,22 @@
                 "theme",
                 "wordpress"
             ],
+            "support": {
+                "issues": "https://github.com/TGMPA/TGM-Plugin-Activation/issues",
+                "source": "https://github.com/TGMPA/TGM-Plugin-Activation"
+            },
             "time": "2016-05-19T15:46:51+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "het-weblokaal/wbl-theme-foundation": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

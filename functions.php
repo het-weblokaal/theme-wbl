@@ -11,7 +11,9 @@ namespace WBL\Theme;
 defined( 'ABSPATH' ) || exit;
 
 // Load the Theme Foundation
-require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
+// require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
+require_once( __DIR__ . '/../wbl-theme-foundation/bootstrap.php' );
+Template::customize(['main_template_dir' => '../wbl-theme-foundation/template/views']);
 
 // Bootstrap
 require_once( Theme::get_app_path( 'bootstrap.php' ) );

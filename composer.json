@@ -4,6 +4,7 @@
     },
     "repositories": [],
     "require": {
+        "het-weblokaal/wbl-theme-foundation": "dev-main",
         "tgmpa/tgm-plugin-activation": "^2.6"
     }
 }

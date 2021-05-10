@@ -1,59 +1,113 @@
-[
-    {
-        "name": "tgmpa/tgm-plugin-activation",
-        "version": "2.6.1",
-        "version_normalized": "2.6.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/TGMPA/TGM-Plugin-Activation.git",
-            "reference": "c626d0d91fc8ef24916e809c7b79eeafab1c1cac"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/TGMPA/TGM-Plugin-Activation/zipball/c626d0d91fc8ef24916e809c7b79eeafab1c1cac",
-            "reference": "c626d0d91fc8ef24916e809c7b79eeafab1c1cac",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2"
-        },
-        "time": "2016-05-19T15:46:51+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "class-tgm-plugin-activation.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "Thomas Griffin",
-                "homepage": "http://thomasgriffinmedia.com",
-                "role": "Developer"
+{
+    "packages": [
+        {
+            "name": "het-weblokaal/wbl-theme-foundation",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/het-weblokaal/wbl-theme-foundation.git",
+                "reference": "76591e0dcc47cbc4e9227620e650d70bedc66ef9"
             },
-            {
-                "name": "Gary Jones",
-                "homepage": "https://github.com/GaryJones",
-                "role": "Developer"
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/76591e0dcc47cbc4e9227620e650d70bedc66ef9",
+                "reference": "76591e0dcc47cbc4e9227620e650d70bedc66ef9",
+                "shasum": ""
             },
-            {
-                "name": "Juliette Reinders Folmer",
-                "homepage": "https://github.com/jrfnl",
-                "role": "Developer"
-            }
-        ],
-        "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
-        "homepage": "http://tgmpluginactivation.com",
-        "keywords": [
-            "activation",
-            "library",
-            "plugins",
-            "theme",
-            "wordpress"
-        ]
-    }
-]
+            "require": {
+                "php": ">=7.0"
+            },
+            "time": "2021-05-04T15:20:33+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": [],
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Erik Joling",
+                    "email": "erik.info@hetweblokaal.nl",
+                    "homepage": "https://www.hetweblokaal.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A theme foundation by Het Weblokaal",
+            "homepage": "https://github.com/het-weblokaal/wbl-theme-foundation",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/het-weblokaal/wbl-theme-foundation/issues",
+                "source": "https://github.com/het-weblokaal/wbl-theme-foundation/tree/main"
+            },
+            "install-path": "../het-weblokaal/wbl-theme-foundation"
+        },
+        {
+            "name": "tgmpa/tgm-plugin-activation",
+            "version": "2.6.1",
+            "version_normalized": "2.6.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TGMPA/TGM-Plugin-Activation.git",
+                "reference": "c626d0d91fc8ef24916e809c7b79eeafab1c1cac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TGMPA/TGM-Plugin-Activation/zipball/c626d0d91fc8ef24916e809c7b79eeafab1c1cac",
+                "reference": "c626d0d91fc8ef24916e809c7b79eeafab1c1cac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "time": "2016-05-19T15:46:51+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "class-tgm-plugin-activation.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Griffin",
+                    "homepage": "http://thomasgriffinmedia.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Gary Jones",
+                    "homepage": "https://github.com/GaryJones",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
+            "homepage": "http://tgmpluginactivation.com",
+            "keywords": [
+                "activation",
+                "library",
+                "plugins",
+                "theme",
+                "wordpress"
+            ],
+            "install-path": "../tgmpa/tgm-plugin-activation"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
