@@ -1,0 +1,33 @@
+/**
+ * PNV Gutenberg Block styles for the editor
+ */
+
+/**
+ * Two Column Content block editor css
+ *
+ * Only use this for basic styles
+ */
+
+[data-type="wbl-theme/segment"] {
+
+}
+
+.wbl-segment__inner {
+
+	}
+
+/**
+ * Two Column Content block editor css
+ *
+ * Only use this for basic styles
+ */
+
+[data-type="wbl-theme/card"] {
+
+}
+
+.wbl-card__inner {
+
+	}
+
+

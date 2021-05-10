@@ -27,8 +27,8 @@ const processIE11 = ! process.env.noIE11;
  * Sets the development path to assets. By default, this is the `/assets`
  * folder in the theme.
  */
-const devPath  = 'resources';
-const pubPath  = 'public';
+const devPath  = 'assets';
+const pubPath  = 'assets';
 
 /**
  * Sets the path to the generated assets. By default, this is the `/dist` folder
@@ -82,9 +82,9 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( `${devPath}/js/polyfill.js`,     'js' )
-   .js( `${devPath}/js/theme.js`,        'js' )
-   .js( `${devPath}/js/block-editor.js`, 'js' );
+mix.js( `${devPath}/js/build/polyfill.js`,     'js' )
+   .js( `${devPath}/js/build/theme.js`,        'js' )
+   .js( `${devPath}/js/build/block-editor.js`, 'js' );
 
 /**
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -92,11 +92,11 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
  */
-mix.postCss( `${devPath}/css/style.css`,             'css' )
-   .postCss( `${devPath}/css/editor-style.css`,      'css' );
+mix.postCss( `${devPath}/css/build/style.css`,             'css' )
+   .postCss( `${devPath}/css/build/editor-style.css`,      'css' );
 
 if ( processIE11 ) {
-	mix.postCss( `${devPath}/css/ie11-style.css`, 'css', [
+	mix.postCss( `${devPath}/css/build/ie11-style.css`, 'css', [
 		require( 'postcss-import' )(),
 		require( 'postcss-mixins' )(),
 		require( 'postcss-nested' )(),
@@ -116,13 +116,13 @@ if ( processIE11 ) {
  * @link https://laravel-mix.com/docs/master/copying-files
  */
 if ( processMedia ) {
-	mix.copy( `${devPath}/img/*`,   `${pubPath}/img` )
-	   .copy( `${devPath}/svg/*`,   `${pubPath}/svg` );
+	mix.copy( `${devPath}/build/img/*`,   'img' )
+	   .copy( `${devPath}/build/svg/*`,   'svg' );
 }
 
 
 /**
  * Gutenberg blocks
  */
-mix.react(   `${devPath}/blocks/blocks.js`,         'js'  )
-   .postCss( `${devPath}/blocks/blocks.editor.css`, 'css' );
+mix.react(   `blocks/blocks.js`,         'js'  )
+   .postCss( `blocks/blocks.editor.css`, 'css' );
