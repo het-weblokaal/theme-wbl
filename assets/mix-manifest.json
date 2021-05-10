@@ -1,9 +1,10 @@
 {
-    "/js/block-editor.js": "/js/block-editor.js?id=0e76afd81711ea5249de",
-    "/js/blocks.js": "/js/blocks.js?id=c886abda0b0a96fc4749",
-    "/js/polyfill.js": "/js/polyfill.js?id=53611988abb8f4ba867d",
+    "/js/block-editor.js": "/js/block-editor.js?id=f6317e2b64c84188cb2a",
+    "/js/blocks.js": "/js/blocks.js?id=ff0c87cf13d66ab84d4a",
+    "/js/polyfill.js": "/js/polyfill.js?id=1fd9cd207431da32efae",
     "/css/style.css": "/css/style.css?id=88c528a0972d499ead1a",
     "/css/editor-style.css": "/css/editor-style.css?id=54af209548f004ffa0be",
+    "/css/ie11-style.css": "/css/ie11-style.css?id=9f8c16a931cbd6b3aece",
     "/css/blocks.editor.css": "/css/blocks.editor.css?id=0c7d58ce609d6ad16cef",
-    "/js/theme.js": "/js/theme.js?id=943b19c0d00d220a3e52"
+    "/js/theme.js": "/js/theme.js?id=751820c318a0c671167c"
 }

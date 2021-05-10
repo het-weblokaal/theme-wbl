@@ -27,8 +27,9 @@ const processIE11 = ! process.env.noIE11;
  * Sets the development path to assets. By default, this is the `/assets`
  * folder in the theme.
  */
-const devPath  = 'assets';
+const devPath  = 'src';
 const pubPath  = 'assets';
+const blockPath  = 'inc/blocks';
 
 /**
  * Sets the path to the generated assets. By default, this is the `/dist` folder
@@ -82,9 +83,9 @@ mix.version();
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
-mix.js( `${devPath}/js/build/polyfill.js`,     'js' )
-   .js( `${devPath}/js/build/theme.js`,        'js' )
-   .js( `${devPath}/js/build/block-editor.js`, 'js' );
+mix.js( `${devPath}/js/polyfill.js`,     'js' )
+   .js( `${devPath}/js/theme.js`,        'js' )
+   .js( `${devPath}/js/block-editor.js`, 'js' );
 
 /**
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -92,11 +93,11 @@ mix.js( `${devPath}/js/build/polyfill.js`,     'js' )
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
  */
-mix.postCss( `${devPath}/css/build/style.css`,             'css' )
-   .postCss( `${devPath}/css/build/editor-style.css`,      'css' );
+mix.postCss( `${devPath}/css/style.css`,             'css' )
+   .postCss( `${devPath}/css/editor-style.css`,      'css' );
 
 if ( processIE11 ) {
-	mix.postCss( `${devPath}/css/build/ie11-style.css`, 'css', [
+	mix.postCss( `${devPath}/css/ie11-style.css`, 'css', [
 		require( 'postcss-import' )(),
 		require( 'postcss-mixins' )(),
 		require( 'postcss-nested' )(),
@@ -111,18 +112,7 @@ if ( processIE11 ) {
 }
 
 /**
- * Copy images and fonts to public
- *
- * @link https://laravel-mix.com/docs/master/copying-files
- */
-if ( processMedia ) {
-	mix.copy( `${devPath}/build/img/*`,   'img' )
-	   .copy( `${devPath}/build/svg/*`,   'svg' );
-}
-
-
-/**
  * Gutenberg blocks
  */
-mix.react(   `blocks/blocks.js`,         'js'  )
-   .postCss( `blocks/blocks.editor.css`, 'css' );
+mix.react(   `${blockPath}/blocks.js`,         'js'  )
+   .postCss( `${blockPath}/blocks.editor.css`, 'css' );
