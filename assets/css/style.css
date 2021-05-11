@@ -778,10 +778,484 @@ td {
 }
 
 /*--------------------------------------------------------------
-# Structure - Ground-zero styles (resets, box-sizing, etc.).
+# Structure - 
 --------------------------------------------------------------*/
 
-/* @import "elements/root.css"; */
+html {
+
+}
+
+body {
+
+}
+
+.site {
+	background-color: var(--background-color);
+	color: var(--foreground-color);
+	font-family: var(--font-1-family);
+	line-height: var(--font-1-line-height);
+	min-height: 100vh;
+}
+
+.site__inner {
+		overflow-y: hidden;
+		overflow-x: hidden;
+		width: 100%;
+		max-width: 100%;
+		clear: both;
+		min-height: 100vh;
+	}
+
+.has-expanded-site-nav .site {
+	/**
+	 * Prevent scrolling
+	 */
+	overflow-y: hidden;
+  	-ms-scroll-chaining: none;
+  	    overscroll-behavior: contain;
+  	height: 100vh;
+}
+
+@media (min-device-width: 1025px) {
+
+.has-expanded-site-nav .site {
+		padding-right: 12px
+}
+	}
+
+.site-header {
+	position: relative;
+	z-index: 99;
+	margin-top: calc(var(--row) * 4);
+	margin-bottom: calc(var(--row) * 6);
+
+ 	/** Additional and modifying classes */
+}
+
+.site-header__inner {
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--page--width);
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		position: relative;
+	}
+
+.site-header .site-branding {
+		width: 135px;
+	}
+
+.site-header .site-nav-toggle {
+		z-index: 99;
+		position: absolute;
+		right: 0;
+	}
+
+.site-header .site-nav-toggle__label {
+			display: none;
+		}
+
+@media (min-width: 600px) {
+			.site-header .site-nav-toggle__label {
+				display: block;
+			}
+		}
+
+/** Media Queries */
+
+@media (min-width: 600px) {
+		.site-header .site-branding {
+			width: 160px;
+		}
+	}
+
+@media (min-width: 840px) {
+
+		.site-header .site-branding {
+			width: 180px;
+		}
+	}
+
+@media (min-width: 1080px) {
+		.site-header .site-branding {
+			width: auto;
+		}
+	}
+
+@media (min-width: 1400px) {
+
+.site-header {
+		padding-left: var(--site--padding);
+		padding-right: var(--site--padding);
+		margin-bottom: calc(var(--row) * 8)
+}
+
+		.site-header__inner {
+			width: auto;
+		}
+			.site-header__inner:before {
+				background: transparent;
+			}
+	}
+
+.has-expanded-site-nav .site-header .site-branding {
+		z-index: -1;
+	}
+
+.has-expanded-site-nav .site-header .site-nav-toggle {
+		--foreground-color: var(--wp--preset--color--primary-1);
+		color: var(--foreground-color);
+	}
+
+.site-main {
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--page--width);
+}
+
+/**
+ * Site footer
+ *
+ * Elements
+ * &__inner
+ * &__title
+ * &__content
+ */
+
+.site-footer {
+	margin-top: calc(var(--row) * 8);
+	margin-bottom: calc(var(--row) * 8);
+}
+
+.site-footer__inner {
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--page--width);
+	}
+
+.site-footer__title {
+		font-size: var(--font-size--lg);
+		margin-top: calc(var(--row) * 6);
+		margin-bottom: calc(var(--row) * 4);
+	}
+
+.site-footer__content {
+		display: grid;
+		grid-column-gap: var(--gutter);
+		column-gap: var(--gutter);
+		grid-row-gap: calc(var(--row) * 3);
+		row-gap: calc(var(--row) * 3);
+		grid-template-columns: 1fr;
+	}
+
+.site-footer__content > * {
+			margin-bottom: 0;
+			width: 100%;
+		}
+
+.site-footer .contact-info {
+		display: grid;
+		grid-column-gap: var(--gutter);
+		column-gap: var(--gutter);
+		grid-row-gap: calc(var(--row) * 3);
+		row-gap: calc(var(--row) * 3);
+		grid-template-columns: 1fr;
+		margin-bottom: calc(var(--row) * 3);
+	}
+
+.site-footer .contact-info > * {
+			margin-bottom: 0;
+			width: 100%;
+		}
+
+.site-footer .contact-info [href^="tel:"] {
+			color: inherit;
+			text-decoration: none;
+		}
+
+.site-footer .social-media {
+		display: flex;
+		align-items: flex-start;
+	}
+
+.site-footer .social-media a {
+			color: inherit;
+			text-decoration: none;
+			margin-right: 1em;
+		}
+
+.site-footer .social-media img {
+			display: block;
+			max-height: 1.5em;
+			margin-bottom: 0;
+		}
+
+.site-footer .documents {
+		margin-bottom: calc(var(--row) * 3);
+	}
+
+.site-footer .documents p:last-child {
+			margin-bottom: 0;
+		}
+
+.site-footer .colophon {
+		font-size: var(--font-size--sm);
+	}
+
+.site-footer .colophon p:last-child {
+			margin-bottom: 0;
+		}
+
+@media (min-width: 360px) {
+		.site-footer__content {
+			grid-template-columns: 1fr 1fr;
+			/* IE11: Grid fallback */
+			column-count: 2;
+		}
+			.site-footer__content > * {
+		/* IE11: Grid fallback */
+		break-inside: avoid-column;
+	}
+
+		.site-footer .contact-info {
+			grid-column: span 2;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.site-footer .colophon {
+			grid-column: span 2;
+		}
+	}
+
+@media (min-width: 840px) {
+		.site-footer__content {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			/* IE11: Grid fallback */
+			column-count: 4;
+		}
+			.site-footer__content > * {
+		/* IE11: Grid fallback */
+		break-inside: avoid-column;
+	}
+
+		.site-footer .contact-info {
+			grid-column: span 4;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		.site-footer .colophon {
+			grid-column: span 2;
+		}
+	}
+
+.page {
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--page-content--width);
+}
+
+@media (min-width: 840px) {
+
+.page {
+		margin-left: calc(var(--column-gutter) * 1);
+}
+	}
+
+/**
+ * Page header
+ *
+ * Elements
+ * __title
+ * __meta-group
+ *
+ */
+
+.page-header {
+	margin-bottom: calc(var(--row) * 4);
+}
+
+.page-header__title {
+		margin: 0;
+	}
+
+.page-header__meta-group {
+		margin-top: calc(var(--row) * 1);
+	}
+
+.page-header .meta {
+		display: inline;
+	}
+
+.page-header .meta--author .meta__content:after {
+				content: ' \2014' ;
+			}
+
+.page-header .meta__content {
+			font-size: inherit;
+		}
+
+.page-header .meta__label {
+		display: none;
+	}
+
+@media (min-width: 1400px) {
+
+.page-header {
+		margin-bottom: calc(var(--row) * 5)
+}
+	}
+
+.page-main__inner {
+
+	}
+
+.page-footer .meta {
+		margin-top: calc(var(--row) * 8);
+		margin-bottom: calc(var(--row) * 8);
+	}
+
+.page-footer .meta__content {
+			font-size: inherit;
+		}
+
+.page-footer .post-navigation {
+	}
+
+@media (min-width: 1080px) {
+
+.page-footer {
+		margin-right: calc(var(--column-gutter) * -1)
+}
+	}
+
+.page-comments {
+	font-size: var(--font-size--sm);
+	margin-top: calc(var(--row) * 6);
+}
+
+.page-comments__title {
+		background-color: var(--foreground-color);
+		border-top-right-radius: 40px;
+		border-bottom-right-radius: 40px;
+		color: var(--background-color);
+		display: inline-block;
+		margin-left: calc(var(--site-padding) * -1);
+		margin-top: 0;
+		margin-bottom: calc(var(--row) * 4);
+		padding: calc(var(--row) * 1) calc(var(--row) * 2 + 0.25em) calc(var(--row) * 1) calc(var(--row) * 2);
+	}
+
+@media (min-width: 360px) {
+
+.page-comments {
+		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width))
+}
+
+		.page-comments__title {
+			margin-left: calc(var(--gutter) * -1);
+		}
+	}
+
+.comments__list,
+		.comments__list ul,
+		.comments__list ol {
+			padding-left: 0;
+			list-style-type: none;
+		}
+
+.comment .children:before,
+	.comment + .comment:before {
+		content: '';
+		display: block;
+		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		width: calc(var(--gutter) * 1);
+		margin-top: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * 4);
+	}
+
+.comment__meta-group {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-bottom: calc(var(--row) * 1);
+	}
+
+.comment__meta-group a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+.comment__meta-group a:hover {
+			}
+
+.comment__author {
+		font-weight: bold;
+		font-size: var(--font-size--md);
+		font-family: var(--font-2-family);
+		line-height: var(--font-2-line-height);
+	}
+
+.comment__author a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+.comment__content * {
+			margin-bottom: calc(var(--row) * 1);
+		}
+
+.comment__content *:last-child {
+				margin-bottom: 0;
+			}
+
+.comment .children {
+		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		margin-top: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * -4);
+		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width));
+		padding-bottom: calc(var(--row) * 4);
+	}
+
+.comment .children:before {
+			margin-left: calc(var(--gutter) * -1);
+		}
+
+@media (min-width: 360px) {
+
+.comment {
+
+/* 		.children & + &:before {
+			margin-left: 0;
+		} */
+}
+
+		.comment .children {
+
+		}
+	}
+
+/** This component doesn't comply to BEM */
+
+.comment-respond:before {
+		content: '';
+		display: block;
+		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+		width: calc(var(--gutter) * 1);
+		margin-top: calc(var(--row) * 4);
+		margin-bottom: calc(var(--row) * 4);
+	}
+
+.comment-respond .comment-reply-title {
+	}
+
+/** This component doesn't comply to BEM */
+
+.comment-form-cookies-consent {
+		line-height: var(--line-height--sm);
+	}
 
 /*--------------------------------------------------------------
 # Objects - Undecorated design patterns.
@@ -2071,6 +2545,40 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			margin-right: 0.5rem;
 		}
 
+.page-image {
+	margin-left: calc(50% - 50vw + var(--site--padding));
+	margin-right: calc(50% - 50vw + var(--site--padding));
+	width: auto;
+	margin-top: calc(var(--row) * 4);
+	margin-bottom: calc(var(--row) * 4);
+}
+
+@media (min-width: 1080px) {
+
+.page-image {
+		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
+		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding))
+}
+	}
+
+.page-image__inner {
+	}
+
+.page-image img {
+		display: block;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+@media (min-width: 840px) {
+
+		.page-image__inner {
+			margin-left: auto;
+			margin-right: auto;
+			width: var(--page--width);
+		}
+	}
+
 .password-protection-form {
 	margin-bottom: calc(var(--row) * 3);
 }
@@ -2375,29 +2883,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		width: auto;
 	}
 
-.social-media-list {
-	padding-left: 0;
-	list-style-type: none;
-
-	display: flex;
-}
-
-.social-media-list__item {
-	}
-
-.social-media-link {
-	color: inherit;
-	text-decoration: none;
-}
-
-.social-media-link:hover,
-	.social-media-link:active {
-
-	}
-
-.social-media-link__icon svg {
-		}
-
 .site-version {
 	font-family: monotype;
 	font-weight: bold;
@@ -2411,266 +2896,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	/* left: 0; */
 	z-index: 99;
 }
-
-.site {
-	background-color: var(--background-color);
-	color: var(--foreground-color);
-	font-family: var(--font-1-family);
-	line-height: var(--font-1-line-height);
-	min-height: 100vh;
-}
-
-.site__inner {
-		overflow-y: hidden;
-		overflow-x: hidden;
-		width: 100%;
-		max-width: 100%;
-		clear: both;
-		min-height: 100vh;
-	}
-
-.has-expanded-site-nav .site {
-	/**
-	 * Prevent scrolling
-	 */
-	overflow-y: hidden;
-  	-ms-scroll-chaining: none;
-  	    overscroll-behavior: contain;
-  	height: 100vh;
-}
-
-@media (min-device-width: 1025px) {
-
-.has-expanded-site-nav .site {
-		padding-right: 12px
-}
-	}
-
-.site-header {
-	position: relative;
-	z-index: 99;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 6);
-
- 	/** Additional and modifying classes */
-}
-
-.site-header__inner {
-		margin-left: auto;
-		margin-right: auto;
-		width: var(--page--width);
-		display: flex;
-		flex-wrap: nowrap;
-		align-items: center;
-		position: relative;
-	}
-
-.site-header .site-branding {
-		width: 135px;
-	}
-
-.site-header .site-nav-toggle {
-		z-index: 99;
-		position: absolute;
-		right: 0;
-	}
-
-.site-header .site-nav-toggle__label {
-			display: none;
-		}
-
-@media (min-width: 600px) {
-			.site-header .site-nav-toggle__label {
-				display: block;
-			}
-		}
-
-/** Media Queries */
-
-@media (min-width: 600px) {
-		.site-header .site-branding {
-			width: 160px;
-		}
-	}
-
-@media (min-width: 840px) {
-
-		.site-header .site-branding {
-			width: 180px;
-		}
-	}
-
-@media (min-width: 1080px) {
-		.site-header .site-branding {
-			width: auto;
-		}
-	}
-
-@media (min-width: 1400px) {
-
-.site-header {
-		padding-left: var(--site--padding);
-		padding-right: var(--site--padding);
-		margin-bottom: calc(var(--row) * 8)
-}
-
-		.site-header__inner {
-			width: auto;
-		}
-			.site-header__inner:before {
-				background: transparent;
-			}
-	}
-
-.has-expanded-site-nav .site-header .site-branding {
-		z-index: -1;
-	}
-
-.has-expanded-site-nav .site-header .site-nav-toggle {
-		--foreground-color: var(--wp--preset--color--primary-1);
-		color: var(--foreground-color);
-	}
-
-.site-main {
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--page--width);
-}
-
-/**
- * Site footer
- *
- * Elements
- * &__inner
- * &__title
- * &__content
- */
-
-.site-footer {
-	margin-top: calc(var(--row) * 8);
-	margin-bottom: calc(var(--row) * 8);
-}
-
-.site-footer__inner {
-		margin-left: auto;
-		margin-right: auto;
-		width: var(--page--width);
-	}
-
-.site-footer__title {
-		font-size: var(--font-size--lg);
-		margin-top: calc(var(--row) * 6);
-		margin-bottom: calc(var(--row) * 4);
-	}
-
-.site-footer__content {
-		display: grid;
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 3);
-		row-gap: calc(var(--row) * 3);
-		grid-template-columns: 1fr;
-	}
-
-.site-footer__content > * {
-			margin-bottom: 0;
-			width: 100%;
-		}
-
-.site-footer .contact-info {
-		display: grid;
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 3);
-		row-gap: calc(var(--row) * 3);
-		grid-template-columns: 1fr;
-		margin-bottom: calc(var(--row) * 3);
-	}
-
-.site-footer .contact-info > * {
-			margin-bottom: 0;
-			width: 100%;
-		}
-
-.site-footer .contact-info [href^="tel:"] {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.site-footer .social-media {
-		display: flex;
-		align-items: flex-start;
-	}
-
-.site-footer .social-media a {
-			color: inherit;
-			text-decoration: none;
-			margin-right: 1em;
-		}
-
-.site-footer .social-media img {
-			display: block;
-			max-height: 1.5em;
-			margin-bottom: 0;
-		}
-
-.site-footer .documents {
-		margin-bottom: calc(var(--row) * 3);
-	}
-
-.site-footer .documents p:last-child {
-			margin-bottom: 0;
-		}
-
-.site-footer .colophon {
-		font-size: var(--font-size--sm);
-	}
-
-.site-footer .colophon p:last-child {
-			margin-bottom: 0;
-		}
-
-@media (min-width: 360px) {
-		.site-footer__content {
-			grid-template-columns: 1fr 1fr;
-			/* IE11: Grid fallback */
-			column-count: 2;
-		}
-			.site-footer__content > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
-	}
-
-		.site-footer .contact-info {
-			grid-column: span 2;
-			grid-template-columns: 1fr 1fr;
-		}
-
-		.site-footer .colophon {
-			grid-column: span 2;
-		}
-	}
-
-@media (min-width: 840px) {
-		.site-footer__content {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			/* IE11: Grid fallback */
-			column-count: 4;
-		}
-			.site-footer__content > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
-	}
-
-		.site-footer .contact-info {
-			grid-column: span 4;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-		.site-footer .colophon {
-			grid-column: span 2;
-		}
-	}
 
 .site-nav {
 	--background-color: var(--wp--preset--color--secondary-1);
@@ -2901,247 +3126,28 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 }
 
-.page {
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--page-content--width);
+.social-media-list {
+	padding-left: 0;
+	list-style-type: none;
+
+	display: flex;
 }
 
-@media (min-width: 840px) {
-
-.page {
-		margin-left: calc(var(--column-gutter) * 1);
-}
+.social-media-list__item {
 	}
 
-/**
- * Page header
- *
- * Elements
- * __title
- * __meta-group
- *
- */
-
-.page-header {
-	margin-bottom: calc(var(--row) * 4);
+.social-media-link {
+	color: inherit;
+	text-decoration: none;
 }
 
-.page-header__title {
-		margin: 0;
+.social-media-link:hover,
+	.social-media-link:active {
+
 	}
 
-.page-header__meta-group {
-		margin-top: calc(var(--row) * 1);
-	}
-
-.page-header .meta {
-		display: inline;
-	}
-
-.page-header .meta--author .meta__content:after {
-				content: ' \2014' ;
-			}
-
-.page-header .meta__content {
-			font-size: inherit;
+.social-media-link__icon svg {
 		}
-
-.page-header .meta__label {
-		display: none;
-	}
-
-@media (min-width: 1400px) {
-
-.page-header {
-		margin-bottom: calc(var(--row) * 5)
-}
-	}
-
-.page-image {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 4);
-}
-
-@media (min-width: 1080px) {
-
-.page-image {
-		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
-		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding))
-}
-	}
-
-.page-image__inner {
-	}
-
-.page-image img {
-		display: block;
-		margin-bottom: 0;
-		width: 100%;
-	}
-
-@media (min-width: 840px) {
-
-		.page-image__inner {
-			margin-left: auto;
-			margin-right: auto;
-			width: var(--page--width);
-		}
-	}
-
-.page-main__inner {
-
-	}
-
-.page-comments {
-	font-size: var(--font-size--sm);
-	margin-top: calc(var(--row) * 6);
-}
-
-.page-comments__title {
-		background-color: var(--foreground-color);
-		border-top-right-radius: 40px;
-		border-bottom-right-radius: 40px;
-		color: var(--background-color);
-		display: inline-block;
-		margin-left: calc(var(--site-padding) * -1);
-		margin-top: 0;
-		margin-bottom: calc(var(--row) * 4);
-		padding: calc(var(--row) * 1) calc(var(--row) * 2 + 0.25em) calc(var(--row) * 1) calc(var(--row) * 2);
-	}
-
-@media (min-width: 360px) {
-
-.page-comments {
-		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width))
-}
-
-		.page-comments__title {
-			margin-left: calc(var(--gutter) * -1);
-		}
-	}
-
-.comments__list,
-		.comments__list ul,
-		.comments__list ol {
-			padding-left: 0;
-			list-style-type: none;
-		}
-
-.comment .children:before,
-	.comment + .comment:before {
-		content: '';
-		display: block;
-		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		width: calc(var(--gutter) * 1);
-		margin-top: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * 4);
-	}
-
-.comment__meta-group {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		margin-bottom: calc(var(--row) * 1);
-	}
-
-.comment__meta-group a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.comment__meta-group a:hover {
-			}
-
-.comment__author {
-		font-weight: bold;
-		font-size: var(--font-size--md);
-		font-family: var(--font-2-family);
-		line-height: var(--font-2-line-height);
-	}
-
-.comment__author a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.comment__content * {
-			margin-bottom: calc(var(--row) * 1);
-		}
-
-.comment__content *:last-child {
-				margin-bottom: 0;
-			}
-
-.comment .children {
-		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		margin-top: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * -4);
-		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width));
-		padding-bottom: calc(var(--row) * 4);
-	}
-
-.comment .children:before {
-			margin-left: calc(var(--gutter) * -1);
-		}
-
-@media (min-width: 360px) {
-
-.comment {
-
-/* 		.children & + &:before {
-			margin-left: 0;
-		} */
-}
-
-		.comment .children {
-
-		}
-	}
-
-/** This component doesn't comply to BEM */
-
-.comment-respond:before {
-		content: '';
-		display: block;
-		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		width: calc(var(--gutter) * 1);
-		margin-top: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * 4);
-	}
-
-.comment-respond .comment-reply-title {
-	}
-
-/** This component doesn't comply to BEM */
-
-.comment-form-cookies-consent {
-		line-height: var(--line-height--sm);
-	}
-
-.page-footer .meta {
-		margin-top: calc(var(--row) * 8);
-		margin-bottom: calc(var(--row) * 8);
-	}
-
-.page-footer .meta__content {
-			font-size: inherit;
-		}
-
-.page-footer .post-navigation {
-	}
-
-@media (min-width: 1080px) {
-
-.page-footer {
-		margin-right: calc(var(--column-gutter) * -1)
-}
-	}
 
 /*--------------------------------------------------------------
 # Utilities - Helpers and overrides.

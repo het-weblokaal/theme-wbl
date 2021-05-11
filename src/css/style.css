@@ -30,10 +30,20 @@
 @import "generic/reset.css";
 @import "generic/base.css";
 
+
 /*--------------------------------------------------------------
-# Structure - Ground-zero styles (resets, box-sizing, etc.).
+# Structure - 
 --------------------------------------------------------------*/
-/* @import "elements/root.css"; */
+@import "structure/root.css";
+@import "structure/site.css";
+@import "structure/site-header.css";
+@import "structure/site-main.css";
+@import "structure/site-footer.css";
+@import "structure/page.css";
+@import "structure/page-header.css";
+@import "structure/page-main.css";
+@import "structure/page-footer.css";
+@import "structure/page-comments.css";
 
 
 /*--------------------------------------------------------------
@@ -41,6 +51,7 @@
 --------------------------------------------------------------*/
 @import "objects/template-landing-page.css";
 @import "objects/layouts.css";
+
 
 /*--------------------------------------------------------------
 # Blocks - editor related styles.
@@ -70,36 +81,26 @@
 @import "blocks/colors.css";
 @import "blocks/misc.css";
 
+
 /*--------------------------------------------------------------
 # Components - specific UI components.
 --------------------------------------------------------------*/
 @import "components/call-to-action.css";
 @import "components/meta.css";
+@import "components/page-image.css";
 @import "components/password-protection-form.css";
 @import "components/posts.css";
 @import "components/posts-post.css";
 @import "components/posts-pagination.css";
 @import "components/post-navigation.css";
 @import "components/search-form.css";
-@import "components/social-media-list.css";
-@import "components/social-media-link.css";
-
 @import "components/site-version.css";
-@import "components/site.css";
-@import "components/site-header.css";
-@import "components/site-main.css";
-@import "components/site-footer.css";
 @import "components/site-nav.css";
 @import "components/site-branding.css";
 @import "components/site-nav-toggle.css";
 @import "components/site-meta.css";
-@import "components/page.css";
-@import "components/page-header.css";
-@import "components/page-image.css";
-@import "components/page-main.css";
-@import "components/page-comments.css";
-@import "components/page-footer.css";
-
+@import "components/social-media-list.css";
+@import "components/social-media-link.css";
 
 
 /*--------------------------------------------------------------
