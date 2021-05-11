@@ -11,20 +11,6 @@
 		clear: both;
 		min-height: 100vh;
 	}
-
-	.is-development & {
-		position: relative;
-		z-index: 1;
-
-		&:before {
-			content: '';
-			@mixin dev--background-grid-child;
-		}
-
-		&:after {
-			@mixin dev--media-query-info-in-pseudo-element;
-		}
-	}
 }
 
 .has-expanded-site-nav .site {

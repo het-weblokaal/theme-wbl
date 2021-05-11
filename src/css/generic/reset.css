@@ -1,4 +1,10 @@
 /**
+ * Generic reset
+ *
+ * This resets opinionated browser styles.
+ */
+
+/**
  * 1. Default spacing and borders
  *
  * 2. Allow flexbox-containers to shrink below its min-content

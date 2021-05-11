@@ -1,0 +1,305 @@
+/**
+ * Generic base
+ *
+ * This offers base styling for common elements.
+ */
+
+
+/* Root
+---------------------------------------------------- */
+
+html {
+    font-size: var(--rem-size);
+}
+
+body {}
+
+
+/* Vertical Spacing
+---------------------------------------------------- */
+/* Maybe extract this to the elements itself to give more control */
+
+p,
+h1,h2,h3,h4,h5,h6,
+ul,ol,
+table,
+blockquote,
+img,
+figure,
+hr,
+pre {
+    margin-bottom: calc(var(--row) * 3);
+}
+
+
+/* Buttons
+---------------------------------------------------- */
+
+input[type="submit"] {
+    background-color: transparent;
+    border: 0;
+}
+
+button,
+input[type="submit"],
+.button {
+    @mixin button;
+}
+
+
+/* Form
+---------------------------------------------------- */
+
+textarea {
+    /* Removes empty space under textarea. */
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select {
+    background-color: transparent;
+    border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+    border-radius: 0;
+    font-size: var(--font-size--sm);
+    padding: calc(var(--row) * 1) calc(var(--row) * 1);
+    width: 100%;
+    transition: border-color var(--transition-fast);
+
+    &::placeholder {
+        color: var(--ui-color);
+        font-style: italic;
+    }
+
+    &:focus {
+        /* Use transparent outline for Windows high contrast mode. */
+        outline: 2px solid transparent;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: var(--ui-color);
+    }
+}
+
+label {
+    display: block;
+    /* font-weight: bold; */
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: calc(var(--row) * 0.5);
+    /* font-weight: normal; */
+    line-height: var(--line-height--sm);
+
+    & + label {
+        display: inline;
+        font-size: var(--font-size--sm);
+        line-height: var(--line-height--sm);
+        /* font-weight: normal; */
+    }
+}
+
+
+/* Headings
+---------------------------------------------------- */
+/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    line-height: var(--line-height--xs);
+    font-weight: bold;
+    font-style: normal;
+    overflow-wrap: break-word;
+    text-transform: uppercase;
+}
+
+h6,
+h5,
+h4,
+.is-h4,
+h3,
+.is-h3 {
+    font-size: var(--font-size--h3);
+    margin-top: calc(var(--row) * 4);
+    margin-bottom: calc(var(--row) * 1);
+}
+
+h2,
+.is-h2 {
+    font-size: var(--font-size--h2);
+    margin-top: calc(var(--row) * 4);
+    margin-bottom: calc(var(--row) * 3);
+}
+
+
+h1,
+.is-h1 {
+    font-size: var(--font-size--h1);
+    margin-top: calc(var(--row) * 6);
+    margin-bottom: calc(var(--row) * 4);
+}
+
+
+/* Inline
+---------------------------------------------------- */
+
+br, strong {}
+
+i, em {}
+
+
+/* Links
+---------------------------------------------------- */
+
+a {
+    @mixin link;
+}
+
+
+/* Lists
+---------------------------------------------------- */
+
+ul, ol {
+    padding-left: 1.1em;
+    margin-left: 0;
+
+    ul, ol {}
+}
+
+li {}
+
+
+/* Media
+---------------------------------------------------- */
+img,
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    display: block;
+}
+
+figure {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+figure img {
+    display: block;
+    margin-bottom: 0;
+}
+
+figcaption {
+    padding-top: calc(var(--row) * 1);
+    /* font-style: italic; */
+    font-size: var(--font-size--min);
+    line-height: var(--line-height--xs);
+}
+
+
+/* Miscelaneous
+---------------------------------------------------- */
+p {
+
+}
+
+hr {
+    color: currentColor;
+    border: 0;
+    border-bottom-width: var(--ui-border-width);
+    border-color: currentColor;
+    border-style: solid;
+    clear: both;
+    width: 100%;
+    margin-top: calc(var(--row) * 3);
+    margin-bottom: calc(var(--row) * 3);
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+
+/* Blockquotes
+---------------------------------------------------- */
+
+blockquote {
+    /* @mixin background--light; */
+
+    i,
+    em,
+    cite {
+
+    }
+
+    p {
+
+    }
+
+    cite,
+    footer {
+        font-style: normal;
+        &:before {
+            content: '\2014';
+            margin-right: var(--spacing--05);
+        }
+    }
+}
+
+
+/* SVG
+---------------------------------------------------- */
+
+svg {
+    @mixin svg;
+}
+
+
+/* Tables
+---------------------------------------------------- */
+
+table {
+    border-collapse: collapse; /* Makes table rows borderable */
+    border-spacing: 0;
+    width: 100%;
+}
+
+th,
+td {
+    border-width: 1px;
+    text-align: left;
+    vertical-align: top;
+}

@@ -28,24 +28,12 @@
 # Generic - Ground-zero styles (resets, box-sizing, etc.).
 --------------------------------------------------------------*/
 @import "generic/reset.css";
-@import "generic/vertical-spacing.css";
-
+@import "generic/base.css";
 
 /*--------------------------------------------------------------
-# Elements - Unclassed HTML elements (type selectors).
+# Structure - Ground-zero styles (resets, box-sizing, etc.).
 --------------------------------------------------------------*/
-@import "elements/html-body.css";
-@import "elements/buttons.css";
-@import "elements/forms.css";
-@import "elements/headings.css";
-@import "elements/inline.css";
-@import "elements/links.css";
-@import "elements/lists.css";
-@import "elements/media.css";
-@import "elements/misc.css";
-@import "elements/quotes.css";
-@import "elements/svg.css";
-@import "elements/tables.css";
+/* @import "elements/root.css"; */
 
 
 /*--------------------------------------------------------------

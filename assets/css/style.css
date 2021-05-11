@@ -323,6 +323,12 @@
 --------------------------------------------------------------*/
 
 /**
+ * Generic reset
+ *
+ * This resets opinionated browser styles.
+ */
+
+/**
  * 1. Default spacing and borders
  *
  * 2. Allow flexbox-containers to shrink below its min-content
@@ -399,6 +405,26 @@ footer, header, main, nav, section {
   opacity: 1;
 }
 
+/**
+ * Generic base
+ *
+ * This offers base styling for common elements.
+ */
+
+/* Root
+---------------------------------------------------- */
+
+html {
+    font-size: var(--rem-size);
+}
+
+body {}
+
+/* Vertical Spacing
+---------------------------------------------------- */
+
+/* Maybe extract this to the elements itself to give more control */
+
 p,
 h1,h2,h3,h4,h5,h6,
 ul,ol,
@@ -408,32 +434,15 @@ img,
 figure,
 hr,
 pre {
-	margin-bottom: calc(var(--row) * 3);
+    margin-bottom: calc(var(--row) * 3);
 }
 
-/*--------------------------------------------------------------
-# Elements - Unclassed HTML elements (type selectors).
---------------------------------------------------------------*/
-
-html {
-	font-size: var(--rem-size);
-}
-
-body {}
-
-/**
- * Links vs Buttons vs Submit
- *
- * Anchors should be used for linking to pages or internal sections
- * Buttons should be used for interactions (more useful in applications)
- * A submit button (input type="submit") shoud be used for forms
- *
- * Note: because of conventions we can allow to style a link as a button
- */
+/* Buttons
+---------------------------------------------------- */
 
 input[type="submit"] {
-	background-color: transparent;
-	border: 0;
+    background-color: transparent;
+    border: 0;
 }
 
 button,
@@ -466,9 +475,12 @@ button:hover,
     	text-decoration-thickness: var(--ui-border-width);
     }
 
+/* Form
+---------------------------------------------------- */
+
 textarea {
-	/* Removes empty space under textarea. */
-	display: block;
+    /* Removes empty space under textarea. */
+    display: block;
 }
 
 input[type="text"],
@@ -488,85 +500,88 @@ input[type="datetime-local"],
 input[type="color"],
 textarea,
 select {
-	background-color: transparent;
-	border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-	border-radius: 0;
-	font-size: var(--font-size--sm);
-	padding: calc(var(--row) * 1) calc(var(--row) * 1);
-	width: 100%;
-	transition: border-color var(--transition-fast);
+    background-color: transparent;
+    border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+    border-radius: 0;
+    font-size: var(--font-size--sm);
+    padding: calc(var(--row) * 1) calc(var(--row) * 1);
+    width: 100%;
+    transition: border-color var(--transition-fast);
 }
 
 input[type="text"]::-ms-input-placeholder, input[type="email"]::-ms-input-placeholder, input[type="url"]::-ms-input-placeholder, input[type="password"]::-ms-input-placeholder, input[type="search"]::-ms-input-placeholder, input[type="number"]::-ms-input-placeholder, input[type="tel"]::-ms-input-placeholder, input[type="range"]::-ms-input-placeholder, input[type="date"]::-ms-input-placeholder, input[type="month"]::-ms-input-placeholder, input[type="week"]::-ms-input-placeholder, input[type="time"]::-ms-input-placeholder, input[type="datetime"]::-ms-input-placeholder, input[type="datetime-local"]::-ms-input-placeholder, input[type="color"]::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
-		color: var(--ui-color);
-		font-style: italic;
-	}
+        color: var(--ui-color);
+        font-style: italic;
+    }
 
 input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="url"]::placeholder, input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="number"]::placeholder, input[type="tel"]::placeholder, input[type="range"]::placeholder, input[type="date"]::placeholder, input[type="month"]::placeholder, input[type="week"]::placeholder, input[type="time"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder, input[type="color"]::placeholder, textarea::placeholder, select::placeholder {
-		color: var(--ui-color);
-		font-style: italic;
-	}
+        color: var(--ui-color);
+        font-style: italic;
+    }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus, select:focus {
-		/* Use transparent outline for Windows high contrast mode. */
-		outline: 2px solid transparent;
-	}
+        /* Use transparent outline for Windows high contrast mode. */
+        outline: 2px solid transparent;
+    }
 
 input[type="text"]:hover,
-	input[type="text"]:focus,
-	input[type="email"]:hover,
-	input[type="email"]:focus,
-	input[type="url"]:hover,
-	input[type="url"]:focus,
-	input[type="password"]:hover,
-	input[type="password"]:focus,
-	input[type="search"]:hover,
-	input[type="search"]:focus,
-	input[type="number"]:hover,
-	input[type="number"]:focus,
-	input[type="tel"]:hover,
-	input[type="tel"]:focus,
-	input[type="range"]:hover,
-	input[type="range"]:focus,
-	input[type="date"]:hover,
-	input[type="date"]:focus,
-	input[type="month"]:hover,
-	input[type="month"]:focus,
-	input[type="week"]:hover,
-	input[type="week"]:focus,
-	input[type="time"]:hover,
-	input[type="time"]:focus,
-	input[type="datetime"]:hover,
-	input[type="datetime"]:focus,
-	input[type="datetime-local"]:hover,
-	input[type="datetime-local"]:focus,
-	input[type="color"]:hover,
-	input[type="color"]:focus,
-	textarea:hover,
-	textarea:focus,
-	select:hover,
-	select:focus {
-		border-color: var(--ui-color);
-	}
+    input[type="text"]:focus,
+    input[type="email"]:hover,
+    input[type="email"]:focus,
+    input[type="url"]:hover,
+    input[type="url"]:focus,
+    input[type="password"]:hover,
+    input[type="password"]:focus,
+    input[type="search"]:hover,
+    input[type="search"]:focus,
+    input[type="number"]:hover,
+    input[type="number"]:focus,
+    input[type="tel"]:hover,
+    input[type="tel"]:focus,
+    input[type="range"]:hover,
+    input[type="range"]:focus,
+    input[type="date"]:hover,
+    input[type="date"]:focus,
+    input[type="month"]:hover,
+    input[type="month"]:focus,
+    input[type="week"]:hover,
+    input[type="week"]:focus,
+    input[type="time"]:hover,
+    input[type="time"]:focus,
+    input[type="datetime"]:hover,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:hover,
+    input[type="datetime-local"]:focus,
+    input[type="color"]:hover,
+    input[type="color"]:focus,
+    textarea:hover,
+    textarea:focus,
+    select:hover,
+    select:focus {
+        border-color: var(--ui-color);
+    }
 
 label {
-	display: block;
-	/* font-weight: bold; */
+    display: block;
+    /* font-weight: bold; */
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	margin-right: calc(var(--row) * 0.5);
-	/* font-weight: normal; */
-	line-height: var(--line-height--sm);
+    margin-right: calc(var(--row) * 0.5);
+    /* font-weight: normal; */
+    line-height: var(--line-height--sm);
 }
 
 input[type="checkbox"] + label, input[type="radio"] + label {
-		display: inline;
-		font-size: var(--font-size--sm);
-		line-height: var(--line-height--sm);
-		/* font-weight: normal; */
-	}
+        display: inline;
+        font-size: var(--font-size--sm);
+        line-height: var(--line-height--sm);
+        /* font-weight: normal; */
+    }
+
+/* Headings
+---------------------------------------------------- */
 
 /* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
 
@@ -576,11 +591,11 @@ h4,
 h3,
 h2,
 h1 {
-	line-height: var(--line-height--xs);
-	font-weight: bold;
-	font-style: normal;
-	word-wrap: break-word;
-	text-transform: uppercase;
+    line-height: var(--line-height--xs);
+    font-weight: bold;
+    font-style: normal;
+    word-wrap: break-word;
+    text-transform: uppercase;
 }
 
 h6,
@@ -589,37 +604,40 @@ h4,
 .is-h4,
 h3,
 .is-h3 {
-	font-size: var(--font-size--h3);
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 1);
+    font-size: var(--font-size--h3);
+    margin-top: calc(var(--row) * 4);
+    margin-bottom: calc(var(--row) * 1);
 }
 
 h2,
 .is-h2 {
-	font-size: var(--font-size--h2);
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 3);
+    font-size: var(--font-size--h2);
+    margin-top: calc(var(--row) * 4);
+    margin-bottom: calc(var(--row) * 3);
 }
 
 h1,
 .is-h1 {
-	font-size: var(--font-size--h1);
-	margin-top: calc(var(--row) * 6);
-	margin-bottom: calc(var(--row) * 4);
+    font-size: var(--font-size--h1);
+    margin-top: calc(var(--row) * 6);
+    margin-bottom: calc(var(--row) * 4);
 }
+
+/* Inline
+---------------------------------------------------- */
 
 br, strong {}
 
 i, em {}
 
 /* Links
--------------------------------------------------------------------*/
+---------------------------------------------------- */
 
 a {
-	color: inherit;
-	text-decoration: underline;
-	text-decoration-thickness: 0.1em;
-	text-underline-offset: 0.2em;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
 }
 
 a:hover,
@@ -661,7 +679,7 @@ video,
 object,
 embed,
 iframe {
-	display: block;
+    display: block;
 }
 
 figure {
@@ -676,10 +694,10 @@ figure img {
 }
 
 figcaption {
-	padding-top: calc(var(--row) * 1);
-	/* font-style: italic; */
-	font-size: var(--font-size--min);
-	line-height: var(--line-height--xs);
+    padding-top: calc(var(--row) * 1);
+    /* font-style: italic; */
+    font-size: var(--font-size--min);
+    line-height: var(--line-height--xs);
 }
 
 /* Miscelaneous
@@ -690,8 +708,8 @@ p {
 }
 
 hr {
-	color: currentColor;
-	border: 0;
+    color: currentColor;
+    border: 0;
     border-bottom-width: var(--ui-border-width);
     border-color: currentColor;
     border-style: solid;
@@ -722,25 +740,25 @@ blockquote p {
 
 blockquote cite,
     blockquote footer {
-    	font-style: normal;
+        font-style: normal;
     }
 
 blockquote cite:before, blockquote footer:before {
-			content: '\2014';
-			margin-right: var(--spacing--05);
-		}
+            content: '\2014';
+            margin-right: var(--spacing--05);
+        }
 
 /* SVG
 ---------------------------------------------------- */
 
 svg {
-	display: inline-block;
-	fill: currentColor;
-	height: 1em;
-	position: relative;
-	top: -0.0625em;
-	vertical-align: middle;
-	width: 1em;
+    display: inline-block;
+    fill: currentColor;
+    height: 1em;
+    position: relative;
+    top: -0.0625em;
+    vertical-align: middle;
+    width: 1em;
 }
 
 /* Tables
@@ -754,10 +772,16 @@ table {
 
 th,
 td {
-	border-width: 1px;
+    border-width: 1px;
     text-align: left;
     vertical-align: top;
 }
+
+/*--------------------------------------------------------------
+# Structure - Ground-zero styles (resets, box-sizing, etc.).
+--------------------------------------------------------------*/
+
+/* @import "elements/root.css"; */
 
 /*--------------------------------------------------------------
 # Objects - Undecorated design patterns.
@@ -2404,144 +2428,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		clear: both;
 		min-height: 100vh;
 	}
-
-.is-development .site {
-		position: relative;
-		z-index: 1;
-	}
-
-.is-development .site:before {
-			content: '';
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			margin-left: auto;
-			margin-right: auto;
-			width: var(--site--width);
-			z-index: -1;
-			opacity: 0.025;
-			background: var(--foreground-color);
-		}
-
-@media (min-width: 360px) {
-
-.is-development .site:before {
-		background: linear-gradient(90deg,
-			var(--foreground-color) calc(var(--column) * 1),
-			transparent calc(var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1)
-		);
-		}
-	}
-
-@media (min-width: 600px) {
-
-.is-development .site:before {
-		background: linear-gradient(90deg,
-			var(--foreground-color) calc(var(--column) * 1),
-			transparent calc(var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 3),
-			var(--foreground-color) calc(var(--column-gutter) * 3)
-		);
-		}
-	}
-
-@media (min-width: 840px) {
-
-.is-development .site:before {
-		background: linear-gradient(90deg,
-			var(--foreground-color) calc(var(--column) * 1),
-			transparent calc(var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 3),
-			var(--foreground-color) calc(var(--column-gutter) * 3),
-			var(--foreground-color) calc(var(--column-gutter) * 3 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 3 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 4),
-			var(--foreground-color) calc(var(--column-gutter) * 4),
-			var(--foreground-color) calc(var(--column-gutter) * 4 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 4 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 5),
-			var(--foreground-color) calc(var(--column-gutter) * 5),
-			var(--foreground-color) calc(var(--column-gutter) * 5 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 5 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 6),
-			var(--foreground-color) calc(var(--column-gutter) * 6),
-			var(--foreground-color) calc(var(--column-gutter) * 6 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 6 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 7),
-			var(--foreground-color) calc(var(--column-gutter) * 7),
-			var(--foreground-color) calc(var(--column-gutter) * 7 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 7 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 8),
-			var(--foreground-color) calc(var(--column-gutter) * 8)
-		);
-		}
-	}
-
-.is-development .site:after {
-			position: fixed;
-			bottom: 0;
-			right: 0;
-			margin-right: 10px;
-			margin-bottom: 10px;
-			border-radius: 5px;
-			padding: 0.4em;
-			font-size: var(--font-size--sm);
-			line-height: var(--line-height--xs);
-			content: 'bp - [mini]';
-			opacity: 0.75;
-			background-color: var(--background-color);
-			color: var(--foreground-color);
-		}
-
-@media (min-width: 360px) {
-
-.is-development .site:after { content: 'bp 1: 360px [klein]';
-		} }
-
-@media (min-width: 600px) {
-
-.is-development .site:after { content: 'bp 2: 600px [klein]';
-		} }
-
-@media (min-width: 840px) {
-
-.is-development .site:after { content: 'bp 3: 840px [middel]';
-		} }
-
-@media (min-width: 1080px) {
-
-.is-development .site:after { content: 'bp 4: 1080px [middel]';
-		} }
-
-@media (min-width: 1400px) {
-
-.is-development .site:after { content: 'bp 5: 1400px [groot]';
-		} }
-
-@media (min-width: 1720px) {
-
-.is-development .site:after { content: 'bp 6: 1720px [groot]';
-		} }
 
 .has-expanded-site-nav .site {
 	/**
