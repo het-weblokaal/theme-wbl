@@ -22,6 +22,7 @@
 # Tools - Default mixins and functions.
 --------------------------------------------------------------*/
 @import "tools/mixins.css";
+@import "tools/mixins-development.css";
 
 
 /*--------------------------------------------------------------
@@ -94,7 +95,7 @@
 @import "components/posts-pagination.css";
 @import "components/post-navigation.css";
 @import "components/search-form.css";
-@import "components/site-version.css";
+@import "components/site-debug-info.css";
 @import "components/site-nav.css";
 @import "components/site-branding.css";
 @import "components/site-nav-toggle.css";

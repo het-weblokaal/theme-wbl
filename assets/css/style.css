@@ -318,6 +318,10 @@
  * Development
  * =============== */
 
+/* ===============
+ * Development
+ * =============== */
+
 /*--------------------------------------------------------------
 # Generic - Ground-zero styles (resets, box-sizing, etc.).
 --------------------------------------------------------------*/
@@ -786,25 +790,22 @@ html {
 }
 
 body {
-
+	
 }
 
 .site {
+	overflow-y: hidden;
+	overflow-x: hidden;
+	width: 100%;
+	max-width: 100%;
+	clear: both;
+	min-height: 100vh;
+
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 	font-family: var(--font-1-family);
 	line-height: var(--font-1-line-height);
-	min-height: 100vh;
 }
-
-.site__inner {
-		overflow-y: hidden;
-		overflow-x: hidden;
-		width: 100%;
-		max-width: 100%;
-		clear: both;
-		min-height: 100vh;
-	}
 
 .has-expanded-site-nav .site {
 	/**
@@ -814,14 +815,11 @@ body {
   	-ms-scroll-chaining: none;
   	    overscroll-behavior: contain;
   	height: 100vh;
-}
 
-@media (min-device-width: 1025px) {
-
-.has-expanded-site-nav .site {
-		padding-right: 12px
+/* 	@media (min-device-width: 1025px) {
+		padding-right: 12px;
+	} */
 }
-	}
 
 .site-header {
 	position: relative;
@@ -2883,18 +2881,152 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		width: auto;
 	}
 
-.site-version {
+.site-debug-info {
+	display: none;
 	font-family: monotype;
 	font-weight: bold;
 	font-size: var(--font-size--min);
+	line-height: var(--line-height--xs);
 	text-align: right;
-	opacity: 0.4;
-	margin: calc(var(--row) * 1);
-	position: absolute;
-	top: 0;
+	position: fixed;
+	left: 0;
 	right: 0;
-	/* left: 0; */
-	z-index: 99;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+}
+
+.site-debug-info__grid {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--site--width);
+		opacity: 0.025;
+
+		--foreground-color: #000;
+
+		background: linear-gradient(90deg,
+		var(--foreground-color) var(--column-span-1),
+		transparent var(--column-span-1),
+		transparent var(--column-gutter-1),
+		var(--foreground-color) var(--column-gutter-1),
+		var(--foreground-color) var(--column-span-2),
+		transparent var(--column-span-2),
+		transparent var(--column-gutter-2),
+		var(--foreground-color) var(--column-gutter-2),
+		var(--foreground-color) var(--column-span-3),
+		transparent var(--column-span-3),
+		transparent var(--column-gutter-3),
+		var(--foreground-color) var(--column-gutter-3),
+		var(--foreground-color) var(--column-span-4),
+		transparent var(--column-span-4),
+		transparent var(--column-gutter-4),
+		var(--foreground-color) var(--column-gutter-4),
+		var(--foreground-color) var(--column-span-5),
+		transparent var(--column-span-5),
+		transparent var(--column-gutter-5),
+		var(--foreground-color) var(--column-gutter-5),
+		var(--foreground-color) var(--column-span-6),
+		transparent var(--column-span-6),
+		transparent var(--column-gutter-6),
+		var(--foreground-color) var(--column-gutter-6),
+		var(--foreground-color) var(--column-span-7),
+		transparent var(--column-span-7),
+		transparent var(--column-gutter-7),
+		var(--foreground-color) var(--column-gutter-7),
+		var(--foreground-color) var(--column-span-8),
+		transparent var(--column-span-8),
+		transparent var(--column-gutter-8),
+		var(--foreground-color) var(--column-gutter-8),
+		var(--foreground-color) var(--column-span-9),
+		transparent var(--column-span-9),
+		transparent var(--column-gutter-9),
+		var(--foreground-color) var(--column-gutter-9),
+		var(--foreground-color) var(--column-span-10),
+		transparent var(--column-span-10),
+		transparent var(--column-gutter-10),
+		var(--foreground-color) var(--column-gutter-10),
+		var(--foreground-color) var(--column-span-11),
+		transparent var(--column-span-11),
+		transparent var(--column-gutter-11),
+		var(--foreground-color) var(--column-gutter-11),
+		var(--foreground-color) var(--column-span-12),
+		transparent var(--column-span-12),
+		transparent var(--column-gutter-12),
+		var(--foreground-color) var(--column-gutter-12)
+	);
+	}
+
+.site-debug-info__version {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 99;
+		margin-right: 0.5rem;
+		margin-bottom: 2.5rem;
+
+		opacity: 0.4;
+	}
+
+.site-debug-info__responsiveness {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 99;
+		margin-right: 0.5rem;
+		margin-bottom: 1.5rem;
+
+		opacity: 0.4;
+	}
+
+.site-debug-info__responsiveness:after {
+			content: 'bp - (mini)';
+		}
+
+@media (--from-breakpoint-1) {
+
+.site-debug-info__responsiveness:after { content: 'bp 1: 360px (klein)';
+		} }
+
+@media (--from-breakpoint-2) {
+
+.site-debug-info__responsiveness:after { content: 'bp 2: 600px (klein)';
+		} }
+
+@media (--from-breakpoint-3) {
+
+.site-debug-info__responsiveness:after { content: 'bp 3: 840px (middel)';
+		} }
+
+@media (--from-breakpoint-4) {
+
+.site-debug-info__responsiveness:after { content: 'bp 4: 1080px (middel)';
+		} }
+
+@media (--from-breakpoint-5) {
+
+.site-debug-info__responsiveness:after { content: 'bp 5: 1400px (groot)';
+		} }
+
+@media (--from-breakpoint-6) {
+
+.site-debug-info__responsiveness:after { content: 'bp 6: 1720px (groot)';
+		} }
+
+/* Show debug-info in development mode */
+
+.is-development .site-debug-info {
+	display: block;
+}
+
+/* Hide debug grid online */
+
+.is-development--online .site-debug-info__grid {
+	display: none;
 }
 
 .site-nav {
@@ -3014,20 +3146,20 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 				text-decoration-thickness: var(--ui-border-width);
 			}
 
-.site-branding svg.hetweblokaal-logo {
-		position: static;
-		width: 100%;
-		max-width: 240px;
-		height: auto;
+svg.site-logo {
+	position: static;
+	width: 100%;
+	max-width: 240px;
+	height: auto;
+}
+
+svg.site-logo__text path {
+		/* fill: var(--foreground-color); */
 	}
 
-.site-branding svg.hetweblokaal-logo__text path {
-			/* fill: var(--foreground-color); */
-		}
-
-.site-branding svg.hetweblokaal-logo__symbol path {
-			/* stroke: var(--foreground-color); */
-		}
+svg.site-logo__symbol path {
+		/* stroke: var(--foreground-color); */
+	}
 
 .custom-logo-link {
 	display: inline-block;

@@ -1,16 +1,13 @@
 .site {
+	@mixin margin-collapse-fix;
+	@mixin full-page-content-overflow-fix;
+	clear: both;
+	min-height: 100vh;
+
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 	font-family: var(--font-1-family);
 	line-height: var(--font-1-line-height);
-	min-height: 100vh;
-
-	&__inner {
-		@mixin margin-collapse-fix;
-		@mixin full-page-content-overflow-fix;
-		clear: both;
-		min-height: 100vh;
-	}
 }
 
 .has-expanded-site-nav .site {
@@ -21,7 +18,7 @@
   	overscroll-behavior: contain;
   	height: 100vh;
 
-	@media (min-device-width: 1025px) {
+/* 	@media (min-device-width: 1025px) {
 		padding-right: 12px;
-	}
+	} */
 }

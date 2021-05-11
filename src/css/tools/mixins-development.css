@@ -1,0 +1,67 @@
+/* ===============
+ * Development
+ * =============== */
+
+@define-mixin dev--background-grid {
+	background: linear-gradient(90deg,
+		var(--foreground-color) var(--column-span-1),
+		transparent var(--column-span-1),
+		transparent var(--column-gutter-1),
+		var(--foreground-color) var(--column-gutter-1),
+		var(--foreground-color) var(--column-span-2),
+		transparent var(--column-span-2),
+		transparent var(--column-gutter-2),
+		var(--foreground-color) var(--column-gutter-2),
+		var(--foreground-color) var(--column-span-3),
+		transparent var(--column-span-3),
+		transparent var(--column-gutter-3),
+		var(--foreground-color) var(--column-gutter-3),
+		var(--foreground-color) var(--column-span-4),
+		transparent var(--column-span-4),
+		transparent var(--column-gutter-4),
+		var(--foreground-color) var(--column-gutter-4),
+		var(--foreground-color) var(--column-span-5),
+		transparent var(--column-span-5),
+		transparent var(--column-gutter-5),
+		var(--foreground-color) var(--column-gutter-5),
+		var(--foreground-color) var(--column-span-6),
+		transparent var(--column-span-6),
+		transparent var(--column-gutter-6),
+		var(--foreground-color) var(--column-gutter-6),
+		var(--foreground-color) var(--column-span-7),
+		transparent var(--column-span-7),
+		transparent var(--column-gutter-7),
+		var(--foreground-color) var(--column-gutter-7),
+		var(--foreground-color) var(--column-span-8),
+		transparent var(--column-span-8),
+		transparent var(--column-gutter-8),
+		var(--foreground-color) var(--column-gutter-8),
+		var(--foreground-color) var(--column-span-9),
+		transparent var(--column-span-9),
+		transparent var(--column-gutter-9),
+		var(--foreground-color) var(--column-gutter-9),
+		var(--foreground-color) var(--column-span-10),
+		transparent var(--column-span-10),
+		transparent var(--column-gutter-10),
+		var(--foreground-color) var(--column-gutter-10),
+		var(--foreground-color) var(--column-span-11),
+		transparent var(--column-span-11),
+		transparent var(--column-gutter-11),
+		var(--foreground-color) var(--column-gutter-11),
+		var(--foreground-color) var(--column-span-12),
+		transparent var(--column-span-12),
+		transparent var(--column-gutter-12),
+		var(--foreground-color) var(--column-gutter-12)
+	);
+}
+
+@define-mixin dev--media-query-info {
+	content: 'bp - (mini)';
+
+	@media (--from-breakpoint-1) { content: 'bp 1: 360px (klein)'; }
+	@media (--from-breakpoint-2) { content: 'bp 2: 600px (klein)'; }
+	@media (--from-breakpoint-3) { content: 'bp 3: 840px (middel)'; }
+	@media (--from-breakpoint-4) { content: 'bp 4: 1080px (middel)'; }
+	@media (--from-breakpoint-5) { content: 'bp 5: 1400px (groot)'; }
+	@media (--from-breakpoint-6) { content: 'bp 6: 1720px (groot)'; }
+}

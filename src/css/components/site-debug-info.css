@@ -1,0 +1,66 @@
+.site-debug-info {
+	display: none;
+	font-family: monotype;
+	font-weight: bold;
+	font-size: var(--font-size--min);
+	line-height: var(--line-height--xs);
+	text-align: right;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+
+	&__grid {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--site--width);
+		opacity: 0.025;
+
+		--foreground-color: #000;
+
+		@mixin dev--background-grid;
+	}
+
+	&__version {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 99;
+		margin-right: 0.5rem;
+		margin-bottom: 2.5rem;
+
+		opacity: 0.4;
+	}
+
+	&__responsiveness {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 99;
+		margin-right: 0.5rem;
+		margin-bottom: 1.5rem;
+
+		opacity: 0.4;
+
+		&:after {
+			@mixin dev--media-query-info;
+		}
+	}
+}
+
+/* Show debug-info in development mode */
+.is-development .site-debug-info {
+	display: block;
+}
+
+/* Hide debug grid online */
+.is-development--online .site-debug-info__grid {
+	display: none;
+}

@@ -18,20 +18,20 @@
 
 		}
 	}
+}
 
-	svg.hetweblokaal-logo {
-		position: static;
-		width: 100%;
-		max-width: 240px;
-		height: auto;
+svg.site-logo {
+	position: static;
+	width: 100%;
+	max-width: 240px;
+	height: auto;
 
-		&__text path {
-			/* fill: var(--foreground-color); */
-		}
+	&__text path {
+		/* fill: var(--foreground-color); */
+	}
 
-		&__symbol path {
-			/* stroke: var(--foreground-color); */
-		}
+	&__symbol path {
+		/* stroke: var(--foreground-color); */
 	}
 }
 
