@@ -18,11 +18,13 @@
 @import "settings/effects.css";
 @import "settings/misc.css";
 
+
 /*--------------------------------------------------------------
 # Tools - Default mixins and functions.
 --------------------------------------------------------------*/
 @import "tools/mixins.css";
 @import "tools/mixins-development.css";
+@import "tools/mixins-structure.css";
 
 
 /*--------------------------------------------------------------
@@ -45,13 +47,6 @@
 @import "structure/page-main.css";
 @import "structure/page-footer.css";
 @import "structure/page-comments.css";
-
-
-/*--------------------------------------------------------------
-# Objects - Undecorated design patterns.
---------------------------------------------------------------*/
-@import "objects/template-landing-page.css";
-@import "objects/layouts.css";
 
 
 /*--------------------------------------------------------------
@@ -113,3 +108,4 @@
 @import "utilities/wordpress.css";
 @import "utilities/prefers-reduced-motion.css";
 @import "utilities/shame.css";
+@import "utilities/template-landing-page.css";

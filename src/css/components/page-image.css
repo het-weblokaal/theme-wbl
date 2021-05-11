@@ -12,7 +12,7 @@
 		width: 100%;
 	}
 
-	@media (--columns-8) {
+	@media (--grid-columns-8) {
 
 		&__inner {
 			@mixin container--page;

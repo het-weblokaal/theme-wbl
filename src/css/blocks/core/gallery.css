@@ -30,7 +30,7 @@
 		}
 	}
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		&.columns-1 {}
 		&.columns-2,
 		&.columns-3,
@@ -47,7 +47,7 @@
 
 	}
 
-	@media (--breakpoint-3) {
+	@media (--from-breakpoint-3) {
 
 		&.columns-3,
 		&.columns-4,
@@ -59,7 +59,7 @@
 		}
 	}
 
-	@media (--breakpoint-4) {
+	@media (--from-breakpoint-4) {
 
 		&.columns-4,
 		&.columns-5,
@@ -70,7 +70,7 @@
 		}
 	}
 
-	@media (--breakpoint-5) {
+	@media (--from-breakpoint-5) {
 
 		&.columns-5,
 		&.columns-6 {

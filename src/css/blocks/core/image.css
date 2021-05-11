@@ -15,7 +15,7 @@
 			@mixin container--page;
 		}
 
-		@media (--columns-8) {
+		@media (--grid-columns-8) {
 
 			img {
 				@mixin container--page;

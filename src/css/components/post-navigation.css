@@ -10,7 +10,7 @@
 		column-gap: var(--gutter);
 		row-gap: calc(var(--row) * 4);
 
-		@media (--breakpoint-2) {
+		@media (--from-breakpoint-2) {
 			grid-template-columns: 1fr 1fr;
 			@mixin ie11-grid-fallback 2;
 		}

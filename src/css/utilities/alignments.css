@@ -19,7 +19,7 @@ figure.alignright {
 		width: 100%;
 	}
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		margin-top: calc(var(--row) * 0.5);
 	}
 }

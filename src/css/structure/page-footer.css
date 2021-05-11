@@ -12,7 +12,7 @@
 	.post-navigation {
 	}
 
-	@media (--breakpoint-4) {
+	@media (--from-breakpoint-4) {
 		margin-right: calc(var(--column-gutter) * -1);
 	}
 }

@@ -15,7 +15,7 @@
 		align-items: end;
 	}
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		grid-template-areas: "media-text-media media-text-content";
 		grid-template-columns: repeat(2, 1fr);
 

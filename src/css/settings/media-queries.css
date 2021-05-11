@@ -1,18 +1,42 @@
-@custom-media --breakpoint-1 (min-width: 360px);
-@custom-media --breakpoint-2 (min-width: 600px);
-@custom-media --breakpoint-3 (min-width: 840px);
-@custom-media --breakpoint-4 (min-width: 1080px);
-@custom-media --breakpoint-5 (min-width: 1400px);
-@custom-media --breakpoint-6 (min-width: 1720px);
+/**
+ * Media Queries / Breakpoints.
+ *
+ * Mobile first, so we start with general styles which apply to every screensize and change it going up the breakpoints.
+ *
+ * Special helpers:
+ * - mobile xs: for very small screens. You can see it as "only breakpoint 0".
+ * - mobile: usually the breakpoint where we expect touch screens. So different navigations.
+ * - desktop: large screens.
+ *
+ * Has connection with site layout. See settings/spacing.css
+ */
+
+@custom-media --from-breakpoint-1 (min-width: 360px);
+@custom-media --from-breakpoint-2 (min-width: 600px);
+@custom-media --from-breakpoint-3 (min-width: 840px);
+@custom-media --from-breakpoint-4 (min-width: 1080px);
+@custom-media --from-breakpoint-5 (min-width: 1400px);
+@custom-media --from-breakpoint-6 (min-width: 1720px);
+
+@custom-media --until-breakpoint-1 (max-width: 359px);
+@custom-media --until-breakpoint-2 (max-width: 599px);
+@custom-media --until-breakpoint-3 (max-width: 839px);
+@custom-media --until-breakpoint-4 (max-width: 1079px);
+@custom-media --until-breakpoint-5 (max-width: 1399px);
+@custom-media --until-breakpoint-6 (max-width: 1719px);
 
 /**
- * Helper breakpoints
+ * Special helpers
+ *
+ * - Columns
+ * - Devices
  */
-@custom-media --columns-2 (min-width: 360px);
-@custom-media --columns-4 (min-width: 600px);
-@custom-media --columns-8 (min-width: 840px);
+@custom-media --grid-columns-2 (--from-breakpoint-1);
+@custom-media --grid-columns-4 (--from-breakpoint-2);
+@custom-media --grid-columns-6 (--from-breakpoint-3);
+@custom-media --grid-columns-8 (--from-breakpoint-3);
+@custom-media --grid-columns-12 (--from-breakpoint-5);
 
-/* Mobile-Desktop helpers */
-@custom-media --only-mobile-xs (max-width: 359px);
-@custom-media --only-mobile (max-width: 839px);
-@custom-media --only-desktop (min-width: 840px);
+@custom-media --only-mobile-xs (--until-breakpoint-1);
+@custom-media --only-mobile (--until-breakpoint-4);
+@custom-media --only-desktop (--from-breakpoint-4);

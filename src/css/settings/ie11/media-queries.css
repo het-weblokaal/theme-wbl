@@ -1,14 +1,14 @@
-@custom-media --breakpoint-1 (min-width: 360px);
-@custom-media --breakpoint-2 (min-width: 600px);
-@custom-media --breakpoint-3 (min-width: 840px);
-@custom-media --breakpoint-4 (min-width: 840px);
+@custom-media --from-breakpoint-1 (min-width: 360px);
+@custom-media --from-breakpoint-2 (min-width: 600px);
+@custom-media --from-breakpoint-3 (min-width: 840px);
+@custom-media --from-breakpoint-4 (min-width: 840px);
 
 /**
  * Helper breakpoints
  */
-@custom-media --columns-2 (min-width: 360px);
-@custom-media --columns-4 (min-width: 600px);
-@custom-media --columns-8 (min-width: 840px);
+@custom-media --grid-columns-2 (min-width: 360px);
+@custom-media --grid-columns-4 (min-width: 600px);
+@custom-media --grid-columns-8 (min-width: 840px);
 
 /* Mobile-Desktop helpers */
 @custom-media --only-desktop (min-width: 840px);

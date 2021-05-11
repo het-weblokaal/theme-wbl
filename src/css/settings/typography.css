@@ -32,10 +32,10 @@
 	--line-height--sm: 1.2;
 	--line-height--md: 1.5;
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 	}
 
-	@media (--breakpoint-2) {
+	@media (--from-breakpoint-2) {
 		--rem-size: 112.5%;
 
 		--font-size--min: 0.75rem;
@@ -46,11 +46,11 @@
 		--font-size--h2: var(--font-size--2xl);
 	}
 
-	@media (--breakpoint-3) {
+	@media (--from-breakpoint-3) {
 		--rem-size: 118.75%;
 	}
 
-	@media (--breakpoint-4) {
+	@media (--from-breakpoint-4) {
 		--rem-size: 125%;
 		--font-size--min: 0.675rem;
 		--font-size--sm: 0.8125rem;
@@ -58,15 +58,15 @@
 		--font-size--max: 2.5rem;
 	}
 
-	@media (--breakpoint-5) {
+	@media (--from-breakpoint-5) {
 	}
 
-	@media (--breakpoint-6) {
+	@media (--from-breakpoint-6) {
 		--rem-size: 150%;
 		--font-size--min: 0.625rem;
 	}
 
-	@media (--breakpoint-7) {
+	@media (--from-breakpoint-7) {
 	}
 }
 

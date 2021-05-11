@@ -78,7 +78,7 @@
 	}
 
 	/** Media Queries */
-	@media (--breakpoint-2) {
+	@media (--from-breakpoint-2) {
 		grid-template-areas:
 			"meta content content content";
 
@@ -94,7 +94,7 @@
         }
 	}
 
-	@media (--breakpoint-3) {
+	@media (--from-breakpoint-3) {
 		grid-template-areas:
 			"meta content content content";
 
@@ -129,7 +129,7 @@
         }
 	}
 
-	@media (--breakpoint-5) {
+	@media (--from-breakpoint-5) {
 		&__header,
         &__main {
         	max-width: 600px;

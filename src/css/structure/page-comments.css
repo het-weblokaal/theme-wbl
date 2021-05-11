@@ -14,7 +14,7 @@
 		padding: calc(var(--row) * 1) calc(var(--row) * 2 + 0.25em) calc(var(--row) * 1) calc(var(--row) * 2);
 	}
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
 		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width));
 
@@ -94,7 +94,7 @@
 		}
 	}
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 
 		.children {
 

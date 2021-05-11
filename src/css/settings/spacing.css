@@ -1,4 +1,88 @@
+/**
+ * Spacing
+ *
+ * Site width, columns and gutters. Also vertical rhythm.
+ *
+ * - Mobile first
+ * - we start with one column and increase it throughout the breakpoints.
+ * - The last breakpoint has fixed sizes so we can box the layout
+ *
+ * For the breakpoint timings: see settings/media-queries.css.
+ */
 :root {
+	--vertical-space: 1.5rem;
+
+	--site--width:   88vw;
+	--site--padding: 6vw;
+
+	/* One column */
+	--column: 88vw;
+	--gutter: 0vw;
+
+	/* Column & gutter shortcuts */
+	--column-span-1: var(--column);
+	--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
+	--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
+	--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
+	--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
+	--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
+	--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
+	--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
+	--column-span-9: calc(var(--column) * 9 + var(--gutter) * 8);
+	--column-span-10: calc(var(--column) * 10 + var(--gutter) * 9);
+	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
+	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
+
+	--column-gutter-1: calc(var(--column) * 1 + var(--gutter) * 1);
+	--column-gutter-2: calc(var(--column) * 2 + var(--gutter) * 2);
+	--column-gutter-3: calc(var(--column) * 3 + var(--gutter) * 3);
+	--column-gutter-4: calc(var(--column) * 4 + var(--gutter) * 4);
+	--column-gutter-5: calc(var(--column) * 5 + var(--gutter) * 5);
+	--column-gutter-6: calc(var(--column) * 6 + var(--gutter) * 6);
+	--column-gutter-7: calc(var(--column) * 7 + var(--gutter) * 7);
+	--column-gutter-8: calc(var(--column) * 8 + var(--gutter) * 8);
+	--column-gutter-9: calc(var(--column) * 9 + var(--gutter) * 9);
+	--column-gutter-10: calc(var(--column) * 10 + var(--gutter) * 10);
+	--column-gutter-11: calc(var(--column) * 11 + var(--gutter) * 11);
+	--column-gutter-12: calc(var(--column) * 12 + var(--gutter) * 12);
+
+    @media (--from-breakpoint-1) {
+
+    	/* Two columns */
+    	--column:        41vw;
+		--gutter:        6vw;
+    }
+
+    @media (--from-breakpoint-3) {
+
+		--site--width:   85vw;
+		--site--padding: 7.5vw;
+
+    	/* Six columns */
+		--column:        10vw;
+		--gutter:        5vw;
+    }
+
+
+	@media (--from-breakpoint-5) {
+
+    	/* Twelve columns */
+		--column:        2.5vw;
+		--gutter:        5vw;
+    }
+
+    @media (--from-breakpoint-6) {
+
+    	/* Fixed sizes */
+		--site--width:   1380px;
+		--site--padding: 90px;
+
+    	--column: 71px; /* 60 71 82 */
+		--gutter: 48px; /* 60 48 36 */
+    }
+}
+
+/* :root {
 	--column        : 85vw;
 	--gutter        : 0vw;
 	--column-gutter : 85vw;
@@ -10,10 +94,9 @@
 	--page--width         : var(--site--width);
 	--page-content--width : var(--site--width);
 
-	--row: 8px; /* Then it's time for rows (vertical spacing) */
+	--row: 8px; 
 
-	/* 2 columns */
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		--column        : 40vw;
 		--gutter        : 6vw;
 		--column-gutter : 46vw;
@@ -24,8 +107,7 @@
 		--site--width   : 86vw;
     }
 
-	/* 4 columns */
-    @media (--breakpoint-2) {
+    @media (--from-breakpoint-2) {
 		--column        : 17.5vw;
 		--gutter        : 5vw;
 		--column-gutter : 22.5vw;
@@ -38,8 +120,7 @@
 		--site--width   : 85vw;
     }
 
-	/* 8 columns */
-    @media (--breakpoint-3) {
+    @media (--from-breakpoint-3) {
 		--column        : 6.5vw;
 		--gutter        : 5vw;
 		--column-gutter : 11.5vw;
@@ -59,27 +140,13 @@
 		--page-content--width : var(--column-span-6);
     }
 
-	/* 8 columns */
-    @media (--breakpoint-4) {
-		/* --column        : 8.0625vw;
-		--gutter        : 3.5vw;
-		--column-gutter : 11.5vw;
-		--site--width    : 89vw;
-		--site--padding  : 5.5vw; */
-
-/* 		--column        : 85px;
-		--gutter        : 50px;
-		--column-gutter : 135px;
-		--site--width    : 1030px;
-		--site--padding  : 50px; */
-
+    @media (--from-breakpoint-4) {
 		--row: 12px;
 
 		--page-content--width : var(--column-span-5);
     }
 
-	/** 8 columns **/
-	@media (--breakpoint-5) {
+	@media (--from-breakpoint-5) {
 		--column        : 98px;
 		--gutter        : 56px;
 		--column-gutter : 154px;
@@ -88,7 +155,7 @@
 		--site--padding : 56px;
     }
 
-    @media (--breakpoint-6) {
+    @media (--from-breakpoint-6) {
     	--column        : 120px;
 		--gutter        : 60px;
 		--column-gutter : 180px;
@@ -100,4 +167,4 @@
 
 		--page-content--width : var(--column-span-5);
     }
-}
+} */

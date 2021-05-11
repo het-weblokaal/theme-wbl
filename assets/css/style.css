@@ -1256,14 +1256,6 @@ body {
 	}
 
 /*--------------------------------------------------------------
-# Objects - Undecorated design patterns.
---------------------------------------------------------------*/
-
-.is-template--landing-page .page-main .wbl-segment:first-child {
-		margin-top: 0;
-	}
-
-/*--------------------------------------------------------------
 # Blocks - editor related styles.
 --------------------------------------------------------------*/
 
@@ -3447,3 +3439,7 @@ figure.alignright {
 		transition-duration: 0.001s !important;
 	}
 }
+
+.is-template--landing-page .page-main .wbl-segment:first-child {
+		margin-top: 0;
+	}

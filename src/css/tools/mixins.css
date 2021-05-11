@@ -7,7 +7,7 @@
 /* ===============
  * Structure
  * =============== */
-
+/* 
 @define-mixin site--padding {
 	padding-left: var(--site--padding);
 	padding-right: var(--site--padding);
@@ -30,19 +30,19 @@
 	margin-right: auto;
 	width: var(--page-content--width);
 
-	@media (--breakpoint-3) {
+	@media (--from-breakpoint-3) {
 		margin-left: calc(var(--column-gutter) * 1);
 	}
 }
 
 @define-mixin container--page-content--full-page {
-	@media (--columns-8) {
+	@media (--grid-columns-8) {
 		margin-left: calc(var(--column-gutter) * -1);
 		margin-right: calc(var(--column-gutter) * -1);
 		width: var(--page--width);
 	}
 
-	@media (--breakpoint-4) {
+	@media (--from-breakpoint-4) {
 		margin-right: calc(var(--column-gutter) * -2);
 	}
 }
@@ -52,7 +52,7 @@
 	margin-right: calc(50% - 50vw + var(--site--padding));
 	width: auto;
 
-	@media (--breakpoint-4) {
+	@media (--from-breakpoint-4) {
 		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
 		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding));
 	}
@@ -60,18 +60,18 @@
 
 @define-mixin container--page-content--right {
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		float: right;
 		margin-bottom: calc(var(--row) * 3);
 		margin-left: var(--gutter);
 		max-width: var(--column-span-1);
 	}
 
-	@media (--columns-4) {
+	@media (--grid-columns-4) {
 		max-width: var(--column-span-2);
 	}
 
-	@media (--columns-8) {
+	@media (--grid-columns-8) {
 		margin-right: calc(var(--column-gutter) * -1);
 		max-width: var(--column-span-3);
 	}
@@ -79,48 +79,48 @@
 
 @define-mixin container--page-content--left {
 
-	@media (--breakpoint-1) {
+	@media (--from-breakpoint-1) {
 		float: left;
 		margin-bottom: calc(var(--row) * 3);
 		margin-right: var(--gutter);
 		max-width: var(--column-span-1);
 	}
 
-	@media (--columns-4) {
+	@media (--grid-columns-4) {
 		max-width: var(--column-span-2);
 	}
 
-	@media (--columns-8) {
+	@media (--grid-columns-8) {
 		max-width: var(--column-span-3);
 	}
-}
+} */
 
 /* Collapse vertical margin */
-@define-mixin margin-collapse-fix {
+/* @define-mixin margin-collapse-fix {
     overflow-y: hidden;
-}
+} */
 
 /* Vertical spacing */
-@define-mixin vertical-spacing {
+/* @define-mixin vertical-spacing {
     margin-bottom: calc(var(--row) * 3);
-}
+} */
 
-@define-mixin full-page-content-overflow-fix {
+/* @define-mixin full-page-content-overflow-fix {
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
 }
-
+ */
 /** Editor structure helpers */
-@define-mixin editor-page-content--full-site {
+/* @define-mixin editor-page-content--full-site {
 	margin-left: -5vw;
 	margin-right: -5vw;
 
-	@media (--breakpoint-3) {
+	@media (--from-breakpoint-3) {
 		margin-left: calc(var(--gutter) * -1);
 		margin-right: calc(var(--gutter) * -1);
 	}
-}
+} */
 
 
 /* ===============
@@ -282,7 +282,7 @@
 @define-mixin dev--background-grid {
 	background: var(--foreground-color);
 
-	@media (--columns-2) {
+	@media (--grid-columns-2) {
 		background: linear-gradient(90deg,
 			var(--foreground-color) calc(var(--column) * 1),
 			transparent calc(var(--column) * 1),
@@ -291,7 +291,7 @@
 		);
 	}
 
-	@media (--columns-4) {
+	@media (--grid-columns-4) {
 		background: linear-gradient(90deg,
 			var(--foreground-color) calc(var(--column) * 1),
 			transparent calc(var(--column) * 1),
@@ -308,7 +308,7 @@
 		);
 	}
 
-	@media (--columns-8) {
+	@media (--grid-columns-8) {
 		background: linear-gradient(90deg,
 			var(--foreground-color) calc(var(--column) * 1),
 			transparent calc(var(--column) * 1),
@@ -382,10 +382,10 @@
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 
-	@media (--breakpoint-1) { content: 'bp 1: 360px [klein]'; }
-	@media (--breakpoint-2) { content: 'bp 2: 600px [klein]'; }
-	@media (--breakpoint-3) { content: 'bp 3: 840px [middel]'; }
-	@media (--breakpoint-4) { content: 'bp 4: 1080px [middel]'; }
-	@media (--breakpoint-5) { content: 'bp 5: 1400px [groot]'; }
-	@media (--breakpoint-6) { content: 'bp 6: 1720px [groot]'; }
+	@media (--from-breakpoint-1) { content: 'bp 1: 360px [klein]'; }
+	@media (--from-breakpoint-2) { content: 'bp 2: 600px [klein]'; }
+	@media (--from-breakpoint-3) { content: 'bp 3: 840px [middel]'; }
+	@media (--from-breakpoint-4) { content: 'bp 4: 1080px [middel]'; }
+	@media (--from-breakpoint-5) { content: 'bp 5: 1400px [groot]'; }
+	@media (--from-breakpoint-6) { content: 'bp 6: 1720px [groot]'; }
 }

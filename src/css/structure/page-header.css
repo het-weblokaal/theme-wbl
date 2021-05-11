@@ -35,7 +35,7 @@
 		display: none;
 	}
 
-	@media (--breakpoint-5) {
+	@media (--from-breakpoint-5) {
 		margin-bottom: calc(var(--row) * 5);
 	}
 }

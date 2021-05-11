@@ -25,7 +25,7 @@
 			display: none;
 		}
 
-		@media (--breakpoint-2) {
+		@media (--from-breakpoint-2) {
 			&__label {
 				display: block;
 			}
@@ -33,26 +33,26 @@
 	}
 
 	/** Media Queries */
-	@media (--breakpoint-2) {
+	@media (--from-breakpoint-2) {
 		.site-branding {
 			width: 160px;
 		}
 	}
 
-	@media (--breakpoint-3) {
+	@media (--from-breakpoint-3) {
 
 		.site-branding {
 			width: 180px;
 		}
 	}
 
-	@media (--breakpoint-4) {
+	@media (--from-breakpoint-4) {
 		.site-branding {
 			width: auto;
 		}
 	}
 
-	@media (--breakpoint-5) {
+	@media (--from-breakpoint-5) {
 		@mixin site--padding;
 		margin-bottom: calc(var(--row) * 8);
 
