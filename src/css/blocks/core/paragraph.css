@@ -1,5 +1,5 @@
 p {
 	&.has-background {
-		padding: calc(var(--row) * 2);
+		padding: var(--space-2);
 	}
 }

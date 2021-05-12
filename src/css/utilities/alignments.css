@@ -3,11 +3,11 @@
 }
 
 .alignleft {
-	@mixin container--page-content--left;
+	@mixin is-page-content--left;
 }
 
 .alignright {
-	@mixin container--page-content--right;
+	@mixin is-page-content--right;
 }
 
 figure.alignleft,
@@ -20,7 +20,7 @@ figure.alignright {
 	}
 
 	@media (--from-breakpoint-1) {
-		margin-top: calc(var(--row) * 0.5);
+		margin-top: var(--space-1);
 	}
 }
 
@@ -32,5 +32,5 @@ figure.alignright {
 }
 
 .alignwide {
-	@mixin container--page-content--full-site;
+	@mixin is-page-content--full;
 }

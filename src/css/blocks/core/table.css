@@ -1,6 +1,6 @@
 .wp-block-table {
-	margin-bottom: calc(var(--row) * 4);
-	margin-top: calc(var(--row) * 4);
+	margin-bottom: var(--space-4);
+	margin-top: var(--space-4);
 
 	.has-fixed-layout {
 		table-layout: fixed;
@@ -12,7 +12,7 @@
 
 	th,
 	td {
-		padding: calc(var(--row) * 1) 0;
+		padding: var(--space-1) 0;
 		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
 	}
 

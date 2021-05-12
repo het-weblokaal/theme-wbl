@@ -1,7 +1,7 @@
 .wp-block-gallery {
 	max-width: none;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 4);
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-4);
 	
 	figure {}
 
@@ -87,7 +87,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	column-gap: calc(var(--gutter) * 1);
-	row-gap: calc(var(--row) * 3);
+	row-gap: var(--space-3);
 
 	
 }

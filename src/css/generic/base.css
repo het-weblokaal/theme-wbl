@@ -18,7 +18,7 @@ body {}
 /* Vertical Spacing
 ---------------------------------------------------- */
 /* Maybe extract this to the elements itself to give more control */
-
+/* 
 p,
 h1,h2,h3,h4,h5,h6,
 ul,ol,
@@ -28,22 +28,206 @@ img,
 figure,
 hr,
 pre {
-    margin-bottom: calc(var(--row) * 3);
+    margin-bottom: calc(var(--vertical-space) * 1);
+} */
+
+
+/* Headings
+---------------------------------------------------- */
+/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    line-height: var(--line-height--xs);
+    font-weight: bold;
+    font-style: normal;
+    overflow-wrap: break-word;
+    text-transform: uppercase;
+}
+
+h6,
+h5,
+h4,
+h3 {
+    font-size: var(--font-size--h3);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+h2 {
+    font-size: var(--font-size--h2);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
 }
 
 
-/* Buttons
+h1 {
+    font-size: var(--font-size--h1);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-8);
+}
+
+
+/* Copywriting
 ---------------------------------------------------- */
 
-input[type="submit"] {
-    background-color: transparent;
-    border: 0;
+p {
+    margin-bottom: var(--space-8);
 }
 
-button,
-input[type="submit"],
-.button {
-    @mixin button;
+
+/* Inline
+---------------------------------------------------- */
+
+br, strong {}
+
+i, em {}
+
+
+/* Links
+---------------------------------------------------- */
+
+a {
+    @mixin link;
+}
+
+
+/* Lists
+---------------------------------------------------- */
+
+ul, ol {
+    padding-left: 1.1em;
+    margin-left: 0;
+    margin-bottom: var(--space-8);
+
+    ul, ol {}
+}
+
+li {}
+
+
+
+/* Tables
+---------------------------------------------------- */
+
+table {
+    border-collapse: collapse; /* Makes table rows borderable */
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: var(--space-8);
+}
+
+th,
+td {
+    border-width: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+
+
+/* Miscelaneous
+---------------------------------------------------- */
+
+hr {
+    color: currentColor;
+    border: 0;
+    border-bottom-width: var(--ui-border-width);
+    border-color: currentColor;
+    border-style: solid;
+    clear: both;
+    width: 100%;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+pre {
+    white-space: pre-wrap;
+    margin-bottom: var(--space-8);
+}
+
+
+/* Blockquotes
+---------------------------------------------------- */
+
+blockquote {
+    margin-bottom: var(--space-8);
+
+    i,
+    em,
+    cite {
+
+    }
+
+    p {
+
+    }
+
+    cite,
+    footer {
+        font-style: normal;
+        &:before {
+            content: '\2014';
+            margin-right: 0.25em;
+        }
+    }
+}
+
+
+/* Media
+---------------------------------------------------- */
+img,
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: var(--space-8);
+}
+
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    display: block;
+}
+
+figure {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+figure img {
+    display: block;
+}
+
+figure > * {
+    margin-bottom: 0;
+}
+
+figcaption {
+    padding-top: var(--space-1);
+    font-size: var(--font-size--min);
+    line-height: var(--line-height--xs);
+}
+
+
+/* SVG
+---------------------------------------------------- */
+
+svg {
+    @mixin svg;
 }
 
 
@@ -76,7 +260,7 @@ select {
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
     font-size: var(--font-size--sm);
-    padding: calc(var(--row) * 1) calc(var(--row) * 1);
+    padding: var(--space-1) var(--space-1);
     width: 100%;
     transition: border-color var(--transition-fast);
 
@@ -103,7 +287,7 @@ label {
 
 input[type="checkbox"],
 input[type="radio"] {
-    margin-right: calc(var(--row) * 0.5);
+    margin-right: 0.25em;
     /* font-weight: normal; */
     line-height: var(--line-height--sm);
 
@@ -116,190 +300,15 @@ input[type="radio"] {
 }
 
 
-/* Headings
----------------------------------------------------- */
-/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
-
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-    line-height: var(--line-height--xs);
-    font-weight: bold;
-    font-style: normal;
-    overflow-wrap: break-word;
-    text-transform: uppercase;
-}
-
-h6,
-h5,
-h4,
-.is-h4,
-h3,
-.is-h3 {
-    font-size: var(--font-size--h3);
-    margin-top: calc(var(--row) * 4);
-    margin-bottom: calc(var(--row) * 1);
-}
-
-h2,
-.is-h2 {
-    font-size: var(--font-size--h2);
-    margin-top: calc(var(--row) * 4);
-    margin-bottom: calc(var(--row) * 3);
-}
-
-
-h1,
-.is-h1 {
-    font-size: var(--font-size--h1);
-    margin-top: calc(var(--row) * 6);
-    margin-bottom: calc(var(--row) * 4);
-}
-
-
-/* Inline
+/* Buttons
 ---------------------------------------------------- */
 
-br, strong {}
-
-i, em {}
-
-
-/* Links
----------------------------------------------------- */
-
-a {
-    @mixin link;
-}
-
-
-/* Lists
----------------------------------------------------- */
-
-ul, ol {
-    padding-left: 1.1em;
-    margin-left: 0;
-
-    ul, ol {}
-}
-
-li {}
-
-
-/* Media
----------------------------------------------------- */
-img,
-figure,
-audio,
-video,
-object,
-embed,
-iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-figure,
-audio,
-video,
-object,
-embed,
-iframe {
-    display: block;
-}
-
-figure {
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-figure img {
-    display: block;
-    margin-bottom: 0;
-}
-
-figcaption {
-    padding-top: calc(var(--row) * 1);
-    /* font-style: italic; */
-    font-size: var(--font-size--min);
-    line-height: var(--line-height--xs);
-}
-
-
-/* Miscelaneous
----------------------------------------------------- */
-p {
-
-}
-
-hr {
-    color: currentColor;
+input[type="submit"] {
+    background-color: transparent;
     border: 0;
-    border-bottom-width: var(--ui-border-width);
-    border-color: currentColor;
-    border-style: solid;
-    clear: both;
-    width: 100%;
-    margin-top: calc(var(--row) * 3);
-    margin-bottom: calc(var(--row) * 3);
 }
 
-pre {
-    white-space: pre-wrap;
-}
-
-
-/* Blockquotes
----------------------------------------------------- */
-
-blockquote {
-    /* @mixin background--light; */
-
-    i,
-    em,
-    cite {
-
-    }
-
-    p {
-
-    }
-
-    cite,
-    footer {
-        font-style: normal;
-        &:before {
-            content: '\2014';
-            margin-right: var(--spacing--05);
-        }
-    }
-}
-
-
-/* SVG
----------------------------------------------------- */
-
-svg {
-    @mixin svg;
-}
-
-
-/* Tables
----------------------------------------------------- */
-
-table {
-    border-collapse: collapse; /* Makes table rows borderable */
-    border-spacing: 0;
-    width: 100%;
-}
-
-th,
-td {
-    border-width: 1px;
-    text-align: left;
-    vertical-align: top;
+button,
+input[type="submit"] {
+    @mixin button;
 }

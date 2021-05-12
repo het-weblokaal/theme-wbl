@@ -1,7 +1,8 @@
 .posts {
-	@mixin container--page-content--full-page;
-	margin-bottom: calc(var(--row) * 10);
-	margin-top: calc(var(--row) * 8);
+	@mixin is-page-content;
+	@mixin is-page-content--full;
+	margin-bottom: var(--space-10);
+	margin-top: var(--space-8);
 
 	_:-ms-fullscreen, :root & {
 		column-gap: var(--gutter);

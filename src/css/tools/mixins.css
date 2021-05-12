@@ -62,7 +62,7 @@
 
 	@media (--from-breakpoint-1) {
 		float: right;
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 		margin-left: var(--gutter);
 		max-width: var(--column-span-1);
 	}
@@ -81,7 +81,7 @@
 
 	@media (--from-breakpoint-1) {
 		float: left;
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 		margin-right: var(--gutter);
 		max-width: var(--column-span-1);
 	}
@@ -102,7 +102,7 @@
 
 /* Vertical spacing */
 /* @define-mixin vertical-spacing {
-    margin-bottom: calc(var(--row) * 3);
+    margin-bottom: var(--space-3);
 } */
 
 /* @define-mixin full-page-content-overflow-fix {
@@ -141,8 +141,8 @@
 
 @define-mixin segment-title {
 	font-size: var(--font-size--lg);
-	margin-top: calc(var(--row) * 6);
-	margin-bottom: calc(var(--row) * 4);
+	margin-top: var(--space-6);
+	margin-bottom: var(--space-4);
 }
 
 
@@ -192,7 +192,7 @@
     cursor: pointer;
 
 	border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    padding: calc(var(--row) * 1);
+    padding: var(--space-1);
 
 	transition: border-color var(--transition-fast);
 

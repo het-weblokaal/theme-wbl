@@ -1,6 +1,6 @@
 .post-navigation {
-	margin-top: calc(var(--row) * 8);
-	margin-bottom: calc(var(--row) * 8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 
 	a {}
 
@@ -8,7 +8,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		column-gap: var(--gutter);
-		row-gap: calc(var(--row) * 4);
+		row-gap: var(--space-4);
 
 		@media (--from-breakpoint-2) {
 			grid-template-columns: 1fr 1fr;
@@ -18,7 +18,7 @@
 
 	&__link-label {
 		@mixin label;
-		margin-bottom: calc(var(--row) * 2);
+		margin-bottom: var(--space-2);
 	}
 
 	&__link {

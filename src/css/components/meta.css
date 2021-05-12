@@ -18,7 +18,7 @@
 	&__label {
 		@mixin label;
 		display: block;
-		margin-bottom: calc(var(--row) * 2);
+		margin-bottom: var(--space-2);
 	}
 
 	&__content {

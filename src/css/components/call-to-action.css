@@ -1,17 +1,18 @@
 .call-to-action {
 	@mixin margin-collapse-fix;
-	@mixin container--page--full-site;
+	@mixin is-page-content;
+	@mixin is-page-content--full;
 	--background-color: var(--wp--preset--color--secondary-1);
 	--foreground-color: var(--wp--preset--color--primary-1);
 	background-color: var(--background-color);
 	color: var(--foreground-color);
-	margin-top: calc(var(--row) * 10);
-	margin-bottom: calc(var(--row) * 10);
+	margin-top: var(--space-10);
+	margin-bottom: var(--space-10);
 
 
 	&__inner {
-		margin-top: calc(var(--row) * 12);
-		margin-bottom: calc(var(--row) * 12);
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
 
 		margin-left: auto;
 		margin-right: auto;

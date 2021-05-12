@@ -3,7 +3,7 @@
 	flex-wrap: wrap;
 
 	.search-field {
-		margin-right: calc(var(--row) * 0.5);
+		margin-right: 0.25em;
 		width: auto;
 	}
 }

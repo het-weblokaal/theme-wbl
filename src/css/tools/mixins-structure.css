@@ -1,12 +1,5 @@
+/* Mixins: Structure */
 /* Mixins are predefined css, usable anywhere in the stylesheets */
-
-/* ===============
- * Helpers
- * =============== */
-
-/* ===============
- * Structure
- * =============== */
 
 /* ---- */
 @define-mixin is-page-segment {
@@ -14,16 +7,6 @@
     margin-right: auto;
 	max-width: var(--site--width);
 	width: 100%;
-}
-
-@define-mixin has-page-content {
-	@mixin clearfix;
-
-	@mixin remove-first-last-child-margin;
-
-	> * {
-		@mixin is-page-content;
-	}
 }
 
 @define-mixin is-page-content {
@@ -78,6 +61,14 @@
 	padding-right: 0;
 }
 
+@define-mixin has-page-content {
+	@mixin clearfix;
+	@mixin remove-first-last-child-margin;
+
+	> * {
+		@mixin is-page-content;
+	}
+}
 
 /* ---- */
 
@@ -128,22 +119,3 @@
 		@mixin-content;
 	}
 }
-
-/* @mixin innerblock-margin-clear($container) {
-
-	// Clear the top margin for the first-child.
-	> #{$container} > *:first-child {
-		margin-top: 0;
-	}
-
-	// Last child that is not the appender.
-	> #{$container} > *:last-child:not(.block-list-appender) {
-		margin-bottom: 0;
-	}
-
-	// When selected, the last item becomes the second last because of the appender.
-	&.has-child-selected > #{$container} > *:nth-last-child(2),
-	&.is-selected > #{$container} > *:nth-last-child(2) {
-		margin-bottom: 0;
-	}
-} */

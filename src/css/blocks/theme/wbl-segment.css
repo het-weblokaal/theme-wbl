@@ -13,18 +13,18 @@
  */
 
  .wbl-segment {
-	@mixin is-page-content--full
+	@mixin is-page-segment;
 	--foreground-color: inherit;
 	--background-color: transparent;
 
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 	border-color: var(--foreground-color);
-	margin-top: calc(var(--row) * 8);
-	margin-bottom: calc(var(--row) * 8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 
 	&__inner {
-		@mixin container--page;
+		@mixin has-page-content;
 	}
 
 	&__title {
@@ -41,7 +41,7 @@
 	&__content {
 		display: grid;
 		column-gap: var(--gutter);
-		row-gap: calc(var(--row) * 3);
+		row-gap: var(--space-3);
 		grid-template-columns: 1fr;
 
 		> * {
@@ -52,8 +52,8 @@
 
 	/** Media Queries */
 	@media (--from-breakpoint-4) {
-		margin-top: calc(var(--row) * 10);
-		margin-bottom: calc(var(--row) * 10);
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-10);
 	}
 
  	/** Additional and modifying classes */
@@ -83,16 +83,16 @@
 		@mixin margin-collapse-fix;
 		--background-color: var(--wp--preset--color--secondary-1);
 		--foreground-color: var(--wp--preset--color--primary-1);
-		margin-top: calc(var(--row) * -1);
+		margin-top: var(--space--1);
 	}
 
 	&--portfolio &__inner {
-		margin-top: calc(var(--row) * 6);
-		margin-bottom: calc(var(--row) * 6);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-6);
 	}
 
 	&--portfolio &__content {
-		row-gap: calc(var(--row) * 6);
+		row-gap: var(--space-6);
 
 		@media (--from-breakpoint-2) {
 			grid-template-columns: 1fr 1fr;
@@ -112,8 +112,8 @@
 	 * Blog
 	 */
 	&--blog {
-		margin-top: calc(var(--row) * 8);
-		margin-bottom: calc(var(--row) * 10);
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-10);
 
 		.posts {
 			margin: 0;
@@ -130,7 +130,7 @@
 	&--featured-four {}
 
 	&--featured-four &__content {
-		row-gap: calc(var(--row) * 6);
+		row-gap: var(--space-6);
 
 		.wbl-card__image-container {
 			padding-right: var(--gutter);
@@ -160,13 +160,13 @@
 	 	row-gap: normal;
 		flex-wrap: wrap;
 		align-items: center;
-		margin: calc(var(--row) * -1) calc(var(--row) * -1);
+		margin: var(--space--1) var(--space--1);
 		margin-bottom: 0;
 
 		figure {
 			flex: 0 1 auto;
 			width: auto;
-			margin: calc(var(--row) * 1) calc(var(--row) * 1);
+			margin: var(--space-1) var(--space-1);
 		}
 
 		img {
@@ -174,12 +174,12 @@
 		}
 
 		@media (--from-breakpoint-2) {
-			margin-left: calc(var(--row) * -2);
-			margin-right: calc(var(--row) * -2);
+			margin-left: var(--space--2);
+			margin-right: var(--space--2);
 
 			figure {
-				margin-left: calc(var(--row) * 2);
-				margin-right: calc(var(--row) * 2);
+				margin-left: var(--space-2);
+				margin-right: var(--space-2);
 			}
 
 			img {
@@ -198,7 +198,8 @@
 
 /* Editor */
 .is-root-container [data-type="wbl-theme/segment"] {
-	@mixin container--page-content--full-page;
+	@mixin editor--is-container;
+	@mixin editor--is-full-width;
 
 	.wbl-segment {
 		margin: 0;
@@ -216,7 +217,7 @@
 	.wbl-segment__content > .block-editor-inner-blocks > .block-editor-block-list__layout {
 		display: grid;
 		column-gap: var(--gutter);
-		row-gap: calc(var(--row) * 3);
+		row-gap: var(--space-3);
 		grid-template-columns: 1fr;
 
 		> * {
@@ -247,7 +248,7 @@
 	}
 
 	.wbl-segment--portfolio {
-		@mixin editor-page-content--full-site;
+		@mixin editor--is-full-width;
 	}
 
 	.wbl-segment--portfolio .wbl-segment__content > .block-editor-inner-blocks > .block-editor-block-list__layout {
@@ -266,22 +267,22 @@
 	}
 
 	.wbl-segment--call-to-action {
-		@mixin editor-page-content--full-site;
+		@mixin editor--is-full-width;
 	}
 
 	.wbl-segment--companies .wbl-segment__content > .block-editor-inner-blocks > .block-editor-block-list__layout {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		margin: calc(var(--row) * -1) calc(var(--row) * -2);
+		margin: var(--space--1) var(--space--2);
 
 		> * {
 			flex: 0 1 auto;
 			width: auto;
-			margin-top: calc(var(--row) * 1);
-			margin-bottom: calc(var(--row) * 1);
-			margin-left: calc(var(--row) * 2);
-			margin-right: calc(var(--row) * 2);
+			margin-top: var(--space-1);
+			margin-bottom: var(--space-1);
+			margin-left: var(--space-2);
+			margin-right: var(--space-2);
 
 			.wbl-simple-image {
 				margin: 0;

@@ -5,8 +5,8 @@
 	display: flex;
 	align-items: center;
 
-/* 	padding: calc(var(--row) * 1);
-	margin: calc(var(--row) * -1); */
+/* 	padding: var(--space-1);
+	margin: var(--space--1); */
 	padding: 0;
 
 
@@ -37,7 +37,7 @@
 
 	&__label {
 		@mixin label;
-		margin-right: calc(var(--row) * 1);
+		margin-right: var(--space-1);
 	}
 
 	&[aria-expanded="false"] &__label--close,

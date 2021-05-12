@@ -1,7 +1,8 @@
 .page-image {
-	@mixin container--page-content--full-site;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 4);
+	@mixin is-page-content;
+	@mixin is-page-content--full;
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-4);
 
 	&__inner {
 	}
@@ -15,7 +16,7 @@
 	@media (--grid-columns-8) {
 
 		&__inner {
-			@mixin container--page;
+			@mixin is-page-content;
 		}
 	}
 }

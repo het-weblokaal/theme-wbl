@@ -4,10 +4,10 @@
 	clear: both;
 	min-height: 100vh;
 
-	background-color: var(--background-color);
+	/* background-color: var(--background-color);
 	color: var(--foreground-color);
 	font-family: var(--font-1-family);
-	line-height: var(--font-1-line-height);
+	line-height: var(--font-1-line-height); */
 }
 
 .has-expanded-site-nav .site {

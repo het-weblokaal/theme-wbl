@@ -11,10 +11,24 @@
 --------------------------------------------------------------*/
 
 /**
- * Helper breakpoints
+ * Media Queries / Breakpoints.
+ *
+ * Mobile first, so we start with general styles which apply to every screensize and change it going up the breakpoints.
+ *
+ * Special helpers:
+ * - mobile xs: for very small screens. You can see it as "only breakpoint 0".
+ * - mobile: usually the breakpoint where we expect touch screens. So different navigations.
+ * - desktop: large screens.
+ *
+ * Has connection with site layout. See settings/spacing.css
  */
 
-/* Mobile-Desktop helpers */
+/**
+ * Special helpers
+ *
+ * - Columns
+ * - Devices
+ */
 
 /**
  * Load font faces
@@ -101,10 +115,128 @@
 }
 	}
 
-@media (--breakpoint-7) {
+@media (--from-breakpoint-7) {
 	}
 
+/**
+ * Spacing
+ *
+ * Site width, columns and gutters. Also vertical rhythm.
+ *
+ * - Mobile first
+ * - we start with one column and increase it throughout the breakpoints.
+ * - The last breakpoint has fixed sizes so we can box the layout
+ *
+ * For the breakpoint timings: see settings/media-queries.css.
+ */
+
 :root {
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 1rem;
+	--space-4: 1.25rem;
+	--space-5: 1.5rem;
+	--space-6: 1.75rem;
+	--space-8: 2rem;
+	--space-12: 3rem;
+	--space-16: 4rem;
+	--space-20: 5rem;
+
+	--column-span-1: var(--column);
+	--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
+	--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
+	--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
+	--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
+	--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
+	--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
+	--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
+	--column-span-9: calc(var(--column) * 9 + var(--gutter) * 8);
+	--column-span-10: calc(var(--column) * 10 + var(--gutter) * 9);
+	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
+	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
+
+	--site--width:   88vw;
+	--site--padding: 6vw;
+
+	/* One column */
+	--column: 88vw;
+	--gutter: 0vw;
+
+	/* Column & gutter shortcuts */
+	--column-span-1: var(--column);
+	--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
+	--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
+	--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
+	--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
+	--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
+	--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
+	--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
+	--column-span-9: calc(var(--column) * 9 + var(--gutter) * 8);
+	--column-span-10: calc(var(--column) * 10 + var(--gutter) * 9);
+	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
+	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
+
+	--column-gutter-1: calc(var(--column) * 1 + var(--gutter) * 1);
+	--column-gutter-2: calc(var(--column) * 2 + var(--gutter) * 2);
+	--column-gutter-3: calc(var(--column) * 3 + var(--gutter) * 3);
+	--column-gutter-4: calc(var(--column) * 4 + var(--gutter) * 4);
+	--column-gutter-5: calc(var(--column) * 5 + var(--gutter) * 5);
+	--column-gutter-6: calc(var(--column) * 6 + var(--gutter) * 6);
+	--column-gutter-7: calc(var(--column) * 7 + var(--gutter) * 7);
+	--column-gutter-8: calc(var(--column) * 8 + var(--gutter) * 8);
+	--column-gutter-9: calc(var(--column) * 9 + var(--gutter) * 9);
+	--column-gutter-10: calc(var(--column) * 10 + var(--gutter) * 10);
+	--column-gutter-11: calc(var(--column) * 11 + var(--gutter) * 11);
+	--column-gutter-12: calc(var(--column) * 12 + var(--gutter) * 12);
+}
+
+@media (min-width: 360px) {
+
+:root {
+
+    	/* Two columns */
+    	--column:        41vw;
+		--gutter:        6vw
+}
+    }
+
+@media (min-width: 840px) {
+
+:root {
+
+		--site--width:   85vw;
+		--site--padding: 7.5vw;
+
+    	/* Six columns */
+		--column:        10vw;
+		--gutter:        5vw
+}
+    }
+
+@media (min-width: 1400px) {
+
+:root {
+
+    	/* Twelve columns */
+		--column:        2.5vw;
+		--gutter:        5vw
+}
+    }
+
+@media (min-width: 1720px) {
+
+:root {
+
+    	/* Fixed sizes */
+		--site--width:   1380px;
+		--site--padding: 90px;
+
+    	--column: 71px; /* 60 71 82 */
+		--gutter: 48px /* 60 48 36 */
+}
+    }
+
+/* :root {
 	--column        : 85vw;
 	--gutter        : 0vw;
 	--column-gutter : 85vw;
@@ -116,14 +248,9 @@
 	--page--width         : var(--site--width);
 	--page-content--width : var(--site--width);
 
-	--row: 8px;
-}
+	--row: 8px; 
 
-/* 2 columns */
-
-@media (min-width: 360px) {
-
-:root {
+	@media (--from-breakpoint-1) {
 		--column        : 40vw;
 		--gutter        : 6vw;
 		--column-gutter : 46vw;
@@ -131,15 +258,10 @@
 		--column-span-1: var(--column);
 		--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
 
-		--site--width   : 86vw
-}
+		--site--width   : 86vw;
     }
 
-/* 4 columns */
-
-@media (min-width: 600px) {
-
-:root {
+    @media (--from-breakpoint-2) {
 		--column        : 17.5vw;
 		--gutter        : 5vw;
 		--column-gutter : 22.5vw;
@@ -149,15 +271,10 @@
 		--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
 		--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
 
-		--site--width   : 85vw
-}
+		--site--width   : 85vw;
     }
 
-/* 8 columns */
-
-@media (min-width: 840px) {
-
-:root {
+    @media (--from-breakpoint-3) {
 		--column        : 6.5vw;
 		--gutter        : 5vw;
 		--column-gutter : 11.5vw;
@@ -174,52 +291,25 @@
 		--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
 
 		--site--width         : 87vw;
-		--page-content--width : var(--column-span-6)
-}
+		--page-content--width : var(--column-span-6);
     }
 
-/* 8 columns */
-
-@media (min-width: 1080px) {
-
-:root {
-		/* --column        : 8.0625vw;
-		--gutter        : 3.5vw;
-		--column-gutter : 11.5vw;
-		--site--width    : 89vw;
-		--site--padding  : 5.5vw; */
-
-/* 		--column        : 85px;
-		--gutter        : 50px;
-		--column-gutter : 135px;
-		--site--width    : 1030px;
-		--site--padding  : 50px; */
-
+    @media (--from-breakpoint-4) {
 		--row: 12px;
 
-		--page-content--width : var(--column-span-5)
-}
+		--page-content--width : var(--column-span-5);
     }
 
-/** 8 columns **/
-
-@media (min-width: 1400px) {
-
-:root {
+	@media (--from-breakpoint-5) {
 		--column        : 98px;
 		--gutter        : 56px;
 		--column-gutter : 154px;
 
 		--site--width   : 1176px;
-		--site--padding : 56px
-}
+		--site--padding : 56px;
     }
 
-/* Then it's time for rows (vertical spacing) */
-
-@media (min-width: 1720px) {
-
-:root {
+    @media (--from-breakpoint-6) {
     	--column        : 120px;
 		--gutter        : 60px;
 		--column-gutter : 180px;
@@ -229,9 +319,9 @@
 		--site--padding : 90px;
 		--site--width   : 1380px;
 
-		--page-content--width : var(--column-span-5)
-}
+		--page-content--width : var(--column-span-5);
     }
+} */
 
 :root {
 
@@ -286,11 +376,124 @@
  * Structure
  * =============== */
 
+/* 
+@define-mixin site--padding {
+	padding-left: var(--site--padding);
+	padding-right: var(--site--padding);
+}
+
+@define-mixin container--page {
+	margin-left: auto;
+    margin-right: auto;
+	width: var(--page--width);
+}
+
+@define-mixin container--page--full-site {
+	margin-left: calc(50% - 50vw + var(--site--padding));
+	margin-right: calc(50% - 50vw + var(--site--padding));
+	width: auto;
+}
+
+@define-mixin container--page-content {
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--page-content--width);
+
+	@media (--from-breakpoint-3) {
+		margin-left: calc(var(--column-gutter) * 1);
+	}
+}
+
+@define-mixin container--page-content--full-page {
+	@media (--grid-columns-8) {
+		margin-left: calc(var(--column-gutter) * -1);
+		margin-right: calc(var(--column-gutter) * -1);
+		width: var(--page--width);
+	}
+
+	@media (--from-breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -2);
+	}
+}
+
+@define-mixin container--page-content--full-site {
+	margin-left: calc(50% - 50vw + var(--site--padding));
+	margin-right: calc(50% - 50vw + var(--site--padding));
+	width: auto;
+
+	@media (--from-breakpoint-4) {
+		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
+		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding));
+	}
+}
+
+@define-mixin container--page-content--right {
+
+	@media (--from-breakpoint-1) {
+		float: right;
+		margin-bottom: var(--space-3);
+		margin-left: var(--gutter);
+		max-width: var(--column-span-1);
+	}
+
+	@media (--grid-columns-4) {
+		max-width: var(--column-span-2);
+	}
+
+	@media (--grid-columns-8) {
+		margin-right: calc(var(--column-gutter) * -1);
+		max-width: var(--column-span-3);
+	}
+}
+
+@define-mixin container--page-content--left {
+
+	@media (--from-breakpoint-1) {
+		float: left;
+		margin-bottom: var(--space-3);
+		margin-right: var(--gutter);
+		max-width: var(--column-span-1);
+	}
+
+	@media (--grid-columns-4) {
+		max-width: var(--column-span-2);
+	}
+
+	@media (--grid-columns-8) {
+		max-width: var(--column-span-3);
+	}
+} */
+
 /* Collapse vertical margin */
+
+/* @define-mixin margin-collapse-fix {
+    overflow-y: hidden;
+} */
 
 /* Vertical spacing */
 
+/* @define-mixin vertical-spacing {
+    margin-bottom: var(--space-3);
+} */
+
+/* @define-mixin full-page-content-overflow-fix {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+ */
+
 /** Editor structure helpers */
+
+/* @define-mixin editor-page-content--full-site {
+	margin-left: -5vw;
+	margin-right: -5vw;
+
+	@media (--from-breakpoint-3) {
+		margin-left: calc(var(--gutter) * -1);
+		margin-right: calc(var(--gutter) * -1);
+	}
+} */
 
 /* ===============
  * Typography
@@ -321,6 +524,22 @@
 /* ===============
  * Development
  * =============== */
+
+/* Mixins: Structure */
+
+/* Mixins are predefined css, usable anywhere in the stylesheets */
+
+/* ---- */
+
+/* ---- */
+
+/* Collapse vertical margin */
+
+/* Clearfix for floating */
+
+/** Editor structure helpers */
+
+/* Fix fullscreen in editor */
 
 /*--------------------------------------------------------------
 # Generic - Ground-zero styles (resets, box-sizing, etc.).
@@ -429,6 +648,7 @@ body {}
 
 /* Maybe extract this to the elements itself to give more control */
 
+/* 
 p,
 h1,h2,h3,h4,h5,h6,
 ul,ol,
@@ -438,46 +658,212 @@ img,
 figure,
 hr,
 pre {
-    margin-bottom: calc(var(--row) * 3);
-}
+    margin-bottom: calc(var(--vertical-space) * 1);
+} */
 
-/* Buttons
+/* Headings
 ---------------------------------------------------- */
 
-input[type="submit"] {
-    background-color: transparent;
-    border: 0;
-}
+/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
 
-button,
-input[type="submit"],
-.button {
-    color: inherit;
-    text-decoration: none;
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    line-height: var(--line-height--xs);
     font-weight: bold;
-    line-height: var(--line-height--sm);
-    /* font-size: var(--font-size--sm);
-    text-transform: uppercase; */
-    display: inline-block;
-    cursor: pointer;
-    border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    padding: calc(var(--row) * 1);
-    transition: border-color var(--transition-fast);
-    position: relative;
+    font-style: normal;
+    word-wrap: break-word;
+    text-transform: uppercase;
 }
 
-button:hover,
-    button:focus,
-    button:active,
-    input[type="submit"]:hover,
-    input[type="submit"]:focus,
-    input[type="submit"]:active,
-    .button:hover,
-    .button:focus,
-    .button:active {
-    	text-decoration: underline;
-    	text-decoration-thickness: var(--ui-border-width);
+h6,
+h5,
+h4,
+h3 {
+    font-size: var(--font-size--h3);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+h2 {
+    font-size: var(--font-size--h2);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+h1 {
+    font-size: var(--font-size--h1);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-8);
+}
+
+/* Copywriting
+---------------------------------------------------- */
+
+p {
+    margin-bottom: var(--space-8);
+}
+
+/* Inline
+---------------------------------------------------- */
+
+br, strong {}
+
+i, em {}
+
+/* Links
+---------------------------------------------------- */
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
+}
+
+a:hover,
+    a:active {
+        outline: 0;
+        -webkit-text-decoration-style: dotted;
+                text-decoration-style: dotted;
     }
+
+/* Lists
+---------------------------------------------------- */
+
+ul, ol {
+    padding-left: 1.1em;
+    margin-left: 0;
+    margin-bottom: var(--space-8);
+}
+
+ul ul, ul ol, ol ul, ol ol {}
+
+li {}
+
+/* Tables
+---------------------------------------------------- */
+
+table {
+    border-collapse: collapse; /* Makes table rows borderable */
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: var(--space-8);
+}
+
+th,
+td {
+    border-width: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+/* Miscelaneous
+---------------------------------------------------- */
+
+hr {
+    color: currentColor;
+    border: 0;
+    border-bottom-width: var(--ui-border-width);
+    border-color: currentColor;
+    border-style: solid;
+    clear: both;
+    width: 100%;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+pre {
+    white-space: pre-wrap;
+    margin-bottom: var(--space-8);
+}
+
+/* Blockquotes
+---------------------------------------------------- */
+
+blockquote {
+    margin-bottom: var(--space-8);
+}
+
+blockquote i,
+    blockquote em,
+    blockquote cite {
+
+    }
+
+blockquote p {
+
+    }
+
+blockquote cite,
+    blockquote footer {
+        font-style: normal;
+    }
+
+blockquote cite:before, blockquote footer:before {
+            content: '\2014';
+            margin-right: 0.25em;
+        }
+
+/* Media
+---------------------------------------------------- */
+
+img,
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: var(--space-8);
+}
+
+figure,
+audio,
+video,
+object,
+embed,
+iframe {
+    display: block;
+}
+
+figure {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+figure img {
+    display: block;
+}
+
+figure > * {
+    margin-bottom: 0;
+}
+
+figcaption {
+    padding-top: var(--space-1);
+    font-size: var(--font-size--min);
+    line-height: var(--line-height--xs);
+}
+
+/* SVG
+---------------------------------------------------- */
+
+svg {
+    display: inline-block;
+    fill: currentColor;
+    height: 1em;
+    position: relative;
+    top: -0.0625em;
+    vertical-align: middle;
+    width: 1em;
+}
 
 /* Form
 ---------------------------------------------------- */
@@ -508,7 +894,7 @@ select {
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
     font-size: var(--font-size--sm);
-    padding: calc(var(--row) * 1) calc(var(--row) * 1);
+    padding: var(--space-1) var(--space-1);
     width: 100%;
     transition: border-color var(--transition-fast);
 }
@@ -572,7 +958,7 @@ label {
 
 input[type="checkbox"],
 input[type="radio"] {
-    margin-right: calc(var(--row) * 0.5);
+    margin-right: 0.25em;
     /* font-weight: normal; */
     line-height: var(--line-height--sm);
 }
@@ -584,202 +970,39 @@ input[type="checkbox"] + label, input[type="radio"] + label {
         /* font-weight: normal; */
     }
 
-/* Headings
+/* Buttons
 ---------------------------------------------------- */
 
-/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
-
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-    line-height: var(--line-height--xs);
-    font-weight: bold;
-    font-style: normal;
-    word-wrap: break-word;
-    text-transform: uppercase;
-}
-
-h6,
-h5,
-h4,
-.is-h4,
-h3,
-.is-h3 {
-    font-size: var(--font-size--h3);
-    margin-top: calc(var(--row) * 4);
-    margin-bottom: calc(var(--row) * 1);
-}
-
-h2,
-.is-h2 {
-    font-size: var(--font-size--h2);
-    margin-top: calc(var(--row) * 4);
-    margin-bottom: calc(var(--row) * 3);
-}
-
-h1,
-.is-h1 {
-    font-size: var(--font-size--h1);
-    margin-top: calc(var(--row) * 6);
-    margin-bottom: calc(var(--row) * 4);
-}
-
-/* Inline
----------------------------------------------------- */
-
-br, strong {}
-
-i, em {}
-
-/* Links
----------------------------------------------------- */
-
-a {
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.2em;
-}
-
-a:hover,
-    a:active {
-        outline: 0;
-        -webkit-text-decoration-style: dotted;
-                text-decoration-style: dotted;
-    }
-
-/* Lists
----------------------------------------------------- */
-
-ul, ol {
-    padding-left: 1.1em;
-    margin-left: 0;
-}
-
-ul ul, ul ol, ol ul, ol ol {}
-
-li {}
-
-/* Media
----------------------------------------------------- */
-
-img,
-figure,
-audio,
-video,
-object,
-embed,
-iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-figure,
-audio,
-video,
-object,
-embed,
-iframe {
-    display: block;
-}
-
-figure {
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-figure img {
-    display: block;
-    margin-bottom: 0;
-}
-
-figcaption {
-    padding-top: calc(var(--row) * 1);
-    /* font-style: italic; */
-    font-size: var(--font-size--min);
-    line-height: var(--line-height--xs);
-}
-
-/* Miscelaneous
----------------------------------------------------- */
-
-p {
-
-}
-
-hr {
-    color: currentColor;
+input[type="submit"] {
+    background-color: transparent;
     border: 0;
-    border-bottom-width: var(--ui-border-width);
-    border-color: currentColor;
-    border-style: solid;
-    clear: both;
-    width: 100%;
-    margin-top: calc(var(--row) * 3);
-    margin-bottom: calc(var(--row) * 3);
 }
 
-pre {
-    white-space: pre-wrap;
-}
-
-/* Blockquotes
----------------------------------------------------- */
-
-/* @mixin background--light; */
-
-blockquote i,
-    blockquote em,
-    blockquote cite {
-
-    }
-
-blockquote p {
-
-    }
-
-blockquote cite,
-    blockquote footer {
-        font-style: normal;
-    }
-
-blockquote cite:before, blockquote footer:before {
-            content: '\2014';
-            margin-right: var(--spacing--05);
-        }
-
-/* SVG
----------------------------------------------------- */
-
-svg {
+button,
+input[type="submit"] {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: var(--line-height--sm);
+    /* font-size: var(--font-size--sm);
+    text-transform: uppercase; */
     display: inline-block;
-    fill: currentColor;
-    height: 1em;
+    cursor: pointer;
+    border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+    padding: var(--space-1);
+    transition: border-color var(--transition-fast);
     position: relative;
-    top: -0.0625em;
-    vertical-align: middle;
-    width: 1em;
 }
 
-/* Tables
----------------------------------------------------- */
-
-table {
-    border-collapse: collapse; /* Makes table rows borderable */
-    border-spacing: 0;
-    width: 100%;
-}
-
-th,
-td {
-    border-width: 1px;
-    text-align: left;
-    vertical-align: top;
-}
+button:hover,
+    button:focus,
+    button:active,
+    input[type="submit"]:hover,
+    input[type="submit"]:focus,
+    input[type="submit"]:active {
+    	text-decoration: underline;
+    	text-decoration-thickness: var(--ui-border-width);
+    }
 
 /*--------------------------------------------------------------
 # Structure - 
@@ -790,7 +1013,10 @@ html {
 }
 
 body {
-	
+	background-color: var(--background-color);
+	color: var(--foreground-color);
+	font-family: var(--font-1-family);
+	line-height: var(--font-1-line-height);
 }
 
 .site {
@@ -801,10 +1027,10 @@ body {
 	clear: both;
 	min-height: 100vh;
 
-	background-color: var(--background-color);
+	/* background-color: var(--background-color);
 	color: var(--foreground-color);
 	font-family: var(--font-1-family);
-	line-height: var(--font-1-line-height);
+	line-height: var(--font-1-line-height); */
 }
 
 .has-expanded-site-nav .site {
@@ -824,8 +1050,8 @@ body {
 .site-header {
 	position: relative;
 	z-index: 99;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 6);
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-6);
 
  	/** Additional and modifying classes */
 }
@@ -833,7 +1059,8 @@ body {
 .site-header__inner {
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--page--width);
+		max-width: var(--site--width);
+		width: 100%;
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
@@ -884,9 +1111,7 @@ body {
 @media (min-width: 1400px) {
 
 .site-header {
-		padding-left: var(--site--padding);
-		padding-right: var(--site--padding);
-		margin-bottom: calc(var(--row) * 8)
+		margin-bottom: var(--space-8)
 }
 
 		.site-header__inner {
@@ -909,7 +1134,8 @@ body {
 .site-main {
 	margin-left: auto;
 	margin-right: auto;
-	width: var(--page--width);
+	max-width: var(--site--width);
+	width: 100%;
 }
 
 /**
@@ -922,28 +1148,29 @@ body {
  */
 
 .site-footer {
-	margin-top: calc(var(--row) * 8);
-	margin-bottom: calc(var(--row) * 8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 }
 
 .site-footer__inner {
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--page--width);
+		max-width: var(--site--width);
+		width: 100%;
 	}
 
 .site-footer__title {
 		font-size: var(--font-size--lg);
-		margin-top: calc(var(--row) * 6);
-		margin-bottom: calc(var(--row) * 4);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-4);
 	}
 
 .site-footer__content {
 		display: grid;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 3);
-		row-gap: calc(var(--row) * 3);
+		grid-row-gap: var(--space-3);
+		row-gap: var(--space-3);
 		grid-template-columns: 1fr;
 	}
 
@@ -956,10 +1183,10 @@ body {
 		display: grid;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 3);
-		row-gap: calc(var(--row) * 3);
+		grid-row-gap: var(--space-3);
+		row-gap: var(--space-3);
 		grid-template-columns: 1fr;
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 	}
 
 .site-footer .contact-info > * {
@@ -990,7 +1217,7 @@ body {
 		}
 
 .site-footer .documents {
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 	}
 
 .site-footer .documents p:last-child {
@@ -1047,212 +1274,88 @@ body {
 		}
 	}
 
-.page {
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--page-content--width);
-}
-
-@media (min-width: 840px) {
-
-.page {
-		margin-left: calc(var(--column-gutter) * 1);
-}
+.page:after {
+	  content: "";
+	  display: table;
+	  clear: both;
 	}
 
-/**
- * Page header
- *
- * Elements
- * __title
- * __meta-group
- *
- */
+.page > *:first-child { margin-top: 0; }
 
-.page-header {
-	margin-bottom: calc(var(--row) * 4);
+.page > *:last-child { margin-bottom: 0; }
+
+.page > * {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--column-span-4);
+	}
+
+@media (min-width: 1400px) {
+
+.page > * {
+		max-width: var(--column-span-6);
+	}
+	}
+
+.page__header {
+	/* @mixin remove-first-last-child-margin; */
+	margin-bottom: var(--space-4);
 }
 
-.page-header__title {
-		margin: 0;
+.page__header .meta-group {
+		margin-top: var(--space-1);
 	}
 
-.page-header__meta-group {
-		margin-top: calc(var(--row) * 1);
-	}
-
-.page-header .meta {
+.page__header .meta {
 		display: inline;
 	}
 
-.page-header .meta--author .meta__content:after {
+.page__header .meta--author .meta__content:after {
 				content: ' \2014' ;
 			}
 
-.page-header .meta__content {
+.page__header .meta__content {
 			font-size: inherit;
 		}
 
-.page-header .meta__label {
+.page__header .meta__label {
 		display: none;
 	}
 
 @media (min-width: 1400px) {
 
-.page-header {
-		margin-bottom: calc(var(--row) * 5)
+.page__header {
+		margin-bottom: var(--space-12)
 }
 	}
 
-.page-main__inner {
+.page__title {
+	margin-top: 0;
+	margin-bottom: 0;
+}
 
+.page__main {
+
+}
+
+.page__footer .meta {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
 	}
 
-.page-footer .meta {
-		margin-top: calc(var(--row) * 8);
-		margin-bottom: calc(var(--row) * 8);
-	}
-
-.page-footer .meta__content {
+.page__footer .meta__content {
 			font-size: inherit;
 		}
 
-.page-footer .post-navigation {
+.page__footer .post-navigation {
 	}
 
 @media (min-width: 1080px) {
 
-.page-footer {
+.page__footer {
 		margin-right: calc(var(--column-gutter) * -1)
 }
-	}
-
-.page-comments {
-	font-size: var(--font-size--sm);
-	margin-top: calc(var(--row) * 6);
-}
-
-.page-comments__title {
-		background-color: var(--foreground-color);
-		border-top-right-radius: 40px;
-		border-bottom-right-radius: 40px;
-		color: var(--background-color);
-		display: inline-block;
-		margin-left: calc(var(--site-padding) * -1);
-		margin-top: 0;
-		margin-bottom: calc(var(--row) * 4);
-		padding: calc(var(--row) * 1) calc(var(--row) * 2 + 0.25em) calc(var(--row) * 1) calc(var(--row) * 2);
-	}
-
-@media (min-width: 360px) {
-
-.page-comments {
-		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width))
-}
-
-		.page-comments__title {
-			margin-left: calc(var(--gutter) * -1);
-		}
-	}
-
-.comments__list,
-		.comments__list ul,
-		.comments__list ol {
-			padding-left: 0;
-			list-style-type: none;
-		}
-
-.comment .children:before,
-	.comment + .comment:before {
-		content: '';
-		display: block;
-		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		width: calc(var(--gutter) * 1);
-		margin-top: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * 4);
-	}
-
-.comment__meta-group {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		margin-bottom: calc(var(--row) * 1);
-	}
-
-.comment__meta-group a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.comment__meta-group a:hover {
-			}
-
-.comment__author {
-		font-weight: bold;
-		font-size: var(--font-size--md);
-		font-family: var(--font-2-family);
-		line-height: var(--font-2-line-height);
-	}
-
-.comment__author a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.comment__content * {
-			margin-bottom: calc(var(--row) * 1);
-		}
-
-.comment__content *:last-child {
-				margin-bottom: 0;
-			}
-
-.comment .children {
-		border-left: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		margin-top: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * -4);
-		padding-left: calc(var(--gutter) * 1 - var(--ui-border-width));
-		padding-bottom: calc(var(--row) * 4);
-	}
-
-.comment .children:before {
-			margin-left: calc(var(--gutter) * -1);
-		}
-
-@media (min-width: 360px) {
-
-.comment {
-
-/* 		.children & + &:before {
-			margin-left: 0;
-		} */
-}
-
-		.comment .children {
-
-		}
-	}
-
-/** This component doesn't comply to BEM */
-
-.comment-respond:before {
-		content: '';
-		display: block;
-		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		width: calc(var(--gutter) * 1);
-		margin-top: calc(var(--row) * 4);
-		margin-bottom: calc(var(--row) * 4);
-	}
-
-.comment-respond .comment-reply-title {
-	}
-
-/** This component doesn't comply to BEM */
-
-.comment-form-cookies-consent {
-		line-height: var(--line-height--sm);
 	}
 
 /*--------------------------------------------------------------
@@ -1260,7 +1363,7 @@ body {
 --------------------------------------------------------------*/
 
 .wp-block-buttons {
-	margin-bottom: calc(var(--row) * 4);
+	margin-bottom: var(--space-4);
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -1285,7 +1388,7 @@ body {
 		display: inline-block;
 		cursor: pointer;
 		border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-		padding: calc(var(--row) * 1);
+		padding: var(--space-1);
 		transition: border-color var(--transition-fast);
 		position: relative;
 	}
@@ -1314,6 +1417,10 @@ body {
 }
 
 .wp-block-cover {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--site--width);
+	width: 100%;
 
 	/* Default colors */
 	--background-color: var(--wp--preset--color--secondary-1);
@@ -1327,27 +1434,11 @@ body {
 	min-height: 430px;
 	position: relative;
 
-	padding-top: calc(var(--row) * 4);
-	padding-bottom: calc(var(--row) * 4);
+	padding-top: var(--space-4);
+	padding-bottom: var(--space-4);
 	padding-right: var(--column-gutter);
 	padding-left: var(--column-gutter);
 }
-
-@media (min-width: 840px) {
-
-.wp-block-cover {
-		margin-left: calc(var(--column-gutter) * -1);
-		margin-right: calc(var(--column-gutter) * -1);
-		width: var(--page--width)
-}
-	}
-
-@media (min-width: 1080px) {
-
-.wp-block-cover {
-		margin-right: calc(var(--column-gutter) * -2)
-}
-	}
 
 .wp-block-cover__inner-container {
 		color: var(--foreground-color);
@@ -1400,7 +1491,7 @@ body {
 	flex-wrap: wrap;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 1080px) {
 
 .wp-block-columns {
 		flex-wrap: nowrap
@@ -1467,8 +1558,8 @@ body {
 
 .wp-block-gallery {
 	max-width: none;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 4);
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-4);
 }
 
 .wp-block-gallery figure {}
@@ -1527,8 +1618,8 @@ body {
 	grid-template-columns: 1fr;
 	grid-column-gap: calc(var(--gutter) * 1);
 	column-gap: calc(var(--gutter) * 1);
-	grid-row-gap: calc(var(--row) * 3);
-	row-gap: calc(var(--row) * 3);
+	grid-row-gap: var(--space-3);
+	row-gap: var(--space-3);
 
 	
 }
@@ -1537,6 +1628,10 @@ body {
 }
 
 .wp-block-group {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--site--width);
+	width: 100%;
 
 	--background-color: transparent;
 
@@ -1545,22 +1640,6 @@ body {
 	display: flex;
 	justify-content: center;
 }
-
-@media (min-width: 840px) {
-
-.wp-block-group {
-		margin-left: calc(var(--column-gutter) * -1);
-		margin-right: calc(var(--column-gutter) * -1);
-		width: var(--page--width)
-}
-	}
-
-@media (min-width: 1080px) {
-
-.wp-block-group {
-		margin-right: calc(var(--column-gutter) * -2)
-}
-	}
 
 .wp-block-group__inner-container {
 		color: var(--foreground-color);
@@ -1577,8 +1656,8 @@ body {
 }
 
 .has-background.wp-block-group > .wp-block-group__inner-container {
-		margin-top: calc(var(--row) * 6);
-		margin-bottom: calc(var(--row) * 6);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-6);
 	}
 
 .is-position-top-left .wp-block-group, .is-position-center-left .wp-block-group, .is-position-bottom-left .wp-block-group {
@@ -1590,11 +1669,11 @@ body {
 	}
 
 h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background {
-		padding: calc(var(--row) * 2);
+		padding: var(--space-2);
 	}
 
 .wp-block-image figure {
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 	}
 
 .wp-block-image figcaption {
@@ -1607,18 +1686,33 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 	}
 
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
+			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
-			width: var(--page--width);
+			max-width: var(--column-span-4);
 		}
+
+@media (min-width: 1400px) {
+
+.wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
+		max-width: var(--column-span-6);
+		}
+	}
 
 @media (min-width: 840px) {
 
 			.wp-block-image.alignwide img, .wp-block-image.alignfull img {
+				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
-				width: var(--page--width);
+				max-width: var(--column-span-4);
 			}
+				@media (min-width: 1400px) {
+
+			.wp-block-image.alignwide img, .wp-block-image.alignfull img {
+		max-width: var(--column-span-6);
+			}
+	}
 		}
 
 .wp-block-media-text {
@@ -1668,7 +1762,7 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
  */
 
 p.has-background {
-		padding: calc(var(--row) * 2);
+		padding: var(--space-2);
 	}
 
 /**
@@ -1699,9 +1793,9 @@ p.has-background {
 
 .wp-block-quote {
 	/* border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color); */
-	/* margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 4); */
-	margin: calc(var(--row) * 4 - var(--ui-border-width)) calc(var(--gutter) - var(--ui-border-width));
+	/* margin-top: var(--space-4);
+	margin-bottom: var(--space-4); */
+	margin: var(--space-4 - var(--ui-border-width)) calc(var(--gutter) - var(--ui-border-width));
 	margin-right: 0;
 
 }
@@ -1715,7 +1809,7 @@ p.has-background {
 		/* line-height: var(--line-height--sm); */
 		font-size: var(--font-size--xl);
 		font-style: italic;
-		margin-bottom: calc(var(--row) * 1);
+		margin-bottom: var(--space-1);
 	}
 
 .wp-block-quote cite {
@@ -1727,8 +1821,8 @@ p.has-background {
 .wp-block-separator {}
 
 .wp-block-table {
-	margin-bottom: calc(var(--row) * 4);
-	margin-top: calc(var(--row) * 4);
+	margin-bottom: var(--space-4);
+	margin-top: var(--space-4);
 }
 
 .wp-block-table .has-fixed-layout {
@@ -1741,7 +1835,7 @@ p.has-background {
 
 .wp-block-table th,
 	.wp-block-table td {
-		padding: calc(var(--row) * 1) 0;
+		padding: var(--space-1) 0;
 		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
 	}
 
@@ -1781,37 +1875,48 @@ p.has-background {
  */
 
 .wbl-segment {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--site--width);
+	width: 100%;
 	--foreground-color: inherit;
 	--background-color: transparent;
 
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 	border-color: var(--foreground-color);
-	margin-top: calc(var(--row) * 8);
-	margin-bottom: calc(var(--row) * 8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 }
 
-@media (min-width: 1080px) {
-
-.wbl-segment {
-		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
-		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding))
-}
+.wbl-segment__inner:after {
+	  content: "";
+	  display: table;
+	  clear: both;
 	}
 
-.wbl-segment__inner {
+.wbl-segment__inner > *:first-child { margin-top: 0; }
+
+.wbl-segment__inner > *:last-child { margin-bottom: 0; }
+
+.wbl-segment__inner > * {
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--page--width);
+		max-width: var(--column-span-4);
+	}
+
+@media (min-width: 1400px) {
+
+.wbl-segment__inner > * {
+		max-width: var(--column-span-6);
+	}
 	}
 
 .wbl-segment__title:not(h1) {
 			font-size: var(--font-size--lg);
-			margin-top: calc(var(--row) * 6);
-			margin-bottom: calc(var(--row) * 4);
+			margin-top: var(--space-6);
+			margin-bottom: var(--space-4);
 		}
 
 @media (min-width: 840px) {
@@ -1825,8 +1930,8 @@ p.has-background {
 		display: grid;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 3);
-		row-gap: calc(var(--row) * 3);
+		grid-row-gap: var(--space-3);
+		row-gap: var(--space-3);
 		grid-template-columns: 1fr;
 	}
 
@@ -1840,8 +1945,8 @@ p.has-background {
 @media (min-width: 1080px) {
 
 .wbl-segment {
-		margin-top: calc(var(--row) * 10);
-		margin-bottom: calc(var(--row) * 10)
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-10)
 }
 	}
 
@@ -1879,17 +1984,17 @@ p.has-background {
 		overflow-y: hidden;
 		--background-color: var(--wp--preset--color--secondary-1);
 		--foreground-color: var(--wp--preset--color--primary-1);
-		margin-top: calc(var(--row) * -1);
+		margin-top: var(--space--1);
 	}
 
 .wbl-segment--portfolio .wbl-segment__inner {
-		margin-top: calc(var(--row) * 6);
-		margin-bottom: calc(var(--row) * 6);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-6);
 	}
 
 .wbl-segment--portfolio .wbl-segment__content {
-		grid-row-gap: calc(var(--row) * 6);
-		row-gap: calc(var(--row) * 6);
+		grid-row-gap: var(--space-6);
+		row-gap: var(--space-6);
 	}
 
 @media (min-width: 600px) {
@@ -1921,8 +2026,8 @@ p.has-background {
 	 */
 
 .wbl-segment--blog {
-		margin-top: calc(var(--row) * 8);
-		margin-bottom: calc(var(--row) * 10);
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-10);
 	}
 
 .wbl-segment--blog .posts {
@@ -1940,8 +2045,8 @@ p.has-background {
 .wbl-segment--featured-four {}
 
 .wbl-segment--featured-four .wbl-segment__content {
-		grid-row-gap: calc(var(--row) * 6);
-		row-gap: calc(var(--row) * 6);
+		grid-row-gap: var(--space-6);
+		row-gap: var(--space-6);
 	}
 
 .wbl-segment--featured-four .wbl-segment__content .wbl-card__image-container {
@@ -1990,14 +2095,14 @@ p.has-background {
 	 	row-gap: normal;
 		flex-wrap: wrap;
 		align-items: center;
-		margin: calc(var(--row) * -1) calc(var(--row) * -1);
+		margin: var(--space--1) var(--space--1);
 		margin-bottom: 0;
 	}
 
 .wbl-segment--companies .wbl-segment__content figure {
 			flex: 0 1 auto;
 			width: auto;
-			margin: calc(var(--row) * 1) calc(var(--row) * 1);
+			margin: var(--space-1) var(--space-1);
 		}
 
 .wbl-segment--companies .wbl-segment__content img {
@@ -2007,13 +2112,13 @@ p.has-background {
 @media (min-width: 600px) {
 
 .wbl-segment--companies .wbl-segment__content {
-			margin-left: calc(var(--row) * -2);
-			margin-right: calc(var(--row) * -2)
+			margin-left: var(--space--2);
+			margin-right: var(--space--2)
 	}
 
 			.wbl-segment--companies .wbl-segment__content figure {
-				margin-left: calc(var(--row) * 2);
-				margin-right: calc(var(--row) * 2);
+				margin-left: var(--space-2);
+				margin-right: var(--space-2);
 			}
 
 			.wbl-segment--companies .wbl-segment__content img {
@@ -2030,21 +2135,12 @@ p.has-background {
 
 /* Editor */
 
-@media (min-width: 840px) {
-
 .is-root-container [data-type="wbl-theme/segment"] {
-		margin-left: calc(var(--column-gutter) * -1);
-		margin-right: calc(var(--column-gutter) * -1);
-		width: var(--page--width)
+	box-shadow: inset 0 0 0 1px var(--editor-container--ui-color);
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
 }
-	}
-
-@media (min-width: 1080px) {
-
-.is-root-container [data-type="wbl-theme/segment"] {
-		margin-right: calc(var(--column-gutter) * -2)
-}
-	}
 
 .is-root-container [data-type="wbl-theme/segment"] .wbl-segment {
 		margin: 0;
@@ -2063,8 +2159,8 @@ p.has-background {
 		display: grid;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 3);
-		row-gap: calc(var(--row) * 3);
+		grid-row-gap: var(--space-3);
+		row-gap: var(--space-3);
 		grid-template-columns: 1fr;
 	}
 
@@ -2108,16 +2204,9 @@ p.has-background {
 		}
 
 .is-root-container [data-type="wbl-theme/segment"] .wbl-segment--portfolio {
-		margin-left: -5vw;
-		margin-right: -5vw;
-	}
-
-@media (min-width: 840px) {
-
-.is-root-container [data-type="wbl-theme/segment"] .wbl-segment--portfolio {
-		margin-left: calc(var(--gutter) * -1);
-		margin-right: calc(var(--gutter) * -1);
-	}
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
 	}
 
 @media (min-width: 600px) {
@@ -2145,32 +2234,25 @@ p.has-background {
 		}
 
 .is-root-container [data-type="wbl-theme/segment"] .wbl-segment--call-to-action {
-		margin-left: -5vw;
-		margin-right: -5vw;
-	}
-
-@media (min-width: 840px) {
-
-.is-root-container [data-type="wbl-theme/segment"] .wbl-segment--call-to-action {
-		margin-left: calc(var(--gutter) * -1);
-		margin-right: calc(var(--gutter) * -1);
-	}
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
 	}
 
 .is-root-container [data-type="wbl-theme/segment"] .wbl-segment--companies .wbl-segment__content > .block-editor-inner-blocks > .block-editor-block-list__layout {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		margin: calc(var(--row) * -1) calc(var(--row) * -2);
+		margin: var(--space--1) var(--space--2);
 	}
 
 .is-root-container [data-type="wbl-theme/segment"] .wbl-segment--companies .wbl-segment__content > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
 			flex: 0 1 auto;
 			width: auto;
-			margin-top: calc(var(--row) * 1);
-			margin-bottom: calc(var(--row) * 1);
-			margin-left: calc(var(--row) * 2);
-			margin-right: calc(var(--row) * 2);
+			margin-top: var(--space-1);
+			margin-bottom: var(--space-1);
+			margin-left: var(--space-2);
+			margin-right: var(--space-2);
 		}
 
 .is-root-container [data-type="wbl-theme/segment"] .wbl-segment--companies .wbl-segment__content > .block-editor-inner-blocks > .block-editor-block-list__layout > * .wbl-simple-image {
@@ -2193,12 +2275,12 @@ p.has-background {
 
 .wbl-card__heading {
 		font-size: var(--font-size--lg);
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 		margin-top: 0;
 	}
 
 .wbl-card__image {
-		margin-bottom: calc(var(--row) * 3);
+		margin-bottom: var(--space-3);
 	}
 
 .wbl-card__text *:last-child {
@@ -2457,20 +2539,29 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 .call-to-action {
 	overflow-y: hidden;
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--column-span-4);
+	max-width: none;
 	--background-color: var(--wp--preset--color--secondary-1);
 	--foreground-color: var(--wp--preset--color--primary-1);
 	background-color: var(--background-color);
 	color: var(--foreground-color);
-	margin-top: calc(var(--row) * 10);
-	margin-bottom: calc(var(--row) * 10);
+	margin-top: var(--space-10);
+	margin-bottom: var(--space-10);
 }
 
+@media (min-width: 1400px) {
+
+.call-to-action {
+		max-width: var(--column-span-6)
+}
+	}
+
 .call-to-action__inner {
-		margin-top: calc(var(--row) * 12);
-		margin-bottom: calc(var(--row) * 12);
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
 
 		margin-left: auto;
 		margin-right: auto;
@@ -2498,7 +2589,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		display: block;
-		margin-bottom: calc(var(--row) * 2);
+		margin-bottom: var(--space-2);
 	}
 
 .meta__content {
@@ -2536,18 +2627,19 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		}
 
 .page-image {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
-	margin-top: calc(var(--row) * 4);
-	margin-bottom: calc(var(--row) * 4);
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--column-span-4);
+	max-width: none;
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-4);
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1400px) {
 
 .page-image {
-		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
-		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding))
+		max-width: var(--column-span-6)
 }
 	}
 
@@ -2563,14 +2655,21 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 840px) {
 
 		.page-image__inner {
+			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
-			width: var(--page--width);
+			max-width: var(--column-span-4);
 		}
+			@media (min-width: 1400px) {
+
+		.page-image__inner {
+		max-width: var(--column-span-6);
+		}
+	}
 	}
 
 .password-protection-form {
-	margin-bottom: calc(var(--row) * 3);
+	margin-bottom: var(--space-3);
 }
 
 .password-protection-form__field {
@@ -2579,28 +2678,24 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	}
 
 .password-protection-form input[type="password"] {
-		margin-right: calc(var(--row) * 0.5);
+		margin-right: 0.25em;
 		width: auto;
 	}
 
 .posts {
-	margin-bottom: calc(var(--row) * 10);
-	margin-top: calc(var(--row) * 8);
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--column-span-4);
+	max-width: none;
+	margin-bottom: var(--space-10);
+	margin-top: var(--space-8);
 }
 
-@media (min-width: 840px) {
+@media (min-width: 1400px) {
 
 .posts {
-		margin-left: calc(var(--column-gutter) * -1);
-		margin-right: calc(var(--column-gutter) * -1);
-		width: var(--page--width)
-}
-	}
-
-@media (min-width: 1080px) {
-
-.posts {
-		margin-right: calc(var(--column-gutter) * -2)
+		max-width: var(--column-span-6)
 }
 	}
 
@@ -2632,16 +2727,16 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	display: grid;
 	grid-column-gap: var(--gutter);
 	column-gap: var(--gutter);
-	grid-row-gap: calc(var(--row) * 2);
-	row-gap: calc(var(--row) * 2);
+	grid-row-gap: var(--space-2);
+	row-gap: var(--space-2);
 }
 
 .posts-post__content-container {
     	display: grid;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 2);
-		row-gap: calc(var(--row) * 2);
+		grid-row-gap: var(--space-2);
+		row-gap: var(--space-2);
 		grid-template-rows: auto 1fr;
     }
 
@@ -2667,7 +2762,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	}
 
 .posts-post__main {
-		/* margin-bottom: calc(var(--row) * 2); */
+		/* margin-bottom: var(--space-2); */
 	}
 
 /* font-size: var(--font-size--sm); */
@@ -2676,7 +2771,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 				display: none;
 			}
 
-/* margin-top: calc(var(--row) * 1); */
+/* margin-top: var(--space-1); */
 
 /* @mixin reset-link; */
 
@@ -2688,7 +2783,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 /** Additional and modifying classes */
 
 .posts-post + .posts-post {
-		margin-top: calc(var(--row) * 6);
+		margin-top: var(--space-6);
 	}
 
 /** Media Queries */
@@ -2707,7 +2802,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
         }
 
         .posts-post__meta-group {
-			margin-top: calc(var(--row) * 0.25);
+			margin-top: var(--space-1);
         	grid-area: meta;
         }
 	}
@@ -2733,7 +2828,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
         }
 
   		.posts-post__meta-group {
-			margin-top: calc(var(--row) * 0.25);
+			margin-top: var(--space-1);
         	grid-area: meta;
         }
 
@@ -2758,8 +2853,8 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	}
 
 .pagination {
-	margin-bottom: calc(var(--row) * 8);
-	margin-top: calc(var(--row) * 8);
+	margin-bottom: var(--space-8);
+	margin-top: var(--space-8);
 }
 
 .pagination a {
@@ -2778,13 +2873,13 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	}
 
 .pagination .page-numbers {
-		padding: calc(var(--row) * 1) calc(var(--row) * 2);
+		padding: var(--space-1) var(--space-2);
 	}
 
 .pagination .page-numbers.prev,
 	.pagination .page-numbers.next {
 		padding: 0;
-		margin: calc(var(--row) * 1) calc(var(--row) * 2);
+		margin: var(--space-1) var(--space-2);
 	}
 
 .pagination .page-numbers.prev {
@@ -2820,8 +2915,8 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		}
 
 .post-navigation {
-	margin-top: calc(var(--row) * 8);
-	margin-bottom: calc(var(--row) * 8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 }
 
 .post-navigation a {}
@@ -2831,8 +2926,8 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		grid-template-columns: 1fr;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
-		grid-row-gap: calc(var(--row) * 4);
-		row-gap: calc(var(--row) * 4);
+		grid-row-gap: var(--space-4);
+		row-gap: var(--space-4);
 	}
 
 @media (min-width: 600px) {
@@ -2852,7 +2947,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		font-size: var(--font-size--label);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		margin-bottom: calc(var(--row) * 2);
+		margin-bottom: var(--space-2);
 	}
 
 .post-navigation__link--previous {
@@ -2869,7 +2964,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 }
 
 .search-form .search-field {
-		margin-right: calc(var(--row) * 0.5);
+		margin-right: 0.25em;
 		width: auto;
 	}
 
@@ -2885,7 +2980,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	right: 0;
 	top: 0;
 	bottom: 0;
-	z-index: 0;
+	z-index: -1;
 }
 
 .site-debug-info__grid {
@@ -2979,32 +3074,32 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			content: 'bp - (mini)';
 		}
 
-@media (--from-breakpoint-1) {
+@media (min-width: 360px) {
 
 .site-debug-info__responsiveness:after { content: 'bp 1: 360px (klein)';
 		} }
 
-@media (--from-breakpoint-2) {
+@media (min-width: 600px) {
 
 .site-debug-info__responsiveness:after { content: 'bp 2: 600px (klein)';
 		} }
 
-@media (--from-breakpoint-3) {
+@media (min-width: 840px) {
 
 .site-debug-info__responsiveness:after { content: 'bp 3: 840px (middel)';
 		} }
 
-@media (--from-breakpoint-4) {
+@media (min-width: 1080px) {
 
 .site-debug-info__responsiveness:after { content: 'bp 4: 1080px (middel)';
 		} }
 
-@media (--from-breakpoint-5) {
+@media (min-width: 1400px) {
 
 .site-debug-info__responsiveness:after { content: 'bp 5: 1400px (groot)';
 		} }
 
-@media (--from-breakpoint-6) {
+@media (min-width: 1720px) {
 
 .site-debug-info__responsiveness:after { content: 'bp 6: 1720px (groot)';
 		} }
@@ -3036,8 +3131,8 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	bottom: 0;
 
 	font-size: var(--font-size--site-nav);
-	padding-top: calc(var(--row) * 4);
-	padding-bottom: calc(var(--row) * 2);
+	padding-top: var(--space-4);
+	padding-bottom: var(--space-2);
 	padding-left: calc(var(--gutter) * 1);
 	padding-right: calc(var(--gutter) * 1);
 
@@ -3100,7 +3195,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 				}
 
 .site-nav .menu__item + .menu__item {
-				margin-top: calc(var(--row) * 3);
+				margin-top: var(--space-3);
 			}
 
 .site-nav .menu__item.has-children {
@@ -3109,13 +3204,13 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 .site-nav .menu__sub-menu {
 			display: none;
-			padding: calc(var(--row) * 1);
+			padding: var(--space-2);
 			font-size: var(--font-size--sm);
 		}
 
 .site-nav .menu__sub-menu .menu__item {
-			padding-top: calc(var(--row) * 0.5);
-			padding-bottom: calc(var(--row) * 0.5);
+			padding-top: var(--space-1);
+			padding-bottom: var(--space-1);
 		}
 
 .site-branding__title {
@@ -3186,8 +3281,8 @@ svg.site-logo__symbol path {
 	padding: 0;
 }
 
-/* 	padding: calc(var(--row) * 1);
-	margin: calc(var(--row) * -1); */
+/* 	padding: var(--space-1);
+	margin: var(--space--1); */
 
 .site-nav-toggle:hover,
 	.site-nav-toggle:focus,
@@ -3222,7 +3317,7 @@ svg.site-logo__symbol path {
 		font-size: var(--font-size--label);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		margin-right: calc(var(--row) * 1);
+		margin-right: var(--space-1);
 	}
 
 .site-nav-toggle[aria-expanded="false"] .site-nav-toggle__label--close,
@@ -3239,7 +3334,7 @@ svg.site-logo__symbol path {
 		display: block;
 	}
 
-@media (max-width: 839px) {
+@media (max-width: 1079px) {
 
 		.site-nav-toggle__label {
 			display: none !important;
@@ -3331,54 +3426,17 @@ svg.site-logo__symbol path {
 .alignright {
 }
 
-@media (min-width: 360px) {
-
 .alignleft {
-		float: left;
-		margin-bottom: calc(var(--row) * 3);
-		margin-right: var(--gutter);
-		max-width: var(--column-span-1);
+	float: left;
+	/* margin-left: calc(var(--column-gutter-1) * -1); */
+	margin-right: var(--gutter);
 }
-	}
-
-@media (min-width: 600px) {
-
-.alignleft {
-		max-width: var(--column-span-2);
-}
-	}
-
-@media (min-width: 840px) {
-
-.alignleft {
-		max-width: var(--column-span-3);
-}
-	}
-
-@media (min-width: 360px) {
 
 .alignright {
-		float: right;
-		margin-bottom: calc(var(--row) * 3);
-		margin-left: var(--gutter);
-		max-width: var(--column-span-1);
+	float: right;
+	margin-left: var(--gutter);
+	/* margin-right: calc(var(--column-gutter-1) * -1); */
 }
-	}
-
-@media (min-width: 600px) {
-
-.alignright {
-		max-width: var(--column-span-2);
-}
-	}
-
-@media (min-width: 840px) {
-
-.alignright {
-		margin-right: calc(var(--column-gutter) * -1);
-		max-width: var(--column-span-3);
-}
-	}
 
 figure.alignleft,
 figure.alignright {
@@ -3394,7 +3452,7 @@ figure.alignleft img, figure.alignright img {
 
 figure.alignleft,
 figure.alignright {
-		margin-top: calc(var(--row) * 0.5)
+		margin-top: var(--space-1)
 }
 	}
 
@@ -3406,18 +3464,8 @@ figure.alignright {
 }
 
 .alignwide {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
+	max-width: none;
 }
-
-@media (min-width: 1080px) {
-
-.alignwide {
-		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
-		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding));
-}
-	}
 
 #wpadminbar {
 

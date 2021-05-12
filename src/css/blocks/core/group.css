@@ -1,5 +1,5 @@
 .wp-block-group {
-	@mixin container--page-content--full-page;
+	@mixin is-page-segment;
 
 	--background-color: transparent;
 
@@ -22,8 +22,8 @@
 	padding-left: calc(var(--gutter) * 1);
 
 	> .wp-block-group__inner-container {
-		margin-top: calc(var(--row) * 6);
-		margin-bottom: calc(var(--row) * 6);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-6);
 	}
 }
 

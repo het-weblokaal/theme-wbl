@@ -1,3 +1,62 @@
 .page {
-	@mixin container--page-content;
+	@mixin has-page-content;
+}
+
+.page__header {
+	/* @mixin remove-first-last-child-margin; */
+	margin-bottom: var(--space-4);
+
+	.meta-group {
+		margin-top: var(--space-1);
+	}
+
+	.meta {
+		display: inline;
+
+		&--author {
+			.meta__content:after {
+				content: ' \2014' ;
+			}
+		}
+
+		&__content {
+			font-size: inherit;
+		}
+	}
+
+	.meta__label {
+		display: none;
+	}
+
+	@media (--from-breakpoint-5) {
+		margin-bottom: var(--space-12);
+	}
+}
+
+.page__title {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.page__main {
+
+}
+
+.page__footer {
+
+	.meta {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+
+		&__content {
+			font-size: inherit;
+		}
+	}
+
+	.post-navigation {
+	}
+
+	@media (--from-breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -1);
+	}
 }

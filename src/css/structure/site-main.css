@@ -1,3 +1,3 @@
 .site-main {
-	@mixin container--page;
+	@mixin is-page-segment;
 }
