@@ -93,7 +93,7 @@
 		}
 	}
 
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		&__content {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			@mixin ie11-grid-fallback 4;

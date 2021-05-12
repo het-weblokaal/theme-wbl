@@ -8,23 +8,23 @@
  */
 
 .wp-block-quote {
-	margin-left: var(--space-12);
-	/* margin-right: calc(var(--space-12) * -1); */
-	margin-top: var(--space-12);
-	margin-bottom: var(--space-12);
+	padding-left: var(--space-8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 
 	p {
-		font-family: var(--font-2-family);
-		/* line-height: var(--line-height--sm); */
-		font-size: var(--font-size--xl);
 		font-style: italic;
-		margin-bottom: var(--space-6);
+		font-weight: bold;
+		margin-bottom: var(--space-4);
 	}
 
 	cite {
-		/* font-style: italic; */
 		font-size: var(--font-size--sm);
-		font-weight: bold;
+		font-style: normal;
+		font-weight: regular;
 	}
 
+	@media (--grid-columns-12) {
+		padding-left: var(--column-gutter-1);
+	}
 }

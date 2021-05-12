@@ -32,9 +32,7 @@
  * - Devices
  */
 @custom-media --grid-columns-2 (--from-breakpoint-1);
-@custom-media --grid-columns-4 (--from-breakpoint-2);
 @custom-media --grid-columns-6 (--from-breakpoint-3);
-@custom-media --grid-columns-8 (--from-breakpoint-3);
 @custom-media --grid-columns-12 (--from-breakpoint-5);
 
 @custom-media --only-mobile-xs (--until-breakpoint-1);

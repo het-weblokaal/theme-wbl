@@ -32,6 +32,7 @@
 --------------------------------------------------------------*/
 /* @import "generic/reset.css";
 @import "generic/base.css"; */
+@import "generic/reset-editor-style.css";
 
 
 /*--------------------------------------------------------------
@@ -59,9 +60,9 @@
 @import "blocks/core/gallery.css";
 @import "blocks/core/image.css";
 @import "blocks/core/media-text.css";
-@import "blocks/core/pullquote.css";
+@import "blocks/core/pullquote.css"; */
 @import "blocks/core/quote.css";
-@import "blocks/core/separator.css";
+/* @import "blocks/core/separator.css";
 @import "blocks/core/table.css"; */
 
 @import "blocks/theme/wbl-card.css";

@@ -36,7 +36,7 @@
 }
 
 @define-mixin container--page-content--full-page {
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		margin-left: calc(var(--column-gutter) * -1);
 		margin-right: calc(var(--column-gutter) * -1);
 		width: var(--page--width);
@@ -71,7 +71,7 @@
 		max-width: var(--column-span-2);
 	}
 
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		margin-right: calc(var(--column-gutter) * -1);
 		max-width: var(--column-span-3);
 	}
@@ -90,7 +90,7 @@
 		max-width: var(--column-span-2);
 	}
 
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		max-width: var(--column-span-3);
 	}
 } */
@@ -274,118 +274,3 @@
 }
 
 /** IE11 target: _:-ms-fullscreen, :root .ie11up */
-
-/* ===============
- * Development
- * =============== */
-
-@define-mixin dev--background-grid {
-	background: var(--foreground-color);
-
-	@media (--grid-columns-2) {
-		background: linear-gradient(90deg,
-			var(--foreground-color) calc(var(--column) * 1),
-			transparent calc(var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1)
-		);
-	}
-
-	@media (--grid-columns-4) {
-		background: linear-gradient(90deg,
-			var(--foreground-color) calc(var(--column) * 1),
-			transparent calc(var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 3),
-			var(--foreground-color) calc(var(--column-gutter) * 3)
-		);
-	}
-
-	@media (--grid-columns-8) {
-		background: linear-gradient(90deg,
-			var(--foreground-color) calc(var(--column) * 1),
-			transparent calc(var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1),
-			var(--foreground-color) calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 1 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2),
-			var(--foreground-color) calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 2 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 3),
-			var(--foreground-color) calc(var(--column-gutter) * 3),
-			var(--foreground-color) calc(var(--column-gutter) * 3 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 3 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 4),
-			var(--foreground-color) calc(var(--column-gutter) * 4),
-			var(--foreground-color) calc(var(--column-gutter) * 4 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 4 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 5),
-			var(--foreground-color) calc(var(--column-gutter) * 5),
-			var(--foreground-color) calc(var(--column-gutter) * 5 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 5 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 6),
-			var(--foreground-color) calc(var(--column-gutter) * 6),
-			var(--foreground-color) calc(var(--column-gutter) * 6 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 6 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 7),
-			var(--foreground-color) calc(var(--column-gutter) * 7),
-			var(--foreground-color) calc(var(--column-gutter) * 7 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 7 + var(--column) * 1),
-			transparent calc(var(--column-gutter) * 8),
-			var(--foreground-color) calc(var(--column-gutter) * 8)
-		);
-	}
-}
-
-@define-mixin dev--background-grid-parent {
-	position: relative;
-	z-index: 1;
-}
-
-@define-mixin dev--background-grid-child {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--site--width);
-	z-index: -1;
-	opacity: 0.025;
-
-	@mixin dev--background-grid;
-}
-
-@define-mixin dev--media-query-info-in-pseudo-element {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	padding: 0.4em;
-
-	font-size: var(--font-size--sm);
-	line-height: var(--line-height--xs);
-	content: 'bp - [mini]';
-	opacity: 0.75;
-	background-color: var(--background-color);
-	color: var(--foreground-color);
-
-	@media (--from-breakpoint-1) { content: 'bp 1: 360px [klein]'; }
-	@media (--from-breakpoint-2) { content: 'bp 2: 600px [klein]'; }
-	@media (--from-breakpoint-3) { content: 'bp 3: 840px [middel]'; }
-	@media (--from-breakpoint-4) { content: 'bp 4: 1080px [middel]'; }
-	@media (--from-breakpoint-5) { content: 'bp 5: 1400px [groot]'; }
-	@media (--from-breakpoint-6) { content: 'bp 6: 1720px [groot]'; }
-}

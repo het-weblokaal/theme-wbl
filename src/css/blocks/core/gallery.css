@@ -1,7 +1,7 @@
 .wp-block-gallery {
 	max-width: none;
-	margin-top: var(--space-4);
-	margin-bottom: var(--space-4);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 	
 	figure {}
 
@@ -93,4 +93,5 @@
 }
 
 .blocks-gallery-item {
+	@mixin remove-first-last-child-margin;
 }

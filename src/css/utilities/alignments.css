@@ -22,6 +22,18 @@ figure.alignright {
 	@media (--from-breakpoint-1) {
 		margin-top: var(--space-1);
 	}
+
+}
+
+figure.alignright {
+
+	@media (--grid-columns-12) {
+		margin-right: calc(var(--column-gutter-1) * -1);
+	}
+}
+
+figure.alignleft {
+	margin-left: 0;
 }
 
 .aligncenter {

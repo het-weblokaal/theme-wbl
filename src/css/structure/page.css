@@ -1,10 +1,17 @@
 .page {
-	@mixin has-page-content;
+	
 }
 
 .page__header {
-	/* @mixin remove-first-last-child-margin; */
+	@mixin has-page-content;
+	@mixin remove-first-last-child-margin;
+
 	margin-bottom: var(--space-4);
+
+	.page__title {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
 	.meta-group {
 		margin-top: var(--space-1);
@@ -33,16 +40,12 @@
 	}
 }
 
-.page__title {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.page__main {
-
+.page__content {
+	@mixin has-page-content;
 }
 
 .page__footer {
+	@mixin has-page-content;
 
 	.meta {
 		margin-top: var(--space-8);

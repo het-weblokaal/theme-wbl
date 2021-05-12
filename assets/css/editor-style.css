@@ -406,7 +406,7 @@
 }
 
 @define-mixin container--page-content--full-page {
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		margin-left: calc(var(--column-gutter) * -1);
 		margin-right: calc(var(--column-gutter) * -1);
 		width: var(--page--width);
@@ -441,7 +441,7 @@
 		max-width: var(--column-span-2);
 	}
 
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		margin-right: calc(var(--column-gutter) * -1);
 		max-width: var(--column-span-3);
 	}
@@ -460,7 +460,7 @@
 		max-width: var(--column-span-2);
 	}
 
-	@media (--grid-columns-8) {
+	@media (--grid-columns-6) {
 		max-width: var(--column-span-3);
 	}
 } */
@@ -522,10 +522,6 @@
  * Development
  * =============== */
 
-/* ===============
- * Development
- * =============== */
-
 /* Mixins: Structure */
 
 /* Mixins are predefined css, usable anywhere in the stylesheets */
@@ -548,6 +544,12 @@
 
 /* @import "generic/reset.css";
 @import "generic/base.css"; */
+
+.wp-block-quote {
+	border-left-width: 0;
+	margin-bottom: 0;
+	padding-left: 0;	
+}
 
 /*--------------------------------------------------------------
 # Structure - 
@@ -575,9 +577,43 @@
 @import "blocks/core/gallery.css";
 @import "blocks/core/image.css";
 @import "blocks/core/media-text.css";
-@import "blocks/core/pullquote.css";
-@import "blocks/core/quote.css";
-@import "blocks/core/separator.css";
+@import "blocks/core/pullquote.css"; */
+
+/**
+ * Difference between pullquote and quote:
+ *
+ * - A quote is something someone else said.
+ * - A pullquote is a piece of text from the text of your article, pulled out.
+ *
+ * @link https://github.com/WordPress/gutenberg/issues/11610
+ */
+
+.wp-block-quote {
+	padding-left: var(--space-8);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
+}
+
+.wp-block-quote p {
+		font-style: italic;
+		font-weight: bold;
+		margin-bottom: var(--space-4);
+	}
+
+.wp-block-quote cite {
+		font-size: var(--font-size--sm);
+		font-style: normal;
+		font-weight: regular;
+	}
+
+@media (min-width: 1400px) {
+
+.wp-block-quote {
+		padding-left: var(--column-gutter-1)
+}
+	}
+
+/* @import "blocks/core/separator.css";
 @import "blocks/core/table.css"; */
 
 /**
@@ -652,13 +688,22 @@
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--column-span-6);
+	}
+
+/* max-width: var(--column-span-6); */
+
+@media (min-width: 840px) {
+
+.wbl-segment__inner > * {
+		max-width: var(--column-span-4);
+	}
 	}
 
 @media (min-width: 1400px) {
 
 .wbl-segment__inner > * {
-		max-width: var(--column-span-8);
+		max-width: var(--column-span-7);
+		margin-left: var(--column-gutter-2);
 	}
 	}
 
@@ -1277,13 +1322,22 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--column-span-6);
+	}
+
+/* max-width: var(--column-span-6); */
+
+@media (min-width: 840px) {
+
+.edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
+		max-width: var(--column-span-4);
+	}
 	}
 
 @media (min-width: 1400px) {
 
 .edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		max-width: var(--column-span-8);
+		max-width: var(--column-span-7);
+		margin-left: var(--column-gutter-2);
 	}
 	}
 

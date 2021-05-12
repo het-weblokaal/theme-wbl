@@ -37,13 +37,13 @@ h5,
 h4,
 h3 {
     font-size: var(--font-size--h3);
-    margin-top: var(--space-4);
-    margin-bottom: var(--space-8);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
 }
 
 h2 {
     font-size: var(--font-size--h2);
-    margin-top: var(--space-8);
+    margin-top: var(--space-12);
     margin-bottom: var(--space-8);
 }
 
@@ -51,7 +51,7 @@ h2 {
 h1 {
     font-size: var(--font-size--h1);
     margin-top: var(--space-12);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
 }
 
 
@@ -204,7 +204,7 @@ figure > * {
 }
 
 figcaption {
-    padding-top: var(--space-1);
+    margin-top: var(--space-4);
     font-size: var(--font-size--min);
     line-height: var(--line-height--xs);
 }
