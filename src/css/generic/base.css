@@ -15,23 +15,6 @@ html {
 body {}
 
 
-/* Vertical Spacing
----------------------------------------------------- */
-/* Maybe extract this to the elements itself to give more control */
-/* 
-p,
-h1,h2,h3,h4,h5,h6,
-ul,ol,
-table,
-blockquote,
-img,
-figure,
-hr,
-pre {
-    margin-bottom: calc(var(--vertical-space) * 1);
-} */
-
-
 /* Headings
 ---------------------------------------------------- */
 /* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
@@ -157,6 +140,10 @@ pre {
 
 blockquote {
     margin-bottom: var(--space-8);
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
 
     i,
     em,

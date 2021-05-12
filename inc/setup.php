@@ -59,7 +59,7 @@ add_action( 'after_setup_theme', function() {
 function load_font() {
 
 	// Load font
-	// wp_enqueue_style( Theme::handle('roboto-font'), wptt_get_webfont_url( 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap' ), null, Theme::get_version() );
+	wp_enqueue_style( Theme::handle('font'), wptt_get_webfont_url( 'https://use.typekit.net/pwk2csi.css' ), null, Theme::get_version() );
 }
 
 /**

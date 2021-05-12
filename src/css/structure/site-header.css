@@ -1,16 +1,14 @@
 .site-header {
 	position: relative;
 	z-index: 99;
-	margin-top: var(--space-4);
-	margin-bottom: var(--space-6);
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-12);
+	@mixin is-page-segment;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	position: relative;
 
-	&__inner {
-		@mixin is-page-segment;
-		display: flex;
-		flex-wrap: nowrap;
-		align-items: center;
-		position: relative;
-	}
 
 	.site-branding {
 		width: 135px;
@@ -53,14 +51,8 @@
 	}
 
 	@media (--from-breakpoint-5) {
-		margin-bottom: var(--space-8);
-
-		&__inner {
-			width: auto;
-			&:before {
-				background: transparent;
-			}
-		}
+		@mixin is-page-segment--full;
+		margin-bottom: var(--space-16);
 	}
 
  	/** Additional and modifying classes */

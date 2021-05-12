@@ -27,7 +27,10 @@ Theme::customize( [
 ]);
 
 // Customize Template class
-Template::customize(['main_template_dir' => '../wbl-theme-foundation/template/views']);
+Template::customize( [
+	'main_template_dir' => '../wbl-theme-foundation/template/views',
+	'custom_template_dir' => 'inc/views',
+] );
 
 
 # ------------------------------------------------------------------------------

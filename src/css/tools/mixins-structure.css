@@ -9,6 +9,13 @@
 	width: 100%;
 }
 
+@define-mixin is-page-segment--full {
+	margin-left: var(--site--padding);
+    margin-right: var(--site--padding);
+	max-width: none;
+	width: auto;
+}
+
 @define-mixin is-page-content {
 	width: 100%;
 	margin-left: auto;
@@ -17,18 +24,18 @@
 }
 
 @define-mixin is-page-content--normal {
-	max-width: var(--column-span-4);
-
-	@media (--from-breakpoint-5) {
-		max-width: var(--column-span-6);
-	}
-}
-
-@define-mixin is-page-content--wide {
 	max-width: var(--column-span-6);
 
 	@media (--from-breakpoint-5) {
 		max-width: var(--column-span-8);
+	}
+}
+
+@define-mixin is-page-content--wide {
+	max-width: var(--column-span-8);
+
+	@media (--from-breakpoint-5) {
+		max-width: var(--column-span-10);
 	}
 }
 
