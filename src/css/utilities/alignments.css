@@ -28,7 +28,7 @@ figure.alignright {
 figure.alignright {
 
 	@media (--grid-columns-12) {
-		margin-right: calc(var(--column-gutter-1) * -1);
+		/* margin-right: calc(var(--column-gutter-1) * -1); */
 	}
 }
 
@@ -44,5 +44,8 @@ figure.alignleft {
 }
 
 .alignwide {
-	@mixin is-page-content--full;
+	@mixin is-page-content--full-page;
+}
+.alignfull {
+	@mixin is-page-content--full-site;
 }

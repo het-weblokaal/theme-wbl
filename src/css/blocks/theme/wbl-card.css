@@ -10,7 +10,7 @@
 
 .wbl-card {
 	&__heading {
-		font-size: var(--font-size--lg);
+		font-size: var(--font-size--large);
 		margin-bottom: var(--space-3);
 		margin-top: 0;
 	}

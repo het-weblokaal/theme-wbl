@@ -25,6 +25,7 @@
 @import "tools/mixins.css";
 @import "tools/mixins-development.css";
 @import "tools/mixins-structure.css";
+@import "tools/mixins-typography.css";
 
 
 /*--------------------------------------------------------------
@@ -78,6 +79,7 @@
 # Components - specific UI components.
 --------------------------------------------------------------*/
 @import "components/call-to-action.css";
+@import "components/layout-blog.css";
 @import "components/meta.css";
 @import "components/page-image.css";
 @import "components/password-protection-form.css";

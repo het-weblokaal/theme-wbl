@@ -9,8 +9,8 @@
 
 .wp-block-quote {
 	padding-left: var(--space-8);
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--space-10);
+	margin-bottom: var(--space-10);
 
 	p {
 		font-style: italic;
@@ -19,7 +19,7 @@
 	}
 
 	cite {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 		font-style: normal;
 		font-weight: regular;
 	}

@@ -12,7 +12,10 @@ html {
     font-size: var(--rem-size);
 }
 
-body {}
+body {
+    font-family: var(--font-family);
+    line-height: var(--line-height--normal);
+}
 
 
 /* Headings
@@ -25,7 +28,6 @@ h4,
 h3,
 h2,
 h1 {
-    line-height: var(--line-height--xs);
     font-weight: bold;
     font-style: normal;
     overflow-wrap: break-word;
@@ -36,20 +38,23 @@ h6,
 h5,
 h4,
 h3 {
-    font-size: var(--font-size--h3);
+    font-size: var(--font-size--normal);
+    line-height: var(--line-height--small);
     margin-top: var(--space-10);
     margin-bottom: var(--space-4);
 }
 
 h2 {
-    font-size: var(--font-size--h2);
+    font-size: var(--font-size--extra-large);
+    line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-8);
 }
 
 
 h1 {
-    font-size: var(--font-size--h1);
+    font-size: var(--font-size--gigantic);
+    line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-12);
 }
@@ -205,8 +210,8 @@ figure > * {
 
 figcaption {
     margin-top: var(--space-4);
-    font-size: var(--font-size--min);
-    line-height: var(--line-height--xs);
+    font-size: var(--font-size--extra-small);
+    line-height: var(--line-height--extra-small);
 }
 
 
@@ -246,7 +251,7 @@ select {
     background-color: transparent;
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
-    font-size: var(--font-size--sm);
+    font-size: var(--font-size--small);
     padding: var(--space-1) var(--space-1);
     width: 100%;
     transition: border-color var(--transition-fast);
@@ -276,12 +281,12 @@ input[type="checkbox"],
 input[type="radio"] {
     margin-right: 0.25em;
     /* font-weight: normal; */
-    line-height: var(--line-height--sm);
+    line-height: var(--line-height--small);
 
     & + label {
         display: inline;
-        font-size: var(--font-size--sm);
-        line-height: var(--line-height--sm);
+        font-size: var(--font-size--small);
+        line-height: var(--line-height--small);
         /* font-weight: normal; */
     }
 }

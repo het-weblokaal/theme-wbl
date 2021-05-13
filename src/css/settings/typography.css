@@ -1,49 +1,47 @@
-/* Use values with units as much as you can because of performance impact calculating the unit */
-
+/**
+ * Typography
+ *
+ * Define rem-size, font-sizes, line-heights and font-families.
+ *
+ * - Mobile first: we change the font-size going up the breakpoints.
+ * - Rem-size also impacts the spacing (see settings/spacing.css)
+ * - Use values with units as much as you can because of performance impact calculating the unit
+ */
 :root {
 
+	/* Root unit size */
 	--rem-size: 100%; /* 16 */
 
 	/* Typography */
-	--font-1-family: unit-rounded, sans-serif;
-	--font-1-line-height: 1.333;
+	--font-family: unit-rounded, sans-serif;
 
 	/* Font Sizes */
-	--font-size--min: 0.875rem;
-	--font-size--sm: 0.875rem;
-	--font-size--base: 1rem;
-	--font-size--lg: 1.1rem;
-	--font-size--xl: 1.25rem;
-	--font-size--2xl: 1.375rem;
-	--font-size--3xl: 1.5rem;
-	--font-size--max: 1.5rem;
-
-	/* Utility Mapping */
-	--font-size--site-nav: var(--font-size--xl);
-	--font-size--site-nav-toggle: var(--font-size--2xl);
-	--font-size--label: var(--font-size--min);
-	--font-size--meta: var(--font-size--sm);
-	--font-size--h3: var(--font-size--base);
-	--font-size--h2: var(--font-size--xl);
-	--font-size--h1: var(--font-size--max);
+	--font-size--extra-small: 0.825rem;
+	--font-size--small: 0.875rem;
+	--font-size--normal: 1rem;
+	--font-size--large: 1.25rem;
+	--font-size--extra-large: 1.5rem;
+	--font-size--huge: 2rem;
+	--font-size--gigantic: 2.5rem;
 
 	/* Line heights */
-	--line-height--xs: 1;
-	--line-height--sm: 1.2;
-	--line-height--md: 1.5;
+	--line-height--extra-small: 1;
+	--line-height--small: 1.2;
+	--line-height--normal: 1.333;
+	--line-height--large: 1.5;
 
-	@media (--from-breakpoint-1) {
+	/* Breakpoints */
+	@media (--from-breakpoint-3) {
+		--rem-size: 112.5%; /* 18 */
+
+		--font-size--extra-small: 0.722223rem; /* 13 */
+		--font-size--small: 0.833334rem; /* 15 */
+		--font-size--large: 1.25rem;
+		--font-size--extra-large: 1.5rem;
 	}
 
 	@media (--from-breakpoint-2) {
 		--rem-size: 112.5%;
-
-		--font-size--min: 0.75rem;
-		--font-size--sm: 0.85rem;
-		--font-size--3xl: 2rem;
-		--font-size--max: 2rem;
-
-		--font-size--h2: var(--font-size--2xl);
 	}
 
 	@media (--from-breakpoint-3) {
@@ -52,21 +50,15 @@
 
 	@media (--from-breakpoint-4) {
 		--rem-size: 125%;
-		--font-size--min: 0.675rem;
-		--font-size--sm: 0.8125rem;
-		--font-size--2xl: 1.5rem;
-		--font-size--max: 2.5rem;
 	}
 
 	@media (--from-breakpoint-5) {
 	}
 
 	@media (--from-breakpoint-6) {
-		--rem-size: 150%;
-		--font-size--min: 0.625rem;
-	}
-
-	@media (--from-breakpoint-7) {
+		--rem-size: 150%; /* 24 */
+		--font-size--extra-small: 0.625rem;
+		--font-size--small: 0.75rem;
+		--line-height--normal: 1.4;
 	}
 }
-

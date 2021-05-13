@@ -1,0 +1,18 @@
+@define-mixin reset-typography {
+	font-size: var(--font-size--normal);
+	line-height: var(--line-height);
+	font-weight: 400;
+	font-style: normal;
+}
+
+@define-mixin label {
+	font-size: var(--font-size--extra-small);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+@define-mixin segment-title {
+	font-size: var(--font-size--large);
+	margin-top: var(--space-6);
+	margin-bottom: var(--space-4);
+}

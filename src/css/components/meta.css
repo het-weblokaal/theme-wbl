@@ -40,10 +40,14 @@
 
 	&--date &__content {}
 
-	&--categories {
+	&--category {
 		a {
 			display: inline-block;
 			margin-right: 1em;
+
+			&:before {
+				content: '#';
+			}
 		}
 	}
 

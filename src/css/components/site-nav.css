@@ -89,7 +89,7 @@
 		&__sub-menu {
 			display: none;
 			padding: var(--space-2);
-			font-size: var(--font-size--sm);
+			font-size: var(--font-size--small);
 		}
 
 		&__sub-menu .menu__item {

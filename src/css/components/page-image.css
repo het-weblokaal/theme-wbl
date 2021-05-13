@@ -1,6 +1,6 @@
 .page-image {
 	@mixin is-page-content;
-	@mixin is-page-content--full;
+	@mixin is-page-content--full-page;
 	margin-top: var(--space-4);
 	margin-bottom: var(--space-4);
 

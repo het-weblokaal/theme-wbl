@@ -2,23 +2,23 @@
 
 /* Font sizes. */
 .has-small-font-size {
-	font-size: var(--font-size--sm);
+	font-size: var(--font-size--small);
 }
 
 .has-normal-font-size {
-	font-size: var(--font-size--md);
+	font-size: var(--font-size--normal);
 }
 
 .has-medium-font-size {
-	font-size: var(--font-size--xl);
+	font-size: var(--font-size--extra-large);
 }
 
 .has-large-font-size {
-	font-size: var(--font-size--2xl);
+	font-size: var(--font-size--huge);
 }
 
 .has-huge-font-size {
-	font-size: var(--font-size--3xl);
+	font-size: var(--font-size--gigantic);
 }
 
 

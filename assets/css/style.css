@@ -34,55 +34,58 @@
  * Load font faces
  */
 
-/* Use values with units as much as you can because of performance impact calculating the unit */
+/**
+ * Typography
+ *
+ * Define rem-size, font-sizes, line-heights and font-families.
+ *
+ * - Mobile first: we change the font-size going up the breakpoints.
+ * - Rem-size also impacts the spacing (see settings/spacing.css)
+ * - Use values with units as much as you can because of performance impact calculating the unit
+ */
 
 :root {
 
+	/* Root unit size */
 	--rem-size: 100%; /* 16 */
 
 	/* Typography */
-	--font-1-family: unit-rounded, sans-serif;
-	--font-1-line-height: 1.333;
+	--font-family: unit-rounded, sans-serif;
 
 	/* Font Sizes */
-	--font-size--min: 0.875rem;
-	--font-size--sm: 0.875rem;
-	--font-size--base: 1rem;
-	--font-size--lg: 1.1rem;
-	--font-size--xl: 1.25rem;
-	--font-size--2xl: 1.375rem;
-	--font-size--3xl: 1.5rem;
-	--font-size--max: 1.5rem;
-
-	/* Utility Mapping */
-	--font-size--site-nav: var(--font-size--xl);
-	--font-size--site-nav-toggle: var(--font-size--2xl);
-	--font-size--label: var(--font-size--min);
-	--font-size--meta: var(--font-size--sm);
-	--font-size--h3: var(--font-size--base);
-	--font-size--h2: var(--font-size--xl);
-	--font-size--h1: var(--font-size--max);
+	--font-size--extra-small: 0.825rem;
+	--font-size--small: 0.875rem;
+	--font-size--normal: 1rem;
+	--font-size--large: 1.25rem;
+	--font-size--extra-large: 1.5rem;
+	--font-size--huge: 2rem;
+	--font-size--gigantic: 2.5rem;
 
 	/* Line heights */
-	--line-height--xs: 1;
-	--line-height--sm: 1.2;
-	--line-height--md: 1.5;
+	--line-height--extra-small: 1;
+	--line-height--small: 1.2;
+	--line-height--normal: 1.333;
+	--line-height--large: 1.5;
 }
 
-@media (min-width: 360px) {
+/* Breakpoints */
+
+@media (min-width: 840px) {
+
+:root {
+		--rem-size: 112.5%; /* 18 */
+
+		--font-size--extra-small: 0.722223rem; /* 13 */
+		--font-size--small: 0.833334rem; /* 15 */
+		--font-size--large: 1.25rem;
+		--font-size--extra-large: 1.5rem
+}
 	}
 
 @media (min-width: 600px) {
 
 :root {
-		--rem-size: 112.5%;
-
-		--font-size--min: 0.75rem;
-		--font-size--sm: 0.85rem;
-		--font-size--3xl: 2rem;
-		--font-size--max: 2rem;
-
-		--font-size--h2: var(--font-size--2xl)
+		--rem-size: 112.5%
 }
 	}
 
@@ -96,11 +99,7 @@
 @media (min-width: 1080px) {
 
 :root {
-		--rem-size: 125%;
-		--font-size--min: 0.675rem;
-		--font-size--sm: 0.8125rem;
-		--font-size--2xl: 1.5rem;
-		--font-size--max: 2.5rem
+		--rem-size: 125%
 }
 	}
 
@@ -110,12 +109,11 @@
 @media (min-width: 1720px) {
 
 :root {
-		--rem-size: 150%;
-		--font-size--min: 0.625rem
+		--rem-size: 150%; /* 24 */
+		--font-size--extra-small: 0.625rem;
+		--font-size--small: 0.75rem;
+		--line-height--normal: 1.4
 }
-	}
-
-@media (--from-breakpoint-7) {
 	}
 
 /**
@@ -218,9 +216,20 @@
 
 :root {
 
+		--site--width:   86vw;
+		--site--padding: 7vw;
+
     	/* Twelve columns */
-		--column:        2.5vw;
-		--gutter:        5vw
+		--column:        3.5vw;
+		--gutter:        4vw;
+
+		/* Fixed sizes */
+		--site--width:   1200px;
+		--site--padding: 48px;
+
+    	/* Twelve columns */
+		--column:        56px;
+		--gutter:        48px
 }
     }
 
@@ -230,7 +239,7 @@
 
     	/* Fixed sizes */
 		--site--width:   1380px;
-		--site--padding: 90px;
+		--site--padding: 48px;
 
     	--column: 71px; /* 60 71 82 */
 		--gutter: 48px /* 60 48 36 */
@@ -370,137 +379,6 @@
 /* Mixins are predefined css, usable anywhere in the stylesheets */
 
 /* ===============
- * Helpers
- * =============== */
-
-/* ===============
- * Structure
- * =============== */
-
-/* 
-@define-mixin site--padding {
-	padding-left: var(--site--padding);
-	padding-right: var(--site--padding);
-}
-
-@define-mixin container--page {
-	margin-left: auto;
-    margin-right: auto;
-	width: var(--page--width);
-}
-
-@define-mixin container--page--full-site {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
-}
-
-@define-mixin container--page-content {
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--page-content--width);
-
-	@media (--from-breakpoint-3) {
-		margin-left: calc(var(--column-gutter) * 1);
-	}
-}
-
-@define-mixin container--page-content--full-page {
-	@media (--grid-columns-6) {
-		margin-left: calc(var(--column-gutter) * -1);
-		margin-right: calc(var(--column-gutter) * -1);
-		width: var(--page--width);
-	}
-
-	@media (--from-breakpoint-4) {
-		margin-right: calc(var(--column-gutter) * -2);
-	}
-}
-
-@define-mixin container--page-content--full-site {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
-
-	@media (--from-breakpoint-4) {
-		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
-		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding));
-	}
-}
-
-@define-mixin container--page-content--right {
-
-	@media (--from-breakpoint-1) {
-		float: right;
-		margin-bottom: var(--space-3);
-		margin-left: var(--gutter);
-		max-width: var(--column-span-1);
-	}
-
-	@media (--grid-columns-4) {
-		max-width: var(--column-span-2);
-	}
-
-	@media (--grid-columns-6) {
-		margin-right: calc(var(--column-gutter) * -1);
-		max-width: var(--column-span-3);
-	}
-}
-
-@define-mixin container--page-content--left {
-
-	@media (--from-breakpoint-1) {
-		float: left;
-		margin-bottom: var(--space-3);
-		margin-right: var(--gutter);
-		max-width: var(--column-span-1);
-	}
-
-	@media (--grid-columns-4) {
-		max-width: var(--column-span-2);
-	}
-
-	@media (--grid-columns-6) {
-		max-width: var(--column-span-3);
-	}
-} */
-
-/* Collapse vertical margin */
-
-/* @define-mixin margin-collapse-fix {
-    overflow-y: hidden;
-} */
-
-/* Vertical spacing */
-
-/* @define-mixin vertical-spacing {
-    margin-bottom: var(--space-3);
-} */
-
-/* @define-mixin full-page-content-overflow-fix {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-}
- */
-
-/** Editor structure helpers */
-
-/* @define-mixin editor-page-content--full-site {
-	margin-left: -5vw;
-	margin-right: -5vw;
-
-	@media (--from-breakpoint-3) {
-		margin-left: calc(var(--gutter) * -1);
-		margin-right: calc(var(--gutter) * -1);
-	}
-} */
-
-/* ===============
- * Typography
- * =============== */
-
-/* ===============
  * Links
  * =============== */
 
@@ -638,7 +516,10 @@ html {
     font-size: var(--rem-size);
 }
 
-body {}
+body {
+    font-family: var(--font-family);
+    line-height: var(--line-height--normal);
+}
 
 /* Headings
 ---------------------------------------------------- */
@@ -651,7 +532,6 @@ h4,
 h3,
 h2,
 h1 {
-    line-height: var(--line-height--xs);
     font-weight: bold;
     font-style: normal;
     word-wrap: break-word;
@@ -662,19 +542,22 @@ h6,
 h5,
 h4,
 h3 {
-    font-size: var(--font-size--h3);
+    font-size: var(--font-size--normal);
+    line-height: var(--line-height--small);
     margin-top: var(--space-10);
     margin-bottom: var(--space-4);
 }
 
 h2 {
-    font-size: var(--font-size--h2);
+    font-size: var(--font-size--extra-large);
+    line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-8);
 }
 
 h1 {
-    font-size: var(--font-size--h1);
+    font-size: var(--font-size--gigantic);
+    line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-12);
 }
@@ -831,8 +714,8 @@ figure > * {
 
 figcaption {
     margin-top: var(--space-4);
-    font-size: var(--font-size--min);
-    line-height: var(--line-height--xs);
+    font-size: var(--font-size--extra-small);
+    line-height: var(--line-height--extra-small);
 }
 
 /* SVG
@@ -876,7 +759,7 @@ select {
     background-color: transparent;
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
-    font-size: var(--font-size--sm);
+    font-size: var(--font-size--small);
     padding: var(--space-1) var(--space-1);
     width: 100%;
     transition: border-color var(--transition-fast);
@@ -943,13 +826,13 @@ input[type="checkbox"],
 input[type="radio"] {
     margin-right: 0.25em;
     /* font-weight: normal; */
-    line-height: var(--line-height--sm);
+    line-height: var(--line-height--small);
 }
 
 input[type="checkbox"] + label, input[type="radio"] + label {
         display: inline;
-        font-size: var(--font-size--sm);
-        line-height: var(--line-height--sm);
+        font-size: var(--font-size--small);
+        line-height: var(--line-height--small);
         /* font-weight: normal; */
     }
 
@@ -966,8 +849,8 @@ input[type="submit"] {
     color: inherit;
     text-decoration: none;
     font-weight: bold;
-    line-height: var(--line-height--sm);
-    /* font-size: var(--font-size--sm);
+    line-height: var(--line-height--small);
+    /* font-size: var(--font-size--small);
     text-transform: uppercase; */
     display: inline-block;
     cursor: pointer;
@@ -998,8 +881,7 @@ html {
 body {
 	background-color: var(--background-color);
 	color: var(--foreground-color);
-	font-family: var(--font-1-family);
-	line-height: var(--font-1-line-height);
+	
 }
 
 .site {
@@ -1095,7 +977,8 @@ body {
 		margin-right: var(--site--padding);
 		max-width: none;
 		width: auto;
-		margin-bottom: var(--space-16)
+		/* margin-top: var(--space-12); */
+		margin-bottom: calc(var(--space-20) + var(--space-4))
 }
 	}
 
@@ -1137,7 +1020,7 @@ body {
 	}
 
 .site-footer__title {
-		font-size: var(--font-size--lg);
+		font-size: var(--font-size--large);
 		margin-top: var(--space-6);
 		margin-bottom: var(--space-4);
 	}
@@ -1202,7 +1085,7 @@ body {
 		}
 
 .site-footer .colophon {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 	}
 
 .site-footer .colophon p:last-child {
@@ -1255,17 +1138,17 @@ body {
 	
 }
 
-.page__header:after {
+body.is-singular .page__header:after {
 	  content: "";
 	  display: table;
 	  clear: both;
 	}
 
-.page__header > *:first-child { margin-top: 0; }
+body.is-singular .page__header > *:first-child { margin-top: 0; }
 
-.page__header > *:last-child { margin-bottom: 0; }
+body.is-singular .page__header > *:last-child { margin-bottom: 0; }
 
-.page__header > * {
+body.is-singular .page__header > * {
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
@@ -1275,22 +1158,17 @@ body {
 
 @media (min-width: 840px) {
 
-.page__header > * {
+body.is-singular .page__header > * {
 		max-width: var(--column-span-4);
 	}
 	}
 
 @media (min-width: 1400px) {
 
-.page__header > * {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+body.is-singular .page__header > * {
+		max-width: var(--column-span-8);
 	}
 	}
-
-.page__header > *:first-child { margin-top: 0; }
-
-.page__header > *:last-child { margin-bottom: 0; }
 
 .page__header {
 
@@ -1298,7 +1176,6 @@ body {
 }
 
 .page__header .page__title {
-		margin-top: 0;
 		margin-bottom: 0;
 	}
 
@@ -1357,8 +1234,7 @@ body {
 @media (min-width: 1400px) {
 
 .page__content > * {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 	}
 	}
 
@@ -1390,8 +1266,7 @@ body {
 @media (min-width: 1400px) {
 
 .page__footer > * {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 	}
 	}
 
@@ -1438,8 +1313,8 @@ body {
 		color: inherit;
 		text-decoration: none;
 		font-weight: bold;
-		line-height: var(--line-height--sm);
-		/* font-size: var(--font-size--sm);
+		line-height: var(--line-height--small);
+		/* font-size: var(--font-size--small);
     text-transform: uppercase; */
 		display: inline-block;
 		cursor: pointer;
@@ -1760,8 +1635,7 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 @media (min-width: 1400px) {
 
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 		}
 	}
 
@@ -1782,8 +1656,7 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 				@media (min-width: 1400px) {
 
 			.wp-block-image.alignwide img, .wp-block-image.alignfull img {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 			}
 	}
 		}
@@ -1866,8 +1739,8 @@ p.has-background {
 
 .wp-block-quote {
 	padding-left: var(--space-8);
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--space-10);
+	margin-bottom: var(--space-10);
 }
 
 .wp-block-quote p {
@@ -1877,7 +1750,7 @@ p.has-background {
 	}
 
 .wp-block-quote cite {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 		font-style: normal;
 		font-weight: regular;
 	}
@@ -1911,7 +1784,7 @@ p.has-background {
 	}
 
 .wp-block-table th {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 		font-weight: bold;
 	}
 
@@ -1920,7 +1793,7 @@ p.has-background {
 			}
 
 .wp-block-table td {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 	}
 
 .wp-block-table tfoot td {
@@ -1988,13 +1861,12 @@ p.has-background {
 @media (min-width: 1400px) {
 
 .wbl-segment__inner > * {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 	}
 	}
 
 .wbl-segment__title:not(h1) {
-			font-size: var(--font-size--lg);
+			font-size: var(--font-size--large);
 			margin-top: var(--space-6);
 			margin-bottom: var(--space-4);
 		}
@@ -2354,7 +2226,7 @@ p.has-background {
  */
 
 .wbl-card__heading {
-		font-size: var(--font-size--lg);
+		font-size: var(--font-size--large);
 		margin-bottom: var(--space-3);
 		margin-top: 0;
 	}
@@ -2486,23 +2358,23 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 /* Font sizes. */
 
 .has-small-font-size {
-	font-size: var(--font-size--sm);
+	font-size: var(--font-size--small);
 }
 
 .has-normal-font-size {
-	font-size: var(--font-size--md);
+	font-size: var(--font-size--normal);
 }
 
 .has-medium-font-size {
-	font-size: var(--font-size--xl);
+	font-size: var(--font-size--extra-large);
 }
 
 .has-large-font-size {
-	font-size: var(--font-size--2xl);
+	font-size: var(--font-size--huge);
 }
 
 .has-huge-font-size {
-	font-size: var(--font-size--3xl);
+	font-size: var(--font-size--gigantic);
 }
 
 .has-text-align-left {
@@ -2622,10 +2494,10 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-left: calc(50% - 50vw + var(--site--padding));
+	margin-right: calc(50% - 50vw + var(--site--padding));
 	max-width: none;
-	margin-left: 0;
-	margin-top: var(--space-10);
-	margin-bottom: var(--space-12);
+	width: auto;
 	--background-color: var(--wp--preset--color--secondary-1);
 	--foreground-color: var(--wp--preset--color--primary-1);
 	background-color: var(--background-color);
@@ -2646,8 +2518,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .call-to-action {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2)
+		max-width: var(--column-span-8)
 }
 	}
 
@@ -2659,6 +2530,130 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		margin-right: auto;
 		max-width: var(--page-content--width);
 		text-align: center;
+	}
+
+.layout-blog {
+	max-width: none;
+	margin-bottom: var(--space-10);
+	margin-top: var(--space-8);
+
+	display: grid;
+	grid-column-gap: var(--gutter);
+	column-gap: var(--gutter);
+	grid-row-gap: var(--space-8);
+	row-gap: var(--space-8);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 840px) {
+
+.layout-blog {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12)
+}
+	}
+
+@media (min-width: 1400px) {
+
+.layout-blog {		
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12)
+}
+	}
+
+.layout-blog__item {
+
+	}
+
+@media (min-width: 600px) and (max-width: 839px) {
+
+.layout-blog {
+		grid-template-columns: 1fr 1fr
+}
+	}
+
+.layout-blog .entry__title {
+		font-size: var(--font-size--large);
+		margin-bottom: var(--space-4);
+		margin-top: 0;
+	}
+
+.layout-blog .entry p {
+		margin-bottom: var(--space-4);
+	}
+
+.layout-blog .entry img {
+		display: block;
+		width: 100%;
+		margin-bottom: var(--space-4);
+	}
+
+.layout-blog .entry__footer {
+		font-size: var(--font-size--small);
+	}
+
+.layout-blog .entry .meta {
+		display: block;
+	}
+
+.layout-blog .entry .meta--date {
+			font-weight: bold;
+		}
+
+/** Media Queries */
+
+@media (min-width: 840px) {
+
+		.layout-blog .entry__title {
+			font-size: var(--font-size--extra-large);
+		}
+
+    	.layout-blog .entry img {
+    		margin-bottom: 0;
+    	}
+
+		.layout-blog .entry__inner {
+			display: grid;
+			grid-column-gap: var(--gutter);
+			column-gap: var(--gutter);
+			grid-template-rows: auto 1fr;
+
+			grid-template-areas:
+				"footer header header image"
+				"footer main   main   image";
+
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+  		.layout-blog .entry__footer {
+			margin-top: 0.25em;
+        	grid-area: footer;
+        }
+
+        .layout-blog .entry__header {
+        	grid-area: header;
+        }
+
+  		.layout-blog .entry__main {
+        	grid-area: main;
+		}
+
+        .layout-blog .entry__image {
+        	grid-area: image;
+        }
+
+        .layout-blog .entry .meta--category {
+			margin-top: var(--space-2);
+		}
+	}
+
+@media (min-width: 1400px) {
+
+        	.layout-blog .entry__header > *, .layout-blog .entry__main > * {
+        		max-width: 600px;
+        	}
 	}
 
 /**
@@ -2677,7 +2672,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
  */
 
 .meta__label {
-		font-size: var(--font-size--label);
+		font-size: var(--font-size--extra-small);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		display: block;
@@ -2706,10 +2701,14 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 .meta--date .meta__content {}
 
-.meta--categories a {
+.meta--category a {
 			display: inline-block;
 			margin-right: 1em;
 		}
+
+.meta--category a:before {
+				content: '#';
+			}
 
 .meta--password-protection-status:before {
 			color: var(--ui-color);
@@ -2723,9 +2722,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	margin-left: auto;
 	margin-right: auto;
 	max-width: none;
-	margin-left: 0;
-	margin-top: var(--space-10);
-	margin-bottom: var(--space-12);
 	margin-top: var(--space-4);
 	margin-bottom: var(--space-4);
 }
@@ -2742,8 +2738,25 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .page-image {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2)
+		max-width: var(--column-span-8)
+}
+	}
+
+@media (min-width: 840px) {
+
+.page-image {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12)
+}
+	}
+
+@media (min-width: 1400px) {
+
+.page-image {		
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12)
 }
 	}
 
@@ -2773,8 +2786,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			@media (min-width: 1400px) {
 
 		.page-image__inner {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 		}
 	}
 	}
@@ -2798,11 +2810,13 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	margin-left: auto;
 	margin-right: auto;
 	max-width: none;
-	margin-left: 0;
-	margin-top: var(--space-10);
-	margin-bottom: var(--space-12);
 	margin-bottom: var(--space-10);
 	margin-top: var(--space-8);
+/* 
+	_:-ms-fullscreen, :root & {
+		column-gap: var(--gutter);
+		@mixin ie11-grid-fallback 2;
+	} */
 }
 
 /* max-width: var(--column-span-6); */
@@ -2810,28 +2824,33 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 840px) {
 
 .posts {
-		max-width: var(--column-span-4)
+		max-width: var(--column-span-4);
 }
 	}
 
 @media (min-width: 1400px) {
 
 .posts {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2)
+		max-width: var(--column-span-8);
 }
 	}
 
-.posts _:-ms-fullscreen, :root .posts {
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		/* IE11: Grid fallback */
-		column-count: 2;
+@media (min-width: 840px) {
+
+.posts {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12);
+}
 	}
 
-.posts _:-ms-fullscreen > *, :root .posts > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
+@media (min-width: 1400px) {
+
+.posts {		
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12);
+}
 	}
 
 /**
@@ -2869,7 +2888,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 .posts-post__title {
 		margin-top: 0;
 		margin-bottom: 0;
-		line-height: var(--line-height--sm);
+		line-height: var(--line-height--small);
 	}
 
 .posts-post__image {}
@@ -2888,7 +2907,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		/* margin-bottom: var(--space-2); */
 	}
 
-/* font-size: var(--font-size--sm); */
+/* font-size: var(--font-size--small); */
 
 .posts-post__meta-group .meta__label {
 				display: none;
@@ -3067,7 +3086,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		}
 
 .post-navigation__link-label {
-		font-size: var(--font-size--label);
+		font-size: var(--font-size--extra-small);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		margin-bottom: var(--space-2);
@@ -3095,8 +3114,8 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	display: none;
 	font-family: monotype;
 	font-weight: bold;
-	font-size: var(--font-size--min);
-	line-height: var(--line-height--xs);
+	font-size: var(--font-size--extra-small);
+	line-height: var(--line-height--extra-small);
 	text-align: right;
 	position: fixed;
 	left: 0;
@@ -3328,7 +3347,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 .site-nav .menu__sub-menu {
 			display: none;
 			padding: var(--space-2);
-			font-size: var(--font-size--sm);
+			font-size: var(--font-size--small);
 		}
 
 .site-nav .menu__sub-menu .menu__item {
@@ -3340,7 +3359,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		margin-bottom: 0;
 		margin-top: 0;
 
-		font-size: var(--font-size--3xl);
+		font-size: var(--font-size--gigantic);
 		line-height: 1;
 	}
 
@@ -3401,11 +3420,10 @@ svg.site-logo__symbol path {
 
 	display: flex;
 	align-items: center;
-	padding: 0;
-}
 
-/* 	padding: var(--space-1);
-	margin: var(--space--1); */
+	padding: 0;
+	font-size: 1rem;
+}
 
 .site-nav-toggle:hover,
 	.site-nav-toggle:focus,
@@ -3424,9 +3442,17 @@ svg.site-logo__symbol path {
 .site-nav-toggle::-moz-focus-inner { border: 0; }
 
 .site-nav-toggle__icon {
-		width: var(--font-size--site-nav-toggle);
-		height: var(--font-size--site-nav-toggle);
+		width: 1.375rem;
+		height: 1.375rem;
 	}
+
+@media (min-width: 1400px) {
+
+.site-nav-toggle__icon {
+			width: 1.5rem;
+			height: 1.5rem
+	}
+		}
 
 .site-nav-toggle__icon svg {
 			height: auto;
@@ -3437,10 +3463,11 @@ svg.site-logo__symbol path {
 		}
 
 .site-nav-toggle__label {
-		font-size: var(--font-size--label);
+		font-size: var(--font-size--extra-small);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		margin-right: var(--space-1);
+		margin-right: 1em;
+		margin-top: 0.25em;
 	}
 
 .site-nav-toggle[aria-expanded="false"] .site-nav-toggle__label--close,
@@ -3577,7 +3604,7 @@ svg.site-logo__symbol path {
 
 .alignright {
 		max-width: var(--column-span-4);
-		margin-right: var(--column-span-1);
+		/* margin-right: var(--column-span-1); */
 }
 	}
 
@@ -3604,7 +3631,7 @@ figure.alignright {
 @media (min-width: 1400px) {
 
 figure.alignright {
-		margin-right: calc(var(--column-gutter-1) * -1)
+		/* margin-right: calc(var(--column-gutter-1) * -1); */
 }
 	}
 
@@ -3621,9 +3648,31 @@ figure.alignleft {
 
 .alignwide {
 	max-width: none;
-	margin-left: 0;
-	margin-top: var(--space-10);
-	margin-bottom: var(--space-12);
+}
+
+@media (min-width: 840px) {
+
+.alignwide {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12);
+}
+	}
+
+@media (min-width: 1400px) {
+
+.alignwide {		
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-12);
+}
+	}
+
+.alignfull {
+	margin-left: calc(50% - 50vw + var(--site--padding));
+	margin-right: calc(50% - 50vw + var(--site--padding));
+	max-width: none;
+	width: auto;
 }
 
 #wpadminbar {

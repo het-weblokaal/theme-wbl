@@ -71,7 +71,7 @@
 	}
 
 	.colophon {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 		p:last-child {
 			margin-bottom: 0;
 		}

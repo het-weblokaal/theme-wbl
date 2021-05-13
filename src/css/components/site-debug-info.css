@@ -2,8 +2,8 @@
 	display: none;
 	font-family: monotype;
 	font-weight: bold;
-	font-size: var(--font-size--min);
-	line-height: var(--line-height--xs);
+	font-size: var(--font-size--extra-small);
+	line-height: var(--line-height--extra-small);
 	text-align: right;
 	position: fixed;
 	left: 0;

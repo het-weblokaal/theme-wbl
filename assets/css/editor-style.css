@@ -34,55 +34,58 @@
  * Load font faces
  */
 
-/* Use values with units as much as you can because of performance impact calculating the unit */
+/**
+ * Typography
+ *
+ * Define rem-size, font-sizes, line-heights and font-families.
+ *
+ * - Mobile first: we change the font-size going up the breakpoints.
+ * - Rem-size also impacts the spacing (see settings/spacing.css)
+ * - Use values with units as much as you can because of performance impact calculating the unit
+ */
 
 :root {
 
+	/* Root unit size */
 	--rem-size: 100%; /* 16 */
 
 	/* Typography */
-	--font-1-family: unit-rounded, sans-serif;
-	--font-1-line-height: 1.333;
+	--font-family: unit-rounded, sans-serif;
 
 	/* Font Sizes */
-	--font-size--min: 0.875rem;
-	--font-size--sm: 0.875rem;
-	--font-size--base: 1rem;
-	--font-size--lg: 1.1rem;
-	--font-size--xl: 1.25rem;
-	--font-size--2xl: 1.375rem;
-	--font-size--3xl: 1.5rem;
-	--font-size--max: 1.5rem;
-
-	/* Utility Mapping */
-	--font-size--site-nav: var(--font-size--xl);
-	--font-size--site-nav-toggle: var(--font-size--2xl);
-	--font-size--label: var(--font-size--min);
-	--font-size--meta: var(--font-size--sm);
-	--font-size--h3: var(--font-size--base);
-	--font-size--h2: var(--font-size--xl);
-	--font-size--h1: var(--font-size--max);
+	--font-size--extra-small: 0.825rem;
+	--font-size--small: 0.875rem;
+	--font-size--normal: 1rem;
+	--font-size--large: 1.25rem;
+	--font-size--extra-large: 1.5rem;
+	--font-size--huge: 2rem;
+	--font-size--gigantic: 2.5rem;
 
 	/* Line heights */
-	--line-height--xs: 1;
-	--line-height--sm: 1.2;
-	--line-height--md: 1.5;
+	--line-height--extra-small: 1;
+	--line-height--small: 1.2;
+	--line-height--normal: 1.333;
+	--line-height--large: 1.5;
 }
 
-@media (min-width: 360px) {
+/* Breakpoints */
+
+@media (min-width: 840px) {
+
+:root {
+		--rem-size: 112.5%; /* 18 */
+
+		--font-size--extra-small: 0.722223rem; /* 13 */
+		--font-size--small: 0.833334rem; /* 15 */
+		--font-size--large: 1.25rem;
+		--font-size--extra-large: 1.5rem
+}
 	}
 
 @media (min-width: 600px) {
 
 :root {
-		--rem-size: 112.5%;
-
-		--font-size--min: 0.75rem;
-		--font-size--sm: 0.85rem;
-		--font-size--3xl: 2rem;
-		--font-size--max: 2rem;
-
-		--font-size--h2: var(--font-size--2xl)
+		--rem-size: 112.5%
 }
 	}
 
@@ -96,11 +99,7 @@
 @media (min-width: 1080px) {
 
 :root {
-		--rem-size: 125%;
-		--font-size--min: 0.675rem;
-		--font-size--sm: 0.8125rem;
-		--font-size--2xl: 1.5rem;
-		--font-size--max: 2.5rem
+		--rem-size: 125%
 }
 	}
 
@@ -110,12 +109,11 @@
 @media (min-width: 1720px) {
 
 :root {
-		--rem-size: 150%;
-		--font-size--min: 0.625rem
+		--rem-size: 150%; /* 24 */
+		--font-size--extra-small: 0.625rem;
+		--font-size--small: 0.75rem;
+		--line-height--normal: 1.4
 }
-	}
-
-@media (--from-breakpoint-7) {
 	}
 
 /**
@@ -218,9 +216,20 @@
 
 :root {
 
+		--site--width:   86vw;
+		--site--padding: 7vw;
+
     	/* Twelve columns */
-		--column:        2.5vw;
-		--gutter:        5vw
+		--column:        3.5vw;
+		--gutter:        4vw;
+
+		/* Fixed sizes */
+		--site--width:   1200px;
+		--site--padding: 48px;
+
+    	/* Twelve columns */
+		--column:        56px;
+		--gutter:        48px
 }
     }
 
@@ -230,7 +239,7 @@
 
     	/* Fixed sizes */
 		--site--width:   1380px;
-		--site--padding: 90px;
+		--site--padding: 48px;
 
     	--column: 71px; /* 60 71 82 */
 		--gutter: 48px /* 60 48 36 */
@@ -370,137 +379,6 @@
 /* Mixins are predefined css, usable anywhere in the stylesheets */
 
 /* ===============
- * Helpers
- * =============== */
-
-/* ===============
- * Structure
- * =============== */
-
-/* 
-@define-mixin site--padding {
-	padding-left: var(--site--padding);
-	padding-right: var(--site--padding);
-}
-
-@define-mixin container--page {
-	margin-left: auto;
-    margin-right: auto;
-	width: var(--page--width);
-}
-
-@define-mixin container--page--full-site {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
-}
-
-@define-mixin container--page-content {
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--page-content--width);
-
-	@media (--from-breakpoint-3) {
-		margin-left: calc(var(--column-gutter) * 1);
-	}
-}
-
-@define-mixin container--page-content--full-page {
-	@media (--grid-columns-6) {
-		margin-left: calc(var(--column-gutter) * -1);
-		margin-right: calc(var(--column-gutter) * -1);
-		width: var(--page--width);
-	}
-
-	@media (--from-breakpoint-4) {
-		margin-right: calc(var(--column-gutter) * -2);
-	}
-}
-
-@define-mixin container--page-content--full-site {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
-	width: auto;
-
-	@media (--from-breakpoint-4) {
-		margin-left: calc(50% - 50vw + (var(--column-gutter) / 2) + var(--site--padding));
-		margin-right: calc(50% - 50vw - (var(--column-gutter) / 2) + var(--site--padding));
-	}
-}
-
-@define-mixin container--page-content--right {
-
-	@media (--from-breakpoint-1) {
-		float: right;
-		margin-bottom: var(--space-3);
-		margin-left: var(--gutter);
-		max-width: var(--column-span-1);
-	}
-
-	@media (--grid-columns-4) {
-		max-width: var(--column-span-2);
-	}
-
-	@media (--grid-columns-6) {
-		margin-right: calc(var(--column-gutter) * -1);
-		max-width: var(--column-span-3);
-	}
-}
-
-@define-mixin container--page-content--left {
-
-	@media (--from-breakpoint-1) {
-		float: left;
-		margin-bottom: var(--space-3);
-		margin-right: var(--gutter);
-		max-width: var(--column-span-1);
-	}
-
-	@media (--grid-columns-4) {
-		max-width: var(--column-span-2);
-	}
-
-	@media (--grid-columns-6) {
-		max-width: var(--column-span-3);
-	}
-} */
-
-/* Collapse vertical margin */
-
-/* @define-mixin margin-collapse-fix {
-    overflow-y: hidden;
-} */
-
-/* Vertical spacing */
-
-/* @define-mixin vertical-spacing {
-    margin-bottom: var(--space-3);
-} */
-
-/* @define-mixin full-page-content-overflow-fix {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
-}
- */
-
-/** Editor structure helpers */
-
-/* @define-mixin editor-page-content--full-site {
-	margin-left: -5vw;
-	margin-right: -5vw;
-
-	@media (--from-breakpoint-3) {
-		margin-left: calc(var(--gutter) * -1);
-		margin-right: calc(var(--gutter) * -1);
-	}
-} */
-
-/* ===============
- * Typography
- * =============== */
-
-/* ===============
  * Links
  * =============== */
 
@@ -590,8 +468,8 @@
 
 .wp-block-quote {
 	padding-left: var(--space-8);
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--space-10);
+	margin-bottom: var(--space-10);
 }
 
 .wp-block-quote p {
@@ -601,7 +479,7 @@
 	}
 
 .wp-block-quote cite {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 		font-style: normal;
 		font-weight: regular;
 	}
@@ -627,7 +505,7 @@
  */
 
 .wbl-card__heading {
-		font-size: var(--font-size--lg);
+		font-size: var(--font-size--large);
 		margin-bottom: var(--space-3);
 		margin-top: 0;
 	}
@@ -702,13 +580,12 @@
 @media (min-width: 1400px) {
 
 .wbl-segment__inner > * {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 	}
 	}
 
 .wbl-segment__title:not(h1) {
-			font-size: var(--font-size--lg);
+			font-size: var(--font-size--large);
 			margin-top: var(--space-6);
 			margin-bottom: var(--space-4);
 		}
@@ -1163,23 +1040,23 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 /* Font sizes. */
 
 .has-small-font-size {
-	font-size: var(--font-size--sm);
+	font-size: var(--font-size--small);
 }
 
 .has-normal-font-size {
-	font-size: var(--font-size--md);
+	font-size: var(--font-size--normal);
 }
 
 .has-medium-font-size {
-	font-size: var(--font-size--xl);
+	font-size: var(--font-size--extra-large);
 }
 
 .has-large-font-size {
-	font-size: var(--font-size--2xl);
+	font-size: var(--font-size--huge);
 }
 
 .has-huge-font-size {
-	font-size: var(--font-size--3xl);
+	font-size: var(--font-size--gigantic);
 }
 
 .has-text-align-left {
@@ -1336,8 +1213,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		max-width: var(--column-span-7);
-		margin-left: var(--column-gutter-2);
+		max-width: var(--column-span-8);
 	}
 	}
 

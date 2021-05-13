@@ -3,13 +3,14 @@
 }
 
 .page__header {
-	@mixin has-page-content;
-	@mixin remove-first-last-child-margin;
+
+	body.is-singular & {
+		@mixin has-page-content;
+	}
 
 	margin-bottom: var(--space-4);
 
 	.page__title {
-		margin-top: 0;
 		margin-bottom: 0;
 	}
 

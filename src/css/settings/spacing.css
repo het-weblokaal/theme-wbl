@@ -89,16 +89,27 @@
 
 	@media (--from-breakpoint-5) {
 
+		--site--width:   86vw;
+		--site--padding: 7vw;
+
     	/* Twelve columns */
-		--column:        2.5vw;
-		--gutter:        5vw;
+		--column:        3.5vw;
+		--gutter:        4vw;
+
+		/* Fixed sizes */
+		--site--width:   1200px;
+		--site--padding: 48px;
+
+    	/* Twelve columns */
+		--column:        56px;
+		--gutter:        48px;
     }
 
     @media (--from-breakpoint-6) {
 
     	/* Fixed sizes */
 		--site--width:   1380px;
-		--site--padding: 90px;
+		--site--padding: 48px;
 
     	--column: 71px; /* 60 71 82 */
 		--gutter: 48px; /* 60 48 36 */

@@ -17,7 +17,7 @@
 	}
 
 	th {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 		font-weight: bold;
 	}
 
@@ -30,7 +30,7 @@
 	}
 
 	td {
-		font-size: var(--font-size--sm);
+		font-size: var(--font-size--small);
 	}
 
 	tfoot td {

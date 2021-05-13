@@ -51,8 +51,9 @@
 	}
 
 	@media (--from-breakpoint-5) {
-		@mixin is-page-segment--full;
-		margin-bottom: var(--space-16);
+		@mixin is-page-segment--full-site;
+		/* margin-top: var(--space-12); */
+		margin-bottom: calc(var(--space-20) + var(--space-4));
 	}
 
  	/** Additional and modifying classes */

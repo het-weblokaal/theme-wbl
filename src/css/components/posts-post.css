@@ -28,7 +28,7 @@
 	&__title {
 		margin-top: 0;
 		margin-bottom: 0;
-		line-height: var(--line-height--sm);
+		line-height: var(--line-height--small);
 	}
 
 	&__image {}
@@ -48,7 +48,7 @@
 	}
 
 	&__meta-group {
-		/* font-size: var(--font-size--sm); */
+		/* font-size: var(--font-size--small); */
 
 		.meta {
 
