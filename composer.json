@@ -5,6 +5,7 @@
     "repositories": [],
     "require": {
         "het-weblokaal/wbl-theme-foundation": "dev-main",
-        "tgmpa/tgm-plugin-activation": "^2.6"
+        "tgmpa/tgm-plugin-activation": "^2.6",
+        "wptt/webfont-loader": "^1.1"
     }
 }

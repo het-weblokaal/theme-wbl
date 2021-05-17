@@ -1,22 +1,9 @@
 .page-image {
-	@mixin is-page-content;
 	@mixin is-page-content--full-page;
-	margin-top: var(--space-4);
-	margin-bottom: var(--space-4);
-
-	&__inner {
-	}
 
 	img {
 		display: block;
 		margin-bottom: 0;
 		width: 100%;
-	}
-
-	@media (--grid-columns-6) {
-
-		&__inner {
-			@mixin is-page-content;
-		}
 	}
 }

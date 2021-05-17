@@ -9,8 +9,6 @@
 
 .wp-block-quote {
 	padding-left: var(--space-8);
-	margin-top: var(--space-10);
-	margin-bottom: var(--space-10);
 
 	p {
 		font-style: italic;
@@ -24,7 +22,9 @@
 		font-weight: regular;
 	}
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-7) {
+		margin-top: var(--space-10);
+		margin-bottom: var(--space-10);
 		padding-left: var(--column-gutter-1);
 	}
 }

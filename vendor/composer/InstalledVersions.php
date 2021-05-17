@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '15756a337a8bb7c6e93e6e1639bb6677d5c500a1',
+    'reference' => '3faf97482359c5134b22de237db94bd4d7179a16',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '15756a337a8bb7c6e93e6e1639bb6677d5c500a1',
+      'reference' => '3faf97482359c5134b22de237db94bd4d7179a16',
     ),
     'het-weblokaal/wbl-theme-foundation' => 
     array (
@@ -64,6 +64,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c626d0d91fc8ef24916e809c7b79eeafab1c1cac',
+    ),
+    'wptt/webfont-loader' => 
+    array (
+      'pretty_version' => 'v1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7243420fec7f202a9355485b8533bd99a7654941',
     ),
   ),
 );

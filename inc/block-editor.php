@@ -1,9 +1,30 @@
 <?php
 /**
- * Functions
+ * Setup
  */
 
 namespace WBL\Theme;
+
+
+/**
+ * Setup at regular hook
+ */
+add_action( 'after_setup_theme', function() {
+
+	// Add block category for this theme
+	// add_filter( 'block_categories', __NAMESPACE__ . '\register_block_category' );
+
+	/**
+	 * Register block patterns
+	 */
+
+	// Setup custom category for block patterns
+	// register_block_pattern_category( Theme::get_id(), [ 'label' => Theme::get_name() ], 'Theme category' );
+
+	// Setup block patterns
+	// register_block_pattern( Theme::get_id() . "/hero", require Theme::template_path( 'block-patterns/hero.php' ) );
+
+}, 5 );
 
 /**
  * Creating a new block category.
@@ -27,28 +48,4 @@ function register_block_category( $categories ) {
     }
 
     return $categories;
-}
-
-/**
- * Global color styles
- *
- * Mimics the global styles which are experimental in the plugin
- *
- * @link: /wp-content/plugins/gutenberg/lib/global-styles.php
- */
-function get_global_color_inline_style() {
-    $css = "";
-
-    $theme_colors = get_theme_support( 'editor-color-palette' )[0] ?? [];
-
-    if ($theme_colors) {
-
-        $css = ":root { \n";
-        foreach ( $theme_colors as $color ) {
-            $css .= "   --wp--preset--color--{$color['slug']}: {$color['color']};\n";
-        }
-        $css .= "}";
-    }
-
-    return $css;
 }

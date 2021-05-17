@@ -17,6 +17,7 @@
 @custom-media --from-breakpoint-4 (min-width: 1080px);
 @custom-media --from-breakpoint-5 (min-width: 1400px);
 @custom-media --from-breakpoint-6 (min-width: 1720px);
+@custom-media --from-breakpoint-7 (min-width: 1920px);
 
 @custom-media --until-breakpoint-1 (max-width: 359px);
 @custom-media --until-breakpoint-2 (max-width: 599px);
@@ -24,6 +25,7 @@
 @custom-media --until-breakpoint-4 (max-width: 1079px);
 @custom-media --until-breakpoint-5 (max-width: 1399px);
 @custom-media --until-breakpoint-6 (max-width: 1719px);
+@custom-media --until-breakpoint-7 (max-width: 1919px);
 
 /**
  * Special helpers

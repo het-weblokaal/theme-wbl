@@ -51,7 +51,55 @@
 		var(--foreground-color) var(--column-span-12),
 		transparent var(--column-span-12),
 		transparent var(--column-gutter-12),
-		var(--foreground-color) var(--column-gutter-12)
+		var(--foreground-color) var(--column-gutter-12),
+		var(--foreground-color) var(--column-span-13),
+		transparent var(--column-span-13),
+		transparent var(--column-gutter-13),
+		var(--foreground-color) var(--column-gutter-13),
+		var(--foreground-color) var(--column-span-14),
+		transparent var(--column-span-14),
+		transparent var(--column-gutter-14),
+		var(--foreground-color) var(--column-gutter-14),
+		var(--foreground-color) var(--column-span-15),
+		transparent var(--column-span-15),
+		transparent var(--column-gutter-15),
+		var(--foreground-color) var(--column-gutter-15),
+		var(--foreground-color) var(--column-span-16),
+		transparent var(--column-span-16),
+		transparent var(--column-gutter-16),
+		var(--foreground-color) var(--column-gutter-16),
+		var(--foreground-color) var(--column-span-17),
+		transparent var(--column-span-17),
+		transparent var(--column-gutter-17),
+		var(--foreground-color) var(--column-gutter-17),
+		var(--foreground-color) var(--column-span-18),
+		transparent var(--column-span-18),
+		transparent var(--column-gutter-18),
+		var(--foreground-color) var(--column-gutter-18),
+		var(--foreground-color) var(--column-span-19),
+		transparent var(--column-span-19),
+		transparent var(--column-gutter-19),
+		var(--foreground-color) var(--column-gutter-19),
+		var(--foreground-color) var(--column-span-20),
+		transparent var(--column-span-20),
+		transparent var(--column-gutter-20),
+		var(--foreground-color) var(--column-gutter-20),
+		var(--foreground-color) var(--column-span-21),
+		transparent var(--column-span-21),
+		transparent var(--column-gutter-21),
+		var(--foreground-color) var(--column-gutter-21),
+		var(--foreground-color) var(--column-span-22),
+		transparent var(--column-span-22),
+		transparent var(--column-gutter-22),
+		var(--foreground-color) var(--column-gutter-22),
+		var(--foreground-color) var(--column-span-23),
+		transparent var(--column-span-23),
+		transparent var(--column-gutter-23),
+		var(--foreground-color) var(--column-gutter-23),
+		var(--foreground-color) var(--column-span-24),
+		transparent var(--column-span-24),
+		transparent var(--column-gutter-24),
+		var(--foreground-color) var(--column-gutter-24)
 	);
 }
 
@@ -64,4 +112,5 @@
 	@media (--from-breakpoint-4) { content: 'bp 4: 1080px (middel)'; }
 	@media (--from-breakpoint-5) { content: 'bp 5: 1400px (groot)'; }
 	@media (--from-breakpoint-6) { content: 'bp 6: 1720px (groot)'; }
+	@media (--from-breakpoint-7) { content: 'bp 7: 1920px (max)'; }
 }

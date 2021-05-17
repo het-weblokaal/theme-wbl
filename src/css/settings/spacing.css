@@ -56,6 +56,19 @@
 	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
 	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
 
+	--column-span-13: calc(var(--column) * 13 + var(--gutter) * 12);
+	--column-span-14: calc(var(--column) * 14 + var(--gutter) * 13);
+	--column-span-15: calc(var(--column) * 15 + var(--gutter) * 14);
+	--column-span-16: calc(var(--column) * 16 + var(--gutter) * 15);
+	--column-span-17: calc(var(--column) * 17 + var(--gutter) * 16);
+	--column-span-18: calc(var(--column) * 18 + var(--gutter) * 17);
+	--column-span-19: calc(var(--column) * 19 + var(--gutter) * 18);
+	--column-span-20: calc(var(--column) * 20 + var(--gutter) * 19);
+	--column-span-21: calc(var(--column) * 21 + var(--gutter) * 20);
+	--column-span-22: calc(var(--column) * 22 + var(--gutter) * 21);
+	--column-span-23: calc(var(--column) * 23 + var(--gutter) * 22);
+	--column-span-24: calc(var(--column) * 24 + var(--gutter) * 23);
+
 	--column-gutter-1: calc(var(--column) * 1 + var(--gutter) * 1);
 	--column-gutter-2: calc(var(--column) * 2 + var(--gutter) * 2);
 	--column-gutter-3: calc(var(--column) * 3 + var(--gutter) * 3);
@@ -69,6 +82,19 @@
 	--column-gutter-11: calc(var(--column) * 11 + var(--gutter) * 11);
 	--column-gutter-12: calc(var(--column) * 12 + var(--gutter) * 12);
 
+	--column-gutter-13: calc(var(--column) * 13 + var(--gutter) * 13);
+	--column-gutter-14: calc(var(--column) * 14 + var(--gutter) * 14);
+	--column-gutter-15: calc(var(--column) * 15 + var(--gutter) * 15);
+	--column-gutter-16: calc(var(--column) * 16 + var(--gutter) * 16);
+	--column-gutter-17: calc(var(--column) * 17 + var(--gutter) * 17);
+	--column-gutter-18: calc(var(--column) * 18 + var(--gutter) * 18);
+	--column-gutter-19: calc(var(--column) * 19 + var(--gutter) * 19);
+	--column-gutter-20: calc(var(--column) * 20 + var(--gutter) * 20);
+	--column-gutter-21: calc(var(--column) * 21 + var(--gutter) * 21);
+	--column-gutter-22: calc(var(--column) * 22 + var(--gutter) * 22);
+	--column-gutter-23: calc(var(--column) * 23 + var(--gutter) * 23);
+	--column-gutter-24: calc(var(--column) * 24 + var(--gutter) * 24);
+
     @media (--from-breakpoint-1) {
 
     	/* Two columns */
@@ -78,10 +104,10 @@
 
     @media (--from-breakpoint-3) {
 
+    	/* Six columns */
 		--site--width:   85vw;
 		--site--padding: 7.5vw;
 
-    	/* Six columns */
 		--column:        10vw;
 		--gutter:        5vw;
     }
@@ -89,30 +115,28 @@
 
 	@media (--from-breakpoint-5) {
 
-		--site--width:   86vw;
-		--site--padding: 7vw;
-
     	/* Twelve columns */
-		--column:        3.5vw;
-		--gutter:        4vw;
+		--site--width:   1080px;
+		--site--padding: 60px;
 
-		/* Fixed sizes */
-		--site--width:   1200px;
-		--site--padding: 48px;
-
-    	/* Twelve columns */
-		--column:        56px;
-		--gutter:        48px;
+    	--column: 35px; 
+		--gutter: 60px; 
     }
 
     @media (--from-breakpoint-6) {
+		--site--width:   1200px;
+		--site--padding: 60px;
 
-    	/* Fixed sizes */
-		--site--width:   1380px;
-		--site--padding: 48px;
+    	--column: 45px; 
+		--gutter: 60px;
+    }
 
-    	--column: 71px; /* 60 71 82 */
-		--gutter: 48px; /* 60 48 36 */
+    @media (--from-breakpoint-7) {
+    	--site--width:   1320px;
+		--site--padding: 90px;
+
+    	--column: 55px; 
+		--gutter: 60px; 
     }
 }
 

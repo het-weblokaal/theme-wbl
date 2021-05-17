@@ -56,6 +56,11 @@
 		margin-bottom: calc(var(--space-20) + var(--space-4));
 	}
 
+	@media (--from-breakpoint-6) {
+		margin-top: var(--space-12);
+		margin-bottom: calc(var(--space-20));
+	}
+
  	/** Additional and modifying classes */
 }
 

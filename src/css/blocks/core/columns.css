@@ -1,66 +1,46 @@
-/**
- * All Columns Alignment
- */
 .wp-block-columns {
-	display: flex;
-	flex-wrap: wrap;
+	margin-top: calc(var(--vertical-space) * 2);
+	margin-bottom: calc(var(--vertical-space) * 2);
 
-	@media (--only-desktop) {
-		flex-wrap: nowrap;
+	display: grid;
+	column-gap: var(--gutter);
+	row-gap: var(--space-8);
+
+	grid-template-columns: 1fr;
+
+	@media (--from-breakpoint-2) {
+		grid-template-columns: 1fr 1fr;
 	}
+}
 
-	&.are-vertically-aligned-top {
-		align-items: flex-start;
+.wp-block-columns.is-style-columns-1 {
+	grid-template-columns: 1fr;
+}
+
+.wp-block-columns.is-style-columns-3,
+.wp-block-columns.is-style-columns-4 {
+
+	@media (--from-breakpoint-4) {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
+}
 
-	&.are-vertically-aligned-center {
-		align-items: center;
+.wp-block-columns.is-style-columns-4 {
+
+	@media (--from-breakpoint-6) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
+}
 
-	&.are-vertically-aligned-bottom {
-		align-items: flex-end;
+.wp-block-columns.is-style-columns-2 {
+	grid-template-columns: 1fr;
+
+
+	@media (--from-breakpoint-2) {
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
 .wp-block-column {
-	flex-grow: 1;
-	flex-basis: 0;
-
-	/* Prevent the columns from growing wider than their distributed sizes. */
-	min-width: 0;
-
-	/* Prevent long unbroken words from overflowing. */
-	overflow-wrap: break-word;
-
-	/* Columns with an explicitly-assigned width should maintain their
-	`flex-basis` width and not grow. */
-	&[style*="flex-basis"] {
-		flex-grow: 0;
-	}
-
-	/* When columns are in a single row, add space before all except the first. */
-	&:not(:first-child) {
-		/* margin-left: var(--gutter); */
-	}
-
-	&.is-vertically-aligned-top {
-		align-self: flex-start;
-	}
-
-	&.is-vertically-aligned-center {
-		align-self: center;
-	}
-
-	&.is-vertically-aligned-bottom {
-		align-self: flex-end;
-	}
-
-	&.is-vertically-aligned-top,
-	&.is-vertically-aligned-center,
-	&.is-vertically-aligned-bottom {
-		width: 100%;
-	}
-
-	> *:first-child { margin-top: 0; }
-	> *:last-child { margin-bottom: 0; }
+	@mixin remove-first-last-child-margin;
 }
