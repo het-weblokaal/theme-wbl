@@ -31,8 +31,8 @@
 /*--------------------------------------------------------------
 # Generic - Ground-zero styles (resets, box-sizing, etc.).
 --------------------------------------------------------------*/
-/* @import "generic/reset.css";
-@import "generic/base.css"; */
+/* @import "generic/reset.css"; */
+@import "generic/base.css";
 @import "generic/reset-editor-style.css";
 
 
@@ -57,19 +57,20 @@
 /* @import "blocks/core/button.css";
 @import "blocks/core/code.css";
 @import "blocks/core/cover.css";
-@import "blocks/core/columns.css";
 @import "blocks/core/gallery.css";
 @import "blocks/core/image.css";
 @import "blocks/core/media-text.css";
-@import "blocks/core/pullquote.css"; */
-@import "blocks/core/quote.css";
+@import "blocks/core/pullquote.css";
+@import "blocks/core/quote.css"; */
 /* @import "blocks/core/separator.css";
 @import "blocks/core/table.css"; */
+@import "blocks/core/columns.css";
+@import "blocks/core/group.css";
 
-@import "blocks/theme/wbl-card.css";
+/* @import "blocks/theme/wbl-card.css";
 @import "blocks/theme/wbl-segment.css";
 @import "blocks/theme/wbl-simple-container.css";
-@import "blocks/theme/wbl-simple-image.css";
+@import "blocks/theme/wbl-simple-image.css"; */
 
 @import "blocks/colors.css";
 @import "blocks/misc.css";
@@ -81,21 +82,41 @@
 
 
 /* Editor background */
-.editor-styles-wrapper {
+body {
 	--background-color: var(--wp--preset--color--primary-1);
 	--foreground-color: var(--wp--preset--color--secondary-1);
 
 	background-color: var(--background-color);
 	color: var(--foreground-color);
+
+	font-family: var(--font-family);
+    line-height: var(--line-height--normal);
+
+	font-size: var(--rem-size);
 }
 
 /* Block width */
 /* .editor-styles-wrapper .wp-block { */
 .edit-post-visual-editor__post-title-wrapper,
 .is-root-container {
+	@mixin is-page-segment;
 	@mixin has-page-content;
 }
 
+/**
+ * Fix max width on wp-block class
+ */
 .wp-block {
-	/* max-width: none; */
+	max-width: none;
+}
+
+/**
+ * Reset default style for alignfull wrapper around group-block
+ */
+.block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
+	@mixin is-page-content--full-page;
+}
+
+.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+	@mixin is-page-content--full-screen-editor-fix;
 }

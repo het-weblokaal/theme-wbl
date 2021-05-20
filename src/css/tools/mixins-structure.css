@@ -60,6 +60,13 @@
 
 @define-mixin is-page-content--full-site {
 	max-width: none;
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
+
+	@media (--grid-columns-12) {
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
+	}
 
 	@mixin is-page-content--full-screen;
 }
@@ -160,6 +167,23 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: auto;
+}
+
+@define-mixin is-page-content--full-screen-editor-fix {
+	max-width: none;
+	width: auto;
+	margin-left: 0;
+	margin-right: 0;
+
+	@media (--from-breakpoint-6) {
+		margin-left: -5vw;
+		margin-right: -5vw;
+	}
+
+	@media (--from-breakpoint-7) {
+		margin-left: -7vw;
+		margin-right: -7vw;
+	}
 }
 
 @define-mixin editor--is-container {

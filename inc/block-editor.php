@@ -24,6 +24,13 @@ add_action( 'after_setup_theme', function() {
 	// Setup block patterns
 	// register_block_pattern( Theme::get_id() . "/hero", require Theme::template_path( 'block-patterns/hero.php' ) );
 
+	/**
+	 * Restrict the allowed blocks (opinionated)
+	 */
+	add_filter( 'allowed_block_types', function( $allowed_block_types ) {
+		return $allowed_block_types;
+	}, 10, 2 );
+
 }, 5 );
 
 /**
