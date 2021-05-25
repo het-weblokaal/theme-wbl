@@ -46,6 +46,11 @@ figure.alignleft {
 .alignwide {
 	@mixin is-page-content--full-page;
 }
+
 .alignfull {
-	@mixin is-page-content--full-site;
+	@mixin is-page-content--full-screen;
+
+	&.has-background {
+		@mixin is-page-content--full-screen-with-background;
+	}
 }

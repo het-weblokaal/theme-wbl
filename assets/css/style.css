@@ -175,19 +175,6 @@
 	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
 	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
 
-	--column-span-13: calc(var(--column) * 13 + var(--gutter) * 12);
-	--column-span-14: calc(var(--column) * 14 + var(--gutter) * 13);
-	--column-span-15: calc(var(--column) * 15 + var(--gutter) * 14);
-	--column-span-16: calc(var(--column) * 16 + var(--gutter) * 15);
-	--column-span-17: calc(var(--column) * 17 + var(--gutter) * 16);
-	--column-span-18: calc(var(--column) * 18 + var(--gutter) * 17);
-	--column-span-19: calc(var(--column) * 19 + var(--gutter) * 18);
-	--column-span-20: calc(var(--column) * 20 + var(--gutter) * 19);
-	--column-span-21: calc(var(--column) * 21 + var(--gutter) * 20);
-	--column-span-22: calc(var(--column) * 22 + var(--gutter) * 21);
-	--column-span-23: calc(var(--column) * 23 + var(--gutter) * 22);
-	--column-span-24: calc(var(--column) * 24 + var(--gutter) * 23);
-
 	--column-gutter-1: calc(var(--column) * 1 + var(--gutter) * 1);
 	--column-gutter-2: calc(var(--column) * 2 + var(--gutter) * 2);
 	--column-gutter-3: calc(var(--column) * 3 + var(--gutter) * 3);
@@ -200,19 +187,6 @@
 	--column-gutter-10: calc(var(--column) * 10 + var(--gutter) * 10);
 	--column-gutter-11: calc(var(--column) * 11 + var(--gutter) * 11);
 	--column-gutter-12: calc(var(--column) * 12 + var(--gutter) * 12);
-
-	--column-gutter-13: calc(var(--column) * 13 + var(--gutter) * 13);
-	--column-gutter-14: calc(var(--column) * 14 + var(--gutter) * 14);
-	--column-gutter-15: calc(var(--column) * 15 + var(--gutter) * 15);
-	--column-gutter-16: calc(var(--column) * 16 + var(--gutter) * 16);
-	--column-gutter-17: calc(var(--column) * 17 + var(--gutter) * 17);
-	--column-gutter-18: calc(var(--column) * 18 + var(--gutter) * 18);
-	--column-gutter-19: calc(var(--column) * 19 + var(--gutter) * 19);
-	--column-gutter-20: calc(var(--column) * 20 + var(--gutter) * 20);
-	--column-gutter-21: calc(var(--column) * 21 + var(--gutter) * 21);
-	--column-gutter-22: calc(var(--column) * 22 + var(--gutter) * 22);
-	--column-gutter-23: calc(var(--column) * 23 + var(--gutter) * 23);
-	--column-gutter-24: calc(var(--column) * 24 + var(--gutter) * 24);
 }
 
 @media (min-width: 360px) {
@@ -272,93 +246,6 @@
 		--gutter: 60px
 } 
     }
-
-/* :root {
-	--column        : 85vw;
-	--gutter        : 0vw;
-	--column-gutter : 85vw;
-
-	--column-span-1: var(--column);
-
-	--site--width         : 85vw;
-	--site--padding       : 0vw;
-	--page--width         : var(--site--width);
-	--page-content--width : var(--site--width);
-
-	--row: 8px; 
-
-	@media (--from-breakpoint-1) {
-		--column        : 40vw;
-		--gutter        : 6vw;
-		--column-gutter : 46vw;
-
-		--column-span-1: var(--column);
-		--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
-
-		--site--width   : 86vw;
-    }
-
-    @media (--from-breakpoint-2) {
-		--column        : 17.5vw;
-		--gutter        : 5vw;
-		--column-gutter : 22.5vw;
-
-		--column-span-1: var(--column);
-		--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
-		--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
-		--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
-
-		--site--width   : 85vw;
-    }
-
-    @media (--from-breakpoint-3) {
-		--column        : 6.5vw;
-		--gutter        : 5vw;
-		--column-gutter : 11.5vw;
-
-		--row: 12px;
-
-		--column-span-1: var(--column);
-		--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
-		--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
-		--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
-		--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
-		--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
-		--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
-		--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
-
-		--site--width         : 87vw;
-		--page-content--width : var(--column-span-6);
-    }
-
-    @media (--from-breakpoint-4) {
-		--row: 12px;
-
-		--page-content--width : var(--column-span-5);
-    }
-
-	@media (--from-breakpoint-5) {
-		--column        : 98px;
-		--gutter        : 56px;
-		--column-gutter : 154px;
-
-		--site--width   : 1176px;
-		--site--padding : 56px;
-    }
-
-    @media (--from-breakpoint-6) {
-    	--column        : 120px;
-		--gutter        : 60px;
-		--column-gutter : 180px;
-
-		--row: 16px;
-
-		--site--padding : 90px;
-		--site--width   : 1380px;
-
-		--page-content--width : var(--column-span-5);
-    }
-} */
 
 :root {
 
@@ -1599,7 +1486,18 @@ body.is-singular .page__header > * {
 	background-color: var(--background-color);
 	display: flex;
 	justify-content: center;
+
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
 }
+
+@media (min-width: 840px) {
+
+.wp-block-group {
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12)
+}
+	}
 
 .wp-block-group__inner-container {
 		color: var(--foreground-color);
@@ -1611,11 +1509,6 @@ body.is-singular .page__header > * {
 .wp-block-group__inner-container > *:first-child { margin-top: 0; }
 
 .wp-block-group__inner-container > *:last-child { margin-bottom: 0; }
-
-/* .wp-block-group.alignwide > .wp-block-group__inner-container,
-.wp-block-group.alignfull > .wp-block-group__inner-container {
-	@mixin is-page-segment;
-} */
 
 .has-background.wp-block-group {
 	overflow-y: hidden;
@@ -1629,6 +1522,7 @@ body.is-singular .page__header > * {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		grid-gap: var(--space-4);
 		gap: var(--space-4);
 		width: 100%;
@@ -2561,63 +2455,80 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 .call-to-action {
 	overflow-y: hidden;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
 	max-width: none;
 	width: auto;
 	--background-color: var(--wp--preset--color--secondary-1);
 	--foreground-color: var(--wp--preset--color--primary-1);
 	background-color: var(--background-color);
 	color: var(--foreground-color);
-	margin-top: var(--space-10);
-	margin-bottom: var(--space-10);
+	margin-top: var(--space-12);
+	margin-bottom: var(--space-12);
 }
 
 @media (min-width: 840px) {
 
 .call-to-action {
-		max-width: var(--column-span-4)
+		margin-left: calc(50% - 50vw + var(--site--padding));
+		margin-right: calc(50% - 50vw + var(--site--padding))
 }
+	}
+
+.call-to-action__inner {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--site--width);
+		width: 100%;
+	}
+
+.call-to-action__inner:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+.call-to-action__inner > *:first-child { margin-top: 0; }
+
+.call-to-action__inner > *:last-child { margin-bottom: 0; }
+
+.call-to-action__inner > * {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+@media (min-width: 840px) {
+
+.call-to-action__inner > * {
+		max-width: var(--column-span-4);
+	}
 	}
 
 @media (min-width: 1400px) {
 
-.call-to-action {
+.call-to-action__inner > * {
 		margin-left: var(--column-gutter-2);		
-		max-width: var(--column-span-8)
-}
+		max-width: var(--column-span-8);
+	}
 	}
 
 @media (min-width: 1920px) {
 
-.call-to-action {
-		max-width: var(--column-span-7)
-}
+.call-to-action__inner > * {
+		max-width: var(--column-span-7);
 	}
-
-@media (min-width: 1400px) {
-
-.call-to-action {
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12)
-}
 	}
 
 .call-to-action__inner {
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
-
-		margin-left: auto;
-		margin-right: auto;
-		max-width: var(--page-content--width);
 		text-align: center;
-	}
+}
+
+.call-to-action__inner > * {
+			margin-left: auto;
+		}
 
 .layout-blog {
 	max-width: none;
@@ -3215,55 +3126,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		var(--foreground-color) var(--column-span-12),
 		transparent var(--column-span-12),
 		transparent var(--column-gutter-12),
-		var(--foreground-color) var(--column-gutter-12),
-		var(--foreground-color) var(--column-span-13),
-		transparent var(--column-span-13),
-		transparent var(--column-gutter-13),
-		var(--foreground-color) var(--column-gutter-13),
-		var(--foreground-color) var(--column-span-14),
-		transparent var(--column-span-14),
-		transparent var(--column-gutter-14),
-		var(--foreground-color) var(--column-gutter-14),
-		var(--foreground-color) var(--column-span-15),
-		transparent var(--column-span-15),
-		transparent var(--column-gutter-15),
-		var(--foreground-color) var(--column-gutter-15),
-		var(--foreground-color) var(--column-span-16),
-		transparent var(--column-span-16),
-		transparent var(--column-gutter-16),
-		var(--foreground-color) var(--column-gutter-16),
-		var(--foreground-color) var(--column-span-17),
-		transparent var(--column-span-17),
-		transparent var(--column-gutter-17),
-		var(--foreground-color) var(--column-gutter-17),
-		var(--foreground-color) var(--column-span-18),
-		transparent var(--column-span-18),
-		transparent var(--column-gutter-18),
-		var(--foreground-color) var(--column-gutter-18),
-		var(--foreground-color) var(--column-span-19),
-		transparent var(--column-span-19),
-		transparent var(--column-gutter-19),
-		var(--foreground-color) var(--column-gutter-19),
-		var(--foreground-color) var(--column-span-20),
-		transparent var(--column-span-20),
-		transparent var(--column-gutter-20),
-		var(--foreground-color) var(--column-gutter-20),
-		var(--foreground-color) var(--column-span-21),
-		transparent var(--column-span-21),
-		transparent var(--column-gutter-21),
-		var(--foreground-color) var(--column-gutter-21),
-		var(--foreground-color) var(--column-span-22),
-		transparent var(--column-span-22),
-		transparent var(--column-gutter-22),
-		var(--foreground-color) var(--column-gutter-22),
-		var(--foreground-color) var(--column-span-23),
-		transparent var(--column-span-23),
-		transparent var(--column-gutter-23),
-		var(--foreground-color) var(--column-gutter-23),
-		var(--foreground-color) var(--column-span-24),
-		transparent var(--column-span-24),
-		transparent var(--column-gutter-24),
-		var(--foreground-color) var(--column-gutter-24)
+		var(--foreground-color) var(--column-gutter-12)
 	);
 	}
 
@@ -3744,21 +3607,25 @@ figure.alignleft {
 	}
 
 .alignfull {
-	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
 	margin-left: calc(50% - 50vw + var(--site--padding));
 	margin-right: calc(50% - 50vw + var(--site--padding));
 	max-width: none;
 	width: auto;
 }
 
-@media (min-width: 1400px) {
+.alignfull.has-background {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		max-width: none;
+		width: auto;
+	}
 
-.alignfull {
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-}
+@media (min-width: 840px) {
+
+.alignfull.has-background {
+		margin-left: calc(50% - 50vw + var(--site--padding));
+		margin-right: calc(50% - 50vw + var(--site--padding));
+	}
 	}
 
 #wpadminbar {

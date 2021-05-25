@@ -53,5 +53,7 @@ array_map( function( $file ) {
 	'general',
 	'assets',
 	'block-editor',
+	'call-to-action',
+	'footer',
 ] );
 

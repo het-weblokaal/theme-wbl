@@ -6,6 +6,14 @@
 	display: flex;
 	justify-content: center;
 
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
+
+	@media (--grid-columns-6) {
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
+	}
+
 	&__inner-container {
 		color: var(--foreground-color);
 		width: 100%;
@@ -15,11 +23,6 @@
 		/* @mixin has-page-content; */
 	}
 }
-
-/* .wp-block-group.alignwide > .wp-block-group__inner-container,
-.wp-block-group.alignfull > .wp-block-group__inner-container {
-	@mixin is-page-segment;
-} */
 
 .has-background.wp-block-group {
 	@mixin margin-collapse-fix;
@@ -34,6 +37,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		gap: var(--space-4);
 		width: 100%;
 

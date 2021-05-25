@@ -63,7 +63,7 @@
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
 
-	@media (--grid-columns-12) {
+	@media (--grid-columns-6) {
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
 	}
@@ -71,16 +71,21 @@
 	@mixin is-page-content--full-screen;
 }
 
+@define-mixin is-page-content--full-screen-with-background {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: none;
+	width: auto;
+
+	@media (--from-breakpoint-3) {
+		margin-left: calc(50% - 50vw + var(--site--padding));
+		margin-right: calc(50% - 50vw + var(--site--padding));
+	}
+}
+
 @define-mixin is-page-content--full-screen {
 	margin-left: calc(50% - 50vw + var(--site--padding));
 	margin-right: calc(50% - 50vw + var(--site--padding));
-	max-width: none;
-	width: auto;
-}
-
-@define-mixin is-page-content--full-screen-without-site-padding {
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
 	max-width: none;
 	width: auto;
 }
