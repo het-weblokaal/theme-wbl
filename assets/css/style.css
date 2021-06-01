@@ -1086,7 +1086,7 @@ body.is-singular .page__header > * {
 @media (min-width: 1400px) {
 
 body.is-singular .page__header > * {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1160,7 +1160,7 @@ body.is-singular .page__header > * {
 @media (min-width: 1400px) {
 
 .page__content > * {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1198,7 +1198,7 @@ body.is-singular .page__header > * {
 @media (min-width: 1400px) {
 
 .page__footer > * {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1579,7 +1579,7 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 @media (min-width: 1400px) {
 
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 		}
 	}
@@ -1607,7 +1607,7 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 				@media (min-width: 1400px) {
 
 			.wp-block-image.alignwide img, .wp-block-image.alignfull img {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 			}
 	}
@@ -1817,7 +1817,7 @@ p.has-background {
 @media (min-width: 1400px) {
 
 .wbl-segment__inner > * {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 	}
@@ -2508,7 +2508,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .call-to-action__inner > * {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 	}
@@ -2771,7 +2771,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .posts {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 }
 	}

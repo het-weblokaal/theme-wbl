@@ -1072,7 +1072,12 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 # Utilities - Helpers and overrides.
 --------------------------------------------------------------*/
 
-/* Editor background */
+/**
+ * Body will be transformed to .editor-styles-wrapper because we add
+ * theme support for editor-styles in this theme
+ *
+ * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+ */
 
 body {
 	--background-color: var(--wp--preset--color--primary-1);
@@ -1085,11 +1090,16 @@ body {
     line-height: var(--line-height--normal);
 
 	font-size: var(--rem-size);
+
+	/**
+	 * Enforce a basic font-size similar to frontend. We assume large screens
+	 */
+	font-size: 24px;
 }
 
-/* Block width */
-
-/* .editor-styles-wrapper .wp-block { */
+/**
+ * Add layout for block-containers similar as frontend
+ */
 
 .edit-post-visual-editor__post-title-wrapper,
 .is-root-container {
@@ -1125,7 +1135,7 @@ body {
 @media (min-width: 1400px) {
 
 .edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1136,14 +1146,6 @@ body {
 		max-width: var(--column-span-7);
 	}
 	}
-
-/**
- * Fix max width on wp-block class
- */
-
-.wp-block {
-	max-width: none;
-}
 
 /**
  * Reset default style for alignfull wrapper around group-block

@@ -5,7 +5,11 @@ namespace WBL\Theme;
 ?>
 <article class="page <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
-	<?php Template::display( 'page/header', Template::hierarchy() ) ?>
+	<?php if ('landing-page' != get_page_template_slug()) : ?>
+
+		<?php Template::display( 'page/header', Template::hierarchy() ) ?>
+
+	<?php endif; ?>
 
 	<?php Template::display( 'page/content', Template::hierarchy() ) ?>
 

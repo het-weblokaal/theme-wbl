@@ -36,7 +36,7 @@
 	}
 
 	@media (--grid-columns-12) {
-		margin-left: var(--column-gutter-2);		
+		margin-left: var(--column-gutter-2);
 		max-width: var(--column-span-8);
 	}
 

@@ -81,7 +81,12 @@
 @import "utilities/helpers.css";
 
 
-/* Editor background */
+/**
+ * Body will be transformed to .editor-styles-wrapper because we add
+ * theme support for editor-styles in this theme
+ *
+ * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+ */
 body {
 	--background-color: var(--wp--preset--color--primary-1);
 	--foreground-color: var(--wp--preset--color--secondary-1);
@@ -93,21 +98,20 @@ body {
     line-height: var(--line-height--normal);
 
 	font-size: var(--rem-size);
+
+	/**
+	 * Enforce a basic font-size similar to frontend. We assume large screens
+	 */
+	font-size: 24px;
 }
 
-/* Block width */
-/* .editor-styles-wrapper .wp-block { */
+/**
+ * Add layout for block-containers similar as frontend
+ */
 .edit-post-visual-editor__post-title-wrapper,
 .is-root-container {
 	@mixin is-page-segment;
 	@mixin has-page-content;
-}
-
-/**
- * Fix max width on wp-block class
- */
-.wp-block {
-	max-width: none;
 }
 
 /**

@@ -73,9 +73,9 @@ add_action( 'after_setup_theme', function() {
 	        $css .= "}";
 
 			// Register global styles
+			wp_enqueue_style( Theme::handle('global-color') );
 			wp_register_style( Theme::handle('global-color'), false, array(), true, true );
 			wp_add_inline_style( Theme::handle('global-color'), $css );
-			wp_enqueue_style( Theme::handle('global-color') );
 		}
 
 	});
@@ -105,6 +105,11 @@ add_action( 'after_setup_theme', function() {
 				'wp-hooks'
 			] 
 		);
+
+		// Temporary fix to remove max-width from .wp-block
+		wp_register_style( Theme::handle('wp-block-fix'), false, array(), true, true );
+		wp_add_inline_style( Theme::handle('wp-block-fix'), '.wp-block { max-width: none; }' );
+		wp_enqueue_style( Theme::handle('wp-block-fix') );
 
 		// // Add style for blocks
 		// wp_enqueue_style( 
