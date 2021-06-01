@@ -6,8 +6,6 @@ namespace WBL\Theme;
 # Load Theme Foundation
 # ------------------------------------------------------------------------------
 
-// Load the Theme Foundation
-
 if ( 'test' == pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION) ) {
 	require_once( __DIR__ . '/../../wbl-theme-foundation/bootstrap.php' );
 
@@ -17,7 +15,7 @@ if ( 'test' == pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION) ) {
 	] );
 }
 else {
-	require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
+	require_once( __DIR__ . '/../vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
 }
 
 // Customize Theme class
