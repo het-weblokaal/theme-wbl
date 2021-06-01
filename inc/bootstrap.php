@@ -7,8 +7,18 @@ namespace WBL\Theme;
 # ------------------------------------------------------------------------------
 
 // Load the Theme Foundation
-// require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
-require_once( __DIR__ . '/../../wbl-theme-foundation/bootstrap.php' );
+
+if ( 'test' == pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION) ) {
+	require_once( __DIR__ . '/../../wbl-theme-foundation/bootstrap.php' );
+
+	// Customize Template class
+	Template::customize( [
+		'main_template_dir' => '../wbl-theme-foundation/template/views'
+	] );
+}
+else {
+	require_once( __DIR__ . '/vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
+}
 
 // Customize Theme class
 Theme::customize( [
@@ -16,12 +26,6 @@ Theme::customize( [
 	'template_dir' => 'inc/views',
 	'blocks_dir'   => 'inc/blocks',
 ]);
-
-// Customize Template class
-Template::customize( [
-	'main_template_dir' => '../wbl-theme-foundation/template/views',
-	'custom_template_dir' => 'inc/views',
-] );
 
 
 # ------------------------------------------------------------------------------
