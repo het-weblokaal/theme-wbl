@@ -21,7 +21,7 @@
             "time": "2021-06-01T13:57:33+00:00",
             "default-branch": true,
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": [],
                 "files": []
@@ -45,7 +45,7 @@
             ],
             "support": {
                 "issues": "https://github.com/het-weblokaal/wbl-theme-foundation/issues",
-                "source": "https://github.com/het-weblokaal/wbl-theme-foundation/tree/main"
+                "source": "https://github.com/het-weblokaal/wbl-theme-foundation/tree/0.2"
             },
             "install-path": "../het-weblokaal/wbl-theme-foundation"
         },
