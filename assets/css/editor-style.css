@@ -66,6 +66,9 @@
 	--line-height--small: 1.2;
 	--line-height--normal: 1.333;
 	--line-height--large: 1.5;
+
+	/* Extra */
+	--copywriting-max-width: 32rem;
 }
 
 /* Breakpoints */
@@ -284,6 +287,20 @@
 
 	--ui-border-width: 2px;
 	--ui-border-style: solid;
+
+/* 	--copywriting-max-width: none;
+
+	@media ) {
+		--copywriting-max-width: var(--column-span-4);
+	}
+
+	@media (--from-breakpoint-5) {
+		--copywriting-max-width: var(--column-span-8);
+	}
+
+	@media (--from-breakpoint-7) {
+		--copywriting-max-width: var(--column-span-7);
+	} */
 }
 
 /*--------------------------------------------------------------
@@ -817,13 +834,18 @@ button:hover,
 .wp-block-group__inner-container {
 		color: var(--foreground-color);
 		width: 100%;
-
-		/* @mixin has-page-content; */
 	}
 
 .wp-block-group__inner-container > *:first-child { margin-top: 0; }
 
 .wp-block-group__inner-container > *:last-child { margin-bottom: 0; }
+
+.wp-block-group__inner-container {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--site--width);
+		width: 100%;
+}
 
 .has-background.wp-block-group {
 	overflow-y: hidden;
@@ -1095,7 +1117,78 @@ body {
 	 * Enforce a basic font-size similar to frontend. We assume large screens
 	 */
 	font-size: 24px;
+
+	/**
+	 * Grid
+	 */
+	position: relative;
 }
+
+body:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--site--width);
+		opacity: 0.025;
+
+		--foreground-color: #000;
+
+		background: linear-gradient(90deg,
+		var(--foreground-color) var(--column-span-1),
+		transparent var(--column-span-1),
+		transparent var(--column-gutter-1),
+		var(--foreground-color) var(--column-gutter-1),
+		var(--foreground-color) var(--column-span-2),
+		transparent var(--column-span-2),
+		transparent var(--column-gutter-2),
+		var(--foreground-color) var(--column-gutter-2),
+		var(--foreground-color) var(--column-span-3),
+		transparent var(--column-span-3),
+		transparent var(--column-gutter-3),
+		var(--foreground-color) var(--column-gutter-3),
+		var(--foreground-color) var(--column-span-4),
+		transparent var(--column-span-4),
+		transparent var(--column-gutter-4),
+		var(--foreground-color) var(--column-gutter-4),
+		var(--foreground-color) var(--column-span-5),
+		transparent var(--column-span-5),
+		transparent var(--column-gutter-5),
+		var(--foreground-color) var(--column-gutter-5),
+		var(--foreground-color) var(--column-span-6),
+		transparent var(--column-span-6),
+		transparent var(--column-gutter-6),
+		var(--foreground-color) var(--column-gutter-6),
+		var(--foreground-color) var(--column-span-7),
+		transparent var(--column-span-7),
+		transparent var(--column-gutter-7),
+		var(--foreground-color) var(--column-gutter-7),
+		var(--foreground-color) var(--column-span-8),
+		transparent var(--column-span-8),
+		transparent var(--column-gutter-8),
+		var(--foreground-color) var(--column-gutter-8),
+		var(--foreground-color) var(--column-span-9),
+		transparent var(--column-span-9),
+		transparent var(--column-gutter-9),
+		var(--foreground-color) var(--column-gutter-9),
+		var(--foreground-color) var(--column-span-10),
+		transparent var(--column-span-10),
+		transparent var(--column-gutter-10),
+		var(--foreground-color) var(--column-gutter-10),
+		var(--foreground-color) var(--column-span-11),
+		transparent var(--column-span-11),
+		transparent var(--column-gutter-11),
+		var(--foreground-color) var(--column-gutter-11),
+		var(--foreground-color) var(--column-span-12),
+		transparent var(--column-span-12),
+		transparent var(--column-gutter-12),
+		var(--foreground-color) var(--column-gutter-12)
+	);		
+	}
 
 /**
  * Add layout for block-containers similar as frontend

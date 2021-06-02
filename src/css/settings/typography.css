@@ -30,6 +30,9 @@
 	--line-height--normal: 1.333;
 	--line-height--large: 1.5;
 
+	/* Extra */
+	--copywriting-max-width: 32rem;
+
 	/* Breakpoints */
 	@media (--from-breakpoint-3) {
 		--rem-size: 112.5%; /* 18 */

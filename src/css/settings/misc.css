@@ -4,4 +4,18 @@
 
 	--ui-border-width: 2px;
 	--ui-border-style: solid;
+
+/* 	--copywriting-max-width: none;
+
+	@media ) {
+		--copywriting-max-width: var(--column-span-4);
+	}
+
+	@media (--from-breakpoint-5) {
+		--copywriting-max-width: var(--column-span-8);
+	}
+
+	@media (--from-breakpoint-7) {
+		--copywriting-max-width: var(--column-span-7);
+	} */
 }

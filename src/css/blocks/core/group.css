@@ -19,8 +19,7 @@
 		width: 100%;
 
 		@mixin remove-first-last-child-margin;
-
-		/* @mixin has-page-content; */
+		@mixin is-page-segment;
 	}
 }
 
