@@ -3193,14 +3193,8 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 /* Show debug-info in development mode */
 
-.is-development .site-debug-info {
+.is-debug-mode .site-debug-info {
 	display: block;
-}
-
-/* Hide debug grid online */
-
-.is-development--online .site-debug-info__grid {
-	display: none;
 }
 
 .site-nav {

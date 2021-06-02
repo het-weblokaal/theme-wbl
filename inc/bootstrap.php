@@ -6,7 +6,7 @@ namespace WBL\Theme;
 # Load Theme Foundation
 # ------------------------------------------------------------------------------
 
-if ( 'test' == pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION) ) {
+if ( wp_get_environment_type() == 'local' ) {
 	require_once( __DIR__ . '/../../wbl-theme-foundation/bootstrap.php' );
 
 	// Customize Template class
