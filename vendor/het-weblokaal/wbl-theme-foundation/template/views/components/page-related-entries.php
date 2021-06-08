@@ -7,7 +7,7 @@ namespace WBL\Theme;
 
 ?>
 
-<div class="page-related-entries">
+<div class="entry-related-entries">
 		
 	<?php
 	Template::display( 'loop/grid', null, [

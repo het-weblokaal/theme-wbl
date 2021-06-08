@@ -3,7 +3,7 @@
 namespace WBL\Theme;
 
 ?>
-<footer class="page__footer">
+<footer class="entry__footer">
 
 	Page footer (maybe comments?)
 

@@ -3,7 +3,7 @@
 namespace WBL\Theme;
 
 ?>
-<header class="page__header">
+<header class="entry__header">
 
 	<?php Template::display( 'components/page-breadcrumbs' ) ?>
 

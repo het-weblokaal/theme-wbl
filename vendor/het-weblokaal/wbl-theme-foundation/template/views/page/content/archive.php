@@ -3,7 +3,7 @@
 namespace WBL\Theme;
 
 ?>
-<div class="page__content">
+<div class="entry__content">
 
 	<?php the_archive_description(); ?>
 

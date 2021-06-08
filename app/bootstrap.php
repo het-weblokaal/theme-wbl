@@ -11,7 +11,7 @@ if ( wp_get_environment_type() == 'local' ) {
 
 	// Customize Template class
 	Template::customize( [
-		'main_template_dir' => '../wbl-theme-foundation/template/views'
+		'main_template_dir' => '../wbl-theme-foundation/templating'
 	] );
 }
 else {
@@ -20,9 +20,9 @@ else {
 
 // Customize Theme class
 Theme::customize( [
-	'app_dir'      => 'inc',
-	'template_dir' => 'inc/views',
-	'blocks_dir'   => 'inc/blocks',
+	'app_dir'      => 'app',
+	'template_dir' => '',
+	'blocks_dir'   => 'app/blocks',
 ]);
 
 
