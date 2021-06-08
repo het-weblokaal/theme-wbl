@@ -7,15 +7,15 @@ namespace WBL\Theme;
 
 	<?php if ('landing-page' != get_page_template_slug()) : ?>
 
-		<?php Template::display( 'page/header', Template::hierarchy() ) ?>
+		<?php Template::display( 'page/header' ) ?>
 
 	<?php endif; ?>
 
-	<?php Template::display( 'page/content', Template::hierarchy() ) ?>
+	<?php Template::display( 'page/content' ) ?>
 
 	<?php if (is_singular('post')) : ?>
 
-		<?php Template::display( 'page/footer', Template::hierarchy() ) ?>
+		<?php Template::display( 'page/footer' ) ?>
 
 	<?php endif; ?>
 
