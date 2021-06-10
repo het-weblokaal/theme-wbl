@@ -18,16 +18,16 @@ add_action( 'after_setup_theme', function() {
 
 		// Add theme stylesheet
 		wp_enqueue_style( 
-			Theme::handle(), 
-			Theme::asset( 'css/style.css' ), 
+			App::handle(), 
+			App::asset( 'css/style.css' ), 
 			null, 
 			null 
 		);
 
 		// Add theme scripts
 		wp_enqueue_script( 
-			Theme::handle(), 
-			Theme::asset( 'js/theme.js' ), 
+			App::handle(), 
+			App::asset( 'js/theme.js' ), 
 			null, 
 			null, 
 			true 
@@ -45,10 +45,10 @@ add_action( 'after_setup_theme', function() {
 		 * @link https://github.com/WPTT/webfont-loader
 		 */
 		wp_enqueue_style( 
-			Theme::handle('font'), 
+			App::handle('font'), 
 			wptt_get_webfont_url( 'https://use.typekit.net/pwk2csi.css' ), 
 			null, 
-			Theme::get_version() 
+			App::get_version() 
 		);
 	});
 
@@ -73,9 +73,9 @@ add_action( 'after_setup_theme', function() {
 	        $css .= "}";
 
 			// Register global styles
-			wp_enqueue_style( Theme::handle('global-color') );
-			wp_register_style( Theme::handle('global-color'), false, array(), true, true );
-			wp_add_inline_style( Theme::handle('global-color'), $css );
+			wp_enqueue_style( App::handle('global-color') );
+			wp_register_style( App::handle('global-color'), false, array(), true, true );
+			wp_add_inline_style( App::handle('global-color'), $css );
 		}
 
 	});
@@ -85,7 +85,7 @@ add_action( 'after_setup_theme', function() {
 	 *
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#enqueuing-the-editor-style
 	 */
-	add_editor_style( Theme::asset( 'css/editor-style.css' ) );
+	add_editor_style( App::asset( 'css/editor-style.css' ) );
 
 	/**
 	 * Add scripts and styles (editor)
@@ -94,8 +94,8 @@ add_action( 'after_setup_theme', function() {
 
 		// Add script for block editor
 		wp_enqueue_script( 
-			Theme::handle('block-editor'), 
-			Theme::asset( 'js/block-editor.js' ), 
+			App::handle('block-editor'), 
+			App::asset( 'js/block-editor.js' ), 
 			[ 
 				'wp-blocks', 
 				'wp-i18n', 
@@ -107,21 +107,21 @@ add_action( 'after_setup_theme', function() {
 		);
 
 		// Temporary fix to remove max-width from .wp-block
-		wp_register_style( Theme::handle('wp-block-fix'), false, array(), true, true );
-		wp_add_inline_style( Theme::handle('wp-block-fix'), '.wp-block { max-width: none; }' );
-		wp_enqueue_style( Theme::handle('wp-block-fix') );
+		wp_register_style( App::handle('wp-block-fix'), false, array(), true, true );
+		wp_add_inline_style( App::handle('wp-block-fix'), '.wp-block { max-width: none; }' );
+		wp_enqueue_style( App::handle('wp-block-fix') );
 
 		// // Add style for blocks
 		// wp_enqueue_style( 
-		// 	Theme::handle('blocks'),
-		// 	Theme::asset( 'css/blocks.editor.css' ),
+		// 	App::handle('blocks'),
+		// 	App::asset( 'css/blocks.editor.css' ),
 		// 	array( 'wp-edit-blocks' ) // By depending on frontend-style the editor style is later in the cascade
 		// );
 
 		// // Add script for blocks
 		// wp_enqueue_script( 
-		// 	Theme::handle('blocks'),
-		// 	Theme::asset( 'js/blocks.js' ),
+		// 	App::handle('blocks'),
+		// 	App::asset( 'js/blocks.js' ),
 		// 	[
 		// 		'lodash',
 		// 		'wp-blocks',

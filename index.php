@@ -1,6 +1,6 @@
 <?php
 
 // Kickstart
-\WBL\Theme\Template::kickstart();
+\WBL\Theme\Template::display( 'index' );
 
 ?>

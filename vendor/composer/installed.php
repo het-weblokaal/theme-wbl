@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6ebadee8f2d983e16784789cd6c874aa5fe6b3e2',
+    'reference' => '994da7d273cd847eaacd46a3ddb1171fa860d856',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6ebadee8f2d983e16784789cd6c874aa5fe6b3e2',
+      'reference' => '994da7d273cd847eaacd46a3ddb1171fa860d856',
     ),
     'het-weblokaal/wbl-theme-foundation' => 
     array (
@@ -28,7 +28,7 @@
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '0c947ed83cb9e6b7e8a142a33a25c4236405d847',
+      'reference' => 'ef6af9ef3f2b8d7f30f03cfa420b01919dd93f10',
     ),
     'tgmpa/tgm-plugin-activation' => 
     array (

@@ -19,10 +19,10 @@ add_action( 'after_setup_theme', function() {
 	 */
 
 	// Setup custom category for block patterns
-	// register_block_pattern_category( Theme::get_id(), [ 'label' => Theme::get_name() ], 'Theme category' );
+	// register_block_pattern_category( App::get_id(), [ 'label' => App::get_name() ], 'Theme category' );
 
 	// Setup block patterns
-	// register_block_pattern( Theme::get_id() . "/hero", require Theme::template_path( 'block-patterns/hero.php' ) );
+	// register_block_pattern( App::get_id() . "/hero", require App::template_path( 'block-patterns/hero.php' ) );
 
 	/**
 	 * Restrict the allowed blocks (opinionated)
@@ -43,8 +43,8 @@ function register_block_category( $categories ) {
 
     // The block category title and slug.
     $block_category = [
-		'title' => Theme::get_name(),
-		'slug' => Theme::get_id(),
+		'title' => App::get_name(),
+		'slug' => App::get_id(),
 		'icon'  => 'star-filled'
     ];
 

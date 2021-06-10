@@ -7,23 +7,15 @@ namespace WBL\Theme;
 # ------------------------------------------------------------------------------
 
 if ( wp_get_environment_type() == 'local' ) {
-	require_once( __DIR__ . '/../../wbl-theme-foundation/bootstrap.php' );
+	require_once( get_template_directory() . '/../wbl-theme-foundation/app/bootstrap.php' );
 
-	// Customize Template class
-	Template::customize( [
-		'main_template_dir' => '../wbl-theme-foundation/templating'
-	] );
+	App::customize([
+		'foundation_dir' => '../wbl-theme-foundation'
+	]);
 }
-else {
-	require_once( __DIR__ . '/../vendor/het-weblokaal/wbl-theme-foundation/bootstrap.php' );
-}
-
-// Customize Theme class
-Theme::customize( [
-	'app_dir'      => 'app',
-	'template_dir' => '',
-	'blocks_dir'   => 'app/blocks',
-]);
+// else {
+// 	require_once( get_template_directory() . '/vendor/het-weblokaal/wbl-theme-foundation/app/bootstrap.php' );
+// }
 
 
 # ------------------------------------------------------------------------------
@@ -33,15 +25,15 @@ Theme::customize( [
 /**
  * Composer Dependancies
  */
-if ( file_exists( Theme::get_vendor_path( 'autoload.php' ) ) ) {
-	require_once( Theme::get_vendor_path( 'autoload.php' ) );
+if ( file_exists( App::get_vendor_path( 'autoload.php' ) ) ) {
+	require_once( App::get_vendor_path( 'autoload.php' ) );
 }
 
 /**
  * Load webfont loader
  */
-if ( file_exists( Theme::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) ) ) {
-	require_once( Theme::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) );
+if ( file_exists( App::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) ) ) {
+	require_once( App::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) );
 }
 
 
@@ -50,7 +42,7 @@ if ( file_exists( Theme::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-load
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
-	require_once( Theme::get_app_path( "{$file}.php" ) );
+	require_once( App::get_app_path( "{$file}.php" ) );
 }, [
 	'general',
 	'assets',
