@@ -3,11 +3,7 @@
 }
 
 .page__header {
-
-	body.is-singular & {
-		@mixin has-page-content;
-	}
-
+	@mixin has-page-content;
 	margin-bottom: var(--space-4);
 
 	.page__title {
@@ -38,6 +34,12 @@
 
 	@media (--from-breakpoint-5) {
 		margin-bottom: var(--space-12);
+	}
+
+	.is-archive & {
+		> * {
+			@mixin reset-page-content;
+		}
 	}
 }
 

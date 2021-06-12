@@ -29,7 +29,7 @@ const processIE11 = ! process.env.noIE11;
  */
 const devPath  = 'src';
 const pubPath  = 'assets';
-const blockPath  = 'inc/blocks';
+const blockPath  = 'app/blocks';
 
 /**
  * Sets the path to the generated assets. By default, this is the `/dist` folder
@@ -96,20 +96,20 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
 mix.postCss( `${devPath}/css/style.css`,             'css' )
    .postCss( `${devPath}/css/editor-style.css`,      'css' );
 
-if ( processIE11 ) {
-	mix.postCss( `${devPath}/css/ie11-style.css`, 'css', [
-		require( 'postcss-import' )(),
-		require( 'postcss-mixins' )(),
-		require( 'postcss-nested' )(),
-		require( 'postcss-preset-env' )({
-			browsers: 'IE 11',
-			stage: 2,
-			features: {
-				'custom-media-queries': true
-			}
-		})
-	]);
-}
+// if ( processIE11 ) {
+// 	mix.postCss( `${devPath}/css/ie11-style.css`, 'css', [
+// 		require( 'postcss-import' )(),
+// 		require( 'postcss-mixins' )(),
+// 		require( 'postcss-nested' )(),
+// 		require( 'postcss-preset-env' )({
+// 			browsers: 'IE 11',
+// 			stage: 2,
+// 			features: {
+// 				'custom-media-queries': true
+// 			}
+// 		})
+// 	]);
+// }
 
 /**
  * Gutenberg blocks

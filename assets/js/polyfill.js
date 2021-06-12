@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./inc/blocks/blocks.editor.css":
+/***/ "./app/blocks/blocks.editor.css":
 /*!**************************************!*\
-  !*** ./inc/blocks/blocks.editor.css ***!
+  !*** ./app/blocks/blocks.editor.css ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9pbmMvYmxvY2tzL2Jsb2Nrcy5lZGl0b3IuY3NzP2YyZmIiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiLi9pbmMvYmxvY2tzL2Jsb2Nrcy5lZGl0b3IuY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gcmVtb3ZlZCBieSBleHRyYWN0LXRleHQtd2VicGFjay1wbHVnaW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./inc/blocks/blocks.editor.css\n");
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hcHAvYmxvY2tzL2Jsb2Nrcy5lZGl0b3IuY3NzPzI1OTYiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoiLi9hcHAvYmxvY2tzL2Jsb2Nrcy5lZGl0b3IuY3NzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gcmVtb3ZlZCBieSBleHRyYWN0LXRleHQtd2VicGFjay1wbHVnaW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./app/blocks/blocks.editor.css\n");
 
 /***/ }),
 
@@ -132,7 +132,7 @@ eval("/**\n * Polyfills\n */\n\n/**\n * el.matches polyfill for IE11\n * Source:
 
 /***/ 0:
 /*!****************************************************************************************************************!*\
-  !*** multi ./src/js/polyfill.js ./src/css/style.css ./src/css/editor-style.css ./inc/blocks/blocks.editor.css ***!
+  !*** multi ./src/js/polyfill.js ./src/css/style.css ./src/css/editor-style.css ./app/blocks/blocks.editor.css ***!
   \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -140,7 +140,7 @@ eval("/**\n * Polyfills\n */\n\n/**\n * el.matches polyfill for IE11\n * Source:
 __webpack_require__(/*! /home/erik/Webdev/www/hetweblokaal/public_html/wp-content/themes/theme-wbl/src/js/polyfill.js */"./src/js/polyfill.js");
 __webpack_require__(/*! /home/erik/Webdev/www/hetweblokaal/public_html/wp-content/themes/theme-wbl/src/css/style.css */"./src/css/style.css");
 __webpack_require__(/*! /home/erik/Webdev/www/hetweblokaal/public_html/wp-content/themes/theme-wbl/src/css/editor-style.css */"./src/css/editor-style.css");
-module.exports = __webpack_require__(/*! /home/erik/Webdev/www/hetweblokaal/public_html/wp-content/themes/theme-wbl/inc/blocks/blocks.editor.css */"./inc/blocks/blocks.editor.css");
+module.exports = __webpack_require__(/*! /home/erik/Webdev/www/hetweblokaal/public_html/wp-content/themes/theme-wbl/app/blocks/blocks.editor.css */"./app/blocks/blocks.editor.css");
 
 
 /***/ })
