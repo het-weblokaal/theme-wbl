@@ -1083,9 +1083,7 @@ body {
 	  clear: both;
 	}
 
-.page__header > *:first-child { margin-top: 0; }
-
-.page__header > *:last-child { margin-bottom: 0; }
+/* @mixin remove-first-last-child-margin; */
 
 .page__header > * {
 		width: 100%;
@@ -1103,7 +1101,7 @@ body {
 @media (min-width: 1400px) {
 
 .page__header > * {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1111,7 +1109,7 @@ body {
 @media (min-width: 1920px) {
 
 .page__header > * {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 	}
 	}
 
@@ -1162,9 +1160,7 @@ body {
 	  clear: both;
 	}
 
-.page__content > *:first-child { margin-top: 0; }
-
-.page__content > *:last-child { margin-bottom: 0; }
+/* @mixin remove-first-last-child-margin; */
 
 .page__content > * {
 		width: 100%;
@@ -1182,7 +1178,7 @@ body {
 @media (min-width: 1400px) {
 
 .page__content > * {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1190,7 +1186,7 @@ body {
 @media (min-width: 1920px) {
 
 .page__content > * {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 	}
 	}
 
@@ -1200,9 +1196,7 @@ body {
 	  clear: both;
 	}
 
-.page__footer > *:first-child { margin-top: 0; }
-
-.page__footer > *:last-child { margin-bottom: 0; }
+/* @mixin remove-first-last-child-margin; */
 
 .page__footer > * {
 		width: 100%;
@@ -1220,7 +1214,7 @@ body {
 @media (min-width: 1400px) {
 
 .page__footer > * {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1228,20 +1222,33 @@ body {
 @media (min-width: 1920px) {
 
 .page__footer > * {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 	}
 	}
 
-.page__footer .meta {
+.page__footer .entry-meta {
 		margin-top: var(--space-8);
 		margin-bottom: var(--space-8);
 	}
 
-.page__footer .meta__content {
+.page__footer .entry-meta__content {
 			font-size: inherit;
 		}
 
-.page__footer .post-navigation {
+.page__footer .entry-navigation {
+		max-width: none;
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+	}
+
+@media (min-width: 840px) {
+
+.page__footer .entry-navigation {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
+	}
 	}
 
 @media (min-width: 1080px) {
@@ -1619,7 +1626,7 @@ h1 {
 @media (min-width: 1400px) {
 
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 		}
 	}
@@ -1627,7 +1634,7 @@ h1 {
 @media (min-width: 1920px) {
 
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 		}
 	}
 
@@ -1647,14 +1654,14 @@ h1 {
 				@media (min-width: 1400px) {
 
 			.wp-block-image.alignwide img, .wp-block-image.alignfull img {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 			}
 	}
 				@media (min-width: 1920px) {
 
 			.wp-block-image.alignwide img, .wp-block-image.alignfull img {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 			}
 	}
 		}
@@ -1841,9 +1848,7 @@ p.has-background {
 	  clear: both;
 	}
 
-.wbl-segment__inner > *:first-child { margin-top: 0; }
-
-.wbl-segment__inner > *:last-child { margin-bottom: 0; }
+/* @mixin remove-first-last-child-margin; */
 
 .wbl-segment__inner > * {
 		width: 100%;
@@ -1861,7 +1866,7 @@ p.has-background {
 @media (min-width: 1400px) {
 
 .wbl-segment__inner > * {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
 	}
@@ -1869,7 +1874,7 @@ p.has-background {
 @media (min-width: 1920px) {
 
 .wbl-segment__inner > * {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 	}
 	}
 
@@ -2532,9 +2537,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	  clear: both;
 	}
 
-.call-to-action__inner > *:first-child { margin-top: 0; }
-
-.call-to-action__inner > *:last-child { margin-bottom: 0; }
+/* @mixin remove-first-last-child-margin; */
 
 .call-to-action__inner > * {
 		width: 100%;
@@ -2552,7 +2555,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .call-to-action__inner > * {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
 	}
@@ -2560,7 +2563,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1920px) {
 
 .call-to-action__inner > * {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 	}
 	}
 
@@ -2815,7 +2818,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1400px) {
 
 .posts {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 }
 	}
@@ -2823,7 +2826,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 1920px) {
 
 .posts {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 }
 	}
 
@@ -3040,14 +3043,14 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			font-weight: bold;
 		}
 
-.post-navigation {
+.entry-navigation {
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
 }
 
-.post-navigation a {}
+.entry-navigation a {}
 
-.post-navigation__links {
+.entry-navigation__links {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-column-gap: var(--gutter);
@@ -3058,29 +3061,29 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 @media (min-width: 600px) {
 
-.post-navigation__links {
+.entry-navigation__links {
 			grid-template-columns: 1fr 1fr;
 			/* IE11: Grid fallback */
 			column-count: 2
 	}
-			.post-navigation__links > * {
+			.entry-navigation__links > * {
 		/* IE11: Grid fallback */
 		break-inside: avoid-column;
 	}
 		}
 
-.post-navigation__link-label {
+.entry-navigation__link-label {
 		font-size: var(--font-size--extra-small);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		margin-bottom: var(--space-2);
 	}
 
-.post-navigation__link--previous {
+.entry-navigation__link--previous {
 
 		}
 
-.post-navigation__link--next {
+.entry-navigation__link--next {
 
 		}
 
@@ -3554,6 +3557,35 @@ svg.site-logo__symbol path {
 #main[tabindex="-1"]:focus { /* stylelint-disable-line a11y/no-outline-none */
 	outline: 0;
 }
+
+/**
+ * Layout
+ *
+ * Layouts like grid, lists and others.
+ */
+
+/* Grid
+---------------------------------------------------- */
+
+.grid {
+    display: grid;
+    grid-column-gap: var(--gutter);
+    column-gap: var(--gutter);
+    grid-row-gap: var(--space-8);
+    row-gap: var(--space-8);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+
+.grid {
+        grid-template-columns: 1fr 1fr
+}
+    }
+
+.grid__item > *:first-child { margin-top: 0; }
+
+.grid__item > *:last-child { margin-bottom: 0; }
 
 .alignleft,
 .alignright {

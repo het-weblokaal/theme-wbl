@@ -50,7 +50,7 @@
 .page__footer {
 	@mixin has-page-content;
 
-	.meta {
+	.entry-meta {
 		margin-top: var(--space-8);
 		margin-bottom: var(--space-8);
 
@@ -59,7 +59,8 @@
 		}
 	}
 
-	.post-navigation {
+	.entry-navigation {
+		@mixin is-page-content--full-page;
 	}
 
 	@media (--from-breakpoint-4) {

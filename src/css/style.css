@@ -86,7 +86,7 @@
 @import "components/posts.css";
 @import "components/posts-post.css";
 @import "components/posts-pagination.css";
-@import "components/post-navigation.css";
+@import "components/entry-navigation.css";
 @import "components/search-form.css";
 @import "components/site-debug-info.css";
 @import "components/site-nav.css";
@@ -101,6 +101,7 @@
 # Utilities - Helpers and overrides.
 --------------------------------------------------------------*/
 @import "utilities/accessibility.css";
+@import "utilities/layout.css";
 @import "utilities/alignments.css";
 @import "utilities/helpers.css";
 @import "utilities/wordpress.css";

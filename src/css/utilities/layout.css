@@ -1,0 +1,23 @@
+/**
+ * Layout
+ *
+ * Layouts like grid, lists and others.
+ */
+
+
+/* Grid
+---------------------------------------------------- */
+.grid {
+    display: grid;
+    column-gap: var(--gutter);
+    row-gap: var(--space-8);
+    grid-template-columns: 1fr;
+
+    @media (--from-breakpoint-2) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.grid__item {
+    @mixin remove-first-last-child-margin;
+}

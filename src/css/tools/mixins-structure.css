@@ -36,12 +36,12 @@
 	}
 
 	@media (--grid-columns-12) {
-		margin-left: var(--column-gutter-2);
+		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
 
 	@media (--from-breakpoint-7) {
-		max-width: var(--column-span-7);
+		/* max-width: var(--column-span-7); */
 	}
 }
 
@@ -127,7 +127,7 @@
 
 @define-mixin has-page-content {
 	@mixin clearfix;
-	@mixin remove-first-last-child-margin;
+	/* @mixin remove-first-last-child-margin; */
 
 	> * {
 		@mixin is-page-content;
