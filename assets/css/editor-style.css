@@ -1246,17 +1246,13 @@ body:before {
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
-}
-
-@media (min-width: 840px) {
-
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
+	/* @media (--grid-columns-6) {
 		margin-left: 0;
 		margin-right: 0;
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
+	} */
 }
-	}
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
 	max-width: none;

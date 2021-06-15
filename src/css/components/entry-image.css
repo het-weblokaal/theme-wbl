@@ -1,4 +1,4 @@
-.page-image {
+.entry-image {
 	@mixin is-page-content--full-page;
 
 	img {

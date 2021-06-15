@@ -1186,72 +1186,16 @@ body {
 	}
 	}
 
-.page__footer:after {
-	  content: "";
-	  display: table;
-	  clear: both;
-	}
-
-/* @mixin remove-first-last-child-margin; */
-
-.page__footer > * {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-@media (min-width: 840px) {
-
-.page__footer > * {
-		max-width: var(--column-span-4);
-	}
-	}
-
-@media (min-width: 1400px) {
-
-.page__footer > * {
-		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
-	}
-	}
-
-@media (min-width: 1920px) {
-
-.page__footer > * {
-		/* max-width: var(--column-span-7); */
-	}
-	}
-
-.page__footer .entry-meta {
-		margin-top: var(--space-8);
-		margin-bottom: var(--space-8);
-	}
-
-.page__footer .entry-meta__content {
-			font-size: inherit;
-		}
-
-.page__footer .entry-navigation {
+.page-content .archive-description {
 		max-width: none;
 		margin-top: var(--space-8);
 		margin-bottom: var(--space-8);
-	}
-
-@media (min-width: 840px) {
-
-.page__footer .entry-navigation {
+		/* @media (--grid-columns-6) {
 		margin-left: 0;
 		margin-right: 0;
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
-	}
-	}
-
-@media (min-width: 1080px) {
-
-.page__footer {
-		margin-right: calc(var(--column-gutter) * -1)
-}
+	} */
 	}
 
 .page-footer {
@@ -1314,16 +1258,15 @@ body {
 		max-width: none;
 		margin-top: var(--space-8);
 		margin-bottom: var(--space-8);
-	}
-
-@media (min-width: 840px) {
-
-.page-footer .entry-navigation {
+		/* @media (--grid-columns-6) {
 		margin-left: 0;
 		margin-right: 0;
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
-	}
+	} */
+
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20);
 	}
 
 /*--------------------------------------------------------------
@@ -2645,184 +2588,25 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			margin-left: auto;
 		}
 
-.layout-blog {
-	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
-	margin-bottom: var(--space-10);
-	margin-top: var(--space-8);
-
-	display: grid;
-	grid-column-gap: var(--gutter);
-	column-gap: var(--gutter);
-	grid-row-gap: var(--space-8);
-	row-gap: var(--space-8);
-	grid-template-columns: 1fr;
+.entry {
+	
 }
 
-@media (min-width: 840px) {
-
-.layout-blog {
-		margin-left: 0;
-		margin-right: 0;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12)
+.entry--blog {
+	
 }
-	}
 
-.layout-blog__item {
-
-	}
-
-@media (min-width: 600px) and (max-width: 839px) {
-
-.layout-blog {
-		grid-template-columns: 1fr 1fr
+.entry-author a {
+	color: inherit;
+	text-decoration: none;
 }
-	}
 
-.layout-blog .entry__title {
-		font-size: var(--font-size--large);
-		margin-bottom: var(--space-4);
-		margin-top: 0;
-	}
-
-.layout-blog .entry p {
-		margin-bottom: var(--space-4);
-	}
-
-.layout-blog .entry img {
-		display: block;
-		width: 100%;
-		margin-bottom: var(--space-4);
-	}
-
-.layout-blog .entry__footer {
-		font-size: var(--font-size--small);
-	}
-
-.layout-blog .entry .meta {
-		display: block;
-	}
-
-.layout-blog .entry .meta--date {
-			font-weight: bold;
-		}
-
-/** Media Queries */
-
-@media (min-width: 840px) {
-
-		.layout-blog .entry__title {
-			font-size: var(--font-size--extra-large);
-		}
-
-    	.layout-blog .entry img {
-    		margin-bottom: 0;
-    	}
-
-		.layout-blog .entry__inner {
-			display: grid;
-			grid-column-gap: var(--gutter);
-			column-gap: var(--gutter);
-			grid-template-rows: auto 1fr;
-
-			grid-template-areas:
-				"footer header header image"
-				"footer main   main   image";
-
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-  		.layout-blog .entry__footer {
-			margin-top: 0.25em;
-        	grid-area: footer;
-        }
-
-        .layout-blog .entry__header {
-        	grid-area: header;
-        }
-
-  		.layout-blog .entry__main {
-        	grid-area: main;
-		}
-
-        .layout-blog .entry__image {
-        	grid-area: image;
-        }
-
-        .layout-blog .entry .meta--category {
-			margin-top: var(--space-2);
-		}
-	}
-
-@media (min-width: 1400px) {
-
-        	.layout-blog .entry__header > *, .layout-blog .entry__main > * {
-        		max-width: 600px;
-        	}
-	}
-
-/**
- * Meta (like date, author, categories)
- *
- * Elements
- * __label
- * __items
- *
- * Modifiers
- * --date
- * --categories
- * --author
- * --password-protection-status
- *
- */
-
-.meta__label {
-		font-size: var(--font-size--extra-small);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		display: block;
-		margin-bottom: var(--space-2);
-	}
-
-.meta__content {
-		font-size: var(--font-size--meta);
-	}
-
-.meta a {
-
-	}
-
-.meta--author a {
-		color: inherit;
-		text-decoration: none;
-	}
-
-.meta--author a:hover,
-	    .meta--author a:active {
-	    	text-decoration: underline;
-	    	text-decoration-thickness: 0.1em;
-	    	text-underline-offset: 0.2em;
-	    }
-
-.meta--date .meta__content {}
-
-.meta--category a {
-			display: inline-block;
-			margin-right: 1em;
-		}
-
-.meta--category a:before {
-				content: '#';
-			}
-
-.meta--password-protection-status:before {
-			color: var(--ui-color);
-			content: '\2022';
-			margin-left: 0.5rem;
-			margin-right: 0.5rem;
-		}
+.entry-author a:hover,
+    .entry-author a:active {
+    	text-decoration: underline;
+    	text-decoration-thickness: 0.1em;
+    	text-underline-offset: 0.2em;
+    }
 
 .entry-category {
 	display: inline-block;
@@ -2833,229 +2617,201 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		content: '#';
 	}
 
-.page-image {
+.entry-password-protection-status:before {
+		color: var(--ui-color);
+		content: '\2022';
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+
+.entry-navigation {
+	margin-top: var(--space-8);
+	margin-bottom: var(--space-8);
+}
+
+.entry-navigation a {}
+
+.entry-navigation__links {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-column-gap: var(--gutter);
+		column-gap: var(--gutter);
+		grid-row-gap: var(--space-4);
+		row-gap: var(--space-4);
+	}
+
+@media (min-width: 600px) {
+
+.entry-navigation__links {
+			grid-template-columns: 1fr 1fr;
+			/* IE11: Grid fallback */
+			column-count: 2
+	}
+			.entry-navigation__links > * {
+		/* IE11: Grid fallback */
+		break-inside: avoid-column;
+	}
+		}
+
+.entry-navigation__link-label {
+		font-size: var(--font-size--extra-small);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		margin-bottom: var(--space-2);
+	}
+
+.entry-navigation__link--previous {
+
+		}
+
+.entry-navigation__link--next {
+
+		}
+
+.entry-image {
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
 }
 
-@media (min-width: 840px) {
-
-.page-image {
+/* @media (--grid-columns-6) {
 		margin-left: 0;
 		margin-right: 0;
 		margin-top: var(--space-12);
-		margin-bottom: var(--space-12)
-}
-	}
+		margin-bottom: var(--space-12);
+	} */
 
-.page-image img {
+.entry-image img {
 		display: block;
 		margin-bottom: 0;
 		width: 100%;
 	}
 
-.password-protection-form {
-	margin-bottom: var(--space-3);
-}
-
-.password-protection-form__field {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-.password-protection-form input[type="password"] {
-		margin-right: 0.25em;
-		width: auto;
-	}
-
-.posts {
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+.loop--blog {
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
-	margin-bottom: var(--space-10);
-	margin-top: var(--space-8);
-/* 
-	_:-ms-fullscreen, :root & {
-		column-gap: var(--gutter);
-		@mixin ie11-grid-fallback 2;
+	/* @media (--grid-columns-6) {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
 	} */
+	margin-bottom: var(--space-12);
+	margin-top: var(--space-12);
+
+	display: grid;
+	grid-column-gap: var(--gutter);
+	column-gap: var(--gutter);
+	grid-row-gap: var(--space-12);
+	row-gap: var(--space-12);
+	grid-template-columns: 1fr;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 600px) {
 
-.posts {
-		max-width: var(--column-span-4);
+.loop--blog {
+		grid-template-columns: 1fr 1fr
+}
+	}
+
+@media (min-width: 1080px) {
+
+.loop--blog {
+		grid-template-columns: 1fr 1fr 1fr
 }
 	}
 
 @media (min-width: 1400px) {
 
-.posts {
-		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
+.loop--blog {
+		grid-template-columns: 1fr
 }
 	}
 
-@media (min-width: 1920px) {
-
-.posts {
-		/* max-width: var(--column-span-7); */
-}
-	}
-
-@media (min-width: 840px) {
-
-.posts {
-		margin-left: 0;
-		margin-right: 0;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-}
-	}
-
-/**
- * A post in a posts loop
- *
- * Elements
- * &__meta-group
- * &__content-container
- * &__header
- * &__title
- * &__main
- * &__image
- */
-
-.posts-post {
-	display: grid;
-	grid-column-gap: var(--gutter);
-	column-gap: var(--gutter);
-	grid-row-gap: var(--space-2);
-	row-gap: var(--space-2);
-}
-
-.posts-post__content-container {
-    	display: grid;
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		grid-row-gap: var(--space-2);
-		row-gap: var(--space-2);
-		grid-template-rows: auto 1fr;
-    }
-
-.posts-post__header {
-	}
-
-.posts-post__title {
+.loop--blog .entry__title {
+		font-size: var(--font-size--large);
+		margin-bottom: var(--space-4);
 		margin-top: 0;
-		margin-bottom: 0;
-		line-height: var(--line-height--small);
 	}
 
-.posts-post__image {}
+.loop--blog .entry p {
+		margin-bottom: var(--space-4);
+	}
 
-.posts-post__image img {
+.loop--blog .entry img {
 		display: block;
 		width: 100%;
-		margin-bottom: 0;
+		margin-bottom: var(--space-4);
 	}
 
-.posts-post__main p {
-		margin-bottom: 0;
+.loop--blog .entry__footer {
+		font-size: var(--font-size--small);
 	}
 
-.posts-post__main {
-		/* margin-bottom: var(--space-2); */
+.loop--blog .entry__author .label, .loop--blog .entry__categories .label, .loop--blog .entry__date .label {
+			display: none;
+		}
+
+.loop--blog .entry__date {
+		font-weight: bold;
 	}
 
-/* font-size: var(--font-size--small); */
+@media (min-width: 1400px) {
 
-.posts-post__meta-group .meta__label {
-				display: none;
-			}
-
-/* margin-top: var(--space-1); */
-
-/* @mixin reset-link; */
-
-.posts-post__meta-group .meta--categories a:hover,
-				    .posts-post__meta-group .meta--categories a:active {
-				    	/* @mixin link-active-2; */
-				    }
-
-/** Additional and modifying classes */
-
-.posts-post + .posts-post {
-		margin-top: var(--space-6);
-	}
-
-/** Media Queries */
-
-@media (min-width: 600px) {
-
-.posts-post {
+.loop--blog .entry {
+		display: grid;
+		grid-column-gap: var(--gutter);
+		column-gap: var(--gutter);
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-areas:
-			"meta content content content";
-
-		grid-template-columns: 1fr 1fr 1fr 1fr
+			"footer header header image"
+			"footer main   main   image"
 }
 
-		.posts-post__content-container {
-        	grid-area: content;
+		.loop--blog .entry__title {
+			font-size: var(--font-size--extra-large);
+		}
+
+    	.loop--blog .entry img {
+    		margin-bottom: 0;
+    	}
+
+        .loop--blog .entry__categories {
+			margin-top: var(--space-2);
+			word-wrap: break-word;
+		}
+
+  		.loop--blog .entry__footer {
+			margin-top: 0.25em;
+        	grid-area: footer;
         }
 
-        .posts-post__meta-group {
-			margin-top: var(--space-1);
-        	grid-area: meta;
-        }
-	}
-
-@media (min-width: 840px) {
-
-.posts-post {
-		grid-template-areas:
-			"meta content content content";
-
-		grid-template-columns: 1fr 1fr 1fr 1fr
-}
-
-        .posts-post__content-container {
-        	grid-area: content;
-
-			grid-template-areas:
-				"header header image"
-				"main main image";
-
-			grid-template-columns: 1fr 1fr 1fr;
-			grid-template-rows: auto 1fr;
-        }
-
-  		.posts-post__meta-group {
-			margin-top: var(--space-1);
-        	grid-area: meta;
-        }
-
-        .posts-post__header {
+        .loop--blog .entry__header {
         	grid-area: header;
         }
 
-  		.posts-post__main {
+  		.loop--blog .entry__main {
         	grid-area: main;
 		}
 
-        .posts-post__image {
+        .loop--blog .entry__image {
         	grid-area: image;
         }
 	}
 
 @media (min-width: 1400px) {
-		.posts-post__header,
-        .posts-post__main {
-        	max-width: 600px;
-        }
+
+.loop--blog .entry {
+		--copywriting-max-width: 24rem;
+
+		grid-template-areas:
+			"footer header header image"
+			"footer main   main   image";
+
+		grid-template-columns: 1fr 1fr 1fr 1fr
+}
 	}
 
 .pagination {
@@ -3120,49 +2876,19 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			font-weight: bold;
 		}
 
-.entry-navigation {
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+.password-protection-form {
+	margin-bottom: var(--space-3);
 }
 
-.entry-navigation a {}
-
-.entry-navigation__links {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		grid-row-gap: var(--space-4);
-		row-gap: var(--space-4);
+.password-protection-form__field {
+		display: flex;
+		flex-wrap: wrap;
 	}
 
-@media (min-width: 600px) {
-
-.entry-navigation__links {
-			grid-template-columns: 1fr 1fr;
-			/* IE11: Grid fallback */
-			column-count: 2
+.password-protection-form input[type="password"] {
+		margin-right: 0.25em;
+		width: auto;
 	}
-			.entry-navigation__links > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
-	}
-		}
-
-.entry-navigation__link-label {
-		font-size: var(--font-size--extra-small);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		margin-bottom: var(--space-2);
-	}
-
-.entry-navigation__link--previous {
-
-		}
-
-.entry-navigation__link--next {
-
-		}
 
 .search-form {
 	display: flex;
@@ -3741,17 +3467,13 @@ figure.alignleft {
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
-}
-
-@media (min-width: 840px) {
-
-.alignwide {
+	/* @media (--grid-columns-6) {
 		margin-left: 0;
 		margin-right: 0;
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
+	} */
 }
-	}
 
 .alignfull {
 	margin-left: calc(50% - 50vw + var(--site--padding));

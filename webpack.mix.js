@@ -20,9 +20,6 @@ const mix = require( 'laravel-mix' );
 // Prevent webpack to copy media files each time (when changing css/js)
 const processMedia = ! process.env.nomedia;
 
-// Only build IE in certain cases
-const processIE11 = ! process.env.noIE11;
-
 /**
  * Sets the development path to assets. By default, this is the `/assets`
  * folder in the theme.
@@ -95,21 +92,6 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
  */
 mix.postCss( `${devPath}/css/style.css`,             'css' )
    .postCss( `${devPath}/css/editor-style.css`,      'css' );
-
-// if ( processIE11 ) {
-// 	mix.postCss( `${devPath}/css/ie11-style.css`, 'css', [
-// 		require( 'postcss-import' )(),
-// 		require( 'postcss-mixins' )(),
-// 		require( 'postcss-nested' )(),
-// 		require( 'postcss-preset-env' )({
-// 			browsers: 'IE 11',
-// 			stage: 2,
-// 			features: {
-// 				'custom-media-queries': true
-// 			}
-// 		})
-// 	]);
-// }
 
 /**
  * Gutenberg blocks
