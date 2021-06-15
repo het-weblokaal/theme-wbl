@@ -1077,7 +1077,7 @@ body {
 	
 }
 
-.page__header:after {
+.page-header:after {
 	  content: "";
 	  display: table;
 	  clear: both;
@@ -1085,7 +1085,7 @@ body {
 
 /* @mixin remove-first-last-child-margin; */
 
-.page__header > * {
+.page-header > * {
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
@@ -1093,14 +1093,14 @@ body {
 
 @media (min-width: 840px) {
 
-.page__header > * {
+.page-header > * {
 		max-width: var(--column-span-4);
 	}
 	}
 
 @media (min-width: 1400px) {
 
-.page__header > * {
+.page-header > * {
 		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
@@ -1108,53 +1108,49 @@ body {
 
 @media (min-width: 1920px) {
 
-.page__header > * {
+.page-header > * {
 		/* max-width: var(--column-span-7); */
 	}
 	}
 
-.page__header {
+.page-header {
 	margin-bottom: var(--space-4);
 }
 
-.page__header .page__title {
+.page-header .page-title {
 		margin-bottom: 0;
 	}
 
-.page__header .meta-group {
+.page-header__meta {
 		margin-top: var(--space-1);
 	}
 
-.page__header .meta {
-		display: inline;
-	}
-
-.page__header .meta--author .meta__content:after {
-				content: ' \2014' ;
-			}
-
-.page__header .meta__content {
-			font-size: inherit;
+.page-header__meta > * {
+			display: inline;
 		}
 
-.page__header .meta__label {
-		display: none;
-	}
+.page-header__meta .entry__author:after {
+			content: ' \2014' ;
+		}
+
+.page-header__meta .entry__date .label {
+			display: none;
+		}
 
 @media (min-width: 1400px) {
 
-.page__header {
+.page-header {
 		margin-bottom: var(--space-12)
 }
 	}
 
-.is-archive .page__header > * {
+.page.archive .page-header > * {
 			margin-left: auto;
 			margin-right: auto;
 			max-width: none;
 		}
 
-.page__content:after {
+.page-content:after {
 	  content: "";
 	  display: table;
 	  clear: both;
@@ -1162,7 +1158,7 @@ body {
 
 /* @mixin remove-first-last-child-margin; */
 
-.page__content > * {
+.page-content > * {
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
@@ -1170,14 +1166,14 @@ body {
 
 @media (min-width: 840px) {
 
-.page__content > * {
+.page-content > * {
 		max-width: var(--column-span-4);
 	}
 	}
 
 @media (min-width: 1400px) {
 
-.page__content > * {
+.page-content > * {
 		/* margin-left: var(--column-gutter-2); */
 		max-width: var(--column-span-8);
 	}
@@ -1185,7 +1181,7 @@ body {
 
 @media (min-width: 1920px) {
 
-.page__content > * {
+.page-content > * {
 		/* max-width: var(--column-span-7); */
 	}
 	}
@@ -1256,6 +1252,78 @@ body {
 .page__footer {
 		margin-right: calc(var(--column-gutter) * -1)
 }
+	}
+
+.page-footer {
+
+	/* @media (--from-breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -1);
+	} */
+}
+
+.page-footer:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+/* @mixin remove-first-last-child-margin; */
+
+.page-footer > * {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+@media (min-width: 840px) {
+
+.page-footer > * {
+		max-width: var(--column-span-4);
+	}
+	}
+
+@media (min-width: 1400px) {
+
+.page-footer > * {
+		/* margin-left: var(--column-gutter-2); */
+		max-width: var(--column-span-8);
+	}
+	}
+
+@media (min-width: 1920px) {
+
+.page-footer > * {
+		/* max-width: var(--column-span-7); */
+	}
+	}
+
+.page-footer .entry__categories {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+	}
+
+.page-footer .entry__categories .label {
+			font-size: var(--font-size--extra-small);
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			display: block;
+			margin-bottom: var(--space-4);
+		}
+
+.page-footer .entry-navigation {
+		max-width: none;
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+	}
+
+@media (min-width: 840px) {
+
+.page-footer .entry-navigation {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
+	}
 	}
 
 /*--------------------------------------------------------------
@@ -2755,6 +2823,15 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			margin-left: 0.5rem;
 			margin-right: 0.5rem;
 		}
+
+.entry-category {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.entry-category:before {
+		content: '#';
+	}
 
 .page-image {
 	max-width: none;

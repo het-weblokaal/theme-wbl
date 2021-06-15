@@ -44,6 +44,9 @@
 @import "structure/site-main.css";
 @import "structure/site-footer.css";
 @import "structure/page.css";
+@import "structure/page-header.css";
+@import "structure/page-content.css";
+@import "structure/page-footer.css";
 
 
 /*--------------------------------------------------------------
@@ -81,6 +84,7 @@
 @import "components/call-to-action.css";
 @import "components/layout-blog.css";
 @import "components/meta.css";
+@import "components/entry-category.css";
 @import "components/page-image.css";
 @import "components/password-protection-form.css";
 @import "components/posts.css";

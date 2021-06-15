@@ -1,0 +1,34 @@
+.page-header {
+	@mixin has-page-content;
+	margin-bottom: var(--space-4);
+
+	.page-title {
+		margin-bottom: 0;
+	}
+
+	&__meta {
+		margin-top: var(--space-1);
+
+		> * {
+			display: inline;
+		}
+
+		.entry__author:after {
+			content: ' \2014' ;
+		}
+
+		.entry__date .label {
+			display: none;
+		}
+	}
+
+	@media (--from-breakpoint-5) {
+		margin-bottom: var(--space-12);
+	}
+
+	.page.archive & {
+		> * {
+			@mixin reset-page-content;
+		}
+	}
+}

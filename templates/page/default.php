@@ -6,7 +6,7 @@ namespace WBL\Theme;
 the_post(); 
 
 ?>
-<article class="page <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
+<article class="page entry <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
 	<?php Template::display( 'page/header' ); ?>
 

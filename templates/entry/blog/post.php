@@ -22,9 +22,9 @@ namespace WBL\Theme;
 		</div>
 
 		<footer class="entry__footer">
-			<?= render_entry_author( [ 'class' => 'entry__author meta meta--author' ] ) ?>
-			<?= render_entry_date( [ 'class' => 'entry__date meta meta--date' ]) ?>
-			<?= render_entry_terms( [ 'class' => 'entry__category meta meta--category', 'taxonomy' => 'category' ] ) ?>
+			<?php Template::display( 'components/entry-author', null, [ 'label' => 'door' ] ) ?>
+			<?php Template::display( 'components/entry-date' ) ?>
+			<?php Template::display( 'components/entry-categories' ) ?>
 			<?= render_entry_password_protection_status() ?>
 		</footer>
 

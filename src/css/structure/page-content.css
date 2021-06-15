@@ -1,0 +1,24 @@
+.page-content {
+	@mixin has-page-content;
+}
+
+.page__footer {
+	@mixin has-page-content;
+
+	.entry-meta {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+
+		&__content {
+			font-size: inherit;
+		}
+	}
+
+	.entry-navigation {
+		@mixin is-page-content--full-page;
+	}
+
+	@media (--from-breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -1);
+	}
+}

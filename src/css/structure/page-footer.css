@@ -1,0 +1,22 @@
+.page-footer {
+	@mixin has-page-content;
+
+	.entry__categories {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+
+		.label {
+			@mixin label;
+			display: block;
+			margin-bottom: var(--space-4);
+		}
+	}
+
+	.entry-navigation {
+		@mixin is-page-content--full-page;
+	}
+
+	/* @media (--from-breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -1);
+	} */
+}

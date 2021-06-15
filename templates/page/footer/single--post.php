@@ -3,10 +3,9 @@
 namespace WBL\Theme;
 
 ?>
-<footer class="page__footer">
+<footer class="page-footer entry__footer">
 
-	<
-	<?= render_entry_terms( [ 'class' => 'entry-meta__category', 'taxonomy' => 'category' ] ) ?>
+	<?php Template::display( 'components/entry-categories' ) ?>
 
 	<?php Template::display( 'components/entry-navigation' ) ?>
 
