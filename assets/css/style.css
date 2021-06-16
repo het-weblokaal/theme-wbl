@@ -450,6 +450,7 @@ html {
 body {
     font-family: var(--font-family);
     line-height: var(--line-height--normal);
+    color: var(--foreground-color);
 }
 
 /* Headings
@@ -823,10 +824,8 @@ body {
 	clear: both;
 	min-height: 100vh;
 
-	/* background-color: var(--background-color);
+	background-color: var(--background-color);
 	color: var(--foreground-color);
-	font-family: var(--font-1-family);
-	line-height: var(--font-1-line-height); */
 }
 
 .has-expanded-site-nav .site {
@@ -841,6 +840,12 @@ body {
 /* 	@media (min-device-width: 1025px) {
 		padding-right: 12px;
 	} */
+}
+
+.has-page-image .site {
+
+	margin-top: 572px; /* !magicnumber */
+
 }
 
 .site-header {
@@ -2668,24 +2673,16 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 		}
 
-.entry-image {
-	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
-}
+/* .entry-image {
+	@mixin is-page-content--full-page;
 
-/* @media (--grid-columns-6) {
-		margin-left: 0;
-		margin-right: 0;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-	} */
-
-.entry-image img {
+	img {
 		display: block;
 		margin-bottom: 0;
 		width: 100%;
 	}
+}
+ */
 
 .loop--blog {
 	max-width: none;
@@ -2875,6 +2872,21 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 .posts-nav .page-numbers.current {
 			font-weight: bold;
 		}
+
+.page-image {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	
+	height: 572px; /* !magicnumber */
+
+	display: flex;
+	align-items: center;
+}
+
+.page-title {}
 
 .password-protection-form {
 	margin-bottom: var(--space-3);
