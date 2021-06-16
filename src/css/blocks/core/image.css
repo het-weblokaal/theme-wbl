@@ -11,15 +11,20 @@
 	&.alignwide,
 	&.alignfull {
 		max-width: none;
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
 		figcaption {
 			@mixin is-page-content;
 		}
+		img {
+			width: 100%;
+		}
 
-		@media (--grid-columns-6) {
+		/* @media (--grid-columns-6) {
 
 			img {
 				@mixin is-page-content;
 			}
-		}
+		} */
 	}
 }
