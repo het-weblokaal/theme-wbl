@@ -26,3 +26,37 @@
 	margin-top: 572px; /* !magicnumber */
 
 }
+
+.is-debug-mode .site {
+	background-color: transparent;
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: var(--background-color);
+		z-index: -9;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--site--width);
+		opacity: 0.025;
+		z-index: -8;
+
+		--foreground-color: #000;
+
+		@mixin dev--background-grid;
+	}
+}

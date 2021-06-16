@@ -48,10 +48,7 @@ function excerpt_length( $length ) {
  */
 function add_page_image_class( $classes ) {
 
-	App::log('add_page_image_class');
-
 	if (is_singular() && has_post_thumbnail()) {
-		App::log('add_page_image_class 2222222');
 		$classes[] = 'has-page-image';
 	}
 

@@ -6,53 +6,45 @@
 	line-height: var(--line-height--extra-small);
 	text-align: right;
 	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
-
-	&__grid {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin-left: auto;
-		margin-right: auto;
-		width: var(--site--width);
-		opacity: 0.025;
-
-		--foreground-color: #000;
-
-		@mixin dev--background-grid;
-	}
+	z-index: 99;
+	right: 0.5rem;
+	bottom: 0.5rem;
 
 	&__version {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		z-index: 99;
-		margin-right: 0.5rem;
-		margin-bottom: 2.5rem;
-
+		display: inline-block;
 		opacity: 0.4;
+		padding: 0.25rem;
+		border-radius: 10px;
+		background-color: var(--background-color);
 	}
 
-	&__responsiveness {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		z-index: 99;
-		margin-right: 0.5rem;
-		margin-bottom: 1.5rem;
-
+	&__media-queries {
+		display: inline-block;
 		opacity: 0.4;
+		padding: 0.25rem;
+		border-radius: 10px;
+		background-color: var(--background-color);
 
 		&:after {
 			@mixin dev--media-query-info;
 		}
 	}
+}
+
+.site-grid {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--site--width);
+	opacity: 0.025;
+
+	--foreground-color: #000;
+
+	@mixin dev--background-grid;
 }
 
 /* Show debug-info in development mode */

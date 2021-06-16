@@ -24,9 +24,9 @@ namespace WBL\Theme;
 
 		<?php Template::display( 'site/footer' ) ?>
 
+		<?php Template::display( 'components/site-debug-info' ) ?>
+
 	</div>
-	
-	<?php Template::display( 'components/site-debug-info' ) ?>
 
 	<?php wp_footer(); ?>
 	

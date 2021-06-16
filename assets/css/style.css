@@ -450,7 +450,7 @@ html {
 body {
     font-family: var(--font-family);
     line-height: var(--line-height--normal);
-    color: var(--foreground-color);
+    background: transparent;
 }
 
 /* Headings
@@ -847,6 +847,89 @@ body {
 	margin-top: 572px; /* !magicnumber */
 
 }
+
+.is-debug-mode .site {
+	background-color: transparent;
+	position: relative;
+}
+
+.is-debug-mode .site:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: var(--background-color);
+		z-index: -9;
+	}
+
+.is-debug-mode .site:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--site--width);
+		opacity: 0.025;
+		z-index: -8;
+
+		--foreground-color: #000;
+
+		background: linear-gradient(90deg,
+		var(--foreground-color) var(--column-span-1),
+		transparent var(--column-span-1),
+		transparent var(--column-gutter-1),
+		var(--foreground-color) var(--column-gutter-1),
+		var(--foreground-color) var(--column-span-2),
+		transparent var(--column-span-2),
+		transparent var(--column-gutter-2),
+		var(--foreground-color) var(--column-gutter-2),
+		var(--foreground-color) var(--column-span-3),
+		transparent var(--column-span-3),
+		transparent var(--column-gutter-3),
+		var(--foreground-color) var(--column-gutter-3),
+		var(--foreground-color) var(--column-span-4),
+		transparent var(--column-span-4),
+		transparent var(--column-gutter-4),
+		var(--foreground-color) var(--column-gutter-4),
+		var(--foreground-color) var(--column-span-5),
+		transparent var(--column-span-5),
+		transparent var(--column-gutter-5),
+		var(--foreground-color) var(--column-gutter-5),
+		var(--foreground-color) var(--column-span-6),
+		transparent var(--column-span-6),
+		transparent var(--column-gutter-6),
+		var(--foreground-color) var(--column-gutter-6),
+		var(--foreground-color) var(--column-span-7),
+		transparent var(--column-span-7),
+		transparent var(--column-gutter-7),
+		var(--foreground-color) var(--column-gutter-7),
+		var(--foreground-color) var(--column-span-8),
+		transparent var(--column-span-8),
+		transparent var(--column-gutter-8),
+		var(--foreground-color) var(--column-gutter-8),
+		var(--foreground-color) var(--column-span-9),
+		transparent var(--column-span-9),
+		transparent var(--column-gutter-9),
+		var(--foreground-color) var(--column-gutter-9),
+		var(--foreground-color) var(--column-span-10),
+		transparent var(--column-span-10),
+		transparent var(--column-gutter-10),
+		var(--foreground-color) var(--column-gutter-10),
+		var(--foreground-color) var(--column-span-11),
+		transparent var(--column-span-11),
+		transparent var(--column-gutter-11),
+		var(--foreground-color) var(--column-gutter-11),
+		var(--foreground-color) var(--column-span-12),
+		transparent var(--column-span-12),
+		transparent var(--column-gutter-12),
+		var(--foreground-color) var(--column-gutter-12)
+	);
+	}
 
 .site-header {
 	position: relative;
@@ -2878,7 +2961,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: -1;
+	z-index: -10;
 	
 	height: 572px; /* !magicnumber */
 
@@ -2920,27 +3003,80 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	line-height: var(--line-height--extra-small);
 	text-align: right;
 	position: fixed;
+	z-index: 99;
+	right: 0.5rem;
+	bottom: 0.5rem;
+}
+
+.site-debug-info__version {
+		display: inline-block;
+		opacity: 0.4;
+		padding: 0.25rem;
+		border-radius: 10px;
+		background-color: var(--background-color);
+	}
+
+.site-debug-info__media-queries {
+		display: inline-block;
+		opacity: 0.4;
+		padding: 0.25rem;
+		border-radius: 10px;
+		background-color: var(--background-color);
+	}
+
+.site-debug-info__media-queries:after {
+			content: 'bp - (mini)';
+		}
+
+@media (min-width: 360px) {
+
+.site-debug-info__media-queries:after { content: 'bp 1: 360px (klein)';
+		} }
+
+@media (min-width: 600px) {
+
+.site-debug-info__media-queries:after { content: 'bp 2: 600px (klein)';
+		} }
+
+@media (min-width: 840px) {
+
+.site-debug-info__media-queries:after { content: 'bp 3: 840px (middel)';
+		} }
+
+@media (min-width: 1080px) {
+
+.site-debug-info__media-queries:after { content: 'bp 4: 1080px (middel)';
+		} }
+
+@media (min-width: 1400px) {
+
+.site-debug-info__media-queries:after { content: 'bp 5: 1400px (groot)';
+		} }
+
+@media (min-width: 1720px) {
+
+.site-debug-info__media-queries:after { content: 'bp 6: 1720px (groot)';
+		} }
+
+@media (min-width: 1920px) {
+
+.site-debug-info__media-queries:after { content: 'bp 7: 1920px (max)';
+		} }
+
+.site-grid {
+	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
-	z-index: -1;
-}
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--site--width);
+	opacity: 0.025;
 
-.site-debug-info__grid {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin-left: auto;
-		margin-right: auto;
-		width: var(--site--width);
-		opacity: 0.025;
+	--foreground-color: #000;
 
-		--foreground-color: #000;
-
-		background: linear-gradient(90deg,
+	background: linear-gradient(90deg,
 		var(--foreground-color) var(--column-span-1),
 		transparent var(--column-span-1),
 		transparent var(--column-gutter-1),
@@ -2990,68 +3126,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		transparent var(--column-gutter-12),
 		var(--foreground-color) var(--column-gutter-12)
 	);
-	}
-
-.site-debug-info__version {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		z-index: 99;
-		margin-right: 0.5rem;
-		margin-bottom: 2.5rem;
-
-		opacity: 0.4;
-	}
-
-.site-debug-info__responsiveness {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		z-index: 99;
-		margin-right: 0.5rem;
-		margin-bottom: 1.5rem;
-
-		opacity: 0.4;
-	}
-
-.site-debug-info__responsiveness:after {
-			content: 'bp - (mini)';
-		}
-
-@media (min-width: 360px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 1: 360px (klein)';
-		} }
-
-@media (min-width: 600px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 2: 600px (klein)';
-		} }
-
-@media (min-width: 840px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 3: 840px (middel)';
-		} }
-
-@media (min-width: 1080px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 4: 1080px (middel)';
-		} }
-
-@media (min-width: 1400px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 5: 1400px (groot)';
-		} }
-
-@media (min-width: 1720px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 6: 1720px (groot)';
-		} }
-
-@media (min-width: 1920px) {
-
-.site-debug-info__responsiveness:after { content: 'bp 7: 1920px (max)';
-		} }
+}
 
 /* Show debug-info in development mode */
 

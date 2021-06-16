@@ -10,13 +10,10 @@ if ( ! App::is_debug_mode() ) {
 ?>
 
 <div class="site-debug-info">
-	<div class="site-debug-info__grid">
-
-	</div>
 	<div class="site-debug-info__version">
-		<?= App::get_version() ?>
+		v<?= App::get_version() ?>
 	</div>
-	<div class="site-debug-info__responsiveness">
+	<div class="site-debug-info__media-queries">
 
 	</div>
 </div>
