@@ -28,7 +28,12 @@ add_action( 'after_setup_theme', function() {
 	 * Restrict the allowed blocks (opinionated)
 	 */
 	add_filter( 'allowed_block_types', function( $allowed_block_types ) {
+
+		// Add blocks specifically for this theme
+		$allowed_block_types[] = 'wbl-projects/projects';
+
 		return $allowed_block_types;
+		
 	}, 10, 2 );
 
 }, 5 );
