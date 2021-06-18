@@ -13,9 +13,9 @@ if ( wp_get_environment_type() == 'local' ) {
 		'foundation_dir' => '../wbl-theme-foundation'
 	]);
 }
-// else {
-// 	require_once( get_template_directory() . '/vendor/het-weblokaal/wbl-theme-foundation/app/bootstrap.php' );
-// }
+else {
+	require_once( get_template_directory() . '/vendor/het-weblokaal/wbl-theme-foundation/app/bootstrap.php' );
+}
 
 
 # ------------------------------------------------------------------------------
