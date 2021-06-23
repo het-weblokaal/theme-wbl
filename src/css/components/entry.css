@@ -2,7 +2,7 @@
 	
 }
 
-.entry--post {
+.entry--blog {
 	.entry__title {
 		font-size: var(--font-size--large);
 		margin-bottom: var(--space-4);
@@ -86,20 +86,36 @@
 	}
 }
 
-.entry--wbl_project {
+
+.entry--grid {
 
 	.entry__image img {
 		display: block;
 		width: 100%;
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--space-3);
 	}
 
 	.entry__title {
-		font-size: var(--font-size--large);
+		/* font-size: var(--font-size--large); */
 		margin-top: 0;
+		margin-bottom: 0;
+
+		a {
+			@mixin reset-link;
+		}
 	}
 
 	.entry__footer {
-		font-size: var(--font-size--small);
+		font-size: var(--font-size--extra-small);
+	}
+}
+
+.entry-project_category {
+	@mixin reset-link;
+	display: inline-block;
+	margin-right: 1em;
+
+	&:before {
+		content: '#';
 	}
 }

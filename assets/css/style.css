@@ -79,9 +79,9 @@
 		--rem-size: 112.5%; /* 18 */
 
 		--font-size--extra-small: 0.722223rem; /* 13 */
-		--font-size--small: 0.833334rem; /* 15 */
-		--font-size--large: 1.25rem;
-		--font-size--extra-large: 1.5rem
+		--font-size--small: 0.833334rem /* 15 */
+/* 		--font-size--large: 1.25rem;
+		--font-size--extra-large: 1.5rem; */
 }
 	}
 
@@ -2673,37 +2673,37 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	
 }
 
-.entry--post .entry__title {
+.entry--blog .entry__title {
 		font-size: var(--font-size--large);
 		margin-bottom: var(--space-4);
 		margin-top: 0;
 	}
 
-.entry--post p {
+.entry--blog p {
 		margin-bottom: var(--space-4);
 	}
 
-.entry--post img {
+.entry--blog img {
 		display: block;
 		width: 100%;
 		margin-bottom: var(--space-4);
 	}
 
-.entry--post .entry__footer {
+.entry--blog .entry__footer {
 		font-size: var(--font-size--small);
 	}
 
-.entry--post .entry__author .label, .entry--post .entry__categories .label, .entry--post .entry__date .label {
+.entry--blog .entry__author .label, .entry--blog .entry__categories .label, .entry--blog .entry__date .label {
 			display: none;
 		}
 
-.entry--post .entry__date {
+.entry--blog .entry__date {
 		font-weight: bold;
 	}
 
 @media (min-width: 1400px) {
 
-.entry--post {
+.entry--blog {
 		display: grid;
 		grid-column-gap: var(--gutter);
 		column-gap: var(--gutter);
@@ -2714,40 +2714,40 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			"footer main   main   image"
 }
 
-		.entry--post .entry__title {
+		.entry--blog .entry__title {
 			font-size: var(--font-size--extra-large);
 		}
 
-    	.entry--post img {
+    	.entry--blog img {
     		margin-bottom: 0;
     	}
 
-        .entry--post .entry__categories {
+        .entry--blog .entry__categories {
 			margin-top: var(--space-2);
 			word-wrap: break-word;
 		}
 
-  		.entry--post .entry__footer {
+  		.entry--blog .entry__footer {
 			margin-top: 0.25em;
         	grid-area: footer;
         }
 
-        .entry--post .entry__header {
+        .entry--blog .entry__header {
         	grid-area: header;
         }
 
-  		.entry--post .entry__main {
+  		.entry--blog .entry__main {
         	grid-area: main;
 		}
 
-        .entry--post .entry__image {
+        .entry--blog .entry__image {
         	grid-area: image;
         }
 	}
 
 @media (min-width: 1400px) {
 
-.entry--post {
+.entry--blog {
 		--copywriting-max-width: 24rem;
 
 		grid-template-areas:
@@ -2758,19 +2758,36 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 }
 	}
 
-.entry--wbl_project .entry__image img {
+.entry--grid .entry__image img {
 		display: block;
 		width: 100%;
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--space-3);
 	}
 
-.entry--wbl_project .entry__title {
-		font-size: var(--font-size--large);
+.entry--grid .entry__title {
+		/* font-size: var(--font-size--large); */
 		margin-top: 0;
+		margin-bottom: 0;
 	}
 
-.entry--wbl_project .entry__footer {
-		font-size: var(--font-size--small);
+.entry--grid .entry__title a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+.entry--grid .entry__footer {
+		font-size: var(--font-size--extra-small);
+	}
+
+.entry-project_category {
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.entry-project_category:before {
+		content: '#';
 	}
 
 .entry-author a {
@@ -2930,6 +2947,11 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	display: flex;
 	align-items: center;
 }
+
+.page-image img {
+		display: block;
+		width: 100%;
+	}
 
 .page-title {}
 

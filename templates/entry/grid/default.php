@@ -4,7 +4,7 @@ namespace WBL\Theme;
 
 ?>
 
-<article class="entry grid__item <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
+<article class="entry entry--grid <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 
 	<header class="entry__header">
 		<h3 class="entry__title">

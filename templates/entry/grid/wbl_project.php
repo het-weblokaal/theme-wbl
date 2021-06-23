@@ -4,10 +4,10 @@ namespace WBL\Theme;
 
 ?>
 
-<article class="entry entry--<?= get_post_type() ?>">
+<article class="entry entry--grid entry--<?= get_post_type() ?>">
 
 	<div class="entry__image">
-		<?= the_post_thumbnail( 'thumbnail') ?>
+		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'thumbnail') ?></a>
 	</div>
 
 	<header class="entry__header">			
@@ -20,7 +20,7 @@ namespace WBL\Theme;
 
 		<div class="entry__categories">
 
-			<?php echo render_entry_terms( [ 'taxonomy' => 'project_category' ] ); ?>
+			<?php echo render_entry_terms( [ 'taxonomy' => 'project_category', 'link' => false, 'sep' => '' ] ); ?>
 
 		</div>
 

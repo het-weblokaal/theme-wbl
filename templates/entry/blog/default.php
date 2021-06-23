@@ -4,7 +4,7 @@ namespace WBL\Theme;
 
 ?>
 
-<article class="entry layout-blog__item <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
+<article class="entry entry--blog entry--<?= get_post_type() ?> <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
 		<header class="entry__header">			
