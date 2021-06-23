@@ -1278,12 +1278,16 @@ body {
 		max-width: none;
 		margin-top: var(--space-8);
 		margin-bottom: var(--space-8);
-		/* @media (--grid-columns-6) {
-		margin-left: 0;
-		margin-right: 0;
+	}
+
+@media (min-width: 840px) {
+
+.page-content .archive-description {
+		/* margin-left: 0;
+		margin-right: 0; */
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
-	} */
+	}
 	}
 
 .page-footer {
@@ -1346,15 +1350,19 @@ body {
 		max-width: none;
 		margin-top: var(--space-8);
 		margin-bottom: var(--space-8);
-		/* @media (--grid-columns-6) {
-		margin-left: 0;
-		margin-right: 0;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-	} */
 
 		margin-top: var(--space-20);
 		margin-bottom: var(--space-20);
+	}
+
+@media (min-width: 840px) {
+
+.page-footer .entry-navigation {
+		/* margin-left: 0;
+		margin-right: 0; */
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12);
+	}
 	}
 
 /*--------------------------------------------------------------
@@ -2665,9 +2673,105 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	
 }
 
-.entry--blog {
-	
+.entry--post .entry__title {
+		font-size: var(--font-size--large);
+		margin-bottom: var(--space-4);
+		margin-top: 0;
+	}
+
+.entry--post p {
+		margin-bottom: var(--space-4);
+	}
+
+.entry--post img {
+		display: block;
+		width: 100%;
+		margin-bottom: var(--space-4);
+	}
+
+.entry--post .entry__footer {
+		font-size: var(--font-size--small);
+	}
+
+.entry--post .entry__author .label, .entry--post .entry__categories .label, .entry--post .entry__date .label {
+			display: none;
+		}
+
+.entry--post .entry__date {
+		font-weight: bold;
+	}
+
+@media (min-width: 1400px) {
+
+.entry--post {
+		display: grid;
+		grid-column-gap: var(--gutter);
+		column-gap: var(--gutter);
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-areas:
+			"footer header header image"
+			"footer main   main   image"
 }
+
+		.entry--post .entry__title {
+			font-size: var(--font-size--extra-large);
+		}
+
+    	.entry--post img {
+    		margin-bottom: 0;
+    	}
+
+        .entry--post .entry__categories {
+			margin-top: var(--space-2);
+			word-wrap: break-word;
+		}
+
+  		.entry--post .entry__footer {
+			margin-top: 0.25em;
+        	grid-area: footer;
+        }
+
+        .entry--post .entry__header {
+        	grid-area: header;
+        }
+
+  		.entry--post .entry__main {
+        	grid-area: main;
+		}
+
+        .entry--post .entry__image {
+        	grid-area: image;
+        }
+	}
+
+@media (min-width: 1400px) {
+
+.entry--post {
+		--copywriting-max-width: 24rem;
+
+		grid-template-areas:
+			"footer header header image"
+			"footer main   main   image";
+
+		grid-template-columns: 1fr 1fr 1fr 1fr
+}
+	}
+
+.entry--wbl_project .entry__image img {
+		display: block;
+		width: 100%;
+		margin-bottom: var(--space-4);
+	}
+
+.entry--wbl_project .entry__title {
+		font-size: var(--font-size--large);
+		margin-top: 0;
+	}
+
+.entry--wbl_project .entry__footer {
+		font-size: var(--font-size--small);
+	}
 
 .entry-author a {
 	color: inherit;
@@ -2751,188 +2855,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	}
 }
  */
-
-.loop--blog {
-	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
-	/* @media (--grid-columns-6) {
-		margin-left: 0;
-		margin-right: 0;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-	} */
-	margin-bottom: var(--space-12);
-	margin-top: var(--space-12);
-
-	display: grid;
-	grid-column-gap: var(--gutter);
-	column-gap: var(--gutter);
-	grid-row-gap: var(--space-12);
-	row-gap: var(--space-12);
-	grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-
-.loop--blog {
-		grid-template-columns: 1fr 1fr
-}
-	}
-
-@media (min-width: 1080px) {
-
-.loop--blog {
-		grid-template-columns: 1fr 1fr 1fr
-}
-	}
-
-@media (min-width: 1400px) {
-
-.loop--blog {
-		grid-template-columns: 1fr
-}
-	}
-
-.loop--blog .entry__title {
-		font-size: var(--font-size--large);
-		margin-bottom: var(--space-4);
-		margin-top: 0;
-	}
-
-.loop--blog .entry p {
-		margin-bottom: var(--space-4);
-	}
-
-.loop--blog .entry img {
-		display: block;
-		width: 100%;
-		margin-bottom: var(--space-4);
-	}
-
-.loop--blog .entry__footer {
-		font-size: var(--font-size--small);
-	}
-
-.loop--blog .entry__author .label, .loop--blog .entry__categories .label, .loop--blog .entry__date .label {
-			display: none;
-		}
-
-.loop--blog .entry__date {
-		font-weight: bold;
-	}
-
-@media (min-width: 1400px) {
-
-.loop--blog .entry {
-		display: grid;
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		grid-template-rows: auto 1fr;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-areas:
-			"footer header header image"
-			"footer main   main   image"
-}
-
-		.loop--blog .entry__title {
-			font-size: var(--font-size--extra-large);
-		}
-
-    	.loop--blog .entry img {
-    		margin-bottom: 0;
-    	}
-
-        .loop--blog .entry__categories {
-			margin-top: var(--space-2);
-			word-wrap: break-word;
-		}
-
-  		.loop--blog .entry__footer {
-			margin-top: 0.25em;
-        	grid-area: footer;
-        }
-
-        .loop--blog .entry__header {
-        	grid-area: header;
-        }
-
-  		.loop--blog .entry__main {
-        	grid-area: main;
-		}
-
-        .loop--blog .entry__image {
-        	grid-area: image;
-        }
-	}
-
-@media (min-width: 1400px) {
-
-.loop--blog .entry {
-		--copywriting-max-width: 24rem;
-
-		grid-template-areas:
-			"footer header header image"
-			"footer main   main   image";
-
-		grid-template-columns: 1fr 1fr 1fr 1fr
-}
-	}
-
-.loop--wbl-projects {
-	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
-	/* @media (--grid-columns-6) {
-		margin-left: 0;
-		margin-right: 0;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-	} */
-	margin-bottom: var(--space-12);
-	margin-top: var(--space-12);
-
-	display: grid;
-	grid-column-gap: var(--gutter);
-	column-gap: var(--gutter);
-	grid-row-gap: var(--space-12);
-	row-gap: var(--space-12);
-	grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-
-.loop--wbl-projects {
-		grid-template-columns: 1fr 1fr
-}
-	}
-
-@media (min-width: 1080px) {
-
-.loop--wbl-projects {
-		grid-template-columns: 1fr 1fr 1fr
-}
-	}
-
-.loop--wbl-projects .entry__title {
-		font-size: var(--font-size--large);
-		margin-bottom: var(--space-4);
-		margin-top: 0;
-	}
-
-.loop--wbl-projects .entry p {
-		margin-bottom: var(--space-4);
-	}
-
-.loop--wbl-projects .entry img {
-		display: block;
-		width: 100%;
-		margin-bottom: var(--space-4);
-	}
-
-.loop--wbl-projects .entry__footer {
-		font-size: var(--font-size--small);
-	}
 
 .pagination {
 	margin-bottom: var(--space-8);
@@ -3498,13 +3420,29 @@ svg.site-logo__symbol path {
 ---------------------------------------------------- */
 
 .grid {
+    max-width: none;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
     display: grid;
     grid-column-gap: var(--gutter);
     column-gap: var(--gutter);
-    grid-row-gap: var(--space-8);
-    row-gap: var(--space-8);
+    grid-row-gap: var(--space-12);
+    row-gap: var(--space-12);
     grid-template-columns: 1fr;
 }
+
+@media (min-width: 840px) {
+
+.grid {
+		/* margin-left: 0;
+		margin-right: 0; */
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12)
+}
+	}
 
 @media (min-width: 600px) {
 
@@ -3513,9 +3451,65 @@ svg.site-logo__symbol path {
 }
     }
 
-.grid__item > *:first-child { margin-top: 0; }
+@media (min-width: 840px) {
 
-.grid__item > *:last-child { margin-bottom: 0; }
+.grid {
+        grid-template-columns: 1fr 1fr 1fr
+}
+    }
+
+.grid > .entry > *:first-child { margin-top: 0; }
+
+.grid > .entry > *:last-child { margin-bottom: 0; }
+
+/* Blog
+---------------------------------------------------- */
+
+.blog {
+    max-width: none;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    grid-column-gap: var(--gutter);
+    column-gap: var(--gutter);
+    grid-row-gap: var(--space-12);
+    row-gap: var(--space-12);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 840px) {
+
+.blog {
+		/* margin-left: 0;
+		margin-right: 0; */
+		margin-top: var(--space-12);
+		margin-bottom: var(--space-12)
+}
+	}
+
+@media (min-width: 600px) {
+
+.blog {
+        grid-template-columns: 1fr 1fr
+}
+    }
+
+@media (min-width: 1080px) {
+
+.blog {
+        grid-template-columns: 1fr 1fr 1fr
+}
+    }
+
+@media (min-width: 1400px) {
+
+.blog {
+        grid-template-columns: 1fr
+}
+    }
 
 .alignleft,
 .alignright {
@@ -3594,13 +3588,17 @@ figure.alignleft {
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
-	/* @media (--grid-columns-6) {
-		margin-left: 0;
-		margin-right: 0;
+}
+
+@media (min-width: 840px) {
+
+.alignwide {
+		/* margin-left: 0;
+		margin-right: 0; */
 		margin-top: var(--space-12);
 		margin-bottom: var(--space-12);
-	} */
 }
+	}
 
 .alignfull {
 	margin-left: calc(50% - 50vw + var(--site--padding));

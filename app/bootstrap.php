@@ -49,5 +49,6 @@ array_map( function( $file ) {
 	'block-editor',
 	'call-to-action',
 	'footer',
+	'projects',
 ] );
 

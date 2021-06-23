@@ -30,7 +30,7 @@ final class Template {
 	/**
 	 * Render template file
 	 */
-	private static function render( $slug, $hierarchy = null, $args = [] ) {
+	public static function render( $slug, $hierarchy = null, $args = [] ) {
 
 		ob_start();
 

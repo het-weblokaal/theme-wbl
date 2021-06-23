@@ -9,11 +9,11 @@ $query = ( isset($args['query_args']) ) ? new \WP_Query( $args['query_args'] ) :
 
 <?php if ( $query->have_posts() ) : ?>
 
-	<div class="loop grid <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
+	<div class="loop loop--<?= get_post_type() ?> grid <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php Template::display( 'entry/grid', Template::entry_hierarchy() ); ?>
+			<?php Template::display( 'entry/grid' ); ?>
 
 		<?php endwhile; ?>
 
