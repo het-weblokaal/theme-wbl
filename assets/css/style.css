@@ -3642,6 +3642,12 @@ figure.alignleft {
 	}
 	}
 
+ul.is-style-no-bullets,
+ol.is-style-no-bullets {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 #wpadminbar {
 
 }

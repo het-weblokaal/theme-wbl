@@ -1093,6 +1093,12 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 # Utilities - Helpers and overrides.
 --------------------------------------------------------------*/
 
+ul.is-style-no-bullets,
+ol.is-style-no-bullets {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 /**
  * Body will be transformed to .editor-styles-wrapper because we add
  * theme support for editor-styles in this theme
