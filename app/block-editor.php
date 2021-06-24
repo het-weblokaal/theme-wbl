@@ -19,10 +19,14 @@ add_action( 'after_setup_theme', function() {
 	 */
 
 	// Setup custom category for block patterns
-	// register_block_pattern_category( App::get_id(), [ 'label' => App::get_name() ], 'Theme category' );
+	register_block_pattern_category( App::get_id(), [ 'label' => App::get_name() . ' blocks' ] );
 
 	// Setup block patterns
-	// register_block_pattern( App::get_id() . "/hero", require App::template_path( 'block-patterns/hero.php' ) );
+	register_block_pattern( App::get_id() . "/test", [ 
+		'title'      => esc_html__( 'Test', 'wbl-theme' ),
+		'categories' => [ App::get_id() ],
+		'content'    => Template::render( 'block-patterns/test', null )
+	] );
 
 	/**
 	 * Restrict the allowed blocks (opinionated)
