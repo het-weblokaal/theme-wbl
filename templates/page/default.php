@@ -2,9 +2,6 @@
 
 namespace WBL\Theme;
 
-// Setup postdata (only on singular templates)
-the_post(); 
-
 ?>
 <article class="page entry entry--<?= get_post_type()?> <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
