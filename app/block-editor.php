@@ -18,6 +18,7 @@ add_action( 'after_setup_theme', function() {
 
 		// Add blocks specifically for this theme
 		$allowed_block_types[] = 'wbl-projects/projects';
+		$allowed_block_types[] = 'wbl-theme/archive-loop';
 
 		return $allowed_block_types;
 		
