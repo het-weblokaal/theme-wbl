@@ -2,26 +2,17 @@
 
 namespace WBL\Theme;
 
+// Setup postdata (only on singular templates)
+if ( is_singular() ) {
+	the_post(); 
+}
 ?>
-<article class="page entry entry--<?= get_post_type()?> <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
+<div class="page <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
-	<?php
+	<?php Template::display( 'page/entry' ) ?>
 
-	// Get featured image
-	$page_image = render_featured_image([ 'size' => 'max' ]);
+	<?php Template::display( 'page/sidebar' ) ?>
 
-	?>
+	<?php Template::display( 'page/call-to-action', null ); ?>
 
-	<?php if ($page_image) : ?>
-		<div class="page-image">
-			<?= $page_image ?>
-		</div>
-	<?php endif; ?>
-
-	<?php Template::display( 'page/header' ); ?>
-
-	<?php Template::display( 'page/content' ); ?>
-
-	<?php Template::display( 'page/footer' ); ?>
-
-</article>
+</div>

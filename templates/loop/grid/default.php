@@ -13,7 +13,7 @@ $query = ( isset($args['query_args']) ) ? new \WP_Query( $args['query_args'] ) :
 
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php Template::display( 'entry/grid' ); ?>
+			<?php Template::display( 'loop/grid/entry' ); ?>
 
 		<?php endwhile; ?>
 

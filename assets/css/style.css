@@ -2933,7 +2933,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			font-weight: bold;
 		}
 
-.page-image {
+.page__image {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -2946,7 +2946,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	align-items: center;
 }
 
-.page-image img {
+.page__image img {
 		display: block;
 		width: 100%;
 	}
