@@ -286,6 +286,8 @@
 	--ui-border-width: 2px;
 	--ui-border-style: solid;
 
+	--page-image-height: 0;
+
 /* 	--copywriting-max-width: none;
 
 	@media ) {
@@ -1102,6 +1104,24 @@ ol.is-style-no-bullets {
 	list-style-type: none;
 	padding-left: 0;
 }
+
+body.has-page-image {
+	--page-image-height: 200px;
+}
+
+@media (min-width: 840px) {
+
+body.has-page-image {
+		--page-image-height: 400px
+}
+	}
+
+@media (min-width: 1400px) {
+
+body.has-page-image {
+		--page-image-height: 572px
+}
+	}
 
 /**
  * Body will be transformed to .editor-styles-wrapper because we add

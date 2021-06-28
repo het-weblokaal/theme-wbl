@@ -22,9 +22,7 @@
 }
 
 .has-page-image .site {
-
-	margin-top: 572px; /* !magicnumber */
-
+	margin-top: var(--page-image-height);
 }
 
 .is-debug-mode .site {

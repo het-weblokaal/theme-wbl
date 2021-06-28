@@ -14,7 +14,7 @@
 
     display: grid;
     column-gap: var(--gutter);
-    row-gap: var(--space-12);
+    row-gap: var(--space-8);
     grid-template-columns: 1fr;
 
     @media (--from-breakpoint-2) {

@@ -286,6 +286,8 @@
 	--ui-border-width: 2px;
 	--ui-border-style: solid;
 
+	--page-image-height: 0;
+
 /* 	--copywriting-max-width: none;
 
 	@media ) {
@@ -841,9 +843,7 @@ body {
 }
 
 .has-page-image .site {
-
-	margin-top: 572px; /* !magicnumber */
-
+	margin-top: var(--page-image-height);
 }
 
 .is-debug-mode .site {
@@ -1007,13 +1007,34 @@ body {
 }
 	}
 
+.has-expanded-site-nav .site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+/* right: var(--gutter); */
+
 .has-expanded-site-nav .site-header .site-branding {
-		z-index: -1;
+		--foreground-color: var(--wp--preset--color--primary-1);
+		color: var(--foreground-color);
+		z-index: 1;
 	}
+
+/* z-index: -1; */
+
+.has-expanded-site-nav .site-header .site-branding path {
+			stroke: currentColor;
+		}
 
 .has-expanded-site-nav .site-header .site-nav-toggle {
 		--foreground-color: var(--wp--preset--color--primary-1);
 		color: var(--foreground-color);
+
+		/* position: fixed;
+		top: var(--space-8);
+		right: var(--gutter); */
 	}
 
 .site-main {
@@ -2744,15 +2765,15 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	width: 100%;
 	z-index: -10;
 	
-	height: 572px; /* !magicnumber */
-
-	display: flex;
-	align-items: center;
+	height: var(--page-image-height);
 }
 
 .page__image img {
 		display: block;
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin-bottom: 0;
 	}
 
 /* @mixin remove-first-last-child-margin; */
@@ -3278,7 +3299,7 @@ svg.site-logo__symbol path {
 	}
 
 .site-nav-toggle[aria-expanded="true"] {
-
+		
 	}
 
 /*&:focus {
@@ -3437,8 +3458,8 @@ svg.site-logo__symbol path {
     display: grid;
     grid-column-gap: var(--gutter);
     column-gap: var(--gutter);
-    grid-row-gap: var(--space-12);
-    row-gap: var(--space-12);
+    grid-row-gap: var(--space-8);
+    row-gap: var(--space-8);
     grid-template-columns: 1fr;
 }
 
@@ -3641,6 +3662,24 @@ ol.is-style-no-bullets {
 	list-style-type: none;
 	padding-left: 0;
 }
+
+body.has-page-image {
+	--page-image-height: 200px;
+}
+
+@media (min-width: 840px) {
+
+body.has-page-image {
+		--page-image-height: 400px
+}
+	}
+
+@media (min-width: 1400px) {
+
+body.has-page-image {
+		--page-image-height: 572px
+}
+	}
 
 #wpadminbar {
 

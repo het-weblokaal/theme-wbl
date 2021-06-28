@@ -3,3 +3,15 @@ ol.is-style-no-bullets {
 	list-style-type: none;
 	padding-left: 0;
 }
+
+body.has-page-image {
+	--page-image-height: 200px;
+
+	@media (--from-breakpoint-3) {
+		--page-image-height: 400px;
+	}
+
+	@media (--from-breakpoint-5) {
+		--page-image-height: 572px;
+	}
+}

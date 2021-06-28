@@ -10,14 +10,14 @@
 	width: 100%;
 	z-index: -10;
 	
-	height: 572px; /* !magicnumber */
-
-	display: flex;
-	align-items: center;
+	height: var(--page-image-height);
 
 	img {
 		display: block;
 		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin-bottom: 0;
 	}
 }
 
