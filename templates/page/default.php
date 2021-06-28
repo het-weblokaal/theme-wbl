@@ -11,8 +11,6 @@ if ( is_singular() ) {
 
 	<?php Template::display( 'page/entry' ) ?>
 
-	<?php Template::display( 'page/sidebar' ) ?>
-
 	<?php Template::display( 'page/call-to-action', null ); ?>
 
 </div>

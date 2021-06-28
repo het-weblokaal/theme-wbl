@@ -43,10 +43,6 @@
 @import "structure/site-header.css";
 @import "structure/site-main.css";
 @import "structure/site-footer.css";
-@import "structure/page.css";
-@import "structure/page-header.css";
-@import "structure/page-content.css";
-@import "structure/page-footer.css";
 
 
 /*--------------------------------------------------------------
@@ -89,9 +85,9 @@
 @import "components/entry-navigation.css";
 @import "components/entry-image.css";
 @import "components/loop-pagination.css";
-@import "components/page-image.css";
-@import "components/page-title.css";
+@import "components/page.css";
 @import "components/password-protection-form.css";
+@import "components/project-specs.css";
 @import "components/search-form.css";
 @import "components/site-debug-info.css";
 @import "components/site-nav.css";
@@ -112,4 +108,4 @@
 @import "utilities/wordpress.css";
 @import "utilities/prefers-reduced-motion.css";
 @import "utilities/shame.css";
-@import "utilities/template-landing-page.css";
+@import "utilities/templates.css";

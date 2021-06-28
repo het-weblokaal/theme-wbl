@@ -3,7 +3,7 @@
 namespace WBL\Theme;
 
 ?>
-<footer class="page-footer entry__footer">
+<footer class="page__footer entry__footer">
 
 	<?php Template::display( 'components/entry-categories' ) ?>
 

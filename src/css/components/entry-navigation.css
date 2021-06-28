@@ -31,4 +31,10 @@
 
 		}
 	}
+
+	@media (--from-breakpoint-2) {
+		&__next {
+			text-align: right;
+		}
+	}
 }

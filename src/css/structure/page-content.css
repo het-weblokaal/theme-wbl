@@ -1,7 +1,0 @@
-.page-content {
-	@mixin has-page-content;
-
-	.archive-description {
-		@mixin is-page-content--full-page;
-	}
-}

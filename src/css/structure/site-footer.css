@@ -7,21 +7,22 @@
  * &__content
  */
 .site-footer {
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--space-20);
+	margin-bottom: var(--space-20);
 
 	&__inner {
 		@mixin is-page-segment;
 	}
 
 	&__title {
-		@mixin segment-title;
+		font-size: var(--font-size--large);
+		margin-bottom: var(--space-12);
 	}
 
 	&__content {
 		display: grid;
 		column-gap: var(--gutter);
-		row-gap: var(--space-3);
+		row-gap: var(--space-8);
 		grid-template-columns: 1fr;
 
 		> * {
@@ -33,9 +34,9 @@
 	.contact-info {
 		display: grid;
 		column-gap: var(--gutter);
-		row-gap: var(--space-3);
+		row-gap: var(--space-8);
 		grid-template-columns: 1fr;
-		margin-bottom: var(--space-3);
+		margin-bottom: var(--space-8);
 
 		> * {
 			margin-bottom: 0;
@@ -64,15 +65,16 @@
 	}
 
 	.documents {
-		margin-bottom: var(--space-3);
-		p:last-child {
+		margin-bottom: var(--space-2);
+		> *:last-child {
 			margin-bottom: 0;
 		}
 	}
 
 	.colophon {
 		font-size: var(--font-size--small);
-		p:last-child {
+
+		> *:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -80,12 +82,14 @@
 	@media (--grid-columns-2) {
 		&__content {
 			grid-template-columns: 1fr 1fr;
+			row-gap: var(--space-16);
 			@mixin ie11-grid-fallback 2;
 		}
 
 		.contact-info {
 			grid-column: span 2;
 			grid-template-columns: 1fr 1fr;
+			row-gap: var(--space-10);
 		}
 
 		.colophon {
@@ -93,7 +97,7 @@
 		}
 	}
 
-	@media (--grid-columns-6) {
+	@media (--from-breakpoint-4) {
 		&__content {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			@mixin ie11-grid-fallback 4;
@@ -102,10 +106,6 @@
 		.contact-info {
 			grid-column: span 4;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-		.colophon {
-			grid-column: span 2;
 		}
 	}
 }

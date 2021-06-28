@@ -5,15 +5,14 @@
 	--foreground-color: var(--wp--preset--color--primary-1);
 	background-color: var(--background-color);
 	color: var(--foreground-color);
-	margin-top: var(--space-12);
-	margin-bottom: var(--space-12);
-
+	margin-top: var(--space-20);
+	margin-bottom: var(--space-20);
 
 	&__inner {
 		@mixin is-page-segment;
 		@mixin has-page-content;
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20);
 		text-align: center;
 
 		> * {

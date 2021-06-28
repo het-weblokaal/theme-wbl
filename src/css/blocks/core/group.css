@@ -3,8 +3,13 @@
 
 	position: relative;
 	background-color: var(--background-color);
-	display: flex;
-	justify-content: center;
+
+	/**
+	 * By preference: no flex on group block
+	 * because this creates difficulties with overlapping margins 
+	 */
+	/* display: flex;
+	justify-content: center; */
 
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
@@ -18,7 +23,6 @@
 		color: var(--foreground-color);
 		width: 100%;
 
-		@mixin remove-first-last-child-margin;
 		@mixin is-page-segment;
 	}
 }
@@ -28,6 +32,8 @@
 
 	> .wp-block-group__inner-container {
 		margin: var(--gutter);
+		width: auto;
+		max-width: none;
 	}
 }
 

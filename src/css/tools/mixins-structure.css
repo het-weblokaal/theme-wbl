@@ -49,24 +49,12 @@
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
-
-	@media (--grid-columns-6) {
-		/* margin-left: 0;
-		margin-right: 0; */
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-	}
 }
 
 @define-mixin is-page-content--full-site {
 	max-width: none;
 	margin-top: var(--space-8);
 	margin-bottom: var(--space-8);
-
-	@media (--grid-columns-6) {
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
-	}
 
 	@mixin is-page-content--full-screen;
 }
@@ -83,11 +71,24 @@
 	}
 }
 
-@define-mixin is-page-content--full-screen {
+@define-mixin is-page-content--full-screen-with-padding {
 	margin-left: calc(50% - 50vw + var(--site--padding));
 	margin-right: calc(50% - 50vw + var(--site--padding));
 	max-width: none;
 	width: auto;
+
+	margin-top: var(--space-16);
+	margin-bottom: var(--space-16);
+}
+
+@define-mixin is-page-content--full-screen {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: none;
+	width: auto;
+	
+	margin-top: var(--space-16);
+	margin-bottom: var(--space-16);
 }
 
 @define-mixin is-page-content--right {
@@ -126,7 +127,7 @@
 }
 
 @define-mixin has-page-content {
-	@mixin clearfix;
+	/* @mixin clearfix; */
 	/* @mixin remove-first-last-child-margin; */
 
 	> * {

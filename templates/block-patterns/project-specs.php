@@ -1,8 +1,8 @@
 <?php
 namespace WBL\Theme;
 ?>
-<!-- wp:group {"align":"wide"} -->
-<div class="wp-block-group alignwide"><div class="wp-block-group__inner-container"><!-- wp:columns {"className":"is-style-columns-4"} -->
+<!-- wp:group {"align":"full", "className":"project-specs"} -->
+<div class="wp-block-group project-specs alignfull"><div class="wp-block-group__inner-container"><!-- wp:columns {"className":"is-style-columns-4"} -->
 <div class="wp-block-columns is-style-columns-4"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":3} -->
 <h3>Opdrachtgever</h3>
