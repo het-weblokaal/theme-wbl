@@ -19,6 +19,7 @@ add_action( 'after_setup_theme', function() {
 		// Add blocks specifically for this theme
 		$allowed_block_types[] = 'wbl-projects/projects';
 		$allowed_block_types[] = 'wbl-theme/archive-loop';
+		$allowed_block_types[] = 'core/gallery';
 
 		return $allowed_block_types;
 		
@@ -61,6 +62,15 @@ add_action( 'after_setup_theme', function() {
 			array(
 				'name'  => 'no-bullets',
 				'label' => esc_html__( 'Een lijst zonder punten', 'wbl-theme' ),
+			)
+		);
+
+		// Gallery: inline image
+		register_block_style(
+			'core/gallery',
+			array(
+				'name'  => 'inline-images',
+				'label' => esc_html__( 'Galerij met inline afbeeldingen', 'wbl-theme' ),
 			)
 		);
 	} );

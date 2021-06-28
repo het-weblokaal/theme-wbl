@@ -81,6 +81,27 @@
 	}
 }
 
+.wp-block-gallery.is-style-inline-images {
+	/* [class*="columns-"] */
+
+	.blocks-gallery-grid {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		column-gap: var(--space-10);
+		row-gap: var(--space-6);
+	}
+	
+	.blocks-gallery-item {
+		flex: 0 1 auto;
+		width: auto;
+		/* margin: var(--space-4); */
+	}
+
+	img {
+	}
+}
+
 .blocks-gallery-grid {
 	@mixin reset-list;
 

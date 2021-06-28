@@ -60,7 +60,7 @@ figure.alignleft {
 }
 
 .alignfull {
-	@mixin is-page-content--full-screen;
+	@mixin is-page-content--full-page;
 
 	@media (--grid-columns-6) {
 		margin-top: var(--space-12);
