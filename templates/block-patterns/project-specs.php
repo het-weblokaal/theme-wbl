@@ -8,9 +8,9 @@ namespace WBL\Theme;
 <h3>Opdrachtgever</h3>
 <!-- /wp:heading -->
 
-<!-- wp:image {"id":10,"width":150,"height":100,"sizeSlug":"thumbnail","linkDestination":"none"} -->
-<figure class="wp-block-image size-thumbnail is-resized"><img src="http://hetweblokaal.test/wp-content/uploads/2021/04/P1190337-300x200.jpg" alt="P1190337" class="wp-image-10" width="150" height="100"/></figure>
-<!-- /wp:image --></div>
+<!-- wp:image {sizeSlug":"thumbnail"} -->
+<figure class="wp-block-image size-thumbnail"><img src="<?= App::asset('img/placeholder.png') ?>" alt=""/></figure>
+<!-- /wp:image -->
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -19,7 +19,7 @@ namespace WBL\Theme;
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="http://natuurlijkeveehouderij.nl/" data-type="URL" data-id="natuurlijkeveehouderij.nl/">natuurlijkeveehouderij.nl</a></p>
+<p><a href="http://domeinnaam.nl/" data-type="URL" data-id="domeinnaam.nl/">domeinnaam.nl</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

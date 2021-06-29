@@ -99,6 +99,13 @@ add_action( 'after_setup_theme', function() {
 		'content'    => Template::render( 'block-patterns/project-specs', null )
 	] );
 
+	// Setup About Us in 4 Columns
+	register_block_pattern( App::get_id() . "/about-us-in-four-columns", [ 
+		'title'      => esc_html__( 'Over Ons, in 4 kolommen', 'wbl-theme' ),
+		'categories' => [ App::get_id() ],
+		'content'    => Template::render( 'block-patterns/about-us-in-four-columns', null )
+	] );
+
 }, 5 );
 
 /**

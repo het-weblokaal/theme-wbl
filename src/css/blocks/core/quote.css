@@ -17,6 +17,8 @@
 	}
 
 	cite {
+		display: block;
+		margin-top: calc( var(--space-1) * -1 );
 		font-size: var(--font-size--small);
 		font-style: normal;
 		font-weight: regular;

@@ -82,20 +82,18 @@
 }
 
 .wp-block-gallery.is-style-inline-images {
-	/* [class*="columns-"] */
 
 	.blocks-gallery-grid {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		column-gap: var(--space-10);
+		column-gap: var(--gutter);
 		row-gap: var(--space-6);
 	}
 	
 	.blocks-gallery-item {
 		flex: 0 1 auto;
 		width: auto;
-		/* margin: var(--space-4); */
 	}
 
 	img {
@@ -108,7 +106,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	column-gap: calc(var(--gutter) * 1);
-	row-gap: var(--space-3);
+	row-gap: var(--space-10);
 
 	
 }

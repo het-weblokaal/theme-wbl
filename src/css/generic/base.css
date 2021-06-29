@@ -210,7 +210,7 @@ figure > * {
 }
 
 figcaption {
-    margin-top: var(--space-4);
+    margin-top: var(--space-3);
     font-size: var(--font-size--extra-small);
     line-height: var(--line-height--extra-small);
 }

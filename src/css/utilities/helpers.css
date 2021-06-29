@@ -14,4 +14,8 @@ body.has-page-image {
 	@media (--from-breakpoint-5) {
 		--page-image-height: 572px;
 	}
+
+	&.has-expanded-site-nav {
+		--page-image-height: 0px;
+	}
 }
