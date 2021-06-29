@@ -85,11 +85,11 @@ add_action( 'after_setup_theme', function() {
 	// Setup custom category for block patterns
 	register_block_pattern_category( App::get_id(), [ 'label' => App::get_name() . ' blocks' ] );
 
-	// Setup Project Specs block pattern
-	register_block_pattern( App::get_id() . "/project-specs", [ 
-		'title'      => esc_html__( 'Project Specs', 'wbl-theme' ),
+	// Setup Two column section
+	register_block_pattern( App::get_id() . "/two-column-section", [ 
+		'title'      => esc_html__( 'Sectie met twee kolommen', 'wbl-theme' ),
 		'categories' => [ App::get_id() ],
-		'content'    => Template::render( 'block-patterns/project-specs', null )
+		'content'    => Template::render( 'block-patterns/two-column-section', null )
 	] );
 
 	// Setup About Us in 4 Columns
@@ -97,6 +97,13 @@ add_action( 'after_setup_theme', function() {
 		'title'      => esc_html__( 'Over Ons, in 4 kolommen', 'wbl-theme' ),
 		'categories' => [ App::get_id() ],
 		'content'    => Template::render( 'block-patterns/about-us-in-four-columns', null )
+	] );
+
+	// Setup Project Specs block pattern
+	register_block_pattern( App::get_id() . "/project-specs", [ 
+		'title'      => esc_html__( 'Project Specs', 'wbl-theme' ),
+		'categories' => [ App::get_id() ],
+		'content'    => Template::render( 'block-patterns/project-specs', null )
 	] );
 
 }, 5 );
