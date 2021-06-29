@@ -12,7 +12,7 @@ namespace WBL\Theme;
 add_action( 'after_setup_theme', function() {
 
 	// Inform WordPress of custom language directory
-	load_theme_textdomain( 'theme-wbl', App::get_file_path( App::get_lang_dir() ) );
+	load_theme_textdomain( 'theme-wbl', App::path( App::get_lang_dir() ) );
 
 	// Colors
 	add_theme_support( 'editor-color-palette', [

@@ -9,12 +9,14 @@ namespace WBL\Theme;
 if ( wp_get_environment_type() == 'local' ) {
 	require_once( get_template_directory() . '/../wbl-theme-foundation/app/bootstrap.php' );
 
-	App::customize([
+	App::boot([
 		'foundation_dir' => '../wbl-theme-foundation'
 	]);
 }
 else {
 	require_once( get_template_directory() . '/vendor/het-weblokaal/wbl-theme-foundation/app/bootstrap.php' );
+
+	App::boot();
 }
 
 
@@ -25,15 +27,15 @@ else {
 /**
  * Composer Dependancies
  */
-if ( file_exists( App::get_vendor_path( 'autoload.php' ) ) ) {
-	require_once( App::get_vendor_path( 'autoload.php' ) );
+if ( file_exists( App::vendor_path( 'autoload.php' ) ) ) {
+	require_once( App::vendor_path( 'autoload.php' ) );
 }
 
 /**
  * Load webfont loader
  */
-if ( file_exists( App::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) ) ) {
-	require_once( App::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) );
+if ( file_exists( App::vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) ) ) {
+	require_once( App::vendor_path( 'wptt/webfont-loader/wptt-webfont-loader.php' ) );
 }
 
 
@@ -42,7 +44,7 @@ if ( file_exists( App::get_vendor_path( 'wptt/webfont-loader/wptt-webfont-loader
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
-	require_once( App::get_app_path( "{$file}.php" ) );
+	require_once( App::app_path( "{$file}.php" ) );
 }, [
 	'general',
 	'assets',

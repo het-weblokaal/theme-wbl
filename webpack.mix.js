@@ -26,7 +26,6 @@ const processMedia = ! process.env.nomedia;
  */
 const devPath  = 'src';
 const pubPath  = 'assets';
-const blockPath  = 'app/blocks';
 
 /**
  * Sets the path to the generated assets. By default, this is the `/dist` folder
@@ -93,8 +92,3 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
 mix.postCss( `${devPath}/css/style.css`,             'css' )
    .postCss( `${devPath}/css/editor-style.css`,      'css' );
 
-/**
- * Gutenberg blocks
- */
-mix.react(   `${blockPath}/blocks.js`,         'js'  )
-   .postCss( `${blockPath}/blocks.editor.css`, 'css' );
