@@ -1,0 +1,27 @@
+{
+	"name": "theme-wbl",
+	"version": "1.0.0",
+	"description": "...",
+	"author": "Erik Joling",
+	"license": "GPL-2.0+",
+	"homepage": "https://www.hetweblokaal.nl/",
+	"main": "resources/js/app.js",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/erikjoling/theme-wbl.git"
+	},
+	"bugs": {
+		"url": "https://github.com/erikjoling/theme-wbl/issues"
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.2",
+		"laravel-mix": "^5.0.5",
+		"vue-template-compiler": "^2.6.14"
+	},
+	"dependencies": {}
+}

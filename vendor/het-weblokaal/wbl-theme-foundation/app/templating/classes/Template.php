@@ -51,16 +51,24 @@ final class Template {
 
 		// Opinionated hierarchy (override by `false` or array)
 		if ( is_null($hierarchy) ) {
-
-			if ( substr( $slug, 0, 10 ) === "components" || substr( $slug, 0, 4 ) === "loop" ) {
-				$hierarchy = null;
-			}
-			elseif ( substr( $slug, 0, 5 ) === "entry" ) {
-				$hierarchy = static::entry_hierarchy();
-			}
-			else {
+			
+			// The index, site and page have page_hierarchy
+			if ( substr( $slug, 0, 5 ) === "index" || substr( $slug, 0, 4 ) === "site" || substr( $slug, 0, 4 ) === "page" ) {
 				$hierarchy = static::page_hierarchy();
 			}
+
+			// Loops have page hierarchy, loop entries have entry_hierarchy
+			if ( substr( $slug, 0, 4 ) === "loop" ) {
+
+				if (strpos( $slug, "entry" ) !== false ) {
+					$hierarchy = static::entry_hierarchy();
+				}
+				else {
+					$hierarchy = static::page_hierarchy();
+				}
+			}
+
+			// The rest doesn't need template hierarchy. I.e. loops and components are unique templates
 		}
 
 		// Default args
@@ -205,34 +213,34 @@ final class Template {
 			if (is_search()) {
 				$template_types[] = 'archive--search';
 			}
-
-			// Post type archives
-			elseif (\is_home() || \is_post_type_archive()) {
-				$template_types[] = 'archive--' . get_post_type_on_archive();
-			}
-
-			// Taxonomies
-			elseif (\is_category() || \is_tag() || \is_tax()) {
-
-				if (\is_category()) {
-					$template_types[] = 'archive--category';
-				}
-				elseif (\is_tag()) {
-					$template_types[] = 'archive--tag';
-				}
-				elseif (\is_tax()) {
-					$template_types[] = 'archive--' . get_query_var( 'taxonomy' );
-				}
-
-				$template_types[] = 'archive--tax';
-			}
-
-			// Author and dates
+			// Author
 			elseif (\is_author()) {
 				$template_types[] = 'archive--author';
 			}
+			// Date
 			elseif (\is_date()) {
 				$template_types[] = 'archive--date';
+			}
+			// All other archives
+			else {
+				
+				// Taxonomies
+				if (\is_category() || \is_tag() || \is_tax()) {
+
+					if (\is_category()) {
+						$template_types[] = 'archive--category';
+					}
+					elseif (\is_tag()) {
+						$template_types[] = 'archive--tag';
+					}
+					elseif (\is_tax()) {
+						$template_types[] = 'archive--' . get_query_var( 'taxonomy' );
+					}
+
+					$template_types[] = 'archive--tax';
+				}
+
+				$template_types[] = 'archive--' . get_post_type_on_archive();	
 			}
 
 			// Default archive

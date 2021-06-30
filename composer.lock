@@ -4,26 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "517ac0b890b9317a88cb1deca706f7d8",
+    "content-hash": "5e543b0656c39abf3310d476198ef7bb",
     "packages": [
         {
             "name": "het-weblokaal/wbl-theme-foundation",
-            "version": "dev-main",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/het-weblokaal/wbl-theme-foundation.git",
-                "reference": "69e2b5311c3c0ca694bb0bac34f04859324a8128"
+                "reference": "25aecd66563e0cd1f5a8babef332b98dca7923b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/69e2b5311c3c0ca694bb0bac34f04859324a8128",
-                "reference": "69e2b5311c3c0ca694bb0bac34f04859324a8128",
+                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/25aecd66563e0cd1f5a8babef332b98dca7923b6",
+                "reference": "25aecd66563e0cd1f5a8babef332b98dca7923b6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": [],
@@ -52,7 +51,7 @@
                 "issues": "https://github.com/het-weblokaal/wbl-theme-foundation/issues",
                 "source": "https://github.com/het-weblokaal/wbl-theme-foundation"
             },
-            "time": "2021-06-15T09:51:23+00:00"
+            "time": "2021-06-30T08:58:12+00:00"
         },
         {
             "name": "tgmpa/tgm-plugin-activation",

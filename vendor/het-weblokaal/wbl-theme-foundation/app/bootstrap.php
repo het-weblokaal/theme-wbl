@@ -52,4 +52,3 @@ array_map( function( $file ) {
 	'functions/page',
 	'functions/site',
 ] );
-
