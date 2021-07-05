@@ -41,22 +41,6 @@
 	}
 }
 
-.site-grid {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--site--width);
-	opacity: 0.025;
-
-	--foreground-color: #000;
-
-	@mixin dev--background-grid;
-}
-
 /* Show debug-info in development mode */
 .is-debug-mode .site-debug-info {
 	display: block;

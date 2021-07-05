@@ -12,7 +12,8 @@
 	&.alignfull {
 		max-width: none;
 		figcaption {
-			@mixin is-page-content;
+			@mixin is-page-segment;
+			@mixin is-page-content--normal;
 		}
 		img {
 			width: 100%;

@@ -856,7 +856,7 @@ body {
 		margin-right: auto;
 		width: var(--site--width);
 		opacity: 0.1;
-		z-index: 99;
+		z-index: 98;
 
 		--foreground-color: red;
 
@@ -1537,9 +1537,10 @@ h1 {
 	}
 
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
-			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
+			max-width: var(--site--width);
+			width: 100%;
 		}
 
 @media (min-width: 840px) {
@@ -3076,71 +3077,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 .site-debug-info__media-queries:after { content: 'bp 7: 1920px (max)';
 		} }
-
-.site-grid {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: var(--site--width);
-	opacity: 0.025;
-
-	--foreground-color: #000;
-
-	background: linear-gradient(90deg,
-		var(--foreground-color) var(--column-span-1),
-		transparent var(--column-span-1),
-		transparent var(--column-gutter-1),
-		var(--foreground-color) var(--column-gutter-1),
-		var(--foreground-color) var(--column-span-2),
-		transparent var(--column-span-2),
-		transparent var(--column-gutter-2),
-		var(--foreground-color) var(--column-gutter-2),
-		var(--foreground-color) var(--column-span-3),
-		transparent var(--column-span-3),
-		transparent var(--column-gutter-3),
-		var(--foreground-color) var(--column-gutter-3),
-		var(--foreground-color) var(--column-span-4),
-		transparent var(--column-span-4),
-		transparent var(--column-gutter-4),
-		var(--foreground-color) var(--column-gutter-4),
-		var(--foreground-color) var(--column-span-5),
-		transparent var(--column-span-5),
-		transparent var(--column-gutter-5),
-		var(--foreground-color) var(--column-gutter-5),
-		var(--foreground-color) var(--column-span-6),
-		transparent var(--column-span-6),
-		transparent var(--column-gutter-6),
-		var(--foreground-color) var(--column-gutter-6),
-		var(--foreground-color) var(--column-span-7),
-		transparent var(--column-span-7),
-		transparent var(--column-gutter-7),
-		var(--foreground-color) var(--column-gutter-7),
-		var(--foreground-color) var(--column-span-8),
-		transparent var(--column-span-8),
-		transparent var(--column-gutter-8),
-		var(--foreground-color) var(--column-gutter-8),
-		var(--foreground-color) var(--column-span-9),
-		transparent var(--column-span-9),
-		transparent var(--column-gutter-9),
-		var(--foreground-color) var(--column-gutter-9),
-		var(--foreground-color) var(--column-span-10),
-		transparent var(--column-span-10),
-		transparent var(--column-gutter-10),
-		var(--foreground-color) var(--column-gutter-10),
-		var(--foreground-color) var(--column-span-11),
-		transparent var(--column-span-11),
-		transparent var(--column-gutter-11),
-		var(--foreground-color) var(--column-gutter-11),
-		var(--foreground-color) var(--column-span-12),
-		transparent var(--column-span-12),
-		transparent var(--column-gutter-12),
-		var(--foreground-color) var(--column-gutter-12)
-	);
-}
 
 /* Show debug-info in development mode */
 
