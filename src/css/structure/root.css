@@ -3,8 +3,7 @@ html {
 }
 
 body {
-	background-color: var(--background-color);
-	color: var(--foreground-color);
-	
+	/* background-color: var(--background-color);
+	color: var(--foreground-color); */	
 }
 

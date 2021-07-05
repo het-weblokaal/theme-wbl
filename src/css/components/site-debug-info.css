@@ -5,12 +5,14 @@
 	font-size: var(--font-size--extra-small);
 	line-height: var(--line-height--extra-small);
 	text-align: right;
-	position: fixed;
+	position: fixed !important;
 	z-index: 99;
 	right: 0.5rem;
 	bottom: 0.5rem;
 
-	&__version {
+	&__grid-toggle,
+	&__version,
+	&__media-queries {
 		display: inline-block;
 		opacity: 0.4;
 		padding: 0.25rem;
@@ -18,12 +20,20 @@
 		background-color: var(--background-color);
 	}
 
+	&__grid-toggle {
+		label {
+			display: inline-block;
+		}
+
+		input {
+			display: inline-block;
+		}
+	}
+
+	&__version {
+	}
+
 	&__media-queries {
-		display: inline-block;
-		opacity: 0.4;
-		padding: 0.25rem;
-		border-radius: 10px;
-		background-color: var(--background-color);
 
 		&:after {
 			@mixin dev--media-query-info;

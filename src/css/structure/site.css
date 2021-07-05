@@ -25,24 +25,11 @@
 	margin-top: var(--page-image-height);
 }
 
-.is-debug-mode .site {
-	background-color: transparent;
-	position: relative;
-
-	&:before {
-		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-color: var(--background-color);
-		z-index: -9;
-	}
+.has-grid .site {
 
 	&:after {
 		content: '';
-		position: absolute;
+		position: fixed;
 		left: 0;
 		right: 0;
 		top: 0;
@@ -50,10 +37,10 @@
 		margin-left: auto;
 		margin-right: auto;
 		width: var(--site--width);
-		opacity: 0.025;
-		z-index: -8;
+		opacity: 0.1;
+		z-index: 99;
 
-		--foreground-color: #000;
+		--foreground-color: red;
 
 		@mixin dev--background-grid;
 	}
