@@ -811,9 +811,8 @@ html {
 }
 
 body {
-	background-color: var(--background-color);
-	color: var(--foreground-color);
-	
+	/* background-color: var(--background-color);
+	color: var(--foreground-color); */	
 }
 
 .site {
@@ -846,25 +845,9 @@ body {
 	margin-top: var(--page-image-height);
 }
 
-.is-debug-mode .site {
-	background-color: transparent;
-	position: relative;
-}
-
-.is-debug-mode .site:before {
+.has-grid .site:after {
 		content: '';
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-color: var(--background-color);
-		z-index: -9;
-	}
-
-.is-debug-mode .site:after {
-		content: '';
-		position: absolute;
+		position: fixed;
 		left: 0;
 		right: 0;
 		top: 0;
@@ -872,10 +855,10 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		width: var(--site--width);
-		opacity: 0.025;
-		z-index: -8;
+		opacity: 0.1;
+		z-index: 99;
 
-		--foreground-color: #000;
+		--foreground-color: red;
 
 		background: linear-gradient(90deg,
 		var(--foreground-color) var(--column-span-1),
@@ -1675,7 +1658,7 @@ p.has-background {
  */
 
 .wp-block-quote {
-	padding-left: var(--space-8);
+	max-width: var(--copywriting-max-width);
 }
 
 .wp-block-quote p {
@@ -1692,12 +1675,21 @@ p.has-background {
 		font-weight: regular;
 	}
 
-@media (min-width: 1920px) {
+@media (min-width: 600px) {
+
+.wp-block-quote {
+		padding-left: var(--space-8);
+		padding-right: var(--space-8)
+}
+	}
+
+@media (min-width: 1400px) {
 
 .wp-block-quote {
 		margin-top: var(--space-10);
 		margin-bottom: var(--space-10);
-		padding-left: var(--column-gutter-1)
+		padding-left: var(--column-gutter-1);
+		padding-right: var(--column-gutter-1)
 }
 	}
 
@@ -2989,12 +2981,18 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		width: auto;
 	}
 
-.project-specs {
 /* 	@media (--from-breakpoint-5) {
 		margin-top: var(--space-16);
 		margin-bottom: var(--space-16);
 	} */
-}
+
+@media (min-width: 1080px) {
+
+.project-specs .wp-block-columns.is-style-columns-3,
+	.project-specs .wp-block-columns.is-style-columns-4 {
+			grid-template-columns: 1fr 1fr 1fr 1fr
+	}
+		}
 
 .search-form {
 	display: flex;
@@ -3013,13 +3011,15 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	font-size: var(--font-size--extra-small);
 	line-height: var(--line-height--extra-small);
 	text-align: right;
-	position: fixed;
+	position: fixed !important;
 	z-index: 99;
 	right: 0.5rem;
 	bottom: 0.5rem;
 }
 
-.site-debug-info__version {
+.site-debug-info__grid-toggle,
+	.site-debug-info__version,
+	.site-debug-info__media-queries {
 		display: inline-block;
 		opacity: 0.4;
 		padding: 0.25rem;
@@ -3027,12 +3027,15 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		background-color: var(--background-color);
 	}
 
-.site-debug-info__media-queries {
-		display: inline-block;
-		opacity: 0.4;
-		padding: 0.25rem;
-		border-radius: 10px;
-		background-color: var(--background-color);
+.site-debug-info__grid-toggle label {
+			display: inline-block;
+		}
+
+.site-debug-info__grid-toggle input {
+			display: inline-block;
+		}
+
+.site-debug-info__version {
 	}
 
 .site-debug-info__media-queries:after {

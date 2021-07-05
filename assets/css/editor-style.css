@@ -764,7 +764,7 @@ button:hover,
  */
 
 .wp-block-quote {
-	padding-left: var(--space-8);
+	max-width: var(--copywriting-max-width);
 }
 
 .wp-block-quote p {
@@ -781,12 +781,21 @@ button:hover,
 		font-weight: regular;
 	}
 
-@media (min-width: 1920px) {
+@media (min-width: 600px) {
+
+.wp-block-quote {
+		padding-left: var(--space-8);
+		padding-right: var(--space-8)
+}
+	}
+
+@media (min-width: 1400px) {
 
 .wp-block-quote {
 		margin-top: var(--space-10);
 		margin-bottom: var(--space-10);
-		padding-left: var(--column-gutter-1)
+		padding-left: var(--column-gutter-1);
+		padding-right: var(--column-gutter-1)
 }
 	}
 

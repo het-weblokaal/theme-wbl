@@ -3,4 +3,12 @@
 		margin-top: var(--space-16);
 		margin-bottom: var(--space-16);
 	} */
+
+	.wp-block-columns.is-style-columns-3,
+	.wp-block-columns.is-style-columns-4 {
+
+		@media (--from-breakpoint-4) {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+	}
 }

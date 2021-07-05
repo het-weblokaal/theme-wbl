@@ -8,7 +8,7 @@
  */
 
 .wp-block-quote {
-	padding-left: var(--space-8);
+	max-width: var(--copywriting-max-width);
 
 	p {
 		font-style: italic;
@@ -24,9 +24,15 @@
 		font-weight: regular;
 	}
 
-	@media (--from-breakpoint-7) {
+	@media (--from-breakpoint-2) {
+		padding-left: var(--space-8);
+		padding-right: var(--space-8);
+	}
+
+	@media (--grid-columns-12) {
 		margin-top: var(--space-10);
 		margin-bottom: var(--space-10);
 		padding-left: var(--column-gutter-1);
+		padding-right: var(--column-gutter-1);
 	}
 }
