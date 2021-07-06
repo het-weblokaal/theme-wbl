@@ -68,7 +68,7 @@ function add_page_image_class( $classes ) {
  */
 function render_archive_loop_block( $render, $attributes ) {
 
-	if ( ! is_post_type_archive() ) {
+	if ( ! is_post_type_archive() && ! is_home() ) {
 		return false;
 	}
 

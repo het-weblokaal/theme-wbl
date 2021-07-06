@@ -34,10 +34,10 @@
 	--copywriting-max-width: 32rem;
 
 	/* Breakpoints */
-	@media (--from-breakpoint-3) {
+	@media (--from-breakpoint-1) {
 		--rem-size: 112.5%; /* 18 */
 
-		--font-size--extra-small: 0.722223rem; /* 13 */
+		--font-size--extra-small: 0.777778rem; /* 14 */
 		--font-size--small: 0.833334rem; /* 15 */
 	}
 
@@ -58,7 +58,7 @@
 
 	@media (--from-breakpoint-6) {
 		--rem-size: 150%; /* 24 */
-		--font-size--extra-small: 0.625rem;
+		--font-size--extra-small: 0.6667rem;
 		--font-size--small: 0.75rem;
 		--line-height--normal: 1.4;
 	}

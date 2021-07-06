@@ -63,13 +63,6 @@
 @import "blocks/core/separator.css";
 @import "blocks/core/table.css";
 
-@import "blocks/theme/wbl-segment.css";
-@import "blocks/theme/wbl-card.css";
-@import "blocks/theme/wbl-simple-container.css";
-@import "blocks/theme/wbl-simple-image.css";
-
-@import "blocks/third-party/automattic--layout-grid.css";
-
 @import "blocks/colors.css";
 @import "blocks/misc.css";
 

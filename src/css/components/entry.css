@@ -35,6 +35,11 @@
 		font-weight: bold;
 	}
 
+	.entry__categories {
+		font-size: var(--font-size--extra-small);
+		margin-top: 0.1em;
+	}
+
 	@media (--from-breakpoint-5) {
 		display: grid;
 		column-gap: var(--gutter);

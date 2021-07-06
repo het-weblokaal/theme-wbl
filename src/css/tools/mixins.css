@@ -7,7 +7,7 @@
 	color: inherit;
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
-	text-underline-offset: 0.2em;
+	text-underline-offset: 0.1em;
 
 	&:hover,
     &:active {
@@ -23,7 +23,7 @@
 @define-mixin link-active-2 {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
-	text-underline-offset: 0.2em;
+	text-underline-offset: 0.1em;
 }
 
 @define-mixin reset-link {

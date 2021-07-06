@@ -73,12 +73,12 @@
 
 /* Breakpoints */
 
-@media (min-width: 840px) {
+@media (min-width: 360px) {
 
 :root {
 		--rem-size: 112.5%; /* 18 */
 
-		--font-size--extra-small: 0.722223rem; /* 13 */
+		--font-size--extra-small: 0.777778rem; /* 14 */
 		--font-size--small: 0.833334rem /* 15 */
 }
 	}
@@ -111,7 +111,7 @@
 
 :root {
 		--rem-size: 150%; /* 24 */
-		--font-size--extra-small: 0.625rem;
+		--font-size--extra-small: 0.6667rem;
 		--font-size--small: 0.75rem;
 		--line-height--normal: 1.4
 }
@@ -434,7 +434,7 @@ a {
     color: inherit;
     text-decoration: underline;
     text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.1em;
 }
 
 a:hover,
@@ -931,11 +931,6 @@ button:hover,
 .is-position-top-right .wp-block-group, .is-position-center-right .wp-block-group, .is-position-bottom-right .wp-block-group {
 		justify-content: flex-end;
 	}
-
-/* @import "blocks/theme/wbl-card.css";
-@import "blocks/theme/wbl-segment.css";
-@import "blocks/theme/wbl-simple-container.css";
-@import "blocks/theme/wbl-simple-image.css"; */
 
 /* Maybe put in :root to create specificity */
 
