@@ -856,7 +856,7 @@ body {
 		margin-right: auto;
 		width: var(--site--width);
 		opacity: 0.1;
-		z-index: 98;
+		z-index: 99;
 
 		--foreground-color: red;
 
@@ -2537,7 +2537,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	line-height: var(--line-height--extra-small);
 	text-align: right;
 	position: fixed !important;
-	z-index: 99;
+	z-index: 999;
 	right: 0.5rem;
 	bottom: 0.5rem;
 }
@@ -2622,7 +2622,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 	right: 0;
 	bottom: 0;
 
-	font-size: var(--font-size--site-nav);
+	font-size: var(--font-size--large);
 	padding-top: var(--space-4);
 	padding-bottom: var(--space-2);
 	padding-left: calc(var(--gutter) * 1);
@@ -2645,11 +2645,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 .site-nav[aria-expanded="true"] {
 		visibility: visible;
 		opacity: 1;
-
-
-		/* _:-ms-fullscreen, :root & {
-			display: block;
-		} */
 	}
 
 /** General style */
@@ -2687,7 +2682,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 				}
 
 .site-nav .menu__item + .menu__item {
-				margin-top: var(--space-3);
+				margin-top: var(--space-6);
 			}
 
 .site-nav .menu__item.has-children {

@@ -38,7 +38,7 @@
 		margin-right: auto;
 		width: var(--site--width);
 		opacity: 0.1;
-		z-index: 98;
+		z-index: 99;
 
 		--foreground-color: red;
 

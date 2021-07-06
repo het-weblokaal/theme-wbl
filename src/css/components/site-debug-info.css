@@ -6,7 +6,7 @@
 	line-height: var(--line-height--extra-small);
 	text-align: right;
 	position: fixed !important;
-	z-index: 99;
+	z-index: 999;
 	right: 0.5rem;
 	bottom: 0.5rem;
 
