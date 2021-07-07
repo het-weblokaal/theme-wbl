@@ -4,7 +4,7 @@ namespace WBL\Theme;
 
 ?>
 
-<article class="entry entry--grid entry--<?= get_post_type() ?>">
+<article class="loop__entry entry entry--grid entry--<?= get_post_type() ?>">
 
 	<div class="entry__image">
 		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'thumbnail') ?></a>

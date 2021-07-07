@@ -4,7 +4,7 @@ namespace WBL\Theme;
 
 ?>
 
-<article class="entry layout-list__item <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
+<article class="loop__entry entry entry--search <?= html_classes($args['extra_classes']) ?>" <?= html_attributes($args['attr']) ?>>
 	<div class="entry__inner">
 
 		<header class="entry__header">

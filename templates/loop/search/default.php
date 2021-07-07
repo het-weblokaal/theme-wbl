@@ -9,11 +9,11 @@ $query = ( isset($args['query_args']) ) ? new \WP_Query( $args['query_args'] ) :
 
 <?php if ( $query->have_posts() ) : ?>
 
-	<div class="loop layout-list <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
+	<div class="loop loop--search <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
 
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-			<?php Template::display( 'loop/list/entry', Template::entry_hierarchy() ); ?>
+			<?php Template::display( 'loop/search/entry', Template::entry_hierarchy() ); ?>
 
 		<?php endwhile; ?>
 

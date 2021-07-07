@@ -1,0 +1,1 @@
+<?php // No header on landing page template 
