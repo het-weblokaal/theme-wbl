@@ -124,7 +124,7 @@ function loop_format( $format, $post_type ) {
 		'wbl_project' => 'grid'
 	];
 
-	$format = $format_map[$post_type] ?? $format_map;
+	$format = $format_map[$post_type] ?? $format;
 
 	return $format;
 }
