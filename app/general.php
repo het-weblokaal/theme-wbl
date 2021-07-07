@@ -40,6 +40,9 @@ add_action( 'after_setup_theme', function() {
 	// Render posts block
 	add_filter( 'wbl/blocks/posts/render', __NAMESPACE__ . '\render_posts_block', 10, 2 );
 
+	// Make sure we render the right loop template
+	add_filter( 'wbl/theme/template/loop_format', __NAMESPACE__ . '\loop_format', 10, 2 );
+
 }, 5 );
 
 /**
@@ -112,4 +115,16 @@ function render_posts_block( $render, $attributes ) {
 	] );
 
 	return $render;
+}
+
+function loop_format( $format, $post_type ) {
+
+	$format_map = [
+		'post' => 'blog',
+		'wbl_project' => 'grid'
+	];
+
+	$format = $format_map[$post_type] ?? $format_map;
+
+	return $format;
 }
