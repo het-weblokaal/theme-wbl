@@ -29,8 +29,18 @@
 		margin-bottom: var(--space-12);
 	}
 
+	.page__label {
+		@mixin label;
+		margin-bottom: calc( var(--space-8) * -1 );
+
+		a {
+			@mixin reset-link;
+		}
+	}
+
 	.page__meta {
-		margin-top: var(--space-1);
+		margin-top: var(--space-2);
+		/* font-size: var(--font-size--small); */
 	}
 }
 

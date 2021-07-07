@@ -13,7 +13,7 @@
 	bottom: 0;
 
 	font-size: var(--font-size--large);
-	padding-top: var(--space-4);
+	padding-top: var(--space-6);
 	padding-bottom: var(--space-2);
 	padding-left: calc(var(--gutter) * 1);
 	padding-right: calc(var(--gutter) * 1);
