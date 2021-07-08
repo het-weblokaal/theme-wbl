@@ -76,7 +76,7 @@ function render_archive_loop_block( $render, $attributes ) {
 	}
 
 	if ( get_post_type_on_archive() == 'wbl_project' ) {
-		$render = Template::render( 'loop/grid', null );
+		$render = Template::render( 'loop/work', null );
 	}
 	else {
 		$render = Template::render( 'loop/blog', null );
@@ -121,7 +121,7 @@ function loop_format( $format, $post_type ) {
 
 	$format_map = [
 		'post' => 'blog',
-		'wbl_project' => 'grid'
+		'wbl_project' => 'work'
 	];
 
 	$format = $format_map[$post_type] ?? $format;

@@ -5,24 +5,26 @@ namespace WBL\Theme;
 $args = wp_parse_args( $args, [
 	'label' => 'Onderwerpen',
 	'link' => true,
-	'class' => 'entry__tax'
+	'taxonomy' => 'category',
 ] );
 
-$categories = render_entry_terms( [ 
+$terms = render_entry_terms( [ 
 	'link'        => $args['link'],
-	'taxonomy'    => 'category',
+	'taxonomy'    => $args['taxonomy'],
 	'term_format' => '%s',
 	'sep'         => ''
 ] );
 
 ?>
 
-<div class="<?= $args['class'] ?>">
+<div class="entry__terms entry__terms--<?= $args['taxonomy'] ?>">
 
 	<?php if ($args['label']) : ?>
 		<span class="label"><?= $args['label'] ?></span>
 	<?php endif; ?>
 
-	<?= $categories ?>
+	<div class="content">
+		<?= $terms ?>
+	</div>
 	
 </div>

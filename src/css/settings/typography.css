@@ -38,7 +38,7 @@
 		--rem-size: 112.5%; /* 18 */
 
 		--font-size--extra-small: 0.777778rem; /* 14 */
-		--font-size--small: 0.833334rem; /* 15 */
+		--font-size--small: 0.8889rem; /* 16 */
 	}
 
 	@media (--from-breakpoint-2) {
@@ -58,8 +58,8 @@
 
 	@media (--from-breakpoint-6) {
 		--rem-size: 150%; /* 24 */
-		--font-size--extra-small: 0.666667rem;
-		/* --font-size--small: 0.75rem; */
+		--font-size--extra-small: 0.75rem;
+		--font-size--small: 0.875rem;
 		--line-height--normal: 1.4;
 	}
 }

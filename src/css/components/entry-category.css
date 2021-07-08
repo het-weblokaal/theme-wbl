@@ -1,8 +1,0 @@
-.entry-category {
-	display: inline-block;
-	margin-right: 1em;
-
-	&:before {
-		content: '#';
-	}
-}

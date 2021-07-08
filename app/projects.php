@@ -31,7 +31,7 @@ add_action( 'after_setup_theme', function() {
 			$extra_classes[] = 'align' . $args['align'];
 		}
 
-		$render = Template::render( 'loop/grid', null, [
+		$render = Template::render( 'loop/work', null, [
 			'query_args' => $query_args,
 			'extra_classes' => $extra_classes
 		] );

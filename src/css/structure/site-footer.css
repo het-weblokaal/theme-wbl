@@ -83,7 +83,6 @@
 		&__content {
 			grid-template-columns: 1fr 1fr;
 			row-gap: var(--space-16);
-			@mixin ie11-grid-fallback 2;
 		}
 
 		.contact-info {
@@ -100,7 +99,6 @@
 	@media (--from-breakpoint-4) {
 		&__content {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-			@mixin ie11-grid-fallback 4;
 		}
 
 		.contact-info {

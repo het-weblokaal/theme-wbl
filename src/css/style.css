@@ -43,6 +43,8 @@
 @import "structure/site-header.css";
 @import "structure/site-main.css";
 @import "structure/site-footer.css";
+@import "components/page.css";
+@import "components/entry.css";
 
 
 /*--------------------------------------------------------------
@@ -71,14 +73,12 @@
 # Components - specific UI components.
 --------------------------------------------------------------*/
 @import "components/call-to-action.css";
-@import "components/entry.css";
 @import "components/entry-author.css";
-@import "components/entry-category.css";
 @import "components/entry-password-protection-status.css";
 @import "components/entry-navigation.css";
-@import "components/entry-image.css";
+@import "components/entry-terms.css";
+@import "components/loop.css";
 @import "components/loop-pagination.css";
-@import "components/page.css";
 @import "components/password-protection-form.css";
 @import "components/project-specs.css";
 @import "components/search-form.css";
@@ -86,7 +86,6 @@
 @import "components/site-nav.css";
 @import "components/site-branding.css";
 @import "components/site-nav-toggle.css";
-@import "components/site-meta.css";
 @import "components/social-media-list.css";
 @import "components/social-media-link.css";
 
@@ -95,7 +94,6 @@
 # Utilities - Helpers and overrides.
 --------------------------------------------------------------*/
 @import "utilities/accessibility.css";
-@import "utilities/layout.css";
 @import "utilities/alignments.css";
 @import "utilities/helpers.css";
 @import "utilities/wordpress.css";

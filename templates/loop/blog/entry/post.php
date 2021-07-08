@@ -23,7 +23,7 @@ namespace WBL\Theme;
 	<footer class="entry__footer">
 		<?php Template::display( 'components/entry-author', null, [ 'label' => 'door' ] ) ?>
 		<?php Template::display( 'components/entry-date' ) ?>
-		<?php Template::display( 'components/entry-categories', null, [ 'link' => false ] ) ?>
+		<?php Template::display( 'components/entry-terms', null, [ 'taxonomy' => 'category', 'link' => false ] ) ?>
 		<?= render_entry_password_protection_status() ?>
 	</footer>
 

@@ -12,7 +12,6 @@
 
 		@media (--from-breakpoint-2) {
 			grid-template-columns: 1fr 1fr;
-			@mixin ie11-grid-fallback 2;
 		}
 	}
 

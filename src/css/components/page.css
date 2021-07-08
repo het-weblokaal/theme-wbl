@@ -40,7 +40,7 @@
 
 	.page__meta {
 		margin-top: var(--space-2);
-		/* font-size: var(--font-size--small); */
+		font-size: var(--font-size--small);
 	}
 }
 
@@ -61,20 +61,15 @@
 .page__footer {
 	@mixin has-page-content;
 
-	.entry__categories {
-		margin-top: var(--space-8);
-		margin-bottom: var(--space-8);
+	.entry__terms {
+		margin-top: var(--space-16);
+		margin-bottom: var(--space-16);
 
 		.label {
 			@mixin label;
 			display: block;
 			margin-bottom: var(--space-4);
 		}
-	}
-
-	.entry__categories {
-		margin-top: var(--space-16);
-		margin-bottom: var(--space-16);
 	}
 
 	.entry-navigation {

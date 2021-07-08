@@ -109,22 +109,3 @@
 @define-mixin hr-styles {
 
 }
-
-/* Grid fallback for IE11 */
-@define-mixin ie11-grid-set-columns $columns {
-	/* IE11: Grid fallback */
-	column-count: $(columns);
-}
-
-/* Grid fallback for IE11 */
-@define-mixin ie11-grid-fallback $columns {
-
-	@mixin ie11-grid-set-columns $(columns);
-
-	> * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
-	}
-}
-
-/** IE11 target: _:-ms-fullscreen, :root .ie11up */

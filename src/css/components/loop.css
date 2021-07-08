@@ -1,0 +1,205 @@
+/**
+ * Loop
+ *
+ * General and specific styles for blog, work and search
+ */
+
+
+/* Default
+---------------------------------------------------- */
+.loop {
+
+}
+
+.loop__entry {
+
+}
+
+/* Blog loop
+---------------------------------------------------- */
+.loop--blog {
+    @mixin is-page-content--full-page;
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    column-gap: var(--gutter);
+    row-gap: var(--space-12);
+    grid-template-columns: 1fr;
+
+    @media (--from-breakpoint-2) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (--from-breakpoint-4) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (--from-breakpoint-5) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.loop--blog .loop__entry {
+
+    .entry__title {
+        font-size: var(--font-size--large);
+        margin-top: 0;
+        margin-bottom: var(--space-4);
+    }
+
+    p {
+        margin-bottom: var(--space-4);
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        margin-bottom: var(--space-4);
+    }
+
+    .entry__footer {
+        font-size: var(--font-size--small);
+    }
+
+    .entry__author,
+    .entry__terms,
+    .entry__date {
+        .label {
+            display: none;
+        }
+    }
+
+    .entry__date {
+        font-weight: bold;
+    }
+
+    .entry__terms {
+        margin-top: 0.1em;
+
+        .entry__term {
+            margin-right: 0.5em;
+        }
+    }
+
+    @media (--from-breakpoint-5) {
+        display: grid;
+        column-gap: var(--gutter);
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "footer header header image"
+            "footer main   main   image";
+
+        .entry__title {
+            font-size: var(--font-size--extra-large);
+        }
+
+        img {
+            margin-bottom: 0;
+        }
+
+        .entry__terms {
+            margin-top: var(--space-2);
+            overflow-wrap: break-word;
+        }
+
+        .entry__footer {
+            margin-top: 0.25em;
+            grid-area: footer;
+        }
+
+        .entry__header {
+            grid-area: header;
+        }
+
+        .entry__main {
+            grid-area: main;
+        }
+
+        .entry__image {
+            grid-area: image;
+        }
+    }
+
+    @media (--from-breakpoint-5) {
+        --copywriting-max-width: 24rem;
+
+        grid-template-areas:
+            "footer header header image"
+            "footer main   main   image";
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+/* Work loop
+---------------------------------------------------- */
+.loop--work {
+    @mixin is-page-content--full-page;
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    column-gap: var(--gutter);
+    row-gap: var(--space-8);
+    grid-template-columns: 1fr;
+
+    @media (--from-breakpoint-2) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (--from-breakpoint-3) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.loop--work .loop__entry {
+    @mixin remove-first-last-child-margin;
+
+    .entry__image img {
+        display: block;
+        width: 100%;
+        margin-bottom: var(--space-3);
+    }
+
+    .entry__title {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        a {
+            @mixin reset-link;
+        }
+    }
+
+    .entry__footer {
+        font-size: var(--font-size--extra-small);
+    }
+}
+
+
+/* Search loop
+---------------------------------------------------- */
+.loop--search {
+    @mixin is-page-content--full-page;
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    column-gap: var(--gutter);
+    row-gap: var(--space-8);
+    grid-template-columns: 1fr;
+
+    @media (--from-breakpoint-2) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (--from-breakpoint-3) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.loop--search .loop__entry {
+
+}

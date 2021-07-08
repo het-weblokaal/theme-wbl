@@ -22,6 +22,7 @@ namespace WBL\Theme;
 
 	<footer class="entry__footer">
 		<?= get_post_type() ?>
+		<?= render_entry_password_protection_status() ?>
 	</footer>
 
 </article>

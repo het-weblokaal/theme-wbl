@@ -79,7 +79,7 @@
 		--rem-size: 112.5%; /* 18 */
 
 		--font-size--extra-small: 0.777778rem; /* 14 */
-		--font-size--small: 0.833334rem /* 15 */
+		--font-size--small: 0.8889rem /* 16 */
 }
 	}
 
@@ -111,8 +111,8 @@
 
 :root {
 		--rem-size: 150%; /* 24 */
-		--font-size--extra-small: 0.666667rem;
-		/* --font-size--small: 0.75rem; */
+		--font-size--extra-small: 0.75rem;
+		--font-size--small: 0.875rem;
 		--line-height--normal: 1.4
 }
 	}
@@ -320,12 +320,6 @@
 /* ===============
  * Other
  * =============== */
-
-/* Grid fallback for IE11 */
-
-/* Grid fallback for IE11 */
-
-/** IE11 target: _:-ms-fullscreen, :root .ie11up */
 
 /* ===============
  * Development
@@ -1125,13 +1119,7 @@ body {
 			grid-template-columns: 1fr 1fr;
 			grid-row-gap: var(--space-16);
 			row-gap: var(--space-16);
-			/* IE11: Grid fallback */
-			column-count: 2;
 		}
-			.site-footer__content > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
-	}
 
 		.site-footer .contact-info {
 			grid-column: span 2;
@@ -1148,19 +1136,235 @@ body {
 @media (min-width: 1080px) {
 		.site-footer__content {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-			/* IE11: Grid fallback */
-			column-count: 4;
 		}
-			.site-footer__content > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
-	}
 
 		.site-footer .contact-info {
 			grid-column: span 4;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
 	}
+
+.page {
+
+	
+}
+
+.page__image {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -10;
+	
+	height: var(--page-image-height);
+}
+
+.page__image img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		margin-bottom: 0;
+	}
+
+/* @mixin remove-first-last-child-margin; */
+
+.page__header > * {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+@media (min-width: 840px) {
+
+.page__header > * {
+		max-width: var(--column-span-4);
+	}
+	}
+
+@media (min-width: 1400px) {
+
+.page__header > * {
+		/* margin-left: var(--column-gutter-2); */
+		max-width: var(--column-span-8);
+	}
+	}
+
+@media (min-width: 1920px) {
+
+.page__header > * {
+		/* max-width: var(--column-span-7); */
+	}
+	}
+
+.page__header {
+	margin-bottom: var(--space-4);
+}
+
+/* @mixin clearfix; */
+
+@media (min-width: 1400px) {
+
+.page__header {
+		margin-bottom: var(--space-12)
+}
+	}
+
+.page__header .page__label {
+		font-size: var(--font-size--extra-small);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		margin-bottom: calc( var(--space-8) * -1 );
+	}
+
+.page__header .page__label a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+.page__header .page__meta {
+		margin-top: var(--space-2);
+		font-size: var(--font-size--small);
+	}
+
+/* @mixin remove-first-last-child-margin; */
+
+.page__content > * {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+@media (min-width: 840px) {
+
+.page__content > * {
+		max-width: var(--column-span-4);
+	}
+	}
+
+@media (min-width: 1400px) {
+
+.page__content > * {
+		/* margin-left: var(--column-gutter-2); */
+		max-width: var(--column-span-8);
+	}
+	}
+
+@media (min-width: 1920px) {
+
+.page__content > * {
+		/* max-width: var(--column-span-7); */
+	}
+	}
+
+.page__content {
+
+	margin-bottom: var(--space-4);
+}
+
+/* @mixin clearfix; */
+
+@media (min-width: 1400px) {
+
+.page__content {
+		margin-bottom: var(--space-12)
+}
+	}
+
+.page__content .archive-description {
+		max-width: none;
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+	}
+
+.page__footer {
+
+	/* @media (--from-breakpoint-4) {
+		margin-right: calc(var(--column-gutter) * -1);
+	} */
+}
+
+/* @mixin remove-first-last-child-margin; */
+
+.page__footer > * {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+@media (min-width: 840px) {
+
+.page__footer > * {
+		max-width: var(--column-span-4);
+	}
+	}
+
+@media (min-width: 1400px) {
+
+.page__footer > * {
+		/* margin-left: var(--column-gutter-2); */
+		max-width: var(--column-span-8);
+	}
+	}
+
+@media (min-width: 1920px) {
+
+.page__footer > * {
+		/* max-width: var(--column-span-7); */
+	}
+	}
+
+/* @mixin clearfix; */
+
+.page__footer .entry__terms {
+		margin-top: var(--space-16);
+		margin-bottom: var(--space-16);
+	}
+
+.page__footer .entry__terms .label {
+			font-size: var(--font-size--extra-small);
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			display: block;
+			margin-bottom: var(--space-4);
+		}
+
+.page__footer .entry-navigation {
+		max-width: none;
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-8);
+
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20);
+	}
+
+.page__title {
+	margin-bottom: 0;
+}
+
+.page__meta > * {
+		display: inline;
+	}
+
+.page__meta .entry__author:after {
+		content: ' \2014' ;
+	}
+
+.page__meta .entry__date .label {
+		display: none;
+	}
+
+.entry {
+	
+}
+
+.entry--post {
+	
+}
+
+.entry--wbl_project {
+
+}
 
 /*--------------------------------------------------------------
 # Blocks - editor related styles.
@@ -2013,132 +2217,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			margin-left: auto;
 		}
 
-.entry {
-	
-}
-
-.entry--blog .entry__title {
-		font-size: var(--font-size--large);
-		margin-bottom: var(--space-4);
-		margin-top: 0;
-	}
-
-.entry--blog p {
-		margin-bottom: var(--space-4);
-	}
-
-.entry--blog img {
-		display: block;
-		width: 100%;
-		margin-bottom: var(--space-4);
-	}
-
-.entry--blog .entry__footer {
-		font-size: var(--font-size--small);
-	}
-
-.entry--blog .entry__author .label, .entry--blog .entry__categories .label, .entry--blog .entry__date .label {
-			display: none;
-		}
-
-.entry--blog .entry__date {
-		font-weight: bold;
-	}
-
-.entry--blog .entry__categories {
-		font-size: var(--font-size--extra-small);
-		margin-top: 0.1em;
-	}
-
-@media (min-width: 1400px) {
-
-.entry--blog {
-		display: grid;
-		grid-column-gap: var(--gutter);
-		column-gap: var(--gutter);
-		grid-template-rows: auto 1fr;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-areas:
-			"footer header header image"
-			"footer main   main   image"
-}
-
-		.entry--blog .entry__title {
-			font-size: var(--font-size--extra-large);
-		}
-
-    	.entry--blog img {
-    		margin-bottom: 0;
-    	}
-
-        .entry--blog .entry__categories {
-			margin-top: var(--space-2);
-			word-wrap: break-word;
-		}
-
-  		.entry--blog .entry__footer {
-			margin-top: 0.25em;
-        	grid-area: footer;
-        }
-
-        .entry--blog .entry__header {
-        	grid-area: header;
-        }
-
-  		.entry--blog .entry__main {
-        	grid-area: main;
-		}
-
-        .entry--blog .entry__image {
-        	grid-area: image;
-        }
-	}
-
-@media (min-width: 1400px) {
-
-.entry--blog {
-		--copywriting-max-width: 24rem;
-
-		grid-template-areas:
-			"footer header header image"
-			"footer main   main   image";
-
-		grid-template-columns: 1fr 1fr 1fr 1fr
-}
-	}
-
-.entry--grid .entry__image img {
-		display: block;
-		width: 100%;
-		margin-bottom: var(--space-3);
-	}
-
-.entry--grid .entry__title {
-		/* font-size: var(--font-size--large); */
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-
-.entry--grid .entry__title a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.entry--grid .entry__footer {
-		font-size: var(--font-size--extra-small);
-	}
-
-.entry-project_category {
-	color: inherit;
-	text-decoration: none;
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.entry-project_category:before {
-		content: '#';
-	}
-
 .entry-author a {
 	color: inherit;
 	text-decoration: none;
@@ -2150,15 +2228,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
     	text-decoration-thickness: 0.1em;
     	text-underline-offset: 0.1em;
     }
-
-.entry-category {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.entry-category:before {
-		content: '#';
-	}
 
 .entry-password-protection-status:before {
 		color: var(--ui-color);
@@ -2186,13 +2255,7 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 @media (min-width: 600px) {
 
 .entry-navigation__links {
-			grid-template-columns: 1fr 1fr;
-			/* IE11: Grid fallback */
-			column-count: 2
-	}
-			.entry-navigation__links > * {
-		/* IE11: Grid fallback */
-		break-inside: avoid-column;
+			grid-template-columns: 1fr 1fr
 	}
 		}
 
@@ -2217,16 +2280,260 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		}
 	}
 
-/* .entry-image {
-	@mixin is-page-content--full-page;
+.entry__term--category,
+.entry__term--project_category {
 
-	img {
-		display: block;
-		margin-bottom: 0;
-		width: 100%;
-	}
+	color: inherit;
+
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 0.75em;
 }
+
+.entry__term--category:before, .entry__term--project_category:before {
+		content: '#';
+	}
+
+/**
+ * Loop
+ *
+ * General and specific styles for blog, work and search
  */
+
+/* Default
+---------------------------------------------------- */
+
+.loop {
+
+}
+
+.loop__entry {
+
+}
+
+/* Blog loop
+---------------------------------------------------- */
+
+.loop--blog {
+    max-width: none;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    grid-column-gap: var(--gutter);
+    column-gap: var(--gutter);
+    grid-row-gap: var(--space-12);
+    row-gap: var(--space-12);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+
+.loop--blog {
+        grid-template-columns: 1fr 1fr
+}
+    }
+
+@media (min-width: 1080px) {
+
+.loop--blog {
+        grid-template-columns: 1fr 1fr 1fr
+}
+    }
+
+@media (min-width: 1400px) {
+
+.loop--blog {
+        grid-template-columns: 1fr
+}
+    }
+
+.loop--blog .loop__entry .entry__title {
+        font-size: var(--font-size--large);
+        margin-top: 0;
+        margin-bottom: var(--space-4);
+    }
+
+.loop--blog .loop__entry p {
+        margin-bottom: var(--space-4);
+    }
+
+.loop--blog .loop__entry img {
+        display: block;
+        width: 100%;
+        margin-bottom: var(--space-4);
+    }
+
+.loop--blog .loop__entry .entry__footer {
+        font-size: var(--font-size--small);
+    }
+
+.loop--blog .loop__entry .entry__author .label, .loop--blog .loop__entry .entry__terms .label, .loop--blog .loop__entry .entry__date .label {
+            display: none;
+        }
+
+.loop--blog .loop__entry .entry__date {
+        font-weight: bold;
+    }
+
+.loop--blog .loop__entry .entry__terms {
+        margin-top: 0.1em;
+    }
+
+.loop--blog .loop__entry .entry__terms .entry__term {
+            margin-right: 0.5em;
+        }
+
+@media (min-width: 1400px) {
+
+.loop--blog .loop__entry {
+        display: grid;
+        grid-column-gap: var(--gutter);
+        column-gap: var(--gutter);
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "footer header header image"
+            "footer main   main   image"
+}
+
+        .loop--blog .loop__entry .entry__title {
+            font-size: var(--font-size--extra-large);
+        }
+
+        .loop--blog .loop__entry img {
+            margin-bottom: 0;
+        }
+
+        .loop--blog .loop__entry .entry__terms {
+            margin-top: var(--space-2);
+            word-wrap: break-word;
+        }
+
+        .loop--blog .loop__entry .entry__footer {
+            margin-top: 0.25em;
+            grid-area: footer;
+        }
+
+        .loop--blog .loop__entry .entry__header {
+            grid-area: header;
+        }
+
+        .loop--blog .loop__entry .entry__main {
+            grid-area: main;
+        }
+
+        .loop--blog .loop__entry .entry__image {
+            grid-area: image;
+        }
+    }
+
+@media (min-width: 1400px) {
+
+.loop--blog .loop__entry {
+        --copywriting-max-width: 24rem;
+
+        grid-template-areas:
+            "footer header header image"
+            "footer main   main   image";
+
+        grid-template-columns: 1fr 1fr 1fr 1fr
+}
+    }
+
+/* Work loop
+---------------------------------------------------- */
+
+.loop--work {
+    max-width: none;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    grid-column-gap: var(--gutter);
+    column-gap: var(--gutter);
+    grid-row-gap: var(--space-8);
+    row-gap: var(--space-8);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+
+.loop--work {
+        grid-template-columns: 1fr 1fr
+}
+    }
+
+@media (min-width: 840px) {
+
+.loop--work {
+        grid-template-columns: 1fr 1fr 1fr
+}
+    }
+
+.loop--work .loop__entry > *:first-child { margin-top: 0; }
+
+.loop--work .loop__entry > *:last-child { margin-bottom: 0; }
+
+.loop--work .loop__entry .entry__image img {
+        display: block;
+        width: 100%;
+        margin-bottom: var(--space-3);
+    }
+
+.loop--work .loop__entry .entry__title {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+.loop--work .loop__entry .entry__title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+.loop--work .loop__entry .entry__footer {
+        font-size: var(--font-size--extra-small);
+    }
+
+/* Search loop
+---------------------------------------------------- */
+
+.loop--search {
+    max-width: none;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+
+    display: grid;
+    grid-column-gap: var(--gutter);
+    column-gap: var(--gutter);
+    grid-row-gap: var(--space-8);
+    row-gap: var(--space-8);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+
+.loop--search {
+        grid-template-columns: 1fr 1fr
+}
+    }
+
+@media (min-width: 840px) {
+
+.loop--search {
+        grid-template-columns: 1fr 1fr 1fr
+}
+    }
+
+.loop--search .loop__entry {
+
+}
 
 .pagination {
 	margin-bottom: var(--space-8);
@@ -2290,221 +2597,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			font-weight: bold;
 		}
 
-.page {
-
-	
-}
-
-.page__image {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: -10;
-	
-	height: var(--page-image-height);
-}
-
-.page__image img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		margin-bottom: 0;
-	}
-
-/* @mixin remove-first-last-child-margin; */
-
-.page__header > * {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-@media (min-width: 840px) {
-
-.page__header > * {
-		max-width: var(--column-span-4);
-	}
-	}
-
-@media (min-width: 1400px) {
-
-.page__header > * {
-		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
-	}
-	}
-
-@media (min-width: 1920px) {
-
-.page__header > * {
-		/* max-width: var(--column-span-7); */
-	}
-	}
-
-.page__header {
-	margin-bottom: var(--space-4);
-}
-
-/* @mixin clearfix; */
-
-@media (min-width: 1400px) {
-
-.page__header {
-		margin-bottom: var(--space-12)
-}
-	}
-
-.page__header .page__label {
-		font-size: var(--font-size--extra-small);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		margin-bottom: calc( var(--space-8) * -1 );
-	}
-
-.page__header .page__label a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-.page__header .page__meta {
-		margin-top: var(--space-2);
-		/* font-size: var(--font-size--small); */
-	}
-
-/* @mixin remove-first-last-child-margin; */
-
-.page__content > * {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-@media (min-width: 840px) {
-
-.page__content > * {
-		max-width: var(--column-span-4);
-	}
-	}
-
-@media (min-width: 1400px) {
-
-.page__content > * {
-		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
-	}
-	}
-
-@media (min-width: 1920px) {
-
-.page__content > * {
-		/* max-width: var(--column-span-7); */
-	}
-	}
-
-.page__content {
-
-	margin-bottom: var(--space-4);
-}
-
-/* @mixin clearfix; */
-
-@media (min-width: 1400px) {
-
-.page__content {
-		margin-bottom: var(--space-12)
-}
-	}
-
-.page__content .archive-description {
-		max-width: none;
-		margin-top: var(--space-8);
-		margin-bottom: var(--space-8);
-	}
-
-.page__footer {
-
-	/* @media (--from-breakpoint-4) {
-		margin-right: calc(var(--column-gutter) * -1);
-	} */
-}
-
-/* @mixin remove-first-last-child-margin; */
-
-.page__footer > * {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-@media (min-width: 840px) {
-
-.page__footer > * {
-		max-width: var(--column-span-4);
-	}
-	}
-
-@media (min-width: 1400px) {
-
-.page__footer > * {
-		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
-	}
-	}
-
-@media (min-width: 1920px) {
-
-.page__footer > * {
-		/* max-width: var(--column-span-7); */
-	}
-	}
-
-/* @mixin clearfix; */
-
-.page__footer .entry__categories {
-		margin-top: var(--space-8);
-		margin-bottom: var(--space-8);
-	}
-
-.page__footer .entry__categories .label {
-			font-size: var(--font-size--extra-small);
-			letter-spacing: 0.1em;
-			text-transform: uppercase;
-			display: block;
-			margin-bottom: var(--space-4);
-		}
-
-.page__footer .entry__categories {
-		margin-top: var(--space-16);
-		margin-bottom: var(--space-16);
-	}
-
-.page__footer .entry-navigation {
-		max-width: none;
-		margin-top: var(--space-8);
-		margin-bottom: var(--space-8);
-
-		margin-top: var(--space-20);
-		margin-bottom: var(--space-20);
-	}
-
-.page__title {
-	margin-bottom: 0;
-}
-
-.page__meta > * {
-		display: inline;
-	}
-
-.page__meta .entry__author:after {
-		content: ' \2014' ;
-	}
-
-.page__meta .entry__date .label {
-		display: none;
-	}
-
 .password-protection-form {
 	margin-bottom: var(--space-3);
 }
@@ -2519,10 +2611,9 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 		width: auto;
 	}
 
-/* 	@media (--from-breakpoint-5) {
-		margin-top: var(--space-16);
-		margin-bottom: var(--space-16);
-	} */
+.project-specs {
+	font-size: var(--font-size--small);
+}
 
 @media (min-width: 1080px) {
 
@@ -2531,6 +2622,14 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 			grid-template-columns: 1fr 1fr 1fr 1fr
 	}
 		}
+
+@media (min-width: 1400px) {
+
+.project-specs.alignfull {
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20)
+}
+	}
 
 .search-form {
 	display: flex;
@@ -2849,10 +2948,6 @@ svg.site-logo__symbol path {
 		}
 	}
 
-.site-meta {
-
-}
-
 .social-media-list {
 	padding-left: 0;
 	list-style-type: none;
@@ -2929,87 +3024,6 @@ svg.site-logo__symbol path {
 #main[tabindex="-1"]:focus { /* stylelint-disable-line a11y/no-outline-none */
 	outline: 0;
 }
-
-/**
- * Layout
- *
- * Layouts like grid, lists and others.
- */
-
-/* Grid
----------------------------------------------------- */
-
-.grid {
-    max-width: none;
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-8);
-    margin-bottom: var(--space-12);
-    margin-top: var(--space-12);
-
-    display: grid;
-    grid-column-gap: var(--gutter);
-    column-gap: var(--gutter);
-    grid-row-gap: var(--space-8);
-    row-gap: var(--space-8);
-    grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-
-.grid {
-        grid-template-columns: 1fr 1fr
-}
-    }
-
-@media (min-width: 840px) {
-
-.grid {
-        grid-template-columns: 1fr 1fr 1fr
-}
-    }
-
-.grid > .entry > *:first-child { margin-top: 0; }
-
-.grid > .entry > *:last-child { margin-bottom: 0; }
-
-/* Blog
----------------------------------------------------- */
-
-.blog {
-    max-width: none;
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-8);
-    margin-bottom: var(--space-12);
-    margin-top: var(--space-12);
-
-    display: grid;
-    grid-column-gap: var(--gutter);
-    column-gap: var(--gutter);
-    grid-row-gap: var(--space-12);
-    row-gap: var(--space-12);
-    grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-
-.blog {
-        grid-template-columns: 1fr 1fr
-}
-    }
-
-@media (min-width: 1080px) {
-
-.blog {
-        grid-template-columns: 1fr 1fr 1fr
-}
-    }
-
-@media (min-width: 1400px) {
-
-.blog {
-        grid-template-columns: 1fr
-}
-    }
 
 .alignleft,
 .alignright {
