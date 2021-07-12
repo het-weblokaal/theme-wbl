@@ -381,6 +381,7 @@ h1 {
     font-style: normal;
     word-wrap: break-word;
     text-transform: uppercase;
+    max-width: var(--copywriting-max-width);
 }
 
 h6,
@@ -405,6 +406,8 @@ h1 {
     line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-12);
+
+    max-width: calc(var(--copywriting-max-width) * 1.25);
 }
 
 /* Copywriting
@@ -412,6 +415,7 @@ h1 {
 
 p {
     margin-bottom: var(--space-8);
+    max-width: var(--copywriting-max-width);
 }
 
 /* Inline
@@ -509,12 +513,12 @@ blockquote p {
 
     }
 
-blockquote cite,
-    blockquote footer {
+blockquote cite {
         font-style: normal;
+        max-width: var(--copywriting-max-width);
     }
 
-blockquote cite:before, blockquote footer:before {
+blockquote cite:before {
             content: '\2014';
             margin-right: 0.25em;
         }
@@ -756,10 +760,6 @@ button:hover,
  *
  * @link https://github.com/WordPress/gutenberg/issues/11610
  */
-
-.wp-block-quote {
-	max-width: var(--copywriting-max-width);
-}
 
 .wp-block-quote p {
 		font-style: italic;

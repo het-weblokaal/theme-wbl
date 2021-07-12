@@ -33,6 +33,7 @@ h1 {
     font-style: normal;
     overflow-wrap: break-word;
     text-transform: uppercase;
+    max-width: var(--copywriting-max-width);
 }
 
 h6,
@@ -58,6 +59,8 @@ h1 {
     line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-12);
+
+    max-width: calc(var(--copywriting-max-width) * 1.25);
 }
 
 
@@ -66,6 +69,7 @@ h1 {
 
 p {
     margin-bottom: var(--space-8);
+    max-width: var(--copywriting-max-width);
 }
 
 
@@ -161,9 +165,9 @@ blockquote {
 
     }
 
-    cite,
-    footer {
+    cite {
         font-style: normal;
+        max-width: var(--copywriting-max-width);
         &:before {
             content: '\2014';
             margin-right: 0.25em;

@@ -1,5 +1,4 @@
 p {
-	max-width: var(--copywriting-max-width);
 	
 	&.has-background {
 		padding: var(--space-2);

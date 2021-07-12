@@ -8,7 +8,6 @@
  */
 
 .wp-block-quote {
-	max-width: var(--copywriting-max-width);
 
 	p {
 		font-style: italic;

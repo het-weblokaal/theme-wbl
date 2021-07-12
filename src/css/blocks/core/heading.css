@@ -4,13 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-	max-width: var(--copywriting-max-width);
-
 	&.has-background {
 		padding: var(--space-2);
 	}
-}
-
-h1 {
-	max-width: calc(var(--copywriting-max-width) * 1.25);
 }

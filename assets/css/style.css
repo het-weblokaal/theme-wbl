@@ -462,6 +462,7 @@ h1 {
     font-style: normal;
     word-wrap: break-word;
     text-transform: uppercase;
+    max-width: var(--copywriting-max-width);
 }
 
 h6,
@@ -486,6 +487,8 @@ h1 {
     line-height: var(--line-height--extra-small);
     margin-top: var(--space-12);
     margin-bottom: var(--space-12);
+
+    max-width: calc(var(--copywriting-max-width) * 1.25);
 }
 
 /* Copywriting
@@ -493,6 +496,7 @@ h1 {
 
 p {
     margin-bottom: var(--space-8);
+    max-width: var(--copywriting-max-width);
 }
 
 /* Inline
@@ -590,12 +594,12 @@ blockquote p {
 
     }
 
-blockquote cite,
-    blockquote footer {
+blockquote cite {
         font-style: normal;
+        max-width: var(--copywriting-max-width);
     }
 
-blockquote cite:before, blockquote footer:before {
+blockquote cite:before {
             content: '\2014';
             margin-right: 0.25em;
         }
@@ -1710,22 +1714,9 @@ body {
 		justify-content: flex-end;
 	}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	max-width: var(--copywriting-max-width);
-}
-
 h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background {
 		padding: var(--space-2);
 	}
-
-h1 {
-	max-width: calc(var(--copywriting-max-width) * 1.25);
-}
 
 .wp-block-image figure {
 		/* margin-bottom: var(--space-6); */
@@ -1828,10 +1819,6 @@ h1 {
 }
  */
 
-p {
-	max-width: var(--copywriting-max-width);
-}
-
 p.has-background {
 		padding: var(--space-2);
 	}
@@ -1861,10 +1848,6 @@ p.has-background {
  *
  * @link https://github.com/WordPress/gutenberg/issues/11610
  */
-
-.wp-block-quote {
-	max-width: var(--copywriting-max-width);
-}
 
 .wp-block-quote p {
 		font-style: italic;
@@ -3207,6 +3190,24 @@ body.has-page-image.has-expanded-site-nav {
 		transition-duration: 0.001s !important;
 	}
 }
+
+.wp-block-gallery.is-style-inline-images img {
+		max-height: 40px;
+	}
+
+@media (min-width: 600px) {
+
+		.wp-block-gallery.is-style-inline-images img {
+			max-height: 60px;
+		}
+	}
+
+@media (min-width: 1400px) {
+
+		.wp-block-gallery.is-style-inline-images img {
+			max-height: 84px;
+		}
+	}
 
 .is-archive .page__header > * {
 			margin-left: auto;
