@@ -51,6 +51,7 @@ array_map( function( $file ) {
 	'block-editor',
 	'call-to-action',
 	'footer',
-	'projects',
+	'wbl-blocks',
+	'wbl-projects',
 ] );
 

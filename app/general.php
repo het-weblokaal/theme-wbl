@@ -32,16 +32,11 @@ add_action( 'after_setup_theme', function() {
 	// Excerpts
 	add_filter( 'excerpt_length', __NAMESPACE__ . '\excerpt_length' );
 
+	// Body class
 	add_filter( 'body_class', __NAMESPACE__ . '\add_page_image_class', 11, 2 );
 
-	// Render archive loop block
-	add_filter( 'wbl/blocks/archive-loop/render', __NAMESPACE__ . '\render_archive_loop_block', 10, 2 );
-
-	// Render posts block
-	add_filter( 'wbl/blocks/posts/render', __NAMESPACE__ . '\render_posts_block', 10, 2 );
-
 	// Make sure we render the right loop template
-	add_filter( 'wbl/theme/template/loop_format', __NAMESPACE__ . '\loop_format', 10, 2 );
+	add_filter( 'wbl/theme/template/loop/type', __NAMESPACE__ . '\loop_type', 10, 2 );
 
 }, 5 );
 
@@ -64,67 +59,15 @@ function add_page_image_class( $classes ) {
 	return $classes;
 }
 
-/**
- * Render the archive loop through a block
- *
- * @return  string
- */
-function render_archive_loop_block( $render, $attributes ) {
 
-	if ( ! is_post_type_archive() && ! is_home() ) {
-		return false;
-	}
+function loop_type( $type, $post_type ) {
 
-	if ( get_post_type_on_archive() == 'wbl_project' ) {
-		$render = Template::render( 'loop/work', null );
-	}
-	else {
-		$render = Template::render( 'loop/blog', null );
-	}	
-
-	return $render;
-}
-
-/**
- * Render the posts through a block
- *
- * @return  string
- */
-function render_posts_block( $render, $attributes ) {
-
-	$query_args = [
-		'posts_per_page'   => $attributes['postsToShow'],
-		'post_type'        => 'post',
-		// 'post_status'      => 'publish',
-		// 'order'            => $attributes['order'],
-		// 'orderby'          => $attributes['orderBy'],
-		// 'suppress_filters' => false,
-	];
-
-	// Extra classes
-	$extra_classes = [];
-
-	// Alignment
-	if (! empty($args['align'])) {
-		$extra_classes[] = 'align' . $args['align'];
-	}
-
-	$render = Template::render( 'loop/blog', null, [
-		'query_args' => $query_args,
-		'extra_classes' => $extra_classes
-	] );
-
-	return $render;
-}
-
-function loop_format( $format, $post_type ) {
-
-	$format_map = [
+	$type_map = [
 		'post' => 'blog',
 		'wbl_project' => 'work'
 	];
 
-	$format = $format_map[$post_type] ?? $format;
+	$type = $type_map[$post_type] ?? $type;
 
-	return $format;
+	return $type;
 }
