@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '0b5552b7d5671085597a04645cb29b2262d7948a',
+    'reference' => '3bd667fa6b392fb540fe9d0b958093b0ca88e1e9',
     'name' => '__root__',
   ),
   'versions' => 
@@ -44,7 +44,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '0b5552b7d5671085597a04645cb29b2262d7948a',
+      'reference' => '3bd667fa6b392fb540fe9d0b958093b0ca88e1e9',
     ),
     'het-weblokaal/wbl-theme-foundation' => 
     array (
@@ -53,7 +53,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'dd2f60fa3b9c0fc14020bda3825e385b06347c5d',
+      'reference' => '9058ad5d14f0661e911493795bab7f7747929fd5',
     ),
     'tgmpa/tgm-plugin-activation' => 
     array (
