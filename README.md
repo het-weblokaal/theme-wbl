@@ -1,5 +1,10 @@
 theme-wbl
 
+# Open Source Theme Development
+We strive for openness. So we open source this theme. These are our first steps in open sourcing our code. Bare with us :) 
+
+The code is by no means finished. It's a work in progress.
+
 # Composer dependancies
 
 ## WPTT/webfont-loader
