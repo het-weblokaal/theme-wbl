@@ -27,24 +27,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => '3bd667fa6b392fb540fe9d0b958093b0ca88e1e9',
+    'reference' => '9ebbab629fea529f02b64cfb07747b83cf909cc7',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '3bd667fa6b392fb540fe9d0b958093b0ca88e1e9',
+      'reference' => '9ebbab629fea529f02b64cfb07747b83cf909cc7',
     ),
     'het-weblokaal/wbl-theme-foundation' => 
     array (
@@ -53,7 +53,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '9058ad5d14f0661e911493795bab7f7747929fd5',
+      'reference' => 'c8e84a77304561aeb8d5b01513a1a1887b3b1d59',
     ),
     'tgmpa/tgm-plugin-activation' => 
     array (

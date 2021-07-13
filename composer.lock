@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/het-weblokaal/wbl-theme-foundation.git",
-                "reference": "9058ad5d14f0661e911493795bab7f7747929fd5"
+                "reference": "c8e84a77304561aeb8d5b01513a1a1887b3b1d59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/9058ad5d14f0661e911493795bab7f7747929fd5",
-                "reference": "9058ad5d14f0661e911493795bab7f7747929fd5",
+                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/c8e84a77304561aeb8d5b01513a1a1887b3b1d59",
+                "reference": "c8e84a77304561aeb8d5b01513a1a1887b3b1d59",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "issues": "https://github.com/het-weblokaal/wbl-theme-foundation/issues",
                 "source": "https://github.com/het-weblokaal/wbl-theme-foundation"
             },
-            "time": "2021-07-12T09:45:14+00:00"
+            "time": "2021-07-13T07:01:33+00:00"
         },
         {
             "name": "tgmpa/tgm-plugin-activation",
