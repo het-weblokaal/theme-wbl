@@ -913,7 +913,7 @@ body {
 .site-header {
 	position: relative;
 	z-index: 99;
-	margin-top: var(--space-8);
+	margin-top: var(--space-12);
 	margin-bottom: var(--space-12);
 	margin-left: auto;
 	margin-right: auto;
@@ -956,7 +956,6 @@ body {
 	}
 
 @media (min-width: 840px) {
-
 		.site-header .site-branding {
 			width: 180px;
 		}
@@ -964,7 +963,13 @@ body {
 
 @media (min-width: 1080px) {
 		.site-header .site-branding {
-			width: auto;
+			width: 200px;
+		}
+	}
+
+@media (min-width: 1400px) {
+		.site-header .site-branding {
+			width: 240px;
 		}
 	}
 
@@ -1202,7 +1207,7 @@ body {
 	}
 
 .page__header {
-	margin-bottom: var(--space-4);
+	margin-bottom: var(--space-8);
 }
 
 /* @mixin clearfix; */
@@ -3146,21 +3151,11 @@ ol.is-style-no-bullets {
 }
 
 body.has-page-image {
-	--page-image-height: 200px;
+	--page-image-height: 50vh;
 }
 
-@media (min-width: 840px) {
-
-body.has-page-image {
-		--page-image-height: 400px
-}
-	}
-
-@media (min-width: 1400px) {
-
-body.has-page-image {
-		--page-image-height: 572px
-}
+body.has-page-image.is-singular--wbl_project {
+		--page-image-height: 80vh;
 	}
 
 body.has-page-image.has-expanded-site-nav {

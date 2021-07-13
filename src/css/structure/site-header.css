@@ -1,7 +1,7 @@
 .site-header {
 	position: relative;
 	z-index: 99;
-	margin-top: var(--space-8);
+	margin-top: var(--space-12);
 	margin-bottom: var(--space-12);
 	@mixin is-page-segment;
 	display: flex;
@@ -38,7 +38,6 @@
 	}
 
 	@media (--from-breakpoint-3) {
-
 		.site-branding {
 			width: 180px;
 		}
@@ -46,7 +45,13 @@
 
 	@media (--from-breakpoint-4) {
 		.site-branding {
-			width: auto;
+			width: 200px;
+		}
+	}
+
+	@media (--from-breakpoint-5) {
+		.site-branding {
+			width: 240px;
 		}
 	}
 

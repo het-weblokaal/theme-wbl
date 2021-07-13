@@ -13,7 +13,7 @@ namespace WBL\Theme;
 	</header>
 
 	<div class="entry__image">
-		<?= render_featured_image([ 'size' => 'large' ]) ?>
+		<a href="<?php the_permalink() ?>"><?= render_featured_image([ 'size' => 'medium' ]) ?></a>
 	</div>
 
 	<div class="entry__main">
