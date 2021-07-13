@@ -41,6 +41,14 @@
 	}
 }
 
+.alignwide.wp-block-columns,
+.alignfull.wp-block-columns {
+	@media (--grid-columns-12) {
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20);
+	}
+}
+
 .wp-block-column {
 	@mixin remove-first-last-child-margin;
 }

@@ -846,6 +846,15 @@ button:hover,
 }
 	}
 
+@media (min-width: 1400px) {
+
+.alignwide.wp-block-columns,
+.alignfull.wp-block-columns {
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20)
+}
+	}
+
 .wp-block-column > *:first-child { margin-top: 0; }
 
 .wp-block-column > *:last-child { margin-bottom: 0; }
@@ -888,6 +897,15 @@ button:hover,
 		width: 100%;
 	}
 
+@media (min-width: 1400px) {
+
+.alignwide.wp-block-group,
+.alignfull.wp-block-group {
+		margin-top: var(--space-20);
+		margin-bottom: var(--space-20)
+}
+	}
+
 .has-background.wp-block-group {
 	overflow-y: hidden;
 }
@@ -896,34 +914,6 @@ button:hover,
 		margin: var(--gutter);
 		width: auto;
 		max-width: none;
-	}
-
-.has-flexbox-layout.wp-block-group > .wp-block-group__inner-container {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-		grid-gap: var(--space-4);
-		gap: var(--space-4);
-		width: 100%;
-	}
-
-.has-flexbox-layout.wp-block-group > .wp-block-group__inner-container > * {
-			flex: 0 1 auto;
-			width: auto;
-			margin-bottom: 0;
-
-			/* Fix editor style */
-			margin-left: 0;
-			margin-right: 0;
-		}
-
-.is-position-top-left .wp-block-group, .is-position-center-left .wp-block-group, .is-position-bottom-left .wp-block-group {
-		justify-content: flex-start;
-	}
-
-.is-position-top-right .wp-block-group, .is-position-center-right .wp-block-group, .is-position-bottom-right .wp-block-group {
-		justify-content: flex-end;
 	}
 
 /* Maybe put in :root to create specificity */
