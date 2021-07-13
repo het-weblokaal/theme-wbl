@@ -21,7 +21,7 @@
 	} */
 }
 
-.has-page-image .site {
+.has-page-image:not(.is-singular--page) .site {
 	margin-top: var(--page-image-height);
 }
 

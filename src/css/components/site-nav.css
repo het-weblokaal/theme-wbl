@@ -12,8 +12,8 @@
 	right: 0;
 	bottom: 0;
 
-	font-size: var(--font-size--large);
-	padding-top: var(--space-6);
+	font-size: var(--font-size--extra-large);
+	padding-top: var(--space-8);
 	padding-bottom: var(--space-2);
 	padding-left: calc(var(--gutter) * 1);
 	padding-right: calc(var(--gutter) * 1);
@@ -73,7 +73,7 @@
 			}
 
 			& + .menu__item {
-				margin-top: var(--space-6);
+				margin-top: var(--space-4);
 			}
 		}
 
