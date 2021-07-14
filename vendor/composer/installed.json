@@ -7,18 +7,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/het-weblokaal/wbl-theme-foundation.git",
-                "reference": "c8e84a77304561aeb8d5b01513a1a1887b3b1d59"
+                "reference": "4ffff8d8490db0ef042de3920ba746a6731a6db8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/c8e84a77304561aeb8d5b01513a1a1887b3b1d59",
-                "reference": "c8e84a77304561aeb8d5b01513a1a1887b3b1d59",
+                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/4ffff8d8490db0ef042de3920ba746a6731a6db8",
+                "reference": "4ffff8d8490db0ef042de3920ba746a6731a6db8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0"
             },
-            "time": "2021-07-13T07:01:33+00:00",
+            "time": "2021-07-14T10:26:53+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
