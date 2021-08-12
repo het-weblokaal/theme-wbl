@@ -11,11 +11,6 @@
 --------------------------------------------------------------*/
 
 @import "settings/media-queries.css";
-@import "settings/fonts.css";
-@import "settings/typography.css";
-@import "settings/spacing.css";
-@import "settings/colors.css";
-@import "settings/effects.css";
 @import "settings/misc.css";
 
 
@@ -67,14 +62,32 @@
 @import "blocks/core/columns.css";
 @import "blocks/core/group.css";
 
-@import "blocks/colors.css";
-@import "blocks/misc.css";
 
 /*--------------------------------------------------------------
 # Utilities - Helpers and overrides.
 --------------------------------------------------------------*/
 @import "utilities/helpers.css";
 
+/**
+ * Custom values 
+ *
+ * - Grid: because we can't use vw yet
+ * - Typography: because we can't manipulate rem size yet
+ */
+body {
+
+	/* Grid */
+	--wp--custom--site--width:   1320px;
+	--wp--custom--site--padding: 90px;
+	--wp--custom--grid--column:  55px; 
+	--wp--custom--grid--gutter:  60px; 
+
+	/* Typography */
+	--wp--custom--rem-size: 150%;		
+	--wp--preset--font-size--extra-small: 0.75rem;
+	--wp--preset--font-size--small: 0.875rem;	
+	--wp--custom--line-height--normal: 1.4;
+}
 
 /**
  * Body will be transformed to .editor-styles-wrapper because we add
@@ -89,10 +102,10 @@ body {
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 
-	font-family: var(--font-family);
-    line-height: var(--line-height--normal);
+	font-family: var(--wp--custom--font-family);
+    line-height: var(--wp--custom--line-height--normal);
 
-	font-size: var(--rem-size);
+	font-size: var(--wp--custom--rem-size);
 
 	/**
 	 * Enforce a basic font-size similar to frontend. We assume large screens
@@ -112,7 +125,7 @@ body {
 		bottom: 0;
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--site--width);
+		width: var(--wp--custom--site--width);
 		opacity: 0.025;
 
 		--foreground-color: #000;

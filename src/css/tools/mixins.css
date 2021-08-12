@@ -39,14 +39,14 @@
     @mixin reset-link;
 
 	font-weight: bold;
-	line-height: var(--line-height--small);
-    /* font-size: var(--font-size--small);
+	line-height: var(--wp--custom--line-height--small);
+    /* font-size: var(--wp--preset--font-size--small);
     text-transform: uppercase; */
     display: inline-block;
     cursor: pointer;
 
 	border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    padding: var(--space-1);
+    padding: var(--wp--custom--space--1);
 
 	transition: border-color var(--transition-fast);
 

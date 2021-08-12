@@ -1,6 +1,6 @@
 .pagination {
-	margin-bottom: var(--space-8);
-	margin-top: var(--space-8);
+	margin-bottom: var(--wp--custom--space--8);
+	margin-top: var(--wp--custom--space--8);
 
 	a {
 		@mixin reset-link;
@@ -17,13 +17,13 @@
 	}
 
 	.page-numbers {
-		padding: var(--space-1) var(--space-2);
+		padding: var(--wp--custom--space--1) var(--wp--custom--space--2);
 	}
 
 	.page-numbers.prev,
 	.page-numbers.next {
 		padding: 0;
-		margin: var(--space-1) var(--space-2);
+		margin: var(--wp--custom--space--1) var(--wp--custom--space--2);
 	}
 
 	.page-numbers.prev {

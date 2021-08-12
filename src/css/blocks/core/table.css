@@ -1,6 +1,6 @@
 .wp-block-table {
-	margin-bottom: var(--space-4);
-	margin-top: var(--space-4);
+	margin-bottom: var(--wp--custom--space--4);
+	margin-top: var(--wp--custom--space--4);
 
 	.has-fixed-layout {
 		table-layout: fixed;
@@ -12,12 +12,12 @@
 
 	th,
 	td {
-		padding: var(--space-1) 0;
+		padding: var(--wp--custom--space--1) 0;
 		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
 	}
 
 	th {
-		font-size: var(--font-size--small);
+		font-size: var(--wp--preset--font-size--small);
 		font-weight: bold;
 	}
 
@@ -30,7 +30,7 @@
 	}
 
 	td {
-		font-size: var(--font-size--small);
+		font-size: var(--wp--preset--font-size--small);
 	}
 
 	tfoot td {

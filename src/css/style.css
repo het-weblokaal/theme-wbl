@@ -11,11 +11,8 @@
 --------------------------------------------------------------*/
 
 @import "settings/media-queries.css";
-@import "settings/fonts.css";
-@import "settings/typography.css";
-@import "settings/spacing.css";
-@import "settings/colors.css";
-@import "settings/effects.css";
+@import "settings/responsive-grid.css";
+@import "settings/responsive-typography.css";
 @import "settings/misc.css";
 
 
@@ -64,9 +61,6 @@
 @import "blocks/core/quote.css";
 @import "blocks/core/separator.css";
 @import "blocks/core/table.css";
-
-@import "blocks/colors.css";
-@import "blocks/misc.css";
 
 
 /*--------------------------------------------------------------

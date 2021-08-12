@@ -1,5 +1,5 @@
 .wp-block-buttons {
-	margin-bottom: var(--space-4);
+	margin-bottom: var(--wp--custom--space--4);
 	display: flex;
 	flex-wrap: wrap;
 

@@ -15,19 +15,7 @@ add_action( 'after_setup_theme', function() {
 	load_theme_textdomain( 'theme-wbl', App::path( App::get_lang_dir() ) );
 
 	// Colors
-	add_theme_support( 'editor-color-palette', [
-		[
-			'name' => __( 'Primary Color', 'theme-wbl' ),
-			'slug' => 'primary-1',
-			'color' => '#FFF7D6' //'#fff5cc',
-		],
-		[
-			'name' => __( 'Secondary Color', 'theme-wbl' ),
-			'slug' => 'secondary-1',
-			'color' => '#000000',
-		]
-	] );
-
+	add_theme_support( 'editor-color-palette', [] );
 
 	// Excerpts
 	add_filter( 'excerpt_length', __NAMESPACE__ . '\excerpt_length' );

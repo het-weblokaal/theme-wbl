@@ -7,22 +7,22 @@
  * &__content
  */
 .site-footer {
-	margin-top: var(--space-20);
-	margin-bottom: var(--space-20);
+	margin-top: var(--wp--custom--space--20);
+	margin-bottom: var(--wp--custom--space--20);
 
 	&__inner {
 		@mixin is-page-segment;
 	}
 
 	&__title {
-		font-size: var(--font-size--large);
-		margin-bottom: var(--space-12);
+		font-size: var(--wp--preset--font-size--large);
+		margin-bottom: var(--wp--custom--space--12);
 	}
 
 	&__content {
 		display: grid;
-		column-gap: var(--gutter);
-		row-gap: var(--space-8);
+		column-gap: var(--wp--custom--grid--gutter);
+		row-gap: var(--wp--custom--space--8);
 		grid-template-columns: 1fr;
 
 		> * {
@@ -33,10 +33,10 @@
 
 	.contact-info {
 		display: grid;
-		column-gap: var(--gutter);
-		row-gap: var(--space-8);
+		column-gap: var(--wp--custom--grid--gutter);
+		row-gap: var(--wp--custom--space--8);
 		grid-template-columns: 1fr;
-		margin-bottom: var(--space-8);
+		margin-bottom: var(--wp--custom--space--8);
 
 		> * {
 			margin-bottom: 0;
@@ -65,14 +65,14 @@
 	}
 
 	.documents {
-		margin-bottom: var(--space-2);
+		margin-bottom: var(--wp--custom--space--2);
 		> *:last-child {
 			margin-bottom: 0;
 		}
 	}
 
 	.colophon {
-		font-size: var(--font-size--small);
+		font-size: var(--wp--preset--font-size--small);
 
 		> *:last-child {
 			margin-bottom: 0;
@@ -82,13 +82,13 @@
 	@media (--grid-columns-2) {
 		&__content {
 			grid-template-columns: 1fr 1fr;
-			row-gap: var(--space-16);
+			row-gap: var(--wp--custom--space--16);
 		}
 
 		.contact-info {
 			grid-column: span 2;
 			grid-template-columns: 1fr 1fr;
-			row-gap: var(--space-10);
+			row-gap: var(--wp--custom--space--10);
 		}
 
 		.colophon {

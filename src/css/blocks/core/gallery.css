@@ -1,7 +1,7 @@
 .wp-block-gallery {
 	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--wp--custom--space--8);
+	margin-bottom: var(--wp--custom--space--8);
 	
 	figure {}
 
@@ -87,8 +87,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		column-gap: var(--gutter);
-		row-gap: var(--space-6);
+		column-gap: var(--wp--custom--grid--gutter);
+		row-gap: var(--wp--custom--space--6);
 	}
 	
 	.blocks-gallery-item {
@@ -102,8 +102,8 @@
 
 	display: grid;
 	grid-template-columns: 1fr;
-	column-gap: calc(var(--gutter) * 1);
-	row-gap: var(--space-10);
+	column-gap: calc(var(--wp--custom--grid--gutter) * 1);
+	row-gap: var(--wp--custom--space--10);
 
 	
 }

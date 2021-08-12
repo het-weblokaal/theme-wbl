@@ -1,7 +1,7 @@
 .wp-block-media-text {
 	display: grid;
 	align-items: center;
-	grid-gap: var(--gutter);
+	grid-gap: var(--wp--custom--grid--gutter);
 
 	&.is-vertically-aligned-top {
 		align-items: start;

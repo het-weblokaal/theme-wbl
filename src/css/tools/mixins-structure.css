@@ -5,13 +5,13 @@
 @define-mixin is-page-segment {
 	margin-left: auto;
     margin-right: auto;
-	max-width: var(--site--width);
+	max-width: var(--wp--custom--site--width);
 	width: 100%;
 }
 
 @define-mixin is-page-segment--full-site {
-	margin-left: var(--site--padding);
-    margin-right: var(--site--padding);
+	margin-left: var(--wp--custom--site--padding);
+    margin-right: var(--wp--custom--site--padding);
 	max-width: none;
 	width: auto;
 }
@@ -32,29 +32,29 @@
 
 @define-mixin is-page-content--normal {
 	@media (--grid-columns-6) {
-		max-width: var(--column-span-4);
+		max-width: var(--wp--custom--grid--column-span--4);
 	}
 
 	@media (--grid-columns-12) {
 		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
+		max-width: var(--wp--custom--grid--column-span--8);
 	}
 
 	@media (--from-breakpoint-7) {
-		/* max-width: var(--column-span-7); */
+		/* max-width: var(--wp--custom--grid--column-span--7); */
 	}
 }
 
 @define-mixin is-page-content--full-page {
 	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--wp--custom--space--8);
+	margin-bottom: var(--wp--custom--space--8);
 }
 
 @define-mixin is-page-content--full-site {
 	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--wp--custom--space--8);
+	margin-bottom: var(--wp--custom--space--8);
 
 	@mixin is-page-content--full-screen;
 }
@@ -66,19 +66,19 @@
 	width: auto;
 
 	@media (--from-breakpoint-3) {
-		margin-left: calc(50% - 50vw + var(--site--padding));
-		margin-right: calc(50% - 50vw + var(--site--padding));
+		margin-left: calc(50% - 50vw + var(--wp--custom--site--padding));
+		margin-right: calc(50% - 50vw + var(--wp--custom--site--padding));
 	}
 }
 
 @define-mixin is-page-content--full-screen-with-padding {
-	margin-left: calc(50% - 50vw + var(--site--padding));
-	margin-right: calc(50% - 50vw + var(--site--padding));
+	margin-left: calc(50% - 50vw + var(--wp--custom--site--padding));
+	margin-right: calc(50% - 50vw + var(--wp--custom--site--padding));
 	max-width: none;
 	width: auto;
 
-	margin-top: var(--space-16);
-	margin-bottom: var(--space-16);
+	margin-top: var(--wp--custom--space--16);
+	margin-bottom: var(--wp--custom--space--16);
 }
 
 @define-mixin is-page-content--full-screen {
@@ -87,29 +87,29 @@
 	max-width: none;
 	width: auto;
 	
-	margin-top: var(--space-16);
-	margin-bottom: var(--space-16);
+	margin-top: var(--wp--custom--space--16);
+	margin-bottom: var(--wp--custom--space--16);
 }
 
 @define-mixin is-page-content--right {
 	float: right;
-	margin-left: var(--gutter);
+	margin-left: var(--wp--custom--grid--gutter);
 
 	@media (--grid-columns-6) {
-		max-width: var(--column-span-2);
+		max-width: var(--wp--custom--grid--column-span--2);
 	}
 
 	@media (--grid-columns-12) {
-		max-width: var(--column-span-3);
+		max-width: var(--wp--custom--grid--column-span--3);
 	}
 }
 
 @define-mixin is-page-content--left {
 	float: left;
-	margin-right: var(--gutter);
+	margin-right: var(--wp--custom--grid--gutter);
 
 	@media (--from-breakpoint-5) {
-		max-width: var(--column-span-4);
+		max-width: var(--wp--custom--grid--column-span--4);
 	}
 }
 

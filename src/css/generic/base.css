@@ -9,12 +9,12 @@
 ---------------------------------------------------- */
 
 html {
-    font-size: var(--rem-size);
+    font-size: var(--wp--custom--rem-size);
 }
 
 body {
-    font-family: var(--font-family);
-    line-height: var(--line-height--normal);
+    font-family: var(--wp--custom--font-family);
+    line-height: var(--wp--custom--line-height--normal);
     background: transparent;
 }
 
@@ -33,34 +33,34 @@ h1 {
     font-style: normal;
     overflow-wrap: break-word;
     text-transform: uppercase;
-    max-width: var(--copywriting-max-width);
+    max-width: var(--wp--custom--text-max-width);
 }
 
 h6,
 h5,
 h4,
 h3 {
-    font-size: var(--font-size--normal);
-    line-height: var(--line-height--small);
-    margin-top: var(--space-10);
-    margin-bottom: var(--space-4);
+    font-size: var(--wp--preset--font-size--normal);
+    line-height: var(--wp--custom--line-height--small);
+    margin-top: var(--wp--custom--space--10);
+    margin-bottom: var(--wp--custom--space--4);
 }
 
 h2 {
-    font-size: var(--font-size--extra-large);
-    line-height: var(--line-height--extra-small);
-    margin-top: var(--space-12);
-    margin-bottom: var(--space-8);
+    font-size: var(--wp--preset--font-size--extra-large);
+    line-height: var(--wp--custom--line-height--extra-small);
+    margin-top: var(--wp--custom--space--12);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 
 h1 {
-    font-size: var(--font-size--gigantic);
-    line-height: var(--line-height--extra-small);
-    margin-top: var(--space-12);
-    margin-bottom: var(--space-12);
+    font-size: var(--wp--preset--font-size--gigantic);
+    line-height: var(--wp--custom--line-height--extra-small);
+    margin-top: var(--wp--custom--space--12);
+    margin-bottom: var(--wp--custom--space--12);
 
-    max-width: calc(var(--copywriting-max-width) * 1.25);
+    max-width: calc(var(--wp--custom--text-max-width) * 1.25);
 }
 
 
@@ -68,8 +68,8 @@ h1 {
 ---------------------------------------------------- */
 
 p {
-    margin-bottom: var(--space-8);
-    max-width: var(--copywriting-max-width);
+    margin-bottom: var(--wp--custom--space--8);
+    max-width: var(--wp--custom--text-max-width);
 }
 
 
@@ -95,7 +95,7 @@ a {
 ul, ol {
     padding-left: 1.1em;
     margin-left: 0;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 
     ul, ol {}
 }
@@ -111,7 +111,7 @@ table {
     border-collapse: collapse; /* Makes table rows borderable */
     border-spacing: 0;
     width: 100%;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 th,
@@ -135,13 +135,13 @@ hr {
     border-style: solid;
     clear: both;
     width: 100%;
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-8);
+    margin-top: var(--wp--custom--space--8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 pre {
     white-space: pre-wrap;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 
@@ -149,7 +149,7 @@ pre {
 ---------------------------------------------------- */
 
 blockquote {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 
     > *:last-child {
         margin-bottom: 0;
@@ -167,7 +167,7 @@ blockquote {
 
     cite {
         font-style: normal;
-        max-width: var(--copywriting-max-width);
+        max-width: var(--wp--custom--text-max-width);
         &:before {
             content: '\2014';
             margin-right: 0.25em;
@@ -187,7 +187,7 @@ embed,
 iframe {
     max-width: 100%;
     height: auto;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 figure,
@@ -214,9 +214,9 @@ figure > * {
 }
 
 figcaption {
-    margin-top: var(--space-3);
-    font-size: var(--font-size--extra-small);
-    line-height: var(--line-height--extra-small);
+    margin-top: var(--wp--custom--space--3);
+    font-size: var(--wp--preset--font-size--extra-small);
+    line-height: var(--wp--custom--line-height--extra-small);
 }
 
 
@@ -256,8 +256,8 @@ select {
     background-color: transparent;
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
-    font-size: var(--font-size--small);
-    padding: var(--space-1) var(--space-1);
+    font-size: var(--wp--preset--font-size--small);
+    padding: var(--wp--custom--space--1) var(--wp--custom--space--1);
     width: 100%;
     transition: border-color var(--transition-fast);
 
@@ -286,12 +286,12 @@ input[type="checkbox"],
 input[type="radio"] {
     margin-right: 0.25em;
     /* font-weight: normal; */
-    line-height: var(--line-height--small);
+    line-height: var(--wp--custom--line-height--small);
 
     & + label {
         display: inline;
-        font-size: var(--font-size--small);
-        line-height: var(--line-height--small);
+        font-size: var(--wp--preset--font-size--small);
+        line-height: var(--wp--custom--line-height--small);
         /* font-weight: normal; */
     }
 }

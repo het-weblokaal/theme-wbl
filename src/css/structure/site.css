@@ -4,8 +4,8 @@
 	clear: both;
 	min-height: 100vh;
 
-	background-color: var(--background-color);
-	color: var(--foreground-color);
+	background-color: var(--wp--preset--color--cornsilk);
+	color: 			  var(--wp--preset--color--black);
 }
 
 .has-expanded-site-nav .site {
@@ -36,11 +36,9 @@
 		bottom: 0;
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--site--width);
+		width: var(--wp--custom--site--width);
 		opacity: 0.1;
 		z-index: 99;
-
-		--foreground-color: red;
 
 		@mixin dev--background-grid;
 	}

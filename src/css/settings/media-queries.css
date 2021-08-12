@@ -1,21 +1,14 @@
 /**
- * Media Queries / Breakpoints.
+ * Breakpoints for Media Queries
  *
- * Mobile first, so we start with general styles which apply to every screensize and change it going up the breakpoints.
- *
- * Special helpers:
- * - mobile xs: for very small screens. You can see it as "only breakpoint 0".
- * - mobile: usually the breakpoint where we expect touch screens. So different navigations.
- * - desktop: large screens.
- *
- * Has connection with site layout. See settings/spacing.css
+ * We are using the "Mobile first" approach.
  */
 
-@custom-media --from-breakpoint-1 (min-width: 360px);
+@custom-media --from-breakpoint-1 (min-width: 360px); /* Grid: 2 columns */
 @custom-media --from-breakpoint-2 (min-width: 600px);
-@custom-media --from-breakpoint-3 (min-width: 840px);
-@custom-media --from-breakpoint-4 (min-width: 1080px);
-@custom-media --from-breakpoint-5 (min-width: 1400px);
+@custom-media --from-breakpoint-3 (min-width: 840px); /* Grid: 6 columns */
+@custom-media --from-breakpoint-4 (min-width: 1080px); 
+@custom-media --from-breakpoint-5 (min-width: 1400px); /* Grid: 12 columns */
 @custom-media --from-breakpoint-6 (min-width: 1720px);
 @custom-media --from-breakpoint-7 (min-width: 1920px);
 
@@ -28,15 +21,14 @@
 @custom-media --until-breakpoint-7 (max-width: 1919px);
 
 /**
- * Special helpers
+ * Extra information
  *
- * - Columns
- * - Devices
+ * Grid:
+ * - from breakpoint 1 -->  2 columns
+ * - from breakpoint 3 -->  6 columns
+ * - from breakpoint 5 --> 12 columns
+ *
+ * Touch:
+ * - until breakpoint 4 --> smartphones and tablets
+ * - from breakpoint 4  --> laptops and desktops
  */
-@custom-media --grid-columns-2 (--from-breakpoint-1);
-@custom-media --grid-columns-6 (--from-breakpoint-3);
-@custom-media --grid-columns-12 (--from-breakpoint-5);
-
-@custom-media --only-mobile-xs (--until-breakpoint-1);
-@custom-media --only-mobile (--until-breakpoint-4);
-@custom-media --only-desktop (--from-breakpoint-4);

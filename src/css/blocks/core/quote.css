@@ -12,25 +12,25 @@
 	p {
 		font-style: italic;
 		font-weight: bold;
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--wp--custom--space--4);
 	}
 
 	cite {
 		display: block;
-		margin-top: calc( var(--space-1) * -1 );
-		font-size: var(--font-size--small);
+		margin-top: calc( var(--wp--custom--space--1) * -1 );
+		font-size: var(--wp--preset--font-size--small);
 		font-style: normal;
 		font-weight: regular;
 	}
 
 	@media (--from-breakpoint-2) {
-		padding-left: var(--space-8);
-		padding-right: var(--space-8);
+		padding-left: var(--wp--custom--space--8);
+		padding-right: var(--wp--custom--space--8);
 	}
 
 	@media (--grid-columns-12) {
-		margin-top: var(--space-10);
-		margin-bottom: var(--space-10);
+		margin-top: var(--wp--custom--space--10);
+		margin-bottom: var(--wp--custom--space--10);
 		padding-left: var(--column-gutter-1);
 		padding-right: var(--column-gutter-1);
 	}

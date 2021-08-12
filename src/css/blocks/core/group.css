@@ -11,12 +11,12 @@
 	/* display: flex;
 	justify-content: center; */
 
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--wp--custom--space--8);
+	margin-bottom: var(--wp--custom--space--8);
 
 	@media (--grid-columns-6) {
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12);
+		margin-top: var(--wp--custom--space--12);
+		margin-bottom: var(--wp--custom--space--12);
 	}
 
 	&__inner-container {
@@ -30,8 +30,8 @@
 .alignwide.wp-block-group,
 .alignfull.wp-block-group {
 	@media (--grid-columns-12) {
-		margin-top: var(--space-20);
-		margin-bottom: var(--space-20);
+		margin-top: var(--wp--custom--space--20);
+		margin-bottom: var(--wp--custom--space--20);
 	}
 }
 
@@ -39,7 +39,7 @@
 	@mixin margin-collapse-fix;
 
 	> .wp-block-group__inner-container {
-		margin: var(--gutter);
+		margin: var(--wp--custom--grid--gutter);
 		width: auto;
 		max-width: none;
 	}

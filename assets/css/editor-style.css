@@ -11,273 +11,29 @@
 --------------------------------------------------------------*/
 
 /**
- * Media Queries / Breakpoints.
+ * Breakpoints for Media Queries
  *
- * Mobile first, so we start with general styles which apply to every screensize and change it going up the breakpoints.
- *
- * Special helpers:
- * - mobile xs: for very small screens. You can see it as "only breakpoint 0".
- * - mobile: usually the breakpoint where we expect touch screens. So different navigations.
- * - desktop: large screens.
- *
- * Has connection with site layout. See settings/spacing.css
+ * We are using the "Mobile first" approach.
  */
+
+/* Grid: 2 columns */
+
+/* Grid: 6 columns */
+
+/* Grid: 12 columns */
 
 /**
- * Special helpers
+ * Extra information
  *
- * - Columns
- * - Devices
+ * Grid:
+ * - from breakpoint 1 -->  2 columns
+ * - from breakpoint 3 -->  6 columns
+ * - from breakpoint 5 --> 12 columns
+ *
+ * Touch:
+ * - until breakpoint 4 --> smartphones and tablets
+ * - from breakpoint 4  --> laptops and desktops
  */
-
-/**
- * Load font faces
- */
-
-/**
- * Typography
- *
- * Define rem-size, font-sizes, line-heights and font-families.
- *
- * - Mobile first: we change the font-size going up the breakpoints.
- * - Rem-size also impacts the spacing (see settings/spacing.css)
- * - Use values with units as much as you can because of performance impact calculating the unit
- */
-
-:root {
-
-	/* Root unit size */
-	--rem-size: 100%; /* 16 */
-
-	/* Typography */
-	--font-family: unit-rounded, sans-serif;
-
-	/* Font Sizes */
-	--font-size--extra-small: 0.825rem;
-	--font-size--small: 0.875rem;
-	--font-size--normal: 1rem;
-	--font-size--large: 1.25rem;
-	--font-size--extra-large: 1.5rem;
-	--font-size--huge: 2rem;
-	--font-size--gigantic: 2.5rem;
-
-	/* Line heights */
-	--line-height--extra-small: 1;
-	--line-height--small: 1.2;
-	--line-height--normal: 1.333;
-	--line-height--large: 1.5;
-
-	/* Extra */
-	--copywriting-max-width: 32rem;
-}
-
-/* Breakpoints */
-
-@media (min-width: 360px) {
-
-:root {
-		--rem-size: 112.5%; /* 18 */
-
-		--font-size--extra-small: 0.777778rem; /* 14 */
-		--font-size--small: 0.8889rem /* 16 */
-}
-	}
-
-@media (min-width: 600px) {
-
-:root {
-		--rem-size: 112.5%
-}
-	}
-
-@media (min-width: 840px) {
-
-:root {
-		--rem-size: 118.75%
-}
-	}
-
-@media (min-width: 1080px) {
-
-:root {
-		--rem-size: 125%
-}
-	}
-
-@media (min-width: 1400px) {
-	}
-
-@media (min-width: 1720px) {
-
-:root {
-		--rem-size: 150%; /* 24 */
-		--font-size--extra-small: 0.75rem;
-		--font-size--small: 0.875rem;
-		--line-height--normal: 1.4
-}
-	}
-
-/**
- * Spacing
- *
- * Site width, columns and gutters. Also vertical rhythm.
- *
- * - Mobile first
- * - we start with one column and increase it throughout the breakpoints.
- * - The last breakpoint has fixed sizes so we can box the layout
- *
- * For the breakpoint timings: see settings/media-queries.css.
- */
-
-:root {
-	--space-1: 0.25rem;
-	--space-2: 0.5rem;
-	--space-3: 0.75rem;
-	--space-4: 1rem;
-	--space-5: 1.25rem;
-	--space-6: 1.5rem;
-	--space-8: 2rem;
-	--space-10: 2.5rem;
-	--space-12: 3rem;
-	--space-16: 4rem;
-	--space-20: 5rem;
-
-	--column-span-1: var(--column);
-	--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
-	--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
-	--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
-	--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
-	--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
-	--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
-	--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
-	--column-span-9: calc(var(--column) * 9 + var(--gutter) * 8);
-	--column-span-10: calc(var(--column) * 10 + var(--gutter) * 9);
-	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
-	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
-
-	--site--width:   88vw;
-	--site--padding: 6vw;
-
-	/* One column */
-	--column: 88vw;
-	--gutter: 0vw;
-
-	/* Column & gutter shortcuts */
-	--column-span-1: var(--column);
-	--column-span-2: calc(var(--column) * 2 + var(--gutter) * 1);
-	--column-span-3: calc(var(--column) * 3 + var(--gutter) * 2);
-	--column-span-4: calc(var(--column) * 4 + var(--gutter) * 3);
-	--column-span-5: calc(var(--column) * 5 + var(--gutter) * 4);
-	--column-span-6: calc(var(--column) * 6 + var(--gutter) * 5);
-	--column-span-7: calc(var(--column) * 7 + var(--gutter) * 6);
-	--column-span-8: calc(var(--column) * 8 + var(--gutter) * 7);
-	--column-span-9: calc(var(--column) * 9 + var(--gutter) * 8);
-	--column-span-10: calc(var(--column) * 10 + var(--gutter) * 9);
-	--column-span-11: calc(var(--column) * 11 + var(--gutter) * 10);
-	--column-span-12: calc(var(--column) * 12 + var(--gutter) * 11);
-
-	--column-gutter-1: calc(var(--column) * 1 + var(--gutter) * 1);
-	--column-gutter-2: calc(var(--column) * 2 + var(--gutter) * 2);
-	--column-gutter-3: calc(var(--column) * 3 + var(--gutter) * 3);
-	--column-gutter-4: calc(var(--column) * 4 + var(--gutter) * 4);
-	--column-gutter-5: calc(var(--column) * 5 + var(--gutter) * 5);
-	--column-gutter-6: calc(var(--column) * 6 + var(--gutter) * 6);
-	--column-gutter-7: calc(var(--column) * 7 + var(--gutter) * 7);
-	--column-gutter-8: calc(var(--column) * 8 + var(--gutter) * 8);
-	--column-gutter-9: calc(var(--column) * 9 + var(--gutter) * 9);
-	--column-gutter-10: calc(var(--column) * 10 + var(--gutter) * 10);
-	--column-gutter-11: calc(var(--column) * 11 + var(--gutter) * 11);
-	--column-gutter-12: calc(var(--column) * 12 + var(--gutter) * 12);
-}
-
-@media (min-width: 360px) {
-
-:root {
-
-    	/* Two columns */
-    	--column:        41vw;
-		--gutter:        6vw
-}
-    }
-
-@media (min-width: 840px) {
-
-:root {
-
-    	/* Six columns */
-		--site--width:   85vw;
-		--site--padding: 7.5vw;
-
-		--column:        10vw;
-		--gutter:        5vw
-}
-    }
-
-@media (min-width: 1400px) {
-
-:root {
-
-    	/* Twelve columns */
-		--site--width:   1080px;
-		--site--padding: 60px;
-
-    	--column: 35px; 
-		--gutter: 60px
-} 
-    }
-
-@media (min-width: 1720px) {
-
-:root {
-		--site--width:   1200px;
-		--site--padding: 60px;
-
-    	--column: 45px; 
-		--gutter: 60px
-}
-    }
-
-@media (min-width: 1920px) {
-
-:root {
-    	--site--width:   1320px;
-		--site--padding: 90px;
-
-    	--column: 55px; 
-		--gutter: 60px
-} 
-    }
-
-:root {
-
-	/**
-	 * Color library
-	 *
-	 * We define them in theme-support colors function in php, but we
-	 * also define fallback colors here for when they are missing out.
-	 */
-	--wp--preset--color--primary-1: #FFF7D6;
-	--wp--preset--color--secondary-1: #000000;
-
-	/**
-	 * Assign colors
-	 */
-	--background-color: var(--wp--preset--color--primary-1);
-	--foreground-color: var(--wp--preset--color--secondary-1);
-
-	/* --ui-color: var(--wp--preset--color--secondary-1); */
-
-	/* @media screen and (prefers-color-scheme: dark) {
-		--background-color: var(--wp--preset--color--secondary-1);
-		--foreground-color: var(--wp--preset--color--primary-1);
-		--ui-color: var(--wp--preset--color--primary-1);
-	} */
-}
-
-:root {
-	--transition: 200ms ease-in-out 0s;
-	--transition-fast: 100ms ease-in-out 0s;
-}
 
 :root {
 
@@ -288,19 +44,7 @@
 
 	--page-image-height: 0px;
 
-/* 	--copywriting-max-width: none;
-
-	@media ) {
-		--copywriting-max-width: var(--column-span-4);
-	}
-
-	@media (--from-breakpoint-5) {
-		--copywriting-max-width: var(--column-span-8);
-	}
-
-	@media (--from-breakpoint-7) {
-		--copywriting-max-width: var(--column-span-7);
-	} */
+	--wp--custom--text-max-width: 32rem;
 }
 
 /*--------------------------------------------------------------
@@ -357,12 +101,12 @@
 ---------------------------------------------------- */
 
 html {
-    font-size: var(--rem-size);
+    font-size: var(--wp--custom--rem-size);
 }
 
 body {
-    font-family: var(--font-family);
-    line-height: var(--line-height--normal);
+    font-family: var(--wp--custom--font-family);
+    line-height: var(--wp--custom--line-height--normal);
     background: transparent;
 }
 
@@ -381,41 +125,41 @@ h1 {
     font-style: normal;
     word-wrap: break-word;
     text-transform: uppercase;
-    max-width: var(--copywriting-max-width);
+    max-width: var(--wp--custom--text-max-width);
 }
 
 h6,
 h5,
 h4,
 h3 {
-    font-size: var(--font-size--normal);
-    line-height: var(--line-height--small);
-    margin-top: var(--space-10);
-    margin-bottom: var(--space-4);
+    font-size: var(--wp--preset--font-size--normal);
+    line-height: var(--wp--custom--line-height--small);
+    margin-top: var(--wp--custom--space--10);
+    margin-bottom: var(--wp--custom--space--4);
 }
 
 h2 {
-    font-size: var(--font-size--extra-large);
-    line-height: var(--line-height--extra-small);
-    margin-top: var(--space-12);
-    margin-bottom: var(--space-8);
+    font-size: var(--wp--preset--font-size--extra-large);
+    line-height: var(--wp--custom--line-height--extra-small);
+    margin-top: var(--wp--custom--space--12);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 h1 {
-    font-size: var(--font-size--gigantic);
-    line-height: var(--line-height--extra-small);
-    margin-top: var(--space-12);
-    margin-bottom: var(--space-12);
+    font-size: var(--wp--preset--font-size--gigantic);
+    line-height: var(--wp--custom--line-height--extra-small);
+    margin-top: var(--wp--custom--space--12);
+    margin-bottom: var(--wp--custom--space--12);
 
-    max-width: calc(var(--copywriting-max-width) * 1.25);
+    max-width: calc(var(--wp--custom--text-max-width) * 1.25);
 }
 
 /* Copywriting
 ---------------------------------------------------- */
 
 p {
-    margin-bottom: var(--space-8);
-    max-width: var(--copywriting-max-width);
+    margin-bottom: var(--wp--custom--space--8);
+    max-width: var(--wp--custom--text-max-width);
 }
 
 /* Inline
@@ -448,7 +192,7 @@ a:hover,
 ul, ol {
     padding-left: 1.1em;
     margin-left: 0;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 ul ul, ul ol, ol ul, ol ol {}
@@ -462,7 +206,7 @@ table {
     border-collapse: collapse; /* Makes table rows borderable */
     border-spacing: 0;
     width: 100%;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 th,
@@ -483,20 +227,20 @@ hr {
     border-style: solid;
     clear: both;
     width: 100%;
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-8);
+    margin-top: var(--wp--custom--space--8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 pre {
     white-space: pre-wrap;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 /* Blockquotes
 ---------------------------------------------------- */
 
 blockquote {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 blockquote > *:last-child {
@@ -515,7 +259,7 @@ blockquote p {
 
 blockquote cite {
         font-style: normal;
-        max-width: var(--copywriting-max-width);
+        max-width: var(--wp--custom--text-max-width);
     }
 
 blockquote cite:before {
@@ -535,7 +279,7 @@ embed,
 iframe {
     max-width: 100%;
     height: auto;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--wp--custom--space--8);
 }
 
 figure,
@@ -562,9 +306,9 @@ figure > * {
 }
 
 figcaption {
-    margin-top: var(--space-3);
-    font-size: var(--font-size--extra-small);
-    line-height: var(--line-height--extra-small);
+    margin-top: var(--wp--custom--space--3);
+    font-size: var(--wp--preset--font-size--extra-small);
+    line-height: var(--wp--custom--line-height--extra-small);
 }
 
 /* SVG
@@ -608,8 +352,8 @@ select {
     background-color: transparent;
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
-    font-size: var(--font-size--small);
-    padding: var(--space-1) var(--space-1);
+    font-size: var(--wp--preset--font-size--small);
+    padding: var(--wp--custom--space--1) var(--wp--custom--space--1);
     width: 100%;
     transition: border-color var(--transition-fast);
 }
@@ -675,13 +419,13 @@ input[type="checkbox"],
 input[type="radio"] {
     margin-right: 0.25em;
     /* font-weight: normal; */
-    line-height: var(--line-height--small);
+    line-height: var(--wp--custom--line-height--small);
 }
 
 input[type="checkbox"] + label, input[type="radio"] + label {
         display: inline;
-        font-size: var(--font-size--small);
-        line-height: var(--line-height--small);
+        font-size: var(--wp--preset--font-size--small);
+        line-height: var(--wp--custom--line-height--small);
         /* font-weight: normal; */
     }
 
@@ -698,13 +442,13 @@ input[type="submit"] {
     color: inherit;
     text-decoration: none;
     font-weight: bold;
-    line-height: var(--line-height--small);
-    /* font-size: var(--font-size--small);
+    line-height: var(--wp--custom--line-height--small);
+    /* font-size: var(--wp--preset--font-size--small);
     text-transform: uppercase; */
     display: inline-block;
     cursor: pointer;
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    padding: var(--space-1);
+    padding: var(--wp--custom--space--1);
     transition: border-color var(--transition-fast);
     position: relative;
 }
@@ -764,13 +508,13 @@ button:hover,
 .wp-block-quote p {
 		font-style: italic;
 		font-weight: bold;
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--wp--custom--space--4);
 	}
 
 .wp-block-quote cite {
 		display: block;
-		margin-top: calc( var(--space-1) * -1 );
-		font-size: var(--font-size--small);
+		margin-top: calc( var(--wp--custom--space--1) * -1 );
+		font-size: var(--wp--preset--font-size--small);
 		font-style: normal;
 		font-weight: regular;
 	}
@@ -778,16 +522,16 @@ button:hover,
 @media (min-width: 600px) {
 
 .wp-block-quote {
-		padding-left: var(--space-8);
-		padding-right: var(--space-8)
+		padding-left: var(--wp--custom--space--8);
+		padding-right: var(--wp--custom--space--8)
 }
 	}
 
-@media (min-width: 1400px) {
+@media (--grid-columns-12) {
 
 .wp-block-quote {
-		margin-top: var(--space-10);
-		margin-bottom: var(--space-10);
+		margin-top: var(--wp--custom--space--10);
+		margin-bottom: var(--wp--custom--space--10);
 		padding-left: var(--column-gutter-1);
 		padding-right: var(--column-gutter-1)
 }
@@ -801,10 +545,10 @@ button:hover,
 	margin-bottom: calc(var(--vertical-space) * 2);
 
 	display: grid;
-	grid-column-gap: var(--gutter);
-	column-gap: var(--gutter);
-	grid-row-gap: var(--space-8);
-	row-gap: var(--space-8);
+	grid-column-gap: var(--wp--custom--grid--gutter);
+	column-gap: var(--wp--custom--grid--gutter);
+	grid-row-gap: var(--wp--custom--space--8);
+	row-gap: var(--wp--custom--space--8);
 
 	grid-template-columns: 1fr;
 }
@@ -846,12 +590,12 @@ button:hover,
 }
 	}
 
-@media (min-width: 1400px) {
+@media (--grid-columns-12) {
 
 .alignwide.wp-block-columns,
 .alignfull.wp-block-columns {
-		margin-top: var(--space-20);
-		margin-bottom: var(--space-20)
+		margin-top: var(--wp--custom--space--20);
+		margin-bottom: var(--wp--custom--space--20)
 }
 	}
 
@@ -872,15 +616,15 @@ button:hover,
 	/* display: flex;
 	justify-content: center; */
 
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--wp--custom--space--8);
+	margin-bottom: var(--wp--custom--space--8);
 }
 
-@media (min-width: 840px) {
+@media (--grid-columns-6) {
 
 .wp-block-group {
-		margin-top: var(--space-12);
-		margin-bottom: var(--space-12)
+		margin-top: var(--wp--custom--space--12);
+		margin-bottom: var(--wp--custom--space--12)
 }
 	}
 
@@ -892,17 +636,17 @@ button:hover,
 
 		margin-right: auto;
 
-		max-width: var(--site--width);
+		max-width: var(--wp--custom--site--width);
 
 		width: 100%;
 	}
 
-@media (min-width: 1400px) {
+@media (--grid-columns-12) {
 
 .alignwide.wp-block-group,
 .alignfull.wp-block-group {
-		margin-top: var(--space-20);
-		margin-bottom: var(--space-20)
+		margin-top: var(--wp--custom--space--20);
+		margin-bottom: var(--wp--custom--space--20)
 }
 	}
 
@@ -911,104 +655,16 @@ button:hover,
 }
 
 .has-background.wp-block-group > .wp-block-group__inner-container {
-		margin: var(--gutter);
+		margin: var(--wp--custom--grid--gutter);
 		width: auto;
 		max-width: none;
 	}
 
-/* Maybe put in :root to create specificity */
-
-/*
-Moeten kleuren altijd doorlekken naar onderliggende elementen?
-- Paragraaf: ja
-- Cover: ja
-- Groep: ja
-- inline: ja
-
-Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-block lekt het door naar de ::before.
-*/
-
-/* Background colors */
-
-.has-primary-1-background-color {
-	--background-color: var(--wp--preset--color--primary-1);
-	background-color: var(--background-color);
-}
-
-.has-secondary-1-background-color {
-	--background-color: var(--wp--preset--color--secondary-1);
-	background-color: var(--background-color);
-}
-
-.has-tertiary-1-background-color {
-	--background-color: var(--wp--preset--color--tertiary-1);
-	background-color: var(--background-color);
-}
-
-.has-white-background-color {
-	--background-color: #fff;
-	color: var(--background-color);
-}
-
-.has-black-background-color {
-	--background-color: #000;
-	color: var(--background-color);
-}
-
-/* Foreground colors. */
-
-.has-primary-1-color {
-	--foreground-color: var(--wp--preset--color--primary-1);
-	color: var(--foreground-color);
-}
-
-.has-secondary-1-color {
-	--foreground-color: var(--wp--preset--color--secondary-1);
-	color: var(--foreground-color);
-}
-
-.has-tertiary-1-color {
-	--foreground-color: var(--wp--preset--color--tertiary-1);
-	color: var(--foreground-color);
-}
-
-.has-white-color {
-	--foreground-color: #fff;
-	color: var(--foreground-color);
-}
-
-.has-black-color {
-	--foreground-color: #000;
-	color: var(--foreground-color);
-}
-
-/**
- * Container colors
- */
+/*--------------------------------------------------------------
+# Utilities - Helpers and overrides.
+--------------------------------------------------------------*/
 
 /* Maybe put in :root to create specificity */
-
-/* Font sizes. */
-
-.has-small-font-size {
-	font-size: var(--font-size--small);
-}
-
-.has-normal-font-size {
-	font-size: var(--font-size--normal);
-}
-
-.has-medium-font-size {
-	font-size: var(--font-size--extra-large);
-}
-
-.has-large-font-size {
-	font-size: var(--font-size--huge);
-}
-
-.has-huge-font-size {
-	font-size: var(--font-size--gigantic);
-}
 
 .has-text-align-left {
 	text-align: left;
@@ -1118,10 +774,6 @@ Geldt dit ook voor background-color? Je zou zeggen van niet, maar bij het cover-
 
 .has-background-dim-100:before { opacity: 1; }
 
-/*--------------------------------------------------------------
-# Utilities - Helpers and overrides.
---------------------------------------------------------------*/
-
 ul.is-style-no-bullets,
 ol.is-style-no-bullets {
 	list-style-type: none;
@@ -1141,6 +793,28 @@ body.has-page-image.has-expanded-site-nav {
 	}
 
 /**
+ * Custom values 
+ *
+ * - Grid: because we can't use vw yet
+ * - Typography: because we can't manipulate rem size yet
+ */
+
+body {
+
+	/* Grid */
+	--wp--custom--site--width:   1320px;
+	--wp--custom--site--padding: 90px;
+	--wp--custom--grid--column:  55px; 
+	--wp--custom--grid--gutter:  60px; 
+
+	/* Typography */
+	--wp--custom--rem-size: 150%;		
+	--wp--preset--font-size--extra-small: 0.75rem;
+	--wp--preset--font-size--small: 0.875rem;	
+	--wp--custom--line-height--normal: 1.4;
+}
+
+/**
  * Body will be transformed to .editor-styles-wrapper because we add
  * theme support for editor-styles in this theme
  *
@@ -1154,10 +828,10 @@ body {
 	background-color: var(--background-color);
 	color: var(--foreground-color);
 
-	font-family: var(--font-family);
-    line-height: var(--line-height--normal);
+	font-family: var(--wp--custom--font-family);
+    line-height: var(--wp--custom--line-height--normal);
 
-	font-size: var(--rem-size);
+	font-size: var(--wp--custom--rem-size);
 
 	/**
 	 * Enforce a basic font-size similar to frontend. We assume large screens
@@ -1179,61 +853,61 @@ body:before {
 		bottom: 0;
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--site--width);
+		width: var(--wp--custom--site--width);
 		opacity: 0.025;
 
 		--foreground-color: #000;
 
-		background: linear-gradient(90deg,
-		var(--foreground-color) var(--column-span-1),
-		transparent var(--column-span-1),
-		transparent var(--column-gutter-1),
-		var(--foreground-color) var(--column-gutter-1),
-		var(--foreground-color) var(--column-span-2),
-		transparent var(--column-span-2),
-		transparent var(--column-gutter-2),
-		var(--foreground-color) var(--column-gutter-2),
-		var(--foreground-color) var(--column-span-3),
-		transparent var(--column-span-3),
-		transparent var(--column-gutter-3),
-		var(--foreground-color) var(--column-gutter-3),
-		var(--foreground-color) var(--column-span-4),
-		transparent var(--column-span-4),
-		transparent var(--column-gutter-4),
-		var(--foreground-color) var(--column-gutter-4),
-		var(--foreground-color) var(--column-span-5),
-		transparent var(--column-span-5),
-		transparent var(--column-gutter-5),
-		var(--foreground-color) var(--column-gutter-5),
-		var(--foreground-color) var(--column-span-6),
-		transparent var(--column-span-6),
-		transparent var(--column-gutter-6),
-		var(--foreground-color) var(--column-gutter-6),
-		var(--foreground-color) var(--column-span-7),
-		transparent var(--column-span-7),
-		transparent var(--column-gutter-7),
-		var(--foreground-color) var(--column-gutter-7),
-		var(--foreground-color) var(--column-span-8),
-		transparent var(--column-span-8),
-		transparent var(--column-gutter-8),
-		var(--foreground-color) var(--column-gutter-8),
-		var(--foreground-color) var(--column-span-9),
-		transparent var(--column-span-9),
-		transparent var(--column-gutter-9),
-		var(--foreground-color) var(--column-gutter-9),
-		var(--foreground-color) var(--column-span-10),
-		transparent var(--column-span-10),
-		transparent var(--column-gutter-10),
-		var(--foreground-color) var(--column-gutter-10),
-		var(--foreground-color) var(--column-span-11),
-		transparent var(--column-span-11),
-		transparent var(--column-gutter-11),
-		var(--foreground-color) var(--column-gutter-11),
-		var(--foreground-color) var(--column-span-12),
-		transparent var(--column-span-12),
-		transparent var(--column-gutter-12),
-		var(--foreground-color) var(--column-gutter-12)
-	);		
+		/* background: linear-gradient(90deg,
+		var(--foreground-color) var(--wp--custom--grid--column-span--1),
+		transparent var(--wp--custom--grid--column-span--1),
+		transparent calc( var(--wp--custom--grid--column-span--1) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--1) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--2),
+		transparent var(--wp--custom--grid--column-span--2),
+		transparent calc( var(--wp--custom--grid--column-span--2) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--2) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--3),
+		transparent var(--wp--custom--grid--column-span--3),
+		transparent calc( var(--wp--custom--grid--column-span--3) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--3) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--4),
+		transparent var(--wp--custom--grid--column-span--4),
+		transparent calc( var(--wp--custom--grid--column-span--4) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--4) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--5),
+		transparent var(--wp--custom--grid--column-span--5),
+		transparent calc( var(--wp--custom--grid--column-span--5) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--5) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--6),
+		transparent var(--wp--custom--grid--column-span--6),
+		transparent calc( var(--wp--custom--grid--column-span--6) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--6) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--7),
+		transparent var(--wp--custom--grid--column-span--7),
+		transparent calc( var(--wp--custom--grid--column-span--7) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--7) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--8),
+		transparent var(--wp--custom--grid--column-span--8),
+		transparent calc( var(--wp--custom--grid--column-span--8) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--8) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--9),
+		transparent var(--wp--custom--grid--column-span--9),
+		transparent calc( var(--wp--custom--grid--column-span--9) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--9) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--10),
+		transparent var(--wp--custom--grid--column-span--10),
+		transparent calc( var(--wp--custom--grid--column-span--10) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--10) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--11),
+		transparent var(--wp--custom--grid--column-span--11),
+		transparent calc( var(--wp--custom--grid--column-span--11) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--11) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) var(--wp--custom--grid--column-span--12),
+		transparent var(--wp--custom--grid--column-span--12),
+		transparent calc( var(--wp--custom--grid--column-span--12) + var(--wp--custom--grid--gutter) ),
+		var(--foreground-color) calc( var(--wp--custom--grid--column-span--12 + var(--wp--custom--grid--gutter) ))
+	); */		
 	}
 
 /**
@@ -1244,7 +918,7 @@ body:before {
 .is-root-container {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var(--site--width);
+	max-width: var(--wp--custom--site--width);
 	width: 100%;
 	/* @mixin clearfix; */
 }
@@ -1257,25 +931,25 @@ body:before {
 		margin-right: auto;
 	}
 
-@media (min-width: 840px) {
+@media (--grid-columns-6) {
 
 .edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		max-width: var(--column-span-4);
+		max-width: var(--wp--custom--grid--column-span--4);
 	}
 	}
 
-@media (min-width: 1400px) {
+@media (--grid-columns-12) {
 
 .edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
 		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--column-span-8);
+		max-width: var(--wp--custom--grid--column-span--8);
 	}
 	}
 
 @media (min-width: 1920px) {
 
 .edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		/* max-width: var(--column-span-7); */
+		/* max-width: var(--wp--custom--grid--column-span--7); */
 	}
 	}
 
@@ -1285,8 +959,8 @@ body:before {
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
 	max-width: none;
-	margin-top: var(--space-8);
-	margin-bottom: var(--space-8);
+	margin-top: var(--wp--custom--space--8);
+	margin-bottom: var(--wp--custom--space--8);
 }
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {

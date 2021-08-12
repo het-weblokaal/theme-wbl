@@ -23,15 +23,15 @@
 
 .page__header {
 	@mixin has-page-content;
-	margin-bottom: var(--space-8);
+	margin-bottom: var(--wp--custom--space--8);
 
 	@media (--from-breakpoint-5) {
-		margin-bottom: var(--space-12);
+		margin-bottom: var(--wp--custom--space--12);
 	}
 
 	.page__label {
 		@mixin label;
-		margin-bottom: calc( var(--space-8) * -1 );
+		margin-bottom: calc( var(--wp--custom--space--8) * -1 );
 
 		a {
 			@mixin reset-link;
@@ -39,18 +39,18 @@
 	}
 
 	.page__meta {
-		margin-top: var(--space-2);
-		font-size: var(--font-size--small);
+		margin-top: var(--wp--custom--space--2);
+		font-size: var(--wp--preset--font-size--small);
 	}
 }
 
 .page__content {
 	@mixin has-page-content;
 
-	margin-bottom: var(--space-4);
+	margin-bottom: var(--wp--custom--space--4);
 
 	@media (--from-breakpoint-5) {
-		margin-bottom: var(--space-12);
+		margin-bottom: var(--wp--custom--space--12);
 	}
 
 	.archive-description {
@@ -62,21 +62,21 @@
 	@mixin has-page-content;
 
 	.entry__terms {
-		margin-top: var(--space-16);
-		margin-bottom: var(--space-16);
+		margin-top: var(--wp--custom--space--16);
+		margin-bottom: var(--wp--custom--space--16);
 
 		.label {
 			@mixin label;
 			display: block;
-			margin-bottom: var(--space-4);
+			margin-bottom: var(--wp--custom--space--4);
 		}
 	}
 
 	.entry-navigation {
 		@mixin is-page-content--full-page;
 
-		margin-top: var(--space-20);
-		margin-bottom: var(--space-20);
+		margin-top: var(--wp--custom--space--20);
+		margin-bottom: var(--wp--custom--space--20);
 	}
 
 	/* @media (--from-breakpoint-4) {

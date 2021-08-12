@@ -1,12 +1,12 @@
 @define-mixin reset-typography {
-	font-size: var(--font-size--normal);
+	font-size: var(--wp--preset--font-size--normal);
 	line-height: var(--line-height);
 	font-weight: 400;
 	font-style: normal;
 }
 
 @define-mixin label {
-	font-size: var(--font-size--extra-small);
+	font-size: var(--wp--preset--font-size--extra-small);
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }

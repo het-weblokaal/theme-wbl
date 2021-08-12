@@ -53,34 +53,6 @@ add_action( 'after_setup_theme', function() {
 	});
 
 	/**
-	 * Add global color inline style (editor and frontend).
-	 *
-	 * Mimics the global styles which are experimental in the plugin
-	 *
-	 * @link: https://github.com/WordPress/gutenberg/blob/trunk/lib/global-styles.php
-	 */
-	add_action( 'enqueue_block_assets', function() {
-
-		// Get theme colors from theme-support
-	    $theme_colors = get_theme_support( 'editor-color-palette' )[0] ?? [];
-
-	    if ($theme_colors) {
-
-	        $css = ":root { \n";
-	        foreach ( $theme_colors as $color ) {
-	            $css .= "   --wp--preset--color--{$color['slug']}: {$color['color']};\n";
-	        }
-	        $css .= "}";
-
-			// Register global styles
-			wp_enqueue_style( App::handle('global-color') );
-			wp_register_style( App::handle('global-color'), false, array(), true, true );
-			wp_add_inline_style( App::handle('global-color'), $css );
-		}
-
-	});
-
-	/**
 	 * Enqueue editor style
 	 *
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#enqueuing-the-editor-style
