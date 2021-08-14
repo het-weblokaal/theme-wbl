@@ -3,7 +3,7 @@
 /* ===============
  * Links
  * =============== */
-@define-mixin link {
+@mixin link {
 	color: inherit;
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
@@ -15,18 +15,18 @@
     }
 }
 
-@define-mixin link-active {
+@mixin link-active {
 	outline: 0;
 	text-decoration-style: dotted;
 }
 
-@define-mixin link-active-2 {
+@mixin link-active-2 {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.1em;
 }
 
-@define-mixin reset-link {
+@mixin reset-link {
     color: inherit;
     text-decoration: none;
 }
@@ -35,7 +35,7 @@
  * Buttons
  * =============== */
 
-@define-mixin button {
+@mixin button {
     @mixin reset-link;
 
 	font-weight: bold;
@@ -60,7 +60,7 @@
     }
 }
 
-@define-mixin reset-button {
+@mixin reset-button {
 	background-color: transparent;
 	border: none;
 	color: inherit;
@@ -80,12 +80,12 @@
  * Other
  * =============== */
 
-@define-mixin reset-list {
+@mixin reset-list {
     padding-left: 0;
     list-style-type: none;
 }
 
-@define-mixin svg {
+@mixin svg {
 	display: inline-block;
 	fill: currentColor;
 	height: 1em;
@@ -95,17 +95,17 @@
 	width: 1em;
 }
 
-@define-mixin reset-svg {
+@mixin reset-svg {
 	height: auto;
 	top: auto;
 	vertical-align: baseline;
 	width: auto;
 }
 
-@define-mixin global-transition {
+@mixin global-transition {
     transition: all var(--transition-duration-1) ease-in-out;
 }
 
-@define-mixin hr-styles {
+@mixin hr-styles {
 
 }

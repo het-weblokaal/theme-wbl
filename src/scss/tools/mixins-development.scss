@@ -2,7 +2,7 @@
  * Development
  * =============== */
 
-@define-mixin dev--background-grid {
+@mixin dev--background-grid {
 	/* background: linear-gradient(90deg,
 		var(--foreground-color) var(--wp--custom--grid--column-span--1),
 		transparent var(--wp--custom--grid--column-span--1),
@@ -55,7 +55,7 @@
 	); */
 }
 
-@define-mixin dev--media-query-info {
+@mixin dev--media-query-info {
 	content: 'bp - (mini)';
 
 	@media (--from-breakpoint-1) { content: 'bp 1: 360px (klein)'; }

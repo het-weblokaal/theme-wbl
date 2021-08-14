@@ -22,7 +22,6 @@
 		"@babel/preset-react": "^7.14.5",
 		"cross-env": "^7.0.3",
 		"laravel-mix": "^6.0.27",
-		"node-wp-i18n": "^1.2.6",
 		"postcss-preset-env": "^6.7.0",
 		"sass": "^1.37.5",
 		"sass-loader": "^12.1.0",

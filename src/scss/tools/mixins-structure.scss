@@ -2,35 +2,35 @@
 /* Mixins are predefined css, usable anywhere in the stylesheets */
 
 /* ---- */
-@define-mixin is-page-segment {
+@mixin is-page-segment {
 	margin-left: auto;
     margin-right: auto;
 	max-width: var(--wp--custom--site--width);
 	width: 100%;
 }
 
-@define-mixin is-page-segment--full-site {
+@mixin is-page-segment--full-site {
 	margin-left: var(--wp--custom--site--padding);
     margin-right: var(--wp--custom--site--padding);
 	max-width: none;
 	width: auto;
 }
 
-@define-mixin is-page-segment--full-screen {
+@mixin is-page-segment--full-screen {
 	margin-left: 0;
     margin-right: 0;
 	max-width: none;
 	width: auto;
 }
 
-@define-mixin is-page-content {
+@mixin is-page-content {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	@mixin is-page-content--normal;
 }
 
-@define-mixin is-page-content--normal {
+@mixin is-page-content--normal {
 	@media (--grid-columns-6) {
 		max-width: var(--wp--custom--grid--column-span--4);
 	}
@@ -45,13 +45,13 @@
 	}
 }
 
-@define-mixin is-page-content--full-page {
+@mixin is-page-content--full-page {
 	max-width: none;
 	margin-top: var(--wp--custom--space--8);
 	margin-bottom: var(--wp--custom--space--8);
 }
 
-@define-mixin is-page-content--full-site {
+@mixin is-page-content--full-site {
 	max-width: none;
 	margin-top: var(--wp--custom--space--8);
 	margin-bottom: var(--wp--custom--space--8);
@@ -59,7 +59,7 @@
 	@mixin is-page-content--full-screen;
 }
 
-@define-mixin is-page-content--full-screen-with-background {
+@mixin is-page-content--full-screen-with-background {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: none;
@@ -71,7 +71,7 @@
 	}
 }
 
-@define-mixin is-page-content--full-screen-with-padding {
+@mixin is-page-content--full-screen-with-padding {
 	margin-left: calc(50% - 50vw + var(--wp--custom--site--padding));
 	margin-right: calc(50% - 50vw + var(--wp--custom--site--padding));
 	max-width: none;
@@ -81,7 +81,7 @@
 	margin-bottom: var(--wp--custom--space--16);
 }
 
-@define-mixin is-page-content--full-screen {
+@mixin is-page-content--full-screen {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: none;
@@ -91,7 +91,7 @@
 	margin-bottom: var(--wp--custom--space--16);
 }
 
-@define-mixin is-page-content--right {
+@mixin is-page-content--right {
 	float: right;
 	margin-left: var(--wp--custom--grid--gutter);
 
@@ -104,7 +104,7 @@
 	}
 }
 
-@define-mixin is-page-content--left {
+@mixin is-page-content--left {
 	float: left;
 	margin-right: var(--wp--custom--grid--gutter);
 
@@ -113,20 +113,20 @@
 	}
 }
 
-@define-mixin is-full-width {
+@mixin is-full-width {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: none;
 	width: auto;
 }
 
-@define-mixin reset-page-segment {
+@mixin reset-page-segment {
 	max-width: none;
 	padding-left: 0;
 	padding-right: 0;
 }
 
-@define-mixin has-page-content {
+@mixin has-page-content {
 	/* @mixin clearfix; */
 	/* @mixin remove-first-last-child-margin; */
 
@@ -135,7 +135,7 @@
 	}
 }
 
-@define-mixin reset-page-content {
+@mixin reset-page-content {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: none;
@@ -143,18 +143,18 @@
 
 /* ---- */
 
-@define-mixin remove-first-last-child-margin {
+@mixin remove-first-last-child-margin {
 	> *:first-child { margin-top: 0; }
 	> *:last-child { margin-bottom: 0; }
 }
 
 /* Collapse vertical margin */
-@define-mixin margin-collapse-fix {
+@mixin margin-collapse-fix {
     overflow-y: hidden;
 }
 
 /* Clearfix for floating */
-@define-mixin clearfix {
+@mixin clearfix {
 	&:after {
 	  content: "";
 	  display: table;
@@ -162,7 +162,7 @@
 	}
 }
 
-@define-mixin full-page-content-overflow-fix {
+@mixin full-page-content-overflow-fix {
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
@@ -170,18 +170,18 @@
 
 /** Editor structure helpers */
 
-@define-mixin is-page-content--editor {
+@mixin is-page-content--editor {
 	max-width: none;
 }
 
 /* Fix fullscreen in editor */
-@define-mixin editor--is-full-width {
+@mixin editor--is-full-width {
 	margin-left: auto;
 	margin-right: auto;
 	width: auto;
 }
 
-@define-mixin is-page-content--full-screen-editor-fix {
+@mixin is-page-content--full-screen-editor-fix {
 	max-width: none;
 	width: auto;
 	margin-left: 0;
@@ -198,11 +198,11 @@
 	}
 }
 
-@define-mixin editor--is-container {
+@mixin editor--is-container {
 	box-shadow: inset 0 0 0 1px var(--editor-container--ui-color);
 }
 
-@define-mixin editor--inner-blocks {
+@mixin editor--inner-blocks {
 	& > .block-editor-inner-blocks > .block-editor-block-list__layout {
 		@mixin-content;
 	}

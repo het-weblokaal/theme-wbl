@@ -1,5 +1,96 @@
-$color: red;
+/**
+ * Main stylesheet for the theme.
+ *
+ * Theme styles follow http://cssguidelin.es/ and are organized according to
+ * Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
+ * short, each layer of CSS gets more specific as you move down this page.
+ */
 
-body {
-	background-color: $color;
-}
+/*--------------------------------------------------------------
+# Settings - Global variables, config switches.
+--------------------------------------------------------------*/
+
+@import "settings/media-queries.css";
+@import "settings/responsive-grid.css";
+@import "settings/responsive-typography.css";
+@import "settings/misc.css";
+
+
+/*--------------------------------------------------------------
+# Tools - Default mixins and functions.
+--------------------------------------------------------------*/
+@import "tools/mixins.css";
+@import "tools/mixins-development.css";
+@import "tools/mixins-structure.css";
+@import "tools/mixins-typography.css";
+
+
+/*--------------------------------------------------------------
+# Generic - Ground-zero styles (resets, box-sizing, etc.).
+--------------------------------------------------------------*/
+@import "generic/reset.css";
+@import "generic/base.css";
+
+
+/*--------------------------------------------------------------
+# Structure - 
+--------------------------------------------------------------*/
+@import "structure/root.css";
+@import "structure/site.css";
+@import "structure/site-header.css";
+@import "structure/site-main.css";
+@import "structure/site-footer.css";
+@import "components/page.css";
+@import "components/entry.css";
+
+
+/*--------------------------------------------------------------
+# Blocks - editor related styles.
+--------------------------------------------------------------*/
+@import "blocks/core/button.css";
+@import "blocks/core/code.css";
+@import "blocks/core/cover.css";
+@import "blocks/core/columns.css";
+@import "blocks/core/gallery.css";
+@import "blocks/core/group.css";
+@import "blocks/core/heading.css";
+@import "blocks/core/image.css";
+@import "blocks/core/media-text.css";
+@import "blocks/core/paragraph.css";
+@import "blocks/core/pullquote.css";
+@import "blocks/core/quote.css";
+@import "blocks/core/separator.css";
+@import "blocks/core/table.css";
+
+
+/*--------------------------------------------------------------
+# Components - specific UI components.
+--------------------------------------------------------------*/
+@import "components/call-to-action.css";
+@import "components/entry-author.css";
+@import "components/entry-password-protection-status.css";
+@import "components/entry-navigation.css";
+@import "components/entry-terms.css";
+@import "components/loop.css";
+@import "components/loop-pagination.css";
+@import "components/password-protection-form.css";
+@import "components/project-specs.css";
+@import "components/search-form.css";
+@import "components/site-debug-info.css";
+@import "components/site-nav.css";
+@import "components/site-branding.css";
+@import "components/site-nav-toggle.css";
+@import "components/social-media-list.css";
+@import "components/social-media-link.css";
+
+
+/*--------------------------------------------------------------
+# Utilities - Helpers and overrides.
+--------------------------------------------------------------*/
+@import "utilities/accessibility.css";
+@import "utilities/alignments.css";
+@import "utilities/helpers.css";
+@import "utilities/wordpress.css";
+@import "utilities/prefers-reduced-motion.css";
+@import "utilities/shame.css";
+@import "utilities/templates.css";
