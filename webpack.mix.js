@@ -17,9 +17,6 @@
 // Import required packages.
 const mix = require( 'laravel-mix' );
 
-// Prevent webpack to copy media files each time (when changing css/js)
-const processMedia = ! process.env.nomedia;
-
 /**
  * Sets the development path to assets. By default, this is the `/assets`
  * folder in the theme.
@@ -43,9 +40,9 @@ mix.setPublicPath( pubPath );
  */
 mix.options( {
 	postCss : [
-		require( 'postcss-import' )(),
-		require( 'postcss-mixins' )(),
-		require( 'postcss-nested' )(),
+		// require( 'postcss-import' )(),
+		// require( 'postcss-mixins' )(),
+		// require( 'postcss-nested' )(),
 		require( 'postcss-preset-env' )({
 			stage: 2,
 			features: {
@@ -89,6 +86,7 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
  *
  * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
  */
-mix.postCss( `${devPath}/css/style.css`,             'css' )
-   .postCss( `${devPath}/css/editor-style.css`,      'css' );
+mix.sass( `${devPath}/scss/style.scss`, 'css');
 
+   // .postCss( `${devPath}/css/style.css`,             'css' )
+   // .postCss( `${devPath}/css/editor-style.css`,      'css' );
