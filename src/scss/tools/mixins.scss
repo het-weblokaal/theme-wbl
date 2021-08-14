@@ -1,8 +1,12 @@
-/* Mixins are predefined css, usable anywhere in the stylesheets */
+///
+/// Mixins 
+///
+/// predefined css, usable anywhere in the stylesheets 
+///
 
-/* ===============
- * Links
- * =============== */
+/// 
+/// Links
+///
 @mixin link {
 	color: inherit;
 	text-decoration: underline;
@@ -11,7 +15,7 @@
 
 	&:hover,
     &:active {
-        @mixin link-active;
+        @include link-active;
     }
 }
 
@@ -31,12 +35,12 @@
     text-decoration: none;
 }
 
-/* ===============
- * Buttons
- * =============== */
+/// 
+/// Buttons
+///
 
 @mixin button {
-    @mixin reset-link;
+    @include reset-link;
 
 	font-weight: bold;
 	line-height: var(--wp--custom--line-height--small);
@@ -76,9 +80,9 @@
     }
 }
 
-/* ===============
- * Other
- * =============== */
+/// 
+/// Other
+///
 
 @mixin reset-list {
     padding-left: 0;

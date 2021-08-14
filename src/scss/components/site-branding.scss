@@ -8,7 +8,7 @@
 		line-height: 1;
 
 		a {
-			@mixin reset-link;
+			@include reset-link;
 			display: block;
 
 			&:hover {

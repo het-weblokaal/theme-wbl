@@ -1,6 +1,6 @@
 .call-to-action {
-	@mixin margin-collapse-fix;
-	@mixin is-page-content--full-screen-with-background;
+	@include margin-collapse-fix;
+	@include is-page-content--full-screen-with-background;
 	--background-color: var(--wp--preset--color--secondary-1);
 	--foreground-color: var(--wp--preset--color--primary-1);
 	background-color: var(--background-color);
@@ -9,8 +9,8 @@
 	margin-bottom: var(--wp--custom--space--20);
 
 	&__inner {
-		@mixin is-page-segment;
-		@mixin has-page-content;
+		@include is-page-segment;
+		@include has-page-content;
 		margin-top: var(--wp--custom--space--20);
 		margin-bottom: var(--wp--custom--space--20);
 		text-align: center;

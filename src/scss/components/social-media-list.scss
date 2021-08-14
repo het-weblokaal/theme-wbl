@@ -1,5 +1,5 @@
 .social-media-list {
-	@mixin reset-list;
+	@include reset-list;
 
 	display: flex;
 

@@ -1,6 +1,6 @@
 .site {
-	@mixin margin-collapse-fix;
-	@mixin full-page-content-overflow-fix;
+	@include margin-collapse-fix;
+	@include full-page-content-overflow-fix;
 	clear: both;
 	min-height: 100vh;
 
@@ -40,6 +40,6 @@
 		opacity: 0.1;
 		z-index: 99;
 
-		@mixin dev--background-grid;
+		@include dev--background-grid;
 	}
 }

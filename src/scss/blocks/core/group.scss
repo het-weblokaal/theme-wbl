@@ -23,7 +23,7 @@
 		color: var(--foreground-color);
 		width: 100%;
 
-		@mixin is-page-segment;
+		@include is-page-segment;
 	}
 }
 
@@ -36,7 +36,7 @@
 }
 
 .has-background.wp-block-group {
-	@mixin margin-collapse-fix;
+	@include margin-collapse-fix;
 
 	> .wp-block-group__inner-container {
 		margin: var(--wp--custom--grid--gutter);

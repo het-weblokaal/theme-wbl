@@ -1,5 +1,5 @@
 .social-media-link {
-	@mixin reset-link;
+	@include reset-link;
 
 	&:hover,
 	&:active {

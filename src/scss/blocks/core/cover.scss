@@ -1,5 +1,5 @@
 .wp-block-cover {
-	@mixin is-page-segment;
+	@include is-page-segment;
 
 	/* Default colors */
 	--background-color: var(--wp--preset--color--secondary-1);

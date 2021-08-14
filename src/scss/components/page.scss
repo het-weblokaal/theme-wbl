@@ -22,7 +22,7 @@
 }
 
 .page__header {
-	@mixin has-page-content;
+	@include has-page-content;
 	margin-bottom: var(--wp--custom--space--8);
 
 	@media (--from-breakpoint-5) {
@@ -30,11 +30,11 @@
 	}
 
 	.page__label {
-		@mixin label;
+		@include label;
 		margin-bottom: calc( var(--wp--custom--space--8) * -1 );
 
 		a {
-			@mixin reset-link;
+			@include reset-link;
 		}
 	}
 
@@ -45,7 +45,7 @@
 }
 
 .page__content {
-	@mixin has-page-content;
+	@include has-page-content;
 
 	margin-bottom: var(--wp--custom--space--4);
 
@@ -54,26 +54,26 @@
 	}
 
 	.archive-description {
-		@mixin is-page-content--full-page;
+		@include is-page-content--full-page;
 	}
 }
 
 .page__footer {
-	@mixin has-page-content;
+	@include has-page-content;
 
 	.entry__terms {
 		margin-top: var(--wp--custom--space--16);
 		margin-bottom: var(--wp--custom--space--16);
 
 		.label {
-			@mixin label;
+			@include label;
 			display: block;
 			margin-bottom: var(--wp--custom--space--4);
 		}
 	}
 
 	.entry-navigation {
-		@mixin is-page-content--full-page;
+		@include is-page-content--full-page;
 
 		margin-top: var(--wp--custom--space--20);
 		margin-bottom: var(--wp--custom--space--20);

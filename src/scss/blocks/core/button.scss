@@ -17,7 +17,7 @@
 .wp-block-button {
 
 	&__link {
-		@mixin button;
+		@include button;
 	}
 
 	&.aligncenter {

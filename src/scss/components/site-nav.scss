@@ -42,12 +42,12 @@
 	/** General style */
 
 	ul {
-		@mixin reset-list;
+		@include reset-list;
 		margin-bottom: 0;
 	}
 
 	a {
-		@mixin reset-link;
+		@include reset-link;
 		font-weight: bold;
 		text-transform: uppercase;
 	}

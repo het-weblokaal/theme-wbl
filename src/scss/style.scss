@@ -1,96 +1,101 @@
-/**
- * Main stylesheet for the theme.
- *
- * Theme styles follow http://cssguidelin.es/ and are organized according to
- * Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
- * short, each layer of CSS gets more specific as you move down this page.
- */
+///
+/// Main stylesheet for the theme.
+///
+/// Theme styles follow http://cssguidelin.es/ and are organized according to
+/// Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
+/// short, each layer of CSS gets more specific as you move down this page.
+///
+/// Commenting: in all sass construction files (like mixins) we comment the
+/// sass-way i.e. with three slashes ///. This won't be added to our css files then.
+/// This is no strict law. I'm still thinking about it.
+/// If we're documenting real css then we use css-comments
+/// No, we use only real css comments for the relevant section divides.
+///
 
-/*--------------------------------------------------------------
-# Settings - Global variables, config switches.
---------------------------------------------------------------*/
-
-@import "settings/media-queries.css";
-@import "settings/responsive-grid.css";
-@import "settings/responsive-typography.css";
-@import "settings/misc.css";
-
-
-/*--------------------------------------------------------------
-# Tools - Default mixins and functions.
---------------------------------------------------------------*/
-@import "tools/mixins.css";
-@import "tools/mixins-development.css";
-@import "tools/mixins-structure.css";
-@import "tools/mixins-typography.css";
+///
+/// Tools - Default mixins and functions.
+///
+@import "tools/mixins";
+@import "tools/mixins-development";
+@import "tools/mixins-structure";
+@import "tools/mixins-typography";
 
 
-/*--------------------------------------------------------------
-# Generic - Ground-zero styles (resets, box-sizing, etc.).
---------------------------------------------------------------*/
-@import "generic/reset.css";
-@import "generic/base.css";
+///
+/// Settings - Global variables, config switches.
+///
+@import "settings/media-queries";
+@import "settings/responsive-grid";
+@import "settings/responsive-typography";
+@import "settings/misc";
 
 
-/*--------------------------------------------------------------
-# Structure - 
---------------------------------------------------------------*/
-@import "structure/root.css";
-@import "structure/site.css";
-@import "structure/site-header.css";
-@import "structure/site-main.css";
-@import "structure/site-footer.css";
-@import "components/page.css";
-@import "components/entry.css";
+///
+/// Generic - Ground-zero styles (resets, box-sizing, etc.).
+///
+@import "generic/reset";
+@import "generic/base";
 
 
-/*--------------------------------------------------------------
-# Blocks - editor related styles.
---------------------------------------------------------------*/
-@import "blocks/core/button.css";
-@import "blocks/core/code.css";
-@import "blocks/core/cover.css";
-@import "blocks/core/columns.css";
-@import "blocks/core/gallery.css";
-@import "blocks/core/group.css";
-@import "blocks/core/heading.css";
-@import "blocks/core/image.css";
-@import "blocks/core/media-text.css";
-@import "blocks/core/paragraph.css";
-@import "blocks/core/pullquote.css";
-@import "blocks/core/quote.css";
-@import "blocks/core/separator.css";
-@import "blocks/core/table.css";
+// ///
+// /// Structure - 
+// ///
+// @import "structure/root";
+// @import "structure/site";
+// @import "structure/site-header";
+// @import "structure/site-main";
+// @import "structure/site-footer";
+// @import "components/page";
+// @import "components/entry";
 
 
-/*--------------------------------------------------------------
-# Components - specific UI components.
---------------------------------------------------------------*/
-@import "components/call-to-action.css";
-@import "components/entry-author.css";
-@import "components/entry-password-protection-status.css";
-@import "components/entry-navigation.css";
-@import "components/entry-terms.css";
-@import "components/loop.css";
-@import "components/loop-pagination.css";
-@import "components/password-protection-form.css";
-@import "components/project-specs.css";
-@import "components/search-form.css";
-@import "components/site-debug-info.css";
-@import "components/site-nav.css";
-@import "components/site-branding.css";
-@import "components/site-nav-toggle.css";
-@import "components/social-media-list.css";
-@import "components/social-media-link.css";
+// ///
+// /// Blocks - editor related styles.
+// ///
+// @import "blocks/core/button";
+// @import "blocks/core/code";
+// @import "blocks/core/cover";
+// @import "blocks/core/columns";
+// @import "blocks/core/gallery";
+// @import "blocks/core/group";
+// @import "blocks/core/heading";
+// @import "blocks/core/image";
+// @import "blocks/core/media-text";
+// @import "blocks/core/paragraph";
+// @import "blocks/core/pullquote";
+// @import "blocks/core/quote";
+// @import "blocks/core/separator";
+// @import "blocks/core/table";
 
 
-/*--------------------------------------------------------------
-# Utilities - Helpers and overrides.
---------------------------------------------------------------*/
-@import "utilities/accessibility.css";
-@import "utilities/alignments.css";
-@import "utilities/helpers.css";
-@import "utilities/wordpress.css";
-@import "utilities/prefers-reduced-motion.css";
-@import "utilities/shame.css";
-@import "utilities/templates.css";
+// ///
+// /// Components - specific UI components.
+// ///
+// @import "components/call-to-action";
+// @import "components/entry-author";
+// @import "components/entry-password-protection-status";
+// @import "components/entry-navigation";
+// @import "components/entry-terms";
+// @import "components/loop";
+// @import "components/loop-pagination";
+// @import "components/password-protection-form";
+// @import "components/project-specs";
+// @import "components/search-form";
+// @import "components/site-debug-info";
+// @import "components/site-nav";
+// @import "components/site-branding";
+// @import "components/site-nav-toggle";
+// @import "components/social-media-list";
+// @import "components/social-media-link";
+
+
+// ///
+// /// Utilities - Helpers and overrides.
+// ///
+// @import "utilities/accessibility";
+// @import "utilities/alignments";
+// @import "utilities/helpers";
+// @import "utilities/wordpress";
+// @import "utilities/prefers-reduced-motion";
+// @import "utilities/shame";
+// @import "utilities/templates";

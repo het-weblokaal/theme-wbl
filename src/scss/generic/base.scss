@@ -85,7 +85,7 @@ i, em {}
 ---------------------------------------------------- */
 
 a {
-    @mixin link;
+    @include link;
 }
 
 
@@ -224,7 +224,7 @@ figcaption {
 ---------------------------------------------------- */
 
 svg {
-    @mixin svg;
+    @include svg;
 }
 
 
@@ -307,5 +307,5 @@ input[type="submit"] {
 
 button,
 input[type="submit"] {
-    @mixin button;
+    @include button;
 }

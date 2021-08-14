@@ -1,5 +1,5 @@
 .site-nav-toggle {
-	@mixin reset-button;
+	@include reset-button;
 	cursor: pointer;
 
 	display: flex;
@@ -34,13 +34,13 @@
 		}
 
 		svg {
-			@mixin reset-svg;
+			@include reset-svg;
 			height: 100%;
 		}
 	}
 
 	&__label {
-		@mixin label;
+		@include label;
 		margin-right: 1em;
 		margin-top: 0.25em;
 	}

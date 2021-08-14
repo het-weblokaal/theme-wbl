@@ -1,15 +1,20 @@
 /**
- * Responsive Grid
- *
- * Site width and padding. Grid columns and gutters.
+ * Settings: Grid
  */
+
+///
+/// Responsive Grid
+///
+/// Site width and padding. Grid columns and gutters.
+///
+
 body {
 
-	/* Default values are defined in theme.json */
+	// Default values are defined in theme.json
 
     @media (--from-breakpoint-1) {
 
-    	/* 2 columns */
+    	// 2 columns
     	--wp--custom--grid--column: 41vw;
 		--wp--custom--grid--gutter: 6vw;
     }
@@ -18,7 +23,7 @@ body {
 
     @media (--from-breakpoint-3) {
 
-    	/* 6 columns */
+    	// 6 columns
 		--wp--custom--site--width:   85vw;
 		--wp--custom--site--padding: 7.5vw;
 		--wp--custom--grid--column:  10vw;
@@ -29,7 +34,7 @@ body {
 
 	@media (--from-breakpoint-5) {
 
-    	/* 12 columns */
+    	// 12 columns
 		--wp--custom--site--width:   1080px;
 		--wp--custom--site--padding: 60px;
     	--wp--custom--grid--column:  35px; 

@@ -1,8 +1,8 @@
 .entry-author a {
-	@mixin reset-link;
+	@include reset-link;
 
 	&:hover,
     &:active {
-    	@mixin link-active-2;
+    	@include link-active-2;
     }
 }

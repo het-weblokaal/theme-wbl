@@ -50,5 +50,5 @@
 }
 
 .wp-block-column {
-	@mixin remove-first-last-child-margin;
+	@include remove-first-last-child-margin;
 }

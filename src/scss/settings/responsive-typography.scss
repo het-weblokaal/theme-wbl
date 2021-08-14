@@ -1,37 +1,41 @@
 /**
- * Responsive typography
- *
- * Rem-size, font-size and line-height
- *
- * - Rem-size also impacts the spacing (see settings/spacing.css)
- * - Use values with units as much as you can because of performance impact calculating the unit
+ * Settings: Typography
  */
+
+///
+/// Responsive typography
+///
+/// Rem-size, font-size and line-height
+///
+/// - Rem-size also impacts the spacing (see settings/spacing.css)
+/// - Use values with units as much as you can because of performance impact calculating the unit
+///
 
 :root {
 
 	--wp--custom--rem-size: 100%;
 
-	/* Default values are defined in theme.json */
+	// Default values are defined in theme.json 
 
 	@media (--from-breakpoint-1) {
 
-		/* Rem: 18 */
+		// Rem: 18 
 		--wp--custom--rem-size: 112.5%; 
-		--wp--preset--font-size--extra-small: 0.777778rem; /* 14 */
-		--wp--preset--font-size--small: 0.8889rem; /* 16 */
+		--wp--preset--font-size--extra-small: 0.777778rem; // 14 
+		--wp--preset--font-size--small: 0.8889rem; // 16 
 	}
 
 	@media (--from-breakpoint-2) {}
 
 	@media (--from-breakpoint-3) {
 
-		/* Rem: 19 */
+		// Rem: 19 
 		--wp--custom--rem-size: 118.75%;
 	}
 
 	@media (--from-breakpoint-4) {
 
-		/* Rem: 20 */
+		// Rem: 20 
 		--wp--custom--rem-size: 125%;
 	}
 
@@ -39,7 +43,7 @@
 
 	@media (--from-breakpoint-6) {
 
-		/* Rem: 24 */
+		// Rem: 24 
 		--wp--custom--rem-size: 150%;		
 		--wp--preset--font-size--extra-small: 0.75rem;
 		--wp--preset--font-size--small: 0.875rem;

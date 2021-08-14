@@ -16,7 +16,7 @@
 	}
 
 	&__link-label {
-		@mixin label;
+		@include label;
 		margin-bottom: var(--wp--custom--space--2);
 	}
 

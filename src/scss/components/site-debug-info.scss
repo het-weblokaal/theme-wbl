@@ -36,7 +36,7 @@
 	&__media-queries {
 
 		&:after {
-			@mixin dev--media-query-info;
+			@include dev--media-query-info;
 		}
 	}
 }

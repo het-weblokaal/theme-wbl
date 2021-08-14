@@ -3,7 +3,7 @@
 	z-index: 99;
 	margin-top: var(--wp--custom--space--12);
 	margin-bottom: var(--wp--custom--space--12);
-	@mixin is-page-segment;
+	@include is-page-segment;
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
@@ -56,7 +56,7 @@
 	}
 
 	@media (--from-breakpoint-5) {
-		@mixin is-page-segment--full-site;
+		@include is-page-segment--full-site;
 		/* margin-top: var(--wp--custom--space--12); */
 		margin-bottom: calc(var(--wp--custom--space--20) + var(--wp--custom--space--4));
 	}

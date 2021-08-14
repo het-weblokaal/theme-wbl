@@ -130,7 +130,7 @@ body {
 
 		--foreground-color: #000;
 
-		@mixin dev--background-grid;		
+		@include dev--background-grid;		
 	}
 }
 
@@ -139,19 +139,19 @@ body {
  */
 .edit-post-visual-editor__post-title-wrapper,
 .is-root-container {
-	@mixin is-page-segment;
-	@mixin has-page-content;
+	@include is-page-segment;
+	@include has-page-content;
 }
 
 /**
  * Reset default style for alignfull wrapper around group-block
  */
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
-	@mixin is-page-content--full-page;
+	@include is-page-content--full-page;
 }
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-	@mixin is-page-content--full-screen-editor-fix;
+	@include is-page-content--full-screen-editor-fix;
 }
 
 /**

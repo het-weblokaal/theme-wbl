@@ -98,7 +98,7 @@
 }
 
 .blocks-gallery-grid {
-	@mixin reset-list;
+	@include reset-list;
 
 	display: grid;
 	grid-template-columns: 1fr;
@@ -109,5 +109,5 @@
 }
 
 .blocks-gallery-item {
-	@mixin remove-first-last-child-margin;
+	@include remove-first-last-child-margin;
 }

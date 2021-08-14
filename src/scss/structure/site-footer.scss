@@ -11,7 +11,7 @@
 	margin-bottom: var(--wp--custom--space--20);
 
 	&__inner {
-		@mixin is-page-segment;
+		@include is-page-segment;
 	}
 
 	&__title {
@@ -44,7 +44,7 @@
 		}
 
 		[href^="tel:"] {
-			@mixin reset-link;
+			@include reset-link;
 		}
 	}
 
@@ -53,7 +53,7 @@
 		align-items: flex-start;
 
 		a {
-			@mixin reset-link;
+			@include reset-link;
 			margin-right: 1em;
 		}
 

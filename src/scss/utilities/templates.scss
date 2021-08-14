@@ -2,7 +2,7 @@
 
 	.page__header {
 		> * {
-			@mixin reset-page-content;
+			@include reset-page-content;
 		}
 	}
 }

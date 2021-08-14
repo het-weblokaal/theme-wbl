@@ -1,7 +1,10 @@
-/* Mixins: Structure */
-/* Mixins are predefined css, usable anywhere in the stylesheets */
+///
+/// Mixins for structure
+///
+/// predefined css, usable anywhere in the stylesheets 
+///
 
-/* ---- */
+///
 @mixin is-page-segment {
 	margin-left: auto;
     margin-right: auto;
@@ -27,7 +30,7 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	@mixin is-page-content--normal;
+	@include is-page-content--normal;
 }
 
 @mixin is-page-content--normal {
@@ -36,12 +39,12 @@
 	}
 
 	@media (--grid-columns-12) {
-		/* margin-left: var(--column-gutter-2); */
+		// margin-left: var(--column-gutter-2);
 		max-width: var(--wp--custom--grid--column-span--8);
 	}
 
 	@media (--from-breakpoint-7) {
-		/* max-width: var(--wp--custom--grid--column-span--7); */
+		// max-width: var(--wp--custom--grid--column-span--7);
 	}
 }
 
@@ -56,7 +59,7 @@
 	margin-top: var(--wp--custom--space--8);
 	margin-bottom: var(--wp--custom--space--8);
 
-	@mixin is-page-content--full-screen;
+	@include is-page-content--full-screen;
 }
 
 @mixin is-page-content--full-screen-with-background {
@@ -127,11 +130,11 @@
 }
 
 @mixin has-page-content {
-	/* @mixin clearfix; */
-	/* @mixin remove-first-last-child-margin; */
+	// @include clearfix;
+	// @include remove-first-last-child-margin;
 
 	> * {
-		@mixin is-page-content;
+		@include is-page-content;
 	}
 }
 
@@ -141,19 +144,19 @@
 	max-width: none;
 }
 
-/* ---- */
+///
 
 @mixin remove-first-last-child-margin {
 	> *:first-child { margin-top: 0; }
 	> *:last-child { margin-bottom: 0; }
 }
 
-/* Collapse vertical margin */
+/// Collapse vertical margin 
 @mixin margin-collapse-fix {
     overflow-y: hidden;
 }
 
-/* Clearfix for floating */
+/// Clearfix for floating 
 @mixin clearfix {
 	&:after {
 	  content: "";
@@ -168,13 +171,13 @@
     max-width: 100%;
 }
 
-/** Editor structure helpers */
+/// Editor structure helpers 
 
 @mixin is-page-content--editor {
 	max-width: none;
 }
 
-/* Fix fullscreen in editor */
+/// Fix fullscreen in editor 
 @mixin editor--is-full-width {
 	margin-left: auto;
 	margin-right: auto;

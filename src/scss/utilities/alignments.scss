@@ -3,11 +3,11 @@
 }
 
 .alignleft {
-	@mixin is-page-content--left;
+	@include is-page-content--left;
 }
 
 .alignright {
-	@mixin is-page-content--right;
+	@include is-page-content--right;
 }
 
 figure.alignleft,
@@ -44,7 +44,7 @@ figure.alignleft {
 }
 
 .alignwide {
-	@mixin is-page-content--full-page;
+	@include is-page-content--full-page;
 	margin-top: var(--wp--custom--space--8);
 	margin-bottom: var(--wp--custom--space--8);
 
@@ -60,7 +60,7 @@ figure.alignleft {
 }
 
 .alignfull {
-	@mixin is-page-content--full-page;
+	@include is-page-content--full-page;
 
 	@media (--grid-columns-6) {
 		margin-top: var(--wp--custom--space--12);
@@ -73,6 +73,6 @@ figure.alignleft {
 	}
 
 	&.has-background {
-		@mixin is-page-content--full-screen-with-background;
+		@include is-page-content--full-screen-with-background;
 	}
 }
