@@ -1,0 +1,58 @@
+/**
+ * Block: Core/Columns
+ */
+
+.wp-block-columns {
+	margin-top: calc(var(--vertical-space) * 2);
+	margin-bottom: calc(var(--vertical-space) * 2);
+
+	display: grid;
+	column-gap: var(--grid--gutter);
+	row-gap: $space-8;
+
+	grid-template-columns: 1fr;
+
+	@media (--from-breakpoint-2) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.wp-block-columns.is-style-columns-1 {
+	grid-template-columns: 1fr;
+}
+
+.wp-block-columns.is-style-columns-3,
+.wp-block-columns.is-style-columns-4 {
+
+	@media (--from-breakpoint-4) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.wp-block-columns.is-style-columns-4 {
+
+	@media (--from-breakpoint-6) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+.wp-block-columns.is-style-columns-2 {
+	grid-template-columns: 1fr;
+
+
+	@media (--from-breakpoint-2) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.alignwide.wp-block-columns,
+.alignfull.wp-block-columns {
+	@media (--grid-columns-12) {
+		margin-top: $space-20;
+		margin-bottom: $space-20;
+	}
+}
+
+.wp-block-column {
+	@include remove-first-last-child-margin;
+}

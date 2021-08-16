@@ -1,0 +1,33 @@
+/**
+ * Settings: General
+ */
+
+///
+/// Rem size
+///
+/// This impacts the font-size and the spacing
+///
+html {
+
+	--rem-size: 100%;
+
+	@media (--from-breakpoint-1) {
+
+		--rem-size: 112.5%; // 18px
+	}
+
+	@media (--from-breakpoint-3) {
+
+		--rem-size: 118.75%; // 19px
+	}
+
+	@media (--from-breakpoint-4) {
+
+		--rem-size: 125%; // 20px
+	}
+
+	@media (--from-breakpoint-6) {
+		
+		--rem-size: 150%; // 24px
+	}
+}

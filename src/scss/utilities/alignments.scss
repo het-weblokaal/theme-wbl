@@ -1,0 +1,82 @@
+/**
+ * Utilities: Alignments
+ */
+
+.alignleft,
+.alignright {
+}
+
+.alignleft {
+	@include is-page-content--left;
+}
+
+.alignright {
+	@include is-page-content--right;
+}
+
+figure.alignleft,
+figure.alignright {
+
+	width: 100%;
+
+	img {
+		width: 100%;
+	}
+
+	@media (--from-breakpoint-1) {
+		margin-top: $space-1;
+	}
+
+}
+
+figure.alignright {
+
+	@media (--grid-columns-12) {
+		// margin-right: calc(var(--column-gutter-1) * -1);
+	}
+}
+
+figure.alignleft {
+	margin-left: 0;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignwide {
+	@include is-page-content--full-page;
+	margin-top: $space-8;
+	margin-bottom: $space-8;
+
+	@media (--grid-columns-6) {
+		margin-top: $space-12;
+		margin-bottom: $space-12;
+	}
+
+	@media (--grid-columns-12) {
+		margin-top: $space-16;
+		margin-bottom: $space-16;
+	}
+}
+
+.alignfull {
+	@include is-page-content--full-page;
+
+	@media (--grid-columns-6) {
+		margin-top: $space-12;
+		margin-bottom: $space-12;
+	}
+
+	@media (--grid-columns-12) {
+		margin-top: $space-16;
+		margin-bottom: $space-16;
+	}
+
+	&.has-background {
+		@include is-page-content--full-screen-with-background;
+	}
+}

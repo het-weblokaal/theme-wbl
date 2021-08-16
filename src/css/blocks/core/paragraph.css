@@ -1,6 +1,0 @@
-p {
-	
-	&.has-background {
-		padding: var(--wp--custom--space--2);
-	}
-}

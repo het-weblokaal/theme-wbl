@@ -1,112 +1,32 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ({
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/block-editor.js":
 /*!********************************!*\
   !*** ./src/js/block-editor.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (() => {
 
-eval("/**\n * Block Control\n *\n */\nwp.domReady(function () {\n  var __ = wp.i18n.__;\n  /* ==================== CLEANUP ==================== */\n\n  /**\n   * Remove panels\n   *\n   * These should be re-enabled if blog module is active\n   */\n\n  var _wp$data$dispatch = wp.data.dispatch('core/edit-post'),\n      removeEditorPanel = _wp$data$dispatch.removeEditorPanel; // // Excerpt panel\n  // removeEditorPanel( 'post-excerpt' );\n  // Discussion panel\n\n\n  removeEditorPanel('discussion-panel');\n  /**\n   * Disable inline images\n   */\n\n  wp.richText.unregisterFormatType('core/image');\n  /**\n   * Remove Style variants\n   */\n  // Quote\n\n  wp.blocks.unregisterBlockStyle('core/quote', 'default');\n  wp.blocks.unregisterBlockStyle('core/quote', 'large'); // Table\n\n  wp.blocks.unregisterBlockStyle('core/table', 'regular');\n  wp.blocks.unregisterBlockStyle('core/table', 'stripes'); // Separator\n\n  wp.blocks.unregisterBlockStyle('core/separator', 'default');\n  wp.blocks.unregisterBlockStyle('core/separator', 'wide');\n  wp.blocks.unregisterBlockStyle('core/separator', 'dots'); // Buttons\n\n  wp.blocks.unregisterBlockStyle('core/button', 'fill');\n  wp.blocks.unregisterBlockStyle('core/button', 'outline'); // Image\n\n  wp.blocks.unregisterBlockStyle('core/image', 'default');\n  wp.blocks.unregisterBlockStyle('core/image', 'circle-mask');\n  /* ==================== ADDITIONS ==================== */\n  // @link https://developer.wordpress.org/block-editor/developers/filters/block-filters/\n\n  wp.blocks.registerBlockVariation('wbl-theme/segment', {\n    name: 'wbl-theme/segment/test',\n    title: __('Segment: Test', 'theme-wbl'),\n    description: __('WBL Segment as a Test', 'theme-wbl'),\n    attributes: {\n      variation: 'test',\n      tagName: 'aside'\n    },\n    innerBlocks: [['core/paragraph', {\n      placeholder: 'Test'\n    }]],\n    scope: ['block', 'inserter']\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvanMvYmxvY2stZWRpdG9yLmpzP2FmMTgiXSwibmFtZXMiOlsid3AiLCJkb21SZWFkeSIsIl9fIiwiaTE4biIsImRhdGEiLCJkaXNwYXRjaCIsInJlbW92ZUVkaXRvclBhbmVsIiwicmljaFRleHQiLCJ1bnJlZ2lzdGVyRm9ybWF0VHlwZSIsImJsb2NrcyIsInVucmVnaXN0ZXJCbG9ja1N0eWxlIiwicmVnaXN0ZXJCbG9ja1ZhcmlhdGlvbiIsIm5hbWUiLCJ0aXRsZSIsImRlc2NyaXB0aW9uIiwiYXR0cmlidXRlcyIsInZhcmlhdGlvbiIsInRhZ05hbWUiLCJpbm5lckJsb2NrcyIsInBsYWNlaG9sZGVyIiwic2NvcGUiXSwibWFwcGluZ3MiOiJBQUFBOzs7O0FBS0FBLEVBQUUsQ0FBQ0MsUUFBSCxDQUFhLFlBQVc7QUFBQSxNQUVmQyxFQUZlLEdBRVJGLEVBQUUsQ0FBQ0csSUFGSyxDQUVmRCxFQUZlO0FBSXZCOztBQUVBOzs7Ozs7QUFOdUIsMEJBV09GLEVBQUUsQ0FBQ0ksSUFBSCxDQUFRQyxRQUFSLENBQWtCLGdCQUFsQixDQVhQO0FBQUEsTUFXZkMsaUJBWGUscUJBV2ZBLGlCQVhlLEVBYXZCO0FBQ0E7QUFFQTs7O0FBQ0FBLG1CQUFpQixDQUFFLGtCQUFGLENBQWpCO0FBRUE7Ozs7QUFHQ04sSUFBRSxDQUFDTyxRQUFILENBQVlDLG9CQUFaLENBQWtDLFlBQWxDO0FBRUQ7OztBQUlBOztBQUNBUixJQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsWUFBaEMsRUFBOEMsU0FBOUM7QUFDQVYsSUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLFlBQWhDLEVBQThDLE9BQTlDLEVBOUJ1QixDQWdDdkI7O0FBQ0FWLElBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxZQUFoQyxFQUE4QyxTQUE5QztBQUNBVixJQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsWUFBaEMsRUFBOEMsU0FBOUMsRUFsQ3VCLENBb0N2Qjs7QUFDQVYsSUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLGdCQUFoQyxFQUFrRCxTQUFsRDtBQUNBVixJQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsZ0JBQWhDLEVBQWtELE1BQWxEO0FBQ0FWLElBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxnQkFBaEMsRUFBa0QsTUFBbEQsRUF2Q3VCLENBeUN2Qjs7QUFDQVYsSUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLGFBQWhDLEVBQStDLE1BQS9DO0FBQ0FWLElBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxhQUFoQyxFQUErQyxTQUEvQyxFQTNDdUIsQ0E2Q3ZCOztBQUNBVixJQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsWUFBaEMsRUFBOEMsU0FBOUM7QUFDQVYsSUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLFlBQWhDLEVBQThDLGFBQTlDO0FBR0E7QUFFQTs7QUFFQVYsSUFBRSxDQUFDUyxNQUFILENBQVVFLHNCQUFWLENBQWtDLG1CQUFsQyxFQUF1RDtBQUN0REMsUUFBSSxFQUFFLHdCQURnRDtBQUV0REMsU0FBSyxFQUFFWCxFQUFFLENBQUUsZUFBRixFQUFtQixXQUFuQixDQUY2QztBQUd0RFksZUFBVyxFQUFFWixFQUFFLENBQUUsdUJBQUYsRUFBMkIsV0FBM0IsQ0FIdUM7QUFJdERhLGNBQVUsRUFBRTtBQUFFQyxlQUFTLEVBQUUsTUFBYjtBQUFxQkMsYUFBTyxFQUFFO0FBQTlCLEtBSjBDO0FBS3REQyxlQUFXLEVBQUUsQ0FDWixDQUFFLGdCQUFGLEVBQW9CO0FBQUVDLGlCQUFXLEVBQUU7QUFBZixLQUFwQixDQURZLENBTHlDO0FBUXREQyxTQUFLLEVBQUUsQ0FBRSxPQUFGLEVBQVcsVUFBWDtBQVIrQyxHQUF2RDtBQVVBLENBaEVEIiwiZmlsZSI6Ii4vc3JjL2pzL2Jsb2NrLWVkaXRvci5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogQmxvY2sgQ29udHJvbFxuICpcbiAqL1xuXG53cC5kb21SZWFkeSggZnVuY3Rpb24oKSB7XG5cblx0Y29uc3QgeyBfXyB9ID0gd3AuaTE4bjtcblxuXHQvKiA9PT09PT09PT09PT09PT09PT09PSBDTEVBTlVQID09PT09PT09PT09PT09PT09PT09ICovXG5cblx0LyoqXG5cdCAqIFJlbW92ZSBwYW5lbHNcblx0ICpcblx0ICogVGhlc2Ugc2hvdWxkIGJlIHJlLWVuYWJsZWQgaWYgYmxvZyBtb2R1bGUgaXMgYWN0aXZlXG5cdCAqL1xuXHRjb25zdCB7IHJlbW92ZUVkaXRvclBhbmVsIH0gPSB3cC5kYXRhLmRpc3BhdGNoKCAnY29yZS9lZGl0LXBvc3QnICk7XG5cblx0Ly8gLy8gRXhjZXJwdCBwYW5lbFxuXHQvLyByZW1vdmVFZGl0b3JQYW5lbCggJ3Bvc3QtZXhjZXJwdCcgKTtcblxuXHQvLyBEaXNjdXNzaW9uIHBhbmVsXG5cdHJlbW92ZUVkaXRvclBhbmVsKCAnZGlzY3Vzc2lvbi1wYW5lbCcgKTtcblxuXHQvKipcblx0ICogRGlzYWJsZSBpbmxpbmUgaW1hZ2VzXG5cdCAqL1xuXHQgd3AucmljaFRleHQudW5yZWdpc3RlckZvcm1hdFR5cGUoICdjb3JlL2ltYWdlJyApO1xuXG5cdC8qKlxuXHQgKiBSZW1vdmUgU3R5bGUgdmFyaWFudHNcblx0ICovXG5cblx0Ly8gUXVvdGVcblx0d3AuYmxvY2tzLnVucmVnaXN0ZXJCbG9ja1N0eWxlKCAnY29yZS9xdW90ZScsICdkZWZhdWx0JyApO1xuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL3F1b3RlJywgJ2xhcmdlJyApO1xuXG5cdC8vIFRhYmxlXG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvdGFibGUnLCAncmVndWxhcicgKTtcblx0d3AuYmxvY2tzLnVucmVnaXN0ZXJCbG9ja1N0eWxlKCAnY29yZS90YWJsZScsICdzdHJpcGVzJyApO1xuXG5cdC8vIFNlcGFyYXRvclxuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL3NlcGFyYXRvcicsICdkZWZhdWx0JyApO1xuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL3NlcGFyYXRvcicsICd3aWRlJyApO1xuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL3NlcGFyYXRvcicsICdkb3RzJyApO1xuXG5cdC8vIEJ1dHRvbnNcblx0d3AuYmxvY2tzLnVucmVnaXN0ZXJCbG9ja1N0eWxlKCAnY29yZS9idXR0b24nLCAnZmlsbCcgKTtcblx0d3AuYmxvY2tzLnVucmVnaXN0ZXJCbG9ja1N0eWxlKCAnY29yZS9idXR0b24nLCAnb3V0bGluZScgKTtcblxuXHQvLyBJbWFnZVxuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL2ltYWdlJywgJ2RlZmF1bHQnICk7XG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvaW1hZ2UnLCAnY2lyY2xlLW1hc2snICk7XG5cblxuXHQvKiA9PT09PT09PT09PT09PT09PT09PSBBRERJVElPTlMgPT09PT09PT09PT09PT09PT09PT0gKi9cblxuXHQvLyBAbGluayBodHRwczovL2RldmVsb3Blci53b3JkcHJlc3Mub3JnL2Jsb2NrLWVkaXRvci9kZXZlbG9wZXJzL2ZpbHRlcnMvYmxvY2stZmlsdGVycy9cblxuXHR3cC5ibG9ja3MucmVnaXN0ZXJCbG9ja1ZhcmlhdGlvbiggJ3dibC10aGVtZS9zZWdtZW50Jywge1xuXHRcdG5hbWU6ICd3YmwtdGhlbWUvc2VnbWVudC90ZXN0Jyxcblx0XHR0aXRsZTogX18oICdTZWdtZW50OiBUZXN0JywgJ3RoZW1lLXdibCcgKSxcblx0XHRkZXNjcmlwdGlvbjogX18oICdXQkwgU2VnbWVudCBhcyBhIFRlc3QnLCAndGhlbWUtd2JsJyApLFxuXHRcdGF0dHJpYnV0ZXM6IHsgdmFyaWF0aW9uOiAndGVzdCcsIHRhZ05hbWU6ICdhc2lkZScgfSxcblx0XHRpbm5lckJsb2NrczogW1xuXHRcdFx0WyAnY29yZS9wYXJhZ3JhcGgnLCB7IHBsYWNlaG9sZGVyOiAnVGVzdCcgfSBdXG5cdFx0XSxcblx0XHRzY29wZTogWyAnYmxvY2snLCAnaW5zZXJ0ZXInIF1cblx0fSApO1xufSApO1xuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/js/block-editor.js\n");
-
-/***/ }),
-
-/***/ 2:
-/*!**************************************!*\
-  !*** multi ./src/js/block-editor.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! /home/erik/Webdev/www/hetweblokaal/public_html/wp-content/themes/theme-wbl/src/js/block-editor.js */"./src/js/block-editor.js");
-
+eval("/**\n * Block Control\n *\n */\nwp.domReady(function () {\n  var __ = wp.i18n.__;\n  /* ==================== CLEANUP ==================== */\n\n  /**\n   * Remove panels\n   *\n   * These should be re-enabled if blog module is active\n   */\n\n  var _wp$data$dispatch = wp.data.dispatch('core/edit-post'),\n      removeEditorPanel = _wp$data$dispatch.removeEditorPanel; // // Excerpt panel\n  // removeEditorPanel( 'post-excerpt' );\n  // Discussion panel\n\n\n  removeEditorPanel('discussion-panel');\n  /**\n   * Disable inline images\n   */\n\n  wp.richText.unregisterFormatType('core/image');\n  /**\n   * Remove Style variants\n   */\n  // Quote\n\n  wp.blocks.unregisterBlockStyle('core/quote', 'default');\n  wp.blocks.unregisterBlockStyle('core/quote', 'large'); // Table\n\n  wp.blocks.unregisterBlockStyle('core/table', 'regular');\n  wp.blocks.unregisterBlockStyle('core/table', 'stripes'); // Separator\n\n  wp.blocks.unregisterBlockStyle('core/separator', 'default');\n  wp.blocks.unregisterBlockStyle('core/separator', 'wide');\n  wp.blocks.unregisterBlockStyle('core/separator', 'dots'); // Buttons\n\n  wp.blocks.unregisterBlockStyle('core/button', 'fill');\n  wp.blocks.unregisterBlockStyle('core/button', 'outline'); // Image\n\n  wp.blocks.unregisterBlockStyle('core/image', 'default');\n  wp.blocks.unregisterBlockStyle('core/image', 'circle-mask');\n  /* ==================== ADDITIONS ==================== */\n  // @link https://developer.wordpress.org/block-editor/developers/filters/block-filters/\n\n  wp.blocks.registerBlockVariation('wbl-theme/segment', {\n    name: 'wbl-theme/segment/test',\n    title: __('Segment: Test', 'theme-wbl'),\n    description: __('WBL Segment as a Test', 'theme-wbl'),\n    attributes: {\n      variation: 'test',\n      tagName: 'aside'\n    },\n    innerBlocks: [['core/paragraph', {\n      placeholder: 'Test'\n    }]],\n    scope: ['block', 'inserter']\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly90aGVtZS13YmwvLi9zcmMvanMvYmxvY2stZWRpdG9yLmpzP2FmMTgiXSwibmFtZXMiOlsid3AiLCJkb21SZWFkeSIsIl9fIiwiaTE4biIsImRhdGEiLCJkaXNwYXRjaCIsInJlbW92ZUVkaXRvclBhbmVsIiwicmljaFRleHQiLCJ1bnJlZ2lzdGVyRm9ybWF0VHlwZSIsImJsb2NrcyIsInVucmVnaXN0ZXJCbG9ja1N0eWxlIiwicmVnaXN0ZXJCbG9ja1ZhcmlhdGlvbiIsIm5hbWUiLCJ0aXRsZSIsImRlc2NyaXB0aW9uIiwiYXR0cmlidXRlcyIsInZhcmlhdGlvbiIsInRhZ05hbWUiLCJpbm5lckJsb2NrcyIsInBsYWNlaG9sZGVyIiwic2NvcGUiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBRUFBLEVBQUUsQ0FBQ0MsUUFBSCxDQUFhLFlBQVc7QUFFdkIsTUFBUUMsRUFBUixHQUFlRixFQUFFLENBQUNHLElBQWxCLENBQVFELEVBQVI7QUFFQTs7QUFFQTtBQUNEO0FBQ0E7QUFDQTtBQUNBOztBQUNDLDBCQUE4QkYsRUFBRSxDQUFDSSxJQUFILENBQVFDLFFBQVIsQ0FBa0IsZ0JBQWxCLENBQTlCO0FBQUEsTUFBUUMsaUJBQVIscUJBQVFBLGlCQUFSLENBWHVCLENBYXZCO0FBQ0E7QUFFQTs7O0FBQ0FBLEVBQUFBLGlCQUFpQixDQUFFLGtCQUFGLENBQWpCO0FBRUE7QUFDRDtBQUNBOztBQUNFTixFQUFBQSxFQUFFLENBQUNPLFFBQUgsQ0FBWUMsb0JBQVosQ0FBa0MsWUFBbEM7QUFFRDtBQUNEO0FBQ0E7QUFFQzs7QUFDQVIsRUFBQUEsRUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLFlBQWhDLEVBQThDLFNBQTlDO0FBQ0FWLEVBQUFBLEVBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxZQUFoQyxFQUE4QyxPQUE5QyxFQTlCdUIsQ0FnQ3ZCOztBQUNBVixFQUFBQSxFQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsWUFBaEMsRUFBOEMsU0FBOUM7QUFDQVYsRUFBQUEsRUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLFlBQWhDLEVBQThDLFNBQTlDLEVBbEN1QixDQW9DdkI7O0FBQ0FWLEVBQUFBLEVBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxnQkFBaEMsRUFBa0QsU0FBbEQ7QUFDQVYsRUFBQUEsRUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLGdCQUFoQyxFQUFrRCxNQUFsRDtBQUNBVixFQUFBQSxFQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsZ0JBQWhDLEVBQWtELE1BQWxELEVBdkN1QixDQXlDdkI7O0FBQ0FWLEVBQUFBLEVBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxhQUFoQyxFQUErQyxNQUEvQztBQUNBVixFQUFBQSxFQUFFLENBQUNTLE1BQUgsQ0FBVUMsb0JBQVYsQ0FBZ0MsYUFBaEMsRUFBK0MsU0FBL0MsRUEzQ3VCLENBNkN2Qjs7QUFDQVYsRUFBQUEsRUFBRSxDQUFDUyxNQUFILENBQVVDLG9CQUFWLENBQWdDLFlBQWhDLEVBQThDLFNBQTlDO0FBQ0FWLEVBQUFBLEVBQUUsQ0FBQ1MsTUFBSCxDQUFVQyxvQkFBVixDQUFnQyxZQUFoQyxFQUE4QyxhQUE5QztBQUdBO0FBRUE7O0FBRUFWLEVBQUFBLEVBQUUsQ0FBQ1MsTUFBSCxDQUFVRSxzQkFBVixDQUFrQyxtQkFBbEMsRUFBdUQ7QUFDdERDLElBQUFBLElBQUksRUFBRSx3QkFEZ0Q7QUFFdERDLElBQUFBLEtBQUssRUFBRVgsRUFBRSxDQUFFLGVBQUYsRUFBbUIsV0FBbkIsQ0FGNkM7QUFHdERZLElBQUFBLFdBQVcsRUFBRVosRUFBRSxDQUFFLHVCQUFGLEVBQTJCLFdBQTNCLENBSHVDO0FBSXREYSxJQUFBQSxVQUFVLEVBQUU7QUFBRUMsTUFBQUEsU0FBUyxFQUFFLE1BQWI7QUFBcUJDLE1BQUFBLE9BQU8sRUFBRTtBQUE5QixLQUowQztBQUt0REMsSUFBQUEsV0FBVyxFQUFFLENBQ1osQ0FBRSxnQkFBRixFQUFvQjtBQUFFQyxNQUFBQSxXQUFXLEVBQUU7QUFBZixLQUFwQixDQURZLENBTHlDO0FBUXREQyxJQUFBQSxLQUFLLEVBQUUsQ0FBRSxPQUFGLEVBQVcsVUFBWDtBQVIrQyxHQUF2RDtBQVVBLENBaEVEIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBCbG9jayBDb250cm9sXG4gKlxuICovXG5cbndwLmRvbVJlYWR5KCBmdW5jdGlvbigpIHtcblxuXHRjb25zdCB7IF9fIH0gPSB3cC5pMThuO1xuXG5cdC8qID09PT09PT09PT09PT09PT09PT09IENMRUFOVVAgPT09PT09PT09PT09PT09PT09PT0gKi9cblxuXHQvKipcblx0ICogUmVtb3ZlIHBhbmVsc1xuXHQgKlxuXHQgKiBUaGVzZSBzaG91bGQgYmUgcmUtZW5hYmxlZCBpZiBibG9nIG1vZHVsZSBpcyBhY3RpdmVcblx0ICovXG5cdGNvbnN0IHsgcmVtb3ZlRWRpdG9yUGFuZWwgfSA9IHdwLmRhdGEuZGlzcGF0Y2goICdjb3JlL2VkaXQtcG9zdCcgKTtcblxuXHQvLyAvLyBFeGNlcnB0IHBhbmVsXG5cdC8vIHJlbW92ZUVkaXRvclBhbmVsKCAncG9zdC1leGNlcnB0JyApO1xuXG5cdC8vIERpc2N1c3Npb24gcGFuZWxcblx0cmVtb3ZlRWRpdG9yUGFuZWwoICdkaXNjdXNzaW9uLXBhbmVsJyApO1xuXG5cdC8qKlxuXHQgKiBEaXNhYmxlIGlubGluZSBpbWFnZXNcblx0ICovXG5cdCB3cC5yaWNoVGV4dC51bnJlZ2lzdGVyRm9ybWF0VHlwZSggJ2NvcmUvaW1hZ2UnICk7XG5cblx0LyoqXG5cdCAqIFJlbW92ZSBTdHlsZSB2YXJpYW50c1xuXHQgKi9cblxuXHQvLyBRdW90ZVxuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL3F1b3RlJywgJ2RlZmF1bHQnICk7XG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvcXVvdGUnLCAnbGFyZ2UnICk7XG5cblx0Ly8gVGFibGVcblx0d3AuYmxvY2tzLnVucmVnaXN0ZXJCbG9ja1N0eWxlKCAnY29yZS90YWJsZScsICdyZWd1bGFyJyApO1xuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL3RhYmxlJywgJ3N0cmlwZXMnICk7XG5cblx0Ly8gU2VwYXJhdG9yXG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvc2VwYXJhdG9yJywgJ2RlZmF1bHQnICk7XG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvc2VwYXJhdG9yJywgJ3dpZGUnICk7XG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvc2VwYXJhdG9yJywgJ2RvdHMnICk7XG5cblx0Ly8gQnV0dG9uc1xuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL2J1dHRvbicsICdmaWxsJyApO1xuXHR3cC5ibG9ja3MudW5yZWdpc3RlckJsb2NrU3R5bGUoICdjb3JlL2J1dHRvbicsICdvdXRsaW5lJyApO1xuXG5cdC8vIEltYWdlXG5cdHdwLmJsb2Nrcy51bnJlZ2lzdGVyQmxvY2tTdHlsZSggJ2NvcmUvaW1hZ2UnLCAnZGVmYXVsdCcgKTtcblx0d3AuYmxvY2tzLnVucmVnaXN0ZXJCbG9ja1N0eWxlKCAnY29yZS9pbWFnZScsICdjaXJjbGUtbWFzaycgKTtcblxuXG5cdC8qID09PT09PT09PT09PT09PT09PT09IEFERElUSU9OUyA9PT09PT09PT09PT09PT09PT09PSAqL1xuXG5cdC8vIEBsaW5rIGh0dHBzOi8vZGV2ZWxvcGVyLndvcmRwcmVzcy5vcmcvYmxvY2stZWRpdG9yL2RldmVsb3BlcnMvZmlsdGVycy9ibG9jay1maWx0ZXJzL1xuXG5cdHdwLmJsb2Nrcy5yZWdpc3RlckJsb2NrVmFyaWF0aW9uKCAnd2JsLXRoZW1lL3NlZ21lbnQnLCB7XG5cdFx0bmFtZTogJ3dibC10aGVtZS9zZWdtZW50L3Rlc3QnLFxuXHRcdHRpdGxlOiBfXyggJ1NlZ21lbnQ6IFRlc3QnLCAndGhlbWUtd2JsJyApLFxuXHRcdGRlc2NyaXB0aW9uOiBfXyggJ1dCTCBTZWdtZW50IGFzIGEgVGVzdCcsICd0aGVtZS13YmwnICksXG5cdFx0YXR0cmlidXRlczogeyB2YXJpYXRpb246ICd0ZXN0JywgdGFnTmFtZTogJ2FzaWRlJyB9LFxuXHRcdGlubmVyQmxvY2tzOiBbXG5cdFx0XHRbICdjb3JlL3BhcmFncmFwaCcsIHsgcGxhY2Vob2xkZXI6ICdUZXN0JyB9IF1cblx0XHRdLFxuXHRcdHNjb3BlOiBbICdibG9jaycsICdpbnNlcnRlcicgXVxuXHR9ICk7XG59ICk7XG4iXSwiZmlsZSI6Ii4vc3JjL2pzL2Jsb2NrLWVkaXRvci5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/js/block-editor.js\n");
 
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/js/block-editor.js"]();
+/******/ 	
+/******/ })()
+;

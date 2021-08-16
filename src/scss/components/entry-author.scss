@@ -1,0 +1,12 @@
+/**
+ * Component: entry author
+ */
+
+.entry-author a {
+	@include reset-link;
+
+	&:hover,
+    &:active {
+    	@include link-active-2;
+    }
+}

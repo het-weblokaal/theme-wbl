@@ -1,0 +1,82 @@
+/**
+ * Block: Core/Cover
+ */
+
+.wp-block-cover {
+	@include is-page-segment;
+
+	/* Default colors */
+	--background-color: var(--wp--preset--color--secondary-1);
+	--foreground-color: var(--wp--preset--color--primary-1);
+
+	background-size: cover;
+	background-position: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 430px;
+	position: relative;
+
+	padding-top: $space-4;
+	padding-bottom: $space-4;
+	padding-right: var(--column-gutter);
+	padding-left: var(--column-gutter);
+
+	&__inner-container {
+		color: var(--foreground-color);
+		z-index: 1;
+
+		> *:first-child { margin-top: 0; }
+		> *:last-child { margin-bottom: 0; }
+	}
+}
+
+/**
+ * Cover block doesn't have settings for foreground color, so we have to assign it manually
+ */
+.wp-block-cover.has-primary-1-background-color {
+	--foreground-color: var(--wp--preset--color--secondary-1);
+}
+
+.wp-block-cover.has-secondary-1-background-color {
+	--foreground-color: var(--wp--preset--color--primary-1);
+}
+
+.wp-block-cover.has-tertiary-1-background-color {
+	--foreground-color: var(--wp--preset--color--primary-1);
+}
+
+.wp-block-cover.has-custom-content-position {
+
+	.wp-block-cover__inner-container {
+		width: auto;
+	}
+}
+
+.alignwide,
+.alignfull {
+	.wp-block-cover {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.is-position-top-left,
+.is-position-center-left,
+.is-position-bottom-left {
+
+	.wp-block-cover {
+		justify-content: flex-start;
+	}
+}
+
+.is-position-top-right,
+.is-position-center-right,
+.is-position-bottom-right {
+
+	.wp-block-cover {
+		justify-content: flex-end;
+	}
+}
+
+

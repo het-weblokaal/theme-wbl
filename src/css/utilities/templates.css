@@ -1,8 +1,0 @@
-.is-archive {
-
-	.page__header {
-		> * {
-			@mixin reset-page-content;
-		}
-	}
-}

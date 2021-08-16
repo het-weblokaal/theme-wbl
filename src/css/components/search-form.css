@@ -1,9 +1,0 @@
-.search-form {
-	display: flex;
-	flex-wrap: wrap;
-
-	.search-field {
-		margin-right: 0.25em;
-		width: auto;
-	}
-}

@@ -1,0 +1,68 @@
+///
+/// Tools: Mixins Development
+///
+
+@mixin dev--background-grid {
+	/* background: linear-gradient(90deg,
+		var(--foreground-color) var(--grid--column-span--1),
+		transparent var(--grid--column-span--1),
+		transparent calc( var(--grid--column-span--1) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--1) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--2),
+		transparent var(--grid--column-span--2),
+		transparent calc( var(--grid--column-span--2) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--2) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--3),
+		transparent var(--grid--column-span--3),
+		transparent calc( var(--grid--column-span--3) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--3) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--4),
+		transparent var(--grid--column-span--4),
+		transparent calc( var(--grid--column-span--4) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--4) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--5),
+		transparent var(--grid--column-span--5),
+		transparent calc( var(--grid--column-span--5) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--5) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--6),
+		transparent var(--grid--column-span--6),
+		transparent calc( var(--grid--column-span--6) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--6) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--7),
+		transparent var(--grid--column-span--7),
+		transparent calc( var(--grid--column-span--7) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--7) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--8),
+		transparent var(--grid--column-span--8),
+		transparent calc( var(--grid--column-span--8) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--8) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--9),
+		transparent var(--grid--column-span--9),
+		transparent calc( var(--grid--column-span--9) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--9) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--10),
+		transparent var(--grid--column-span--10),
+		transparent calc( var(--grid--column-span--10) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--10) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--11),
+		transparent var(--grid--column-span--11),
+		transparent calc( var(--grid--column-span--11) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--11) + var(--grid--gutter) ),
+		var(--foreground-color) var(--grid--column-span--12),
+		transparent var(--grid--column-span--12),
+		transparent calc( var(--grid--column-span--12) + var(--grid--gutter) ),
+		var(--foreground-color) calc( var(--grid--column-span--12 + var(--grid--gutter) ))
+	); */
+}
+
+@mixin dev--media-query-info {
+	content: 'bp - (mini)';
+
+	@media (--from-breakpoint-1) { content: 'bp 1: 360px (klein)'; }
+	@media (--from-breakpoint-2) { content: 'bp 2: 600px (klein)'; }
+	@media (--from-breakpoint-3) { content: 'bp 3: 840px (middel)'; }
+	@media (--from-breakpoint-4) { content: 'bp 4: 1080px (middel)'; }
+	@media (--from-breakpoint-5) { content: 'bp 5: 1400px (groot)'; }
+	@media (--from-breakpoint-6) { content: 'bp 6: 1720px (groot)'; }
+	@media (--from-breakpoint-7) { content: 'bp 7: 1920px (max)'; }
+}

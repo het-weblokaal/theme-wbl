@@ -1,8 +1,0 @@
-.social-media-list {
-	@mixin reset-list;
-
-	display: flex;
-
-	&__item {
-	}
-}

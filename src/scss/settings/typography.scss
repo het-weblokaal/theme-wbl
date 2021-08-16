@@ -1,0 +1,40 @@
+/**
+ * Settings: Typography
+ */
+
+///
+/// Responsive typography
+///
+/// Rem-size, font-size and line-height
+///
+/// - Rem-size also impacts the spacing (see settings/spacing.css)
+/// - Use values with units as much as you can because of performance impact calculating the unit
+///
+
+body {
+
+	@media (--from-breakpoint-1) {
+
+		// Rem: 18 
+		--wp--preset--font-size--extra-small: 0.777778rem; // 14 
+		--wp--preset--font-size--small: 0.8889rem; // 16 
+	}
+
+	@media (--from-breakpoint-2) {}
+
+	@media (--from-breakpoint-3) {
+	}
+
+	@media (--from-breakpoint-4) {
+	}
+
+	@media (--from-breakpoint-5) {}
+
+	@media (--from-breakpoint-6) {
+
+		--wp--preset--font-size--extra-small: 0.75rem;
+		--wp--preset--font-size--small: 0.875rem;
+		
+		--wp--custom--line-height--normal: 1.4;
+	}
+}

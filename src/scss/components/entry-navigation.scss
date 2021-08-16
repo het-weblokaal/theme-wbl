@@ -1,0 +1,43 @@
+/**
+ * Component: Entry Navigation
+ */
+
+.entry-navigation {
+	margin-top: $space-8;
+	margin-bottom: $space-8;
+
+	a {}
+
+	&__links {
+		display: grid;
+		grid-template-columns: 1fr;
+		column-gap: var(--grid--gutter);
+		row-gap: $space-4;
+
+		@media (--from-breakpoint-2) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__link-label {
+		@include label;
+		margin-bottom: $space-2;
+	}
+
+	&__link {
+
+		&--previous {
+
+		}
+
+		&--next {
+
+		}
+	}
+
+	@media (--from-breakpoint-2) {
+		&__next {
+			text-align: right;
+		}
+	}
+}

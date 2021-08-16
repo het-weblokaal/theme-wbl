@@ -1,0 +1,12 @@
+/**
+ * Utilities: Templates
+ */
+
+.is-archive {
+
+	.page__header {
+		> * {
+			@include reset-page-content;
+		}
+	}
+}

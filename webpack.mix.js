@@ -5,8 +5,8 @@
  * complexity of building out a Webpack configuration file. Use this file to
  * configure how your assets are handled in the build process.
  *
- * @link https://laravel-mix.com/docs/5.0/installation
- * @link https://laravel.com/docs/5.6/mix
+ * @link https://laravel-mix.com/docs/6.0/installation
+ * @link https://laravel.com/docs/6.x/mix
  *
  * @package   Ejo\Theme\Erik
  * @author    Erik Joling <erik@joling.me>
@@ -16,9 +16,6 @@
 
 // Import required packages.
 const mix = require( 'laravel-mix' );
-
-// Prevent webpack to copy media files each time (when changing css/js)
-const processMedia = ! process.env.nomedia;
 
 /**
  * Sets the development path to assets. By default, this is the `/assets`
@@ -37,15 +34,12 @@ mix.setPublicPath( pubPath );
  * Set Laravel Mix options.
  *
  * @link https://laravel-mix.com/docs/5.0/options
- * @link https://laravel.com/docs/5.6/mix#postcss
- * @link https://laravel.com/docs/5.6/mix#url-processing
+ * @link https://laravel.com/docs/6.x/mix#postcss
+ * @link https://laravel.com/docs/6.x/mix#url-processing
  * @link https://github.com/csstools/postcss-preset-env
  */
 mix.options( {
 	postCss : [
-		require( 'postcss-import' )(),
-		require( 'postcss-mixins' )(),
-		require( 'postcss-nested' )(),
 		require( 'postcss-preset-env' )({
 			stage: 2,
 			features: {
@@ -59,7 +53,7 @@ mix.options( {
 /**
  * Builds sources maps for assets. Only when not in production
  *
- * @link https://laravel.com/docs/5.6/mix#css-source-maps
+ * @link https://laravel.com/docs/6.x/mix#css-source-maps
  */
 if (! mix.inProduction()) {
 	mix.sourceMaps();
@@ -70,25 +64,26 @@ if (! mix.inProduction()) {
  * you only want versioned assets in production, do a conditional check for
  * `mix.inProduction()`.
  *
- * @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
+ * @link https://laravel.com/docs/6.x/mix#versioning-and-cache-busting
  */
 mix.version();
 
 /**
  * Compile JavaScript.
  *
- * @link https://laravel.com/docs/5.6/mix#working-with-scripts
+ * @link https://laravel.com/docs/6.x/mix#working-with-scripts
  */
 mix.js( `${devPath}/js/polyfill.js`,     'js' )
    .js( `${devPath}/js/theme.js`,        'js' )
    .js( `${devPath}/js/block-editor.js`, 'js' );
 
 /**
- * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
- * for each of them.
+ * Compile CSS. We use Sass to make our code more understandable. Though we 
+ * don't use all the complexity Sass has to offer. Mainly for comments and
+ * combination. After Sass laravel mix will run PostCSS with the options above.
  *
- * @link https://laravel.com/docs/5.6/mix#working-with-stylesheets
+ * @link https://laravel.com/docs/6.x/mix#working-with-stylesheets
  */
-mix.postCss( `${devPath}/css/style.css`,             'css' )
-   .postCss( `${devPath}/css/editor-style.css`,      'css' );
+mix.sass( `${devPath}/scss/style.scss`,        'css' );
+// mix.sass( `${devPath}/scss/editor-style.scss`, 'css' );
 

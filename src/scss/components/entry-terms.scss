@@ -1,0 +1,15 @@
+/**
+ * Component: Entry Terms
+ */
+
+.entry__term--category,
+.entry__term--project_category {
+
+	@include reset-link;
+	display: inline-block;
+	margin-right: 0.75em;
+
+	&:before {
+		content: '#';
+	}
+}

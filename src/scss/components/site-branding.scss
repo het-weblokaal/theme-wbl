@@ -1,0 +1,51 @@
+/**
+ * Component: Site Branding
+ */
+
+.site-branding {
+
+	&__title {
+		margin-bottom: 0;
+		margin-top: 0;
+
+		font-size: var(--wp--preset--font-size--gigantic);
+		line-height: 1;
+
+		a {
+			@include reset-link;
+			display: block;
+
+			&:hover {
+				text-decoration: underline;
+				text-decoration-thickness: $ui-border-width;
+			}
+
+		}
+	}
+}
+
+svg.site-logo {
+	position: static;
+	width: 100%;
+	max-width: 240px;
+	height: auto;
+
+	// &__text path {
+	// 	fill: var(--foreground-color);
+	// }
+
+	// &__symbol path {
+	// 	stroke: var(--foreground-color);
+	// }
+}
+
+.custom-logo-link {
+	display: inline-block;
+}
+
+.custom-logo {
+	display: block;
+	margin-bottom: 0;
+}
+
+

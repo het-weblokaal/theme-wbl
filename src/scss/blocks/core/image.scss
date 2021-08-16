@@ -1,0 +1,30 @@
+/**
+ * Block: Core/Image
+ */
+
+.wp-block-image {
+	figure {
+		/* margin-bottom: $space-6; */
+	}
+
+
+	figcaption {
+
+	}
+
+	&.alignwide,
+	&.alignfull {
+		max-width: none;
+		figcaption {
+			@include is-page-segment;
+			@include is-page-content--normal;
+		}
+		img {
+			width: 100%;
+		}
+	}
+
+	&.alignfull {
+		@include is-page-content--full-screen;
+	}
+}

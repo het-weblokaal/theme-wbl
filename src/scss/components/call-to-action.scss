@@ -1,0 +1,26 @@
+/**
+ * Component: Call to action
+ */
+
+.call-to-action {
+	@include margin-collapse-fix;
+	@include is-page-content--full-screen-with-background;
+	--background-color: var(--wp--preset--color--secondary-1);
+	--foreground-color: var(--wp--preset--color--primary-1);
+	background-color: var(--background-color);
+	color: var(--foreground-color);
+	margin-top: $space-20;
+	margin-bottom: $space-20;
+
+	&__inner {
+		@include is-page-segment;
+		@include has-page-content;
+		margin-top: $space-20;
+		margin-bottom: $space-20;
+		text-align: center;
+
+		> * {
+			margin-left: auto;
+		}
+	}
+}

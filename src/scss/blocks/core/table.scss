@@ -1,0 +1,48 @@
+/**
+ * Block: core/table
+ */
+
+.wp-block-table {
+	margin-bottom: $space-4;
+	margin-top: $space-4;
+
+	.has-fixed-layout {
+		table-layout: fixed;
+	}
+
+	table {
+		margin-bottom: 0;
+	}
+
+	th,
+	td {
+		padding: $space-1 0;
+		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+	}
+
+	th {
+		font-size: var(--wp--preset--font-size--small);
+		font-weight: bold;
+	}
+
+	tr {
+		&:nth-child(odd) {
+			td {
+				/* @mixin background--light; */
+			}
+		}
+	}
+
+	td {
+		font-size: var(--wp--preset--font-size--small);
+	}
+
+	tfoot td {
+		/* font-weight: bold; */
+		color: var(--ui-color);
+	}
+
+	figcaption {
+	}
+}
+

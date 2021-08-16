@@ -1,0 +1,115 @@
+///
+/// Tools: Mixins 
+///
+/// predefined css, usable anywhere in the stylesheets 
+///
+
+/// 
+/// Links
+///
+@mixin link {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.1em;
+
+	&:hover,
+    &:active {
+        @include link-active;
+    }
+}
+
+@mixin link-active {
+	outline: 0;
+	text-decoration-style: dotted;
+}
+
+@mixin link-active-2 {
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.1em;
+}
+
+@mixin reset-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/// 
+/// Buttons
+///
+
+@mixin button {
+    @include reset-link;
+
+	font-weight: bold;
+	line-height: var(--wp--custom--line-height--small);
+    /* font-size: var(--wp--preset--font-size--small);
+    text-transform: uppercase; */
+    display: inline-block;
+    cursor: pointer;
+
+	border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+    padding: $space-1;
+
+	transition: border-color var(--transition-fast);
+
+	position: relative;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	text-decoration: underline;
+    	text-decoration-thickness: var(--ui-border-width);
+    }
+}
+
+@mixin reset-button {
+	background-color: transparent;
+	border: none;
+	color: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    letter-spacing: normal;
+    text-transform: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+    	text-decoration: none;
+    }
+}
+
+/// 
+/// Other
+///
+
+@mixin reset-list {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+@mixin svg {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+
+@mixin reset-svg {
+	height: auto;
+	top: auto;
+	vertical-align: baseline;
+	width: auto;
+}
+
+@mixin global-transition {
+    transition: all var(--transition-duration-1) ease-in-out;
+}
+
+@mixin hr-styles {
+
+}
