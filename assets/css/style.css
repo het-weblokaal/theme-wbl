@@ -483,8 +483,8 @@ input[type=submit]:active {
   max-width: 100%;
   clear: both;
   min-height: 100vh;
-  background-color: var(--wp--preset--color--cornsilk);
-  color: var(--wp--preset--color--black);
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--secondary);
 }
 
 .has-expanded-site-nav .site {
@@ -637,14 +637,14 @@ input[type=submit]:active {
   right: 0;
 }
 .has-expanded-site-nav .site-header .site-branding {
-  color: var(--wp--preset--color--cornsilk);
+  color: var(--wp--preset--color--primary);
   z-index: 1;
 }
 .has-expanded-site-nav .site-header .site-branding path {
   stroke: currentColor;
 }
 .has-expanded-site-nav .site-header .site-nav-toggle {
-  color: var(--wp--preset--color--cornsilk);
+  color: var(--wp--preset--color--primary);
 }
 
 /**
@@ -1369,10 +1369,6 @@ p.has-background {
   margin-right: calc(50% - 50vw);
   max-width: none;
   width: auto;
-  --background-color: var(--wp--preset--color--secondary-1);
-  --foreground-color: var(--wp--preset--color--primary-1);
-  background-color: var(--background-color);
-  color: var(--foreground-color);
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
@@ -1831,8 +1827,8 @@ p.has-background {
  * Component: Site Nav
  */
 .site-nav {
-  background-color: var(--wp--preset--color--black);
-  color: var(--wp--preset--color--cornsilk);
+  background-color: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--primary);
   position: fixed;
   right: 0;
   top: 0;

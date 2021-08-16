@@ -5,13 +5,13 @@
     	"color": {
             "palette": [
 	            {
-	                "name": "Cornsilk",
-	                "slug": "cornsilk",
+	                "name": "Primary",
+	                "slug": "primary",
 	                "color": "#FFF7D6"
 	            },
 	            {
-	                "name": "Black",
-	                "slug": "black",
+	                "name": "Secondary",
+	                "slug": "secondary",
 	                "color": "#000000"
 	            }
             ],

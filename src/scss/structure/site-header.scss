@@ -78,7 +78,7 @@
 	right: 0;
 
 	.site-branding {
-		color: var(--wp--preset--color--cornsilk);
+		color: var(--wp--preset--color--primary);
 		z-index: 1;
 
 		path {
@@ -87,6 +87,6 @@
 	}
 
 	.site-nav-toggle {
-		color: var(--wp--preset--color--cornsilk);
+		color: var(--wp--preset--color--primary);
 	}
 }

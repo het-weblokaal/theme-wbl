@@ -18,6 +18,29 @@ This improves performance (fewer requests to multiple top-level domains) and inc
 
 # Developer notes
 
+## Color naming
+For colors we choose to use the following naming structure: 
+
+- primary
+- secondary
+- tertiary 
+- neutral
+
+The reason for this is that the naming is exposed to the HTML through classes like `has-primary-color` and `has-secondary-background-color`. When we change the colors we don't want to change the classnames which are saved to the database.
+
+To add subtilities to the colors we can use a palette (from light to dark):
+
+- primary-50
+- primary-100
+- primary-200
+- primary-300
+- primary-400
+- primary-500
+- primary-600
+- primary-700
+- primary-800
+- primary-900
+
 ## Remarkable remarks
 
 - **Fix editor block layout**: There is a max-width of 840px added to .wp-block in the editor. We disable this through an inline script in assets.php. We can't use editor-style.css because this adds to much specificity. Note: could this 840 be linked to the magical 'content-width'?
