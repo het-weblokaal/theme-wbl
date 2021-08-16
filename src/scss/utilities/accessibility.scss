@@ -1,8 +1,12 @@
 /**
- * Text only shown to screen readers.
- * Shamelessly borrowed from HTML5Boilerplate:
- * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ * Utilities: Accessibility
  */
+
+//
+// Text only shown to screen readers.
+// Shamelessly borrowed from HTML5Boilerplate:
+// @link https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+//
 .screen-reader-text { 
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -14,10 +18,10 @@
 	position: absolute;
 	width: 1px;
 
-	/**
-	 * Many screen reader and browser combinations announce broken words
-	 * as they would appear visually.
-	 */
+	//
+	// Many screen reader and browser combinations announce broken words
+	// as they would appear visually.
+	//
 	word-wrap: normal !important;
 
 	&:active,
@@ -32,13 +36,29 @@
 	}
 }
 
-/**
- * Targets the "skip to content" link at the top of the page if it needs extra
- * style rules beyond the screen reader text rules.
- */
+//
+// Targets the "skip to content" link at the top of the page if it needs extra
+// style rules beyond the screen reader text rules.
+//
 .skip-link {}
 
-/* Do not show the outline on the skip link target. */
-#main[tabindex="-1"]:focus { /* stylelint-disable-line a11y/no-outline-none */
+// Do not show the outline on the skip link target
+#main[tabindex="-1"]:focus { 
 	outline: 0;
+}
+
+//
+// Prefers reduced motion
+//
+// @link https://webkit.org/blog-files/prefers-reduced-motion/prm.htm
+// @link https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+//
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001s !important;
+		transition-duration: 0.001s !important;
+	}
 }

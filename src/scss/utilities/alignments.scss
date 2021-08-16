@@ -1,3 +1,7 @@
+/**
+ * Utilities: Alignments
+ */
+
 .alignleft,
 .alignright {
 }
@@ -20,7 +24,7 @@ figure.alignright {
 	}
 
 	@media (--from-breakpoint-1) {
-		margin-top: var(--wp--custom--space--1);
+		margin-top: $space-1;
 	}
 
 }
@@ -28,7 +32,7 @@ figure.alignright {
 figure.alignright {
 
 	@media (--grid-columns-12) {
-		/* margin-right: calc(var(--column-gutter-1) * -1); */
+		// margin-right: calc(var(--column-gutter-1) * -1);
 	}
 }
 
@@ -45,17 +49,17 @@ figure.alignleft {
 
 .alignwide {
 	@include is-page-content--full-page;
-	margin-top: var(--wp--custom--space--8);
-	margin-bottom: var(--wp--custom--space--8);
+	margin-top: $space-8;
+	margin-bottom: $space-8;
 
 	@media (--grid-columns-6) {
-		margin-top: var(--wp--custom--space--12);
-		margin-bottom: var(--wp--custom--space--12);
+		margin-top: $space-12;
+		margin-bottom: $space-12;
 	}
 
 	@media (--grid-columns-12) {
-		margin-top: var(--wp--custom--space--16);
-		margin-bottom: var(--wp--custom--space--16);
+		margin-top: $space-16;
+		margin-bottom: $space-16;
 	}
 }
 
@@ -63,13 +67,13 @@ figure.alignleft {
 	@include is-page-content--full-page;
 
 	@media (--grid-columns-6) {
-		margin-top: var(--wp--custom--space--12);
-		margin-bottom: var(--wp--custom--space--12);
+		margin-top: $space-12;
+		margin-bottom: $space-12;
 	}
 
 	@media (--grid-columns-12) {
-		margin-top: var(--wp--custom--space--16);
-		margin-bottom: var(--wp--custom--space--16);
+		margin-top: $space-16;
+		margin-bottom: $space-16;
 	}
 
 	&.has-background {

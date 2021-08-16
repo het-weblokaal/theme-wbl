@@ -1,4 +1,6 @@
-/* Maybe put in :root to create specificity */
+/**
+ * Utilities: Helpers
+ */
 
 .has-text-align-left {
 	text-align: left;
@@ -96,13 +98,13 @@ ol.is-style-no-bullets {
 }
 
 body.has-page-image {
-	--page-image-height: 50vh;
+	--misc--page-image-height: 50vh;
 
 	&.is-singular--wbl_project {
-		--page-image-height: 80vh;
+		--misc--page-image-height: 80vh;
 	}
 
 	&.has-expanded-site-nav {
-		--page-image-height: 0px;
+		--misc--page-image-height: 0px;
 	}
 }

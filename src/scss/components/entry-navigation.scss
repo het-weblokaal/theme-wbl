@@ -1,14 +1,18 @@
+/**
+ * Component: Entry Navigation
+ */
+
 .entry-navigation {
-	margin-top: var(--wp--custom--space--8);
-	margin-bottom: var(--wp--custom--space--8);
+	margin-top: $space-8;
+	margin-bottom: $space-8;
 
 	a {}
 
 	&__links {
 		display: grid;
 		grid-template-columns: 1fr;
-		column-gap: var(--wp--custom--grid--gutter);
-		row-gap: var(--wp--custom--space--4);
+		column-gap: var(--grid--gutter);
+		row-gap: $space-4;
 
 		@media (--from-breakpoint-2) {
 			grid-template-columns: 1fr 1fr;
@@ -17,7 +21,7 @@
 
 	&__link-label {
 		@include label;
-		margin-bottom: var(--wp--custom--space--2);
+		margin-bottom: $space-2;
 	}
 
 	&__link {

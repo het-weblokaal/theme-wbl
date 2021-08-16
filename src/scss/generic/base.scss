@@ -1,15 +1,16 @@
 /**
- * Generic base
- *
- * This offers base styling for common elements.
- */
+ * Generic: base
+ */ 
+
+// This offers base styling for common elements.
 
 
-/* Root
----------------------------------------------------- */
+//
+// Root
+//
 
 html {
-    font-size: var(--wp--custom--rem-size);
+    font-size: var(--rem-size);
 }
 
 body {
@@ -19,9 +20,10 @@ body {
 }
 
 
-/* Headings
----------------------------------------------------- */
-/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
+//
+// Headings
+//
+// Reverse order so that the * wildcard specifity is in the right order... Usecase?
 
 h6,
 h5,
@@ -42,60 +44,64 @@ h4,
 h3 {
     font-size: var(--wp--preset--font-size--normal);
     line-height: var(--wp--custom--line-height--small);
-    margin-top: var(--wp--custom--space--10);
-    margin-bottom: var(--wp--custom--space--4);
+    margin-top: $space-10;
+    margin-bottom: $space-4;
 }
 
 h2 {
     font-size: var(--wp--preset--font-size--extra-large);
     line-height: var(--wp--custom--line-height--extra-small);
-    margin-top: var(--wp--custom--space--12);
-    margin-bottom: var(--wp--custom--space--8);
+    margin-top: $space-12;
+    margin-bottom: $space-8;
 }
 
 
 h1 {
     font-size: var(--wp--preset--font-size--gigantic);
     line-height: var(--wp--custom--line-height--extra-small);
-    margin-top: var(--wp--custom--space--12);
-    margin-bottom: var(--wp--custom--space--12);
+    margin-top: $space-12;
+    margin-bottom: $space-12;
 
     max-width: calc(var(--wp--custom--text-max-width) * 1.25);
 }
 
 
-/* Copywriting
----------------------------------------------------- */
+//
+// Copywriting
+//
 
 p {
-    margin-bottom: var(--wp--custom--space--8);
+    margin-bottom: $space-8;
     max-width: var(--wp--custom--text-max-width);
 }
 
 
-/* Inline
----------------------------------------------------- */
+//
+// Inline
+//
 
 br, strong {}
 
 i, em {}
 
 
-/* Links
----------------------------------------------------- */
+//
+// Links
+//
 
 a {
     @include link;
 }
 
 
-/* Lists
----------------------------------------------------- */
+//
+// Lists
+//
 
 ul, ol {
     padding-left: 1.1em;
     margin-left: 0;
-    margin-bottom: var(--wp--custom--space--8);
+    margin-bottom: $space-8;
 
     ul, ol {}
 }
@@ -104,14 +110,15 @@ li {}
 
 
 
-/* Tables
----------------------------------------------------- */
+//
+// Tables
+//
 
 table {
-    border-collapse: collapse; /* Makes table rows borderable */
+    border-collapse: collapse; // Makes table rows borderable
     border-spacing: 0;
     width: 100%;
-    margin-bottom: var(--wp--custom--space--8);
+    margin-bottom: $space-8;
 }
 
 th,
@@ -124,8 +131,9 @@ td {
 
 
 
-/* Miscelaneous
----------------------------------------------------- */
+//
+// Miscelaneous
+//
 
 hr {
     color: currentColor;
@@ -135,21 +143,22 @@ hr {
     border-style: solid;
     clear: both;
     width: 100%;
-    margin-top: var(--wp--custom--space--8);
-    margin-bottom: var(--wp--custom--space--8);
+    margin-top: $space-8;
+    margin-bottom: $space-8;
 }
 
 pre {
     white-space: pre-wrap;
-    margin-bottom: var(--wp--custom--space--8);
+    margin-bottom: $space-8;
 }
 
 
-/* Blockquotes
----------------------------------------------------- */
+//
+// Blockquotes
+//
 
 blockquote {
-    margin-bottom: var(--wp--custom--space--8);
+    margin-bottom: $space-8;
 
     > *:last-child {
         margin-bottom: 0;
@@ -176,8 +185,10 @@ blockquote {
 }
 
 
-/* Media
----------------------------------------------------- */
+//
+// Media
+//
+
 img,
 figure,
 audio,
@@ -187,7 +198,7 @@ embed,
 iframe {
     max-width: 100%;
     height: auto;
-    margin-bottom: var(--wp--custom--space--8);
+    margin-bottom: $space-8;
 }
 
 figure,
@@ -214,25 +225,27 @@ figure > * {
 }
 
 figcaption {
-    margin-top: var(--wp--custom--space--3);
+    margin-top: $space-3;
     font-size: var(--wp--preset--font-size--extra-small);
     line-height: var(--wp--custom--line-height--extra-small);
 }
 
 
-/* SVG
----------------------------------------------------- */
+//
+// SVG
+//
 
 svg {
     @include svg;
 }
 
 
-/* Form
----------------------------------------------------- */
+//
+// Form
+//
 
 textarea {
-    /* Removes empty space under textarea. */
+    // Removes empty space under textarea.
     display: block;
 }
 
@@ -257,7 +270,7 @@ select {
     border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
     border-radius: 0;
     font-size: var(--wp--preset--font-size--small);
-    padding: var(--wp--custom--space--1) var(--wp--custom--space--1);
+    padding: $space-1 $space-1;
     width: 100%;
     transition: border-color var(--transition-fast);
 
@@ -267,7 +280,7 @@ select {
     }
 
     &:focus {
-        /* Use transparent outline for Windows high contrast mode. */
+        // Use transparent outline for Windows high contrast mode.
         outline: 2px solid transparent;
     }
 
@@ -279,26 +292,27 @@ select {
 
 label {
     display: block;
-    /* font-weight: bold; */
+    // font-weight: bold;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
     margin-right: 0.25em;
-    /* font-weight: normal; */
+    // font-weight: normal;
     line-height: var(--wp--custom--line-height--small);
 
     & + label {
         display: inline;
         font-size: var(--wp--preset--font-size--small);
         line-height: var(--wp--custom--line-height--small);
-        /* font-weight: normal; */
+        // font-weight: normal;
     }
 }
 
 
-/* Buttons
----------------------------------------------------- */
+//
+// Buttons
+//
 
 input[type="submit"] {
     background-color: transparent;

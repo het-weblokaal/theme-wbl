@@ -1,36 +1,40 @@
 /**
- * Difference between pullquote and quote:
- *
- * - A quote is something someone else said.
- * - A pullquote is a piece of text from the text of your article, pulled out.
- *
- * @link https://github.com/WordPress/gutenberg/issues/11610
+ * Block: core/quote
  */
+
+//
+// Difference between pullquote and quote:
+//
+// - A quote is something someone else said.
+// - A pullquote is a piece of text from the text of your article, pulled out.
+//
+// @link https://github.com/WordPress/gutenberg/issues/11610
+//
 
 .wp-block-quote {
 
 	p {
 		font-style: italic;
 		font-weight: bold;
-		margin-bottom: var(--wp--custom--space--4);
+		margin-bottom: $space-4;
 	}
 
 	cite {
 		display: block;
-		margin-top: calc( var(--wp--custom--space--1) * -1 );
+		margin-top: calc( $space-1 * -1 );
 		font-size: var(--wp--preset--font-size--small);
 		font-style: normal;
 		font-weight: regular;
 	}
 
 	@media (--from-breakpoint-2) {
-		padding-left: var(--wp--custom--space--8);
-		padding-right: var(--wp--custom--space--8);
+		padding-left: $space-8;
+		padding-right: $space-8;
 	}
 
 	@media (--grid-columns-12) {
-		margin-top: var(--wp--custom--space--10);
-		margin-bottom: var(--wp--custom--space--10);
+		margin-top: $space-10;
+		margin-bottom: $space-10;
 		padding-left: var(--column-gutter-1);
 		padding-right: var(--column-gutter-1);
 	}

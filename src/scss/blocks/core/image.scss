@@ -1,6 +1,10 @@
+/**
+ * Block: Core/Image
+ */
+
 .wp-block-image {
 	figure {
-		/* margin-bottom: var(--wp--custom--space--6); */
+		/* margin-bottom: $space-6; */
 	}
 
 

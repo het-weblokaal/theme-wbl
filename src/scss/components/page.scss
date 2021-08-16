@@ -1,3 +1,7 @@
+/**
+ * Component: Page
+ */
+
 .page {
 
 	
@@ -10,7 +14,7 @@
 	width: 100%;
 	z-index: -10;
 	
-	height: var(--page-image-height);
+	height: var(--misc--page-image-height);
 
 	img {
 		display: block;
@@ -23,15 +27,15 @@
 
 .page__header {
 	@include has-page-content;
-	margin-bottom: var(--wp--custom--space--8);
+	margin-bottom: $space-8;
 
 	@media (--from-breakpoint-5) {
-		margin-bottom: var(--wp--custom--space--12);
+		margin-bottom: $space-12;
 	}
 
 	.page__label {
 		@include label;
-		margin-bottom: calc( var(--wp--custom--space--8) * -1 );
+		margin-bottom: calc( $space-8 * -1 );
 
 		a {
 			@include reset-link;
@@ -39,7 +43,7 @@
 	}
 
 	.page__meta {
-		margin-top: var(--wp--custom--space--2);
+		margin-top: $space-2;
 		font-size: var(--wp--preset--font-size--small);
 	}
 }
@@ -47,10 +51,10 @@
 .page__content {
 	@include has-page-content;
 
-	margin-bottom: var(--wp--custom--space--4);
+	margin-bottom: $space-4;
 
 	@media (--from-breakpoint-5) {
-		margin-bottom: var(--wp--custom--space--12);
+		margin-bottom: $space-12;
 	}
 
 	.archive-description {
@@ -62,21 +66,21 @@
 	@include has-page-content;
 
 	.entry__terms {
-		margin-top: var(--wp--custom--space--16);
-		margin-bottom: var(--wp--custom--space--16);
+		margin-top: $space-16;
+		margin-bottom: $space-16;
 
 		.label {
 			@include label;
 			display: block;
-			margin-bottom: var(--wp--custom--space--4);
+			margin-bottom: $space-4;
 		}
 	}
 
 	.entry-navigation {
 		@include is-page-content--full-page;
 
-		margin-top: var(--wp--custom--space--20);
-		margin-bottom: var(--wp--custom--space--20);
+		margin-top: $space-20;
+		margin-bottom: $space-20;
 	}
 
 	/* @media (--from-breakpoint-4) {

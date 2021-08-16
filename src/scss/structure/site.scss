@@ -1,3 +1,7 @@
+/**
+ * Structure: Site
+ */
+
 .site {
 	@include margin-collapse-fix;
 	@include full-page-content-overflow-fix;
@@ -9,20 +13,19 @@
 }
 
 .has-expanded-site-nav .site {
-	/**
-	 * Prevent scrolling
-	 */
+
+	// Prevent scrolling
 	overflow-y: hidden;
   	overscroll-behavior: contain;
   	height: 100vh;
 
-/* 	@media (min-device-width: 1025px) {
-		padding-right: 12px;
-	} */
+	// @media (min-device-width: 1025px) {
+	// 	padding-right: 12px;
+	// }
 }
 
 .has-page-image:not(.is-singular--page) .site {
-	margin-top: var(--page-image-height);
+	margin-top: var(--misc--page-image-height);
 }
 
 .has-grid .site {
@@ -36,7 +39,7 @@
 		bottom: 0;
 		margin-left: auto;
 		margin-right: auto;
-		width: var(--wp--custom--site--width);
+		width: var(--site--width);
 		opacity: 0.1;
 		z-index: 99;
 

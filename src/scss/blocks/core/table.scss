@@ -1,6 +1,10 @@
+/**
+ * Block: core/table
+ */
+
 .wp-block-table {
-	margin-bottom: var(--wp--custom--space--4);
-	margin-top: var(--wp--custom--space--4);
+	margin-bottom: $space-4;
+	margin-top: $space-4;
 
 	.has-fixed-layout {
 		table-layout: fixed;
@@ -12,7 +16,7 @@
 
 	th,
 	td {
-		padding: var(--wp--custom--space--1) 0;
+		padding: $space-1 0;
 		border-bottom: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
 	}
 

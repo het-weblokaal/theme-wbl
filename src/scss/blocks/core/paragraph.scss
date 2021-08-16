@@ -1,6 +1,10 @@
+/**
+ * Block: core/paragraph
+ */
+
 p {
 	
 	&.has-background {
-		padding: var(--wp--custom--space--2);
+		padding: $space-2;
 	}
 }

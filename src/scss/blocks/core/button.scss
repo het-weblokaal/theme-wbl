@@ -1,5 +1,9 @@
+/**
+ * Block: core/button
+ */
+
 .wp-block-buttons {
-	margin-bottom: var(--wp--custom--space--4);
+	margin-bottom: $space-4;
 	display: flex;
 	flex-wrap: wrap;
 

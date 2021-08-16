@@ -1,3 +1,7 @@
+/**
+ * Component: Site Branding
+ */
+
 .site-branding {
 
 	&__title {
@@ -13,7 +17,7 @@
 
 			&:hover {
 				text-decoration: underline;
-				text-decoration-thickness: var(--ui-border-width);
+				text-decoration-thickness: $ui-border-width;
 			}
 
 		}
@@ -26,13 +30,13 @@ svg.site-logo {
 	max-width: 240px;
 	height: auto;
 
-	&__text path {
-		/* fill: var(--foreground-color); */
-	}
+	// &__text path {
+	// 	fill: var(--foreground-color);
+	// }
 
-	&__symbol path {
-		/* stroke: var(--foreground-color); */
-	}
+	// &__symbol path {
+	// 	stroke: var(--foreground-color);
+	// }
 }
 
 .custom-logo-link {

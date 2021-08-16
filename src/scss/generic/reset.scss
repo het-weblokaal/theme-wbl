@@ -1,19 +1,18 @@
 /**
- * Generic reset
+ * Generic: reset
  */
 
-///
-/// This resets opinionated browser styles.
-///
+// This resets opinionated browser styles.
 
-///
-/// 1. Default spacing and borders
-///
-/// 2. Allow flexbox-containers to shrink below its min-content
-///    Thus allowing flexboxcontainers to shrink smaller than child-image
-///    - https://teamtreehouse.com/community/firefox-flexbox-not-working
-///    - http://stackoverflow.com/questions/28710379/firefox-flexbox-image-width
-///
+
+//
+// 1. Default spacing and borders
+//
+// 2. Allow flexbox-containers to shrink below its min-content
+//    Thus allowing flexboxcontainers to shrink smaller than child-image
+//    - https://teamtreehouse.com/community/firefox-flexbox-not-working
+//    - http://stackoverflow.com/questions/28710379/firefox-flexbox-image-width
+//
 * {
     margin: 0;  // 1
     padding: 0; // 1
@@ -53,24 +52,24 @@ footer, header, main, nav, section {
     display: block;
 }
 
-///
-/// HTML5 extra
-///
-/// If something is marked hidden, it is hidden from all presentations,
-/// including, for instance, screen readers.
-///
-/// CSS's `display: none` will be dependent on a given presentation
-///
+//
+// HTML5 extra
+//
+// If something is marked hidden, it is hidden from all presentations,
+// including, for instance, screen readers.
+//
+// CSS's `display: none` will be dependent on a given presentation
+//
 [hidden] {
     display: none;
 }
 
-///
-/// Firefox placeholder reset
-///
-/// By default, all placeholders in Firefox have an opacity value
-/// applied to them, so in order to fix this we need to reset that value
-///
+//
+// Firefox placeholder reset
+//
+// By default, all placeholders in Firefox have an opacity value
+// applied to them, so in order to fix this we need to reset that value
+//
 ::-moz-placeholder {
   opacity: 1;
 }

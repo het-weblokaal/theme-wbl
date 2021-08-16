@@ -1,3 +1,7 @@
+/**
+ * Component: Project Specs
+ */
+
 .project-specs {
 	font-size: var(--wp--preset--font-size--small);
 
@@ -12,7 +16,7 @@
 
 .project-specs.alignfull {
 	@media (--from-breakpoint-5) {
-		margin-top: var(--wp--custom--space--20);
-		margin-bottom: var(--wp--custom--space--20);
+		margin-top: $space-20;
+		margin-bottom: $space-20;
 	}
 }

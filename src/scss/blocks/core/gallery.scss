@@ -1,7 +1,11 @@
+/**
+ * Block: Core/Gallery
+ */
+
 .wp-block-gallery {
 	max-width: none;
-	margin-top: var(--wp--custom--space--8);
-	margin-bottom: var(--wp--custom--space--8);
+	margin-top: $space-8;
+	margin-bottom: $space-8;
 	
 	figure {}
 
@@ -87,8 +91,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		column-gap: var(--wp--custom--grid--gutter);
-		row-gap: var(--wp--custom--space--6);
+		column-gap: var(--grid--gutter);
+		row-gap: $space-6;
 	}
 	
 	.blocks-gallery-item {
@@ -102,8 +106,8 @@
 
 	display: grid;
 	grid-template-columns: 1fr;
-	column-gap: calc(var(--wp--custom--grid--gutter) * 1);
-	row-gap: var(--wp--custom--space--10);
+	column-gap: calc(var(--grid--gutter) * 1);
+	row-gap: $space-10;
 
 	
 }

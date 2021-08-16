@@ -1,5 +1,5 @@
 ///
-/// Mixins 
+/// Tools: Mixins 
 ///
 /// predefined css, usable anywhere in the stylesheets 
 ///
@@ -50,7 +50,7 @@
     cursor: pointer;
 
 	border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    padding: var(--wp--custom--space--1);
+    padding: $space-1;
 
 	transition: border-color var(--transition-fast);
 

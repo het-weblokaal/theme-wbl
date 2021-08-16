@@ -1,8 +1,12 @@
+/**
+ * Structure: Site Header
+ */
+
 .site-header {
 	position: relative;
 	z-index: 99;
-	margin-top: var(--wp--custom--space--12);
-	margin-bottom: var(--wp--custom--space--12);
+	margin-top: $space-12;
+	margin-bottom: $space-12;
 	@include is-page-segment;
 	display: flex;
 	flex-wrap: nowrap;
@@ -30,7 +34,7 @@
 		}
 	}
 
-	/** Media Queries */
+	// Media Queries 
 	@media (--from-breakpoint-2) {
 		.site-branding {
 			width: 160px;
@@ -57,16 +61,14 @@
 
 	@media (--from-breakpoint-5) {
 		@include is-page-segment--full-site;
-		/* margin-top: var(--wp--custom--space--12); */
-		margin-bottom: calc(var(--wp--custom--space--20) + var(--wp--custom--space--4));
+		// margin-top: $space-12;
+		margin-bottom: calc($space-20 + $space-4);
 	}
 
 	@media (--from-breakpoint-6) {
-		margin-top: var(--wp--custom--space--12);
-		margin-bottom: calc(var(--wp--custom--space--20));
+		margin-top: $space-12;
+		margin-bottom: calc($space-20);
 	}
-
- 	/** Additional and modifying classes */
 }
 
 .has-expanded-site-nav .site-header {
@@ -74,13 +76,10 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	/* right: var(--wp--custom--grid--gutter); */
 
 	.site-branding {
-		--foreground-color: var(--wp--preset--color--primary-1);
-		color: var(--foreground-color);
+		color: var(--wp--preset--color--cornsilk);
 		z-index: 1;
-		/* z-index: -1; */
 
 		path {
 			stroke: currentColor;
@@ -88,11 +87,6 @@
 	}
 
 	.site-nav-toggle {
-		--foreground-color: var(--wp--preset--color--primary-1);
-		color: var(--foreground-color);
-
-		/* position: fixed;
-		top: var(--wp--custom--space--8);
-		right: var(--wp--custom--grid--gutter); */
+		color: var(--wp--preset--color--cornsilk);
 	}
 }

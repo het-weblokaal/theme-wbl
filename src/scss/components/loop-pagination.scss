@@ -1,6 +1,10 @@
+/**
+ * Component: Loop Pagination
+ */
+
 .pagination {
-	margin-bottom: var(--wp--custom--space--8);
-	margin-top: var(--wp--custom--space--8);
+	margin-bottom: $space-8;
+	margin-top: $space-8;
 
 	a {
 		@include reset-link;
@@ -17,13 +21,13 @@
 	}
 
 	.page-numbers {
-		padding: var(--wp--custom--space--1) var(--wp--custom--space--2);
+		padding: $space-1 $space-2;
 	}
 
 	.page-numbers.prev,
 	.page-numbers.next {
 		padding: 0;
-		margin: var(--wp--custom--space--1) var(--wp--custom--space--2);
+		margin: $space-1 $space-2;
 	}
 
 	.page-numbers.prev {
