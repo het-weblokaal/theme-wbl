@@ -124,7 +124,7 @@
     }
 
     @media (--from-breakpoint-5) {
-        --wp--custom--text-max-width: 24rem;
+        --misc--max-text-width: 24rem;
 
         grid-template-areas:
             "footer header header image"

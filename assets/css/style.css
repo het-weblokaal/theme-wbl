@@ -175,7 +175,7 @@ h1 {
   font-style: normal;
   overflow-wrap: break-word;
   text-transform: uppercase;
-  max-width: var(--wp--custom--text-max-width);
+  max-width: var(--misc--max-text-width);
 }
 
 h6,
@@ -200,12 +200,12 @@ h1 {
   line-height: var(--wp--custom--line-height--extra-small);
   margin-top: 3rem;
   margin-bottom: 3rem;
-  max-width: calc(var(--wp--custom--text-max-width) * 1.25);
+  max-width: calc(var(--misc--max-text-width) * 1.25);
 }
 
 p {
   margin-bottom: 2rem;
-  max-width: var(--wp--custom--text-max-width);
+  max-width: var(--misc--max-text-width);
 }
 
 a {
@@ -264,7 +264,7 @@ blockquote > *:last-child {
 }
 blockquote cite {
   font-style: normal;
-  max-width: var(--wp--custom--text-max-width);
+  max-width: var(--misc--max-text-width);
 }
 blockquote cite:before {
   content: "—";
@@ -620,13 +620,13 @@ input[type=submit]:active {
     margin-right: var(--site--padding);
     max-width: none;
     width: auto;
-    margin-bottom: calc($space-20 + $space-4);
+    margin-bottom: 6rem;
   }
 }
 @media (min-width: 1720px) {
   .site-header {
     margin-top: 3rem;
-    margin-bottom: calc($space-20);
+    margin-bottom: 5rem;
   }
 }
 
@@ -1573,7 +1573,7 @@ p.has-background {
 }
 @media (min-width: 1400px) {
   .loop--blog .loop__entry {
-    --wp--custom--text-max-width: 24rem;
+    --misc--max-text-width: 24rem;
     grid-template-areas: "footer header header image" "footer main   main   image";
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

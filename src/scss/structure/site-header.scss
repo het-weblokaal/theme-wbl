@@ -61,13 +61,12 @@
 
 	@media (--from-breakpoint-5) {
 		@include is-page-segment--full-site;
-		// margin-top: $space-12;
-		margin-bottom: calc($space-20 + $space-4);
+		margin-bottom: $space-24;
 	}
 
 	@media (--from-breakpoint-6) {
 		margin-top: $space-12;
-		margin-bottom: calc($space-20);
+		margin-bottom: $space-20;
 	}
 }
 

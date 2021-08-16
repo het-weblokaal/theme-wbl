@@ -35,7 +35,7 @@ h1 {
     font-style: normal;
     overflow-wrap: break-word;
     text-transform: uppercase;
-    max-width: var(--wp--custom--text-max-width);
+    max-width: var(--misc--max-text-width);
 }
 
 h6,
@@ -62,7 +62,7 @@ h1 {
     margin-top: $space-12;
     margin-bottom: $space-12;
 
-    max-width: calc(var(--wp--custom--text-max-width) * 1.25);
+    max-width: calc(var(--misc--max-text-width) * 1.25);
 }
 
 
@@ -72,7 +72,7 @@ h1 {
 
 p {
     margin-bottom: $space-8;
-    max-width: var(--wp--custom--text-max-width);
+    max-width: var(--misc--max-text-width);
 }
 
 
@@ -176,7 +176,7 @@ blockquote {
 
     cite {
         font-style: normal;
-        max-width: var(--wp--custom--text-max-width);
+        max-width: var(--misc--max-text-width);
         &:before {
             content: '\2014';
             margin-right: 0.25em;
