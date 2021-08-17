@@ -6,67 +6,97 @@
  * short, each layer of CSS gets more specific as you move down this page.
  */
 
-/*--------------------------------------------------------------
-# Settings - Global variables, config switches.
---------------------------------------------------------------*/
 
-@import "settings/media-queries.css";
-@import "settings/misc.css";
+///
+/// Tools - Default mixins and functions.
+///
 
-
-/*--------------------------------------------------------------
-# Tools - Default mixins and functions.
---------------------------------------------------------------*/
-@import "tools/mixins.css";
-@import "tools/mixins-development.css";
-@import "tools/mixins-structure.css";
-@import "tools/mixins-typography.css";
+@import "tools/variables";
+@import "tools/mixins";
+@import "tools/mixins-development";
+@import "tools/mixins-structure";
+@import "tools/mixins-typography";
 
 
-/*--------------------------------------------------------------
-# Generic - Ground-zero styles (resets, box-sizing, etc.).
---------------------------------------------------------------*/
-/* @import "generic/reset.css"; */
-@import "generic/base.css";
-@import "generic/reset-editor-style.css";
+///
+/// Settings - Global variables, config switches.
+///
+@import "settings/media-queries";
+@import "settings/rem";
+@import "settings/grid";
+@import "settings/typography";
+@import "settings/misc";
 
 
-/*--------------------------------------------------------------
-# Structure - 
---------------------------------------------------------------*/
-/* @import "structure/root.css";
-@import "structure/site.css";
-@import "structure/site-header.css";
-@import "structure/site-main.css";
-@import "structure/site-footer.css";
-@import "structure/page.css";
-@import "structure/page-header.css";
-@import "structure/page-main.css";
-@import "structure/page-footer.css";
-@import "structure/page-comments.css"; */
+///
+/// Generic - Ground-zero styles (resets, box-sizing, etc.).
+///
+@import "generic/reset";
+@import "generic/base";
 
 
-/*--------------------------------------------------------------
-# Blocks - editor related styles.
---------------------------------------------------------------*/
-/* @import "blocks/core/button.css";
-@import "blocks/core/code.css";
-@import "blocks/core/cover.css";
-@import "blocks/core/gallery.css";
-@import "blocks/core/image.css";
-@import "blocks/core/media-text.css";
-@import "blocks/core/pullquote.css"; */
-@import "blocks/core/quote.css";
-/* @import "blocks/core/separator.css";
-@import "blocks/core/table.css"; */
-@import "blocks/core/columns.css";
-@import "blocks/core/group.css";
+// ///
+// /// Structure - 
+// ///
+// @import "structure/root";
+// @import "structure/site";
+// @import "structure/site-header";
+// @import "structure/site-main";
+// @import "structure/site-footer";
+// @import "components/page";
+// @import "components/entry";
 
 
-/*--------------------------------------------------------------
-# Utilities - Helpers and overrides.
---------------------------------------------------------------*/
-@import "utilities/helpers.css";
+// ///
+// /// Blocks - editor related styles.
+// ///
+// @import "blocks/core/button";
+// @import "blocks/core/code";
+// @import "blocks/core/cover";
+// @import "blocks/core/columns";
+// @import "blocks/core/gallery";
+@import "blocks/core/group";
+// @import "blocks/core/heading";
+// @import "blocks/core/image";
+// @import "blocks/core/media-text";
+// @import "blocks/core/paragraph";
+// @import "blocks/core/pullquote";
+// @import "blocks/core/quote";
+// @import "blocks/core/separator";
+// @import "blocks/core/table";
+
+
+// ///
+// /// Components - specific UI components.
+// ///
+// @import "components/call-to-action";
+// @import "components/entry-author";
+// @import "components/entry-password-protection-status";
+// @import "components/entry-navigation";
+// @import "components/entry-terms";
+// @import "components/loop";
+// @import "components/loop-pagination";
+// @import "components/password-protection-form";
+// @import "components/project-specs";
+// @import "components/search-form";
+// @import "components/site-debug-info";
+// @import "components/site-nav";
+// @import "components/site-branding";
+// @import "components/site-nav-toggle";
+// @import "components/social-media-list";
+// @import "components/social-media-link";
+
+
+// ///
+// /// Utilities - Helpers and overrides.
+// ///
+// @import "utilities/accessibility";
+// @import "utilities/alignments";
+// @import "utilities/helpers";
+// @import "utilities/wordpress";
+// @import "utilities/shame";
+// @import "utilities/templates";
+
 
 /**
  * Custom values 
@@ -96,11 +126,8 @@ body {
  * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
  */
 body {
-	--background-color: var(--wp--preset--color--primary-1);
-	--foreground-color: var(--wp--preset--color--secondary-1);
-
-	background-color: var(--background-color);
-	color: var(--foreground-color);
+	background-color: var(--wp--preset--color--primary);
+	color: 			  var(--wp--preset--color--secondary);
 
 	font-family: var(--wp--custom--font-family);
     line-height: var(--wp--custom--line-height--normal);
@@ -110,7 +137,7 @@ body {
 	/**
 	 * Enforce a basic font-size similar to frontend. We assume large screens
 	 */
-	font-size: 24px;
+	// font-size: 24px;
 
 	/**
 	 * Grid
@@ -128,35 +155,27 @@ body {
 		width: var(--site--width);
 		opacity: 0.025;
 
-		--foreground-color: #000;
-
 		@include dev--background-grid;		
 	}
 }
 
-/**
- * Add layout for block-containers similar as frontend
- */
-.edit-post-visual-editor__post-title-wrapper,
-.is-root-container {
-	@include is-page-segment;
-	@include has-page-content;
-}
+// // Add layout for block-containers similar as frontend
+// .edit-post-visual-editor__post-title-wrapper,
+// .is-root-container {
+// 	@include is-page-segment;
+// 	@include has-page-content;
+// }
 
-/**
- * Reset default style for alignfull wrapper around group-block
- */
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
-	@include is-page-content--full-page;
-}
+// // Reset default style for alignfull wrapper around group-block
+// .block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
+// 	@include is-page-content--full-page;
+// }
 
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-	@include is-page-content--full-screen-editor-fix;
-}
+// .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+// 	@include is-page-content--full-screen-editor-fix;
+// }
 
-/**
- * Fix columns block extra margin
- */
-.block-editor-block-list__block.wp-block-column:not(:first-child) {
-    margin-left: 0;
-}
+// // Fix columns block extra margin
+// .block-editor-block-list__block.wp-block-column:not(:first-child) {
+//     margin-left: 0;
+// }

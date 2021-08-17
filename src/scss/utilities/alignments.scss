@@ -31,7 +31,7 @@ figure.alignright {
 
 figure.alignright {
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		// margin-right: calc(var(--column-gutter-1) * -1);
 	}
 }
@@ -52,12 +52,12 @@ figure.alignleft {
 	margin-top: $space-8;
 	margin-bottom: $space-8;
 
-	@media (--grid-columns-6) {
+	@media (--from-breakpoint-3) {
 		margin-top: $space-12;
 		margin-bottom: $space-12;
 	}
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		margin-top: $space-16;
 		margin-bottom: $space-16;
 	}
@@ -66,12 +66,12 @@ figure.alignleft {
 .alignfull {
 	@include is-page-content--full-page;
 
-	@media (--grid-columns-6) {
+	@media (--from-breakpoint-3) {
 		margin-top: $space-12;
 		margin-bottom: $space-12;
 	}
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		margin-top: $space-16;
 		margin-bottom: $space-16;
 	}

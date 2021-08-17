@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Editor stylesheet for the theme.
  *
@@ -5,115 +6,174 @@
  * Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
  * short, each layer of CSS gets more specific as you move down this page.
  */
-
-/*--------------------------------------------------------------
-# Settings - Global variables, config switches.
---------------------------------------------------------------*/
-
 /**
- * Breakpoints for Media Queries
- *
- * We are using the "Mobile first" approach.
+ * Settings: General
  */
-
-/* Grid: 2 columns */
-
-/* Grid: 6 columns */
-
-/* Grid: 12 columns */
-
-/**
- * Extra information
- *
- * Grid:
- * - from breakpoint 1 -->  2 columns
- * - from breakpoint 3 -->  6 columns
- * - from breakpoint 5 --> 12 columns
- *
- * Touch:
- * - until breakpoint 4 --> smartphones and tablets
- * - from breakpoint 4  --> laptops and desktops
- */
-
-:root {
-
-	--button-border-width: 6px;
-
-	--ui-border-width: 2px;
-	--ui-border-style: solid;
-
-	--page-image-height: 0px;
-
-	--wp--custom--text-max-width: 32rem;
+html {
+  --rem-size: 100%;
+}
+@media (min-width: 360px) {
+  html {
+    --rem-size: 112.5%;
+  }
+}
+@media (min-width: 840px) {
+  html {
+    --rem-size: 118.75%;
+  }
+}
+@media (min-width: 1080px) {
+  html {
+    --rem-size: 125%;
+  }
+}
+@media (min-width: 1720px) {
+  html {
+    --rem-size: 150%;
+  }
 }
 
-/*--------------------------------------------------------------
-# Tools - Default mixins and functions.
---------------------------------------------------------------*/
-
-/* Mixins are predefined css, usable anywhere in the stylesheets */
-
-/* ===============
- * Links
- * =============== */
-
-/* ===============
- * Buttons
- * =============== */
-
-/* ===============
- * Other
- * =============== */
-
-/* ===============
- * Development
- * =============== */
-
-/* Mixins: Structure */
-
-/* Mixins are predefined css, usable anywhere in the stylesheets */
-
-/* ---- */
-
-/* ---- */
-
-/* Collapse vertical margin */
-
-/* Clearfix for floating */
-
-/** Editor structure helpers */
-
-/* Fix fullscreen in editor */
-
-/*--------------------------------------------------------------
-# Generic - Ground-zero styles (resets, box-sizing, etc.).
---------------------------------------------------------------*/
-
-/* @import "generic/reset.css"; */
+/**
+ * Settings: Grid
+ */
+body {
+  --grid--column-span--1: var(--grid--column);
+  --grid--column-span--2: calc(var(--grid--column) * 2 + var(--grid--gutter) * 1);
+  --grid--column-span--3: calc(var(--grid--column) * 3 + var(--grid--gutter) * 2);
+  --grid--column-span--4: calc(var(--grid--column) * 4 + var(--grid--gutter) * 3);
+  --grid--column-span--5: calc(var(--grid--column) * 5 + var(--grid--gutter) * 4);
+  --grid--column-span--6: calc(var(--grid--column) * 6 + var(--grid--gutter) * 5);
+  --grid--column-span--7: calc(var(--grid--column) * 7 + var(--grid--gutter) * 6);
+  --grid--column-span--8: calc(var(--grid--column) * 8 + var(--grid--gutter) * 7);
+  --grid--column-span--9: calc(var(--grid--column) * 9 + var(--grid--gutter) * 8);
+  --grid--column-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
+  --grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
+  --grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
+  --layout--content-size: var(--grid--column-span--4);
+  --layout--wide-size: var(--grid--column-span--8);
+  --site--width: 88vw;
+  --site--padding: 6vw;
+  --grid--column: 88vw;
+  --grid--gutter: 0vw;
+}
+@media (min-width: 360px) {
+  body {
+    --grid--column: 41vw;
+    --grid--gutter: 6vw;
+  }
+}
+@media (min-width: 840px) {
+  body {
+    --site--width: 85vw;
+    --site--padding: 7.5vw;
+    --grid--column: 10vw;
+    --grid--gutter: 5vw;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    --site--width: 1080px;
+    --site--padding: 60px;
+    --grid--column: 35px;
+    --grid--gutter: 60px;
+  }
+}
+@media (min-width: 1720px) {
+  body {
+    --site--width: 1200px;
+    --site--padding: 60px;
+    --grid--column: 45px;
+    --grid--gutter: 60px;
+  }
+}
+@media (min-width: 1920px) {
+  body {
+    --site--width: 1320px;
+    --site--padding: 90px;
+    --grid--column: 55px;
+    --grid--gutter: 60px;
+  }
+}
 
 /**
- * Generic base
- *
- * This offers base styling for common elements.
+ * Settings: Typography
  */
+@media (min-width: 360px) {
+  body {
+    --wp--preset--font-size--extra-small: 0.777778rem;
+    --wp--preset--font-size--small: 0.8889rem;
+  }
+}
+@media (min-width: 1720px) {
+  body {
+    --wp--preset--font-size--extra-small: 0.75rem;
+    --wp--preset--font-size--small: 0.875rem;
+    --wp--custom--line-height--normal: 1.4;
+  }
+}
 
-/* Root
----------------------------------------------------- */
+/**
+ * Settings: misc
+ */
+body {
+  --misc--page-image-height: 0px;
+  --misc--max-text-width: 32rem;
+}
 
+/**
+ * Generic: reset
+ */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+option,
+textarea,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+article, aside, summary, details, figcaption, figure,
+footer, header, main, nav, section {
+  display: block;
+}
+
+[hidden] {
+  display: none;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+
+/**
+ * Generic: base
+ */
 html {
-    font-size: var(--wp--custom--rem-size);
+  font-size: var(--rem-size);
 }
 
 body {
-    font-family: var(--wp--custom--font-family);
-    line-height: var(--wp--custom--line-height--normal);
-    background: transparent;
+  font-size: var(--wp--preset--font-size--normal);
+  font-family: var(--wp--custom--font-family);
+  line-height: var(--wp--custom--line-height--normal);
+  background: transparent;
 }
-
-/* Headings
----------------------------------------------------- */
-
-/* Reverse order so that the * wildcard specifity is in the right order... Usecase? */
 
 h6,
 h5,
@@ -121,154 +181,105 @@ h4,
 h3,
 h2,
 h1 {
-    font-weight: bold;
-    font-style: normal;
-    word-wrap: break-word;
-    text-transform: uppercase;
-    max-width: var(--wp--custom--text-max-width);
+  font-weight: bold;
+  font-style: normal;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
+  max-width: var(--misc--max-text-width);
 }
 
 h6,
 h5,
 h4,
 h3 {
-    font-size: var(--wp--preset--font-size--normal);
-    line-height: var(--wp--custom--line-height--small);
-    margin-top: var(--wp--custom--space--10);
-    margin-bottom: var(--wp--custom--space--4);
+  font-size: var(--wp--preset--font-size--normal);
+  line-height: var(--wp--custom--line-height--small);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: var(--wp--preset--font-size--extra-large);
-    line-height: var(--wp--custom--line-height--extra-small);
-    margin-top: var(--wp--custom--space--12);
-    margin-bottom: var(--wp--custom--space--8);
+  font-size: var(--wp--preset--font-size--extra-large);
+  line-height: var(--wp--custom--line-height--extra-small);
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 h1 {
-    font-size: var(--wp--preset--font-size--gigantic);
-    line-height: var(--wp--custom--line-height--extra-small);
-    margin-top: var(--wp--custom--space--12);
-    margin-bottom: var(--wp--custom--space--12);
-
-    max-width: calc(var(--wp--custom--text-max-width) * 1.25);
+  font-size: var(--wp--preset--font-size--gigantic);
+  line-height: var(--wp--custom--line-height--extra-small);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: calc(var(--misc--max-text-width) * 1.25);
 }
-
-/* Copywriting
----------------------------------------------------- */
 
 p {
-    margin-bottom: var(--wp--custom--space--8);
-    max-width: var(--wp--custom--text-max-width);
+  margin-bottom: 2rem;
+  max-width: var(--misc--max-text-width);
 }
-
-/* Inline
----------------------------------------------------- */
-
-br, strong {}
-
-i, em {}
-
-/* Links
----------------------------------------------------- */
 
 a {
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.1em;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.1em;
 }
-
-a:hover,
-    a:active {
-        outline: 0;
-        -webkit-text-decoration-style: dotted;
-                text-decoration-style: dotted;
-    }
-
-/* Lists
----------------------------------------------------- */
+a:hover, a:active {
+  outline: 0;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+}
 
 ul, ol {
-    padding-left: 1.1em;
-    margin-left: 0;
-    margin-bottom: var(--wp--custom--space--8);
+  padding-left: 1.1em;
+  margin-left: 0;
+  margin-bottom: 2rem;
 }
-
-ul ul, ul ol, ol ul, ol ol {}
-
-li {}
-
-/* Tables
----------------------------------------------------- */
-
 table {
-    border-collapse: collapse; /* Makes table rows borderable */
-    border-spacing: 0;
-    width: 100%;
-    margin-bottom: var(--wp--custom--space--8);
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 th,
 td {
-    border-width: 1px;
-    text-align: left;
-    vertical-align: top;
+  border-width: 1px;
+  text-align: left;
+  vertical-align: top;
 }
 
-/* Miscelaneous
----------------------------------------------------- */
-
 hr {
-    color: currentColor;
-    border: 0;
-    border-bottom-width: var(--ui-border-width);
-    border-color: currentColor;
-    border-style: solid;
-    clear: both;
-    width: 100%;
-    margin-top: var(--wp--custom--space--8);
-    margin-bottom: var(--wp--custom--space--8);
+  color: currentColor;
+  border: 0;
+  border-bottom-width: var(--ui-border-width);
+  border-color: currentColor;
+  border-style: solid;
+  clear: both;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 pre {
-    white-space: pre-wrap;
-    margin-bottom: var(--wp--custom--space--8);
+  white-space: pre-wrap;
+  margin-bottom: 2rem;
 }
-
-/* Blockquotes
----------------------------------------------------- */
 
 blockquote {
-    margin-bottom: var(--wp--custom--space--8);
+  margin-bottom: 2rem;
 }
-
 blockquote > *:last-child {
-        margin-bottom: 0;
-    }
-
-blockquote i,
-    blockquote em,
-    blockquote cite {
-
-    }
-
-blockquote p {
-
-    }
-
+  margin-bottom: 0;
+}
 blockquote cite {
-        font-style: normal;
-        max-width: var(--wp--custom--text-max-width);
-    }
-
+  font-style: normal;
+  max-width: var(--misc--max-text-width);
+}
 blockquote cite:before {
-            content: '\2014';
-            margin-right: 0.25em;
-        }
-
-/* Media
----------------------------------------------------- */
+  content: "—";
+  margin-right: 0.25em;
+}
 
 img,
 figure,
@@ -277,9 +288,9 @@ video,
 object,
 embed,
 iframe {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: var(--wp--custom--space--8);
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
 figure,
@@ -288,509 +299,217 @@ video,
 object,
 embed,
 iframe {
-    display: block;
+  display: block;
 }
 
 figure {
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 figure img {
-    display: block;
+  display: block;
 }
 
 figure > * {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 figcaption {
-    margin-top: var(--wp--custom--space--3);
-    font-size: var(--wp--preset--font-size--extra-small);
-    line-height: var(--wp--custom--line-height--extra-small);
+  margin-top: 0.75rem;
+  font-size: var(--wp--preset--font-size--extra-small);
+  line-height: var(--wp--custom--line-height--extra-small);
 }
-
-/* SVG
----------------------------------------------------- */
 
 svg {
-    display: inline-block;
-    fill: currentColor;
-    height: 1em;
-    position: relative;
-    top: -0.0625em;
-    vertical-align: middle;
-    width: 1em;
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  position: relative;
+  top: -0.0625em;
+  vertical-align: middle;
+  width: 1em;
 }
-
-/* Form
----------------------------------------------------- */
 
 textarea {
-    /* Removes empty space under textarea. */
-    display: block;
+  display: block;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
 textarea,
 select {
-    background-color: transparent;
-    border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    border-radius: 0;
-    font-size: var(--wp--preset--font-size--small);
-    padding: var(--wp--custom--space--1) var(--wp--custom--space--1);
-    width: 100%;
-    transition: border-color var(--transition-fast);
+  background-color: transparent;
+  border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+  border-radius: 0;
+  font-size: var(--wp--preset--font-size--small);
+  padding: 0.25rem 0.25rem;
+  width: 100%;
+  transition: border-color var(--transition-fast);
 }
-
-input[type="text"]::-ms-input-placeholder, input[type="email"]::-ms-input-placeholder, input[type="url"]::-ms-input-placeholder, input[type="password"]::-ms-input-placeholder, input[type="search"]::-ms-input-placeholder, input[type="number"]::-ms-input-placeholder, input[type="tel"]::-ms-input-placeholder, input[type="range"]::-ms-input-placeholder, input[type="date"]::-ms-input-placeholder, input[type="month"]::-ms-input-placeholder, input[type="week"]::-ms-input-placeholder, input[type="time"]::-ms-input-placeholder, input[type="datetime"]::-ms-input-placeholder, input[type="datetime-local"]::-ms-input-placeholder, input[type="color"]::-ms-input-placeholder, textarea::-ms-input-placeholder, select::-ms-input-placeholder {
-        color: var(--ui-color);
-        font-style: italic;
-    }
-
-input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="url"]::placeholder, input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="number"]::placeholder, input[type="tel"]::placeholder, input[type="range"]::placeholder, input[type="date"]::placeholder, input[type="month"]::placeholder, input[type="week"]::placeholder, input[type="time"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder, input[type="color"]::placeholder, textarea::placeholder, select::placeholder {
-        color: var(--ui-color);
-        font-style: italic;
-    }
-
-input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus, select:focus {
-        /* Use transparent outline for Windows high contrast mode. */
-        outline: 2px solid transparent;
-    }
-
-input[type="text"]:hover,
-    input[type="text"]:focus,
-    input[type="email"]:hover,
-    input[type="email"]:focus,
-    input[type="url"]:hover,
-    input[type="url"]:focus,
-    input[type="password"]:hover,
-    input[type="password"]:focus,
-    input[type="search"]:hover,
-    input[type="search"]:focus,
-    input[type="number"]:hover,
-    input[type="number"]:focus,
-    input[type="tel"]:hover,
-    input[type="tel"]:focus,
-    input[type="range"]:hover,
-    input[type="range"]:focus,
-    input[type="date"]:hover,
-    input[type="date"]:focus,
-    input[type="month"]:hover,
-    input[type="month"]:focus,
-    input[type="week"]:hover,
-    input[type="week"]:focus,
-    input[type="time"]:hover,
-    input[type="time"]:focus,
-    input[type="datetime"]:hover,
-    input[type="datetime"]:focus,
-    input[type="datetime-local"]:hover,
-    input[type="datetime-local"]:focus,
-    input[type="color"]:hover,
-    input[type="color"]:focus,
-    textarea:hover,
-    textarea:focus,
-    select:hover,
-    select:focus {
-        border-color: var(--ui-color);
-    }
+input[type=text]::placeholder,
+input[type=email]::placeholder,
+input[type=url]::placeholder,
+input[type=password]::placeholder,
+input[type=search]::placeholder,
+input[type=number]::placeholder,
+input[type=tel]::placeholder,
+input[type=range]::placeholder,
+input[type=date]::placeholder,
+input[type=month]::placeholder,
+input[type=week]::placeholder,
+input[type=time]::placeholder,
+input[type=datetime]::placeholder,
+input[type=datetime-local]::placeholder,
+input[type=color]::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--ui-color);
+  font-style: italic;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=range]:focus,
+input[type=date]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=time]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=color]:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid transparent;
+}
+input[type=text]:hover, input[type=text]:focus,
+input[type=email]:hover,
+input[type=email]:focus,
+input[type=url]:hover,
+input[type=url]:focus,
+input[type=password]:hover,
+input[type=password]:focus,
+input[type=search]:hover,
+input[type=search]:focus,
+input[type=number]:hover,
+input[type=number]:focus,
+input[type=tel]:hover,
+input[type=tel]:focus,
+input[type=range]:hover,
+input[type=range]:focus,
+input[type=date]:hover,
+input[type=date]:focus,
+input[type=month]:hover,
+input[type=month]:focus,
+input[type=week]:hover,
+input[type=week]:focus,
+input[type=time]:hover,
+input[type=time]:focus,
+input[type=datetime]:hover,
+input[type=datetime]:focus,
+input[type=datetime-local]:hover,
+input[type=datetime-local]:focus,
+input[type=color]:hover,
+input[type=color]:focus,
+textarea:hover,
+textarea:focus,
+select:hover,
+select:focus {
+  border-color: var(--ui-color);
+}
 
 label {
-    display: block;
-    /* font-weight: bold; */
+  display: block;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-    margin-right: 0.25em;
-    /* font-weight: normal; */
-    line-height: var(--wp--custom--line-height--small);
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 0.25em;
+  line-height: var(--wp--custom--line-height--small);
+}
+input[type=checkbox] + label,
+input[type=radio] + label {
+  display: inline;
+  font-size: var(--wp--preset--font-size--small);
+  line-height: var(--wp--custom--line-height--small);
 }
 
-input[type="checkbox"] + label, input[type="radio"] + label {
-        display: inline;
-        font-size: var(--wp--preset--font-size--small);
-        line-height: var(--wp--custom--line-height--small);
-        /* font-weight: normal; */
-    }
-
-/* Buttons
----------------------------------------------------- */
-
-input[type="submit"] {
-    background-color: transparent;
-    border: 0;
+input[type=submit] {
+  background-color: transparent;
+  border: 0;
 }
 
 button,
-input[type="submit"] {
-    color: inherit;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: var(--wp--custom--line-height--small);
-    /* font-size: var(--wp--preset--font-size--small);
-    text-transform: uppercase; */
-    display: inline-block;
-    cursor: pointer;
-    border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
-    padding: var(--wp--custom--space--1);
-    transition: border-color var(--transition-fast);
-    position: relative;
+input[type=submit] {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: var(--wp--custom--line-height--small);
+  /* font-size: var(--wp--preset--font-size--small);
+  text-transform: uppercase; */
+  display: inline-block;
+  cursor: pointer;
+  border: var(--ui-border-width) var(--ui-border-style) var(--foreground-color);
+  padding: 0.25rem;
+  transition: border-color var(--transition-fast);
+  position: relative;
 }
-
-button:hover,
-    button:focus,
-    button:active,
-    input[type="submit"]:hover,
-    input[type="submit"]:focus,
-    input[type="submit"]:active {
-    	text-decoration: underline;
-    	text-decoration-thickness: var(--ui-border-width);
-    }
-
-.wp-block-quote {
-	border-left-width: 0;
-	margin-bottom: 0;
-	padding-left: 0;	
+button:hover, button:focus, button:active,
+input[type=submit]:hover,
+input[type=submit]:focus,
+input[type=submit]:active {
+  text-decoration: underline;
+  text-decoration-thickness: var(--ui-border-width);
 }
-
-/*--------------------------------------------------------------
-# Structure - 
---------------------------------------------------------------*/
-
-/* @import "structure/root.css";
-@import "structure/site.css";
-@import "structure/site-header.css";
-@import "structure/site-main.css";
-@import "structure/site-footer.css";
-@import "structure/page.css";
-@import "structure/page-header.css";
-@import "structure/page-main.css";
-@import "structure/page-footer.css";
-@import "structure/page-comments.css"; */
-
-/*--------------------------------------------------------------
-# Blocks - editor related styles.
---------------------------------------------------------------*/
-
-/* @import "blocks/core/button.css";
-@import "blocks/core/code.css";
-@import "blocks/core/cover.css";
-@import "blocks/core/gallery.css";
-@import "blocks/core/image.css";
-@import "blocks/core/media-text.css";
-@import "blocks/core/pullquote.css"; */
 
 /**
- * Difference between pullquote and quote:
- *
- * - A quote is something someone else said.
- * - A pullquote is a piece of text from the text of your article, pulled out.
- *
- * @link https://github.com/WordPress/gutenberg/issues/11610
+ * Block: Core/Group
  */
-
-.wp-block-quote p {
-		font-style: italic;
-		font-weight: bold;
-		margin-bottom: var(--wp--custom--space--4);
-	}
-
-.wp-block-quote cite {
-		display: block;
-		margin-top: calc( var(--wp--custom--space--1) * -1 );
-		font-size: var(--wp--preset--font-size--small);
-		font-style: normal;
-		font-weight: regular;
-	}
-
-@media (min-width: 600px) {
-
-.wp-block-quote {
-		padding-left: var(--wp--custom--space--8);
-		padding-right: var(--wp--custom--space--8)
-}
-	}
-
-@media (--grid-columns-12) {
-
-.wp-block-quote {
-		margin-top: var(--wp--custom--space--10);
-		margin-bottom: var(--wp--custom--space--10);
-		padding-left: var(--column-gutter-1);
-		padding-right: var(--column-gutter-1)
-}
-	}
-
-/* @import "blocks/core/separator.css";
-@import "blocks/core/table.css"; */
-
-.wp-block-columns {
-	margin-top: calc(var(--vertical-space) * 2);
-	margin-bottom: calc(var(--vertical-space) * 2);
-
-	display: grid;
-	grid-column-gap: var(--wp--custom--grid--gutter);
-	column-gap: var(--wp--custom--grid--gutter);
-	grid-row-gap: var(--wp--custom--space--8);
-	row-gap: var(--wp--custom--space--8);
-
-	grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-
-.wp-block-columns {
-		grid-template-columns: 1fr 1fr
-}
-	}
-
-.wp-block-columns.is-style-columns-1 {
-	grid-template-columns: 1fr;
-}
-
-@media (min-width: 1080px) {
-
-.wp-block-columns.is-style-columns-3,
-.wp-block-columns.is-style-columns-4 {
-		grid-template-columns: 1fr 1fr 1fr
-}
-	}
-
-@media (min-width: 1720px) {
-
-.wp-block-columns.is-style-columns-4 {
-		grid-template-columns: 1fr 1fr 1fr 1fr
-}
-	}
-
-.wp-block-columns.is-style-columns-2 {
-	grid-template-columns: 1fr;
-}
-
-@media (min-width: 600px) {
-
-.wp-block-columns.is-style-columns-2 {
-		grid-template-columns: 1fr 1fr
-}
-	}
-
-@media (--grid-columns-12) {
-
-.alignwide.wp-block-columns,
-.alignfull.wp-block-columns {
-		margin-top: var(--wp--custom--space--20);
-		margin-bottom: var(--wp--custom--space--20)
-}
-	}
-
-.wp-block-column > *:first-child { margin-top: 0; }
-
-.wp-block-column > *:last-child { margin-bottom: 0; }
-
 .wp-block-group {
-	--background-color: transparent;
-
-	position: relative;
-	background-color: var(--background-color);
-
-	/**
-	 * By preference: no flex on group block
-	 * because this creates difficulties with overlapping margins 
-	 */
-	/* display: flex;
-	justify-content: center; */
-
-	margin-top: var(--wp--custom--space--8);
-	margin-bottom: var(--wp--custom--space--8);
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-
-@media (--grid-columns-6) {
-
-.wp-block-group {
-		margin-top: var(--wp--custom--space--12);
-		margin-bottom: var(--wp--custom--space--12)
+@media (min-width: 840px) {
+  .wp-block-group {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
-	}
-
-.wp-block-group__inner-container {
-		color: var(--foreground-color);
-		width: 100%;
-
-		margin-left: auto;
-
-		margin-right: auto;
-
-		max-width: var(--wp--custom--site--width);
-
-		width: 100%;
-	}
-
-@media (--grid-columns-12) {
-
-.alignwide.wp-block-group,
-.alignfull.wp-block-group {
-		margin-top: var(--wp--custom--space--20);
-		margin-bottom: var(--wp--custom--space--20)
+@media (min-width: 1400px) {
+  .wp-block-group.alignwide, .wp-block-group.alignfull {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
 }
-	}
-
-.has-background.wp-block-group {
-	overflow-y: hidden;
+.wp-block-group.has-background {
+  overflow-y: hidden;
+  padding: 1rem;
 }
-
-.has-background.wp-block-group > .wp-block-group__inner-container {
-		margin: var(--wp--custom--grid--gutter);
-		width: auto;
-		max-width: none;
-	}
-
-/*--------------------------------------------------------------
-# Utilities - Helpers and overrides.
---------------------------------------------------------------*/
-
-/* Maybe put in :root to create specificity */
-
-.has-text-align-left {
-	text-align: left;
+.wp-block-group.has-background > *:first-child {
+  margin-top: 0;
 }
-
-.has-text-align-right {
-	text-align: right;
+.wp-block-group.has-background > *:last-child {
+  margin-bottom: 0;
 }
-
-.has-text-align-center {
-	text-align: center;
-}
-
-/* Parallax */
-
-.has-parallax {
-	background-attachment: fixed;
-}
-
-/* Position: Top */
-
-.is-position-top-left {
-	align-items: flex-start;
-	justify-content: flex-start;
-}
-
-.is-position-top-center {
-	align-items: flex-start;
-	justify-content: center;
-}
-
-.is-position-top-right {
-	align-items: flex-start;
-	justify-content: flex-end;
-}
-
-/* Position: Center */
-
-.is-position-center-left {
-	align-items: center;
-	justify-content: flex-start;
-}
-
-.is-position-center-center {
-	align-items: center;
-	justify-content: center;
-}
-
-.is-position-center-right {
-	align-items: center;
-	justify-content: flex-end;
-}
-
-/* Position: Bottom */
-
-.is-position-bottom-left {
-	align-items: flex-end;
-	justify-content: flex-start;
-}
-
-.is-position-bottom-center {
-	align-items: flex-end;
-	justify-content: center;
-}
-
-.is-position-bottom-right {
-	align-items: flex-end;
-	justify-content: flex-end;
-}
-
-/* Background dimming */
-
-.has-background-dim {
-	background-color: transparent;
-
-}
-
-.has-background-dim:before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		z-index: 1;
-		content: '';
-		background-color: var(--background-color);
-		opacity: .5;
-	}
-
-.has-background-dim-10:before { opacity: .1; }
-
-.has-background-dim-20:before { opacity: .2; }
-
-.has-background-dim-30:before { opacity: .3; }
-
-.has-background-dim-40:before { opacity: .4; }
-
-.has-background-dim-50:before { opacity: .5; }
-
-.has-background-dim-60:before { opacity: .6; }
-
-.has-background-dim-70:before { opacity: .7; }
-
-.has-background-dim-80:before { opacity: .8; }
-
-.has-background-dim-90:before { opacity: .9; }
-
-.has-background-dim-100:before { opacity: 1; }
-
-ul.is-style-no-bullets,
-ol.is-style-no-bullets {
-	list-style-type: none;
-	padding-left: 0;
-}
-
-body.has-page-image {
-	--page-image-height: 50vh;
-}
-
-body.has-page-image.is-singular--wbl_project {
-		--page-image-height: 80vh;
-	}
-
-body.has-page-image.has-expanded-site-nav {
-		--page-image-height: 0px;
-	}
 
 /**
  * Custom values 
@@ -798,20 +517,17 @@ body.has-page-image.has-expanded-site-nav {
  * - Grid: because we can't use vw yet
  * - Typography: because we can't manipulate rem size yet
  */
-
 body {
-
-	/* Grid */
-	--wp--custom--site--width:   1320px;
-	--wp--custom--site--padding: 90px;
-	--wp--custom--grid--column:  55px; 
-	--wp--custom--grid--gutter:  60px; 
-
-	/* Typography */
-	--wp--custom--rem-size: 150%;		
-	--wp--preset--font-size--extra-small: 0.75rem;
-	--wp--preset--font-size--small: 0.875rem;	
-	--wp--custom--line-height--normal: 1.4;
+  /* Grid */
+  --site--width: 1320px;
+  --site--padding: 90px;
+  --grid--column: 55px;
+  --grid--gutter: 60px;
+  /* Typography */
+  --rem-size: 150%;
+  --wp--preset--font-size--extra-small: 0.75rem;
+  --wp--preset--font-size--small: 0.875rem;
+  --wp--custom--line-height--normal: 1.4;
 }
 
 /**
@@ -820,176 +536,30 @@ body {
  *
  * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
  */
-
 body {
-	--background-color: var(--wp--preset--color--primary-1);
-	--foreground-color: var(--wp--preset--color--secondary-1);
-
-	background-color: var(--background-color);
-	color: var(--foreground-color);
-
-	font-family: var(--wp--custom--font-family);
-    line-height: var(--wp--custom--line-height--normal);
-
-	font-size: var(--wp--custom--rem-size);
-
-	/**
-	 * Enforce a basic font-size similar to frontend. We assume large screens
-	 */
-	font-size: 24px;
-
-	/**
-	 * Grid
-	 */
-	position: relative;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--secondary);
+  font-family: var(--wp--custom--font-family);
+  line-height: var(--wp--custom--line-height--normal);
+  font-size: var(--rem-size);
+  /**
+   * Enforce a basic font-size similar to frontend. We assume large screens
+   */
+  /**
+   * Grid
+   */
+  position: relative;
 }
-
 body:before {
-		content: "";
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin-left: auto;
-		margin-right: auto;
-		width: var(--wp--custom--site--width);
-		opacity: 0.025;
-
-		--foreground-color: #000;
-
-		/* background: linear-gradient(90deg,
-		var(--foreground-color) var(--wp--custom--grid--column-span--1),
-		transparent var(--wp--custom--grid--column-span--1),
-		transparent calc( var(--wp--custom--grid--column-span--1) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--1) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--2),
-		transparent var(--wp--custom--grid--column-span--2),
-		transparent calc( var(--wp--custom--grid--column-span--2) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--2) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--3),
-		transparent var(--wp--custom--grid--column-span--3),
-		transparent calc( var(--wp--custom--grid--column-span--3) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--3) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--4),
-		transparent var(--wp--custom--grid--column-span--4),
-		transparent calc( var(--wp--custom--grid--column-span--4) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--4) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--5),
-		transparent var(--wp--custom--grid--column-span--5),
-		transparent calc( var(--wp--custom--grid--column-span--5) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--5) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--6),
-		transparent var(--wp--custom--grid--column-span--6),
-		transparent calc( var(--wp--custom--grid--column-span--6) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--6) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--7),
-		transparent var(--wp--custom--grid--column-span--7),
-		transparent calc( var(--wp--custom--grid--column-span--7) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--7) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--8),
-		transparent var(--wp--custom--grid--column-span--8),
-		transparent calc( var(--wp--custom--grid--column-span--8) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--8) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--9),
-		transparent var(--wp--custom--grid--column-span--9),
-		transparent calc( var(--wp--custom--grid--column-span--9) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--9) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--10),
-		transparent var(--wp--custom--grid--column-span--10),
-		transparent calc( var(--wp--custom--grid--column-span--10) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--10) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--11),
-		transparent var(--wp--custom--grid--column-span--11),
-		transparent calc( var(--wp--custom--grid--column-span--11) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--11) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) var(--wp--custom--grid--column-span--12),
-		transparent var(--wp--custom--grid--column-span--12),
-		transparent calc( var(--wp--custom--grid--column-span--12) + var(--wp--custom--grid--gutter) ),
-		var(--foreground-color) calc( var(--wp--custom--grid--column-span--12 + var(--wp--custom--grid--gutter) ))
-	); */		
-	}
-
-/**
- * Add layout for block-containers similar as frontend
- */
-
-.edit-post-visual-editor__post-title-wrapper,
-.is-root-container {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: var(--wp--custom--site--width);
-	width: 100%;
-	/* @mixin clearfix; */
-}
-
-/* @mixin remove-first-last-child-margin; */
-
-.edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-@media (--grid-columns-6) {
-
-.edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		max-width: var(--wp--custom--grid--column-span--4);
-	}
-	}
-
-@media (--grid-columns-12) {
-
-.edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		/* margin-left: var(--column-gutter-2); */
-		max-width: var(--wp--custom--grid--column-span--8);
-	}
-	}
-
-@media (min-width: 1920px) {
-
-.edit-post-visual-editor__post-title-wrapper > *, .is-root-container > * {
-		/* max-width: var(--wp--custom--grid--column-span--7); */
-	}
-	}
-
-/**
- * Reset default style for alignfull wrapper around group-block
- */
-
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
-	max-width: none;
-	margin-top: var(--wp--custom--space--8);
-	margin-bottom: var(--wp--custom--space--8);
-}
-
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-	max-width: none;
-	width: auto;
-	margin-left: 0;
-	margin-right: 0;
-}
-
-@media (min-width: 1720px) {
-
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-		margin-left: -5vw;
-		margin-right: -5vw;
-}
-	}
-
-@media (min-width: 1920px) {
-
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-		margin-left: -7vw;
-		margin-right: -7vw;
-}
-	}
-
-/**
- * Fix columns block extra margin
- */
-
-.block-editor-block-list__block.wp-block-column:not(:first-child) {
-    margin-left: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--site--width);
+  opacity: 0.025;
+  background: linear-gradient(90deg, var(--wp--preset--color--secondary) var(--grid--column-span--1), transparent var(--grid--column-span--1), transparent calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--2), transparent var(--grid--column-span--2), transparent calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--3), transparent var(--grid--column-span--3), transparent calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--4), transparent var(--grid--column-span--4), transparent calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--5), transparent var(--grid--column-span--5), transparent calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--6), transparent var(--grid--column-span--6), transparent calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--7), transparent var(--grid--column-span--7), transparent calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--8), transparent var(--grid--column-span--8), transparent calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--9), transparent var(--grid--column-span--9), transparent calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--10), transparent var(--grid--column-span--10), transparent calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--11), transparent var(--grid--column-span--11), transparent calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--12), transparent var(--grid--column-span--12), transparent calc( var(--grid--column-span--12) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--12) + var(--grid--gutter) ));
 }

@@ -47,7 +47,7 @@
 
 .alignwide.wp-block-columns,
 .alignfull.wp-block-columns {
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		margin-top: $space-20;
 		margin-bottom: $space-20;
 	}

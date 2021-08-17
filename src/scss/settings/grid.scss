@@ -23,6 +23,9 @@ body {
 	--grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
 	--grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
 
+	--layout--content-size: var(--grid--column-span--4);
+	--layout--wide-size: var(--grid--column-span--8);
+
 	// 1 column
 	--site--width:   88vw;
 	--site--padding: 6vw;

@@ -32,7 +32,7 @@
 		padding-right: $space-8;
 	}
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		margin-top: $space-10;
 		margin-bottom: $space-10;
 		padding-left: var(--column-gutter-1);

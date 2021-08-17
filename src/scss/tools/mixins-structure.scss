@@ -34,11 +34,11 @@
 }
 
 @mixin is-page-content--normal {
-	@media (--grid-columns-6) {
+	@media (--from-breakpoint-3) {
 		max-width: var(--grid--column-span--4);
 	}
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		// margin-left: var(--column-gutter-2);
 		max-width: var(--grid--column-span--8);
 	}
@@ -98,11 +98,11 @@
 	float: right;
 	margin-left: var(--grid--gutter);
 
-	@media (--grid-columns-6) {
+	@media (--from-breakpoint-3) {
 		max-width: var(--grid--column-span--2);
 	}
 
-	@media (--grid-columns-12) {
+	@media (--from-breakpoint-5) {
 		max-width: var(--grid--column-span--3);
 	}
 }

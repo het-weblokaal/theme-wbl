@@ -8,10 +8,15 @@
 
 	margin-top: $space-20;
 	margin-bottom: $space-20;
+	
+	@include has-page-content;
+ 	text-align: center;
+
+ 	
 
 	&__inner {
-		@include is-page-segment;
 		@include has-page-content;
+		@include is-page-segment;
 		margin-top: $space-20;
 		margin-bottom: $space-20;
 		text-align: center;

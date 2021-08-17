@@ -42,6 +42,8 @@ body {
   --grid--column-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
   --grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
   --grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
+  --layout--content-size: var(--grid--column-span--4);
+  --layout--wide-size: var(--grid--column-span--8);
   --site--width: 88vw;
   --site--padding: 6vw;
   --grid--column: 88vw;
@@ -106,7 +108,7 @@ body {
 /**
  * Settings: misc
  */
-:root {
+body {
   --misc--page-image-height: 0px;
   --misc--max-text-width: 32rem;
 }
@@ -160,6 +162,7 @@ html {
 }
 
 body {
+  font-size: var(--wp--preset--font-size--normal);
   font-family: var(--wp--custom--font-family);
   line-height: var(--wp--custom--line-height--normal);
   background: transparent;
@@ -680,7 +683,7 @@ input[type=submit]:active {
 .site-footer .colophon > *:last-child {
   margin-bottom: 0;
 }
-@media (--grid-columns-2) {
+@media (min-width: 360px) {
   .site-footer__content {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 4rem;
@@ -733,12 +736,12 @@ input[type=submit]:active {
   margin-left: auto;
   margin-right: auto;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .page__header > * {
     max-width: var(--grid--column-span--4);
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .page__header > * {
     max-width: var(--grid--column-span--8);
   }
@@ -771,12 +774,12 @@ input[type=submit]:active {
   margin-left: auto;
   margin-right: auto;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .page__content > * {
     max-width: var(--grid--column-span--4);
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .page__content > * {
     max-width: var(--grid--column-span--8);
   }
@@ -802,12 +805,12 @@ input[type=submit]:active {
   margin-left: auto;
   margin-right: auto;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .page__footer > * {
     max-width: var(--grid--column-span--4);
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .page__footer > * {
     max-width: var(--grid--column-span--8);
   }
@@ -1012,7 +1015,7 @@ input[type=submit]:active {
   }
 }
 
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .alignwide.wp-block-columns,
 .alignfull.wp-block-columns {
     margin-top: 5rem;
@@ -1105,48 +1108,31 @@ input[type=submit]:active {
  * Block: Core/Group
  */
 .wp-block-group {
-  --background-color: transparent;
   position: relative;
-  background-color: var(--background-color);
-  /**
-   * By preference: no flex on group block
-   * because this creates difficulties with overlapping margins 
-   */
-  /* display: flex;
-  justify-content: center; */
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .wp-block-group {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
 }
-.wp-block-group__inner-container {
-  color: var(--foreground-color);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--site--width);
-  width: 100%;
-}
-
-@media (--grid-columns-12) {
-  .alignwide.wp-block-group,
-.alignfull.wp-block-group {
+@media (min-width: 1400px) {
+  .wp-block-group.alignwide, .wp-block-group.alignfull {
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
 }
-
-.has-background.wp-block-group {
+.wp-block-group.has-background {
   overflow-y: hidden;
+  padding: 1rem;
 }
-.has-background.wp-block-group > .wp-block-group__inner-container {
-  margin: var(--grid--gutter);
-  width: auto;
-  max-width: none;
+.wp-block-group.has-background > *:first-child {
+  margin-top: 0;
+}
+.wp-block-group.has-background > *:last-child {
+  margin-bottom: 0;
 }
 
 /**
@@ -1176,12 +1162,12 @@ h6.has-background {
   max-width: var(--site--width);
   width: 100%;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
     max-width: var(--grid--column-span--4);
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
     max-width: var(--grid--column-span--8);
   }
@@ -1267,7 +1253,7 @@ p.has-background {
     padding-right: 2rem;
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .wp-block-quote {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
@@ -1322,11 +1308,27 @@ p.has-background {
   width: auto;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  text-align: center;
 }
 @media (min-width: 840px) {
   .call-to-action {
     margin-left: calc(50% - 50vw + var(--site--padding));
     margin-right: calc(50% - 50vw + var(--site--padding));
+  }
+}
+.call-to-action > * {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 840px) {
+  .call-to-action > * {
+    max-width: var(--grid--column-span--4);
+  }
+}
+@media (min-width: 1400px) {
+  .call-to-action > * {
+    max-width: var(--grid--column-span--8);
   }
 }
 .call-to-action__inner {
@@ -1343,12 +1345,12 @@ p.has-background {
   margin-left: auto;
   margin-right: auto;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .call-to-action__inner > * {
     max-width: var(--grid--column-span--4);
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .call-to-action__inner > * {
     max-width: var(--grid--column-span--8);
   }
@@ -2017,12 +2019,12 @@ svg.site-logo {
   float: right;
   margin-left: var(--grid--gutter);
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .alignright {
     max-width: var(--grid--column-span--2);
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .alignright {
     max-width: var(--grid--column-span--3);
   }
@@ -2061,13 +2063,13 @@ figure.alignleft {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .alignwide {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .alignwide {
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -2079,13 +2081,13 @@ figure.alignleft {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-@media (--grid-columns-6) {
+@media (min-width: 840px) {
   .alignfull {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
 }
-@media (--grid-columns-12) {
+@media (min-width: 1400px) {
   .alignfull {
     margin-top: 4rem;
     margin-bottom: 4rem;

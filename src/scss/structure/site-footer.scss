@@ -75,7 +75,7 @@
 		}
 	}
 
-	@media (--grid-columns-2) {
+	@media (--from-breakpoint-1) {
 		&__content {
 			grid-template-columns: 1fr 1fr;
 			row-gap: $space-16;

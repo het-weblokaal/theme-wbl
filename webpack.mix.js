@@ -85,5 +85,5 @@ mix.js( `${devPath}/js/polyfill.js`,     'js' )
  * @link https://laravel.com/docs/6.x/mix#working-with-stylesheets
  */
 mix.sass( `${devPath}/scss/style.scss`,        'css' );
-// mix.sass( `${devPath}/scss/editor-style.scss`, 'css' );
+mix.sass( `${devPath}/scss/editor-style.scss`, 'css' );
 

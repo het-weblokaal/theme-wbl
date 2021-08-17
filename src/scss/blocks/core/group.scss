@@ -3,48 +3,32 @@
  */
 
 .wp-block-group {
-	--background-color: transparent;
-
 	position: relative;
-	background-color: var(--background-color);
 
-	/**
-	 * By preference: no flex on group block
-	 * because this creates difficulties with overlapping margins 
-	 */
-	/* display: flex;
-	justify-content: center; */
+	// By preference: no flex on group block
+	// because this creates difficulties with overlapping margins 
+	// display: flex;
+	// justify-content: center;
 
 	margin-top: $space-8;
 	margin-bottom: $space-8;
 
-	@media (--grid-columns-6) {
+	@media (--from-breakpoint-3) {
 		margin-top: $space-12;
 		margin-bottom: $space-12;
 	}
 
-	&__inner-container {
-		color: var(--foreground-color);
-		width: 100%;
-
-		@include is-page-segment;
+	&.alignwide,
+	&.alignfull {
+		@media (--from-breakpoint-5) {
+			margin-top: $space-20;
+			margin-bottom: $space-20;
+		}
 	}
-}
 
-.alignwide.wp-block-group,
-.alignfull.wp-block-group {
-	@media (--grid-columns-12) {
-		margin-top: $space-20;
-		margin-bottom: $space-20;
-	}
-}
-
-.has-background.wp-block-group {
-	@include margin-collapse-fix;
-
-	> .wp-block-group__inner-container {
-		margin: var(--grid--gutter);
-		width: auto;
-		max-width: none;
+	&.has-background {
+		@include margin-collapse-fix;
+		@include remove-first-last-child-margin;
+		padding: $space-4;
 	}
 }

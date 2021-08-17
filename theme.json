@@ -26,7 +26,10 @@
             "link": false
         },
 
-        "layout": false,
+        "layout": {
+        	"contentSize": "600px",
+			"wideSize": "900px"
+        },
 
         "spacing": false,
 
