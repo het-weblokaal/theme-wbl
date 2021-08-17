@@ -19,7 +19,7 @@
 ////
 
 .loop--blog {
-    @include is-page-content--full-page;
+    @include is-page-content--wide;
     margin-bottom: $space-12;
     margin-top: $space-12;
 

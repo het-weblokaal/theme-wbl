@@ -48,15 +48,17 @@ figure.alignleft {
 }
 
 .alignwide {
-	@include is-page-content--full-page;
+	@include is-page-content--wide;
 	margin-top: $space-8;
 	margin-bottom: $space-8;
 
+	// 6 columns
 	@media (--from-breakpoint-3) {
 		margin-top: $space-12;
 		margin-bottom: $space-12;
 	}
 
+	// 12 columns
 	@media (--from-breakpoint-5) {
 		margin-top: $space-16;
 		margin-bottom: $space-16;

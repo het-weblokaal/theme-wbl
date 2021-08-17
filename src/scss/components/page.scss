@@ -26,11 +26,16 @@
 }
 
 .page__header {
-	@include has-page-content;
+	@include is-page-segment;
+
 	margin-bottom: $space-8;
 
 	@media (--from-breakpoint-5) {
 		margin-bottom: $space-12;
+	}
+
+	> * {
+		@include is-page-content;
 	}
 
 	.page__label {
@@ -49,12 +54,16 @@
 }
 
 .page__content {
-	@include has-page-content;
+	@include is-page-segment;
 
 	margin-bottom: $space-4;
 
 	@media (--from-breakpoint-5) {
 		margin-bottom: $space-12;
+	}
+
+	> * {
+		@include is-page-content;
 	}
 
 	.archive-description {
@@ -63,7 +72,11 @@
 }
 
 .page__footer {
-	@include has-page-content;
+	@include is-page-segment;
+
+	> * {
+		@include is-page-content;
+	}
 
 	.entry__terms {
 		margin-top: $space-16;

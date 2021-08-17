@@ -27,8 +27,8 @@
         },
 
         "layout": {
-        	"contentSize": "600px",
-			"wideSize": "900px"
+        	"contentSize": "var(--layout--content-size)",
+			"wideSize": "var(--layout--wide-size)"
         },
 
         "spacing": false,

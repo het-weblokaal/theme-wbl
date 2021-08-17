@@ -23,14 +23,14 @@ body {
 	--grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
 	--grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
 
-	--layout--content-size: var(--grid--column-span--4);
-	--layout--wide-size: var(--grid--column-span--8);
-
 	// 1 column
 	--site--width:   88vw;
 	--site--padding: 6vw;
 	--grid--column:  88vw;
 	--grid--gutter:  0vw;
+
+	--layout--content-size: 100%;
+	--layout--wide-size: 100%;
 
     @media (--from-breakpoint-1) {
 
@@ -48,6 +48,8 @@ body {
 		--site--padding: 7.5vw;
 		--grid--column:  10vw;
 		--grid--gutter:  5vw;
+
+		--layout--content-size: var(--grid--column-span--4);
     }
 
     @media (--from-breakpoint-4) {}
@@ -58,7 +60,9 @@ body {
 		--site--width:   1080px;
 		--site--padding: 60px;
     	--grid--column:  35px; 
-		--grid--gutter:  60px; 
+		--grid--gutter:  60px;
+
+		--layout--content-size: var(--grid--column-span--8);
     }
 
     @media (--from-breakpoint-6) {

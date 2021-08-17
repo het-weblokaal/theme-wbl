@@ -7,57 +7,75 @@
 ///
 @mixin is-page-segment {
 	margin-left: auto;
-    margin-right: auto;
-	max-width: var(--site--width);
-	width: 100%;
-}
-
-@mixin is-page-segment--full-site {
-	margin-left: var(--site--padding);
-    margin-right: var(--site--padding);
-	max-width: none;
-	width: auto;
-}
-
-@mixin is-page-segment--full-screen {
-	margin-left: 0;
-    margin-right: 0;
-	max-width: none;
-	width: auto;
+	margin-right: auto;
+	width: var(--site--width);
 }
 
 @mixin is-page-content {
+    margin-left: auto;
+    margin-right: auto;
+	width: var(--layout--content-size);
+
+	// 6 columns
+	@media (--from-breakpoint-3) {}
+
+	// 12 columns
+	@media (--from-breakpoint-5) {
+		margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
+	}
+}
+
+@mixin is-page-content--wide {
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	@include is-page-content--normal;
+
+	// 6 columns
+	@media (--from-breakpoint-3) {}
+
+	// 12 columns
+	@media (--from-breakpoint-5) {
+		margin-left: auto;
+	}
+}
+
+@mixin is-page-segment--full-site {
+	// margin-left: var(--site--padding);
+ //    margin-right: var(--site--padding);
+	// max-width: none;
+	// width: auto;
+}
+
+@mixin is-page-segment--full-screen {
+	// margin-left: 0;
+ //    margin-right: 0;
+	// max-width: none;
+	// width: auto;
 }
 
 @mixin is-page-content--normal {
-	@media (--from-breakpoint-3) {
-		max-width: var(--grid--column-span--4);
-	}
+	// @media (--from-breakpoint-3) {
+	// 	max-width: var(--grid--column-span--4);
+	// }
 
-	@media (--from-breakpoint-5) {
-		// margin-left: var(--column-gutter-2);
-		max-width: var(--grid--column-span--8);
-	}
+	// @media (--from-breakpoint-5) {
+	// 	// margin-left: var(--column-gutter-2);
+	// 	max-width: var(--grid--column-span--8);
+	// }
 
-	@media (--from-breakpoint-7) {
-		// max-width: var(--grid--column-span--7);
-	}
+	// @media (--from-breakpoint-7) {
+	// 	// max-width: var(--grid--column-span--7);
+	// }
 }
 
 @mixin is-page-content--full-page {
-	max-width: none;
-	margin-top: $space-8;
-	margin-bottom: $space-8;
+	// max-width: none;
+	// margin-top: $space-8;
+	// margin-bottom: $space-8;
 }
 
 @mixin is-page-content--full-site {
-	max-width: none;
-	margin-top: $space-8;
-	margin-bottom: $space-8;
+	// max-width: none;
+	// margin-top: $space-8;
+	// margin-bottom: $space-8;
 
 	@include is-page-content--full-screen;
 }
@@ -132,10 +150,6 @@
 @mixin has-page-content {
 	// @include clearfix;
 	// @include remove-first-last-child-margin;
-
-	> * {
-		@include is-page-content;
-	}
 }
 
 @mixin reset-page-content {
