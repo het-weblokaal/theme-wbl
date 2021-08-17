@@ -10,18 +10,18 @@
 
 body {
 
-	--grid--columns-span--1: var(--grid--column);
-	--grid--columns-span--2: calc(var(--grid--column) * 2  + var(--grid--gutter) * 1);
-	--grid--columns-span--3: calc(var(--grid--column) * 3  + var(--grid--gutter) * 2);
-	--grid--columns-span--4: calc(var(--grid--column) * 4  + var(--grid--gutter) * 3);
-	--grid--columns-span--5: calc(var(--grid--column) * 5  + var(--grid--gutter) * 4);
-	--grid--columns-span--6: calc(var(--grid--column) * 6  + var(--grid--gutter) * 5);
-	--grid--columns-span--7: calc(var(--grid--column) * 7  + var(--grid--gutter) * 6);
-	--grid--columns-span--8: calc(var(--grid--column) * 8  + var(--grid--gutter) * 7);
-	--grid--columns-span--9: calc(var(--grid--column) * 9  + var(--grid--gutter) * 8);
-	--grid--columns-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
-	--grid--columns-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
-	--grid--columns-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
+	--grid--column-span--1: var(--grid--column);
+	--grid--column-span--2: calc(var(--grid--column) * 2  + var(--grid--gutter) * 1);
+	--grid--column-span--3: calc(var(--grid--column) * 3  + var(--grid--gutter) * 2);
+	--grid--column-span--4: calc(var(--grid--column) * 4  + var(--grid--gutter) * 3);
+	--grid--column-span--5: calc(var(--grid--column) * 5  + var(--grid--gutter) * 4);
+	--grid--column-span--6: calc(var(--grid--column) * 6  + var(--grid--gutter) * 5);
+	--grid--column-span--7: calc(var(--grid--column) * 7  + var(--grid--gutter) * 6);
+	--grid--column-span--8: calc(var(--grid--column) * 8  + var(--grid--gutter) * 7);
+	--grid--column-span--9: calc(var(--grid--column) * 9  + var(--grid--gutter) * 8);
+	--grid--column-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
+	--grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
+	--grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
 
 	// 1 column
 	--site--width:   88vw;

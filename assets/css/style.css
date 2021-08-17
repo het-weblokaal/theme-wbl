@@ -30,18 +30,18 @@ html {
  * Settings: Grid
  */
 body {
-  --grid--columns-span--1: var(--grid--column);
-  --grid--columns-span--2: calc(var(--grid--column) * 2 + var(--grid--gutter) * 1);
-  --grid--columns-span--3: calc(var(--grid--column) * 3 + var(--grid--gutter) * 2);
-  --grid--columns-span--4: calc(var(--grid--column) * 4 + var(--grid--gutter) * 3);
-  --grid--columns-span--5: calc(var(--grid--column) * 5 + var(--grid--gutter) * 4);
-  --grid--columns-span--6: calc(var(--grid--column) * 6 + var(--grid--gutter) * 5);
-  --grid--columns-span--7: calc(var(--grid--column) * 7 + var(--grid--gutter) * 6);
-  --grid--columns-span--8: calc(var(--grid--column) * 8 + var(--grid--gutter) * 7);
-  --grid--columns-span--9: calc(var(--grid--column) * 9 + var(--grid--gutter) * 8);
-  --grid--columns-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
-  --grid--columns-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
-  --grid--columns-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
+  --grid--column-span--1: var(--grid--column);
+  --grid--column-span--2: calc(var(--grid--column) * 2 + var(--grid--gutter) * 1);
+  --grid--column-span--3: calc(var(--grid--column) * 3 + var(--grid--gutter) * 2);
+  --grid--column-span--4: calc(var(--grid--column) * 4 + var(--grid--gutter) * 3);
+  --grid--column-span--5: calc(var(--grid--column) * 5 + var(--grid--gutter) * 4);
+  --grid--column-span--6: calc(var(--grid--column) * 6 + var(--grid--gutter) * 5);
+  --grid--column-span--7: calc(var(--grid--column) * 7 + var(--grid--gutter) * 6);
+  --grid--column-span--8: calc(var(--grid--column) * 8 + var(--grid--gutter) * 7);
+  --grid--column-span--9: calc(var(--grid--column) * 9 + var(--grid--gutter) * 8);
+  --grid--column-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
+  --grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
+  --grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
   --site--width: 88vw;
   --site--padding: 6vw;
   --grid--column: 88vw;
@@ -509,56 +509,7 @@ input[type=submit]:active {
   width: var(--site--width);
   opacity: 0.1;
   z-index: 99;
-  /* background: linear-gradient(90deg,
-  	var(--foreground-color) var(--grid--column-span--1),
-  	transparent var(--grid--column-span--1),
-  	transparent calc( var(--grid--column-span--1) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--1) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--2),
-  	transparent var(--grid--column-span--2),
-  	transparent calc( var(--grid--column-span--2) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--2) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--3),
-  	transparent var(--grid--column-span--3),
-  	transparent calc( var(--grid--column-span--3) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--3) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--4),
-  	transparent var(--grid--column-span--4),
-  	transparent calc( var(--grid--column-span--4) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--4) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--5),
-  	transparent var(--grid--column-span--5),
-  	transparent calc( var(--grid--column-span--5) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--5) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--6),
-  	transparent var(--grid--column-span--6),
-  	transparent calc( var(--grid--column-span--6) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--6) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--7),
-  	transparent var(--grid--column-span--7),
-  	transparent calc( var(--grid--column-span--7) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--7) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--8),
-  	transparent var(--grid--column-span--8),
-  	transparent calc( var(--grid--column-span--8) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--8) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--9),
-  	transparent var(--grid--column-span--9),
-  	transparent calc( var(--grid--column-span--9) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--9) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--10),
-  	transparent var(--grid--column-span--10),
-  	transparent calc( var(--grid--column-span--10) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--10) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--11),
-  	transparent var(--grid--column-span--11),
-  	transparent calc( var(--grid--column-span--11) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--11) + var(--grid--gutter) ),
-  	var(--foreground-color) var(--grid--column-span--12),
-  	transparent var(--grid--column-span--12),
-  	transparent calc( var(--grid--column-span--12) + var(--grid--gutter) ),
-  	var(--foreground-color) calc( var(--grid--column-span--12 + var(--grid--gutter) ))
-  ); */
+  background: linear-gradient(90deg, var(--wp--preset--color--secondary) var(--grid--column-span--1), transparent var(--grid--column-span--1), transparent calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--2), transparent var(--grid--column-span--2), transparent calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--3), transparent var(--grid--column-span--3), transparent calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--4), transparent var(--grid--column-span--4), transparent calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--5), transparent var(--grid--column-span--5), transparent calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--6), transparent var(--grid--column-span--6), transparent calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--7), transparent var(--grid--column-span--7), transparent calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--8), transparent var(--grid--column-span--8), transparent calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--9), transparent var(--grid--column-span--9), transparent calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--10), transparent var(--grid--column-span--10), transparent calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--11), transparent var(--grid--column-span--11), transparent calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--12), transparent var(--grid--column-span--12), transparent calc( var(--grid--column-span--12) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--12) + var(--grid--gutter) ));
 }
 
 /**
