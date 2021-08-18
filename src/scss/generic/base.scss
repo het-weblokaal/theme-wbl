@@ -17,7 +17,8 @@ body {
     font-size: var(--wp--preset--font-size--normal);
     font-family: var(--wp--custom--font-family);
     line-height: var(--wp--custom--line-height--normal);
-    background: transparent;
+    background-color: var(--wp--preset--color--primary);
+    color:            var(--wp--preset--color--secondary);
 }
 
 

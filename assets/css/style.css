@@ -42,12 +42,24 @@ body {
   --grid--column-span--10: calc(var(--grid--column) * 10 + var(--grid--gutter) * 9);
   --grid--column-span--11: calc(var(--grid--column) * 11 + var(--grid--gutter) * 10);
   --grid--column-span--12: calc(var(--grid--column) * 12 + var(--grid--gutter) * 11);
+  --grid--column-span--13: calc(var(--grid--column) * 13 + var(--grid--gutter) * 12);
+  --grid--column-span--14: calc(var(--grid--column) * 14 + var(--grid--gutter) * 13);
+  --grid--column-span--15: calc(var(--grid--column) * 15 + var(--grid--gutter) * 14);
+  --grid--column-span--16: calc(var(--grid--column) * 16 + var(--grid--gutter) * 15);
+  --grid--column-span--17: calc(var(--grid--column) * 17 + var(--grid--gutter) * 16);
+  --grid--column-span--18: calc(var(--grid--column) * 18 + var(--grid--gutter) * 17);
+  --grid--column-span--19: calc(var(--grid--column) * 19 + var(--grid--gutter) * 18);
+  --grid--column-span--20: calc(var(--grid--column) * 20 + var(--grid--gutter) * 19);
+  --grid--column-span--21: calc(var(--grid--column) * 21 + var(--grid--gutter) * 20);
+  --grid--column-span--22: calc(var(--grid--column) * 22 + var(--grid--gutter) * 21);
+  --grid--column-span--23: calc(var(--grid--column) * 23 + var(--grid--gutter) * 22);
+  --grid--column-span--24: calc(var(--grid--column) * 24 + var(--grid--gutter) * 23);
   --site--width: 88vw;
-  --site--padding: 6vw;
+  --site--margin: 6vw;
   --grid--column: 88vw;
   --grid--gutter: 0vw;
-  --layout--content-size: 100%;
-  --layout--wide-size: 100%;
+  --layout--content--size: 100%;
+  --layout--wide--size: 100%;
 }
 @media (min-width: 360px) {
   body {
@@ -58,35 +70,39 @@ body {
 @media (min-width: 840px) {
   body {
     --site--width: 85vw;
-    --site--padding: 7.5vw;
+    --site--margin: 7.5vw;
     --grid--column: 10vw;
     --grid--gutter: 5vw;
-    --layout--content-size: var(--grid--column-span--4);
+    --layout--content--size: var(--grid--column-span--4);
   }
 }
 @media (min-width: 1400px) {
   body {
     --site--width: 1080px;
-    --site--padding: 60px;
+    --site--margin: 60px;
     --grid--column: 35px;
     --grid--gutter: 60px;
-    --layout--content-size: var(--grid--column-span--8);
+    --layout--content--size: var(--grid--column-span--8);
   }
 }
 @media (min-width: 1720px) {
   body {
     --site--width: 1200px;
-    --site--padding: 60px;
+    --site--margin: 60px;
     --grid--column: 45px;
     --grid--gutter: 60px;
   }
 }
 @media (min-width: 1920px) {
   body {
-    --site--width: 1320px;
-    --site--padding: 90px;
-    --grid--column: 55px;
+    --site--width: 1740px;
+    --site--margin: 90px;
+    --grid--column: 15px;
     --grid--gutter: 60px;
+    --layout--content--size: var(--grid--column-span--12);
+    --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
+    --layout--wide--size: var(--grid--column-span--18);
+    --layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
   }
 }
 
@@ -167,7 +183,8 @@ body {
   font-size: var(--wp--preset--font-size--normal);
   font-family: var(--wp--custom--font-family);
   line-height: var(--wp--custom--line-height--normal);
-  background: transparent;
+  background-color: var(--wp--preset--color--primary);
+  color: var(--wp--preset--color--secondary);
 }
 
 h6,
@@ -488,8 +505,9 @@ input[type=submit]:active {
   max-width: 100%;
   clear: both;
   min-height: 100vh;
-  background-color: var(--wp--preset--color--primary);
-  color: var(--wp--preset--color--secondary);
+  width: var(--site--width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .has-expanded-site-nav .site {
@@ -514,7 +532,7 @@ input[type=submit]:active {
   width: var(--site--width);
   opacity: 0.1;
   z-index: 99;
-  background: linear-gradient(90deg, var(--wp--preset--color--secondary) var(--grid--column-span--1), transparent var(--grid--column-span--1), transparent calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--2), transparent var(--grid--column-span--2), transparent calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--3), transparent var(--grid--column-span--3), transparent calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--4), transparent var(--grid--column-span--4), transparent calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--5), transparent var(--grid--column-span--5), transparent calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--6), transparent var(--grid--column-span--6), transparent calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--7), transparent var(--grid--column-span--7), transparent calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--8), transparent var(--grid--column-span--8), transparent calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--9), transparent var(--grid--column-span--9), transparent calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--10), transparent var(--grid--column-span--10), transparent calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--11), transparent var(--grid--column-span--11), transparent calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--12), transparent var(--grid--column-span--12), transparent calc( var(--grid--column-span--12) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--12) + var(--grid--gutter) ));
+  background: linear-gradient(90deg, var(--wp--preset--color--secondary) var(--grid--column-span--1), transparent var(--grid--column-span--1), transparent calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--1) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--2), transparent var(--grid--column-span--2), transparent calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--2) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--3), transparent var(--grid--column-span--3), transparent calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--3) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--4), transparent var(--grid--column-span--4), transparent calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--4) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--5), transparent var(--grid--column-span--5), transparent calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--5) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--6), transparent var(--grid--column-span--6), transparent calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--6) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--7), transparent var(--grid--column-span--7), transparent calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--7) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--8), transparent var(--grid--column-span--8), transparent calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--8) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--9), transparent var(--grid--column-span--9), transparent calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--9) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--10), transparent var(--grid--column-span--10), transparent calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--10) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--11), transparent var(--grid--column-span--11), transparent calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--11) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--12), transparent var(--grid--column-span--12), transparent calc( var(--grid--column-span--12) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--12) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--13), transparent var(--grid--column-span--13), transparent calc( var(--grid--column-span--13) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--13) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--14), transparent var(--grid--column-span--14), transparent calc( var(--grid--column-span--14) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--14) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--15), transparent var(--grid--column-span--15), transparent calc( var(--grid--column-span--15) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--15) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--16), transparent var(--grid--column-span--16), transparent calc( var(--grid--column-span--16) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--16) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--17), transparent var(--grid--column-span--17), transparent calc( var(--grid--column-span--17) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--17) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--18), transparent var(--grid--column-span--18), transparent calc( var(--grid--column-span--18) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--18) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--19), transparent var(--grid--column-span--19), transparent calc( var(--grid--column-span--19) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--19) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--10), transparent var(--grid--column-span--20), transparent calc( var(--grid--column-span--20) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--20) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--21), transparent var(--grid--column-span--21), transparent calc( var(--grid--column-span--21) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--21) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--22), transparent var(--grid--column-span--22), transparent calc( var(--grid--column-span--22) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--22) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--23), transparent var(--grid--column-span--23), transparent calc( var(--grid--column-span--23) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--23) + var(--grid--gutter) ), var(--wp--preset--color--secondary) var(--grid--column-span--24), transparent var(--grid--column-span--24), transparent calc( var(--grid--column-span--24) + var(--grid--gutter) ), var(--wp--preset--color--secondary) calc( var(--grid--column-span--24) + var(--grid--gutter) ));
 }
 
 /**
@@ -525,8 +543,6 @@ input[type=submit]:active {
   z-index: 99;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left: var(--site--padding);
-  margin-right: var(--site--padding);
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -601,8 +617,6 @@ input[type=submit]:active {
  * Structure: Site Main
  */
 .site-main {
-  margin-left: auto;
-  margin-right: auto;
   width: var(--site--width);
 }
 
@@ -614,8 +628,6 @@ input[type=submit]:active {
   margin-bottom: 5rem;
 }
 .site-footer__inner {
-  margin-left: auto;
-  margin-right: auto;
   width: var(--site--width);
 }
 .site-footer__title {
@@ -723,9 +735,6 @@ input[type=submit]:active {
 }
 
 .page__header {
-  margin-left: auto;
-  margin-right: auto;
-  width: var(--site--width);
   margin-bottom: 2rem;
 }
 @media (min-width: 1400px) {
@@ -734,14 +743,9 @@ input[type=submit]:active {
   }
 }
 .page__header > * {
-  margin-left: auto;
+  width: var(--layout--content--size);
+  margin-left: var(--layout--content--margin-left) !important;
   margin-right: auto;
-  width: var(--layout--content-size);
-}
-@media (min-width: 1400px) {
-  .page__header > * {
-    margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
-  }
 }
 .page__header .page__label {
   font-size: var(--wp--preset--font-size--extra-small);
@@ -759,9 +763,6 @@ input[type=submit]:active {
 }
 
 .page__content {
-  margin-left: auto;
-  margin-right: auto;
-  width: var(--site--width);
   margin-bottom: 1rem;
 }
 @media (min-width: 1400px) {
@@ -770,32 +771,19 @@ input[type=submit]:active {
   }
 }
 .page__content > * {
-  margin-left: auto;
+  width: var(--layout--content--size);
+  margin-left: var(--layout--content--margin-left) !important;
   margin-right: auto;
-  width: var(--layout--content-size);
-}
-@media (min-width: 1400px) {
-  .page__content > * {
-    margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
-  }
 }
 .page__footer {
-  margin-left: auto;
-  margin-right: auto;
-  width: var(--site--width);
   /* @media (--from-breakpoint-4) {
   	margin-right: calc(var(--column-gutter) * -1);
   } */
 }
 .page__footer > * {
-  margin-left: auto;
+  width: var(--layout--content--size);
+  margin-left: var(--layout--content--margin-left) !important;
   margin-right: auto;
-  width: var(--layout--content-size);
-}
-@media (min-width: 1400px) {
-  .page__footer > * {
-    margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
-  }
 }
 .page__footer .entry__terms {
   margin-top: 4rem;
@@ -882,8 +870,6 @@ input[type=submit]:active {
  * Block: Core/Cover
  */
 .wp-block-cover {
-  margin-left: auto;
-  margin-right: auto;
   width: var(--site--width);
   /* Default colors */
   --background-color: var(--wp--preset--color--secondary-1);
@@ -952,8 +938,6 @@ input[type=submit]:active {
  * Block: Core/Columns
  */
 .wp-block-columns {
-  margin-top: calc(var(--vertical-space) * 2);
-  margin-bottom: calc(var(--vertical-space) * 2);
   display: grid;
   grid-column-gap: var(--grid--gutter);
   column-gap: var(--grid--gutter);
@@ -966,36 +950,21 @@ input[type=submit]:active {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 .wp-block-columns.is-style-columns-1 {
   grid-template-columns: 1fr;
 }
-
 @media (min-width: 1080px) {
-  .wp-block-columns.is-style-columns-3,
-.wp-block-columns.is-style-columns-4 {
+  .wp-block-columns.is-style-columns-3, .wp-block-columns.is-style-columns-4 {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 @media (min-width: 1720px) {
   .wp-block-columns.is-style-columns-4 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-
-.wp-block-columns.is-style-columns-2 {
-  grid-template-columns: 1fr;
-}
-@media (min-width: 600px) {
-  .wp-block-columns.is-style-columns-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (min-width: 1400px) {
-  .alignwide.wp-block-columns,
-.alignfull.wp-block-columns {
+  .wp-block-columns.alignwide, .wp-block-columns.alignfull {
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
@@ -1006,6 +975,9 @@ input[type=submit]:active {
 }
 .wp-block-column > *:last-child {
   margin-bottom: 0;
+}
+.wp-block-column:not(:first-child) {
+  margin-left: 0;
 }
 
 /**
@@ -1135,8 +1107,6 @@ h6.has-background {
   max-width: none;
 }
 .wp-block-image.alignwide figcaption, .wp-block-image.alignfull figcaption {
-  margin-left: auto;
-  margin-right: auto;
   width: var(--site--width);
 }
 .wp-block-image.alignwide img, .wp-block-image.alignfull img {
@@ -1279,13 +1249,11 @@ p.has-background {
 }
 @media (min-width: 840px) {
   .call-to-action {
-    margin-left: calc(50% - 50vw + var(--site--padding));
-    margin-right: calc(50% - 50vw + var(--site--padding));
+    margin-left: calc(50% - 50vw + var(--site--margin));
+    margin-right: calc(50% - 50vw + var(--site--margin));
   }
 }
 .call-to-action__inner {
-  margin-left: auto;
-  margin-right: auto;
   width: var(--site--width);
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -1369,7 +1337,8 @@ p.has-background {
  * Component: Loop
  */
 .loop--blog {
-  width: 100%;
+  width: var(--layout--wide--size);
+  margin-left: var(--layout--wide--margin-left) !important;
   margin-bottom: 3rem;
   margin-top: 3rem;
   display: grid;
@@ -1378,11 +1347,6 @@ p.has-background {
   grid-row-gap: 3rem;
   row-gap: 3rem;
   grid-template-columns: 1fr;
-}
-@media (min-width: 1400px) {
-  .loop--blog {
-    margin-left: auto;
-  }
 }
 @media (min-width: 600px) {
   .loop--blog {
@@ -1990,14 +1954,10 @@ figure.alignleft {
 }
 
 .alignwide {
-  width: 100%;
+  width: var(--layout--wide--size);
+  margin-left: var(--layout--wide--margin-left) !important;
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-@media (min-width: 1400px) {
-  .alignwide {
-    margin-left: auto;
-  }
 }
 @media (min-width: 840px) {
   .alignwide {
@@ -2032,8 +1992,8 @@ figure.alignleft {
 }
 @media (min-width: 840px) {
   .alignfull.has-background {
-    margin-left: calc(50% - 50vw + var(--site--padding));
-    margin-right: calc(50% - 50vw + var(--site--padding));
+    margin-left: calc(50% - 50vw + var(--site--margin));
+    margin-right: calc(50% - 50vw + var(--site--margin));
   }
 }
 

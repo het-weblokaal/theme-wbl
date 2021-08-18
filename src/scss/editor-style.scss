@@ -1,10 +1,10 @@
-/**
- * Editor stylesheet for the theme.
- *
- * Theme styles follow http://cssguidelin.es/ and are organized according to
- * Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
- * short, each layer of CSS gets more specific as you move down this page.
- */
+///
+/// Editor stylesheet for the theme.
+///
+/// Theme styles follow http://cssguidelin.es/ and are organized according to
+/// Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
+/// short, each layer of CSS gets more specific as you move down this page.
+///
 
 
 ///
@@ -98,50 +98,68 @@
 // @import "utilities/templates";
 
 
-/**
- * Custom values 
- *
- * - Grid: because we can't use vw yet
- * - Typography: because we can't manipulate rem size yet
- */
+//
+// Custom values 
+//
+// - Grid: because we can't use vw yet
+// - Typography: because we can't manipulate rem size yet
+//
 body {
 
-	/* Grid */
-	--site--width:   1320px;
-	--site--padding: 90px;
-	--grid--column:  55px; 
-	--grid--gutter:  60px; 
+	// Grid
 
-	/* Typography */
+	// We use custom widths and need to think of the sidebars
+	--site--width:   960px;
+	--site--margin:  90px;
+	--grid--column:  36px; 
+	--grid--gutter:  48px; 
+
+	--layout--content--size: var(--grid--column-span--8);
+	--layout--content--margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
+
+	--layout--wide--size: var(--grid--column-span--10);
+	--layout--wide--margin-left: calc(var(--grid--column-span--1) + var(--grid--gutter));
+
+	@media (--from-breakpoint-7) {
+		--site--width:   1272px;
+		--site--margin:  90px;
+		--grid--column:  7px; 
+		--grid--gutter:  48px; 
+
+		--layout--content--size: var(--grid--column-span--12);
+		--layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
+
+		--layout--wide--size: var(--grid--column-span--18);
+		--layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
+	}
+
+	// Typography
 	--rem-size: 150%;		
 	--wp--preset--font-size--extra-small: 0.75rem;
 	--wp--preset--font-size--small: 0.875rem;	
 	--wp--custom--line-height--normal: 1.4;
 }
 
-/**
- * Body will be transformed to .editor-styles-wrapper because we add
- * theme support for editor-styles in this theme
- *
- * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
- */
+//
+// Body will be transformed to .editor-styles-wrapper because we add
+// theme support for editor-styles in this theme
+//
+// @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+//
 body {
-	background-color: var(--wp--preset--color--primary);
-	color: 			  var(--wp--preset--color--secondary);
+	// background-color: var(--wp--preset--color--primary);
+	// color: 			  var(--wp--preset--color--secondary);
 
-	font-family: var(--wp--custom--font-family);
-    line-height: var(--wp--custom--line-height--normal);
+	// font-family: var(--wp--custom--font-family);
+	// line-height: var(--wp--custom--line-height--normal);
 
+	// In the editor, set this on the body
 	font-size: var(--rem-size);
 
-	/**
-	 * Enforce a basic font-size similar to frontend. We assume large screens
-	 */
+	// Enforce a basic font-size similar to frontend. We assume large screens
 	// font-size: 24px;
 
-	/**
-	 * Grid
-	 */
+	// Grid
 	position: relative;
 	&:before {
 		content: "";
@@ -159,12 +177,17 @@ body {
 	}
 }
 
-// // Add layout for block-containers similar as frontend
-// .edit-post-visual-editor__post-title-wrapper,
-// .is-root-container {
-// 	@include is-page-segment;
-// 	@include has-page-content;
-// }
+// Add layout for block-containers similar as frontend
+.edit-post-visual-editor__post-title-wrapper,
+.is-root-container {
+	width: var(--site--width);
+	margin-left: auto;
+	margin-right: auto;
+	
+	> * {
+		@include is-page-content;
+	}
+}
 
 // // Reset default style for alignfull wrapper around group-block
 // .block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {

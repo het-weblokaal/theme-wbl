@@ -26,10 +26,10 @@
             "link": false
         },
 
-        "layout": {
-        	"contentSize": "var(--layout--content-size)",
-			"wideSize": "var(--layout--wide-size)"
-        },
+		"layout": {
+			"contentSize": "var(--layout--content--size)",
+			"wideSize": "var(--layout--wide--size)"
+		},
 
         "spacing": false,
 
@@ -80,7 +80,7 @@
         },
 
         "custom": {
-
+        	
         	"line-height": {
 				"extra-small": 1,
 				"small": 1.2,

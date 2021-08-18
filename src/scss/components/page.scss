@@ -26,8 +26,6 @@
 }
 
 .page__header {
-	@include is-page-segment;
-
 	margin-bottom: $space-8;
 
 	@media (--from-breakpoint-5) {
@@ -54,8 +52,6 @@
 }
 
 .page__content {
-	@include is-page-segment;
-
 	margin-bottom: $space-4;
 
 	@media (--from-breakpoint-5) {
@@ -72,8 +68,6 @@
 }
 
 .page__footer {
-	@include is-page-segment;
-
 	> * {
 		@include is-page-content;
 	}
