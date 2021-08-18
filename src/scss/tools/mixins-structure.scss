@@ -22,6 +22,11 @@
     margin-left: var(--layout--wide--margin-left) !important;
 }
 
+@mixin is-page-content--full {
+	width: 100%;
+    margin-left: 0 !important;
+}
+
 @mixin is-page-segment--full-site {
 	// margin-left: var(--site--margin);
  //    margin-right: var(--site--margin);
