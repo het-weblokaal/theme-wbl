@@ -3,28 +3,28 @@
  */
 
 .site-footer {
+	@include is-page-content--wide;
 	margin-top: $space-20;
 	margin-bottom: $space-20;
+	display: grid;
+	column-gap: var(--grid--gutter);
+	row-gap: $space-8;
+	grid-template-columns: 1fr;
 
-	&__inner {
-		@include is-page-segment;
+	> * {
+		margin-bottom: 0;
+		width: 100%;
 	}
 
 	&__title {
 		font-size: var(--wp--preset--font-size--large);
-		margin-bottom: $space-12;
+		margin-top: 0;
+		margin-bottom: 0;
+
 	}
 
 	&__content {
-		display: grid;
-		column-gap: var(--grid--gutter);
-		row-gap: $space-8;
-		grid-template-columns: 1fr;
-
-		> * {
-			margin-bottom: 0;
-			width: 100%;
-		}
+		
 	}
 
 	.contact-info {
@@ -76,9 +76,11 @@
 	}
 
 	@media (--from-breakpoint-1) {
-		&__content {
-			grid-template-columns: 1fr 1fr;
-			row-gap: $space-16;
+		grid-template-columns: 1fr 1fr;
+		row-gap: $space-16;
+
+		&__title {
+			grid-column: span 2;
 		}
 
 		.contact-info {
@@ -93,8 +95,10 @@
 	}
 
 	@media (--from-breakpoint-4) {
-		&__content {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+
+		&__title {
+			grid-column: span 2;
 		}
 
 		.contact-info {

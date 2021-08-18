@@ -121,10 +121,15 @@ body {
 	--layout--wide--margin-left: calc(var(--grid--column-span--1) + var(--grid--gutter));
 
 	@media (--from-breakpoint-7) {
-		--site--width:   1272px;
+		// --site--width:   1272px;
+		// --site--margin:  90px;
+		// --grid--column:  7px; 
+		// --grid--gutter:  48px; 
+
+		--site--width:   1260px;
 		--site--margin:  90px;
-		--grid--column:  7px; 
-		--grid--gutter:  48px; 
+		--grid--column:  18px; 
+		--grid--gutter:  36px; 
 
 		--layout--content--size: var(--grid--column-span--12);
 		--layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));

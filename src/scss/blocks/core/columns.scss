@@ -44,6 +44,7 @@
 	}
 }
 
+.block-editor-block-list__block.wp-block-column,
 .wp-block-column {
 	@include remove-first-last-child-margin;
 

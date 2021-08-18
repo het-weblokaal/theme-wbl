@@ -15,17 +15,19 @@ namespace WBL\Theme;
 	<?php wp_body_open() ?>
 
 	<div class="site <?= html_classes( $args['extra_classes'] ) ?>" <?= html_attributes($args['attr']) ?>>
+		<div class="site__inner">
 
-		<?php Template::display( 'components/skip-to-content' ) ?>
+			<?php Template::display( 'components/skip-to-content' ) ?>
 
-		<?php Template::display( 'site/header' ) ?>
+			<?php Template::display( 'site/header' ) ?>
 
-		<?php Template::display( 'site/main' ) ?>
+			<?php Template::display( 'site/main' ) ?>
 
-		<?php Template::display( 'site/footer' ) ?>
+			<?php Template::display( 'site/footer' ) ?>
 
-		<?php Template::display( 'components/site-debug-info' ) ?>
+			<?php Template::display( 'components/site-debug-info' ) ?>
 
+		</div>
 	</div>
 
 	<?php wp_footer(); ?>

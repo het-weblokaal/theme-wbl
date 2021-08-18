@@ -4,25 +4,39 @@
 
 .call-to-action {
 	@include margin-collapse-fix;
-	@include is-page-content--full-screen-with-background;
+	@include is-page-content--full;
 
 	margin-top: $space-20;
 	margin-bottom: $space-20;
+
+	padding-top: $space-20;
+	padding-bottom: $space-20;
 	
-	@include has-page-content;
  	text-align: center;
+
+	> * {
+		@include is-page-content;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 
  	
 
-	&__inner {
-		@include has-page-content;
-		@include is-page-segment;
-		margin-top: $space-20;
-		margin-bottom: $space-20;
-		text-align: center;
+	// &__inner {
+	// 	@include has-page-content;
+	// 	@include is-page-segment;
+	// 	margin-top: $space-20;
+	// 	margin-bottom: $space-20;
+	// 	text-align: center;
 
-		> * {
-			margin-left: auto;
-		}
-	}
+	// 	> * {
+	// 		margin-left: auto;
+	// 	}
+	// }
 }

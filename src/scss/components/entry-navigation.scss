@@ -5,6 +5,8 @@
 .entry-navigation {
 	margin-top: $space-8;
 	margin-bottom: $space-8;
+	@include is-page-content--wide;
+
 
 	a {}
 

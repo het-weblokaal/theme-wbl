@@ -59,7 +59,11 @@ body {
   --grid--column: 88vw;
   --grid--gutter: 0vw;
   --layout--content--size: 100%;
+  --layout--content--margin-left: auto;
   --layout--wide--size: 100%;
+  --layout--wide--margin-left: auto;
+  --layout--full--size: 100%;
+  --layout--full--margin-left: calc(var(--site--margin) * -1);
 }
 @media (min-width: 360px) {
   body {
@@ -96,13 +100,15 @@ body {
 @media (min-width: 1920px) {
   body {
     --site--width: 1740px;
-    --site--margin: 90px;
+    --site--margin: auto;
     --grid--column: 15px;
     --grid--gutter: 60px;
     --layout--content--size: var(--grid--column-span--12);
     --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
     --layout--wide--size: var(--grid--column-span--18);
     --layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
+    --layout--full--size: 100%;
+    --layout--full--margin-left: 0;
   }
 }
 
@@ -528,12 +534,15 @@ input[type=submit]:active {
   }
 }
 
+.block-editor-block-list__block.wp-block-column > *:first-child,
 .wp-block-column > *:first-child {
   margin-top: 0;
 }
+.block-editor-block-list__block.wp-block-column > *:last-child,
 .wp-block-column > *:last-child {
   margin-bottom: 0;
 }
+.block-editor-block-list__block.wp-block-column:not(:first-child),
 .wp-block-column:not(:first-child) {
   margin-left: 0;
 }
@@ -585,10 +594,10 @@ body {
 }
 @media (min-width: 1920px) {
   body {
-    --site--width: 1272px;
+    --site--width: 1260px;
     --site--margin: 90px;
-    --grid--column: 7px;
-    --grid--gutter: 48px;
+    --grid--column: 18px;
+    --grid--gutter: 36px;
     --layout--content--size: var(--grid--column-span--12);
     --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
     --layout--wide--size: var(--grid--column-span--18);
@@ -633,6 +642,10 @@ body:before {
 }
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align=full] {
-  width: 100%;
-  margin-left: 0 !important;
+  width: auto;
+  min-width: var(--layout--full--size);
+  margin-left: var(--layout--full--margin-left) !important;
+  margin-right: var(--layout--full--margin-left) !important;
+  padding-left: var(--site--margin);
+  padding-right: var(--site--margin);
 }

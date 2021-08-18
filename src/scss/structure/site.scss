@@ -4,12 +4,16 @@
 
 .site {
 	@include margin-collapse-fix;
-	@include full-page-content-overflow-fix;
-	clear: both;
 	min-height: 100vh;
-	width: var(--site--width);
-	margin-left: auto;
-	margin-right: auto;
+	background-color: var(--wp--preset--color--primary);
+    color:            var(--wp--preset--color--secondary);
+
+    &__inner {
+		max-width: var(--site--width);
+		margin-left: var(--site--margin);
+		margin-right: var(--site--margin);
+		clear: both;
+    }
 }
 
 .has-expanded-site-nav .site {

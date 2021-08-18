@@ -23,8 +23,12 @@
 }
 
 @mixin is-page-content--full {
-	width: 100%;
-    margin-left: 0 !important;
+	width: auto;
+	min-width: var(--layout--full--size);
+    margin-left: var(--layout--full--margin-left) !important;
+    margin-right: var(--layout--full--margin-left) !important;
+    padding-left: var(--site--margin);
+    padding-right: var(--site--margin);
 }
 
 @mixin is-page-segment--full-site {
