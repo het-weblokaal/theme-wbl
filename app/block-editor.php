@@ -14,20 +14,70 @@ add_action( 'after_setup_theme', function() {
 	/**
 	 * Restrict the allowed blocks (opinionated)
 	 */
-	add_filter( 'allowed_block_types_all', function( $allowed_block_types ) {
+	add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2 );
 
-		// Add blocks specifically for this theme
-		$allowed_block_types[] = 'core/gallery';
+	// Block styles
+	add_action( 'init', __NAMESPACE__ . '\register_block_styles' );
 
-		return $allowed_block_types;
-		
-	}, 10, 2 );
+	// Block patterns
+	add_action( 'init', __NAMESPACE__ . '\register_block_patters' );
 
 
 }, 5 );
 
-// Block styles
-add_action( 'init', function() {
+
+
+/**
+ * Restrict allowed blocks
+ *
+ * @link https://gist.github.com/erikjoling/7b05c3e3411244d126808bab46529d78
+ * @link https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/index.js 
+ * 
+ * @return array
+ */
+function allowed_block_types( $allowed_blocks, $post ) {
+
+	$allowed_blocks = [
+
+		// Core blocks
+		'core/button',
+		'core/buttons',
+		'core/column',
+		'core/columns',
+		'core/cover',
+		'core/embed',
+		'core/file',
+		'core/gallery',
+		'core/group',
+		'core/heading',
+		'core/html',
+		'core/image',
+		'core/list',
+		'core/paragraph',
+		'core/pullquote',
+		'core/quote',
+		'core/table',
+
+		// WBL blocks
+		'wbl-blocks/archive-loop',
+		'wbl-blocks/posts',
+
+		// WBL other blocks
+		'wbl-projects/projects',
+
+		// Third Party blocks
+		'contact-form-7/contact-form-selector',
+	];
+
+	return $allowed_block_types;	
+}
+
+/**
+ * Register block styles
+ * 
+ * @return void
+ */
+function register_block_styles() {
 
 	// Columns: 2
 	register_block_style( 'core/columns', array(
@@ -59,10 +109,14 @@ add_action( 'init', function() {
 		'name'  => 'inline-images',
 		'label' => esc_html__( 'Galerij met inline afbeeldingen', 'wbl-theme' ),
 	) );
+}
 
-	/**
-	 * Register block patterns
-	 */
+/**
+ * Register block patterns
+ * 
+ * @return void
+ */
+function register_block_patters() {
 
 	// Setup custom category for block patterns
 	register_block_pattern_category( App::get_id(), [ 'label' => App::get_name() . ' blocks' ] );
@@ -87,6 +141,5 @@ add_action( 'init', function() {
 		'categories' => [ App::get_id() ],
 		'content'    => Template::render( 'block-patterns/project-specs', null )
 	] );
-} );
-
+}
 
