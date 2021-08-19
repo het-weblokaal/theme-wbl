@@ -132,7 +132,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
 		'contact-form-7/contact-form-selector',
 	];
 
-	return $allowed_block_types;	
+	return $allowed_blocks;	
 }
 
 /**

@@ -2,6 +2,11 @@
 /**
  * Settings: Colors
  */
+body {
+  --wp--preset--color--primary: #FFF7D6;
+  --wp--preset--color--secondary: #000000;
+}
+
 /**
  * Settings: General
  */
@@ -119,7 +124,14 @@ body {
  * Settings: Typography
  */
 body {
-  --wp--custom--font-family: "unit-rounded, sans-serif";
+  --wp--preset--font-family: unit-rounded, sans-serif;
+  --wp--preset--font-size--extra-small: 0.825rem;
+  --wp--preset--font-size--small: 0.875rem;
+  --wp--preset--font-size--normal: 1rem;
+  --wp--preset--font-size--large: 1.25rem;
+  --wp--preset--font-size--extra-large: 1.5rem;
+  --wp--preset--font-size--huge: 2rem;
+  --wp--preset--font-size--gigantic: 2.5rem;
   --wp--custom--line-height--extra-small: 1,
   --wp--custom--line-height--small: 1.2,
   --wp--custom--line-height--normal: 1.333,
@@ -201,7 +213,7 @@ html {
 
 body {
   font-size: var(--wp--preset--font-size--normal);
-  font-family: var(--wp--custom--font-family);
+  font-family: var(--wp--preset--font-family);
   line-height: var(--wp--custom--line-height--normal);
   background-color: var(--wp--preset--color--primary);
   color: var(--wp--preset--color--secondary);
@@ -2015,6 +2027,22 @@ figure.alignleft {
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
+}
+
+.has-primary-background-color {
+  background-color: var(--wp--preset--color--primary);
+}
+
+.has-primary-color {
+  color: var(--wp--preset--color--primary);
+}
+
+.has-secondary-background-color {
+  background-color: var(--wp--preset--color--secondary);
+}
+
+.has-secondary-color {
+  color: var(--wp--preset--color--secondary);
 }
 
 /**
