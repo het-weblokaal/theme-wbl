@@ -15,6 +15,7 @@ body {
 
 	--wp--preset--font-family: unit-rounded, sans-serif;
 
+	// Also defined in /app/block-editor.php
 	--wp--preset--font-size--extra-small: 0.825rem;
 	--wp--preset--font-size--small: 0.875rem;
 	--wp--preset--font-size--normal: 1rem;
@@ -23,10 +24,10 @@ body {
 	--wp--preset--font-size--huge: 2rem;
 	--wp--preset--font-size--gigantic: 2.5rem;
 
-	--wp--custom--line-height--extra-small: 1,
-	--wp--custom--line-height--small: 1.2,
-	--wp--custom--line-height--normal: 1.333,
-	--wp--custom--line-height--large: 1.5
+	--wp--custom--line-height--extra-small: 1;
+	--wp--custom--line-height--small: 1.2;
+	--wp--custom--line-height--normal: 1.333;
+	--wp--custom--line-height--large: 1.5;
 
 	@media (--from-breakpoint-1) {
 

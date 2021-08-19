@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', function() {
 	add_action( 'init', __NAMESPACE__ . '\register_block_styles' );
 
 	// Block patterns
-	add_action( 'init', __NAMESPACE__ . '\register_block_patters' );
+	add_action( 'init', __NAMESPACE__ . '\register_block_patterns' );
 
 }, 5 );
 
@@ -179,7 +179,7 @@ function register_block_styles() {
  * 
  * @return void
  */
-function register_block_patters() {
+function register_block_patterns() {
 
 	// Setup custom category for block patterns
 	register_block_pattern_category( App::get_id(), [ 'label' => App::get_name() . ' blocks' ] );
