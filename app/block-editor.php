@@ -8,12 +8,78 @@ namespace WBL\Theme;
 
 /**
  * Setup at regular hook
+ * 
+ * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
  */
 add_action( 'after_setup_theme', function() {
 
-	/**
-	 * Restrict the allowed blocks (opinionated)
-	 */
+	// Add support for wide and full aligned blocks
+	add_theme_support( 'align-wide' );
+
+	// Color palette
+	add_theme_support( 'editor-color-palette', [
+		[
+			"name"  => "Primary",
+			"slug"  => "primary",
+			"color" => "#FFF7D6"
+		],
+		[
+			"name"  => "Secondary",
+			"slug"  => "secondary",
+			"color" => "#000000"
+		]
+	]);
+
+	// Disable custom colors: we don't want users to get too creative..
+	add_theme_support( 'disable-custom-colors' );
+
+	// Disable Gradients
+	add_theme_support( 'editor-gradient-presets' );
+	add_theme_support( 'disable-custom-gradients' );
+
+	// Font-sizes. 
+	add_theme_support( 'editor-font-sizes', [
+		[ 
+			"slug" => "extra-small",
+			"size" => "0.825rem",
+			"name" => "Extra Small"
+		],
+		[ 
+			"slug" => "small",
+			"size" => "0.875rem",
+			"name" => "Small"
+		],
+		[ 
+			"slug" => "normal",
+			"size" => "1rem",
+			"name" => "Normal"
+		],
+		[ 
+			"slug" => "large",
+			"size" => "1.25rem",
+			"name" => "Large"
+		],
+		[ 
+			"slug" => "extra-large",
+			"size" => "1.5rem",
+			"name" => "Extra Large"
+		],
+		[ 
+			"slug" => "huge",
+			"size" => "2rem",
+			"name" => "Huge"
+		],
+		[ 
+			"slug" => "gigantic",
+			"size" => "2.5rem",
+			"name" => "Gigantic"
+		]
+	] );
+
+	// Disable custom font-size
+	add_theme_support( 'disable-custom-font-sizes' );
+
+	// Restrict the allowed blocks (opinionated)	 
 	add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2 );
 
 	// Block styles
@@ -22,10 +88,7 @@ add_action( 'after_setup_theme', function() {
 	// Block patterns
 	add_action( 'init', __NAMESPACE__ . '\register_block_patters' );
 
-
 }, 5 );
-
-
 
 /**
  * Restrict allowed blocks

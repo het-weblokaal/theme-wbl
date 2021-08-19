@@ -13,6 +13,13 @@
 
 body {
 
+	--wp--custom--font-family: "unit-rounded, sans-serif";
+
+	--wp--custom--line-height--extra-small: 1,
+	--wp--custom--line-height--small: 1.2,
+	--wp--custom--line-height--normal: 1.333,
+	--wp--custom--line-height--large: 1.5
+
 	@media (--from-breakpoint-1) {
 
 		// Rem: 18 
