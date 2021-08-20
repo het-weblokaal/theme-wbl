@@ -40,39 +40,39 @@ add_action( 'after_setup_theme', function() {
 	// Font-sizes. 
 	add_theme_support( 'editor-font-sizes', [
 		[ 
+			"name" => "Extra Small",
 			"slug" => "extra-small",
-			"size" => "0.825rem",
-			"name" => "Extra Small"
+			"size" => "0.825rem"
 		],
 		[ 
+			"name" => "Small",
 			"slug" => "small",
-			"size" => "0.875rem",
-			"name" => "Small"
+			"size" => "0.875rm",
 		],
 		[ 
+			"name" => "Normal",
 			"slug" => "normal",
-			"size" => "1rem",
-			"name" => "Normal"
+			"size" => "1rem"
 		],
 		[ 
+			"name" => "Large",
 			"slug" => "large",
-			"size" => "1.25rem",
-			"name" => "Large"
+			"size" => "1.25re",
 		],
 		[ 
+			"name" => "Extra Large",
 			"slug" => "extra-large",
-			"size" => "1.5rem",
-			"name" => "Extra Large"
+			"size" => "1.5rem"
 		],
 		[ 
+			"name" => "Huge",
 			"slug" => "huge",
-			"size" => "2rem",
-			"name" => "Huge"
+			"size" => "2rem"
 		],
 		[ 
+			"name" => "Gigantic",
 			"slug" => "gigantic",
-			"size" => "2.5rem",
-			"name" => "Gigantic"
+			"size" => "2.5rem"
 		]
 	] );
 

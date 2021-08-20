@@ -14,6 +14,9 @@ add_action( 'after_setup_theme', function() {
 	// Load external font (editor and frontend).
 	add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_external_font' );
 
+	// Inject global styles inline css (editor and frontend).
+	// add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_global_styles' );
+
 	// Enqueue theme styles and scripts to the frontend
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\add_styles_and_scripts_to_frontend' );
 
@@ -45,6 +48,22 @@ function add_external_font() {
 	);
 }
 
+
+function add_global_styles() {
+
+	// Get global styles
+	$css = get_global_styles();
+
+	/**
+	 * Register our own global styles (mimic global styles behavior)
+	 * 
+	 * See WBL Theme Foundation: block-editor.php
+	 */
+	wp_enqueue_style( App::handle('global-styles') );
+	wp_register_style( App::handle('global-styles'), false, array(), true, true );
+	wp_add_inline_style( App::handle('global-styles'), $css );
+}
+
 /**
  * Enqueue theme styles and scripts to the frontend
  */
@@ -57,6 +76,9 @@ function add_styles_and_scripts_to_frontend() {
 		null, 
 		null 
 	);
+
+	// Add inline style
+	wp_add_inline_style( App::handle(), get_global_styles() );
 
 	// Add theme scripts
 	wp_enqueue_script( 
