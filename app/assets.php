@@ -15,7 +15,7 @@ add_action( 'after_setup_theme', function() {
 	add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_external_font' );
 
 	// Inject global styles inline css (editor and frontend).
-	// add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_global_styles' );
+	add_action( 'enqueue_block_assets', __NAMESPACE__ . '\add_global_styles' );
 
 	// Enqueue theme styles and scripts to the frontend
 	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\add_styles_and_scripts_to_frontend' );
@@ -59,9 +59,9 @@ function add_global_styles() {
 	 * 
 	 * See WBL Theme Foundation: block-editor.php
 	 */
-	wp_enqueue_style( App::handle('global-styles') );
 	wp_register_style( App::handle('global-styles'), false, array(), true, true );
 	wp_add_inline_style( App::handle('global-styles'), $css );
+	wp_enqueue_style( App::handle('global-styles') );
 }
 
 /**
@@ -77,8 +77,7 @@ function add_styles_and_scripts_to_frontend() {
 		null 
 	);
 
-	// Add inline style
-	wp_add_inline_style( App::handle(), get_global_styles() );
+	// wp_add_inline_style( App::handle(), get_global_styles() );
 
 	// Add theme scripts
 	wp_enqueue_script( 
@@ -113,6 +112,11 @@ function enqueue_styles_and_scripts_to_editor() {
 	wp_register_style( App::handle('wp-block-fix'), false, array(), true, true );
 	wp_add_inline_style( App::handle('wp-block-fix'), '.wp-block { max-width: none; }' );
 	wp_enqueue_style( App::handle('wp-block-fix') );
+
+	// Temporary global styles
+	wp_register_style( App::handle('global-styles'), false, array(), true, true );
+	wp_add_inline_style( App::handle('global-styles'), get_global_styles( '.editor_styles_wrapper' ) );
+	wp_enqueue_style( App::handle('global-styles') );
 
 	// Add style for blocks
 	wp_enqueue_style( 

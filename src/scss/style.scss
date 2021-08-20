@@ -28,7 +28,6 @@
 /// Settings - Global variables, config switches.
 ///
 @import "settings/media-queries";
-@import "settings/colors";
 @import "settings/rem";
 @import "settings/grid";
 @import "settings/typography";
@@ -99,8 +98,6 @@
 ///
 @import "utilities/accessibility";
 @import "utilities/alignments";
-@import "utilities/colors";
-@import "utilities/typography";
 @import "utilities/helpers";
 @import "utilities/wordpress";
 @import "utilities/shame";
