@@ -547,3 +547,12 @@ body:before {
   padding-left: var(--site--margin);
   padding-right: var(--site--margin);
 }
+
+h1.has-background,
+h2.has-background,
+h3.has-background,
+h4.has-background,
+h5.has-background,
+h6.has-background {
+  padding: 0;
+}

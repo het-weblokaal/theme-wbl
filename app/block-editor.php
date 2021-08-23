@@ -47,7 +47,7 @@ add_action( 'after_setup_theme', function() {
 		[ 
 			"name" => "Small",
 			"slug" => "small",
-			"size" => "0.875rm",
+			"size" => "0.875rem",
 		],
 		[ 
 			"name" => "Normal",
@@ -57,7 +57,7 @@ add_action( 'after_setup_theme', function() {
 		[ 
 			"name" => "Large",
 			"slug" => "large",
-			"size" => "1.25re",
+			"size" => "1.25rem",
 		],
 		[ 
 			"name" => "Extra Large",

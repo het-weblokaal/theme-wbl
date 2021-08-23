@@ -191,3 +191,12 @@ body {
 // .block-editor-block-list__block.wp-block-column:not(:first-child) {
 //     margin-left: 0;
 // }
+
+h1.has-background, 
+h2.has-background, 
+h3.has-background, 
+h4.has-background, 
+h5.has-background, 
+h6.has-background {
+    padding: 0;
+}
