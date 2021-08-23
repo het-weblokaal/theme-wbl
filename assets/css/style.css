@@ -623,12 +623,6 @@ input[type=submit]:active {
   }
 }
 
-.has-expanded-site-nav .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
 .has-expanded-site-nav .site-header .site-branding {
   color: var(--wp--preset--color--primary);
   z-index: 1;
