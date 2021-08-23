@@ -108,3 +108,8 @@ body.has-page-image {
 		--misc--page-image-height: 0px;
 	}
 }
+
+// For maximum text width
+.has-max-text-width {
+	max-width: 32rem;
+}

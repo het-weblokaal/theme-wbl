@@ -63,7 +63,7 @@ body {
   --layout--wide--size: 100%;
   --layout--wide--margin-left: auto;
   --layout--full--size: 100%;
-  --layout--full--margin-left: calc(var(--site--margin) * -1);
+  --layout--full--margin-left: auto;
 }
 @media (min-width: 360px) {
   body {
@@ -91,9 +91,7 @@ body {
     --grid--column: 45px;
     --grid--gutter: 60px;
     --layout--content--size: var(--grid--column-span--8);
-    --layout--content--margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
     --layout--wide--size: var(--grid--column-span--10);
-    --layout--wide--margin-left: calc(var(--grid--column-span--1) + var(--grid--gutter));
     --layout--full--size: 100%;
     --layout--full--margin-left: 0;
   }
@@ -104,11 +102,8 @@ body {
     --grid--column: 3px;
     --grid--gutter: 60px;
     --layout--content--size: var(--grid--column-span--12);
-    --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
     --layout--wide--size: var(--grid--column-span--18);
-    --layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
     --layout--full--size: 100%;
-    --layout--full--margin-left: 0;
   }
 }
 @media (min-width: 1920px) {
@@ -117,11 +112,8 @@ body {
     --grid--column: 15px;
     --grid--gutter: 60px;
     --layout--content--size: var(--grid--column-span--12);
-    --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
     --layout--wide--size: var(--grid--column-span--18);
-    --layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
     --layout--full--size: 100%;
-    --layout--full--margin-left: 0;
   }
 }
 
@@ -154,7 +146,6 @@ body {
  */
 body {
   --misc--page-image-height: 0px;
-  --misc--max-text-width: none;
 }
 
 /**
@@ -223,7 +214,6 @@ h1 {
   font-style: normal;
   overflow-wrap: break-word;
   text-transform: uppercase;
-  max-width: var(--misc--max-text-width);
 }
 
 h6,
@@ -248,7 +238,6 @@ h1 {
   line-height: var(--wp--custom--line-height--extra-small);
   margin-top: 3rem;
   margin-bottom: 3rem;
-  max-width: calc(var(--misc--max-text-width) * 1.25);
 }
 
 p {
@@ -2182,6 +2171,10 @@ body.has-page-image.is-singular--wbl_project {
 }
 body.has-page-image.has-expanded-site-nav {
   --misc--page-image-height: 0px;
+}
+
+.has-max-text-width {
+  max-width: 32rem;
 }
 
 /**

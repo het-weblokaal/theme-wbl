@@ -49,7 +49,8 @@ body {
 	--layout--wide--margin-left: auto;
 
 	--layout--full--size: 100%;
-	--layout--full--margin-left: calc(var(--site--margin) * -1);
+	// --layout--full--margin-left: calc(var(--site--margin) * -1);
+	--layout--full--margin-left: auto;
 
     @media (--from-breakpoint-1) {
 
@@ -90,10 +91,10 @@ body {
 
 
 		--layout--content--size: var(--grid--column-span--8);
-		--layout--content--margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
+		// --layout--content--margin-left: calc(var(--grid--column-span--2) + var(--grid--gutter));
 
 		--layout--wide--size: var(--grid--column-span--10);
-		--layout--wide--margin-left: calc(var(--grid--column-span--1) + var(--grid--gutter));
+		// --layout--wide--margin-left: calc(var(--grid--column-span--1) + var(--grid--gutter));
 
 		--layout--full--size: 100%;
 		--layout--full--margin-left: 0;
@@ -114,13 +115,13 @@ body {
 		--grid--gutter:  60px; 
 
 		--layout--content--size: var(--grid--column-span--12);
-		--layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
+		// --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
 
 		--layout--wide--size: var(--grid--column-span--18);
-		--layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
+		// --layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
 
 		--layout--full--size: 100%;
-		--layout--full--margin-left: 0;
+		// --layout--full--margin-left: 0;
 
     }
 
@@ -152,12 +153,12 @@ body {
 		--grid--gutter:  60px; 
 
 		--layout--content--size: var(--grid--column-span--12);
-		--layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
+		// --layout--content--margin-left: calc(var(--grid--column-span--6) + var(--grid--gutter));
 
 		--layout--wide--size: var(--grid--column-span--18);
-		--layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
+		// --layout--wide--margin-left: calc(var(--grid--column-span--3) + var(--grid--gutter));
 
 		--layout--full--size: 100%;
-		--layout--full--margin-left: 0;
+		// --layout--full--margin-left: 0;
     }
 }

@@ -37,7 +37,7 @@ h1 {
     font-style: normal;
     overflow-wrap: break-word;
     text-transform: uppercase;
-    max-width: var(--misc--max-text-width);
+    // max-width: var(--misc--max-text-width);
 }
 
 h6,
@@ -64,7 +64,7 @@ h1 {
     margin-top: $space-12;
     margin-bottom: $space-12;
 
-    max-width: calc(var(--misc--max-text-width) * 1.25);
+    // max-width: calc(var(--misc--max-text-width) * 1.25);
 }
 
 
