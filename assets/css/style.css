@@ -1106,48 +1106,10 @@ input[type=submit]:active {
 }
 .wp-block-group.has-background {
   overflow-y: hidden;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-.wp-block-group.has-background > *:first-child {
-  margin-top: 0;
-}
-.wp-block-group.has-background > *:last-child {
-  margin-bottom: 0;
-}
-.wp-block-group.has-background > * {
-  width: var(--layout--content--size);
-  margin-left: var(--layout--content--margin-left);
-  margin-right: auto;
-}
-.wp-block-group.has-background > .alignwide {
-  width: var(--layout--wide--size);
-  margin-left: var(--layout--wide--margin-left);
-}
-.wp-block-group.has-background > .alignfull {
-  width: auto;
-  min-width: var(--layout--full--size);
-  margin-left: var(--layout--full--margin-left);
-  margin-right: var(--layout--full--margin-left);
-  padding-left: var(--site--margin);
-  padding-right: var(--site--margin);
-}
-.wp-block-group__inner-container {
-  overflow-y: hidden;
-}
-.wp-block-group__inner-container > *:first-child {
-  margin-top: 0;
-}
-.wp-block-group__inner-container > *:last-child {
-  margin-bottom: 0;
 }
 .wp-block-group.has-background > .wp-block-group__inner-container {
-  width: auto;
-  min-width: var(--layout--full--size);
-  margin-left: var(--layout--full--margin-left);
-  margin-right: var(--layout--full--margin-left);
-  padding-left: var(--site--margin);
-  padding-right: var(--site--margin);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 .wp-block-group.has-background > .wp-block-group__inner-container > * {
   width: var(--layout--content--size);
@@ -1159,6 +1121,19 @@ input[type=submit]:active {
   margin-left: var(--layout--wide--margin-left);
 }
 .wp-block-group.has-background > .wp-block-group__inner-container > .alignfull {
+  width: auto;
+  min-width: var(--layout--full--size);
+  margin-left: var(--layout--full--margin-left);
+  margin-right: var(--layout--full--margin-left);
+  padding-left: var(--site--margin);
+  padding-right: var(--site--margin);
+}
+
+.wp-block-group.has-background > .wp-block[data-align=wide], .wp-block-group.has-background > .wp-block-group__inner-container > .wp-block[data-align=wide] {
+  width: var(--layout--wide--size);
+  margin-left: var(--layout--wide--margin-left);
+}
+.wp-block-group.has-background > .wp-block[data-align=full], .wp-block-group.has-background > .wp-block-group__inner-container > .wp-block[data-align=full] {
   width: auto;
   min-width: var(--layout--full--size);
   margin-left: var(--layout--full--margin-left);

@@ -53,9 +53,9 @@
 // @import "blocks/core/button";
 // @import "blocks/core/code";
 // @import "blocks/core/cover";
-// @import "blocks/core/columns";
+@import "blocks/core/columns";
 // @import "blocks/core/gallery";
-// @import "blocks/core/group";
+@import "blocks/core/group";
 // @import "blocks/core/heading";
 // @import "blocks/core/image";
 // @import "blocks/core/media-text";
@@ -182,15 +182,14 @@ body {
 	> * {
 		@include is-page-content;
 	}
-}
 
-// Alignments
-.wp-block[data-align="wide"] {
-	@include is-page-content--wide;
-}
+	> [data-align="wide"] {
+		@include is-page-content--wide;
+	}
 
-.wp-block[data-align="full"] {
-	@include is-page-content--full;
+	> [data-align="full"] {
+		@include is-page-content--full;
+	}
 }
 
 // Reset default style for alignments wrappers around group-block

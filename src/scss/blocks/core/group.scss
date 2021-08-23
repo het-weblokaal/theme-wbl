@@ -2,6 +2,9 @@
  * Block: Core/Group
  */
 
+// In the future inner-container will be deprecated due to LayoutSettings.
+// But currently I can assume it's present in our websites.
+
 // By preference: no flex on group block
 // because this creates difficulties with overlapping margins 
 
@@ -26,11 +29,14 @@
 
 	// If group has background we treat is a special content container
 	&.has-background {
-		@include margin-collapse-fix;
-		@include remove-first-last-child-margin;
+		@include margin-collapse-fix;		
+	}
 
-		padding-top: $space-20;
-		padding-bottom: $space-20;
+	&.has-background > &__inner-container {
+		// @include remove-first-last-child-margin;
+
+		margin-top: $space-20;
+		margin-bottom: $space-20;
 		
 		> * {
 			@include is-page-content;
@@ -44,30 +50,19 @@
 			@include is-page-content--full;
 		}
 	}
+}
 
+// Editor
+.wp-block-group {
 
-	// The presence of inner-container is doubtful due to 
-	// layout setttings. But it could always be present.
-	// So we style it.
-	&__inner-container {
-		@include margin-collapse-fix;
-		@include remove-first-last-child-margin;
+	&.has-background > .wp-block[data-align="wide"],
+	&.has-background > &__inner-container > .wp-block[data-align="wide"] {
+		@include is-page-content--wide;
 	}
 
-	// Reset inner-container...
-	&.has-background > &__inner-container {
+	&.has-background > .wp-block[data-align="full"],
+	&.has-background > &__inner-container > .wp-block[data-align="full"] {
 		@include is-page-content--full;
-
-		> * {
-			@include is-page-content;
-		}
-
-		> .alignwide {
-			@include is-page-content--wide;
-		}
-
-		> .alignfull {
-			@include is-page-content--full;
-		}
 	}
 }
+
