@@ -166,6 +166,12 @@ body {
 	}
 }
 
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"],
+.wp-block {
+	max-width: none;
+}
+
 // Add layout for block-containers similar as frontend
 .edit-post-visual-editor__post-title-wrapper,
 .is-root-container {
@@ -178,11 +184,19 @@ body {
 	}
 }
 
-// Reset default style for alignfull wrapper around group-block
-.block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
+// Alignments
+.wp-block[data-align="wide"] {
 	@include is-page-content--wide;
 }
 
+.wp-block[data-align="full"] {
+	@include is-page-content--full;
+}
+
+// Reset default style for alignments wrappers around group-block
+.block-editor-block-list__layout.is-root-container > .wp-block[data-align="wide"] {
+	@include is-page-content--wide;
+}
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
 	@include is-page-content--full;
 }
@@ -200,3 +214,23 @@ h5.has-background,
 h6.has-background {
     padding: 0;
 }
+
+
+
+// .wp-block
+// // Reset inner-container...
+// &.has-background > &__inner-container {
+// 	@include is-page-content--full;
+
+// 	> * {
+// 		@include is-page-content;
+// 	}
+
+// 	> .alignwide {
+// 		@include is-page-content--wide;
+// 	}
+
+// 	> .alignfull {
+// 		@include is-page-content--full;
+// 	}
+// }

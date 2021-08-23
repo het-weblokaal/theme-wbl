@@ -13,20 +13,20 @@
 
 @mixin is-page-content {
 	width: var(--layout--content--size);
-    margin-left: var(--layout--content--margin-left) !important;
+    margin-left: var(--layout--content--margin-left);
     margin-right: auto;
 }
 
 @mixin is-page-content--wide {
 	width: var(--layout--wide--size);
-    margin-left: var(--layout--wide--margin-left) !important;
+    margin-left: var(--layout--wide--margin-left);
 }
 
 @mixin is-page-content--full {
 	width: auto;
 	min-width: var(--layout--full--size);
-    margin-left: var(--layout--full--margin-left) !important;
-    margin-right: var(--layout--full--margin-left) !important;
+    margin-left: var(--layout--full--margin-left);
+    margin-right: var(--layout--full--margin-left);
     padding-left: var(--site--margin);
     padding-right: var(--site--margin);
 }

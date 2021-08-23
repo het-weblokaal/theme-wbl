@@ -2,13 +2,11 @@
  * Block: Core/Group
  */
 
+// By preference: no flex on group block
+// because this creates difficulties with overlapping margins 
+
 .wp-block-group {
 	position: relative;
-
-	// By preference: no flex on group block
-	// because this creates difficulties with overlapping margins 
-	// display: flex;
-	// justify-content: center;
 
 	margin-top: $space-8;
 	margin-bottom: $space-8;
@@ -26,9 +24,50 @@
 		}
 	}
 
+	// If group has background we treat is a special content container
 	&.has-background {
 		@include margin-collapse-fix;
 		@include remove-first-last-child-margin;
-		padding: $space-4;
+
+		padding-top: $space-20;
+		padding-bottom: $space-20;
+		
+		> * {
+			@include is-page-content;
+		}
+
+		> .alignwide {
+			@include is-page-content--wide;
+		}
+
+		> .alignfull {
+			@include is-page-content--full;
+		}
+	}
+
+
+	// The presence of inner-container is doubtful due to 
+	// layout setttings. But it could always be present.
+	// So we style it.
+	&__inner-container {
+		@include margin-collapse-fix;
+		@include remove-first-last-child-margin;
+	}
+
+	// Reset inner-container...
+	&.has-background > &__inner-container {
+		@include is-page-content--full;
+
+		> * {
+			@include is-page-content;
+		}
+
+		> .alignwide {
+			@include is-page-content--wide;
+		}
+
+		> .alignfull {
+			@include is-page-content--full;
+		}
 	}
 }

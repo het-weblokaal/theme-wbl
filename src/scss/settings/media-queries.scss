@@ -8,8 +8,8 @@
 @custom-media --from-breakpoint-2 (min-width: 600px);
 @custom-media --from-breakpoint-3 (min-width: 840px); // Grid: 6 columns
 @custom-media --from-breakpoint-4 (min-width: 1080px); 
-@custom-media --from-breakpoint-5 (min-width: 1400px); // Grid: 12 columns
-@custom-media --from-breakpoint-6 (min-width: 1720px);
+@custom-media --from-breakpoint-5 (min-width: 1360px); // Grid: 12 columns
+@custom-media --from-breakpoint-6 (min-width: 1640px);
 @custom-media --from-breakpoint-7 (min-width: 1920px);
 
 @custom-media --until-breakpoint-1 (max-width: 359px);
