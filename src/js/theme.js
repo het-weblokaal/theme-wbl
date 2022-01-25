@@ -24,23 +24,26 @@ if (window.document.documentMode) {
 let gridToggle = document.querySelector('#grid-toggle');
 let gridToggleTarget = document.querySelector('body');
 
-if (localStorage.getItem('hasGrid')) {
-	gridToggleTarget.classList.add('has-grid');
-	gridToggle.checked = true;
-}
-else {
-	gridToggle.textContent = false;
-}
+if (gridToggle) {
 
-gridToggle.addEventListener('click', function(e) {
-    // e.preventDefault();
     if (localStorage.getItem('hasGrid')) {
-        gridToggleTarget.classList.remove('has-grid');
-        gridToggle.checked = false;
-        localStorage.removeItem('hasGrid');
-    } else {
-        gridToggleTarget.classList.add('has-grid');
-        gridToggle.checked = true;
-        localStorage.setItem('hasGrid', true);
+    	gridToggleTarget.classList.add('has-grid');
+    	gridToggle.checked = true;
     }
-}); 
+    else {
+    	gridToggle.textContent = false;
+    }
+
+    gridToggle.addEventListener('click', function(e) {
+        // e.preventDefault();
+        if (localStorage.getItem('hasGrid')) {
+            gridToggleTarget.classList.remove('has-grid');
+            gridToggle.checked = false;
+            localStorage.removeItem('hasGrid');
+        } else {
+            gridToggleTarget.classList.add('has-grid');
+            gridToggle.checked = true;
+            localStorage.setItem('hasGrid', true);
+        }
+    }); 
+}
