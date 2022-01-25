@@ -114,4 +114,9 @@
 
 .blocks-gallery-item {
 	@include remove-first-last-child-margin;
+
+	// WP5.9 
+	display: block !important;
+	width: auto !important;
+	margin: 0 !important;
 }

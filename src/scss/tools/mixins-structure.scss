@@ -20,6 +20,7 @@
 @mixin is-page-content--wide {
 	width: var(--layout--wide--size);
     margin-left: var(--layout--wide--margin-left);
+    margin-right: auto;
 }
 
 @mixin is-page-content--full {
