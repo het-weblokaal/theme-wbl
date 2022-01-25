@@ -50,6 +50,6 @@
 
 	// Reset opionated gutenberg style
 	&:not(:first-child) {
-	    margin-left: 0;
+	    margin-left: 0 !important;
 	}
 }
