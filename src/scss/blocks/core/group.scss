@@ -29,12 +29,10 @@
 
 	// If group has background we treat is a special content container
 	&.has-background {
-		@include margin-collapse-fix;		
+		@include margin-collapse-fix;
 	}
 
 	&.has-background > &__inner-container {
-		// @include remove-first-last-child-margin;
-
 		margin-top: $space-20;
 		margin-bottom: $space-20;
 		

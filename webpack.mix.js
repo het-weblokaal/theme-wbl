@@ -7,11 +7,6 @@
  *
  * @link https://laravel-mix.com/docs/6.0/installation
  * @link https://laravel.com/docs/6.x/mix
- *
- * @package   Ejo\Theme\Erik
- * @author    Erik Joling <erik@joling.me>
- * @copyright 2020 Erik Joling
- * @link      https://erik.joling.me/
  */
 
 // Import required packages.
