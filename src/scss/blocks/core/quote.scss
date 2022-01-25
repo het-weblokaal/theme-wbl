@@ -21,7 +21,7 @@
 
 	cite {
 		display: block;
-		margin-top: calc( $space-1 * -1 );
+		margin-top: $space-1 * -1;
 		font-size: var(--wp--preset--font-size--small);
 		font-style: normal;
 		font-weight: regular;
