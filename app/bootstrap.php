@@ -6,11 +6,11 @@ namespace WBL\Theme;
 # Load Theme Foundation
 # ------------------------------------------------------------------------------
 
-if ( wp_get_environment_type() == 'local' ) {
-	require_once( get_template_directory() . '/../wbl-theme-foundation/app/bootstrap.php' );
+if ( wp_get_environment_type() == 'local' && file_exists( '/srv/www/local/wbl-theme-foundation/app/bootstrap.php' ) ) {
+	require_once( '/srv/www/local/wbl-theme-foundation/app/bootstrap.php' );
 
 	App::boot([
-		'foundation_dir' => '../wbl-theme-foundation'
+		'foundation_dir' => '/srv/www/local/wbl-theme-foundation'
 	]);
 }
 else {
