@@ -75,6 +75,13 @@ final class App {
 	private static $assets_dir;
 
 	/**
+	 * Config folder (relative to plugin/theme)
+	 *
+	 * @var string
+	 */
+	private static $config_dir;
+
+	/**
 	 * Template folder (relative to plugin/theme)
 	 *
 	 * @var string
@@ -134,11 +141,11 @@ final class App {
 			'id'             => '',
 			'app_dir'        => 'app',
 			'assets_dir'     => 'assets',
+			'config_dir'     => 'config',
 			'templates_dir'  => 'templates',
 			'blocks_dir'     => 'app/blocks',
 			'lang_dir'       => 'assets/lang',
 			'vendor_dir'     => 'vendor',
-			'foundation_dir' => 'vendor/het-weblokaal/wbl-theme-foundation'
 		] );
 
 		/**
@@ -153,11 +160,11 @@ final class App {
 		static::set_version();
 		static::set_app_dir( $args['app_dir'] );
 		static::set_assets_dir( $args['assets_dir'] );
+		static::set_config_dir( $args['config_dir'] );
 		static::set_templates_dir( $args['templates_dir'] );
 		static::set_blocks_dir( $args['blocks_dir'] );
 		static::set_lang_dir( $args['lang_dir'] );
 		static::set_vendor_dir( $args['vendor_dir'] );
-		static::set_foundation_dir( $args['foundation_dir'] );
 		static::set_mix_manifest();
 
 	}
@@ -184,16 +191,6 @@ final class App {
 	public static function get_name() {
 
 		return static::$name;
-	}
-
-	/**
-	 * Gets the app directory path with trailing slash.
-	 *
-	 * @return string
-	 */
-	public static function get_foundation_dir() {
-
-		return static::$foundation_dir;
 	}
 
 	/**
@@ -254,6 +251,16 @@ final class App {
 	public static function get_assets_dir() {
 
 		return static::$assets_dir;
+	}
+
+	/**
+	 * Gets the config directory of the theme
+	 *
+	 * @return string
+	 */
+	public static function get_config_dir() {
+
+		return static::$config_dir;
 	}
 
 	/**
@@ -392,6 +399,16 @@ final class App {
 	}
 
 	/**
+	 * Sets the config directory (without outer slashes)
+	 *
+	 * @return void
+	 */
+	private static function set_config_dir( $config_dir ) {
+
+		static::$config_dir = trim($config_dir, '/');
+	}
+
+	/**
 	 * Sets the app templates directory (without outer slashes)
 	 *
 	 * @return void
@@ -429,16 +446,6 @@ final class App {
 	private static function set_vendor_dir( $vendor_dir ) {
 
 		static::$vendor_dir = trim($vendor_dir, '/');
-	}
-
-	/**
-	 * Sets the foundation directory (without outer slashes)
-	 *
-	 * @return void
-	 */
-	private static function set_foundation_dir( $foundation_dir ) {
-
-		static::$foundation_dir = trim($foundation_dir, '/');
 	}
 
 	/**
@@ -499,48 +506,6 @@ final class App {
 	public static function path( $relative_file = '' ) {
 
 		return static::get_path() . trim($relative_file, '/');
-	}
-
-	/**
-	 * Get asset with cachebusting if it's enabled by laravel mix
-	 *
-	 * @param string $file relative to the asset folder
-	 * @return string filepath
-	 */
-	public static function asset( $relative_file ) {
-
-		// Get manifest
-		$manifest = static::get_mix_manifest();
-
-		// Setup manifest key. (relative file with leading slash)
-		$manifest_key = '/' . ltrim($relative_file, '/');
-
-		// If a file is in the manifest, add the cache-busting path
-		if ( $manifest && isset( $manifest[ $manifest_key ] ) ) {
-
-			// Get file with cache busting and remove leading slash
-			$relative_file = ltrim($manifest[ $manifest_key ], '/');
-		}
-
-		return static::assets_uri( $relative_file );
-	}
-
-	/**
-	 * Get SVG markup
-	 *
-	 * @param string name of the SVG icon
-	 * @return string svg-markup
-	 */
-	public static function svg( $name = '' ) {
-
-		$svg = '';
-
-		if ($name) {
-			$svg = file_get_contents( static::asset( "svg/{$name}.svg" ) );
-			$svg = ($svg) ? $svg : '';
-		}
-
-		return $svg;
 	}
 
 	/**
@@ -607,6 +572,68 @@ final class App {
 	public static function vendor_path( $relative_file = '' ) {
 
 		return static::path( static::get_vendor_dir() . '/' . $relative_file );
+	}
+
+	/**
+	 * Get asset with cachebusting if it's enabled by laravel mix
+	 *
+	 * @param string $file relative to the asset folder
+	 * @return string filepath
+	 */
+	public static function asset( $relative_file ) {
+
+		// Get manifest
+		$manifest = static::get_mix_manifest();
+
+		// Setup manifest key. (relative file with leading slash)
+		$manifest_key = '/' . ltrim($relative_file, '/');
+
+		// If a file is in the manifest, add the cache-busting path
+		if ( $manifest && isset( $manifest[ $manifest_key ] ) ) {
+
+			// Get file with cache busting and remove leading slash
+			$relative_file = ltrim($manifest[ $manifest_key ], '/');
+		}
+
+		return static::assets_uri( $relative_file );
+	}
+
+
+	/**
+	 * Includes and returns a given PHP config file. The file must return
+	 * an array.
+	 *
+	 * @param  string  $name (points to file)
+	 * @return array
+	 */
+	public static function config( $name ) {
+
+		// Get config file
+		$file = static::path( static::get_config_dir() . '/' . "{$name}.php" );
+
+		// Get config data (fallback to empty array)
+		$config = file_exists( $file ) ? include( $file ) : [];
+
+		// Return config data (array)
+		return $config;
+	}
+
+	/**
+	 * Get SVG markup
+	 *
+	 * @param string name of the SVG icon
+	 * @return string svg-markup
+	 */
+	public static function svg( $name = '' ) {
+
+		$svg = '';
+
+		if ($name) {
+			$svg = file_get_contents( static::asset( "svg/{$name}.svg" ) );
+			$svg = ($svg) ? $svg : '';
+		}
+
+		return $svg;
 	}
 
 	/**

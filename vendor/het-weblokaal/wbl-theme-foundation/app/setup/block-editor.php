@@ -12,55 +12,6 @@ namespace WBL\Theme;
 add_action( 'after_setup_theme', function() {
 
 	/**
-	 * Add support for wide and full aligned blocks
-	 *
-	 * This adds nice layout diversity
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#wide-alignment
-	 */
-	add_theme_support( 'align-wide' );
-
-	/**
-	 * Disable the CUSTOM colors. 
-	 * 
-	 * We don't want users to get too creative..
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
-	 */
-	add_theme_support( 'disable-custom-colors' );
-
-	/**
-	 * Disable all gradients. 
-	 *
-	 * We don't support this yet in our themes
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#block-gradient-presets
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#disabling-custom-gradients
-	 */
-	add_theme_support( 'editor-gradient-presets' );
-	add_theme_support( 'disable-custom-gradients' );
-
-	/**
-	 * Disable all font-sizes. 
-	 *
-	 * Our policy is to let the theme decide on font sizes.
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#block-font-sizes
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#disabling-custom-font-sizes
-	 */
-	// add_theme_support( 'editor-font-sizes' );
-	add_theme_support( 'editor-font-sizes', [] );
-	add_theme_support( 'disable-custom-font-sizes' );
-
-	/**
-	 * Disable Core Block Patterns.
-	 *
-	 * They are not relevant for our users.
-	 */
-	remove_theme_support( 'core-block-patterns' );
-
-
-	/**
 	 * Automatically transform editor styles by selectively rewriting or adjusting certain CSS selectors.  
 	 *
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
@@ -68,19 +19,11 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'editor-styles' );
 
 	/**
-	 * Remove default block styles
+	 * Disable Core Block Patterns.
 	 *
-	 * Core blocks include default structural styles. These are loaded in both the editor and the front end 
-	 * by default. An example of these styles is the CSS that powers the columns block. Without these rules, 
-	 * the block would result in a broken layout containing no columns at all.
-	 *
-	 * We take this responsibility on ourselves.
-	 *
-	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#default-block-styles
-	 */	 
-	add_action( 'wp_enqueue_scripts', function() {
-		wp_dequeue_style( 'wp-block-library' );
-	} );
+	 * They are not relevant for our users.
+	 */
+	remove_theme_support( 'core-block-patterns' );
 	
 	/**
 	 * Remove access to the Block Directory (ie. installation of new blocks through the editor)
@@ -93,72 +36,25 @@ add_action( 'after_setup_theme', function() {
 	remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
 
 	/**
-	 * Restrict the allowed blocks (opinionated)
-	 *
-	 * Themes can override this by hooking later to this filter.
-	 *
-	 * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#hiding-blocks-from-the-inserter
-	 */
-	add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2 );
-
-	/**
 	 * Show block-editor on page_for_posts page (blog/home)
 	 *
 	 * @link 
 	 */
 	add_filter( 'replace_editor', __NAMESPACE__ . '\enable_block_editor_on_blog_page', 10, 2 );
 
+	/**
+	 * Disable block editor functionality
+	 */
+	add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\disable_drop_cap_feature' );
+	add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\disable_duotone_feature' );
+	add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\disable_layout_feature' );
+	add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\disable_template_editor' );
+
 }, 5 );
 
 # ------------------------------------------------------------------------------
 # Elaborate functionality
 # ------------------------------------------------------------------------------
-
-/**
- * Restrict allowed blocks
- *
- * @link https://gist.github.com/erikjoling/7b05c3e3411244d126808bab46529d78
- * @link https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/index.js 
- */
-function allowed_block_types( $allowed_blocks, $post ) {
-
-	$allowed_blocks = [
-
-		// Core blocks
-		'core/button',
-		'core/buttons',
-		'core/column',
-		'core/columns',
-		'core/cover',
-		'core/embed',
-		'core/file',
-		'core/group',
-		'core/heading',
-		'core/html',
-		'core/image',
-		'core/list',
-		'core/paragraph',
-		'core/pullquote',
-		'core/quote',
-		'core/table',
-
-		// WBL blocks
-		'wbl-blocks/archive-loop',
-		'wbl-blocks/posts',
-
-		// WBL other blocks
-		'wbl-projects/projects',
-
-		// Third Party blocks
-		'contact-form-7/contact-form-selector',
-	];
-
-	// Uncomment to allow all blocks
-	// $allowed_blocks = true;
-
-    return $allowed_blocks;
-}
-
 
 /**
  * Simulate non-empty content to enable Gutenberg editor
@@ -189,4 +85,128 @@ function enable_block_editor_on_blog_page( $replace, $post ) {
 function filter_add_rest_orderby_params( $params ) {
 	$params['orderby']['enum'][] = 'menu_order';
 	return $params;
+}
+
+/**
+ * Disable the drop cap feature
+ * 
+ * @link https://github.com/joppuyo/disable-drop-cap/blob/master/remove-drop-cap.php
+ */
+function disable_drop_cap_feature( $editor_settings ) {
+
+	if (isset($editor_settings['__experimentalFeatures']['typography']['dropCap'])) {
+		$editor_settings['__experimentalFeatures']['typography']['dropCap'] = false;
+	}
+
+    return $editor_settings;
+}
+
+/**
+ * Disable the duotone feature
+ */
+function disable_duotone_feature( $editor_settings ) {
+
+	if (isset($editor_settings['__experimentalFeatures']['color']['duotone'])) {
+	    $editor_settings['__experimentalFeatures']['color']['customDuotone'] = false;
+	    $editor_settings['__experimentalFeatures']['color']['duotone'] = false;
+	}
+
+    return $editor_settings;
+}
+
+/**
+ * Disable the layout feature
+ */
+function disable_layout_feature( $editor_settings ) {
+
+	// App::log($editor_settings);
+	if (isset($editor_settings['supportsLayout'])) {
+    	$editor_settings['supportsLayout'] = false;
+    }
+
+    return $editor_settings;
+}
+
+/**
+ * Disable the template editor
+ */
+function disable_template_editor( $editor_settings ) {
+
+	if (isset($editor_settings['supportsTemplateMode'])) {
+    	$editor_settings['supportsTemplateMode'] = false;
+    }
+
+    return $editor_settings;
+}
+
+
+/**
+ * Get global styles (wp 5.8)
+ * 
+ * We don't use theme.json (yet). There are some things which won't coorperate
+ * with what we want for our websites. Like the opionated layout styling which
+ * we cannot disable.
+ * 
+ * But there are some things about theme.json which are nice. It injects some of
+ * the values as inline css to the frontend and the editor. This prevents us from
+ * having to duplicate the values. With this function we intend to mimic this
+ * behavior. We define our color palette and our typography with theme-support and
+ * we inject this in the same way as with theme.json WP5.8.
+ * 
+ * The theme needs to enqueue the global styles
+ * 
+ * @link: https://github.com/WordPress/gutenberg/blob/trunk/lib/global-styles.php
+ * 
+ * @return string $css
+ */
+function get_global_styles( $root = ':root' ) {
+
+	// Get theme colors and font-sizes from theme-support
+	$colors = get_theme_support( 'editor-color-palette' )[0] ?? [];
+	$font_sizes = get_theme_support( 'editor-font-sizes' )[0] ?? [];
+
+	if ( !$colors && !$font_sizes ) {
+		return;
+	}
+
+	$css = "{$root} { \n";
+
+	/**
+	 * 1. Add custom properties
+	 */
+
+	// Colors
+	foreach ( $colors as $color ) {
+		$css .= "   --wp--preset--color--{$color['slug']}: {$color['color']};\n";
+	}
+
+	// Font-sizes
+	foreach ( $font_sizes as $font_size ) {
+		$css .= "   --wp--preset--font-size--{$font_size['slug']}: {$font_size['size']};\n";
+	}
+
+	$css .= "}\n";
+
+	/**
+	 * 2. Add helpers
+	 */
+
+	// Colors
+	foreach ( $colors as $color ) {
+
+		// background-color
+		$css .= ".has-{$color['slug']}-background-color { background-color: var(--wp--preset--color--{$color['slug']}); }\n";
+
+		// color
+		$css .= ".has-{$color['slug']}-color { color: var(--wp--preset--color--{$color['slug']}); }\n";
+	}
+
+	// Font-sizes
+	foreach ( $font_sizes as $font_size ) {
+		$css .= ".has-{$font_size['slug']}-font-size { font-size: var(--wp--preset--font-size--{$font_size['slug']}); }\n";
+	}
+
+	$css = rtrim($css, "\n");
+
+	return $css;
 }

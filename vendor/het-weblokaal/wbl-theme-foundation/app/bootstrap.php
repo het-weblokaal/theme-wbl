@@ -6,18 +6,23 @@ if ( class_exists( 'WBL\Theme\App' ) ) {
 	return;
 }
 
+# ------------------------------------------------------------------------------
+# Load Dependencies
+# ------------------------------------------------------------------------------
+
+// Load App Class
+require_once( 'classes/App.php' );
+
+// Composer Dependancies
+require_once( __DIR__ . '/../vendor/autoload.php' );
 
 # ------------------------------------------------------------------------------
-# Load the foundation
+# Load setup
 # ------------------------------------------------------------------------------
 
 array_map( function( $file ) {
 	require_once( "{$file}.php" );
 }, [
-	// Classes
-	'classes/App',
-
-	// Functions
 	'setup/archive',
 	'setup/assets',
 	'setup/block-editor',
@@ -31,6 +36,7 @@ array_map( function( $file ) {
 	'setup/password-protection',
 	'setup/polylang',
 	'setup/seo',
+	'setup/shortcodes',
 	'setup/site',
 ] );
 
@@ -53,4 +59,5 @@ array_map( function( $file ) {
 	'functions/page',
 	'functions/archive-page',
 	'functions/site',
+	'functions/theme-json',
 ] );
