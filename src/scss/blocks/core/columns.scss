@@ -19,8 +19,7 @@
 
 	&.is-style-columns-2 {}
 
-	&.is-style-columns-3,
-	&.is-style-columns-4 {
+	&.is-style-columns-3 {
 
 		@media (--from-breakpoint-4) {
 			grid-template-columns: 1fr 1fr 1fr;
@@ -29,7 +28,7 @@
 
 	&.is-style-columns-4 {
 
-		@media (--from-breakpoint-6) {
+		@media (--from-breakpoint-4) {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 		}
 	}
