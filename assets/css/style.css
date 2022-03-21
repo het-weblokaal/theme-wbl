@@ -1151,8 +1151,11 @@ h6.has-background {
 /**
  * Block: Core/Image
  */
-.wp-block-image figure {
-  /* margin-bottom: $space-6; */
+.wp-block-image {
+  /* Remove margin bottom from linked images */
+}
+.wp-block-image a img {
+  margin-bottom: 0;
 }
 .wp-block-image.alignwide, .wp-block-image.alignfull {
   max-width: none;
