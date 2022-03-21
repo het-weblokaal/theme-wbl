@@ -1,6 +1,10 @@
+1.1.1
+- Fixed image caption spacing (when image has link)
+- Improved layout on medium screens with '4-columns-style'
+
 1.1
-- Fix compatibility with WP5.9
-- Fix gridToggle missing bug
+- Fixed compatibility with WP5.9
+- Fixed gridToggle missing bug
 
 1.0.3
-- Add alignwide-support for gallery, improve columns and remove figcaption border
+- Added alignwide-support for gallery, improve columns and remove figcaption border
