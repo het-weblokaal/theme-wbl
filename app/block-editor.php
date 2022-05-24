@@ -34,7 +34,7 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'disable-custom-colors' );
 
 	// Disable Gradients
-	add_theme_support( 'editor-gradient-presets' );
+	add_theme_support( 'editor-gradient-presets', [] );
 	add_theme_support( 'disable-custom-gradients' );
 
 	// Font-sizes. 
