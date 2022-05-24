@@ -1,51 +1,50 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '2fe281a1dc885efc1648d297b3883dfe7b6fec74',
+        'name' => '__root__',
+        'dev' => true,
     ),
-    'reference' => '34337c756e7ebd1507617d08b370910e3de53e25',
-    'name' => '__root__',
-  ),
-  'versions' => 
-  array (
-    '__root__' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '34337c756e7ebd1507617d08b370910e3de53e25',
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '2fe281a1dc885efc1648d297b3883dfe7b6fec74',
+            'dev_requirement' => false,
+        ),
+        'het-weblokaal/wbl-theme-foundation' => array(
+            'pretty_version' => 'dev-dev',
+            'version' => 'dev-dev',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../het-weblokaal/wbl-theme-foundation',
+            'aliases' => array(),
+            'reference' => 'a2af3120be18a2579000d89de1cf0d51934ec893',
+            'dev_requirement' => false,
+        ),
+        'tgmpa/tgm-plugin-activation' => array(
+            'pretty_version' => '2.6.1',
+            'version' => '2.6.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tgmpa/tgm-plugin-activation',
+            'aliases' => array(),
+            'reference' => 'c626d0d91fc8ef24916e809c7b79eeafab1c1cac',
+            'dev_requirement' => false,
+        ),
+        'wptt/webfont-loader' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../wptt/webfont-loader',
+            'aliases' => array(),
+            'reference' => '7243420fec7f202a9355485b8533bd99a7654941',
+            'dev_requirement' => false,
+        ),
     ),
-    'het-weblokaal/wbl-theme-foundation' => 
-    array (
-      'pretty_version' => 'dev-dev',
-      'version' => 'dev-dev',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '3688163ac5f34f2eba1940e9f05c77e5c7978360',
-    ),
-    'tgmpa/tgm-plugin-activation' => 
-    array (
-      'pretty_version' => '2.6.1',
-      'version' => '2.6.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c626d0d91fc8ef24916e809c7b79eeafab1c1cac',
-    ),
-    'wptt/webfont-loader' => 
-    array (
-      'pretty_version' => 'v1.1.1',
-      'version' => '1.1.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '7243420fec7f202a9355485b8533bd99a7654941',
-    ),
-  ),
 );

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/het-weblokaal/wbl-theme-foundation.git",
-                "reference": "3688163ac5f34f2eba1940e9f05c77e5c7978360"
+                "reference": "a2af3120be18a2579000d89de1cf0d51934ec893"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/3688163ac5f34f2eba1940e9f05c77e5c7978360",
-                "reference": "3688163ac5f34f2eba1940e9f05c77e5c7978360",
+                "url": "https://api.github.com/repos/het-weblokaal/wbl-theme-foundation/zipball/a2af3120be18a2579000d89de1cf0d51934ec893",
+                "reference": "a2af3120be18a2579000d89de1cf0d51934ec893",
                 "shasum": ""
             },
             "require": {
@@ -26,10 +26,10 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": [],
                 "files": [
                     "app/bootstrap.php"
-                ]
+                ],
+                "psr-4": []
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -52,7 +52,7 @@
                 "issues": "https://github.com/het-weblokaal/wbl-theme-foundation/issues",
                 "source": "https://github.com/het-weblokaal/wbl-theme-foundation"
             },
-            "time": "2021-12-07T08:39:59+00:00"
+            "time": "2022-05-10T11:24:20+00:00"
         },
         {
             "name": "tgmpa/tgm-plugin-activation",
@@ -169,5 +169,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }
