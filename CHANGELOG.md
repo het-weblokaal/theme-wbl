@@ -1,3 +1,8 @@
+1.1.2
+- Checked compatibility with WP6.0
+- Fixed gradients config bug
+- Fixed local, unsecured loading of SVG 
+
 1.1.1
 - Fixed image caption spacing (when image has link)
 - Improved layout on medium screens with '4-columns-style'
